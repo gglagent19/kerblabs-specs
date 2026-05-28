@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>LightTouch Med Spa &mdash; Orlando</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ovo&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:        #F5EBE4;
+    --bg-alt:    #EFE0D5;
+    --bone:      #6B554A;
+    --sand:      #C97B63;
+    --ink:       #2A1F1A;
+    --gold:      #B58A5C;
+    --cream:     #FBF6EE;
+    --blush:     #F0C7B5;
+  }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; }
+  body{
+    background: var(--bg);
+    color: var(--bone);
+    font-family: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    min-height: 100vh;
+  }
+  ::selection{ background: var(--sand); color: var(--ink); }
+
+  /* ======================================================
+     HERO — full-viewport autoplay video + scroll-shrink to corner card
+     ====================================================== */
+  .hero{
+    position: relative;
+    height: 200vh;            /* scroll runway: phase 1 = 0..100vh */
+    width: 100%;
+  }
+  .hero-video-wrap{
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    overflow: hidden;
+    background: #1a1410;
+    will-change: transform, width, height, top, left, border-radius;
+    transition: border-radius .4s ease;
+  }
+  .hero-video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+  }
+  .vignette{
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.32) 0%, rgba(0,0,0,0) 28%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%);
+    transition: opacity .35s ease;
+    will-change: opacity;
+  }
+  .hero-overlay{
+    position: fixed;
+    inset: 0;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4vh 24px;
+    pointer-events: none;
+    will-change: transform, opacity;
+  }
+  .hero-overlay > *{ pointer-events: auto; }
+  .wordmark{
+    margin: 0 0 clamp(28px, 4.2vh, 56px);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: clamp(34px, 5.2vw, 76px);
+    line-height: 1;
+    letter-spacing: 0.32em;
+    color: var(--cream);
+    text-shadow: 0 2px 28px rgba(0,0,0,0.45);
+    opacity: 0;
+    animation: fadeIn 1.4s ease 0.4s forwards;
+  }
+  .headline{
+    margin: 0 0 clamp(36px, 5vh, 64px);
+    font-family: "Ovo", serif;
+    font-weight: 400;
+    font-size: clamp(42px, 6.6vw, 104px);
+    line-height: 1.02;
+    letter-spacing: -0.012em;
+    color: var(--cream);
+    text-shadow: 0 2px 32px rgba(0,0,0,0.5);
+    max-width: 16ch;
+    opacity: 0;
+    animation: fadeIn 1.6s ease 0.9s forwards;
+  }
+  .headline em{
+    font-style: italic;
+    color: var(--blush);
+  }
+  .ticker{
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    position: relative;
+    margin: 0 0 clamp(28px, 4vh, 44px);
+    opacity: 0;
+    animation: fadeIn 1.4s ease 1.5s forwards;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+            mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+  }
+  .ticker-track{
+    display: inline-flex;
+    gap: 56px;
+    white-space: nowrap;
+    padding-left: 100%;
+    animation: marquee 38s linear infinite;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: clamp(12px, 1vw, 14px);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cream);
+    text-shadow: 0 1px 14px rgba(0,0,0,0.5);
+  }
+  .ticker-track span{ display: inline-block; }
+  .ticker-track .dot{ color: var(--blush); margin: 0 4px; }
+  .scroll-hint{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--cream);
+    opacity: 0;
+    animation: fadeIn 1.6s ease 2.0s forwards, bob 2.4s ease-in-out 2.6s infinite;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 10.5px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    text-shadow: 0 1px 12px rgba(0,0,0,0.5);
+  }
+  .scroll-hint svg{ width: 16px; height: 16px; opacity: .9; }
+
+  @keyframes fadeIn{ to { opacity: 1; } }
+  @keyframes marquee{
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes bob{
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(6px); }
+  }
+
+  /* corner-pinned state — toggled via class once shrink completes */
+  .hero-video-wrap.pinned{
+    border-radius: 50%;
+  }
+
+  /* ======================================================
+     CONTENT SECTIONS BELOW HERO
+     ====================================================== */
+  .content{ position: relative; z-index: 5; background: var(--bg); }
+  .sec{ max-width: 1100px; margin: 0 auto; padding: 110px 40px; }
+  .sec .ey,.ctaband .ey{ font:600 12px/1 Montserrat; letter-spacing:.28em; text-transform:uppercase; color:var(--sand); }
+  .sec h2,.ctaband h2{ font:400 clamp(30px,4vw,52px)/1.12 Ovo,serif; color:var(--ink); margin:16px 0 18px; }
+  .sec p.lead{ font:400 18px/1.7 Montserrat; color:var(--bone); max-width:62ch; }
+  .divline{ height:1px; background:rgba(181,138,92,.30); max-width:1100px; margin:0 auto; }
+  .stats{ display:flex; gap:46px; flex-wrap:wrap; margin-top:34px; }
+  .stat .n{ font:400 42px/1 Ovo,serif; color:var(--gold); }
+  .stat .l{ font:500 13px/1.4 Montserrat; color:#9A8770; margin-top:6px; letter-spacing:.03em; }
+  .cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:46px; }
+  .tcard{ border:1px solid rgba(201,123,99,.30); border-radius:16px; padding:32px 28px; background:linear-gradient(180deg,#FBF1EA,#EFE0D5); transition:transform .3s,border-color .3s; }
+  .tcard:hover{ transform:translateY(-5px); border-color:rgba(201,123,99,.55); }
+  .tcard h3{ font:600 22px/1.2 Ovo,serif; color:var(--ink); margin:0 0 12px; }
+  .tcard ul{ list-style:none; padding:0; margin:0; color:var(--bone); font:400 14.5px/1 Montserrat; }
+  .tcard li{ padding:7px 0; border-bottom:1px solid rgba(107,85,74,.12); }
+  .tcard li:last-child{ border:0; }
+  .locs{ display:grid; grid-template-columns:1fr; gap:18px; margin-top:40px; max-width:520px; margin-left:auto; margin-right:auto; }
+  .loc{ border:1px solid rgba(201,123,99,.30); border-radius:14px; padding:26px; text-align:center; }
+  .loc h4{ font:600 18px/1 Ovo,serif; color:var(--sand); margin:0 0 10px; }
+  .loc p{ font:400 14px/1.7 Montserrat; color:var(--bone); margin:0; }
+  .ctaband{ text-align:center; padding:120px 40px; background:linear-gradient(180deg,#EFE0D5,#EFE0D5); }
+  .ctaband h2{ max-width:18ch; margin:14px auto 26px; }
+  .btn{ display:inline-block; background:var(--sand); color:#FFF8F3; font:600 15px/1 Montserrat; padding:16px 32px; border-radius:100px; text-decoration:none; transition:transform .25s,box-shadow .25s; }
+  .btn:hover{ transform:translateY(-2px); box-shadow:0 14px 40px rgba(201,123,99,.30); }
+  .btn-o{ background:transparent; border:1px solid rgba(201,123,99,.4); color:var(--bone); margin-left:10px; }
+  .ft{ border-top:1px solid rgba(181,138,92,.30); padding:46px 40px; max-width:1100px; margin:0 auto; display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; color:#9A8770; font:400 13px/1.8 Montserrat; }
+  .specnote{ padding:18px 40px 40px; text-align:center; color:var(--bone); font:400 11px/1 Montserrat; opacity:.7; }
+  @media(max-width:880px){ .cards{ grid-template-columns:1fr; } .sec{ padding:80px 24px; } }
+
+  /* results / before-after strip */
+  .results .ba-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:46px; }
+  .ba{ border:1px solid rgba(201,123,99,.30); border-radius:16px; overflow:hidden; background:#FBF1EA; transition:transform .3s,border-color .3s; }
+  .ba:hover{ transform:translateY(-5px); border-color:rgba(201,123,99,.55); }
+  .ba-img{ position:relative; aspect-ratio:4/3; display:flex; }
+  .ba-img .half{ flex:1; display:flex; align-items:flex-end; padding:14px; font:600 11px/1 Montserrat; letter-spacing:.16em; text-transform:uppercase; }
+  .ba-img .bf{ background:linear-gradient(140deg,#EFE0D5,#E0CABC); color:#6B554A; }
+  .ba-img .af{ background:linear-gradient(140deg,#F5E3D6,#E8C9B4); color:#9B5A45; justify-content:flex-end; }
+  .ba-img:after{ content:''; position:absolute; top:0; bottom:0; left:50%; width:2px; background:rgba(255,255,255,.7); }
+  .ba-cap{ padding:18px 20px; font:600 15px/1 Ovo,serif; color:var(--ink); }
+  .ba-note{ margin-top:24px; font:400 12px/1.5 Montserrat; color:#b3a790; }
+  @media(max-width:880px){ .results .ba-row{ grid-template-columns:1fr; } }
+
+  /* section reveal */
+  .reveal{ opacity: 0; transform: translateY(28px); transition: opacity .65s ease-out, transform .65s ease-out; }
+  .reveal.in{ opacity: 1; transform: translateY(0); }
+
+  /* mobile hero adjustments — corner card becomes top strip */
+  @media(max-width: 880px){
+    .wordmark{ letter-spacing: 0.22em; }
+    .headline{ font-size: clamp(36px, 9vw, 56px); }
+    .ticker-track{ gap: 36px; font-size: 11px; letter-spacing: 0.18em; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero" aria-label="LightTouch hero">
+  <div class="hero-video-wrap" id="heroVideoWrap">
+    <video class="hero-video" id="heroVideo" src="assets/lighttouch_scrub.mp4" poster="assets/lighttouch_still.jpg" muted playsinline loop autoplay preload="auto" disablepictureinpicture></video>
+    <div class="vignette" id="vignette"></div>
+  </div>
+  <div class="hero-overlay" id="heroOverlay">
+    <h1 class="wordmark">LIGHTTOUCH</h1>
+    <h2 class="headline">Twenty years of<br><em>light</em> touches.</h2>
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track" id="tickerTrack">
+        <span>20+ years on Sand Lake Rd</span><span class="dot">&middot;</span>
+        <span>25,000 active patients</span><span class="dot">&middot;</span>
+        <span>4.7&#9733; &mdash; 942 reviews</span><span class="dot">&middot;</span>
+        <span>700,000 treatments performed</span><span class="dot">&middot;</span>
+        <span>Top 50 Allergan account &mdash; USA</span><span class="dot">&middot;</span>
+        <span>20+ years on Sand Lake Rd</span><span class="dot">&middot;</span>
+        <span>25,000 active patients</span><span class="dot">&middot;</span>
+        <span>4.7&#9733; &mdash; 942 reviews</span><span class="dot">&middot;</span>
+        <span>700,000 treatments performed</span><span class="dot">&middot;</span>
+        <span>Top 50 Allergan account &mdash; USA</span><span class="dot">&middot;</span>
+      </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    </div>
+  </div>
+</section>
+
+<div class="content">
+  <section class="sec reveal" id="about">
+    <div class="ey">NP-led &middot; Twenty years in Orlando</div>
+    <h2>A Top 50 Allergan account, in your zip code.</h2>
+    <p class="lead">For nearly two decades, LightTouch has built one of Orlando&rsquo;s busiest aesthetic practices &mdash; 25,000 active patients, 700,000 treatments, and a Top 50 Allergan ranking nationally. The single Sand Lake Road location now operates 14 treatment rooms.</p>
+    <div class="stats">
+      <div class="stat"><div class="n">20+</div><div class="l">Years in Orlando</div></div>
+      <div class="stat"><div class="n">25K+</div><div class="l">Active patients</div></div>
+      <div class="stat"><div class="n">700K</div><div class="l">Treatments performed</div></div>
+      <div class="stat"><div class="n">Top 50</div><div class="l">Allergan accounts USA</div></div>
+    </div>
+  </section>
+  <div class="divline"></div>
+  <section class="sec reveal" id="treatments">
+    <div class="ey">Treatments</div>
+    <h2>From injectables to laser to skin &mdash; Orlando-tested.</h2>
+    <div class="cards">
+      <div class="tcard"><h3>Injectables &amp; Tox</h3><ul><li>Botox &middot; Dysport &middot; Xeomin</li><li>Juv&eacute;derm &amp; Restylane</li><li>Sculptra &middot; Kybella</li><li>Hyperhidrosis treatment</li></ul></div>
+      <div class="tcard"><h3>Laser &amp; Resurfacing</h3><ul><li>Soprano ICE Laser Hair Removal</li><li>Opus Plasma resurfacing</li><li>Alma Harmony XL</li></ul></div>
+      <div class="tcard"><h3>Skin &amp; Facials</h3><ul><li>Hydrafacial (Syndeo)</li><li>Chemical Peels</li><li>Microneedling</li><li>Alma Reform</li></ul></div>
+    </div>
+  </section>
+  <div class="divline"></div>
+  <div class="divline"></div>
+  <section class="sec results reveal" id="results">
+    <div class="ey">Results</div>
+    <h2>Two decades of natural-looking results.</h2>
+    <p class="lead">Subtle, expert-injected change &mdash; the kind 25,000 Orlandoans keep coming back for.</p>
+    <div class="ba-row">
+      <div class="ba"><div class="ba-img"><div class="half bf">Before</div><div class="half af">After</div></div><div class="ba-cap">Lip &amp; filler balancing</div></div>
+      <div class="ba"><div class="ba-img"><div class="half bf">Before</div><div class="half af">After</div></div><div class="ba-cap">Hydrafacial &amp; resurfacing</div></div>
+      <div class="ba"><div class="ba-img"><div class="half bf">Before</div><div class="half af">After</div></div><div class="ba-cap">Skin tightening &amp; contouring</div></div>
+    </div>
+    <p class="ba-note">Representative layout &mdash; LightTouch&rsquo;s real patient before &amp; after photos slot in on launch.</p>
+  </section>
+  <section class="sec reveal" id="locations">
+    <div class="ey">Visit us</div>
+    <h2>One Orlando home.</h2>
+    <div class="locs">
+      <div class="loc"><h4>Sand Lake Road, Orlando</h4><p>1718 W Sand Lake Rd, Unit C110<br>Orlando, FL 32809<br>(407) 440-2025</p></div>
+    </div>
+  </section>
+  <section class="ctaband reveal" id="book">
+    <div class="ey">Begin</div>
+    <h2>Your Orlando consultation, on the calendar.</h2>
+    <a href="tel:+14074402025" class="btn">Call (407) 440-2025</a>
+    <a href="#about" class="btn btn-o">Explore Treatments</a>
+  </section>
+  <div class="ft">
+    <div><strong style="color:var(--sand);letter-spacing:.12em">LIGHTTOUCH</strong> &middot; Med Spa<br>Orlando, Florida</div>
+    <div style="text-align:right">Twenty years on Sand Lake Road<br>Top 50 Allergan account</div>
+  </div>
+  <div class="specnote">Concept preview designed by Kerblabs for LightTouch Med Spa &mdash; not affiliated; for demonstration only.</div>
+</div>
+
+<script>
+/* ======================================================
+   Hero — scroll-driven shrink to top-right corner card
+   ====================================================== */
+(() => {
+  const wrap     = document.getElementById('heroVideoWrap');
+  const video    = document.getElementById('heroVideo');
+  const overlay  = document.getElementById('heroOverlay');
+  const vignette = document.getElementById('vignette');
+  if (!wrap || !video || !overlay) return;
+
+  // ensure autoplay even on strict mobile policies
+  const tryPlay = () => {
+    const p = video.play();
+    if (p && typeof p.catch === 'function') {
+      p.catch(() => {
+        video.muted = true;
+        video.setAttribute('muted','');
+        video.play().catch(()=>{});
+      });
+    }
+  };
+  video.addEventListener('canplay', tryPlay, { once:true });
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) tryPlay(); });
+  tryPlay();
+
+  const isMobile = () => window.matchMedia('(max-width: 880px)').matches;
+
+  // Corner-card target geometry (desktop)
+  const CARD = { size: 200, margin: 24 };
+  // Mobile target — top strip
+  const STRIP = { height: 84, margin: 0 };
+
+  let ticking = false;
+  const easeOut = t => 1 - Math.pow(1 - t, 2.4);
+
+  function apply(){
+    ticking = false;
+    const vh = window.innerHeight;
+    const vw = window.innerWidth;
+    const raw = Math.max(0, Math.min(1, window.scrollY / vh));
+    const t = easeOut(raw);
+
+    const mobile = isMobile();
+    const target = mobile
+      ? { w: vw, h: STRIP.height, x: 0, y: STRIP.margin, radius: 0 }
+      : { w: CARD.size, h: CARD.size, x: vw - CARD.size - CARD.margin, y: CARD.margin, radius: CARD.size / 2 };
+
+    const w = vw + (target.w - vw) * t;
+    const h = vh + (target.h - vh) * t;
+    const x = 0  + (target.x - 0)  * t;
+    const y = 0  + (target.y - 0)  * t;
+    const r = 0  + (target.radius - 0) * t;
+
+    wrap.style.width  = w + 'px';
+    wrap.style.height = h + 'px';
+    wrap.style.transform = `translate(${x}px, ${y}px)`;
+    wrap.style.top = '0';
+    wrap.style.left = '0';
+    wrap.style.borderRadius = r + 'px';
+    wrap.style.boxShadow = t > 0.8 ? '0 12px 40px rgba(0,0,0,0.25)' : 'none';
+
+    // vignette fades out as video shrinks
+    vignette.style.opacity = String(1 - t);
+
+    // overlay content fades down and out across 0..0.6 of scroll
+    const overlayT = Math.max(0, Math.min(1, raw / 0.6));
+    overlay.style.opacity = String(1 - overlayT);
+    overlay.style.transform = `translateY(${overlayT * -60}px)`;
+    overlay.style.pointerEvents = overlayT > 0.6 ? 'none' : '';
+  }
+
+  function onScroll(){
+    if (!ticking){
+      ticking = true;
+      requestAnimationFrame(apply);
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  window.addEventListener('resize', apply);
+  apply();
+})();
+
+/* ======================================================
+   Section reveals — IntersectionObserver
+   ====================================================== */
+(() => {
+  const els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)){
+    els.forEach(el => el.classList.add('in'));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting){
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
+  els.forEach(el => io.observe(el));
+})();
+
+/* ======================================================
+   Hide corner-pinned video card when footer enters view
+   ====================================================== */
+(() => {
+  const ft = document.querySelector('.ft');
+  const wrap = document.getElementById('heroVideoWrap');
+  if (!ft || !wrap || !('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      wrap.style.opacity = e.isIntersecting ? '0' : '1';
+      wrap.style.transition = 'opacity .5s ease';
+    });
+  }, { threshold: 0.05 });
+  io.observe(ft);
+})();
+</script>
+
+<script>
+/* preload video as blob so autoplay loop is rock-solid */
+(function(){
+  var v=document.querySelector("video");
+  if(!v) return;
+  var s=v.getAttribute("src")||v.currentSrc;
+  if(!s||s.indexOf("blob:")===0) return;
+  fetch(s).then(function(r){return r.blob();}).then(function(b){
+    v.src=URL.createObjectURL(b);
+    v.load();
+    var p=v.play(); if(p&&p.catch) p.catch(function(){});
+  }).catch(function(){});
+})();
+</script>
+</body>
+</html>
