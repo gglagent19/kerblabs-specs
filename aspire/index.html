@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Aspire MedSpa &amp; Beauty Bar &mdash; Tampa</title>
+<meta name="description" content="A luxurious medical spa in Tampa Bay where everyone can feel beautiful on their own terms. Physician-led aesthetic medicine, master injectors, boutique experience." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:        #0F1A2E;      /* deep midnight Tampa Bay */
+    --bg-deep:   #0A1322;
+    --gold:      #D4A857;      /* warm gold */
+    --gold-dim:  #8E6E3A;
+    --cream:     #F4ECD8;      /* warm cream foreground */
+    --cream-dim: #C9C0AB;
+    --ink:       #1A1A1A;
+    --paper:     #FAF6EC;      /* below-fold light bg */
+    --paper-2:   #F1EAD8;
+    --line:      rgba(212,168,87,0.22);
+    --shadow:    0 30px 60px -20px rgba(0,0,0,0.55);
+    --pad-x:     clamp(20px, 4vw, 56px);
+  }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; }
+  html{ scroll-behavior: smooth; }
+  body{
+    background: var(--bg);
+    color: var(--cream);
+    font-family: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+  a{ color: inherit; text-decoration: none; }
+  img, video{ display:block; max-width:100%; }
+  button, a.btn{ cursor: pointer; }
+  :focus-visible{ outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
+
+  /* ===== HERO ===== */
+  .hero{
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  #hero-bg{
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background:
+      radial-gradient(1200px 700px at 20% 30%, #16263F 0%, transparent 60%),
+      radial-gradient(900px 600px at 85% 80%, #1B2D4A 0%, transparent 55%),
+      linear-gradient(180deg, #0F1A2E 0%, #0A1322 100%);
+  }
+  .hero::after{
+    content:'';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(10,19,34,0.10) 0%, rgba(10,19,34,0.55) 65%, rgba(10,19,34,0.92) 100%);
+    pointer-events: none;
+  }
+  .hero-inner{
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1.35fr 0.85fr;
+    gap: clamp(28px, 4vw, 64px);
+    align-items: center;
+    padding: clamp(28px, 4vw, 56px) var(--pad-x) clamp(48px, 6vw, 96px);
+  }
+
+  .nav{
+    position: absolute;
+    top: clamp(20px, 2.5vw, 36px);
+    left: var(--pad-x);
+    right: var(--pad-x);
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--cream-dim);
+  }
+  .nav .wm{ color: var(--gold); font-weight: 600; letter-spacing: 0.42em; }
+  .nav ul{ list-style:none; margin:0; padding:0; display:flex; gap: clamp(16px, 2vw, 32px); }
+  .nav a:hover{ color: var(--gold); transition: color 200ms ease; }
+  @media(max-width: 820px){ .nav ul{ display:none; } }
+
+  .copy{
+    max-width: 640px;
+    padding-top: clamp(40px, 6vw, 64px);
+  }
+  .eyebrow{
+    font-size: 11px;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: clamp(20px, 2.5vw, 32px);
+    text-shadow: 0 1px 12px rgba(0,0,0,0.6);
+  }
+  .headline{
+    font-family: "Cormorant Garamond", "Times New Roman", serif;
+    font-weight: 400;
+    font-size: clamp(44px, 7.6vw, 108px);
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    margin: 0 0 clamp(22px, 2.6vw, 36px);
+    color: var(--cream);
+    text-shadow: 0 2px 24px rgba(0,0,0,0.55);
+  }
+  .headline em{
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 500;
+  }
+  .subline{
+    font-size: clamp(15px, 1.25vw, 19px);
+    line-height: 1.6;
+    color: var(--cream-dim);
+    max-width: 52ch;
+    margin: 0 0 clamp(28px, 3.5vw, 44px);
+    text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+  }
+  .trust{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0,1fr));
+    gap: clamp(14px, 1.6vw, 26px);
+    margin-bottom: clamp(28px, 3.5vw, 44px);
+    padding: clamp(18px, 2vw, 24px) 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .ti b{
+    display:block;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+    font-size: clamp(22px, 2.4vw, 32px);
+    line-height: 1;
+    color: var(--gold);
+  }
+  .ti b span{ font-size: 0.5em; margin-left: 2px; color: var(--cream-dim); }
+  .ti i{
+    display:block;
+    margin-top: 6px;
+    font-style: normal;
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cream-dim);
+  }
+  @media(max-width: 640px){ .trust{ grid-template-columns: repeat(2, 1fr); } }
+
+  .cta-row{ display:flex; align-items:center; gap: 18px; flex-wrap: wrap; }
+  .btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 28px;
+    background: var(--gold);
+    color: var(--bg-deep);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border: 1px solid var(--gold);
+    border-radius: 0;
+    transition: background 200ms ease, color 200ms ease, transform 200ms ease;
+    min-height: 44px;
+  }
+  .btn:hover{ background: transparent; color: var(--gold); transform: translateY(-1px); }
+  .btn-o{ background: transparent; color: var(--cream); border-color: var(--cream-dim); }
+  .btn-o:hover{ background: var(--cream); color: var(--bg-deep); border-color: var(--cream); }
+  .byline{ font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cream-dim); }
+
+  /* Video card right side */
+  .vcard{
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 4 / 5;
+    border: 1px solid var(--line);
+    background: var(--bg-deep);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    justify-self: end;
+    transform: translateY(8px);
+  }
+  .vcard::before{
+    content:'';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(212,168,87,0.18);
+    pointer-events: none;
+    z-index: 2;
+  }
+  .vcard video, .vcard img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+  .vcard .vlabel{
+    position: absolute;
+    left: 22px;
+    bottom: 22px;
+    z-index: 3;
+    font-size: 10.5px;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(10,19,34,0.55);
+    padding: 8px 12px;
+    backdrop-filter: blur(4px);
+  }
+  @media(max-width: 880px){
+    .hero-inner{ grid-template-columns: 1fr; padding-top: 110px; gap: 36px; }
+    .vcard{ justify-self: start; max-width: 320px; aspect-ratio: 4/5; }
+    .copy{ padding-top: 0; }
+  }
+
+  /* ===== CONTENT (light) ===== */
+  .content{
+    position: relative;
+    z-index: 4;
+    background: var(--paper);
+    color: var(--ink);
+  }
+  .sec{
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: clamp(72px, 9vw, 128px) var(--pad-x);
+  }
+  .ey{
+    font-size: 11px;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 22px;
+  }
+  .sec h2{
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
+    font-size: clamp(34px, 4.4vw, 60px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin: 0 0 24px;
+    color: var(--bg);
+    max-width: 24ch;
+  }
+  .sec h2 em{ font-style: italic; color: var(--gold-dim); }
+  .lead{
+    font-size: clamp(16px, 1.2vw, 18.5px);
+    line-height: 1.65;
+    color: #3D4654;
+    max-width: 62ch;
+    margin: 0 0 36px;
+  }
+  .divline{
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--line), transparent);
+    margin: 0;
+  }
+
+  .stats{
+    display:grid;
+    grid-template-columns: repeat(4, minmax(0,1fr));
+    gap: clamp(16px, 2vw, 32px);
+    margin-top: 48px;
+  }
+  .stat{
+    padding-top: 22px;
+    border-top: 1px solid rgba(15,26,46,0.12);
+  }
+  .stat .n{
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+    font-size: clamp(34px, 3.6vw, 48px);
+    line-height: 1;
+    color: var(--bg);
+  }
+  .stat .l{
+    margin-top: 10px;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #6B7280;
+  }
+  @media(max-width: 720px){ .stats{ grid-template-columns: repeat(2, 1fr); } }
+
+  /* Treatments */
+  .cards{
+    display:grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: clamp(20px, 2vw, 32px);
+    margin-top: 48px;
+  }
+  .tcard{
+    background: var(--paper-2);
+    padding: clamp(28px, 2.5vw, 40px);
+    border: 1px solid rgba(15,26,46,0.06);
+    transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+  }
+  .tcard:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 24px 40px -20px rgba(15,26,46,0.18);
+    border-color: var(--gold);
+  }
+  .tcard .icn{
+    width: 36px; height: 36px;
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom: 22px;
+    color: var(--gold-dim);
+  }
+  .tcard h3{
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+    font-size: clamp(22px, 1.8vw, 28px);
+    margin: 0 0 18px;
+    color: var(--bg);
+  }
+  .tcard ul{ list-style:none; padding:0; margin:0; }
+  .tcard li{
+    padding: 10px 0;
+    border-top: 1px solid rgba(15,26,46,0.08);
+    font-size: 14.5px;
+    color: #3D4654;
+  }
+  .tcard li:first-child{ border-top: none; padding-top: 0; }
+  @media(max-width: 880px){ .cards{ grid-template-columns: 1fr; } }
+
+  /* Results before/after */
+  .results{ background: linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%); }
+  .ba-row{
+    display:grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: clamp(18px, 2vw, 28px);
+    margin-top: 48px;
+  }
+  .ba{ background: #fff; border: 1px solid rgba(15,26,46,0.06); }
+  .ba-img{
+    position: relative;
+    height: 320px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .half{
+    display:flex; align-items:center; justify-content:center;
+    font: 500 11px/1 "Inter", sans-serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+  }
+  .half.bf{ background: linear-gradient(140deg, #E8E1CF, #D9CFB4); color: #7A6B4E; }
+  .half.af{ background: linear-gradient(140deg, #F4ECD8, #ECDFC0); color: var(--gold-dim); }
+  .ba-img::after{ content:''; position:absolute; top:0; bottom:0; left:50%; width:2px; background: rgba(255,255,255,0.7); }
+  .ba-cap{ padding: 18px 22px; font: 500 14px/1.3 "Cormorant Garamond", serif; font-size: 17px; color: var(--bg); }
+  .ba-note{ margin-top: 28px; font-size: 12.5px; color: #8A8270; line-height: 1.6; }
+  @media(max-width: 880px){ .ba-row{ grid-template-columns: 1fr; } .ba-img{ height: 260px; } }
+
+  /* Locations */
+  .locs{ display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: clamp(20px, 2.5vw, 36px); margin-top: 40px; }
+  .loc{
+    padding: clamp(28px, 2.5vw, 40px);
+    border: 1px solid rgba(15,26,46,0.08);
+    background: #fff;
+    transition: border-color 200ms ease, transform 200ms ease;
+  }
+  .loc:hover{ border-color: var(--gold); transform: translateY(-2px); }
+  .loc h4{
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+    font-size: 22px;
+    margin: 0 0 14px;
+    color: var(--bg);
+  }
+  .loc p{ margin: 0; font-size: 14.5px; line-height: 1.65; color: #3D4654; }
+  .loc a.lcall{ display:inline-block; margin-top: 14px; color: var(--gold-dim); font-weight: 600; font-size: 13px; letter-spacing: 0.1em; }
+  .loc a.lcall:hover{ color: var(--bg); }
+  @media(max-width: 720px){ .locs{ grid-template-columns: 1fr; } }
+
+  /* CTA band */
+  .ctaband{
+    background: var(--bg);
+    color: var(--cream);
+    padding: clamp(72px, 8vw, 112px) var(--pad-x);
+    text-align: center;
+  }
+  .ctaband .ey{ color: var(--gold); }
+  .ctaband h2{
+    color: var(--cream);
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.1;
+    margin: 0 auto 36px;
+    max-width: 22ch;
+  }
+  .ctaband .btn-o{ color: var(--cream); border-color: var(--cream-dim); }
+  .ctaband .cta-row{ justify-content: center; }
+
+  /* Footer */
+  .ft{
+    background: var(--bg-deep);
+    color: var(--cream-dim);
+    padding: 36px var(--pad-x);
+    display:flex;
+    justify-content: space-between;
+    gap: 24px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    border-top: 1px solid rgba(212,168,87,0.12);
+  }
+  .ft strong{ color: var(--gold); letter-spacing: 0.32em; font-weight: 600; }
+  @media(max-width: 640px){ .ft{ flex-direction: column; text-align: left; } }
+  .specnote{
+    background: var(--bg-deep);
+    color: #6B7588;
+    padding: 14px var(--pad-x) 28px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+    html{ scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero" id="top">
+  <div id="hero-bg" aria-hidden="true"></div>
+
+  <nav class="nav" aria-label="Primary">
+    <span class="wm">ASPIRE</span>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#treatments">Treatments</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#visit">Visit</a></li>
+      <li><a href="#book">Book</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-inner">
+    <div class="copy">
+      <div class="eyebrow">Tampa Bay &middot; Aesthetic Medical Spa &middot; Est. 2018</div>
+      <h1 class="headline">Beauty on <em>your</em><br>own terms.</h1>
+      <p class="subline">A luxurious boutique medical spa on N. Dale Mabry &mdash; where physician-led aesthetics, master injectors, and wellness meet, and everyone leaves feeling like themselves, just better.</p>
+      <div class="trust" role="list" aria-label="Trust signals">
+        <div class="ti" role="listitem"><b>7<span>yrs</span></b><i>Tampa-rooted</i></div>
+        <div class="ti" role="listitem"><b>680<span>+</span></b><i>Patient reviews</i></div>
+        <div class="ti" role="listitem"><b>MD</b><i>Physician-led</i></div>
+        <div class="ti" role="listitem"><b>1</b><i>Boutique location</i></div>
+      </div>
+      <div class="cta-row">
+        <a href="tel:+18135100770" class="btn" aria-label="Call Aspire MedSpa at 813-510-0770">Book a Consultation</a>
+        <span class="byline">with Rosaly Torres, ARNP-C</span>
+      </div>
+    </div>
+
+    <aside class="vcard" aria-label="Aspire MedSpa preview">
+      <video src="assets/aspire_scrub.mp4" poster="assets/aspire_still.jpg" muted autoplay loop playsinline preload="metadata" disablepictureinpicture></video>
+      <span class="vlabel">A Boutique Beauty Bar</span>
+    </aside>
+  </div>
+</section>
+
+<main class="content">
+  <section class="sec" id="about">
+    <div class="ey">A Tampa Bay boutique &middot; Physician-led aesthetic medicine</div>
+    <h2>Where the luxury of a spa meets the <em>safety of medicine.</em></h2>
+    <p class="lead">Aspire blends advanced medical aesthetics with the warmth of a boutique spa experience. Under the supervision of Alfredo Cartaya, MD, and led by Master Injector Rosaly Torres, ARNP-C, our team delivers customized treatments designed around how you actually want to look &mdash; not a trend, not a template.</p>
+    <div class="stats">
+      <div class="stat"><div class="n">7+</div><div class="l">Years in Tampa Bay</div></div>
+      <div class="stat"><div class="n">680+</div><div class="l">Patient reviews</div></div>
+      <div class="stat"><div class="n">MD</div><div class="l">Physician supervised</div></div>
+      <div class="stat"><div class="n">Boutique</div><div class="l">Single-location care</div></div>
+    </div>
+  </section>
+
+  <div class="divline"></div>
+
+  <section class="sec" id="treatments">
+    <div class="ey">Treatments</div>
+    <h2>From injectables to <em>full-body wellness.</em></h2>
+    <p class="lead">A curated lineup of medical-grade aesthetic and wellness services &mdash; every treatment delivered by trained medical professionals in a calm, private boutique setting.</p>
+    <div class="cards">
+      <div class="tcard">
+        <div class="icn" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l6 6-9 9H5v-6z"/><path d="M13 5l6 6"/></svg>
+        </div>
+        <h3>Injectables</h3>
+        <ul>
+          <li>Botox<sup>&reg;</sup> &amp; Dysport<sup>&reg;</sup></li>
+          <li>Dermal fillers &middot; lip balancing</li>
+          <li>Kybella<sup>&reg;</sup> chin contouring</li>
+          <li>Sculptra<sup>&reg;</sup> butt lift</li>
+        </ul>
+      </div>
+      <div class="tcard">
+        <div class="icn" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>
+        </div>
+        <h3>Laser &amp; Skin</h3>
+        <ul>
+          <li>Morpheus8<sup>&reg;</sup> skin tightening</li>
+          <li>HydraFacial<sup>&reg;</sup> &middot; chemical peels</li>
+          <li>Microneedling &middot; pigment correction</li>
+          <li>Laser hair removal &amp; resurfacing</li>
+        </ul>
+      </div>
+      <div class="tcard">
+        <div class="icn" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6.5-7 11-7 11z" transform="translate(-2 0)"/></svg>
+        </div>
+        <h3>Body &amp; Wellness</h3>
+        <ul>
+          <li>Medical weight loss</li>
+          <li>IV therapy &amp; vitamin infusions</li>
+          <li>Hair loss treatment</li>
+          <li>Hormone &amp; wellness consults</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="divline"></div>
+
+  <section class="sec results" id="results">
+    <div class="ey">Results</div>
+    <h2>Natural change, <em>noticed quietly.</em></h2>
+    <p class="lead">Subtle, customized refinement &mdash; the kind people notice without knowing why. Real before &amp; after photos from Aspire&rsquo;s patients slot into this layout on launch.</p>
+    <div class="ba-row">
+      <div class="ba"><div class="ba-img"><div class="half bf">Before</div><div class="half af">After</div></div><div class="ba-cap">Lip &amp; filler balancing</div></div>
+      <div class="ba"><div class="ba-img"><div class="half bf">Before</div><div class="half af">After</div></div><div class="ba-cap">Morpheus8 skin tightening</div></div>
+      <div class="ba"><div class="ba-img"><div class="half bf">Before</div><div class="half af">After</div></div><div class="ba-cap">HydraFacial &amp; pigment correction</div></div>
+    </div>
+    <p class="ba-note">Representative layout for the spec preview &mdash; Aspire&rsquo;s real patient photos populate these slots on production launch, with informed-consent labels.</p>
+  </section>
+
+  <section class="sec" id="visit">
+    <div class="ey">Visit us</div>
+    <h2>A boutique on <em>N. Dale Mabry.</em></h2>
+    <div class="locs">
+      <div class="loc">
+        <h4>Aspire MedSpa &amp; Beauty Bar</h4>
+        <p>12932 N. Dale Mabry Hwy<br>Tampa, FL 33618</p>
+        <a class="lcall" href="tel:+18135100770">Call (813) 510-0770 &rarr;</a>
+      </div>
+      <div class="loc">
+        <h4>Hours</h4>
+        <p>Monday &ndash; Friday &middot; 9:00 AM &ndash; 6:00 PM<br>Every other Saturday &middot; 10:00 AM &ndash; 3:00 PM<br>By appointment</p>
+        <a class="lcall" href="#book">Book online &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ctaband" id="book">
+    <div class="ey">Begin</div>
+    <h2>Feel beautiful on <em>your own terms.</em></h2>
+    <div class="cta-row">
+      <a href="tel:+18135100770" class="btn">Call (813) 510-0770</a>
+      <a href="#treatments" class="btn btn-o">Explore Treatments</a>
+    </div>
+  </section>
+
+  <div class="ft">
+    <div><strong>ASPIRE</strong> &middot; MedSpa &amp; Beauty Bar<br>Tampa, FL &middot; Physician-led aesthetic medicine</div>
+    <div style="text-align:right">Alfredo Cartaya, MD &middot; Rosaly Torres, ARNP-C<br>Where everyone feels beautiful on their own terms.</div>
+  </div>
+
+  <div class="specnote">
+    Concept preview designed by Kerblabs for Aspire MedSpa &amp; Beauty Bar &mdash; not affiliated; for demonstration only.
+  </div>
+</main>
+
+<!-- Vanta.js animated WAVES background — Tampa Bay coastal vibe -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.waves.min.js" defer></script>
+<script>
+(function(){
+  // Respect reduced motion + mobile fallback (skill best practice)
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 768px)').matches || /Mobi|Android/i.test(navigator.userAgent);
+
+  // If reduced motion or mobile, keep static gradient fallback already on #hero-bg
+  if (reduced || isMobile) {
+    return;
+  }
+
+  let vantaEffect = null;
+  let destroyed = false;
+  const hero = document.getElementById('top');
+  const bgEl = document.getElementById('hero-bg');
+
+  function initVanta(){
+    if (vantaEffect || destroyed) return;
+    if (typeof VANTA === 'undefined' || !VANTA.WAVES) {
+      // libs not loaded yet — retry shortly
+      setTimeout(initVanta, 80);
+      return;
+    }
+    try {
+      vantaEffect = VANTA.WAVES({
+        el: bgEl,
+        mouseControls: true,
+        touchControls: false,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0x16263f,        // deep midnight
+        shininess: 38,
+        waveHeight: 18,
+        waveSpeed: 0.65,
+        zoom: 0.92
+      });
+    } catch(e) { /* fail silently → static gradient remains */ }
+  }
+
+  function destroy(){
+    if (vantaEffect && vantaEffect.destroy) {
+      try { vantaEffect.destroy(); } catch(e){}
+    }
+    vantaEffect = null;
+    destroyed = true;
+  }
+
+  // Init when libs finish loading
+  window.addEventListener('load', () => {
+    setTimeout(initVanta, 60);
+  });
+
+  // Destroy when hero scrolls off-screen (save resources)
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) {
+          if (vantaEffect) {
+            // pause: destroy now, re-init when back in view
+            try { vantaEffect.destroy(); } catch(_){}
+            vantaEffect = null;
+          }
+        } else {
+          if (!vantaEffect && !destroyed) initVanta();
+        }
+      }
+    }, { threshold: 0.05 });
+    io.observe(hero);
+  }
+
+  // Cleanup on unload
+  window.addEventListener('beforeunload', destroy);
+})();
+</script>
+
+</body>
+</html>
