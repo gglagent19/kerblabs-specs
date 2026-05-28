@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Coastal Dermatology &amp; Medspa &mdash; Jacksonville</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ovo&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:        #F4F6F4;
+    --bg-alt:    #E8EEEA;
+    --bone:      #2C3E4A;
+    --sand:      #5C8FA6;
+    --gold:      #7FA5B5;
+    --ink:       #0E2638;
+    --pad-x:     56px;
+    --pad-y:     56px;
+    --gap:       clamp(40px, 5vw, 80px);
+    --thumb-w:   clamp(180px, 17vw, 240px);
+    --left-max:  960px;
+  }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; }
+  body{ min-height: 200vh; }
+  body{
+    background: var(--bg);
+    color: var(--bone);
+    font-family: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .stage{
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    padding: var(--pad-y) 0 var(--pad-y) var(--pad-x);
+    display: grid;
+    grid-template-columns: 0px minmax(0, 1fr) 32vw;
+    grid-template-rows: auto 1fr auto;
+    column-gap: var(--gap);
+    row-gap: 0;
+  }
+
+  .wordmark{
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: clamp(40px, 6.4vw, 96px);
+    line-height: 1;
+    letter-spacing: 0.18em;
+    color: var(--sand);
+    white-space: nowrap;
+  }
+
+  .thumb{
+    grid-column: 1;
+    grid-row: 3;
+    align-self: end;
+    width: 100%;
+    overflow: hidden;
+    background: var(--sand);
+    line-height: 0;
+    margin: 0;
+  }
+  .thumb img{ width: 100%; height: auto; display: block; max-height: 32vh; object-fit: cover; }
+
+  .copy{
+    grid-column: 2;
+    grid-row: 3;
+    align-self: end;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(20px, 2.4vw, 36px);
+    padding-bottom: 4px;
+  }
+  .quote{
+    margin: 0;
+    font-family: "Ovo", serif;
+    font-weight: 400;
+    font-size: clamp(20px, 1.85vw, 30px);
+    line-height: 1.5;
+    color: var(--bone);
+    max-width: 38ch;
+  }
+  .sig{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.34em;
+    color: var(--sand);
+    text-transform: uppercase;
+  }
+
+  .portrait{
+    grid-column: 3;
+    grid-row: 1 / span 3;
+    align-self: stretch;
+    width: 100%;
+    height: 100vh;
+    margin: calc(var(--pad-y) * -1) 0;
+    background: #F4F6F4;
+    overflow: hidden;
+    min-height: 0;
+  }
+  .portrait img,
+  .portrait video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+  }
+
+  @media (max-width: 880px){
+    :root{ --pad-x: 20px; --pad-y: 20px; --gap: 16px; --thumb-w: 96px; --left-max: 60vw; }
+    .stage{
+      grid-template-columns: var(--thumb-w) minmax(0,1fr) var(--portrait-w);
+      padding: var(--pad-y) 0 var(--pad-y) var(--pad-x);
+    }
+    .wordmark{ font-size: clamp(20px, 5.6vw, 44px); }
+    .quote   { font-size: clamp(13px, 2vw, 18px); max-width: none; }
+  }
+
+  .subhead{
+    position: fixed;
+    margin: 0;
+    font-family: "Ovo", serif;
+    font-weight: 400;
+    font-size: clamp(16px, 1.4vw, 22px);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #2C3E4A;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 3;
+    transform: translate(-50%, 0);
+  }
+  .loader{
+    position: fixed;
+    inset: 0;
+    background: #F4F6F4;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 1;
+  }
+  ::selection{ background: var(--sand); color: #F4F6F4; }
+
+  /* --- homepage sections (scroll up over the fixed hero) --- */
+  .content{position:relative;z-index:5;background:var(--bg);margin-top:200vh;}
+  .sec{max-width:1100px;margin:0 auto;padding:110px 40px;}
+  .sec .ey,.ctaband .ey{font:600 12px/1 Montserrat;letter-spacing:.28em;text-transform:uppercase;color:var(--sand);}
+  .sec h2,.ctaband h2{font:400 clamp(30px,4vw,52px)/1.12 Ovo,serif;color:var(--bone);margin:16px 0 18px;}
+  .sec p.lead{font:400 18px/1.7 Montserrat;color:#5A6E7A;max-width:62ch;}
+  .divline{height:1px;background:rgba(92,143,166,.30);max-width:1100px;margin:0 auto;}
+  .stats{display:flex;gap:46px;flex-wrap:wrap;margin-top:34px;}
+  .stat .n{font:400 42px/1 Ovo,serif;color:var(--sand);} .stat .l{font:500 13px/1.4 Montserrat;color:#7B8E99;margin-top:6px;letter-spacing:.03em;}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px;}
+  .tcard{border:1px solid rgba(92,143,166,.30);border-radius:16px;padding:32px 28px;background:linear-gradient(180deg,#FAFCFA,#E8EEEA);transition:transform .3s,border-color .3s;}
+  .tcard:hover{transform:translateY(-5px);border-color:rgba(92,143,166,.55);}
+  .tcard h3{font:600 22px/1.2 Ovo,serif;color:var(--bone);margin:0 0 12px;}
+  .tcard ul{list-style:none;padding:0;margin:0;color:#5A6E7A;font:400 14.5px/1 Montserrat;}
+  .tcard li{padding:7px 0;border-bottom:1px solid rgba(44,62,74,.10);} .tcard li:last-child{border:0;}
+  .locs{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:40px;}
+  .loc{border:1px solid rgba(92,143,166,.30);border-radius:14px;padding:26px;} .loc h4{font:600 18px/1 Ovo,serif;color:var(--sand);margin:0 0 10px;} .loc p{font:400 14px/1.7 Montserrat;color:#5A6E7A;margin:0;}
+  .ctaband{text-align:center;padding:120px 40px;background:linear-gradient(180deg,#E8EEEA,#E8EEEA);}
+  .ctaband h2{max-width:18ch;margin:14px auto 26px;}
+  .btn{display:inline-block;background:var(--sand);color:#F4F6F4;font:600 15px/1 Montserrat;padding:16px 32px;border-radius:100px;text-decoration:none;transition:transform .25s,box-shadow .25s;}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(92,143,166,.30);}
+  .btn-o{background:transparent;border:1px solid rgba(92,143,166,.4);color:var(--bone);margin-left:10px;}
+  .ft{border-top:1px solid rgba(92,143,166,.30);padding:46px 40px;max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;color:#7B8E99;font:400 13px/1.8 Montserrat;}
+  .specnote{padding:18px 40px 40px;text-align:center;color:#9AAAB3;font:400 11px/1 Montserrat;}
+  @media(max-width:880px){.cards,.locs{grid-template-columns:1fr;} .sec{padding:80px 24px;}}
+
+
+  /* hero trust block */
+  .herostats{position:absolute;top:23vh;left:var(--pad-x);opacity:0;max-width:560px;z-index:3;}
+  .decade{display:flex;align-items:baseline;gap:14px;}
+  .decade .dn{font:400 clamp(44px,5.4vw,80px)/0.85 Ovo,serif;color:var(--sand);}
+  .decade .dy{font:600 13px/1.2 Montserrat;letter-spacing:.32em;text-transform:uppercase;color:var(--bone);}
+  .hslead{font:400 clamp(16px,1.45vw,20px)/1.5 Ovo,serif;color:var(--bone);margin:16px 0 26px;max-width:40ch;}
+  .hsrow{display:flex;gap:36px;flex-wrap:wrap;}
+  .hs b{display:block;font:400 25px/1 Ovo,serif;color:var(--sand);}
+  .hs i{display:block;font:500 11.5px/1.4 Montserrat;font-style:normal;letter-spacing:.05em;text-transform:uppercase;color:#7B8E99;margin-top:6px;}
+  @media(max-width:880px){.herostats{display:none;}}
+
+
+  /* === editorial left column === */
+  .lead-col{position:fixed;left:clamp(40px,7vw,112px);top:50%;transform:translateY(-46%);width:min(60vw,840px);opacity:0;z-index:3;}
+  .lead-col .eyebrow{font:600 12px/1 Montserrat;letter-spacing:.26em;text-transform:uppercase;color:var(--sand);margin:0 0 24px;}
+  .headline{font:400 clamp(46px,6.2vw,108px)/0.96 Ovo,serif;color:var(--bone);letter-spacing:-.015em;margin:0 0 22px;}
+  .headline em{font-style:italic;color:var(--sand);}
+  .subline{font:400 clamp(15px,1.2vw,18px)/1.62 Montserrat;color:#5A6E7A;max-width:48ch;margin:0 0 36px;}
+  .trust{display:flex;gap:clamp(28px,3.2vw,56px);margin:0 0 38px;align-items:flex-start;}
+  .trust .ti b{display:block;font:400 clamp(28px,2.5vw,38px)/1 Ovo,serif;color:var(--bone);}
+  .trust .ti b span{font:600 11px/1 Montserrat;color:var(--sand);margin-left:4px;letter-spacing:.05em;text-transform:uppercase;vertical-align:super;}
+  .trust .ti i{display:block;font:600 10.5px/1.3 Montserrat;font-style:normal;letter-spacing:.11em;text-transform:uppercase;color:#7B8E99;margin-top:10px;}
+  .cta-row{display:flex;align-items:center;gap:22px;}
+  .byline{font:600 12px/1 Montserrat;letter-spacing:.16em;text-transform:uppercase;color:var(--sand);}
+  @media(max-width:880px){.lead-col{left:24px;right:24px;width:auto;bottom:40px;}.trust{flex-wrap:wrap;gap:22px;}}
+
+
+  /* results / before-after strip */
+  .results .ba-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px;}
+  .ba{border:1px solid rgba(92,143,166,.30);border-radius:16px;overflow:hidden;background:#FAFCFA;transition:transform .3s,border-color .3s;}
+  .ba:hover{transform:translateY(-5px);border-color:rgba(92,143,166,.55);}
+  .ba-img{position:relative;aspect-ratio:4/3;display:flex;}
+  .ba-img .half{flex:1;display:flex;align-items:flex-end;padding:14px;font:600 11px/1 Montserrat;letter-spacing:.16em;text-transform:uppercase;}
+  .ba-img .bf{background:linear-gradient(140deg,#D9E3E8,#BFD0D9);color:#3E5663;}
+  .ba-img .af{background:linear-gradient(140deg,#E6EEF2,#C8DBE4);color:#3F6B82;justify-content:flex-end;}
+  .ba-img:after{content:'';position:absolute;top:0;bottom:0;left:50%;width:2px;background:rgba(255,255,255,.7);}
+  .ba-cap{padding:18px 20px;font:600 15px/1 Ovo,serif;color:var(--bone);}
+  .ba-note{margin-top:24px;font:400 12px/1.5 Montserrat;color:#9AAAB3;}
+  @media(max-width:880px){.results .ba-row{grid-template-columns:1fr;}}
+
+</style>
+</head>
+<body>
+
+<main class="stage">
+  <div class="loader" aria-hidden="true"></div>
+  <h1 class="wordmark">COASTAL</h1>
+
+  <div class="lead-col">
+    <div class="eyebrow">Medical dermatology + aesthetics &middot; Jacksonville, FL &middot; 23 years</div>
+    <h2 class="headline">Skin is<br><em>medicine</em>. Beauty is the rest.</h2>
+    <p class="subline">Board-certified dermatology and a full medspa under one roof &mdash; led by Dr.&nbsp;Sanjiva Goyal, MD, across Jacksonville and Ponte Vedra Beach.</p>
+    <div class="trust">
+      <div class="ti"><b>23<span>yrs</span></b><i>In Jacksonville</i></div>
+      <div class="ti"><b>4.7&#9733;</b><i>859 reviews</i></div>
+      <div class="ti"><b>MD</b><i>Board-certified derm</i></div>
+      <div class="ti"><b>2</b><i>FL locations</i></div>
+    </div>
+    <div class="cta-row">
+      <a href="#book" class="btn">Book a Consultation</a>
+      <span class="byline">with Dr.&nbsp;Sanjiva&nbsp;Goyal,&nbsp;MD</span>
+    </div>
+  </div>
+
+  <aside class="portrait" aria-label="Coastal Dermatology &amp; Medspa">
+    <video class="portrait-media" src="assets/coastal_scrub.mp4" muted playsinline preload="auto" disablepictureinpicture poster="assets/coastal_still.jpg"></video>
+  </aside>
+</main>
+
+<div class="content">
+  <section class="sec" id="about">
+    <div class="ey">Medical-led &middot; Jacksonville's beachside dermatology</div>
+    <h2>Where dermatology meets the coast.</h2>
+    <p class="lead">Founded in 2003 by Dr.&nbsp;Sanjiva Goyal &mdash; Cook County Chief Resident, Northwestern &amp; Harvard fellowships, former Clinic Director at Johns Hopkins, and Mayo Clinic Jacksonville faculty &mdash; Coastal Dermatology &amp; Medspa brings 25+ years of medical dermatology and aesthetic care to families in Jacksonville and Ponte Vedra Beach.</p>
+    <div class="stats">
+      <div class="stat"><div class="n">23+</div><div class="l">Years in Jacksonville</div></div>
+      <div class="stat"><div class="n">4.7&#9733;</div><div class="l">859 patient reviews</div></div>
+      <div class="stat"><div class="n">2</div><div class="l">Northeast Florida locations</div></div>
+      <div class="stat"><div class="n">MD</div><div class="l">Board-certified, physician-led</div></div>
+    </div>
+  </section>
+  <div class="divline"></div>
+  <section class="sec" id="treatments">
+    <div class="ey">Treatments</div>
+    <h2>From medical dermatology to medical aesthetics.</h2>
+    <div class="cards">
+      <div class="tcard"><h3>Medical Dermatology</h3><ul><li>Skin cancer screening &amp; Mohs surgery</li><li>Acne, rosacea &amp; eczema</li><li>Suspicious mole evaluation</li><li>Hair &amp; nail conditions</li></ul></div>
+      <div class="tcard"><h3>Aesthetic Treatments</h3><ul><li>Botox&reg; &amp; neuromodulators</li><li>Dermal fillers &middot; PDO threads</li><li>HydraFacial &middot; chemical peels</li><li>Premium medical skincare</li></ul></div>
+      <div class="tcard"><h3>Laser &amp; Body</h3><ul><li>Aesthetic laser treatments</li><li>VASER&reg; liposuction</li><li>Sun-damage &amp; pigmentation repair</li><li>Growths &amp; lesion removal</li></ul></div>
+    </div>
+  </section>
+  <div class="divline"></div>
+  <section class="sec results" id="results">
+    <div class="ey">Results</div>
+    <h2>Skin you live in, taken seriously.</h2>
+    <p class="lead">Two decades of medical-grade results &mdash; from suspicious-mole peace-of-mind to subtle aesthetic refinement.</p>
+    <div class="ba-row">
+      <div class="ba"><div class="ba-img"><div class="half bf">Before</div><div class="half af">After</div></div><div class="ba-cap">Acne clearance</div></div>
+      <div class="ba"><div class="ba-img"><div class="half bf">Before</div><div class="half af">After</div></div><div class="ba-cap">Sun-damage repair</div></div>
+      <div class="ba"><div class="ba-img"><div class="half bf">Before</div><div class="half af">After</div></div><div class="ba-cap">Filler &amp; contour</div></div>
+    </div>
+    <p class="ba-note">Representative layout &mdash; Coastal Derm's real patient before &amp; after photos slot in on launch.</p>
+  </section>
+  <section class="sec" id="locations">
+    <div class="ey">Visit us</div>
+    <h2>Two beachside locations.</h2>
+    <div class="locs">
+      <div class="loc"><h4>Jacksonville</h4><p>2804 St. John's Bluff Rd S, Suite 109<br>Jacksonville, FL 32246<br>(904) 727-9123</p></div>
+      <div class="loc"><h4>Ponte Vedra Beach</h4><p>183 Landrum Ln, Suite 201<br>Ponte Vedra Beach, FL 32082<br>(904) 727-9123</p></div>
+    </div>
+  </section>
+  <section class="ctaband" id="book">
+    <div class="ey">Begin</div>
+    <h2>Your dermatology consultation, on the calendar.</h2>
+    <a href="tel:+19047279123" class="btn">Call (904) 727-9123</a>
+    <a href="#about" class="btn btn-o">Explore Treatments</a>
+  </section>
+  <div class="ft">
+    <div><strong style="color:var(--sand);letter-spacing:.12em">COASTAL</strong> &middot; Dermatology &amp; Medspa<br>Jacksonville, Florida</div>
+    <div style="text-align:right">Medical-led aesthetics<br>Board-certified dermatology</div>
+  </div>
+  <div class="specnote">Concept preview designed by Kerblabs for Coastal Dermatology &amp; Medspa &mdash; not affiliated; for demonstration only.</div>
+</div>
+
+
+<script>
+(() => {
+  const portrait = document.querySelector('.portrait');
+  const wordmark = document.querySelector('.wordmark');
+  const leadcol  = document.querySelector('.lead-col');
+  const video    = portrait.querySelector('video');
+  let videoDuration = 0;
+  if (video) {
+    video.addEventListener('loadedmetadata', () => {
+      videoDuration = video.duration || 0;
+      apply();
+    });
+    video.pause();
+  }
+  let pRect, wRect, ready = false;
+
+  function reset(){
+    for (const el of [portrait, wordmark]) {
+      el.style.cssText = '';
+    }
+    if (leadcol) leadcol.style.opacity = '';
+  }
+  function measure(){
+    reset();
+    pRect = portrait.getBoundingClientRect();
+    wRect = wordmark.getBoundingClientRect();
+    ready = true;
+  }
+  const lerp = (a,b,t) => a + (b-a)*t;
+  const ease = t => t<.5 ? 2*t*t : 1-Math.pow(-2*t+2,2)/2;
+
+  // Loader fade: sand-cream background fades out, navy wordmark transitions to coastal blue
+  const loaderEl = document.querySelector('.loader');
+  const LOAD_HOLD = 1200, LOAD_DUR = 900;
+  let loadT0 = null, loading = true;
+  function loaderProgress(){
+    if (loadT0 == null) return 0;
+    return Math.max(0, Math.min(1, (performance.now() - loadT0 - LOAD_HOLD) / LOAD_DUR));
+  }
+  function tickLoader(){
+    apply();
+    const p = loaderProgress();
+    if (loaderEl) loaderEl.style.opacity = String(1 - p);
+    if (p < 1) {
+      requestAnimationFrame(tickLoader);
+    } else {
+      loading = false;
+      if (loaderEl) loaderEl.style.display = 'none';
+      introT0 = performance.now();
+      requestAnimationFrame(tickIntro);
+    }
+  }
+
+  const INTRO_DELAY = 200, INTRO_DUR = 900;
+  let introT0 = null;
+  function getIntro(){
+    if (introT0 == null) return 0;
+    const elapsed = performance.now() - introT0 - INTRO_DELAY;
+    return Math.max(0, Math.min(1, elapsed / INTRO_DUR));
+  }
+  function tickIntro(){
+    apply();
+    if (getIntro() < 1) requestAnimationFrame(tickIntro);
+  }
+
+  function apply(){
+    if (!ready) return;
+    const raw  = Math.max(0, Math.min(1, window.scrollY / window.innerHeight));
+    const card = ease(raw);
+    const vw = document.documentElement.clientWidth;
+    const vh = document.documentElement.clientHeight;
+
+    const left  = lerp(0,  pRect.left,  card);
+    const width = lerp(vw, pRect.width, card);
+    portrait.style.position = 'fixed';
+    portrait.style.top = '0';
+    portrait.style.left = left + 'px';
+    portrait.style.width = width + 'px';
+    portrait.style.height = '100vh';
+    portrait.style.margin = '0';
+    portrait.style.zIndex = '2';
+    const offsetX = lerp(0, 0, card);
+    const media = portrait.querySelector('img, video');
+    if (media) media.style.objectPosition = `calc(50% + ${offsetX}px) center`;
+    if (video && videoDuration > 0) {
+      const t = raw * videoDuration;
+      if (Math.abs(video.currentTime - t) > 0.03) video.currentTime = t;
+    }
+
+    const wcx = wRect.left + wRect.width/2;
+    const wcy = wRect.top  + wRect.height/2;
+    const dx  = (vw/2 - wcx) * (1 - card);
+    const dy  = (vh/2 - wcy) * (1 - card);
+    wordmark.style.position = 'fixed';
+    wordmark.style.top  = wRect.top  + 'px';
+    wordmark.style.left = wRect.left + 'px';
+    wordmark.style.width = wRect.width + 'px';
+    wordmark.style.margin = '0';
+    var _ix = lerp(-180, 0, getIntro());
+    wordmark.style.transform = `translate(${dx + _ix}px, ${dy}px)`;
+    wordmark.style.zIndex = loading ? '11' : '3';
+    wordmark.style.willChange = 'transform, color';
+    let r, g, b;
+    if (loading) {
+      // Loader: bg F4F6F4 -> bone navy 2C3E4A
+      const lp = loaderProgress();
+      r = Math.round(lerp(0xF4, 0x2C, lp));
+      g = Math.round(lerp(0xF6, 0x3E, lp));
+      b = Math.round(lerp(0xF4, 0x4A, lp));
+    } else {
+      // Scroll: bone navy 2C3E4A -> sand coastal blue 5C8FA6
+      r = Math.round(lerp(0x2C, 0x5C, card));
+      g = Math.round(lerp(0x3E, 0x8F, card));
+      b = Math.round(lerp(0x4A, 0xA6, card));
+    }
+    wordmark.style.color = `rgb(${r},${g},${b})`;
+
+    const reveal = Math.max(0, Math.min(1, (card - 0.4) / 0.6));
+    if (leadcol) leadcol.style.opacity = reveal;
+  }
+
+  function init(){ measure(); apply(); if (loadT0 == null) { loadT0 = performance.now(); requestAnimationFrame(tickLoader); } }
+  window.addEventListener('scroll', apply, {passive:true});
+  window.addEventListener('resize', () => { ready = false; requestAnimationFrame(init); });
+  init();
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => { ready = false; requestAnimationFrame(() => { measure(); apply(); }); });
+  }
+})();
+</script>
+
+<script>
+(function(){
+  var v=document.querySelector("video");
+  if(!v) return;
+  var s=v.getAttribute("src")||v.currentSrc;
+  if(!s||s.indexOf("blob:")===0) return;
+  fetch(s).then(function(r){return r.blob();}).then(function(b){
+    v.src=URL.createObjectURL(b);
+    v.load();
+  }).catch(function(){});
+})();
+</script>
+</body>
+</html>
