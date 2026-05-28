@@ -403,6 +403,18 @@
     font:400 11px/1.5 Inter; color:var(--mute); max-width:60ch; margin:0 auto;
   }
 
+  /* scrub progress bar (champagne) */
+  .scrub-progress{
+    position:fixed; left:0; bottom:0; height:2px; width:100%;
+    z-index:60; pointer-events:none; background:transparent;
+  }
+  .scrub-progress::before{
+    content:''; display:block; height:100%; width:var(--p,0%);
+    background:linear-gradient(90deg, rgba(196,168,120,0.0) 0%, var(--gold) 40%, var(--gold-soft) 100%);
+    box-shadow:0 0 14px rgba(196,168,120,0.55);
+    transition:width .05s linear;
+  }
+
   /* reduced motion + mobile tilt off */
   @media (prefers-reduced-motion: reduce){
     *, *::before, *::after{ animation:none !important; transition:none !important; }
@@ -428,9 +440,7 @@
 
 <!-- HERO -->
 <section class="hero" id="top" aria-label="Brickell Cosmetic Center">
-  <video class="bg-video" autoplay muted loop playsinline preload="auto" poster="assets/brickell_still.jpg">
-    <source src="assets/brickell_scrub.mp4" type="video/mp4">
-  </video>
+  <video class="bg-video" muted playsinline preload="auto" poster="assets/brickell_still.jpg" src="assets/brickell_scrub.mp4"></video>
   <img class="poster" src="assets/brickell_still.jpg" alt="" aria-hidden="true">
   <div class="scrim" aria-hidden="true"></div>
 
@@ -621,6 +631,9 @@
   Concept preview designed by Kerblabs for Brickell Cosmetic Center &mdash; not affiliated; for demonstration only. All real practice data sourced from brickellcosmetic.com.
 </div>
 
+<!-- Scroll-scrub progress bar -->
+<div class="scrub-progress" aria-hidden="true"></div>
+
 <!-- GSAP + ScrollTrigger -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -649,25 +662,56 @@
     });
   });
 
-  if (reduced || !window.gsap) return;
+  if (reduced || !window.gsap) {
+    // Reduced motion path: no pin, no scrub. Video stays as a static poster frame.
+    const v0 = document.querySelector('.hero video');
+    if (v0) { try { v0.pause(); } catch(e){} v0.removeAttribute('autoplay'); v0.removeAttribute('loop'); }
+    return;
+  }
   gsap.registerPlugin(ScrollTrigger);
 
-  // ---------- HERO: pinned cinematic reveal ----------
+  // ---------- HERO: pinned cinematic reveal + SCROLL-SCRUBBED VIDEO ----------
   // Pin hero for 120vh; overlay items start FULLY VISIBLE then fade out as scroll progresses.
+  // Simultaneously: video.currentTime is driven by scroll progress (scroll-synced scrub).
   const heroEls = gsap.utils.toArray('[data-hero]').sort((a,b)=>+a.dataset.hero - +b.dataset.hero);
 
   // Ensure hero overlay starts visible (CSS already opacity:1, but make sure GSAP doesn't override).
   gsap.set(['.eyebrow','.headline','.lead','.stats','.cue'], { opacity:1, y:0 });
 
-  // Pinned scroll reveal: as user scrolls, overlay fades+lifts away (each element on its own trigger).
+  // Scrub state — video element + progress bar
+  const heroVideo = document.querySelector('.hero video');
+  const progressEl = document.querySelector('.scrub-progress');
+  let videoDuration = 0;
+  if (heroVideo) {
+    try { heroVideo.pause(); } catch(e){}
+    heroVideo.addEventListener('loadedmetadata', () => {
+      videoDuration = heroVideo.duration || 0;
+      // nudge ScrollTrigger to recompute now that we have duration
+      ScrollTrigger.refresh();
+    });
+    // if metadata already loaded (cached), pull it now
+    if (heroVideo.readyState >= 1 && heroVideo.duration) videoDuration = heroVideo.duration;
+  }
+
+  // Master hero pin with scrub. onUpdate drives the video currentTime AND the progress bar.
   ScrollTrigger.create({
     trigger:'.hero',
     start:'top top',
     end:'+=120%',
     pin:true,
     pinSpacing:true,
-    scrub:0.6,
-    anticipatePin:1
+    scrub:0.4,
+    anticipatePin:1,
+    onUpdate: (self) => {
+      if (heroVideo && videoDuration > 0) {
+        const t = self.progress * videoDuration;
+        // throttle frame sets — only seek if delta > 0.03s (Arviv pattern)
+        if (Math.abs(heroVideo.currentTime - t) > 0.03) {
+          try { heroVideo.currentTime = t; } catch(e){}
+        }
+      }
+      if (progressEl) progressEl.style.setProperty('--p', (self.progress * 100).toFixed(2) + '%');
+    }
   });
   // each overlay element fades out on its own sub-trigger within the pin
   // start AFTER 60% of pin range so text stays readable for most of the hero
@@ -686,7 +730,7 @@
       }
     });
   });
-  // subtle video parallax + zoom while pinned
+  // subtle video zoom while pinned (kept — adds depth on top of the scrub)
   gsap.to('.hero video', {
     scale:1.08, ease:'none',
     scrollTrigger:{ trigger:'.hero', start:'top top', end:'+=120%', scrub:0.6 }
@@ -733,6 +777,20 @@
     });
   });
 
+})();
+</script>
+
+<!-- Blob-preload: fetch the all-keyframe MP4 into a Blob so currentTime seeks are instant -->
+<script>
+(function(){
+  var v=document.querySelector(".hero video");
+  if(!v) return;
+  var s=v.getAttribute("src")||v.currentSrc;
+  if(!s||s.indexOf("blob:")===0) return;
+  fetch(s).then(function(r){return r.blob();}).then(function(b){
+    v.src=URL.createObjectURL(b);
+    v.load();
+  }).catch(function(){});
 })();
 </script>
 </body>

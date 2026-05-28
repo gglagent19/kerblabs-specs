@@ -91,8 +91,23 @@
   .hairline{ height: 1px; background: var(--rule); width: 100%; }
 
   /* ───────── Hero ───────── */
+  /* Scrub stage: ~180vh tall sticky container gives ~80vh of pin runway */
+  .hero-stage{
+    position: relative;
+    height: 180vh;
+  }
+  .hero-stage.no-scrub{ height: auto; }
+  .hero-stage .hero-sticky{
+    position: sticky; top: 0;
+    height: 100vh;
+    display: flex; align-items: stretch;
+  }
+  .hero-stage.no-scrub .hero-sticky{
+    position: static; height: auto; display: block;
+  }
   .hero{
     position: relative;
+    width: 100%;
     min-height: 100vh;
     padding: 130px var(--pad-x) clamp(60px, 7vw, 100px);
     max-width: var(--maxw); margin: 0 auto;
@@ -120,9 +135,12 @@
     color: #C8A968;
   }
   .hero-title .gold{ color: #C8A968; font-style: italic; font-weight: 500; }
-  .hero-card{
+  .hero-card-wrap{
     grid-column: 2; grid-row: 2;
     align-self: end;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .hero-card{
     position: relative;
     aspect-ratio: 4 / 5;
     background: var(--moss);
@@ -138,6 +156,29 @@
     font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
     color: var(--alabaster); opacity: .8;
   }
+  /* Scrub cue: thin gold hairline progress + label */
+  .hero-card-cue{
+    display: flex; align-items: center; gap: 12px;
+    padding-top: 2px;
+  }
+  .hero-card-cue .scrub-track{
+    flex: 1; height: 1px;
+    background: var(--rule);
+    position: relative; overflow: hidden;
+  }
+  .hero-card-cue .scrub-fill{
+    position: absolute; top: 0; left: 0; bottom: 0;
+    width: 0%;
+    background: var(--gold);
+    transition: width .08s linear;
+  }
+  .hero-card-cue .scrub-lbl{
+    font-family: var(--sans);
+    font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--moss-soft); font-weight: 500;
+    white-space: nowrap;
+  }
+  .hero-stage.no-scrub .hero-card-cue{ display: none; }
   .hero-foot{
     grid-column: 1 / -1; grid-row: 3;
     display: flex; align-items: flex-end; justify-content: space-between;
@@ -155,9 +196,16 @@
   }
   @media (max-width: 820px){
     .hero{ grid-template-columns: 1fr; }
-    .hero-card{ grid-column: 1; grid-row: 3; aspect-ratio: 4/5; max-width: 320px; }
+    .hero-card-wrap{ grid-column: 1; grid-row: 3; max-width: 320px; }
+    .hero-card{ aspect-ratio: 4/5; }
     .hero-foot{ grid-row: 4; }
     .hero-meta{ text-align: left; }
+  }
+  /* Mobile: disable scrub pin entirely — autoplay loop is smoother on small cards */
+  @media (max-width: 879px){
+    .hero-stage{ height: auto; }
+    .hero-stage .hero-sticky{ position: static; height: auto; display: block; }
+    .hero-card-cue{ display: none; }
   }
 
   /* ───────── Section divider w/ Lottie ───────── */
@@ -347,37 +395,47 @@
   <a href="#book" class="cta cursor-pointer">Book</a>
 </nav>
 
-<!-- ───────── HERO ───────── -->
-<header class="hero">
-  <div class="hero-eyebrow reveal">
-    <span class="eyebrow">Hyde Park Village · Tampa · Est. 2019</span>
-    <span class="hairline" aria-hidden="true"></span>
-    <span class="eyebrow">01 / 06</span>
+<!-- ───────── HERO (scroll-scrub stage) ───────── -->
+<div class="hero-stage" id="heroStage">
+  <div class="hero-sticky">
+    <header class="hero">
+      <div class="hero-eyebrow reveal">
+        <span class="eyebrow">Hyde Park Village · Tampa · Est. 2019</span>
+        <span class="hairline" aria-hidden="true"></span>
+        <span class="eyebrow">01 / 06</span>
+      </div>
+
+      <h1 class="hero-title reveal">
+        Aesthetics<br>
+        with <em>intention</em>,<br>
+        <span class="gold">artistry</span> with care.
+      </h1>
+
+      <div class="hero-card-wrap reveal">
+        <figure class="hero-card">
+          <video id="heroVideo" muted playsinline preload="auto" poster="assets/elan_still.jpg" aria-label="Treatment portrait">
+            <source src="assets/elan_scrub.mp4" type="video/mp4">
+          </video>
+          <img class="video-fallback" src="assets/elan_still.jpg" alt="ÉLAN treatment portrait">
+          <span class="hero-card-tag">In the chair</span>
+        </figure>
+        <div class="hero-card-cue" aria-hidden="true">
+          <div class="scrub-track"><div class="scrub-fill" id="scrubFill"></div></div>
+          <span class="scrub-lbl">Scroll to play</span>
+        </div>
+      </div>
+
+      <div class="hero-foot reveal">
+        <lottie-player class="hero-lottie lazy-lottie" data-src="https://lottie.host/4f08a99e-3c40-4f1b-bd0e-9d4f3bd02fde/8w5jKlxNYP.json" background="transparent" speed="1" loop autoplay aria-hidden="true"></lottie-player>
+        <p class="hero-sub">A boutique medical aesthetics practice in South Tampa &mdash; built around prevention, refinement, and the long view.</p>
+        <div class="hero-meta">
+          Katrina Riley, NP<br>
+          Lindsey Cronk, NP
+        </div>
+      </div>
+    </header>
   </div>
-
-  <h1 class="hero-title reveal">
-    Aesthetics<br>
-    with <em>intention</em>,<br>
-    <span class="gold">artistry</span> with care.
-  </h1>
-
-  <figure class="hero-card reveal">
-    <video autoplay muted loop playsinline preload="metadata" poster="assets/elan_still.jpg" aria-label="Treatment portrait">
-      <source src="assets/elan_scrub.mp4" type="video/mp4">
-    </video>
-    <img class="video-fallback" src="assets/elan_still.jpg" alt="ÉLAN treatment portrait">
-    <span class="hero-card-tag">In the chair</span>
-  </figure>
-
-  <div class="hero-foot reveal">
-    <lottie-player class="hero-lottie lazy-lottie" data-src="https://lottie.host/4f08a99e-3c40-4f1b-bd0e-9d4f3bd02fde/8w5jKlxNYP.json" background="transparent" speed="1" loop autoplay aria-hidden="true"></lottie-player>
-    <p class="hero-sub">A boutique medical aesthetics practice in South Tampa &mdash; built around prevention, refinement, and the long view.</p>
-    <div class="hero-meta">
-      Katrina Riley, NP<br>
-      Lindsey Cronk, NP
-    </div>
-  </div>
-</header>
+</div>
 
 <!-- ───────── DIVIDER ───────── -->
 <div class="divider" aria-hidden="true">
@@ -623,6 +681,103 @@
   // Wait for the deferred player script
   if (document.readyState === 'complete') initLottie();
   else window.addEventListener('load', initLottie);
+})();
+</script>
+
+<!-- ───────── Hero scroll-scrub (paused video → currentTime = scrollProgress * duration) ───────── -->
+<script>
+(function(){
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var isMobile = window.matchMedia && window.matchMedia('(max-width: 879px)').matches;
+
+  var stage = document.getElementById('heroStage');
+  var video = document.getElementById('heroVideo');
+  var fill  = document.getElementById('scrubFill');
+  if (!stage || !video) return;
+
+  // Reduced-motion: static poster, no pin, no scrub. Lottie handled by existing code.
+  if (reduced){
+    stage.classList.add('no-scrub');
+    try { video.removeAttribute('autoplay'); video.removeAttribute('loop'); video.pause(); } catch(_){}
+    return;
+  }
+
+  // Mobile: fall back to autoplay loop — scrub on a small card feels janky.
+  if (isMobile){
+    stage.classList.add('no-scrub');
+    video.setAttribute('autoplay','');
+    video.setAttribute('loop','');
+    video.muted = true;
+    var p = video.play();
+    if (p && p.catch) p.catch(function(){});
+    return;
+  }
+
+  // Desktop scrub path
+  var duration = 0;
+  var ticking = false;
+  var lastTarget = -1;
+
+  function onMeta(){
+    duration = video.duration || 0;
+    update();
+  }
+  if (video.readyState >= 1) onMeta();
+  else video.addEventListener('loadedmetadata', onMeta);
+
+  try { video.pause(); } catch(_){}
+
+  function update(){
+    ticking = false;
+    if (!duration) return;
+    var rect = stage.getBoundingClientRect();
+    // Progress through the pinned runway: 0 when stage top hits viewport top,
+    // 1 when stage bottom reaches viewport bottom.
+    var runway = rect.height - window.innerHeight;
+    if (runway <= 0) return;
+    var scrolled = -rect.top;
+    var p = scrolled / runway;
+    if (p < 0) p = 0; else if (p > 1) p = 1;
+
+    var t = p * duration;
+    if (Math.abs(t - lastTarget) > 0.03) {
+      try { video.currentTime = t; } catch(_){}
+      lastTarget = t;
+    }
+    if (fill) fill.style.width = (p * 100).toFixed(2) + '%';
+  }
+
+  function onScroll(){
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(update);
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  // Re-evaluate mobile breakpoint on resize
+  window.addEventListener('resize', function(){
+    var nowMobile = window.matchMedia('(max-width: 879px)').matches;
+    if (nowMobile !== isMobile){ isMobile = nowMobile; /* user can refresh for full mode swap */ }
+  });
+  update();
+})();
+</script>
+
+<!-- ───────── Blob preload for smooth scrubbing (Arviv pattern) ───────── -->
+<script>
+(function(){
+  var v = document.getElementById('heroVideo') || document.querySelector('video');
+  if (!v) return;
+  var src = v.getAttribute('src') || (v.querySelector('source') && v.querySelector('source').getAttribute('src')) || v.currentSrc;
+  if (!src || src.indexOf('blob:') === 0) return;
+  fetch(src).then(function(r){ return r.blob(); }).then(function(b){
+    var url = URL.createObjectURL(b);
+    // Clear <source> children and assign the blob URL directly
+    while (v.firstChild) v.removeChild(v.firstChild);
+    v.src = url;
+    v.load();
+  }).catch(function(){});
 })();
 </script>
 

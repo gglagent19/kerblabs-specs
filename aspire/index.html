@@ -40,9 +40,19 @@
   :focus-visible{ outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
 
   /* ===== HERO ===== */
+  /* .scrub-stage gives us ~100vh of pin runway for the user to scrub the ~8s video */
+  .scrub-stage{
+    position: relative;
+    height: 200vh;            /* 100vh pin + 100vh scroll runway */
+  }
+  .scrub-stage .hero{
+    position: sticky;
+    top: 0;
+  }
   .hero{
     position: relative;
     min-height: 100vh;
+    height: 100vh;
     overflow: hidden;
     isolation: isolate;
   }
@@ -218,6 +228,50 @@
     background: rgba(10,19,34,0.55);
     padding: 8px 12px;
     backdrop-filter: blur(4px);
+  }
+  /* Scroll-scrub progress visualization */
+  .vwrap{
+    position: relative;
+    justify-self: end;
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .vwrap .vcard{
+    max-width: none;
+    justify-self: stretch;
+  }
+  .scrubmeter{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: "Inter", ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cream-dim);
+  }
+  .scrubmeter .bar{
+    position: relative;
+    flex: 1;
+    height: 2px;
+    background: rgba(212,168,87,0.18);
+    overflow: hidden;
+  }
+  .scrubmeter .fill{
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 0%;
+    background: var(--gold);
+    transition: width 80ms linear;
+  }
+  .scrubmeter .tc{ color: var(--gold); min-width: 6.5ch; text-align: right; font-variant-numeric: tabular-nums; }
+  .scrubmeter .hint{ color: var(--cream-dim); opacity: 0.7; }
+  @media(max-width: 880px){
+    .vwrap{ justify-self: start; max-width: 320px; }
+    .scrubmeter{ display: none; }
   }
   @media(max-width: 880px){
     .hero-inner{ grid-template-columns: 1fr; padding-top: 110px; gap: 36px; }
@@ -441,6 +495,7 @@
 </head>
 <body>
 
+<div class="scrub-stage" id="scrub-stage">
 <section class="hero" id="top">
   <div id="hero-bg" aria-hidden="true"></div>
 
@@ -472,12 +527,20 @@
       </div>
     </div>
 
-    <aside class="vcard" aria-label="Aspire MedSpa preview">
-      <video src="assets/aspire_scrub.mp4" poster="assets/aspire_still.jpg" muted autoplay loop playsinline preload="metadata" disablepictureinpicture></video>
-      <span class="vlabel">A Boutique Beauty Bar</span>
-    </aside>
+    <div class="vwrap">
+      <aside class="vcard" aria-label="Aspire MedSpa preview">
+        <video id="scrubvid" src="assets/aspire_scrub.mp4" poster="assets/aspire_still.jpg" muted playsinline preload="auto" disablepictureinpicture></video>
+        <span class="vlabel">A Boutique Beauty Bar</span>
+      </aside>
+      <div class="scrubmeter" aria-hidden="true">
+        <span class="hint">Scroll&nbsp;to&nbsp;reveal</span>
+        <span class="bar"><span class="fill" id="scrubfill"></span></span>
+        <span class="tc" id="scrubtc">0:00&thinsp;/&thinsp;0:00</span>
+      </div>
+    </div>
   </div>
 </section>
+</div>
 
 <main class="content">
   <section class="sec" id="about">
@@ -666,6 +729,107 @@
 
   // Cleanup on unload
   window.addEventListener('beforeunload', destroy);
+})();
+</script>
+
+<!-- Scroll-sync scrub: scroll position drives video.currentTime -->
+<script>
+(function(){
+  var stage = document.getElementById('scrub-stage');
+  var video = document.getElementById('scrubvid');
+  var fill  = document.getElementById('scrubfill');
+  var tcEl  = document.getElementById('scrubtc');
+  if (!stage || !video) return;
+
+  var reduced  = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var isMobile = window.matchMedia('(max-width: 880px)').matches;
+
+  // Reduced-motion: static poster, no pin, no scrub.
+  if (reduced) {
+    stage.style.height = 'auto';
+    var heroEl = stage.querySelector('.hero');
+    if (heroEl) heroEl.style.position = 'relative';
+    video.removeAttribute('src');     // suppress decode
+    video.style.background = "center/cover no-repeat url('assets/aspire_still.jpg')";
+    return;
+  }
+
+  // Mobile: scrub on a small card feels janky → autoplay muted loop instead, no pin.
+  if (isMobile) {
+    stage.style.height = 'auto';
+    var heroM = stage.querySelector('.hero');
+    if (heroM) heroM.style.position = 'relative';
+    video.setAttribute('autoplay','');
+    video.setAttribute('loop','');
+    video.muted = true;
+    var p = video.play();
+    if (p && p.catch) p.catch(function(){});
+    return;
+  }
+
+  // Desktop scrub
+  video.pause();
+  var videoDuration = 0;
+  var ticking = false;
+  var lastT = -1;
+
+  function fmt(s){
+    if (!isFinite(s) || s < 0) s = 0;
+    var m = Math.floor(s / 60);
+    var ss = Math.floor(s % 60);
+    return m + ':' + (ss < 10 ? '0' + ss : ss);
+  }
+
+  function apply(){
+    ticking = false;
+    var rect = stage.getBoundingClientRect();
+    var stageH = stage.offsetHeight;
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    // Pin runway = stage height minus one viewport (sticky hero is 100vh).
+    var runway = Math.max(1, stageH - vh);
+    // -rect.top = scrollY relative to the stage's start.
+    var p = Math.max(0, Math.min(1, (-rect.top) / runway));
+
+    if (videoDuration > 0) {
+      var t = p * videoDuration;
+      if (Math.abs(t - lastT) > 0.03) {
+        try { video.currentTime = t; } catch(_){}
+        lastT = t;
+      }
+      if (tcEl) tcEl.innerHTML = fmt(t) + '&thinsp;/&thinsp;' + fmt(videoDuration);
+    }
+    if (fill) fill.style.width = (p * 100).toFixed(2) + '%';
+  }
+
+  function onScroll(){
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(apply);
+    }
+  }
+
+  video.addEventListener('loadedmetadata', function(){
+    videoDuration = video.duration || 0;
+    apply();
+  });
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  apply();
+})();
+</script>
+
+<!-- Blob-preload for smooth scrubbing (Arviv-tested pattern) -->
+<script>
+(function(){
+  var v = document.getElementById('scrubvid');
+  if (!v) return;
+  var s = v.getAttribute('src') || v.currentSrc;
+  if (!s || s.indexOf('blob:') === 0) return;
+  fetch(s).then(function(r){ return r.blob(); }).then(function(b){
+    v.src = URL.createObjectURL(b);
+    v.load();
+  }).catch(function(){});
 })();
 </script>
 
