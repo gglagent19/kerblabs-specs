@@ -80,8 +80,9 @@
   .hero .scrim{
     position:absolute; inset:0; z-index:2;
     background:
-      linear-gradient(180deg, rgba(26,26,31,0.78) 0%, rgba(26,26,31,0.22) 30%, rgba(26,26,31,0.30) 65%, rgba(26,26,31,0.92) 100%),
-      radial-gradient(ellipse at center, rgba(26,26,31,0) 0%, rgba(26,26,31,0.55) 100%);
+      linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0) 100%),
+      linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0) 75%),
+      radial-gradient(ellipse at center, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 70%);
   }
   .hero .wrap{
     position:absolute; inset:0; z-index:3;
@@ -89,12 +90,14 @@
     align-items:center; justify-content:center;
     padding:120px var(--pad) 80px;
     text-align:center;
+    background:radial-gradient(ellipse at center, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 70%);
   }
   .eyebrow{
     font:500 11px/1 Inter; letter-spacing:.34em;
     text-transform:uppercase; color:var(--gold);
     display:inline-flex; align-items:center; gap:14px;
-    opacity:0;
+    opacity:1;
+    text-shadow: 0 2px 28px rgba(0,0,0,0.7), 0 0 60px rgba(0,0,0,0.4);
   }
   .eyebrow::before, .eyebrow::after{
     content:''; width:28px; height:1px; background:var(--gold); opacity:.6;
@@ -106,20 +109,23 @@
     font-size:clamp(46px, 8.4vw, 132px);
     line-height:0.96; letter-spacing:-.018em;
     color:var(--ivory); max-width:14ch;
-    opacity:0;
+    opacity:1;
+    text-shadow: 0 2px 28px rgba(0,0,0,0.7), 0 0 60px rgba(0,0,0,0.4);
   }
   .headline em{ font-style:italic; color:var(--gold); }
   .lead{
     margin:0 auto;
     font:400 clamp(15px, 1.25vw, 18px)/1.62 Inter;
     color:var(--ivory-dim); max-width:54ch;
-    opacity:0;
+    opacity:1;
+    text-shadow: 0 2px 28px rgba(0,0,0,0.7), 0 0 60px rgba(0,0,0,0.4);
   }
   .stats{
     display:flex; gap:clamp(28px, 4vw, 64px);
     margin-top:48px; flex-wrap:wrap;
     justify-content:center; align-items:flex-start;
-    opacity:0;
+    opacity:1;
+    text-shadow: 0 2px 28px rgba(0,0,0,0.7), 0 0 60px rgba(0,0,0,0.4);
   }
   .stat{ text-align:center; min-width:84px; }
   .stat .n{
@@ -648,17 +654,11 @@
   gsap.registerPlugin(ScrollTrigger);
 
   // ---------- HERO: pinned cinematic reveal ----------
-  // Pin hero for 120vh; overlay items animate in then out as scroll progresses.
+  // Pin hero for 120vh; overlay items start FULLY VISIBLE then fade out as scroll progresses.
   const heroEls = gsap.utils.toArray('[data-hero]').sort((a,b)=>+a.dataset.hero - +b.dataset.hero);
 
-  // initial entrance (on load)
-  const intro = gsap.timeline({ defaults:{ ease:'power3.out' } });
-  intro.to('.eyebrow',  { opacity:1, y:0, duration:0.7, delay:0.25 })
-       .to('.headline', { opacity:1, y:0, duration:1.1 }, '-=0.4')
-       .to('.lead',     { opacity:1, y:0, duration:0.9 }, '-=0.7')
-       .to('.stats',    { opacity:1, y:0, duration:0.9 }, '-=0.6')
-       .to('.cue',      { opacity:1, y:0, duration:0.7 }, '-=0.5');
-  gsap.set(['.eyebrow','.headline','.lead','.stats','.cue'], { y:24 });
+  // Ensure hero overlay starts visible (CSS already opacity:1, but make sure GSAP doesn't override).
+  gsap.set(['.eyebrow','.headline','.lead','.stats','.cue'], { opacity:1, y:0 });
 
   // Pinned scroll reveal: as user scrolls, overlay fades+lifts away (each element on its own trigger).
   ScrollTrigger.create({
@@ -671,12 +671,13 @@
     anticipatePin:1
   });
   // each overlay element fades out on its own sub-trigger within the pin
+  // start AFTER 60% of pin range so text stays readable for most of the hero
   const fadeTargets = [
-    { sel:'.eyebrow',  s:'top top',  e:'+=30%' },
-    { sel:'.headline', s:'top top',  e:'+=55%' },
-    { sel:'.lead',     s:'top top',  e:'+=75%' },
-    { sel:'.stats',    s:'top top',  e:'+=95%' },
-    { sel:'.cue',      s:'top top',  e:'+=40%' }
+    { sel:'.eyebrow',  s:'top+=60% top',  e:'+=30%' },
+    { sel:'.headline', s:'top+=65% top',  e:'+=35%' },
+    { sel:'.lead',     s:'top+=70% top',  e:'+=30%' },
+    { sel:'.stats',    s:'top+=75% top',  e:'+=25%' },
+    { sel:'.cue',      s:'top+=20% top',  e:'+=20%' }
   ];
   fadeTargets.forEach(t => {
     gsap.to(t.sel, {
@@ -713,7 +714,13 @@
   });
 
   // ---------- Count-up stats ----------
-  document.querySelectorAll('[data-count]').forEach(el => {
+  // Hero stats (.stat .n[data-count]) get their final value immediately — no count animation
+  // (the hero is pinned, so the user can't reliably scroll-trigger them).
+  document.querySelectorAll('.hero [data-count]').forEach(el => {
+    el.textContent = parseInt(el.dataset.count, 10).toLocaleString();
+  });
+  // Count-up only fires on the About .statbar — runs when the About section is in view.
+  document.querySelectorAll('.statbar [data-count]').forEach(el => {
     const target = parseInt(el.dataset.count, 10);
     const obj = { v: 0 };
     ScrollTrigger.create({

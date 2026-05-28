@@ -108,18 +108,18 @@
   .hero-title{
     grid-column: 1; grid-row: 2;
     font-family: var(--serif);
-    font-weight: 400;
+    font-weight: 500;
     font-size: clamp(54px, 9.2vw, 148px);
     line-height: 0.94;
     letter-spacing: -0.015em;
-    color: var(--ink);
+    color: #1A1A1A;
     margin: 0;
   }
   .hero-title em{
-    font-style: italic; font-weight: 400;
-    color: var(--moss);
+    font-style: italic; font-weight: 500;
+    color: #C8A968;
   }
-  .hero-title .gold{ color: var(--gold-deep); font-style: italic; }
+  .hero-title .gold{ color: #C8A968; font-style: italic; font-weight: 500; }
   .hero-card{
     grid-column: 2; grid-row: 2;
     align-self: end;
@@ -579,13 +579,21 @@
   var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ── Reveal on scroll ──
+  // Hero reveals must fire immediately — they're above the fold on load and
+  // any IO miss leaves the headline at opacity 0 (looks faded/invisible).
+  document.querySelectorAll('.hero .reveal').forEach(function(el){ el.classList.add('in'); });
+
   if ('IntersectionObserver' in window && !reduced){
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(e){
         if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
       });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+    document.querySelectorAll('.reveal:not(.in)').forEach(function(el){ io.observe(el); });
+    // Safety net: force-reveal anything still hidden after 2s
+    setTimeout(function(){
+      document.querySelectorAll('.reveal:not(.in)').forEach(function(el){ el.classList.add('in'); });
+    }, 2000);
   } else {
     document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
   }
