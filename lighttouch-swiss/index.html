@@ -1,0 +1,1032 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>LightTouch &mdash; Case Study 001 &middot; Kerblabs</title>
+<meta name="description" content="LightTouch Med Spa, Orlando. Twenty years, 25,000 patients, 700,000 treatments. A case study in editorial restraint." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:        #FAFAFA;
+    --bg-alt:    #F4F4F5;
+    --surface:   #FFFFFF;
+    --ink:       #0A0A0A;
+    --muted:     #71717A;
+    --line:      #E4E4E7;
+    --accent:    #3B5EBE;
+    --accent-deep:#1E40AF;
+    --ease:      cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; }
+  html{ scroll-behavior: smooth; }
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "ss01" 1, "cv11" 1;
+  }
+  ::selection{ background: var(--accent); color: #fff; }
+  a{ color: inherit; text-decoration: none; }
+  img, video{ display: block; max-width: 100%; }
+
+  /* GRAIN — fixed overlay */
+  .grain{
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9000;
+    opacity: 0.035;
+    mix-blend-mode: multiply;
+  }
+
+  /* ====== NAV — floating frosted pill ====== */
+  .nav{
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-12px);
+    z-index: 100;
+    display: inline-flex;
+    align-items: center;
+    gap: clamp(20px, 2.4vw, 36px);
+    padding: 10px 12px 10px 24px;
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    box-shadow: 0 8px 32px rgba(10,10,10,0.04);
+    opacity: 0;
+    animation: navIn .8s var(--ease) .2s forwards;
+  }
+  @keyframes navIn{ to{ opacity:1; transform: translateX(-50%) translateY(0); } }
+  .nav .mark{
+    font-family: "Inter Tight", "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+  }
+  .nav .mark .dot{ display:inline-block; width:5px; height:5px; border-radius:50%; background:var(--accent); margin-left:6px; vertical-align:middle; transform:translateY(-2px); }
+  .nav ul{
+    list-style: none;
+    display: flex;
+    gap: clamp(14px, 1.6vw, 24px);
+    margin: 0;
+    padding: 0;
+  }
+  .nav ul a{
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    transition: color .2s var(--ease);
+  }
+  .nav ul a:hover{ color: var(--ink); }
+  .nav .cta{
+    background: var(--accent);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background .25s var(--ease), transform .25s var(--ease);
+  }
+  .nav .cta:hover{ background: var(--accent-deep); }
+  @media (max-width: 720px){
+    .nav{ gap: 14px; padding: 8px 8px 8px 18px; }
+    .nav ul{ gap: 12px; }
+    .nav ul li:nth-child(n+4){ display: none; }
+  }
+
+  /* ====== GRID HELPERS ====== */
+  .wrap{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-left: clamp(28px, 6vw, 96px);
+    padding-right: clamp(28px, 6vw, 96px);
+  }
+  .grid12{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: clamp(20px, 2vw, 36px);
+  }
+  .section{
+    padding: clamp(120px, 14vw, 200px) 0;
+    position: relative;
+  }
+  .section.alt{ background: var(--bg-alt); }
+  .hairline{ height: 1px; background: var(--line); border: 0; margin: 0; }
+
+  /* ====== TYPE ====== */
+  .eyebrow{
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .eyebrow .bar{ display:inline-block; width:24px; height:1px; background: var(--muted); }
+  .display{
+    font-family: "Inter Tight", "Inter", sans-serif;
+    font-weight: 700;
+    font-size: clamp(56px, 11vw, 168px);
+    line-height: 0.92;
+    letter-spacing: -0.035em;
+    color: var(--ink);
+    margin: 0;
+  }
+  .display .blue{ color: var(--accent); }
+  .h2{
+    font-family: "Inter Tight", "Inter", sans-serif;
+    font-weight: 700;
+    font-size: clamp(40px, 6vw, 88px);
+    line-height: 0.98;
+    letter-spacing: -0.028em;
+    color: var(--ink);
+    margin: 0;
+  }
+  .lead{
+    font-size: clamp(17px, 1.3vw, 19px);
+    line-height: 1.55;
+    color: var(--muted);
+    max-width: 50ch;
+    margin: 0;
+  }
+  .lead strong{ color: var(--ink); font-weight: 500; }
+
+  /* ====== HERO ====== */
+  .hero{
+    min-height: 100vh;
+    padding-top: clamp(140px, 16vh, 200px);
+    padding-bottom: clamp(80px, 10vh, 140px);
+    display: flex;
+    align-items: stretch;
+  }
+  .hero .wrap{ width: 100%; display: flex; flex-direction: column; }
+  .hero-grid{
+    flex: 1;
+    align-items: end;
+  }
+  .hero-left{
+    grid-column: 1 / span 8;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(28px, 4vw, 56px);
+  }
+  .hero-right{
+    grid-column: 9 / span 4;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: end;
+    gap: 14px;
+  }
+  .hero-eyebrow-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-column: 1 / -1;
+    margin-bottom: clamp(60px, 8vw, 120px);
+  }
+  .hero-meta{
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .hero h1{
+    overflow: hidden;
+  }
+  .hero h1 .line{
+    display: block;
+    transform: translateY(110%);
+    opacity: 0;
+    animation: lineUp .9s var(--ease) forwards;
+  }
+  .hero h1 .line:nth-child(1){ animation-delay: .35s; }
+  .hero h1 .line:nth-child(2){ animation-delay: .45s; }
+  @keyframes lineUp{ to{ transform: translateY(0); opacity:1; } }
+  .hero-lead{
+    opacity: 0;
+    transform: translateY(20px);
+    animation: lineUp .8s var(--ease) .7s forwards;
+    max-width: 46ch;
+  }
+  .hero-stats{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(16px, 2vw, 36px);
+    padding-top: clamp(28px, 4vw, 48px);
+    border-top: 1px solid var(--line);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: lineUp .8s var(--ease) .9s forwards;
+  }
+  .hero-stat{ display:flex; flex-direction: column; gap: 8px; }
+  .hero-stat .n{
+    font-family: "Inter Tight", "Inter", sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .hero-stat .l{
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .video-card{
+    position: relative;
+    aspect-ratio: 4 / 5;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(10,10,10,0.06);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: lineUp 1s var(--ease) .6s forwards;
+  }
+  .video-card video, .video-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .video-card .badge{
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    padding: 6px 12px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .video-card .badge .pulse{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 0 rgba(59,94,190,.5);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%{ box-shadow: 0 0 0 0 rgba(59,94,190,.5); }
+    70%{ box-shadow: 0 0 0 8px rgba(59,94,190,0); }
+    100%{ box-shadow: 0 0 0 0 rgba(59,94,190,0); }
+  }
+  .video-cap{
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .scroll-cue{
+    position: absolute;
+    bottom: clamp(20px, 4vh, 40px);
+    left: clamp(28px, 6vw, 96px);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: cueIn 1s var(--ease) 1.4s forwards;
+  }
+  .scroll-cue .arrow{
+    display: inline-block;
+    width: 1px;
+    height: 24px;
+    background: var(--muted);
+    position: relative;
+    animation: cueMove 2.4s ease-in-out infinite;
+  }
+  .scroll-cue .arrow::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -3px;
+    width: 7px;
+    height: 7px;
+    border-right: 1px solid var(--muted);
+    border-bottom: 1px solid var(--muted);
+    transform: rotate(45deg) translate(-1px, -1px);
+  }
+  @keyframes cueIn{ to{ opacity:1; } }
+  @keyframes cueMove{ 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(6px); } }
+
+  /* ====== ABOUT ====== */
+  .about-head h2{ grid-column: 1 / span 7; }
+  .about-lead{ grid-column: 8 / span 5; align-self: end; }
+
+  .stats-grid{
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(20px, 3vw, 56px);
+    margin-top: clamp(80px, 10vw, 140px);
+    padding-top: clamp(40px, 5vw, 64px);
+    border-top: 1px solid var(--line);
+  }
+  .big-stat{ display:flex; flex-direction: column; gap: 14px; }
+  .big-stat .num{
+    font-family: "Inter Tight", "Inter", sans-serif;
+    font-weight: 700;
+    font-size: clamp(48px, 7vw, 104px);
+    line-height: 0.94;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .big-stat .num .sub{ font-size: 0.42em; color: var(--muted); vertical-align: top; margin-left: 4px; letter-spacing: 0; }
+  .big-stat .label{
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ====== TREATMENTS ====== */
+  .treatments-head{ margin-bottom: clamp(60px, 8vw, 110px); }
+  .treatments-head .eyebrow{ grid-column: 1 / span 12; margin-bottom: 24px; }
+  .treatments-head h2{ grid-column: 1 / span 9; }
+  .treatments-head .lead{ grid-column: 1 / span 7; margin-top: 28px; }
+  .t-grid{
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(16px, 2vw, 28px);
+  }
+  .t-card{
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: clamp(28px, 3vw, 48px);
+    transition: transform .4s var(--ease), border-color .3s var(--ease);
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    min-height: 340px;
+  }
+  .t-card:hover{ transform: translateY(-2px); border-color: var(--ink); }
+  .t-num{
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .t-card h3{
+    font-family: "Inter Tight", "Inter", sans-serif;
+    font-weight: 700;
+    font-size: clamp(22px, 2vw, 28px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin: 0;
+  }
+  .t-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: auto;
+  }
+  .t-list li{
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+    font-size: 14px;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  .t-list li:last-child{ border-bottom: 1px solid var(--line); }
+  .t-list li .x{ color: var(--ink); opacity: 0; transition: opacity .25s; font-size: 11px; }
+  .t-list li:hover .x{ opacity: 1; }
+
+  /* ====== RESULTS ====== */
+  .results-head{ margin-bottom: clamp(60px, 8vw, 110px); }
+  .results-head h2{ grid-column: 1 / span 8; }
+  .results-head .lead{ grid-column: 9 / span 4; align-self: end; }
+  .ba-row{
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(16px, 2vw, 28px);
+  }
+  .ba{
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--surface);
+    transition: transform .4s var(--ease), border-color .3s var(--ease);
+  }
+  .ba:hover{ transform: translateY(-2px); border-color: var(--ink); }
+  .ba-img{
+    position: relative;
+    aspect-ratio: 4/3;
+    display: flex;
+    background: #F4F4F5;
+  }
+  .ba-img .half{
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    padding: 16px 18px;
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .ba-img .half.af{ justify-content: flex-end; background: #EAEAEC; color: var(--ink); }
+  .ba-img:after{
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: rgba(10,10,10,0.18);
+  }
+  .ba-cap{
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border-top: 1px solid var(--line);
+  }
+  .ba-cap .t{
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .ba-cap .n{
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .ba-note{
+    grid-column: 1 / span 8;
+    margin-top: 36px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ====== LOCATIONS ====== */
+  .loc-head{ margin-bottom: clamp(60px, 8vw, 100px); }
+  .loc-head .eyebrow{ grid-column: 1 / span 12; margin-bottom: 24px; }
+  .loc-head h2{ grid-column: 1 / span 9; }
+  .loc-block{
+    grid-column: 1 / span 8;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(24px, 4vw, 64px);
+    padding-top: clamp(40px, 4vw, 64px);
+    border-top: 1px solid var(--line);
+  }
+  .loc-meta{
+    grid-column: 11 / span 2;
+    padding-top: clamp(40px, 4vw, 64px);
+    border-top: 1px solid var(--line);
+    align-self: start;
+  }
+  .loc-meta .num{
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .loc-addr h3{
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 3vw, 44px);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    margin: 0 0 18px;
+  }
+  .loc-addr p{ margin: 0; font-size: 16px; line-height: 1.7; color: var(--muted); }
+  .loc-contact{ display: flex; flex-direction: column; gap: 28px; align-self: start; }
+  .loc-contact .row .lbl{
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .loc-contact a.phone{
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 600;
+    font-size: clamp(22px, 2.2vw, 32px);
+    letter-spacing: -0.02em;
+    color: var(--accent);
+    transition: color .25s;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+  }
+  .loc-contact a.phone:hover{ color: var(--accent-deep); border-bottom-color: var(--accent-deep); }
+  .loc-hours{ font-size: 15px; line-height: 1.85; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .loc-hours .day{ display: inline-block; width: 80px; color: var(--muted); }
+
+  /* ====== CTA BAND ====== */
+  .cta{
+    padding: clamp(140px, 18vw, 240px) 0;
+    background: var(--bg-alt);
+    text-align: left;
+  }
+  .cta-grid{ align-items: end; }
+  .cta-head{ grid-column: 1 / span 9; }
+  .cta-head h2{
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 700;
+    font-size: clamp(48px, 8vw, 120px);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    color: var(--ink);
+    margin: 0;
+  }
+  .cta-head h2 .blue{ color: var(--accent); }
+  .cta-actions{
+    grid-column: 10 / span 3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    padding-bottom: 8px;
+  }
+  .btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 16px 28px;
+    border-radius: 100px;
+    border: 0;
+    cursor: pointer;
+    transition: background .25s var(--ease), box-shadow .25s var(--ease), transform .25s var(--ease);
+  }
+  .btn:hover{ background: var(--accent-deep); box-shadow: 0 12px 32px rgba(30,64,175,0.18); transform: translateY(-1px); }
+  .btn-text{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    padding: 4px 0;
+    border-bottom: 1px solid var(--ink);
+  }
+  .btn-text:hover{ color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* ====== FOOTER ====== */
+  .footer{
+    padding: clamp(60px, 6vw, 100px) 0 clamp(40px, 4vw, 60px);
+    border-top: 1px solid var(--line);
+    background: var(--bg);
+  }
+  .ft-grid{ align-items: start; }
+  .ft-brand{ grid-column: 1 / span 4; display: flex; flex-direction: column; gap: 14px; }
+  .ft-brand .mk{
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+  }
+  .ft-brand .tag{ font-size: 13px; color: var(--muted); line-height: 1.55; max-width: 28ch; }
+  .ft-addr{ grid-column: 5 / span 4; font-size: 13px; line-height: 1.7; color: var(--muted); }
+  .ft-addr .lbl{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .ft-credit{ grid-column: 10 / span 3; font-size: 13px; line-height: 1.7; color: var(--muted); text-align: right; }
+  .ft-credit .lbl{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .ft-bottom{
+    margin-top: clamp(60px, 6vw, 96px);
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* ====== REVEAL ====== */
+  .reveal{ opacity: 0; transform: translateY(20px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+  .reveal.in{ opacity: 1; transform: translateY(0); }
+
+  /* ====== FOCUS ====== */
+  a:focus-visible, button:focus-visible, .btn:focus-visible{
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* ====== RESPONSIVE ====== */
+  @media (max-width: 1024px){
+    .hero-left{ grid-column: 1 / span 7; }
+    .hero-right{ grid-column: 8 / span 5; }
+    .about-head h2{ grid-column: 1 / span 8; }
+    .about-lead{ grid-column: 1 / span 8; margin-top: 28px; align-self: start; }
+    .stats-grid{ grid-template-columns: repeat(2, 1fr); }
+    .results-head .lead{ grid-column: 1 / span 8; align-self: start; margin-top: 24px; }
+    .loc-block{ grid-column: 1 / span 12; grid-template-columns: 1fr; gap: 36px; }
+    .loc-meta{ display: none; }
+    .cta-head{ grid-column: 1 / span 12; }
+    .cta-actions{ grid-column: 1 / span 12; margin-top: 48px; flex-direction: row; align-items: center; }
+    .ft-brand{ grid-column: 1 / span 6; }
+    .ft-addr{ grid-column: 7 / span 6; }
+    .ft-credit{ grid-column: 1 / span 12; margin-top: 28px; text-align: left; }
+  }
+  @media (max-width: 720px){
+    body{ font-size: 16px; }
+    .hero{ min-height: auto; padding-top: 120px; padding-bottom: 60px; }
+    .hero-eyebrow-row{ flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 56px; }
+    .hero-left{ grid-column: 1 / -1; }
+    .hero-right{ grid-column: 1 / -1; order: -1; }
+    .video-card{ aspect-ratio: 16/10; }
+    .hero-stats{ grid-template-columns: repeat(2, 1fr); gap: 24px 20px; }
+    .t-grid{ grid-template-columns: 1fr; }
+    .ba-row{ grid-template-columns: 1fr; }
+    .ft-brand, .ft-addr, .ft-credit{ grid-column: 1 / -1; }
+    .ft-credit{ text-align: left; margin-top: 24px; }
+    .scroll-cue{ display: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{ animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+    .reveal{ opacity: 1; transform: none; }
+    .hero h1 .line{ opacity: 1; transform: none; }
+    .hero-lead, .hero-stats, .video-card{ opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Grain overlay -->
+<svg class="grain" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.6 0"/></filter>
+  <rect width="100%" height="100%" filter="url(#n)"/>
+</svg>
+
+<nav class="nav" aria-label="Primary">
+  <a href="#" class="mark">LIGHTTOUCH<span class="dot"></span></a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#treatments">Treatments</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#locations">Locations</a></li>
+  </ul>
+  <a href="#book" class="cta">Book</a>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Hero">
+    <div class="wrap">
+      <div class="grid12 hero-grid">
+        <div class="hero-eyebrow-row">
+          <span class="eyebrow"><span class="bar"></span>Lighttouch &times; Orlando &middot; Case Study 001</span>
+          <span class="hero-meta">Est. 2005 &middot; Sand Lake Road, FL</span>
+        </div>
+
+        <div class="hero-left">
+          <h1 class="display">
+            <span class="line">Twenty years of</span>
+            <span class="line"><span class="blue">light</span> touches.</span>
+          </h1>
+
+          <p class="lead hero-lead">
+            <strong>Twenty years, 25,000 patients, 700,000 treatments.</strong>
+            An Orlando standard you can actually book &mdash; with the rigour of a Top&nbsp;50 Allergan account and the quiet of a single Sand Lake Road suite.
+          </p>
+
+          <div class="hero-stats">
+            <div class="hero-stat"><span class="n">20</span><span class="l">Years</span></div>
+            <div class="hero-stat"><span class="n">25K</span><span class="l">Patients</span></div>
+            <div class="hero-stat"><span class="n">700K</span><span class="l">Treatments</span></div>
+            <div class="hero-stat"><span class="n">4.7&#9733;</span><span class="l">942 Reviews</span></div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="video-card">
+            <span class="badge"><span class="pulse"></span>Live &middot; Now Booking</span>
+            <video src="assets/lighttouch_scrub.mp4" poster="assets/lighttouch_still.jpg" autoplay muted loop playsinline preload="auto" disablepictureinpicture aria-label="LightTouch Med Spa visual editorial"></video>
+          </div>
+          <div class="video-cap">
+            <span>Fig. 01</span>
+            <span>Sand Lake Rd / Orlando</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true">Scroll <span class="arrow"></span></div>
+  </section>
+
+  <hr class="hairline" />
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="grid12 about-head reveal">
+        <span class="eyebrow" style="grid-column: 1 / -1; margin-bottom: 36px;"><span class="bar"></span>01 &middot; The practice</span>
+        <h2 class="h2">A Top 50 Allergan account, in your zip code.</h2>
+        <p class="lead about-lead">
+          For nearly two decades, LightTouch has built one of Orlando&rsquo;s busiest aesthetic practices &mdash; <strong>25,000 active patients, 700,000 treatments, a Top 50 Allergan ranking nationally.</strong> The single Sand Lake Road location now operates 14 treatment rooms.
+        </p>
+
+        <div class="stats-grid">
+          <div class="big-stat">
+            <div class="num">20<span class="sub">+</span></div>
+            <div class="label">Years in Orlando</div>
+          </div>
+          <div class="big-stat">
+            <div class="num">25K<span class="sub">+</span></div>
+            <div class="label">Active patients</div>
+          </div>
+          <div class="big-stat">
+            <div class="num">700K</div>
+            <div class="label">Treatments performed</div>
+          </div>
+          <div class="big-stat">
+            <div class="num">Top<span class="sub">/50</span></div>
+            <div class="label">Allergan accounts, USA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="hairline" />
+
+  <!-- TREATMENTS -->
+  <section class="section alt" id="treatments">
+    <div class="wrap">
+      <div class="grid12 treatments-head reveal">
+        <span class="eyebrow"><span class="bar"></span>02 &middot; Services</span>
+        <h2 class="h2">From injectables to laser to skin &mdash; Orlando-tested.</h2>
+        <p class="lead">Three programs, one suite. Built around what 25,000 Orlandoans have actually asked for &mdash; not a catalog.</p>
+      </div>
+
+      <div class="grid12 reveal">
+        <div class="t-grid">
+          <article class="t-card">
+            <span class="t-num">A / 01</span>
+            <h3>Injectables &amp; Tox</h3>
+            <ul class="t-list">
+              <li>Botox <span class="x">+</span></li>
+              <li>Dysport <span class="x">+</span></li>
+              <li>Xeomin <span class="x">+</span></li>
+              <li>Juv&eacute;derm &amp; Restylane <span class="x">+</span></li>
+              <li>Sculptra &middot; Kybella <span class="x">+</span></li>
+              <li>Hyperhidrosis <span class="x">+</span></li>
+            </ul>
+          </article>
+          <article class="t-card">
+            <span class="t-num">A / 02</span>
+            <h3>Laser &amp; Resurfacing</h3>
+            <ul class="t-list">
+              <li>Soprano ICE Laser Hair Removal <span class="x">+</span></li>
+              <li>Opus Plasma Resurfacing <span class="x">+</span></li>
+              <li>Alma Harmony XL <span class="x">+</span></li>
+            </ul>
+          </article>
+          <article class="t-card">
+            <span class="t-num">A / 03</span>
+            <h3>Skin &amp; Facials</h3>
+            <ul class="t-list">
+              <li>Hydrafacial (Syndeo) <span class="x">+</span></li>
+              <li>Chemical Peels <span class="x">+</span></li>
+              <li>Microneedling <span class="x">+</span></li>
+              <li>Alma Reform <span class="x">+</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="hairline" />
+
+  <!-- RESULTS -->
+  <section class="section" id="results">
+    <div class="wrap">
+      <div class="grid12 results-head reveal">
+        <span class="eyebrow" style="grid-column: 1 / -1; margin-bottom: 36px;"><span class="bar"></span>03 &middot; Outcomes</span>
+        <h2 class="h2">Two decades of natural-looking results.</h2>
+        <p class="lead">Subtle, expert-injected change &mdash; the kind 25,000 Orlandoans keep coming back for.</p>
+      </div>
+
+      <div class="grid12 reveal">
+        <div class="ba-row">
+          <div class="ba">
+            <div class="ba-img"><div class="half bf">Before</div><div class="half af">After</div></div>
+            <div class="ba-cap"><span class="t">Lip &amp; filler balancing</span><span class="n">B&middot;01</span></div>
+          </div>
+          <div class="ba">
+            <div class="ba-img"><div class="half bf">Before</div><div class="half af">After</div></div>
+            <div class="ba-cap"><span class="t">Hydrafacial &amp; resurfacing</span><span class="n">B&middot;02</span></div>
+          </div>
+          <div class="ba">
+            <div class="ba-img"><div class="half bf">Before</div><div class="half af">After</div></div>
+            <div class="ba-cap"><span class="t">Skin tightening &amp; contouring</span><span class="n">B&middot;03</span></div>
+          </div>
+        </div>
+        <p class="ba-note">Representative layout. LightTouch&rsquo;s real patient before-and-after photography slots in on launch &mdash; placeholders are intentional to preserve consent.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="hairline" />
+
+  <!-- LOCATIONS -->
+  <section class="section alt" id="locations">
+    <div class="wrap">
+      <div class="grid12 loc-head reveal">
+        <span class="eyebrow"><span class="bar"></span>04 &middot; Visit</span>
+        <h2 class="h2">One Orlando home.</h2>
+      </div>
+
+      <div class="grid12 reveal">
+        <div class="loc-block">
+          <div class="loc-addr">
+            <h3>Sand Lake Road</h3>
+            <p>1718 W Sand Lake Rd<br>Unit C110<br>Orlando, FL 32809</p>
+          </div>
+
+          <div class="loc-contact">
+            <div class="row">
+              <span class="lbl">Direct line</span>
+              <a class="phone" href="tel:+14074402025">(407) 440&#8209;2025</a>
+            </div>
+            <div class="row">
+              <span class="lbl">Hours</span>
+              <div class="loc-hours">
+                <div><span class="day">Mon&ndash;Fri</span> 10:00 &ndash; 18:00</div>
+                <div><span class="day">Saturday</span> 10:00 &ndash; 17:00</div>
+                <div><span class="day">Sunday</span> Closed</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="loc-meta">
+          <span class="num">01 / 01</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta" id="book">
+    <div class="wrap">
+      <div class="grid12 cta-grid reveal">
+        <span class="eyebrow" style="grid-column: 1 / -1; margin-bottom: 40px;"><span class="bar"></span>Begin</span>
+        <div class="cta-head">
+          <h2>Your Orlando consultation, <span class="blue">on the calendar.</span></h2>
+        </div>
+        <div class="cta-actions">
+          <a href="tel:+14074402025" class="btn">Call (407) 440&#8209;2025</a>
+          <a href="#treatments" class="btn-text">Explore treatments &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="grid12 ft-grid">
+      <div class="ft-brand">
+        <div class="mk">LIGHTTOUCH</div>
+        <div class="tag">A twenty-year Orlando aesthetic practice on Sand Lake Road.</div>
+      </div>
+      <div class="ft-addr">
+        <span class="lbl">Studio</span>
+        1718 W Sand Lake Rd, Unit C110<br>
+        Orlando, FL 32809<br>
+        (407) 440-2025
+      </div>
+      <div class="ft-credit">
+        <span class="lbl">Concept</span>
+        Designed by Kerblabs<br>
+        Case Study 001 &middot; 2026
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>&copy; LightTouch Med Spa. Twenty years on Sand Lake Road.</span>
+      <span>Concept preview by Kerblabs &mdash; not affiliated; for demonstration only.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Section reveals via IntersectionObserver */
+(() => {
+  const els = document.querySelectorAll('.reveal');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced || !('IntersectionObserver' in window)){
+    els.forEach(el => el.classList.add('in'));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting){
+        // small stagger when siblings reveal together
+        setTimeout(() => e.target.classList.add('in'), i * 60);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+  els.forEach(el => io.observe(el));
+})();
+
+/* Nav shadow intensifies on scroll */
+(() => {
+  const nav = document.querySelector('.nav');
+  if (!nav) return;
+  let last = 0;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if ((y > 20) !== (last > 20)){
+      nav.style.boxShadow = y > 20
+        ? '0 12px 40px rgba(10,10,10,0.08)'
+        : '0 8px 32px rgba(10,10,10,0.04)';
+    }
+    last = y;
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>
