@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Purple Boudoir &mdash; Fine-Art Boudoir Portraiture, Chicago</title>
+<meta name="description" content="A fine-art editorial boudoir studio in the West Loop. By appointment. With a mission.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:        #0B0908;
+    --ink-2:      #1A1414;
+    --aubergine:  #2A1620;
+    --bone:       #EFE5D2;
+    --ivory:      #FFF6E6;
+    --champagne:  #E8D5A8;
+    --gold:       #C9A86A;
+    --plum:       #6B3D52;
+    --muted:      #8A7A6A;
+    --pad-x:      56px;
+    --pad-y:      40px;
+  }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; background: var(--ink); }
+  body{
+    min-height: 300vh;
+    color: var(--bone);
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection{ background: var(--gold); color: var(--ink); }
+  a{ color: var(--champagne); text-decoration: none; }
+
+  /* ============ HERO STAGE ============ */
+  .stage{
+    position: fixed; inset: 0;
+    width: 100vw; height: 100vh;
+    background: var(--ink);
+    overflow: hidden;
+    z-index: 2;
+  }
+
+  /* Warm tungsten cone of light at end-state (constant) */
+  .vignette{
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 50% 70% at 78% 50%, rgba(201,168,106,0.10) 0%, rgba(11,9,8,0) 70%),
+      linear-gradient(180deg, rgba(11,9,8,0.45) 0%, rgba(11,9,8,0) 30%, rgba(11,9,8,0) 70%, rgba(11,9,8,0.85) 100%);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 1;
+  }
+  /* The chiaroscuro scrim — heavy ink wash over the right 62% at scrollY=0, releases on scroll */
+  .scrim{
+    position: fixed;
+    top: 0; right: 0;
+    width: 62vw;
+    height: 100vh;
+    background:
+      linear-gradient(90deg, rgba(11,9,8,0.96) 0%, rgba(11,9,8,0.88) 40%, rgba(11,9,8,0.78) 80%, rgba(11,9,8,0.72) 100%);
+    pointer-events: none;
+    z-index: 3;
+    opacity: 1;
+    will-change: opacity;
+  }
+
+  .portrait{
+    position: fixed;
+    top: 0; right: 0;
+    width: 62vw;
+    height: 100vh;
+    background: var(--ink-2);
+    overflow: hidden;
+    z-index: 2;
+  }
+  .portrait video,
+  .portrait img{
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    filter: brightness(0.92) contrast(1.05) saturate(0.96);
+  }
+
+  /* A soft hairline separating the editorial column from the portrait */
+  .gilt-edge{
+    position: fixed;
+    top: 12vh; bottom: 12vh;
+    left: 38vw;
+    width: 1px;
+    background: linear-gradient(180deg, transparent 0%, rgba(201,168,106,0.20) 25%, rgba(201,168,106,0.40) 50%, rgba(201,168,106,0.20) 75%, transparent 100%);
+    opacity: 0;
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  /* Wordmark — top-left throughout */
+  .wordmark{
+    position: fixed;
+    top: var(--pad-y);
+    left: var(--pad-x);
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: var(--champagne);
+    white-space: nowrap;
+    z-index: 6;
+    will-change: transform, opacity;
+  }
+  .wordmark .dot{
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    vertical-align: middle;
+    margin: 0 12px 3px;
+  }
+
+  /* Top-right tiny nav */
+  .topnav{
+    position: fixed;
+    top: var(--pad-y);
+    right: var(--pad-x);
+    z-index: 6;
+    display: flex;
+    gap: 28px;
+    font: 500 11px/1 Inter, sans-serif;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--bone);
+    opacity: 0.85;
+  }
+  .topnav a{ color: var(--bone); }
+  .topnav a:hover{ color: var(--gold); }
+
+  /* Opening centerpiece — constrained to the LEFT column so it doesn't collide with the video */
+  .opener{
+    position: fixed;
+    top: 0; bottom: 0;
+    left: 0;
+    width: 38vw;
+    z-index: 5;
+    display: grid;
+    place-items: center;
+    text-align: left;
+    pointer-events: none;
+    padding: 0 clamp(32px, 5vw, 80px);
+  }
+  .opener > div{ max-width: 100%; }
+  .opener .kicker{
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 30px;
+  }
+  .opener h1{
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    font-size: clamp(36px, 3.6vw, 56px);
+    line-height: 1.02;
+    color: var(--ivory);
+    margin: 0;
+    letter-spacing: -0.012em;
+  }
+  .opener h1 em{
+    font-family: "Cormorant Garamond", "Playfair Display", serif;
+    font-style: italic;
+    color: var(--champagne);
+  }
+  .opener .quiet{
+    margin-top: 28px;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(15px, 1.3vw, 20px);
+    color: var(--bone);
+    letter-spacing: 0.03em;
+    opacity: 0.84;
+  }
+
+  /* Editorial left column — fades in as the video scrubs */
+  .lead-col{
+    position: fixed;
+    left: clamp(32px, 6vw, 96px);
+    top: 50%;
+    transform: translateY(-50%);
+    width: min(34vw, 520px);
+    opacity: 0;
+    z-index: 6;
+    pointer-events: none;
+  }
+  .lead-col .eyebrow{
+    font: 500 11px/1 Inter, sans-serif;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 24px;
+  }
+  .lead-col .headline{
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    font-size: clamp(34px, 4vw, 60px);
+    line-height: 1.04;
+    color: var(--ivory);
+    letter-spacing: -0.012em;
+    margin: 0 0 24px;
+  }
+  .lead-col .headline em{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--champagne);
+  }
+  .lead-col .subline{
+    font: 400 15px/1.7 Inter, sans-serif;
+    color: var(--bone);
+    opacity: 0.88;
+    max-width: 40ch;
+    margin: 0 0 34px;
+  }
+  .trust{
+    display: flex;
+    gap: clamp(20px, 2.4vw, 36px);
+    margin: 0 0 36px;
+    flex-wrap: wrap;
+  }
+  .trust .ti b{
+    display: block;
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    font-size: clamp(26px, 2.2vw, 34px);
+    color: var(--champagne);
+    line-height: 1;
+  }
+  .trust .ti b span{
+    font: 500 10px/1 Inter, sans-serif;
+    color: var(--gold);
+    margin-left: 3px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    vertical-align: super;
+  }
+  .trust .ti i{
+    display: block;
+    font: 500 10px/1.3 Inter, sans-serif;
+    font-style: normal;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 10px;
+  }
+  .cta-row{
+    display: flex; align-items: center; gap: 18px;
+    pointer-events: auto;
+  }
+  .byline{
+    font: 500 11px/1 Inter, sans-serif;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .btn{
+    display: inline-block;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--champagne);
+    font: 500 12px/1 Inter, sans-serif;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    padding: 17px 30px;
+    border-radius: 0;
+    text-decoration: none;
+    transition: background .35s, color .35s;
+  }
+  .btn:hover{
+    background: var(--gold);
+    color: var(--ink);
+  }
+  .btn-solid{
+    background: var(--champagne);
+    border-color: var(--champagne);
+    color: var(--ink);
+  }
+  .btn-solid:hover{
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--ink);
+  }
+
+  /* Loader */
+  .loader{
+    position: fixed; inset: 0;
+    background: var(--ink);
+    z-index: 12;
+    pointer-events: none;
+    opacity: 1;
+  }
+
+  /* ============ HOMEPAGE SECTIONS ============ */
+  .content{
+    position: relative;
+    z-index: 7;
+    background: var(--ink);
+    color: var(--bone);
+    margin-top: 220vh;
+  }
+
+  /* a soft horizontal vignette where the hero meets the content */
+  .content::before{
+    content: '';
+    position: absolute;
+    top: -120px; left: 0; right: 0;
+    height: 120px;
+    background: linear-gradient(180deg, transparent, var(--ink));
+    pointer-events: none;
+  }
+
+  .sec{ max-width: 1180px; margin: 0 auto; padding: 130px 56px; }
+  .sec .ey, .ctaband .ey{
+    font: 500 11px/1 Inter, sans-serif;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .sec h2, .ctaband h2{
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    font-size: clamp(34px, 4.4vw, 64px);
+    line-height: 1.06;
+    color: var(--ivory);
+    margin: 18px 0 20px;
+    letter-spacing: -0.01em;
+  }
+  .sec h2 em, .ctaband h2 em{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--champagne);
+  }
+  .sec p.lead{
+    font: 400 17px/1.75 Inter, sans-serif;
+    color: var(--bone);
+    opacity: 0.86;
+    max-width: 62ch;
+  }
+  .divline{
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(201,168,106,0.30) 20%, rgba(201,168,106,0.30) 80%, transparent 100%);
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  /* The Experience — numbered editorial steps */
+  .steps{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-top: 56px;
+  }
+  .step{ border-top: 1px solid rgba(201,168,106,0.30); padding: 26px 0 0; }
+  .step .n{
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    font-size: 32px;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+  .step h3{
+    font: 500 12px/1 Inter, sans-serif;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--champagne);
+    margin: 0 0 12px;
+  }
+  .step p{
+    font: 400 14px/1.7 Inter, sans-serif;
+    color: var(--bone);
+    opacity: 0.78;
+    margin: 0;
+  }
+
+  /* Gallery — placeholder slots only (integrity rule) */
+  .gallery{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 56px;
+  }
+  .frame{
+    aspect-ratio: 3/4;
+    background:
+      radial-gradient(ellipse 70% 60% at 50% 60%, rgba(201,168,106,0.10), rgba(11,9,8,0) 70%),
+      linear-gradient(180deg, #1a1414 0%, #0b0908 100%);
+    border: 1px solid rgba(201,168,106,0.20);
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 22px;
+    transition: border-color .3s;
+  }
+  .frame:hover{ border-color: rgba(201,168,106,0.55); }
+  .frame .lbl{
+    font: 500 10px/1 Inter, sans-serif;
+    letter-spacing: 0.30em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .frame .cap{
+    position: absolute;
+    top: 22px; left: 22px;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--champagne);
+    line-height: 1.1;
+    max-width: 80%;
+  }
+  .ba-note{ margin-top: 28px; font: 400 12px/1.5 Inter, sans-serif; color: var(--muted); font-style: italic; }
+
+  /* The Cause — dignified, central */
+  .cause{
+    background: linear-gradient(180deg, #0b0908 0%, #14090f 50%, #0b0908 100%);
+    border-top: 1px solid rgba(107,61,82,0.30);
+    border-bottom: 1px solid rgba(107,61,82,0.30);
+  }
+  .cause-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .cause-grid .right{
+    border-left: 1px solid rgba(201,168,106,0.20);
+    padding-left: 60px;
+  }
+  .cause .pull{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: clamp(22px, 2.2vw, 32px);
+    line-height: 1.4;
+    color: var(--ivory);
+    margin: 0 0 22px;
+  }
+  .cause .pull-attr{
+    font: 500 10.5px/1 Inter, sans-serif;
+    letter-spacing: 0.30em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .cause-fact{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 24px;
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(201,168,106,0.18);
+  }
+  .cause-fact:last-child{ border-bottom: 0; }
+  .cause-fact .n{
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 1;
+    color: var(--champagne);
+    min-width: 90px;
+  }
+  .cause-fact .t{
+    font: 400 15px/1.6 Inter, sans-serif;
+    color: var(--bone);
+    opacity: 0.86;
+  }
+  .cause-fact .t b{ color: var(--ivory); font-weight: 500; }
+
+  /* Visit */
+  .visit-card{
+    border: 1px solid rgba(201,168,106,0.28);
+    padding: 38px 40px;
+    max-width: 520px;
+    margin-top: 38px;
+    background: linear-gradient(180deg, #14090f 0%, #0b0908 100%);
+  }
+  .visit-card h4{
+    font: 500 11px/1 Inter, sans-serif;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 18px;
+  }
+  .visit-card p{
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    font-size: 19px;
+    color: var(--ivory);
+    line-height: 1.5;
+    margin: 0;
+  }
+  .visit-card .phone{
+    margin-top: 18px;
+    font: 500 12px/1 Inter, sans-serif;
+    letter-spacing: 0.22em;
+    color: var(--champagne);
+  }
+
+  /* CTA band */
+  .ctaband{
+    text-align: center;
+    padding: 150px 40px;
+    background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(107,61,82,0.18), rgba(11,9,8,0) 60%), var(--ink);
+    border-top: 1px solid rgba(201,168,106,0.20);
+  }
+  .ctaband h2{ max-width: 18ch; margin: 16px auto 30px; }
+
+  /* Footer */
+  .ft{
+    border-top: 1px solid rgba(201,168,106,0.20);
+    padding: 56px 56px;
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    color: var(--muted);
+    font: 400 13px/1.8 Inter, sans-serif;
+  }
+  .ft strong{
+    color: var(--champagne);
+    letter-spacing: 0.18em;
+    font: 500 12px/1.6 Inter, sans-serif;
+  }
+  .ft a{ color: var(--bone); }
+  .ft a:hover{ color: var(--gold); }
+  .specnote{
+    padding: 22px 40px 50px;
+    text-align: center;
+    color: #4a3f37;
+    font: 400 10.5px/1.4 Inter, sans-serif;
+    letter-spacing: 0.10em;
+  }
+
+  /* Responsive */
+  @media(max-width: 980px){
+    .cause-grid{ grid-template-columns: 1fr; gap: 40px; }
+    .cause-grid .right{ border-left: 0; padding-left: 0; border-top: 1px solid rgba(201,168,106,0.20); padding-top: 40px; }
+    .steps{ grid-template-columns: repeat(2, 1fr); }
+    .ft{ grid-template-columns: 1fr; }
+  }
+
+  @media(max-width: 880px){
+    :root{ --pad-x: 22px; --pad-y: 22px; }
+    body{ min-height: 100vh; }
+    .stage, .portrait, .opener, .lead-col, .wordmark, .topnav, .gilt-edge, .vignette, .scrim{ position: static !important; }
+    .scrim{ display: none; }
+    .opener{ width: auto; text-align: left; }
+    .stage{ height: auto; background: var(--ink); }
+    .portrait{ width: 100%; height: 60vh; }
+    .wordmark{ display: block; padding: 22px 22px 0; font-size: 12px; }
+    .topnav{ display: none; }
+    .opener{ display: block; padding: 56px 22px 24px; }
+    .opener h1{ font-size: clamp(38px, 10vw, 60px); text-align: left; }
+    .opener .kicker{ text-align: left; margin-bottom: 24px; }
+    .opener .quiet{ text-align: left; }
+    .lead-col{ width: auto; opacity: 1; margin: 0; padding: 32px 22px 40px; transform: none; top: auto; }
+    .lead-col .headline{ font-size: clamp(28px, 7vw, 38px); }
+    .gilt-edge{ display: none; }
+    .vignette{ display: none; }
+    .content{ margin-top: 0; }
+    .sec{ padding: 80px 22px; }
+    .steps{ grid-template-columns: 1fr; gap: 22px; }
+    .gallery{ grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="loader" aria-hidden="true"></div>
+
+<main class="stage" aria-label="Purple Boudoir">
+  <aside class="portrait" aria-hidden="true">
+    <video class="portrait-media"
+           src="assets/purple_boudoir_scrub.mp4"
+           poster="assets/purple_boudoir_still.jpg"
+           muted playsinline preload="auto" disablepictureinpicture></video>
+  </aside>
+
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="scrim" aria-hidden="true"></div>
+  <div class="gilt-edge" aria-hidden="true"></div>
+
+  <h1 class="wordmark">PURPLE<span class="dot"></span>BOUDOIR</h1>
+
+  <nav class="topnav" aria-label="Primary">
+    <a href="#studio">Studio</a>
+    <a href="#experience">Experience</a>
+    <a href="#cause">Cause</a>
+    <a href="#book">Book</a>
+  </nav>
+
+  <div class="opener">
+    <div>
+      <div class="kicker">Fine-Art Boudoir Portraiture &middot; Chicago West Loop</div>
+      <h1>Quiet the inner critic.<br><em>Become the portrait.</em></h1>
+      <p class="quiet">By appointment. With a mission.</p>
+    </div>
+  </div>
+
+  <div class="lead-col" aria-label="Hero details">
+    <div class="eyebrow">A Chicago studio, since 2018</div>
+    <h2 class="headline">A portrait, made <em>like a painting.</em></h2>
+    <p class="subline">A single afternoon in the West Loop &mdash; pre-shoot styling, hair &amp; makeup, the session itself, and a same-day reveal of your fine-art print. Quiet, considered, and yours.</p>
+    <div class="trust">
+      <div class="ti"><b>5.0<span>&#9733;</span></b><i>Google rating</i></div>
+      <div class="ti"><b>60</b><i>Verified reviews</i></div>
+      <div class="ti"><b>CBS</b><i>Chicago feature</i></div>
+    </div>
+    <div class="cta-row">
+      <a href="https://app.squareup.com/appointments/book/fc5b2112-b9ab-479e-aa61-0437b6775691/64EEDTQT9MWCJ/start" target="_blank" rel="noopener" class="btn btn-solid">Schedule a Call</a>
+      <span class="byline">with Jacob</span>
+    </div>
+  </div>
+</main>
+
+<div class="content">
+
+  <!-- THE STUDIO -->
+  <section class="sec" id="studio">
+    <div class="ey">The Studio</div>
+    <h2>Editorial portraiture, <em>quietly made.</em></h2>
+    <p class="lead">Purple Boudoir is a fine-art portrait studio in Chicago&rsquo;s West Loop. Light, silk, walnut, and the slow patience of a single afternoon. Every session is a one-on-one with Jacob &mdash; founder, lead photographer &mdash; and his team. Tasteful, discreet, considered: a portrait you would hang as art.</p>
+  </section>
+
+  <div class="divline"></div>
+
+  <!-- THE EXPERIENCE -->
+  <section class="sec" id="experience">
+    <div class="ey">The Experience</div>
+    <h2>One afternoon, <em>start to print.</em></h2>
+    <p class="lead">A complete experience &mdash; styling, hair and makeup, the session, and a same-day reveal. You leave with a fine-art print in hand.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="n">01</div>
+        <h3>Consultation</h3>
+        <p>An in-person or video call to talk through your vision, comfort, and the look you want to leave with.</p>
+      </div>
+      <div class="step">
+        <div class="n">02</div>
+        <h3>Styling &amp; HMUA</h3>
+        <p>Wardrobe styling &mdash; including a private Journelle appointment with a 20% discount &mdash; and professional hair &amp; makeup the day of.</p>
+      </div>
+      <div class="step">
+        <div class="n">03</div>
+        <h3>The Session</h3>
+        <p>A relaxed, unhurried session in the West Loop studio. Direction when you want it. Space when you don&rsquo;t.</p>
+      </div>
+      <div class="step">
+        <div class="n">04</div>
+        <h3>Same-Day Reveal</h3>
+        <p>Choose your favorites the same day. A fine-art 11x14 print is included; album and additional prints available.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divline"></div>
+
+  <!-- THE GALLERY (placeholder, integrity rule) -->
+  <section class="sec" id="gallery">
+    <div class="ey">The Gallery</div>
+    <h2>A few from <em>the studio.</em></h2>
+    <p class="lead">Selected portraits, curated. The full archive lives in private galleries shared after your session.</p>
+    <div class="gallery">
+      <div class="frame"><div class="cap">No. 01</div><div class="lbl">Editorial</div></div>
+      <div class="frame"><div class="cap">No. 02</div><div class="lbl">Couples</div></div>
+      <div class="frame"><div class="cap">No. 03</div><div class="lbl">Fine Art</div></div>
+    </div>
+    <p class="ba-note">Concept layout &mdash; Purple Boudoir&rsquo;s real curated portraits slot in here on launch.</p>
+  </section>
+
+  <div class="divline"></div>
+
+  <!-- THE CAUSE — central, dignified -->
+  <section class="cause" id="cause">
+    <div class="sec">
+      <div class="ey">The Cause</div>
+      <h2>Self-love, <em>for a cause.</em></h2>
+      <div class="cause-grid">
+        <div class="left">
+          <p class="pull">&ldquo;Every session funds the work to end domestic violence. The portrait is the artifact. The mission is the reason.&rdquo;</p>
+          <div class="pull-attr">&mdash; Jacob, Founder</div>
+        </div>
+        <div class="right">
+          <div class="cause-fact">
+            <div class="n">$300</div>
+            <div class="t"><b>Minimum donation</b> &mdash; includes the full session &amp; a fine-art 11x14 print ($300 value), with proceeds supporting our partner work to end domestic violence.</div>
+          </div>
+          <div class="cause-fact">
+            <div class="n">CBS</div>
+            <div class="t"><b>Featured on CBS Chicago</b> &mdash; <a href="https://www.cbsnews.com/chicago/news/chicago-studio-boudoir-photography-help-stop-domestic-violence" target="_blank" rel="noopener">read the feature &rarr;</a></div>
+          </div>
+          <div class="cause-fact">
+            <div class="n">All</div>
+            <div class="t"><b>Welcoming.</b> Individual and couples sessions. LGBTQ+ friendly &mdash; safety, dignity, and discretion are the standard.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="sec" id="visit">
+    <div class="ey">Visit</div>
+    <h2>355 N Laflin, <em>West Loop.</em></h2>
+    <p class="lead">A private studio inside the Feather Loft building. By appointment only.</p>
+    <div class="visit-card">
+      <h4>Purple Boudoir</h4>
+      <p>355 N Laflin Street<br>Chicago, IL 60607</p>
+      <div class="phone">(312) 465-4109 &middot; Call or text</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ctaband" id="book">
+    <div class="ey">Begin</div>
+    <h2>A consultation, <em>on your terms.</em></h2>
+    <a href="https://app.squareup.com/appointments/book/fc5b2112-b9ab-479e-aa61-0437b6775691/64EEDTQT9MWCJ/start" target="_blank" rel="noopener" class="btn btn-solid">Schedule Your Call</a>
+    <a href="tel:+13124654109" class="btn" style="margin-left:14px">Call (312) 465-4109</a>
+  </section>
+
+  <!-- Footer -->
+  <div class="ft">
+    <div>
+      <strong>PURPLE BOUDOIR</strong><br>
+      Fine-art editorial portraiture<br>
+      Chicago West Loop
+    </div>
+    <div>
+      <strong>VISIT</strong><br>
+      355 N Laflin Street<br>
+      Chicago, IL 60607<br>
+      <a href="tel:+13124654109">(312) 465-4109</a>
+    </div>
+    <div>
+      <strong>FOLLOW</strong><br>
+      @purpleboudoir<br>
+      Instagram &middot; Facebook &middot; Pinterest<br>
+      <a href="https://purpleboudoir.com/" target="_blank" rel="noopener">purpleboudoir.com</a>
+    </div>
+  </div>
+
+  <div class="specnote">Concept preview by Kerblabs for Purple Boudoir &mdash; not affiliated; for demonstration only.</div>
+</div>
+
+
+<script>
+/* === Hero engine: loader -> intro -> chiaroscuro reveal scroll-scrub === */
+(() => {
+  const stage     = document.querySelector('.stage');
+  const portrait  = document.querySelector('.portrait');
+  const wordmark  = document.querySelector('.wordmark');
+  const opener    = document.querySelector('.opener');
+  const leadcol   = document.querySelector('.lead-col');
+  const giltEdge  = document.querySelector('.gilt-edge');
+  const vignette  = document.querySelector('.vignette');
+  const scrim     = document.querySelector('.scrim');
+  const loaderEl  = document.querySelector('.loader');
+  const video     = portrait.querySelector('video');
+  const videoEl   = portrait.querySelector('video');
+
+  const MOBILE_BP = 880;
+  const isMobile  = () => window.innerWidth < MOBILE_BP;
+  const reduced   = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Mobile: autoplay loop, skip scrub
+  if (isMobile()) {
+    if (video) {
+      video.removeAttribute('preload');
+      video.autoplay = true; video.loop = true; video.muted = true;
+      video.play().catch(()=>{});
+    }
+    if (loaderEl) loaderEl.style.display = 'none';
+    return;
+  }
+
+  let videoDuration = 0;
+  if (video) {
+    video.addEventListener('loadedmetadata', () => {
+      videoDuration = video.duration || 0;
+      apply();
+    });
+    video.pause();
+  }
+
+  // Loader
+  const LOAD_HOLD = 900, LOAD_DUR = 800;
+  let loadT0 = null, loading = true;
+  function loaderProgress(){
+    if (loadT0 == null) return 0;
+    return Math.max(0, Math.min(1, (performance.now() - loadT0 - LOAD_HOLD) / LOAD_DUR));
+  }
+  function tickLoader(){
+    apply();
+    const p = loaderProgress();
+    if (loaderEl) loaderEl.style.opacity = String(1 - p);
+    if (p < 1) {
+      requestAnimationFrame(tickLoader);
+    } else {
+      loading = false;
+      if (loaderEl) loaderEl.style.display = 'none';
+      introT0 = performance.now();
+      requestAnimationFrame(tickIntro);
+    }
+  }
+
+  // Intro
+  const INTRO_DELAY = 150, INTRO_DUR = 1100;
+  let introT0 = null;
+  function getIntro(){
+    if (introT0 == null) return 0;
+    const elapsed = performance.now() - introT0 - INTRO_DELAY;
+    return Math.max(0, Math.min(1, elapsed / INTRO_DUR));
+  }
+  function tickIntro(){
+    apply();
+    if (getIntro() < 1) requestAnimationFrame(tickIntro);
+  }
+
+  // Math
+  const lerp = (a,b,t) => a + (b-a)*t;
+  const clamp01 = v => Math.max(0, Math.min(1, v));
+  const easeInOut = t => t < 0.5 ? 2*t*t : 1 - Math.pow(-2*t+2, 2)/2;
+
+  function apply(){
+    const vh = window.innerHeight;
+    const raw  = clamp01(window.scrollY / vh);
+    const card = easeInOut(raw);
+
+    // Video scrub
+    if (video && videoDuration > 0) {
+      const t = raw * videoDuration;
+      if (Math.abs(video.currentTime - t) > 0.03) {
+        try { video.currentTime = t; } catch(e){}
+      }
+    }
+
+    // Portrait progressive brightness/saturation lift as light enters the scene
+    const bright = lerp(0.82, 1.04, card);
+    const sat    = lerp(0.85, 1.06, card);
+    if (videoEl) videoEl.style.filter = `brightness(${bright}) contrast(1.06) saturate(${sat})`;
+
+    // Vignette holds for end-state warmth
+    vignette.style.opacity = String(lerp(1.0, 0.55, card));
+    // Scrim — heavy ink wash that releases the video reveal as user scrolls
+    // 0 = fully visible (video in deep shadow), 1 = fully released (video revealed)
+    if (scrim) scrim.style.opacity = String(lerp(1.0, 0.0, easeInOut(clamp01(raw / 0.85))));
+
+    // Wordmark intro slide
+    const ix = lerp(-22, 0, getIntro());
+    wordmark.style.transform = `translateX(${ix}px)`;
+    wordmark.style.opacity = String(getIntro());
+
+    // Opener centerpiece: fades out by card=0.40
+    const openOpacity = clamp01(1 - card / 0.40);
+    opener.style.opacity = openOpacity * getIntro();
+
+    // Lead column: fades in after card=0.35
+    const reveal = clamp01((card - 0.35) / 0.55);
+    leadcol.style.opacity = reveal;
+    leadcol.style.transform = `translateY(${lerp(-46, -50, reveal)}%)`;
+
+    // Gilt edge: fades in with lead column
+    giltEdge.style.opacity = String(reveal * 0.85);
+  }
+
+  function init(){ apply(); if (loadT0 == null) { loadT0 = performance.now(); requestAnimationFrame(tickLoader); } }
+  window.addEventListener('scroll', apply, { passive: true });
+  window.addEventListener('resize', () => { if (isMobile()) location.reload(); else apply(); });
+  init();
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => apply());
+  }
+
+  if (reduced) {
+    leadcol.style.opacity = '1';
+    leadcol.style.transform = 'translateY(-50%)';
+    opener.style.opacity = '0';
+    giltEdge.style.opacity = '0.85';
+    if (videoEl) videoEl.style.filter = 'brightness(1.0) contrast(1.05) saturate(1.0)';
+    vignette.style.opacity = '0.55';
+    if (scrim) scrim.style.opacity = '0';
+  }
+})();
+</script>
+
+<script>
+/* Blob preload — required for smooth scrub on multi-MB mp4s */
+(function(){
+  const v = document.querySelector('video');
+  if (!v) return;
+  if (window.innerWidth < 880) return;
+  const s = v.getAttribute('src') || v.currentSrc;
+  if (!s || s.indexOf('blob:') === 0) return;
+  fetch(s).then(r => r.blob()).then(b => {
+    v.src = URL.createObjectURL(b);
+    v.load();
+  }).catch(()=>{});
+})();
+</script>
+</body>
+</html>
