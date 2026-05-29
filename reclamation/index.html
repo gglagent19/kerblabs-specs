@@ -734,6 +734,14 @@
     }
 
     const intro = getIntro();
+    // Fade the whole hero out as user scrolls past the scrub range
+    // (otherwise pinned editorial column overlaps incoming content sections)
+    const heroFadeOut = clamp01((window.scrollY - 1.0 * vh) / (0.8 * vh));
+    const heroOp = intro * (1 - heroFadeOut);
+    hero.style.opacity = String(heroOp);
+    // Once hero is invisible, disable pointer events too
+    hero.style.pointerEvents = heroOp < 0.05 ? 'none' : 'auto';
+
     leadcol.style.opacity = String(intro);
     leadcol.style.transform = `translateY(calc(-50% + ${lerp(20, 0, intro)}px))`;
     wordmark.style.opacity = String(intro);
