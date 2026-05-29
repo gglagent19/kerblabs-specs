@@ -1,0 +1,776 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Reclamation Boudoir &mdash; Santa Monica Boudoir Studio</title>
+<meta name="description" content="A 4.9-star Santa Monica boudoir studio. By appointment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:         #1A1D24;
+    --ink-deep:    #0E1015;
+    --burgundy:    #4A2A30;
+    --burgundy-2:  #6B3A40;
+    --copper:      #B8794A;
+    --amber:       #E8B36C;
+    --linen:       #EFE5D2;
+    --pearl:       #FAF3E0;
+    --muted:       #847B6A;
+    --pad-x:       56px;
+    --pad-y:       36px;
+  }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; background: var(--ink); }
+  body{
+    min-height: 300vh;
+    color: var(--linen);
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection{ background: var(--copper); color: var(--ink); }
+  a{ color: var(--amber); text-decoration: none; }
+
+  /* ============ LAYOUT 3 — INVERSE SIDE-BY-SIDE (VIDEO LEFT, EDITORIAL RIGHT) ============ */
+  .hero{
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--ink);
+    overflow: hidden;
+    z-index: 2;
+  }
+
+  /* Video pinned on the LEFT — mirror of all prior layouts */
+  .stage-video{
+    position: absolute;
+    top: 0; left: 0;
+    width: 62vw;
+    height: 100vh;
+    background: var(--ink-deep);
+    overflow: hidden;
+    z-index: 2;
+    border-right: 1px solid rgba(184,121,74,0.30);
+  }
+  .stage-video video,
+  .stage-video img{
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 50%;
+    display: block;
+    filter: brightness(1.04) contrast(1.06) saturate(1.05);
+  }
+  /* Soft right-edge scrim so editorial column reads cleanly */
+  .stage-video::before{
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; right: 0;
+    width: 220px;
+    background: linear-gradient(270deg, rgba(26,29,36,0.78) 0%, rgba(26,29,36,0.30) 50%, rgba(26,29,36,0) 100%);
+    pointer-events: none;
+    z-index: 4;
+  }
+  /* Soft top + bottom subtle darken */
+  .stage-video::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(14,16,21,0.30) 0%, rgba(14,16,21,0) 14%, rgba(14,16,21,0) 78%, rgba(14,16,21,0.30) 100%);
+    pointer-events: none;
+    z-index: 4;
+  }
+
+  /* Top-LEFT caption over video (mirror of prior right-side label) */
+  .stage-label{
+    position: fixed;
+    top: var(--pad-y);
+    left: var(--pad-x);
+    z-index: 5;
+    font: 500 10.5px/1 Inter, sans-serif;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--amber);
+    opacity: 0;
+  }
+
+  /* Bottom-LEFT scroll cue over video */
+  .scrollcue{
+    position: fixed;
+    bottom: 32px;
+    left: var(--pad-x);
+    z-index: 5;
+    font: 500 9.5px/1 Inter, sans-serif;
+    letter-spacing: 0.40em;
+    text-transform: uppercase;
+    color: var(--amber);
+    opacity: 0;
+  }
+
+  /* Top-LEFT (in video area) — small trust badges */
+  .topbadges{
+    position: fixed;
+    top: var(--pad-y);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    display: flex;
+    gap: 10px;
+    font: 500 9.5px/1 Inter, sans-serif;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--amber);
+  }
+  .topbadges span{
+    padding: 7px 11px;
+    border: 1px solid rgba(184,121,74,0.45);
+    border-radius: 0;
+    background: rgba(14,16,21,0.50);
+    backdrop-filter: blur(8px);
+  }
+
+  /* Wordmark TOP-RIGHT (mirror of all prior top-left placements) */
+  .wordmark{
+    position: fixed;
+    top: var(--pad-y);
+    right: var(--pad-x);
+    margin: 0;
+    font-family: "Crimson Pro", serif;
+    font-weight: 500;
+    font-size: clamp(18px, 1.5vw, 24px);
+    line-height: 1.15;
+    letter-spacing: 0.28em;
+    color: var(--linen);
+    white-space: nowrap;
+    z-index: 6;
+    text-align: right;
+  }
+  .wordmark em{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--amber);
+    letter-spacing: 0.04em;
+    text-transform: lowercase;
+    margin-left: 8px;
+  }
+
+  /* Editorial right column */
+  .lead-col{
+    position: fixed;
+    right: clamp(32px, 5vw, 80px);
+    top: 50%;
+    transform: translateY(-50%);
+    width: min(32vw, 460px);
+    opacity: 1;
+    z-index: 6;
+    pointer-events: none;
+  }
+  .lead-col .eyebrow{
+    font: 600 11px/1 Inter, sans-serif;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin: 0 0 26px;
+  }
+  .lead-col .headline{
+    font-family: "Crimson Pro", serif;
+    font-weight: 400;
+    font-size: clamp(40px, 5.4vw, 84px);
+    line-height: 1.02;
+    color: var(--pearl);
+    letter-spacing: -0.015em;
+    margin: 0 0 26px;
+  }
+  .lead-col .headline em{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--amber);
+  }
+  .lead-col .subline{
+    font: 400 16px/1.7 Inter, sans-serif;
+    color: var(--linen);
+    opacity: 0.88;
+    max-width: 38ch;
+    margin: 0 0 36px;
+  }
+  .trust{
+    display: flex;
+    gap: clamp(20px, 2.4vw, 36px);
+    margin: 0 0 38px;
+    flex-wrap: wrap;
+  }
+  .trust .ti b{
+    display: block;
+    font-family: "Crimson Pro", serif;
+    font-weight: 500;
+    font-size: clamp(28px, 2.4vw, 36px);
+    color: var(--amber);
+    line-height: 1;
+  }
+  .trust .ti b span{
+    font: 600 10px/1 Inter, sans-serif;
+    color: var(--copper);
+    margin-left: 3px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    vertical-align: super;
+  }
+  .trust .ti i{
+    display: block;
+    font: 600 10px/1.3 Inter, sans-serif;
+    font-style: normal;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 10px;
+  }
+  .cta-row{ display: flex; align-items: center; gap: 18px; pointer-events: auto; }
+  .byline{
+    font: 500 11px/1 Inter, sans-serif;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--copper);
+  }
+
+  .btn{
+    display: inline-block;
+    background: var(--amber);
+    border: 1px solid var(--amber);
+    color: var(--ink);
+    font: 500 12px/1 Inter, sans-serif;
+    letter-spacing: 0.30em;
+    text-transform: uppercase;
+    padding: 17px 30px;
+    text-decoration: none;
+    transition: background .35s, color .35s;
+  }
+  .btn:hover{ background: var(--copper); border-color: var(--copper); color: var(--linen); }
+  .btn-o{
+    background: transparent;
+    border: 1px solid var(--amber);
+    color: var(--pearl);
+  }
+  .btn-o:hover{ background: var(--amber); color: var(--ink); }
+
+  /* Loader */
+  .loader{
+    position: fixed; inset: 0;
+    background: var(--ink);
+    z-index: 12;
+    pointer-events: none;
+    opacity: 1;
+  }
+
+  /* ============ HOMEPAGE SECTIONS ============ */
+  .content{
+    position: relative;
+    z-index: 7;
+    background: var(--ink);
+    color: var(--linen);
+    margin-top: 220vh;
+  }
+  .content::before{
+    content: '';
+    position: absolute;
+    top: -100px; left: 0; right: 0;
+    height: 100px;
+    background: linear-gradient(180deg, transparent, var(--ink));
+    pointer-events: none;
+  }
+
+  .sec{ max-width: 1180px; margin: 0 auto; padding: 130px 56px; }
+  .sec .ey, .ctaband .ey{
+    font: 600 11px/1 Inter, sans-serif;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--amber);
+  }
+  .sec h2, .ctaband h2{
+    font-family: "Crimson Pro", serif;
+    font-weight: 400;
+    font-size: clamp(36px, 4.8vw, 68px);
+    line-height: 1.06;
+    color: var(--pearl);
+    margin: 20px 0 22px;
+    letter-spacing: -0.008em;
+  }
+  .sec h2 em, .ctaband h2 em{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--amber);
+    font-weight: 500;
+  }
+  .sec p.lead{
+    font: 400 17px/1.75 Inter, sans-serif;
+    color: var(--linen);
+    opacity: 0.88;
+    max-width: 62ch;
+  }
+  .divline{
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(232,179,108,0.30) 20%, rgba(232,179,108,0.30) 80%, transparent 100%);
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  /* Pattern band — "Reclaim it" statement */
+  .pattern-band{
+    background:
+      radial-gradient(ellipse 60% 50% at 30% 50%, rgba(74,42,48,0.40), rgba(26,29,36,0) 60%),
+      linear-gradient(180deg, var(--ink) 0%, var(--burgundy) 50%, var(--ink) 100%);
+    border-top: 1px solid rgba(232,179,108,0.20);
+    border-bottom: 1px solid rgba(232,179,108,0.20);
+    text-align: center;
+    padding: 130px 40px;
+  }
+  .pattern-band .pull-quote{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(28px, 3.6vw, 54px);
+    line-height: 1.34;
+    color: var(--pearl);
+    max-width: 28ch;
+    margin: 0 auto;
+  }
+  .pattern-band .pull-quote em{
+    font-family: "Crimson Pro", serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--amber);
+  }
+  .pattern-band .attr{
+    font: 600 11px/1 Inter, sans-serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-top: 32px;
+  }
+
+  /* Experience */
+  .steps{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-top: 56px;
+  }
+  .step{ border-top: 1px solid rgba(232,179,108,0.30); padding: 28px 0 0; }
+  .step .n{
+    font-family: "Crimson Pro", serif;
+    font-weight: 500;
+    font-size: 30px;
+    color: var(--amber);
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+  .step h3{
+    font: 500 12px/1 Inter, sans-serif;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--pearl);
+    margin: 0 0 14px;
+  }
+  .step p{
+    font: 400 14px/1.7 Inter, sans-serif;
+    color: var(--linen);
+    opacity: 0.82;
+    margin: 0;
+  }
+
+  /* Gallery */
+  .gallery{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 56px;
+  }
+  .frame{
+    aspect-ratio: 3/4;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 60%, rgba(232,179,108,0.12), rgba(26,29,36,0) 70%),
+      linear-gradient(180deg, var(--burgundy) 0%, var(--ink) 100%);
+    border: 1px solid rgba(232,179,108,0.25);
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 22px;
+  }
+  .frame .lbl{
+    font: 600 10px/1 Inter, sans-serif;
+    letter-spacing: 0.30em;
+    text-transform: uppercase;
+    color: var(--amber);
+  }
+  .frame .cap{
+    position: absolute;
+    top: 22px; left: 22px;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--amber);
+    line-height: 1.1;
+  }
+  .ba-note{ margin-top: 28px; font: 400 12px/1.5 Inter, sans-serif; color: var(--muted); font-style: italic; }
+
+  /* Visit */
+  .visit-card{
+    border: 1px solid rgba(232,179,108,0.30);
+    padding: 38px 40px;
+    max-width: 540px;
+    margin-top: 38px;
+    background: rgba(74,42,48,0.45);
+  }
+  .visit-card h4{
+    font: 600 11px/1 Inter, sans-serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin: 0 0 18px;
+  }
+  .visit-card p{
+    font-family: "Crimson Pro", serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--pearl);
+    line-height: 1.55;
+    margin: 0;
+  }
+  .visit-card .phone{
+    margin-top: 18px;
+    font: 500 12px/1 Inter, sans-serif;
+    letter-spacing: 0.22em;
+    color: var(--amber);
+    text-transform: uppercase;
+  }
+
+  .ctaband{
+    text-align: center;
+    padding: 140px 40px;
+    background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(184,121,74,0.18), rgba(26,29,36,0) 60%), var(--ink);
+    border-top: 1px solid rgba(232,179,108,0.20);
+  }
+  .ctaband h2{ max-width: 18ch; margin: 16px auto 30px; }
+
+  .ft{
+    border-top: 1px solid rgba(232,179,108,0.25);
+    padding: 56px;
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    color: var(--muted);
+    font: 400 13px/1.8 Inter, sans-serif;
+  }
+  .ft strong{
+    color: var(--pearl);
+    letter-spacing: 0.18em;
+    font: 500 12px/1.6 Inter, sans-serif;
+  }
+  .ft a{ color: var(--linen); }
+  .ft a:hover{ color: var(--amber); }
+  .specnote{
+    padding: 22px 40px 50px;
+    text-align: center;
+    color: var(--muted);
+    font: 400 10.5px/1.4 Inter, sans-serif;
+    letter-spacing: 0.10em;
+  }
+
+  /* Responsive */
+  @media(max-width: 1100px){
+    .steps{ grid-template-columns: repeat(2, 1fr); }
+    .ft{ grid-template-columns: 1fr; }
+  }
+
+  @media(max-width: 880px){
+    :root{ --pad-x: 22px; --pad-y: 22px; }
+    body{ min-height: 100vh; }
+    .hero{ position: static !important; height: auto; }
+    .stage-video{ position: relative; width: 100%; height: 56vh; border-right: 0; }
+    .stage-video::before{ display: none; }
+    .topbadges, .scrollcue, .stage-label{ display: none; }
+    .wordmark{ position: static; padding: 22px; font-size: 16px; text-align: center; transform: none; }
+    .lead-col{ position: static; width: auto; opacity: 1; margin: 0; padding: 32px 22px 40px; transform: none; }
+    .lead-col .headline{ font-size: clamp(32px, 8vw, 48px); }
+    .content{ margin-top: 0; }
+    .sec, .pattern-band{ padding: 80px 22px; }
+    .steps, .gallery{ grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="loader" aria-hidden="true"></div>
+
+<main class="hero" aria-label="Reclamation Boudoir">
+  <aside class="stage-video" aria-hidden="true">
+    <video class="stage-media"
+           src="assets/reclamation_scrub.mp4"
+           poster="assets/reclamation_still.jpg"
+           muted playsinline preload="auto" disablepictureinpicture></video>
+  </aside>
+
+  <h1 class="wordmark">RECLAMATION <em>boudoir</em></h1>
+
+  <div class="topbadges" aria-hidden="false">
+    <span>Santa Monica</span>
+    <span>By Appointment</span>
+  </div>
+
+  <div class="stage-label" aria-hidden="true">A STUDIO &middot; OPENING FOR THE EVENING</div>
+  <div class="scrollcue" aria-hidden="true">Scroll to play</div>
+
+  <div class="lead-col" aria-label="Hero details">
+    <div class="eyebrow">Santa Monica &middot; Boudoir Photography</div>
+    <h2 class="headline">Reclaim <em>the room.</em></h2>
+    <p class="subline">A Santa Monica studio for the kind of portrait you keep. Booked, considered, paced &mdash; like a held breath, slow on the exhale.</p>
+    <div class="trust">
+      <div class="ti"><b>4.9<span>&#9733;</span></b><i>Google rating</i></div>
+      <div class="ti"><b>47</b><i>Verified reviews</i></div>
+      <div class="ti"><b>SM</b><i>By appointment</i></div>
+    </div>
+    <div class="cta-row">
+      <a href="tel:+13108791521" class="btn">Call (310) 879-1521</a>
+      <span class="byline">or book online</span>
+    </div>
+  </div>
+</main>
+
+<div class="content">
+
+  <!-- THE STUDIO -->
+  <section class="sec" id="studio">
+    <div class="ey">The Studio</div>
+    <h2>A Santa Monica room, <em>solo-led.</em></h2>
+    <p class="lead">Reclamation Boudoir is a 4.9-star Santa Monica studio on Main Street &mdash; a small, considered space for the kind of portrait that doesn&rsquo;t announce itself but holds the room when you walk past it on the wall. Sessions are by appointment. Online booking is available.</p>
+  </section>
+
+  <div class="divline"></div>
+
+  <!-- PATTERN BAND -->
+  <section class="pattern-band" id="pattern">
+    <p class="pull-quote">A portrait is not a record of how you looked. It is a record of <em>how you felt seen.</em></p>
+    <div class="attr">Reclamation Boudoir &middot; Studio philosophy</div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="sec" id="experience">
+    <div class="ey">The Experience</div>
+    <h2>From the consult to <em>the gallery.</em></h2>
+    <p class="lead">A complete studio experience &mdash; consultation, styling, the session, and a reveal. Online booking available.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="n">01</div>
+        <h3>Consult</h3>
+        <p>A pre-shoot conversation to talk through your vision, comfort level, and the look you want to leave with. Styling guidance follows.</p>
+      </div>
+      <div class="step">
+        <div class="n">02</div>
+        <h3>Studio Day</h3>
+        <p>Hair and makeup arranged in advance. By the time the camera comes out, the room has been set for you.</p>
+      </div>
+      <div class="step">
+        <div class="n">03</div>
+        <h3>The Session</h3>
+        <p>Relaxed, gently directed, paced like a long exhale. The kind of session that ends and you don&rsquo;t want to leave.</p>
+      </div>
+      <div class="step">
+        <div class="n">04</div>
+        <h3>Reveal</h3>
+        <p>Choose your favorites in the studio. Prints and albums available; gallery delivery is simple and discrete.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divline"></div>
+
+  <!-- GALLERY -->
+  <section class="sec" id="gallery">
+    <div class="ey">The Gallery</div>
+    <h2>A few from <em>the room.</em></h2>
+    <p class="lead">Selected portraits. The full archive lives in private galleries shared after your session.</p>
+    <div class="gallery">
+      <div class="frame"><div class="cap">No. 01</div><div class="lbl">Editorial</div></div>
+      <div class="frame"><div class="cap">No. 02</div><div class="lbl">Studio</div></div>
+      <div class="frame"><div class="cap">No. 03</div><div class="lbl">Couples</div></div>
+    </div>
+    <p class="ba-note">Concept layout &mdash; Reclamation Boudoir&rsquo;s real curated portraits slot in here on launch.</p>
+  </section>
+
+  <!-- VISIT -->
+  <section class="sec" id="visit">
+    <div class="ey">Visit</div>
+    <h2>Main Street, <em>Santa Monica.</em></h2>
+    <p class="lead">The studio is on Main Street in Santa Monica. Visits are by appointment; online booking is available.</p>
+    <div class="visit-card">
+      <h4>Reclamation Boudoir</h4>
+      <p>2510 Main Street, Suite C<br>Santa Monica, California</p>
+      <div class="phone">(310) 879-1521 &middot; Opens 9 AM</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ctaband" id="book">
+    <div class="ey">Begin</div>
+    <h2>A session, <em>booked.</em></h2>
+    <a href="tel:+13108791521" class="btn">Call (310) 879-1521</a>
+    <a href="http://www.reclamationboudoir.com/" target="_blank" rel="noopener" class="btn btn-o" style="margin-left:14px">Visit reclamationboudoir.com</a>
+  </section>
+
+  <!-- Footer -->
+  <div class="ft">
+    <div>
+      <strong>RECLAMATION</strong><br>
+      Boudoir photography<br>
+      Santa Monica, California
+    </div>
+    <div>
+      <strong>VISIT</strong><br>
+      2510 Main Street, Suite C<br>
+      Santa Monica, CA<br>
+      Opens 9 AM<br>
+      <a href="tel:+13108791521">(310) 879-1521</a>
+    </div>
+    <div>
+      <strong>FOLLOW</strong><br>
+      <a href="http://www.reclamationboudoir.com/" target="_blank" rel="noopener">reclamationboudoir.com</a>
+    </div>
+  </div>
+
+  <div class="specnote">Concept preview by Kerblabs for Reclamation Boudoir &mdash; not affiliated; for demonstration only.</div>
+</div>
+
+
+<script>
+/* === Hero engine — Layout 3 inverse side-by-side, JS race-fix from start === */
+(() => {
+  const hero       = document.querySelector('.hero');
+  const wordmark   = document.querySelector('.wordmark');
+  const topbadges  = document.querySelector('.topbadges');
+  const stageVideo = document.querySelector('.stage-video');
+  const stageLbl   = document.querySelector('.stage-label');
+  const scrollcue  = document.querySelector('.scrollcue');
+  const leadcol    = document.querySelector('.lead-col');
+  const loaderEl   = document.querySelector('.loader');
+  const video      = stageVideo.querySelector('video');
+
+  const MOBILE_BP = 880;
+  const isMobile  = () => window.innerWidth < MOBILE_BP;
+  const reduced   = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (isMobile()) {
+    if (video) {
+      video.removeAttribute('preload');
+      video.autoplay = true; video.loop = true; video.muted = true;
+      video.play().catch(()=>{});
+    }
+    if (loaderEl) loaderEl.style.display = 'none';
+    return;
+  }
+
+  if (video) {
+    video.addEventListener('loadedmetadata', () => { apply(); });
+    video.pause();
+  }
+  // Race-condition-safe duration read (loaded metadata can fire before listener attaches)
+  const getVideoDuration = () => (video && isFinite(video.duration) ? video.duration : 0);
+
+  const LOAD_HOLD = 700, LOAD_DUR = 700;
+  let loadT0 = null, loading = true;
+  function loaderProgress(){
+    if (loadT0 == null) return 0;
+    return Math.max(0, Math.min(1, (performance.now() - loadT0 - LOAD_HOLD) / LOAD_DUR));
+  }
+  function tickLoader(){
+    apply();
+    const p = loaderProgress();
+    if (loaderEl) loaderEl.style.opacity = String(1 - p);
+    if (p < 1) {
+      requestAnimationFrame(tickLoader);
+    } else {
+      loading = false;
+      if (loaderEl) loaderEl.style.display = 'none';
+      introT0 = performance.now();
+      requestAnimationFrame(tickIntro);
+    }
+  }
+
+  const INTRO_DELAY = 100, INTRO_DUR = 1100;
+  let introT0 = null;
+  function getIntro(){
+    if (introT0 == null) return 0;
+    const elapsed = performance.now() - introT0 - INTRO_DELAY;
+    return Math.max(0, Math.min(1, elapsed / INTRO_DUR));
+  }
+  function tickIntro(){
+    apply();
+    if (getIntro() < 1) requestAnimationFrame(tickIntro);
+  }
+
+  const lerp = (a,b,t) => a + (b-a)*t;
+  const clamp01 = v => Math.max(0, Math.min(1, v));
+  const easeInOut = t => t < 0.5 ? 2*t*t : 1 - Math.pow(-2*t+2, 2)/2;
+
+  function apply(){
+    const vh = window.innerHeight;
+    const raw = clamp01(window.scrollY / (vh * 2.0));
+
+    const dur = getVideoDuration();
+    if (video && dur > 0) {
+      const t = raw * dur;
+      if (Math.abs(video.currentTime - t) > 0.03) {
+        try { video.currentTime = t; } catch(e){}
+      }
+    }
+
+    const intro = getIntro();
+    leadcol.style.opacity = String(intro);
+    leadcol.style.transform = `translateY(calc(-50% + ${lerp(20, 0, intro)}px))`;
+    wordmark.style.opacity = String(intro);
+    if (topbadges) topbadges.style.opacity = String(intro);
+    if (stageLbl) stageLbl.style.opacity = String(intro * 0.85 * (1 - raw / 0.25));
+    if (scrollcue) scrollcue.style.opacity = String(intro * clamp01(1 - raw / 0.10));
+  }
+
+  function init(){ apply(); if (loadT0 == null) { loadT0 = performance.now(); requestAnimationFrame(tickLoader); } }
+  window.addEventListener('scroll', apply, { passive: true });
+  window.addEventListener('resize', () => { if (isMobile()) location.reload(); else apply(); });
+  init();
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => apply());
+  }
+
+  if (reduced) {
+    leadcol.style.opacity = '1';
+    leadcol.style.transform = 'translateY(-50%)';
+    wordmark.style.opacity = '1';
+    if (topbadges) topbadges.style.opacity = '1';
+  }
+})();
+</script>
+
+<script>
+(function(){
+  const v = document.querySelector('video');
+  if (!v) return;
+  if (window.innerWidth < 880) return;
+  const s = v.getAttribute('src') || v.currentSrc;
+  if (!s || s.indexOf('blob:') === 0) return;
+  fetch(s).then(r => r.blob()).then(b => {
+    v.src = URL.createObjectURL(b);
+    v.load();
+  }).catch(()=>{});
+})();
+</script>
+</body>
+</html>
