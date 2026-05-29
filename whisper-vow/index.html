@@ -64,22 +64,17 @@
     to   { transform: translate3d(-12px, -18px, 0); }
   }
 
-  /* The window-frame video container */
+  /* The video container — large, hero-scale */
   .window{
     position: fixed;
-    top: 50%;
-    right: clamp(40px, 6vw, 96px);
-    width: clamp(280px, 40vw, 560px);
-    height: 78vh;
-    transform: translateY(-50%);
+    top: 0;
+    right: 0;
+    width: 62vw;
+    height: 100vh;
     background: var(--ivory);
     overflow: hidden;
     z-index: 3;
-    border: 1px solid var(--gold-light);
-    box-shadow:
-      0 0 0 6px var(--cream),
-      0 0 0 7px rgba(182,138,78,0.30),
-      0 30px 80px -20px rgba(91,71,51,0.20);
+    border-left: 1px solid var(--gold-light);
   }
   .window video,
   .window img{
@@ -89,24 +84,35 @@
     display: block;
     filter: brightness(1.02) saturate(1.04);
   }
-  /* Soft inner shadow at the top so the chiffon feels like it's coming through a window */
+  /* Soft cream scrim along the left edge so editorial column reads clean against the video */
   .window::before{
     content: '';
     position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 220px;
+    background: linear-gradient(90deg, rgba(250,243,230,0.55) 0%, rgba(250,243,230,0.20) 50%, rgba(250,243,230,0) 100%);
+    pointer-events: none;
+    z-index: 4;
+  }
+  /* Subtle top + bottom darken to feel like a held window scene */
+  .window::after{
+    content: '';
+    position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(91,71,51,0.18) 0%, rgba(91,71,51,0) 18%, rgba(91,71,51,0) 78%, rgba(91,71,51,0.20) 100%);
+    background:
+      linear-gradient(180deg, rgba(91,71,51,0.10) 0%, rgba(91,71,51,0) 12%, rgba(91,71,51,0) 80%, rgba(91,71,51,0.18) 100%);
     pointer-events: none;
     z-index: 4;
   }
   .window-label{
     position: fixed;
-    right: clamp(46px, 6.5vw, 110px);
-    top: calc(50% + 39vh + 30px);
+    right: clamp(32px, 4vw, 64px);
+    bottom: 32px;
     font: 500 10px/1 Inter, sans-serif;
     letter-spacing: 0.40em;
     text-transform: uppercase;
     color: var(--gold);
-    z-index: 4;
+    z-index: 5;
     opacity: 0;
   }
 
@@ -171,10 +177,10 @@
   /* Editorial left column */
   .lead-col{
     position: fixed;
-    left: clamp(32px, 6vw, 96px);
+    left: clamp(32px, 5vw, 80px);
     top: 50%;
     transform: translateY(-50%);
-    width: min(36vw, 540px);
+    width: min(34vw, 480px);
     opacity: 1;
     z-index: 6;
     pointer-events: none;
@@ -875,9 +881,9 @@
     if (topbadges) topbadges.style.opacity = String(intro);
     if (windowLbl) windowLbl.style.opacity = String(intro * 0.9 * (1 - card));
 
-    // Window: gentle parallax-style float on scroll (subtle)
+    // Window: gentle parallax-style float on scroll (subtle, full-bleed layout)
     const floatY = lerp(0, -24, card);
-    windowEl.style.transform = `translateY(calc(-50% + ${floatY}px))`;
+    windowEl.style.transform = `translateY(${floatY}px)`;
   }
 
   function init(){ apply(); if (loadT0 == null) { loadT0 = performance.now(); requestAnimationFrame(tickLoader); } }
