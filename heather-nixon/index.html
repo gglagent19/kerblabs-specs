@@ -1,0 +1,851 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Heather Nixon Photography &mdash; Dallas Boudoir Studio</title>
+<meta name="description" content="A 5-star Dallas-area boudoir photography studio. By Heather Nixon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bone:        #F5EFE6;
+    --bone-light:  #FBF6EE;
+    --walnut:      #3F2A1F;
+    --walnut-soft: #5C4131;
+    --cognac:      #A0673B;
+    --rose:        #C99B92;
+    --brass:       #B89456;
+    --brass-light: #D6B47A;
+    --cream:       #EDE3D2;
+    --muted:       #8A7765;
+    --pad-x:       64px;
+    --pad-y:       36px;
+  }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; background: var(--bone); }
+  body{
+    color: var(--walnut-soft);
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection{ background: var(--rose); color: var(--walnut); }
+  a{ color: var(--cognac); text-decoration: none; }
+
+  /* ============ TOP-BOTTOM SPLIT HERO ============ */
+  .hero{
+    width: 100vw;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 62vh 38vh;
+    background: var(--bone);
+    position: relative;
+  }
+
+  /* Top: full-width video — sticky/pinned during scroll-scrub */
+  .hero-video-wrap{
+    position: relative;
+    width: 100%;
+    height: 62vh;
+    background: var(--walnut);
+    overflow: hidden;
+  }
+  .hero-video-wrap video,
+  .hero-video-wrap img{
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 45%;
+    display: block;
+    filter: brightness(1.06) contrast(1.04) saturate(1.03);
+  }
+  /* Top scrim for wordmark legibility */
+  .hero-video-wrap::before{
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 220px;
+    background: linear-gradient(180deg, rgba(63,42,31,0.55) 0%, rgba(63,42,31,0.30) 40%, rgba(63,42,31,0) 100%);
+    pointer-events: none;
+    z-index: 3;
+  }
+  /* Bottom scrim where the band meets the video */
+  .hero-video-wrap::after{
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 140px;
+    background: linear-gradient(180deg, rgba(245,239,230,0) 0%, rgba(245,239,230,0.85) 75%, var(--bone) 100%);
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  /* Wordmark OVER the video — top center */
+  .wordmark{
+    position: absolute;
+    top: var(--pad-y);
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-family: "Marcellus", serif;
+    font-weight: 400;
+    font-size: clamp(20px, 1.8vw, 28px);
+    line-height: 1;
+    letter-spacing: 0.38em;
+    color: var(--bone);
+    white-space: nowrap;
+    z-index: 5;
+    will-change: opacity;
+  }
+  .wordmark em{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--brass-light);
+    letter-spacing: 0.04em;
+    text-transform: lowercase;
+    margin: 0 8px;
+  }
+
+  /* Top-left small nav over video */
+  .topnav{
+    position: absolute;
+    top: var(--pad-y);
+    left: var(--pad-x);
+    z-index: 5;
+    display: flex;
+    gap: 22px;
+    font: 500 10.5px/1 Inter, sans-serif;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--bone);
+  }
+  .topnav a{ color: var(--bone); }
+  .topnav a:hover{ color: var(--brass-light); }
+
+  /* Top-right badges over video */
+  .topbadges{
+    position: absolute;
+    top: var(--pad-y);
+    right: var(--pad-x);
+    z-index: 5;
+    display: flex;
+    gap: 10px;
+    font: 500 9.5px/1 Inter, sans-serif;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--brass-light);
+  }
+  .topbadges span{
+    padding: 7px 12px;
+    border: 1px solid rgba(214,180,122,0.55);
+    border-radius: 0;
+    background: rgba(63,42,31,0.45);
+    backdrop-filter: blur(8px);
+  }
+
+  /* Bottom editorial band — full-width below video */
+  .hero-band{
+    width: 100%;
+    height: 38vh;
+    min-height: 320px;
+    background: var(--bone);
+    display: grid;
+    grid-template-columns: minmax(auto, 1fr) auto;
+    align-items: end;
+    gap: 60px;
+    padding: 0 var(--pad-x) clamp(36px, 5vh, 56px);
+    position: relative;
+  }
+  .hero-band .left{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 1100px;
+  }
+  .hero-band .eyebrow{
+    font: 600 11px/1 Inter, sans-serif;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: var(--cognac);
+    margin: 0;
+  }
+  .hero-band .headline{
+    font-family: "Marcellus", serif;
+    font-weight: 400;
+    font-size: clamp(40px, 6.4vw, 96px);
+    line-height: 0.96;
+    color: var(--walnut);
+    letter-spacing: -0.014em;
+    margin: 0;
+    white-space: nowrap;
+  }
+  .hero-band .headline em{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--cognac);
+    letter-spacing: -0.005em;
+  }
+  .hero-band .subline{
+    font: 400 16px/1.65 Inter, sans-serif;
+    color: var(--walnut-soft);
+    max-width: 56ch;
+    margin: 0;
+  }
+
+  /* Right cluster: trust + CTA stacked */
+  .hero-band .right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 22px;
+    padding-bottom: 4px;
+  }
+  .trust-row{
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+  }
+  .trust-row .ti b{
+    display: block;
+    font-family: "Marcellus", serif;
+    font-weight: 400;
+    font-size: 28px;
+    color: var(--cognac);
+    line-height: 1;
+  }
+  .trust-row .ti b span{
+    font: 600 9px/1 Inter, sans-serif;
+    color: var(--brass);
+    margin-left: 3px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    vertical-align: super;
+  }
+  .trust-row .ti i{
+    display: block;
+    font: 600 9.5px/1.3 Inter, sans-serif;
+    font-style: normal;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 8px;
+    text-align: right;
+  }
+  .cta-row{ display: flex; gap: 14px; align-items: center; }
+  .byline{
+    font: 500 11px/1 Inter, sans-serif;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--brass);
+  }
+
+  .btn{
+    display: inline-block;
+    background: var(--walnut);
+    border: 1px solid var(--walnut);
+    color: var(--bone-light);
+    font: 500 12px/1 Inter, sans-serif;
+    letter-spacing: 0.30em;
+    text-transform: uppercase;
+    padding: 17px 30px;
+    text-decoration: none;
+    transition: background .35s, color .35s, border-color .35s;
+  }
+  .btn:hover{ background: var(--cognac); border-color: var(--cognac); }
+  .btn-o{
+    background: transparent;
+    border: 1px solid var(--cognac);
+    color: var(--walnut);
+  }
+  .btn-o:hover{ background: var(--cognac); color: var(--bone-light); }
+
+  /* Loader */
+  .loader{
+    position: fixed; inset: 0;
+    background: var(--bone);
+    z-index: 12;
+    pointer-events: none;
+    opacity: 1;
+  }
+
+  /* ============ HOMEPAGE SECTIONS (continue scrolling below hero) ============ */
+  .content{
+    background: var(--bone);
+  }
+
+  /* "From the studio" — magazine-style pull statement */
+  .pull-band{
+    background:
+      radial-gradient(ellipse 60% 50% at 30% 50%, rgba(201,155,146,0.18), rgba(245,239,230,0) 60%),
+      linear-gradient(180deg, var(--bone) 0%, var(--cream) 100%);
+    padding: 120px 56px;
+    text-align: left;
+    border-top: 1px solid rgba(184,148,86,0.18);
+  }
+  .pull-band .wrap{ max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 80px 1fr; gap: 32px; align-items: start; }
+  .pull-band .mark{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 88px;
+    line-height: 0.8;
+    color: var(--cognac);
+  }
+  .pull-band .pull{
+    font-family: "Marcellus", serif;
+    font-weight: 400;
+    font-size: clamp(28px, 3.6vw, 50px);
+    line-height: 1.18;
+    color: var(--walnut);
+    max-width: 24ch;
+    margin: 0 0 24px;
+  }
+  .pull-band .pull em{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--cognac);
+    font-weight: 500;
+  }
+  .pull-band .attr{
+    font: 600 11px/1 Inter, sans-serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--brass);
+  }
+
+  .sec{ max-width: 1180px; margin: 0 auto; padding: 130px 56px; }
+  .sec .ey{
+    font: 600 11px/1 Inter, sans-serif;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: var(--cognac);
+  }
+  .sec h2{
+    font-family: "Marcellus", serif;
+    font-weight: 400;
+    font-size: clamp(36px, 4.8vw, 64px);
+    line-height: 1.06;
+    color: var(--walnut);
+    margin: 20px 0 22px;
+    letter-spacing: -0.005em;
+  }
+  .sec h2 em{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--cognac);
+    font-weight: 500;
+  }
+  .sec p.lead{
+    font: 400 17px/1.75 Inter, sans-serif;
+    color: var(--walnut-soft);
+    max-width: 62ch;
+  }
+  .divline{
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(184,148,86,0.30) 20%, rgba(184,148,86,0.30) 80%, transparent 100%);
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  /* The studio — magazine 2-column */
+  .mag-studio{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+    margin-top: 50px;
+  }
+  .mag-studio .col-a p,
+  .mag-studio .col-b p{
+    font: 400 15.5px/1.75 Inter, sans-serif;
+    color: var(--walnut-soft);
+    margin: 0 0 20px;
+  }
+  .mag-studio .dropcap::first-letter{
+    font-family: "Marcellus", serif;
+    font-size: 64px;
+    line-height: 0.85;
+    float: left;
+    margin: 6px 14px 0 0;
+    color: var(--cognac);
+  }
+
+  /* Experience — horizontal ledger */
+  .steps{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 56px;
+    border-top: 1px solid rgba(184,148,86,0.30);
+  }
+  .step{
+    padding: 36px 28px;
+    border-right: 1px solid rgba(184,148,86,0.20);
+  }
+  .step:last-child{ border-right: 0; }
+  .step .n{
+    font: 600 11px/1 Inter, sans-serif;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin-bottom: 14px;
+  }
+  .step h3{
+    font-family: "Marcellus", serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--walnut);
+    margin: 0 0 14px;
+  }
+  .step h3 em{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--cognac);
+    font-weight: 500;
+  }
+  .step p{
+    font: 400 14px/1.7 Inter, sans-serif;
+    color: var(--walnut-soft);
+    margin: 0;
+  }
+
+  /* Gallery */
+  .gallery{
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 22px;
+    margin-top: 56px;
+  }
+  .frame{
+    aspect-ratio: 3/4;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 60%, rgba(184,148,86,0.12), rgba(245,239,230,0) 70%),
+      linear-gradient(180deg, var(--cream) 0%, var(--bone-light) 100%);
+    border: 1px solid rgba(184,148,86,0.28);
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 22px;
+  }
+  .frame:nth-child(1){ aspect-ratio: 3/4; }
+  .frame .lbl{
+    font: 600 10px/1 Inter, sans-serif;
+    letter-spacing: 0.30em;
+    text-transform: uppercase;
+    color: var(--cognac);
+  }
+  .frame .cap{
+    position: absolute;
+    top: 22px; left: 22px;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--cognac);
+    line-height: 1.1;
+  }
+  .ba-note{ margin-top: 28px; font: 400 12px/1.5 Inter, sans-serif; color: var(--muted); font-style: italic; }
+
+  /* Visit */
+  .visit-card{
+    border: 1px solid rgba(184,148,86,0.30);
+    padding: 38px 40px;
+    max-width: 540px;
+    margin-top: 38px;
+    background: var(--bone-light);
+  }
+  .visit-card h4{
+    font: 600 11px/1 Inter, sans-serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin: 0 0 18px;
+  }
+  .visit-card p{
+    font-family: "Marcellus", serif;
+    font-weight: 400;
+    font-size: 19px;
+    color: var(--walnut);
+    line-height: 1.55;
+    margin: 0;
+  }
+  .visit-card .phone{
+    margin-top: 18px;
+    font: 500 12px/1 Inter, sans-serif;
+    letter-spacing: 0.22em;
+    color: var(--cognac);
+    text-transform: uppercase;
+  }
+
+  .ctaband{
+    text-align: center;
+    padding: 140px 40px;
+    background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(184,148,86,0.18), rgba(245,239,230,0) 60%), var(--bone);
+    border-top: 1px solid rgba(184,148,86,0.20);
+  }
+  .ctaband .ey{
+    font: 600 11px/1 Inter, sans-serif;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: var(--cognac);
+  }
+  .ctaband h2{
+    font-family: "Marcellus", serif;
+    font-weight: 400;
+    font-size: clamp(40px, 5.4vw, 78px);
+    color: var(--walnut);
+    margin: 16px auto 30px;
+    max-width: 20ch;
+    line-height: 1.04;
+  }
+  .ctaband h2 em{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--cognac);
+    font-weight: 500;
+  }
+
+  .ft{
+    border-top: 1px solid rgba(184,148,86,0.25);
+    padding: 56px;
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    color: var(--muted);
+    font: 400 13px/1.8 Inter, sans-serif;
+  }
+  .ft strong{
+    color: var(--walnut);
+    letter-spacing: 0.18em;
+    font: 500 12px/1.6 Inter, sans-serif;
+  }
+  .ft a{ color: var(--walnut-soft); }
+  .ft a:hover{ color: var(--cognac); }
+  .specnote{
+    padding: 22px 40px 50px;
+    text-align: center;
+    color: var(--muted);
+    font: 400 10.5px/1.4 Inter, sans-serif;
+    letter-spacing: 0.10em;
+  }
+
+  /* Responsive */
+  @media(max-width: 1100px){
+    .hero{ grid-template-rows: 56vh auto; }
+    .hero-band{ grid-template-columns: 1fr; gap: 32px; padding: 40px var(--pad-x); }
+    .hero-band .right{ align-items: flex-start; }
+    .trust-row .ti i{ text-align: left; }
+    .hero-band .headline{ font-size: clamp(36px, 5.4vw, 64px); white-space: normal; }
+    .mag-studio{ grid-template-columns: 1fr; }
+    .steps{ grid-template-columns: repeat(2, 1fr); }
+    .steps .step:nth-child(2){ border-right: 0; }
+    .gallery{ grid-template-columns: 1fr 1fr; }
+    .ft{ grid-template-columns: 1fr; }
+  }
+
+  @media(max-width: 880px){
+    :root{ --pad-x: 22px; --pad-y: 22px; }
+    .hero{ grid-template-rows: auto auto; }
+    .hero-video-wrap{ height: 55vh; }
+    .topnav, .topbadges{ display: none; }
+    .hero-band{ padding: 32px 22px; }
+    .hero-band .headline{ font-size: clamp(34px, 9vw, 50px); }
+    .sec, .pull-band{ padding: 80px 22px; }
+    .steps{ grid-template-columns: 1fr; }
+    .steps .step{ border-right: 0; border-bottom: 1px solid rgba(184,148,86,0.20); }
+    .steps .step:last-child{ border-bottom: 0; }
+    .gallery{ grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="loader" aria-hidden="true"></div>
+
+<section class="hero" aria-label="Heather Nixon Photography">
+
+  <div class="hero-video-wrap" aria-hidden="true">
+    <video class="hero-media"
+           src="assets/heather_nixon_scrub.mp4"
+           poster="assets/heather_nixon_still.jpg"
+           muted playsinline preload="auto" disablepictureinpicture></video>
+
+    <h1 class="wordmark">HEATHER<em>nixon</em>PHOTOGRAPHY</h1>
+
+    <nav class="topnav" aria-label="Primary">
+      <a href="#studio">Studio</a>
+      <a href="#experience">Experience</a>
+      <a href="#book">Book</a>
+    </nav>
+
+    <div class="topbadges" aria-hidden="false">
+      <span>Dallas Area</span>
+      <span>By Appointment</span>
+    </div>
+  </div>
+
+  <div class="hero-band">
+    <div class="left">
+      <div class="eyebrow">Boudoir Photography &middot; Dallas, Texas</div>
+      <h2 class="headline">Soft <em>southern</em> boudoir.</h2>
+      <p class="subline">A 5-star Dallas-area studio for fine-art boudoir &mdash; pre-shoot styling, professional hair and makeup, and a session shot like a held breath. Solo-led by Heather.</p>
+    </div>
+    <div class="right">
+      <div class="trust-row">
+        <div class="ti"><b>5.0<span>&#9733;</span></b><i>Google rating</i></div>
+        <div class="ti"><b>58</b><i>Verified reviews</i></div>
+      </div>
+      <div class="cta-row">
+        <a href="tel:+19034818008" class="btn">Call (903) 481-8008</a>
+        <span class="byline">with Heather</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<div class="content">
+
+  <!-- PULL-BAND statement -->
+  <section class="pull-band" id="pull">
+    <div class="wrap">
+      <div class="mark">&ldquo;</div>
+      <div>
+        <p class="pull">A session is not a transaction. It&rsquo;s a single afternoon, slow and quiet, that ends with a print you would frame <em>and a feeling you would keep.</em></p>
+        <div class="attr">Heather Nixon Photography &middot; Studio philosophy</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE STUDIO — magazine 2-col -->
+  <section class="sec" id="studio">
+    <div class="ey">The Studio</div>
+    <h2>A Dallas-area practice, <em>solo-led.</em></h2>
+    <div class="mag-studio">
+      <div class="col-a">
+        <p class="dropcap">Heather Nixon Photography is a 5-star Dallas-area boudoir studio &mdash; a small, solo-led operation that books only one session at a time. The room is private. The pace is unhurried. The whole afternoon is built around one woman, one set of nerves, and the quiet steadiness that turns both into a portrait.</p>
+        <p>Sessions are booked by appointment. Styling guidance and professional hair and makeup are arranged in advance. The reveal is same-day; the album is a separate ceremony.</p>
+      </div>
+      <div class="col-b">
+        <p>Reviewers describe the work the same way each time: editorial, quiet, soft. The kind of image that doesn&rsquo;t announce itself but holds the room when you walk past it on the wall.</p>
+        <p>Solo-led means one person sees the project from the consult call to the print on your wall &mdash; no handoffs, no surprises, no team rotations between styling and the camera.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divline"></div>
+
+  <!-- EXPERIENCE — horizontal ledger -->
+  <section class="sec" id="experience">
+    <div class="ey">The Experience</div>
+    <h2>From the call to <em>the print.</em></h2>
+    <div class="steps">
+      <div class="step">
+        <div class="n">01 / Consult</div>
+        <h3>The <em>call</em></h3>
+        <p>A pre-shoot conversation to talk through your vision, comfort level, and the look you want to leave with. Styling guidance arrives by email after.</p>
+      </div>
+      <div class="step">
+        <div class="n">02 / Prep</div>
+        <h3>Hair <em>&amp; makeup</em></h3>
+        <p>Professional styling the morning of the shoot. By the time the camera comes out, you&rsquo;ve been seated, fed, dressed, and dialed up to feel like yourself, intensified.</p>
+      </div>
+      <div class="step">
+        <div class="n">03 / Shoot</div>
+        <h3>The <em>session</em></h3>
+        <p>A relaxed, gently directed shoot. Posing is guided in plain language. No pressure, no awkward held silences, no compositions you wouldn&rsquo;t hang.</p>
+      </div>
+      <div class="step">
+        <div class="n">04 / Reveal</div>
+        <h3>The <em>album</em></h3>
+        <p>Same-day favorites at the studio. Prints and albums available afterward; gallery delivery is simple and unhurried.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divline"></div>
+
+  <!-- GALLERY -->
+  <section class="sec" id="gallery">
+    <div class="ey">The Gallery</div>
+    <h2>A few from <em>the room.</em></h2>
+    <p class="lead">Selected portraits. The full archive lives in private galleries shared after your session.</p>
+    <div class="gallery">
+      <div class="frame"><div class="cap">No. 01</div><div class="lbl">Editorial</div></div>
+      <div class="frame"><div class="cap">No. 02</div><div class="lbl">Soft-light</div></div>
+      <div class="frame"><div class="cap">No. 03</div><div class="lbl">Wardrobe</div></div>
+    </div>
+    <p class="ba-note">Concept layout &mdash; Heather Nixon&rsquo;s real curated portraits slot in here on launch.</p>
+  </section>
+
+  <!-- VISIT -->
+  <section class="sec" id="visit">
+    <div class="ey">Visit</div>
+    <h2>Dallas-Fort Worth area. <em>By appointment.</em></h2>
+    <p class="lead">Studio location and scheduling are arranged after the initial consult call.</p>
+    <div class="visit-card">
+      <h4>Heather Nixon Photography</h4>
+      <p>Dallas-Fort Worth, Texas<br>By appointment only</p>
+      <div class="phone">(903) 481-8008</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ctaband" id="book">
+    <div class="ey">Begin</div>
+    <h2>A single <em>quiet</em> afternoon.</h2>
+    <a href="tel:+19034818008" class="btn">Call (903) 481-8008</a>
+    <a href="https://www.heathernixonphotography.com/" target="_blank" rel="noopener" class="btn btn-o" style="margin-left:14px">Visit the site</a>
+  </section>
+
+  <!-- Footer -->
+  <div class="ft">
+    <div>
+      <strong>HEATHER NIXON</strong><br>
+      Boudoir photography<br>
+      Dallas-Fort Worth, Texas
+    </div>
+    <div>
+      <strong>VISIT</strong><br>
+      Dallas-Fort Worth area<br>
+      By appointment<br>
+      <a href="tel:+19034818008">(903) 481-8008</a>
+    </div>
+    <div>
+      <strong>FOLLOW</strong><br>
+      <a href="https://www.heathernixonphotography.com/" target="_blank" rel="noopener">heathernixonphotography.com</a>
+    </div>
+  </div>
+
+  <div class="specnote">Concept preview by Kerblabs for Heather Nixon Photography &mdash; not affiliated; for demonstration only.</div>
+</div>
+
+
+<script>
+/* === Hero engine: video scrubs while the top-video portion is in view === */
+(() => {
+  const wordmark   = document.querySelector('.wordmark');
+  const topnav     = document.querySelector('.topnav');
+  const topbadges  = document.querySelector('.topbadges');
+  const wrap       = document.querySelector('.hero-video-wrap');
+  const heroBand   = document.querySelector('.hero-band');
+  const loaderEl   = document.querySelector('.loader');
+  const video      = wrap.querySelector('video');
+
+  const MOBILE_BP = 880;
+  const isMobile  = () => window.innerWidth < MOBILE_BP;
+  const reduced   = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (isMobile()) {
+    if (video) {
+      video.removeAttribute('preload');
+      video.autoplay = true; video.loop = true; video.muted = true;
+      video.play().catch(()=>{});
+    }
+    if (loaderEl) loaderEl.style.display = 'none';
+    return;
+  }
+
+  let videoDuration = 0;
+  if (video) {
+    video.addEventListener('loadedmetadata', () => {
+      videoDuration = video.duration || 0;
+      apply();
+    });
+    video.pause();
+  }
+
+  const LOAD_HOLD = 700, LOAD_DUR = 700;
+  let loadT0 = null, loading = true;
+  function loaderProgress(){
+    if (loadT0 == null) return 0;
+    return Math.max(0, Math.min(1, (performance.now() - loadT0 - LOAD_HOLD) / LOAD_DUR));
+  }
+  function tickLoader(){
+    apply();
+    const p = loaderProgress();
+    if (loaderEl) loaderEl.style.opacity = String(1 - p);
+    if (p < 1) {
+      requestAnimationFrame(tickLoader);
+    } else {
+      loading = false;
+      if (loaderEl) loaderEl.style.display = 'none';
+      introT0 = performance.now();
+      requestAnimationFrame(tickIntro);
+    }
+  }
+
+  const INTRO_DELAY = 100, INTRO_DUR = 1100;
+  let introT0 = null;
+  function getIntro(){
+    if (introT0 == null) return 0;
+    const elapsed = performance.now() - introT0 - INTRO_DELAY;
+    return Math.max(0, Math.min(1, elapsed / INTRO_DUR));
+  }
+  function tickIntro(){
+    apply();
+    if (getIntro() < 1) requestAnimationFrame(tickIntro);
+  }
+
+  const lerp = (a,b,t) => a + (b-a)*t;
+  const clamp01 = v => Math.max(0, Math.min(1, v));
+  const easeInOut = t => t < 0.5 ? 2*t*t : 1 - Math.pow(-2*t+2, 2)/2;
+
+  function apply(){
+    // Scrub video tied to scroll over first 100vh (covers the top split + part of band)
+    const vh = window.innerHeight;
+    const raw = clamp01(window.scrollY / (vh * 1.0));
+
+    if (video && videoDuration > 0) {
+      const t = raw * videoDuration;
+      if (Math.abs(video.currentTime - t) > 0.03) {
+        try { video.currentTime = t; } catch(e){}
+      }
+    }
+
+    const intro = getIntro();
+    wordmark.style.opacity = String(intro);
+    if (topnav) topnav.style.opacity = String(intro);
+    if (topbadges) topbadges.style.opacity = String(intro);
+    if (heroBand) heroBand.style.opacity = String(intro);
+  }
+
+  function init(){ apply(); if (loadT0 == null) { loadT0 = performance.now(); requestAnimationFrame(tickLoader); } }
+  window.addEventListener('scroll', apply, { passive: true });
+  window.addEventListener('resize', () => { if (isMobile()) location.reload(); else apply(); });
+  init();
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => apply());
+  }
+
+  if (reduced) {
+    wordmark.style.opacity = '1';
+    if (topnav) topnav.style.opacity = '1';
+    if (topbadges) topbadges.style.opacity = '1';
+    if (heroBand) heroBand.style.opacity = '1';
+  }
+})();
+</script>
+
+<script>
+(function(){
+  const v = document.querySelector('video');
+  if (!v) return;
+  if (window.innerWidth < 880) return;
+  const s = v.getAttribute('src') || v.currentSrc;
+  if (!s || s.indexOf('blob:') === 0) return;
+  fetch(s).then(r => r.blob()).then(b => {
+    v.src = URL.createObjectURL(b);
+    v.load();
+  }).catch(()=>{});
+})();
+</script>
+</body>
+</html>
