@@ -1,0 +1,900 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Evgenia Ribinik Studios &mdash; Brooklyn Boudoir, Bridal &amp; Portrait</title>
+<meta name="description" content="A 5-star Brooklyn studio in Industry City for boudoir, bridal and portrait photography. By Evgenia Ribinik.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500;1,600&family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:         #14100D;
+    --walnut:      #2A1F18;
+    --aubergine:   #3D1F28;
+    --cream:       #F0E6D5;
+    --pearl:       #FAF1DE;
+    --gold:        #C9A86A;
+    --gold-light:  #DFC290;
+    --rose:        #B4736D;
+    --muted:       #8E7B65;
+    --pad-x:       56px;
+    --pad-y:       36px;
+  }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; background: var(--ink); }
+  body{
+    min-height: 300vh;
+    color: var(--cream);
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection{ background: var(--gold); color: var(--ink); }
+  a{ color: var(--gold-light); text-decoration: none; }
+
+  /* ============ FULL-BLEED PINNED HERO (LAYOUT 4) ============ */
+  .hero{
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--ink);
+    overflow: hidden;
+    z-index: 2;
+  }
+  .hero-video{
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    z-index: 1;
+  }
+  .hero-video video,
+  .hero-video img{
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+    display: block;
+    filter: brightness(1.02) contrast(1.06) saturate(1.04);
+  }
+  /* Layered scrims for Vogue-cover legibility — top + bottom + center */
+  .scrim{
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background:
+      linear-gradient(180deg, rgba(20,16,13,0.62) 0%, rgba(20,16,13,0.10) 18%, rgba(20,16,13,0.10) 62%, rgba(20,16,13,0.78) 100%);
+  }
+
+  /* Top-left issue credit (Vogue masthead style) */
+  .issue-credit{
+    position: absolute;
+    top: var(--pad-y);
+    left: var(--pad-x);
+    z-index: 5;
+    font: 500 9.5px/1.5 Inter, sans-serif;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    opacity: 0;
+  }
+  .issue-credit b{ color: var(--cream); font-weight: 600; }
+
+  /* Top-right pill chips */
+  .topbadges{
+    position: absolute;
+    top: var(--pad-y);
+    right: var(--pad-x);
+    z-index: 5;
+    display: flex;
+    gap: 10px;
+    font: 500 9.5px/1 Inter, sans-serif;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+  }
+  .topbadges span{
+    padding: 7px 11px;
+    border: 1px solid rgba(223,194,144,0.45);
+    border-radius: 0;
+    background: rgba(20,16,13,0.50);
+    backdrop-filter: blur(8px);
+  }
+
+  /* Magazine masthead: wordmark, large, center-top */
+  .wordmark{
+    position: absolute;
+    top: calc(var(--pad-y) + 70px);
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+    font-size: clamp(36px, 4.6vw, 76px);
+    line-height: 1;
+    letter-spacing: 0.12em;
+    color: var(--pearl);
+    white-space: nowrap;
+    z-index: 5;
+    text-align: center;
+  }
+  .wordmark .sub{
+    display: block;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.50em;
+    color: var(--gold-light);
+    margin-top: 14px;
+    text-transform: uppercase;
+  }
+
+  /* The big italic editorial headline — Vogue cover-line, lower middle */
+  .cover-headline{
+    position: absolute;
+    left: 50%;
+    top: 52%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    text-align: center;
+    max-width: min(82vw, 1100px);
+  }
+  .cover-headline .pre{
+    font: 500 11px/1 Inter, sans-serif;
+    letter-spacing: 0.46em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 24px;
+  }
+  .cover-headline h1{
+    font-family: "DM Serif Display", "Cormorant Garamond", serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(60px, 10vw, 168px);
+    line-height: 0.94;
+    color: var(--pearl);
+    letter-spacing: -0.012em;
+    margin: 0;
+    text-shadow: 0 4px 28px rgba(20,16,13,0.55), 0 0 64px rgba(20,16,13,0.35);
+  }
+  .cover-headline h1 em{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--gold-light);
+  }
+
+  /* Bottom-left cover-line: subline + trust + CTA */
+  .cover-foot{
+    position: absolute;
+    left: var(--pad-x);
+    bottom: var(--pad-y);
+    z-index: 5;
+    max-width: min(40vw, 520px);
+    opacity: 0;
+  }
+  .cover-foot .subline{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(15px, 1.4vw, 20px);
+    line-height: 1.5;
+    color: var(--pearl);
+    margin: 0 0 22px;
+    text-shadow: 0 2px 14px rgba(20,16,13,0.65);
+  }
+  .cover-foot .trust{
+    display: flex;
+    gap: 28px;
+    margin: 0 0 22px;
+    flex-wrap: wrap;
+  }
+  .cover-foot .trust .ti b{
+    display: block;
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-size: clamp(22px, 2vw, 30px);
+    color: var(--gold-light);
+    line-height: 1;
+  }
+  .cover-foot .trust .ti b span{
+    font: 600 9px/1 Inter, sans-serif;
+    color: var(--gold);
+    margin-left: 3px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    vertical-align: super;
+  }
+  .cover-foot .trust .ti i{
+    display: block;
+    font: 600 9.5px/1.3 Inter, sans-serif;
+    font-style: normal;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cream);
+    margin-top: 8px;
+  }
+  .cover-foot .cta{
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: var(--pearl);
+    border-bottom: 1px solid var(--gold-light);
+    padding-bottom: 6px;
+    font: 500 12px/1 Inter, sans-serif;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    transition: color .3s, border-color .3s;
+  }
+  .cover-foot .cta:hover{ color: var(--gold-light); border-color: var(--pearl); }
+  .cover-foot .cta:after{
+    content: '→';
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--gold-light);
+  }
+
+  /* Bottom-right credit cluster (Vogue cover-style) */
+  .cover-credit{
+    position: absolute;
+    right: var(--pad-x);
+    bottom: var(--pad-y);
+    z-index: 5;
+    text-align: right;
+    opacity: 0;
+  }
+  .cover-credit .by{
+    font: 600 10px/1 Inter, sans-serif;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 8px;
+  }
+  .cover-credit .name{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(28px, 2.6vw, 42px);
+    color: var(--pearl);
+    line-height: 1;
+  }
+  .cover-credit .loc{
+    margin-top: 14px;
+    font: 500 10px/1.4 Inter, sans-serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--cream);
+  }
+
+  /* Scroll cue, bottom center */
+  .scrollcue{
+    position: absolute;
+    bottom: 26px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    font: 500 9px/1 Inter, sans-serif;
+    letter-spacing: 0.40em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* Loader */
+  .loader{
+    position: fixed; inset: 0;
+    background: var(--ink);
+    z-index: 12;
+    pointer-events: none;
+    opacity: 1;
+  }
+
+  /* ============ HOMEPAGE SECTIONS ============ */
+  .content{
+    position: relative;
+    z-index: 7;
+    background: var(--ink);
+    color: var(--cream);
+    margin-top: 220vh;
+  }
+  .content::before{
+    content: '';
+    position: absolute;
+    top: -100px; left: 0; right: 0;
+    height: 100px;
+    background: linear-gradient(180deg, transparent, var(--ink));
+    pointer-events: none;
+  }
+
+  .sec{ max-width: 1180px; margin: 0 auto; padding: 130px 56px; }
+  .sec .ey, .ctaband .ey{
+    font: 600 11px/1 Inter, sans-serif;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+  }
+  .sec h2, .ctaband h2{
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-size: clamp(36px, 4.8vw, 66px);
+    line-height: 1.06;
+    color: var(--pearl);
+    margin: 20px 0 22px;
+    letter-spacing: -0.005em;
+  }
+  .sec h2 em, .ctaband h2 em{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+  .sec p.lead{
+    font: 400 17px/1.75 Inter, sans-serif;
+    color: var(--cream);
+    opacity: 0.88;
+    max-width: 62ch;
+  }
+  .divline{
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(201,168,106,0.30) 20%, rgba(201,168,106,0.30) 80%, transparent 100%);
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  /* Services — 3 cards */
+  .services{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 54px;
+  }
+  .svc{
+    background: linear-gradient(180deg, var(--walnut) 0%, var(--ink) 100%);
+    border: 1px solid rgba(201,168,106,0.25);
+    padding: 40px 32px;
+    transition: transform .3s, border-color .3s;
+  }
+  .svc:hover{ transform: translateY(-5px); border-color: rgba(201,168,106,0.55); }
+  .svc .n{
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 30px;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 18px;
+  }
+  .svc h3{
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-size: 26px;
+    color: var(--pearl);
+    margin: 0 0 14px;
+  }
+  .svc h3 em{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+  .svc p{
+    font: 400 14.5px/1.7 Inter, sans-serif;
+    color: var(--cream);
+    opacity: 0.84;
+    margin: 0;
+  }
+
+  /* Eye pattern band */
+  .pattern-band{
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 50%, rgba(180,115,109,0.18), rgba(20,16,13,0) 60%),
+      linear-gradient(180deg, var(--ink) 0%, var(--aubergine) 50%, var(--ink) 100%);
+    border-top: 1px solid rgba(201,168,106,0.20);
+    border-bottom: 1px solid rgba(201,168,106,0.20);
+    text-align: center;
+    padding: 140px 40px;
+  }
+  .pattern-band .lead-quote{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: clamp(28px, 3.4vw, 50px);
+    line-height: 1.32;
+    color: var(--pearl);
+    max-width: 28ch;
+    margin: 0 auto;
+  }
+  .pattern-band .attr{
+    font: 600 11px/1 Inter, sans-serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-top: 32px;
+  }
+
+  /* Experience */
+  .steps{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-top: 56px;
+  }
+  .step{ border-top: 1px solid rgba(201,168,106,0.30); padding: 28px 0 0; }
+  .step .n{
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-size: 30px;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+  .step h3{
+    font: 500 12px/1 Inter, sans-serif;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--pearl);
+    margin: 0 0 14px;
+  }
+  .step p{
+    font: 400 14px/1.7 Inter, sans-serif;
+    color: var(--cream);
+    opacity: 0.78;
+    margin: 0;
+  }
+
+  /* Gallery */
+  .gallery{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 56px;
+  }
+  .frame{
+    aspect-ratio: 3/4;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 60%, rgba(201,168,106,0.12), rgba(20,16,13,0) 70%),
+      linear-gradient(180deg, var(--walnut) 0%, var(--ink) 100%);
+    border: 1px solid rgba(201,168,106,0.25);
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 22px;
+  }
+  .frame .lbl{
+    font: 600 10px/1 Inter, sans-serif;
+    letter-spacing: 0.30em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+  }
+  .frame .cap{
+    position: absolute;
+    top: 22px; left: 22px;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--gold-light);
+    line-height: 1.1;
+  }
+  .ba-note{ margin-top: 28px; font: 400 12px/1.5 Inter, sans-serif; color: var(--muted); font-style: italic; }
+
+  /* Visit */
+  .visit-card{
+    border: 1px solid rgba(201,168,106,0.30);
+    padding: 38px 40px;
+    max-width: 540px;
+    margin-top: 38px;
+    background: rgba(42,31,24,0.55);
+  }
+  .visit-card h4{
+    font: 600 11px/1 Inter, sans-serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin: 0 0 18px;
+  }
+  .visit-card p{
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--pearl);
+    line-height: 1.55;
+    margin: 0;
+  }
+  .visit-card .phone{
+    margin-top: 18px;
+    font: 500 12px/1 Inter, sans-serif;
+    letter-spacing: 0.22em;
+    color: var(--gold-light);
+    text-transform: uppercase;
+  }
+
+  .ctaband{
+    text-align: center;
+    padding: 140px 40px;
+    background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(180,115,109,0.18), rgba(20,16,13,0) 60%), var(--ink);
+    border-top: 1px solid rgba(201,168,106,0.20);
+  }
+  .ctaband h2{ max-width: 20ch; margin: 16px auto 30px; }
+
+  .btn{
+    display: inline-block;
+    background: var(--gold);
+    border: 1px solid var(--gold);
+    color: var(--ink);
+    font: 500 12px/1 Inter, sans-serif;
+    letter-spacing: 0.30em;
+    text-transform: uppercase;
+    padding: 17px 30px;
+    text-decoration: none;
+    transition: background .35s, color .35s;
+  }
+  .btn:hover{ background: var(--gold-light); border-color: var(--gold-light); }
+  .btn-o{
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--pearl);
+  }
+  .btn-o:hover{ background: var(--gold); color: var(--ink); }
+
+  .ft{
+    border-top: 1px solid rgba(201,168,106,0.25);
+    padding: 56px;
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    color: var(--muted);
+    font: 400 13px/1.8 Inter, sans-serif;
+  }
+  .ft strong{
+    color: var(--pearl);
+    letter-spacing: 0.18em;
+    font: 500 12px/1.6 Inter, sans-serif;
+  }
+  .ft a{ color: var(--cream); }
+  .ft a:hover{ color: var(--gold-light); }
+  .specnote{
+    padding: 22px 40px 50px;
+    text-align: center;
+    color: var(--muted);
+    font: 400 10.5px/1.4 Inter, sans-serif;
+    letter-spacing: 0.10em;
+  }
+
+  /* Responsive */
+  @media(max-width: 1100px){
+    .cover-foot{ max-width: 60vw; }
+    .cover-foot .subline{ font-size: 16px; }
+    .services{ grid-template-columns: 1fr; }
+    .steps{ grid-template-columns: repeat(2, 1fr); }
+    .ft{ grid-template-columns: 1fr; }
+  }
+  @media(max-width: 880px){
+    :root{ --pad-x: 22px; --pad-y: 22px; }
+    body{ min-height: 100vh; }
+    .hero{ position: static !important; height: auto; }
+    .hero-video{ position: relative; height: 56vh; }
+    .scrim{ background: linear-gradient(180deg, rgba(20,16,13,0.55), rgba(20,16,13,0.30) 60%, rgba(20,16,13,0.85)); }
+    .issue-credit, .topbadges, .scrollcue, .cover-credit{ display: none; }
+    .wordmark{ position: static; padding: 22px; transform: none; font-size: 26px; text-align: center; }
+    .cover-headline{ position: static; transform: none; max-width: 100%; padding: 30px 22px; text-align: left; }
+    .cover-headline h1{ font-size: clamp(44px, 12vw, 64px); }
+    .cover-foot{ position: static; max-width: 100%; padding: 0 22px 40px; opacity: 1 !important; }
+    .content{ margin-top: 0; }
+    .sec, .pattern-band{ padding: 80px 22px; }
+    .gallery, .steps{ grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="loader" aria-hidden="true"></div>
+
+<section class="hero" aria-label="Evgenia Ribinik Studios">
+
+  <div class="hero-video" aria-hidden="true">
+    <video class="hero-media"
+           src="assets/evgenia_ribinik_scrub.mp4"
+           poster="assets/evgenia_ribinik_still.jpg"
+           muted playsinline preload="auto" disablepictureinpicture></video>
+  </div>
+
+  <div class="scrim" aria-hidden="true"></div>
+
+  <div class="issue-credit"><b>VOL. I</b> &middot; SS&rsquo;26<br>BROOKLYN STUDIO</div>
+
+  <div class="topbadges" aria-hidden="false">
+    <span>Women-Owned</span>
+    <span>LGBTQ+ Friendly</span>
+  </div>
+
+  <h1 class="wordmark">EVGENIA RIBINIK<span class="sub">Studios &middot; Industry City</span></h1>
+
+  <div class="cover-headline">
+    <div class="pre">Boudoir &middot; Bridal &middot; Portrait</div>
+    <h1>Quiet. Considered.<br><em>Brooklyn.</em></h1>
+  </div>
+
+  <div class="cover-foot" aria-label="Hero details">
+    <p class="subline">A 5-star Industry City studio. The work that <em>132 of 133 reviewers</em> describe with the same handful of words: comfortable atmosphere, her eye, unmatched attention.</p>
+    <div class="trust">
+      <div class="ti"><b>5.0<span>&#9733;</span></b><i>Google rating</i></div>
+      <div class="ti"><b>133</b><i>Verified reviews</i></div>
+      <div class="ti"><b>44</b><i>&ldquo;Boudoir shoot&rdquo;</i></div>
+    </div>
+    <a href="tel:+16462364212" class="cta">Call (646) 236-4212</a>
+  </div>
+
+  <div class="cover-credit" aria-hidden="false">
+    <div class="by">By</div>
+    <div class="name">Evgenia Ribinik</div>
+    <div class="loc">68 35th St &middot; Brooklyn NY</div>
+  </div>
+
+  <div class="scrollcue" aria-hidden="true">Scroll to play</div>
+
+</section>
+
+<div class="content">
+
+  <!-- THE STUDIO -->
+  <section class="sec" id="studio">
+    <div class="ey">The Studio</div>
+    <h2>A Brooklyn practice, <em>solo-led.</em></h2>
+    <p class="lead">Evgenia Ribinik Studios is a 5-star Brooklyn boudoir, bridal, and portrait photography studio inside Industry City. Solo-led, women-owned, LGBTQ+ friendly. Sessions are booked, not browsed; the work is editorial; the studio is the kind of room reviewers describe as <em>comfortable</em> in 28 separate handwritings.</p>
+  </section>
+
+  <div class="divline"></div>
+
+  <!-- EYE PATTERN BAND -->
+  <section class="pattern-band" id="pattern">
+    <p class="lead-quote">&ldquo;Her eye, energy, and attention to detail are <em>unmatched.</em>&rdquo;</p>
+    <div class="attr">A direct quote &middot; from one of 132 five-star reviews</div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="sec" id="services">
+    <div class="ey">Services</div>
+    <h2>Three things, <em>done with the same eye.</em></h2>
+    <p class="lead">Different occasions, the same considered hand &mdash; styling guidance, posing direction, and the quiet steady studio that <em>9 reviewers</em> specifically name for its posing guidance.</p>
+    <div class="services">
+      <div class="svc">
+        <div class="n">01</div>
+        <h3>Boudoir <em>&amp; Intimate</em></h3>
+        <p>Individual boudoir portraiture in the studio &mdash; styling guidance, gentle posing direction, and a session shot for the kind of imagery one client called <em>flawless.</em> The work that <em>44 reviews</em> name by category.</p>
+      </div>
+      <div class="svc">
+        <div class="n">02</div>
+        <h3>Bridal <em>Portrait</em></h3>
+        <p>Pre-wedding bridal portrait sessions. From outfit selection to the final reveal. As one bride wrote: <em>she made me feel completely comfortable and confident.</em></p>
+      </div>
+      <div class="svc">
+        <div class="n">03</div>
+        <h3>Editorial <em>Portrait</em></h3>
+        <p>Personal portrait sessions for individuals and couples. Editorial register; cinematic light; gallery-quality output.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divline"></div>
+
+  <!-- EXPERIENCE -->
+  <section class="sec" id="experience">
+    <div class="ey">The Experience</div>
+    <h2>From the consult to <em>the gallery.</em></h2>
+    <div class="steps">
+      <div class="step">
+        <div class="n">01</div>
+        <h3>Consult</h3>
+        <p>A pre-shoot conversation to talk through your vision, comfort level, outfit options, and the look you want to leave with.</p>
+      </div>
+      <div class="step">
+        <div class="n">02</div>
+        <h3>Styling</h3>
+        <p>Outfit and wardrobe guidance arranged in advance. As one reviewer put it: <em>she guided me through every step.</em></p>
+      </div>
+      <div class="step">
+        <div class="n">03</div>
+        <h3>Session</h3>
+        <p>Relaxed, gently directed, and shot inside the Industry City studio. Soft natural light, considered composition, no rushing.</p>
+      </div>
+      <div class="step">
+        <div class="n">04</div>
+        <h3>Gallery</h3>
+        <p>Reveal your favorites privately. Prints and albums available afterward; gallery delivery is simple, clean, and discrete.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divline"></div>
+
+  <!-- GALLERY -->
+  <section class="sec" id="gallery">
+    <div class="ey">The Gallery</div>
+    <h2>A few from <em>the studio.</em></h2>
+    <p class="lead">Selected portraits, curated. The full archive lives in private galleries shared after your session.</p>
+    <div class="gallery">
+      <div class="frame"><div class="cap">No. 01</div><div class="lbl">Boudoir</div></div>
+      <div class="frame"><div class="cap">No. 02</div><div class="lbl">Bridal</div></div>
+      <div class="frame"><div class="cap">No. 03</div><div class="lbl">Editorial</div></div>
+    </div>
+    <p class="ba-note">Concept layout &mdash; Evgenia Ribinik&rsquo;s real curated portraits slot in here on launch.</p>
+  </section>
+
+  <!-- VISIT -->
+  <section class="sec" id="visit">
+    <div class="ey">Visit</div>
+    <h2>Industry City, <em>Brooklyn.</em></h2>
+    <p class="lead">The studio is inside Industry City, the converted manufacturing complex at the Brooklyn waterfront. Visits are by appointment.</p>
+    <div class="visit-card">
+      <h4>Evgenia Ribinik Studios</h4>
+      <p>68 35th Street<br>Industry City, Brooklyn NY 11232</p>
+      <div class="phone">(646) 236-4212 &middot; Opens 8 AM</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ctaband" id="book">
+    <div class="ey">Begin</div>
+    <h2>A session, <em>booked.</em></h2>
+    <a href="tel:+16462364212" class="btn">Call (646) 236-4212</a>
+    <a href="https://www.evgeniaribinik.com/" target="_blank" rel="noopener" class="btn btn-o" style="margin-left:14px">Visit evgeniaribinik.com</a>
+  </section>
+
+  <!-- Footer -->
+  <div class="ft">
+    <div>
+      <strong>EVGENIA RIBINIK</strong><br>
+      Boudoir, bridal &amp; portrait<br>
+      Brooklyn, New York
+    </div>
+    <div>
+      <strong>VISIT</strong><br>
+      68 35th Street<br>
+      Industry City, Brooklyn NY 11232<br>
+      Opens 8 AM<br>
+      <a href="tel:+16462364212">(646) 236-4212</a>
+    </div>
+    <div>
+      <strong>FOLLOW</strong><br>
+      <a href="https://www.evgeniaribinik.com/" target="_blank" rel="noopener">evgeniaribinik.com</a><br>
+      By Evgenia Ribinik
+    </div>
+  </div>
+
+  <div class="specnote">Concept preview by Kerblabs for Evgenia Ribinik Studios &mdash; not affiliated; for demonstration only.</div>
+</div>
+
+
+<script>
+/* === Hero engine: full-bleed pinned video, scroll-scrub === */
+(() => {
+  const hero       = document.querySelector('.hero');
+  const issue      = document.querySelector('.issue-credit');
+  const topbadges  = document.querySelector('.topbadges');
+  const wordmark   = document.querySelector('.wordmark');
+  const headline   = document.querySelector('.cover-headline');
+  const foot       = document.querySelector('.cover-foot');
+  const credit     = document.querySelector('.cover-credit');
+  const scrollcue  = document.querySelector('.scrollcue');
+  const loaderEl   = document.querySelector('.loader');
+  const video      = hero.querySelector('video');
+
+  const MOBILE_BP = 880;
+  const isMobile  = () => window.innerWidth < MOBILE_BP;
+  const reduced   = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (isMobile()) {
+    if (video) {
+      video.removeAttribute('preload');
+      video.autoplay = true; video.loop = true; video.muted = true;
+      video.play().catch(()=>{});
+    }
+    if (loaderEl) loaderEl.style.display = 'none';
+    return;
+  }
+
+  let videoDuration = 0;
+  if (video) {
+    video.addEventListener('loadedmetadata', () => {
+      videoDuration = video.duration || 0;
+      apply();
+    });
+    video.pause();
+  }
+
+  const LOAD_HOLD = 700, LOAD_DUR = 700;
+  let loadT0 = null, loading = true;
+  function loaderProgress(){
+    if (loadT0 == null) return 0;
+    return Math.max(0, Math.min(1, (performance.now() - loadT0 - LOAD_HOLD) / LOAD_DUR));
+  }
+  function tickLoader(){
+    apply();
+    const p = loaderProgress();
+    if (loaderEl) loaderEl.style.opacity = String(1 - p);
+    if (p < 1) {
+      requestAnimationFrame(tickLoader);
+    } else {
+      loading = false;
+      if (loaderEl) loaderEl.style.display = 'none';
+      introT0 = performance.now();
+      requestAnimationFrame(tickIntro);
+    }
+  }
+
+  const INTRO_DELAY = 100, INTRO_DUR = 1200;
+  let introT0 = null;
+  function getIntro(){
+    if (introT0 == null) return 0;
+    const elapsed = performance.now() - introT0 - INTRO_DELAY;
+    return Math.max(0, Math.min(1, elapsed / INTRO_DUR));
+  }
+  function tickIntro(){
+    apply();
+    if (getIntro() < 1) requestAnimationFrame(tickIntro);
+  }
+
+  const lerp = (a,b,t) => a + (b-a)*t;
+  const clamp01 = v => Math.max(0, Math.min(1, v));
+  const easeInOut = t => t < 0.5 ? 2*t*t : 1 - Math.pow(-2*t+2, 2)/2;
+
+  function apply(){
+    const vh = window.innerHeight;
+    const raw = clamp01(window.scrollY / (vh * 2.0));
+
+    if (video && videoDuration > 0) {
+      const t = raw * videoDuration;
+      if (Math.abs(video.currentTime - t) > 0.03) {
+        try { video.currentTime = t; } catch(e){}
+      }
+    }
+
+    const intro = getIntro();
+    if (issue)     issue.style.opacity = String(intro);
+    if (topbadges) topbadges.style.opacity = String(intro);
+    if (wordmark)  wordmark.style.opacity = String(intro);
+    if (headline)  headline.style.opacity = String(intro);
+    if (foot)      foot.style.opacity = String(intro);
+    if (credit)    credit.style.opacity = String(intro);
+    if (scrollcue) scrollcue.style.opacity = String(intro * clamp01(1 - raw / 0.10));
+  }
+
+  function init(){ apply(); if (loadT0 == null) { loadT0 = performance.now(); requestAnimationFrame(tickLoader); } }
+  window.addEventListener('scroll', apply, { passive: true });
+  window.addEventListener('resize', () => { if (isMobile()) location.reload(); else apply(); });
+  init();
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => apply());
+  }
+
+  if (reduced) {
+    [issue, topbadges, wordmark, headline, foot, credit].forEach(el => { if (el) el.style.opacity = '1'; });
+  }
+})();
+</script>
+
+<script>
+(function(){
+  const v = document.querySelector('video');
+  if (!v) return;
+  if (window.innerWidth < 880) return;
+  const s = v.getAttribute('src') || v.currentSrc;
+  if (!s || s.indexOf('blob:') === 0) return;
+  fetch(s).then(r => r.blob()).then(b => {
+    v.src = URL.createObjectURL(b);
+    v.load();
+  }).catch(()=>{});
+})();
+</script>
+</body>
+</html>
