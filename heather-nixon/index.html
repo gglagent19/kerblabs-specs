@@ -34,14 +34,20 @@
   ::selection{ background: var(--rose); color: var(--walnut); }
   a{ color: var(--cognac); text-decoration: none; }
 
-  /* ============ TOP-BOTTOM SPLIT HERO ============ */
+  /* Body needs scroll runway for the pinned hero to scrub against */
+  body{ min-height: 300vh; }
+
+  /* ============ TOP-BOTTOM SPLIT HERO — PINNED ============ */
+  /* Hero stays fixed; user scrolls under it; video scrubs to scroll progress */
   .hero{
+    position: fixed;
+    top: 0; left: 0;
     width: 100vw;
-    min-height: 100vh;
+    height: 100vh;
     display: grid;
     grid-template-rows: 62vh 38vh;
     background: var(--bone);
-    position: relative;
+    z-index: 2;
   }
 
   /* Top: full-width video — sticky/pinned during scroll-scrub */
@@ -271,9 +277,49 @@
     opacity: 1;
   }
 
-  /* ============ HOMEPAGE SECTIONS (continue scrolling below hero) ============ */
+  /* ============ HOMEPAGE SECTIONS (scroll up over the pinned hero) ============ */
   .content{
+    position: relative;
+    z-index: 7;
     background: var(--bone);
+    margin-top: 220vh;
+  }
+  .content::before{
+    content: '';
+    position: absolute;
+    top: -100px; left: 0; right: 0;
+    height: 100px;
+    background: linear-gradient(180deg, transparent, var(--bone));
+    pointer-events: none;
+  }
+
+  /* Scroll cue at the very bottom of the hero, indicates more below */
+  .scrollcue{
+    position: fixed;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 6;
+    font: 500 9.5px/1 Inter, sans-serif;
+    letter-spacing: 0.40em;
+    text-transform: uppercase;
+    color: var(--cognac);
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .scrollcue:after{
+    content: '';
+    display: block;
+    width: 1px; height: 28px;
+    background: var(--cognac);
+    margin: 12px auto 0;
+    transform-origin: top;
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%, 100%{ transform: scaleY(0.4); opacity: 0.4; }
+    50%     { transform: scaleY(1);   opacity: 1;   }
   }
 
   /* "From the studio" — magazine-style pull statement */
@@ -548,11 +594,14 @@
 
   @media(max-width: 880px){
     :root{ --pad-x: 22px; --pad-y: 22px; }
-    .hero{ grid-template-rows: auto auto; }
+    body{ min-height: 100vh; }
+    /* Mobile: unpin everything, let it scroll normally */
+    .hero{ position: static !important; height: auto; grid-template-rows: auto auto; }
     .hero-video-wrap{ height: 55vh; }
-    .topnav, .topbadges{ display: none; }
+    .topnav, .topbadges, .scrollcue{ display: none; }
     .hero-band{ padding: 32px 22px; }
-    .hero-band .headline{ font-size: clamp(34px, 9vw, 50px); }
+    .hero-band .headline{ font-size: clamp(34px, 9vw, 50px); white-space: normal; }
+    .content{ margin-top: 0; }
     .sec, .pull-band{ padding: 80px 22px; }
     .steps{ grid-template-columns: 1fr; }
     .steps .step{ border-right: 0; border-bottom: 1px solid rgba(184,148,86,0.20); }
@@ -590,6 +639,8 @@
       <span>By Appointment</span>
     </div>
   </div>
+
+  <div class="scrollcue" aria-hidden="true">Scroll to play</div>
 
   <div class="hero-band">
     <div class="left">
@@ -798,10 +849,13 @@
   const clamp01 = v => Math.max(0, Math.min(1, v));
   const easeInOut = t => t < 0.5 ? 2*t*t : 1 - Math.pow(-2*t+2, 2)/2;
 
+  const scrollcue  = document.querySelector('.scrollcue');
+
   function apply(){
-    // Scrub video tied to scroll over first 100vh (covers the top split + part of band)
+    // Scrub video across ~2 viewport heights of scroll runway — slow enough to feel
+    // the user controlling the playback, not so slow it feels stuck.
     const vh = window.innerHeight;
-    const raw = clamp01(window.scrollY / (vh * 1.0));
+    const raw = clamp01(window.scrollY / (vh * 2.0));
 
     if (video && videoDuration > 0) {
       const t = raw * videoDuration;
@@ -815,6 +869,8 @@
     if (topnav) topnav.style.opacity = String(intro);
     if (topbadges) topbadges.style.opacity = String(intro);
     if (heroBand) heroBand.style.opacity = String(intro);
+    // Scroll cue: visible briefly at scrollY=0, fades on scroll
+    if (scrollcue) scrollcue.style.opacity = String(intro * clamp01(1 - raw / 0.10));
   }
 
   function init(){ apply(); if (loadT0 == null) { loadT0 = performance.now(); requestAnimationFrame(tickLoader); } }
