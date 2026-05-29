@@ -803,14 +803,12 @@
     return;
   }
 
-  let videoDuration = 0;
   if (video) {
-    video.addEventListener('loadedmetadata', () => {
-      videoDuration = video.duration || 0;
-      apply();
-    });
+    video.addEventListener('loadedmetadata', () => { apply(); });
     video.pause();
   }
+  // Inline getter — survives the case where loadedmetadata fired before listener attached
+  const getVideoDuration = () => (video && isFinite(video.duration) ? video.duration : 0);
 
   const LOAD_HOLD = 700, LOAD_DUR = 700;
   let loadT0 = null, loading = true;
@@ -852,8 +850,9 @@
     const vh = window.innerHeight;
     const raw = clamp01(window.scrollY / (vh * 2.0));
 
-    if (video && videoDuration > 0) {
-      const t = raw * videoDuration;
+    const dur = getVideoDuration();
+    if (video && dur > 0) {
+      const t = raw * dur;
       if (Math.abs(video.currentTime - t) > 0.03) {
         try { video.currentTime = t; } catch(e){}
       }
