@@ -787,6 +787,15 @@
     if (topnav) topnav.style.opacity = String(intro);
     if (topbadges) topbadges.style.opacity = String(intro);
     if (stageLbl) stageLbl.style.opacity = String(intro * 0.85 * (1 - card));
+
+    // Hero fade-out: prevent overlap with incoming content sections
+    const _heroEl = document.querySelector('.stage');
+    if (_heroEl) {
+      const _heroFadeOut = clamp01((window.scrollY - 1.0 * vh) / (0.8 * vh));
+      const _heroOp = intro * (1 - _heroFadeOut);
+      _heroEl.style.opacity = String(_heroOp);
+      _heroEl.style.pointerEvents = _heroOp < 0.05 ? 'none' : 'auto';
+    }
   }
 
   function init(){ apply(); if (loadT0 == null) { loadT0 = performance.now(); requestAnimationFrame(tickLoader); } }

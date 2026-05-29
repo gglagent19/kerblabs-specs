@@ -871,6 +871,15 @@
     if (heroBand) heroBand.style.opacity = String(intro);
     // Scroll cue: visible briefly at scrollY=0, fades on scroll
     if (scrollcue) scrollcue.style.opacity = String(intro * clamp01(1 - raw / 0.10));
+
+    // Hero fade-out: prevent overlap with incoming content sections
+    const _heroEl = document.querySelector('.hero');
+    if (_heroEl) {
+      const _heroFadeOut = clamp01((window.scrollY - 1.0 * vh) / (0.8 * vh));
+      const _heroOp = intro * (1 - _heroFadeOut);
+      _heroEl.style.opacity = String(_heroOp);
+      _heroEl.style.pointerEvents = _heroOp < 0.05 ? 'none' : 'auto';
+    }
   }
 
   function init(){ apply(); if (loadT0 == null) { loadT0 = performance.now(); requestAnimationFrame(tickLoader); } }

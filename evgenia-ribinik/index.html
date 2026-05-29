@@ -866,6 +866,13 @@
     if (foot)      foot.style.opacity = String(intro);
     if (credit)    credit.style.opacity = String(intro);
     if (scrollcue) scrollcue.style.opacity = String(intro * clamp01(1 - raw / 0.10));
+
+    // Hero fade-out: prevent overlap with incoming content sections
+    const _vh = window.innerHeight;
+    const _heroFadeOut = clamp01((window.scrollY - 1.0 * _vh) / (0.8 * _vh));
+    const _heroOp = intro * (1 - _heroFadeOut);
+    hero.style.opacity = String(_heroOp);
+    hero.style.pointerEvents = _heroOp < 0.05 ? 'none' : 'auto';
   }
 
   function init(){ apply(); if (loadT0 == null) { loadT0 = performance.now(); requestAnimationFrame(tickLoader); } }
