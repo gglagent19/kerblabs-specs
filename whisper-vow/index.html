@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Whisper &amp; Vow &mdash; Austin Bridal Boudoir, Weddings &amp; Elopements</title>
+<meta name="description" content="A Black-owned, women-led Austin studio for bridal boudoir, intimate weddings, and elopements. By appointment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:       #FAF3E6;
+    --ivory:       #FFF8EB;
+    --blush:       #F2D9C7;
+    --peach:       #E8B89A;
+    --gold:        #B68A4E;
+    --gold-light:  #D4B17A;
+    --ink:         #3B2D1F;
+    --ink-soft:    #5C4733;
+    --muted:       #9A8770;
+    --pad-x:       56px;
+    --pad-y:       40px;
+  }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; background: var(--cream); }
+  body{
+    min-height: 320vh;
+    color: var(--ink-soft);
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection{ background: var(--peach); color: var(--ink); }
+  a{ color: var(--gold); text-decoration: none; }
+
+  /* ============ HERO STAGE ============ */
+  .stage{
+    position: fixed; inset: 0;
+    width: 100vw; height: 100vh;
+    background:
+      radial-gradient(ellipse 70% 60% at 70% 50%, rgba(232,184,154,0.10) 0%, rgba(250,243,230,0) 60%),
+      linear-gradient(180deg, var(--ivory) 0%, var(--cream) 100%);
+    overflow: hidden;
+    z-index: 2;
+  }
+
+  /* Subtle dust-mote layer (CSS only) */
+  .motes{
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background-image:
+      radial-gradient(circle 1.5px at 12% 18%, rgba(182,138,78,0.32), transparent 70%),
+      radial-gradient(circle 1.2px at 28% 62%, rgba(182,138,78,0.24), transparent 70%),
+      radial-gradient(circle 1.8px at 76% 30%, rgba(182,138,78,0.28), transparent 70%),
+      radial-gradient(circle 1.0px at 88% 78%, rgba(182,138,78,0.20), transparent 70%),
+      radial-gradient(circle 1.4px at 52% 88%, rgba(182,138,78,0.26), transparent 70%);
+    animation: drift 14s ease-in-out infinite alternate;
+  }
+  @keyframes drift {
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(-12px, -18px, 0); }
+  }
+
+  /* The window-frame video container */
+  .window{
+    position: fixed;
+    top: 50%;
+    right: clamp(40px, 6vw, 96px);
+    width: clamp(280px, 40vw, 560px);
+    height: 78vh;
+    transform: translateY(-50%);
+    background: var(--ivory);
+    overflow: hidden;
+    z-index: 3;
+    border: 1px solid var(--gold-light);
+    box-shadow:
+      0 0 0 6px var(--cream),
+      0 0 0 7px rgba(182,138,78,0.30),
+      0 30px 80px -20px rgba(91,71,51,0.20);
+  }
+  .window video,
+  .window img{
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    filter: brightness(1.02) saturate(1.04);
+  }
+  /* Soft inner shadow at the top so the chiffon feels like it's coming through a window */
+  .window::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(91,71,51,0.18) 0%, rgba(91,71,51,0) 18%, rgba(91,71,51,0) 78%, rgba(91,71,51,0.20) 100%);
+    pointer-events: none;
+    z-index: 4;
+  }
+  .window-label{
+    position: fixed;
+    right: clamp(46px, 6.5vw, 110px);
+    top: calc(50% + 39vh + 30px);
+    font: 500 10px/1 Inter, sans-serif;
+    letter-spacing: 0.40em;
+    text-transform: uppercase;
+    color: var(--gold);
+    z-index: 4;
+    opacity: 0;
+  }
+
+  /* Wordmark top-center for editorial variation */
+  .wordmark{
+    position: fixed;
+    top: var(--pad-y);
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-family: "Italiana", "Cormorant Garamond", serif;
+    font-weight: 400;
+    font-size: clamp(20px, 1.7vw, 26px);
+    line-height: 1;
+    letter-spacing: 0.42em;
+    color: var(--ink);
+    white-space: nowrap;
+    z-index: 6;
+    will-change: opacity;
+  }
+  .wordmark .amp{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+    margin: 0 6px;
+    text-transform: lowercase;
+  }
+
+  /* Top-left small nav */
+  .topnav{
+    position: fixed;
+    top: var(--pad-y);
+    left: var(--pad-x);
+    z-index: 6;
+    display: flex;
+    gap: 22px;
+    font: 500 10.5px/1 Inter, sans-serif;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .topnav a{ color: var(--ink-soft); }
+  .topnav a:hover{ color: var(--gold); }
+
+  /* Top-right small trust badges */
+  .topbadges{
+    position: fixed;
+    top: var(--pad-y);
+    right: var(--pad-x);
+    z-index: 6;
+    display: flex;
+    gap: 14px;
+    font: 500 9.5px/1 Inter, sans-serif;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .topbadges span{ padding: 6px 10px; border: 1px solid rgba(182,138,78,0.35); border-radius: 100px; }
+
+  /* Editorial left column */
+  .lead-col{
+    position: fixed;
+    left: clamp(32px, 6vw, 96px);
+    top: 50%;
+    transform: translateY(-50%);
+    width: min(36vw, 540px);
+    opacity: 1;
+    z-index: 6;
+    pointer-events: none;
+  }
+  .lead-col .eyebrow{
+    font: 600 11px/1 Inter, sans-serif;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 26px;
+  }
+  .lead-col .headline{
+    font-family: "Italiana", serif;
+    font-weight: 400;
+    font-size: clamp(40px, 5.4vw, 88px);
+    line-height: 1.00;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+    margin: 0 0 24px;
+  }
+  .lead-col .headline em{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--gold);
+    letter-spacing: 0.01em;
+  }
+  .lead-col .subline{
+    font: 400 16px/1.7 Inter, sans-serif;
+    color: var(--ink-soft);
+    max-width: 38ch;
+    margin: 0 0 36px;
+  }
+  .trust{
+    display: flex;
+    gap: clamp(20px, 2.4vw, 38px);
+    margin: 0 0 38px;
+    flex-wrap: wrap;
+  }
+  .trust .ti b{
+    display: block;
+    font-family: "Italiana", serif;
+    font-weight: 400;
+    font-size: clamp(28px, 2.4vw, 40px);
+    color: var(--ink);
+    line-height: 1;
+  }
+  .trust .ti b span{
+    font: 600 10px/1 Inter, sans-serif;
+    color: var(--gold);
+    margin-left: 4px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    vertical-align: super;
+  }
+  .trust .ti i{
+    display: block;
+    font: 600 10px/1.3 Inter, sans-serif;
+    font-style: normal;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 10px;
+  }
+  .cta-row{ display: flex; align-items: center; gap: 18px; pointer-events: auto; }
+  .byline{
+    font: 500 11px/1 Inter, sans-serif;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .btn{
+    display: inline-block;
+    background: var(--ink);
+    border: 1px solid var(--ink);
+    color: var(--cream);
+    font: 500 12px/1 Inter, sans-serif;
+    letter-spacing: 0.30em;
+    text-transform: uppercase;
+    padding: 17px 30px;
+    text-decoration: none;
+    transition: background .35s, color .35s, border-color .35s;
+  }
+  .btn:hover{ background: var(--gold); border-color: var(--gold); color: var(--ivory); }
+  .btn-o{
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--ink);
+  }
+  .btn-o:hover{ background: var(--gold); color: var(--ivory); }
+
+  /* Loader */
+  .loader{
+    position: fixed; inset: 0;
+    background: var(--cream);
+    z-index: 12;
+    pointer-events: none;
+    opacity: 1;
+  }
+
+  /* ============ HOMEPAGE SECTIONS ============ */
+  .content{
+    position: relative;
+    z-index: 7;
+    background: var(--cream);
+    color: var(--ink-soft);
+    margin-top: 220vh;
+  }
+  .content::before{
+    content: '';
+    position: absolute;
+    top: -100px; left: 0; right: 0;
+    height: 100px;
+    background: linear-gradient(180deg, transparent, var(--cream));
+    pointer-events: none;
+  }
+
+  .sec{ max-width: 1180px; margin: 0 auto; padding: 130px 56px; }
+  .sec .ey, .ctaband .ey{
+    font: 600 11px/1 Inter, sans-serif;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .sec h2, .ctaband h2{
+    font-family: "Italiana", serif;
+    font-weight: 400;
+    font-size: clamp(36px, 4.6vw, 68px);
+    line-height: 1.04;
+    color: var(--ink);
+    margin: 20px 0 22px;
+    letter-spacing: -0.005em;
+  }
+  .sec h2 em, .ctaband h2 em{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 500;
+  }
+  .sec p.lead{
+    font: 400 17px/1.75 Inter, sans-serif;
+    color: var(--ink-soft);
+    max-width: 62ch;
+  }
+  .divline{
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(182,138,78,0.30) 20%, rgba(182,138,78,0.30) 80%, transparent 100%);
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  /* Services — three columns */
+  .services{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 54px;
+  }
+  .svc{
+    background: var(--ivory);
+    border: 1px solid rgba(182,138,78,0.25);
+    padding: 40px 32px;
+    transition: transform .3s, border-color .3s;
+  }
+  .svc:hover{ transform: translateY(-5px); border-color: rgba(182,138,78,0.55); }
+  .svc .n{
+    font-family: "Italiana", serif;
+    font-weight: 400;
+    font-size: 28px;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 18px;
+  }
+  .svc h3{
+    font-family: "Italiana", serif;
+    font-weight: 400;
+    font-size: 26px;
+    color: var(--ink);
+    margin: 0 0 14px;
+    letter-spacing: -0.005em;
+  }
+  .svc h3 em{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 500;
+  }
+  .svc p{
+    font: 400 14.5px/1.7 Inter, sans-serif;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  /* The Experience — numbered steps */
+  .steps{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-top: 56px;
+  }
+  .step{ border-top: 1px solid rgba(182,138,78,0.30); padding: 28px 0 0; }
+  .step .n{
+    font-family: "Italiana", serif;
+    font-weight: 400;
+    font-size: 30px;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+  .step h3{
+    font: 500 12px/1 Inter, sans-serif;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin: 0 0 14px;
+  }
+  .step p{
+    font: 400 14px/1.7 Inter, sans-serif;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  /* Gallery placeholder */
+  .gallery{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 56px;
+  }
+  .frame{
+    aspect-ratio: 3/4;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 60%, rgba(182,138,78,0.10), rgba(255,248,235,0) 70%),
+      linear-gradient(180deg, var(--ivory) 0%, var(--blush) 100%);
+    border: 1px solid rgba(182,138,78,0.28);
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 22px;
+  }
+  .frame .lbl{
+    font: 600 10px/1 Inter, sans-serif;
+    letter-spacing: 0.30em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .frame .cap{
+    position: absolute;
+    top: 22px; left: 22px;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+  .ba-note{ margin-top: 28px; font: 400 12px/1.5 Inter, sans-serif; color: var(--muted); font-style: italic; }
+
+  /* The studio — Candace + identity callout */
+  .studio-band{
+    background: linear-gradient(180deg, var(--cream) 0%, var(--blush) 50%, var(--cream) 100%);
+    border-top: 1px solid rgba(182,138,78,0.25);
+    border-bottom: 1px solid rgba(182,138,78,0.25);
+  }
+  .studio-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .studio-grid .right{
+    border-left: 1px solid rgba(182,138,78,0.30);
+    padding-left: 60px;
+  }
+  .pull{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: clamp(22px, 2.2vw, 32px);
+    line-height: 1.40;
+    color: var(--ink);
+    margin: 0 0 22px;
+  }
+  .pull-attr{
+    font: 600 10.5px/1 Inter, sans-serif;
+    letter-spacing: 0.30em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .identity-list{ list-style: none; padding: 0; margin: 0; }
+  .identity-list li{
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(182,138,78,0.20);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 24px;
+    align-items: baseline;
+  }
+  .identity-list li:last-child{ border-bottom: 0; }
+  .identity-list b{
+    font-family: "Italiana", serif;
+    font-weight: 400;
+    font-size: 30px;
+    color: var(--gold);
+    line-height: 1;
+    min-width: 100px;
+  }
+  .identity-list span{
+    font: 400 15px/1.65 Inter, sans-serif;
+    color: var(--ink-soft);
+  }
+  .identity-list span strong{ color: var(--ink); font-weight: 500; }
+
+  /* Visit */
+  .visit-card{
+    border: 1px solid rgba(182,138,78,0.30);
+    padding: 38px 40px;
+    max-width: 520px;
+    margin-top: 38px;
+    background: var(--ivory);
+  }
+  .visit-card h4{
+    font: 600 11px/1 Inter, sans-serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 18px;
+  }
+  .visit-card p{
+    font-family: "Italiana", serif;
+    font-weight: 400;
+    font-size: 19px;
+    color: var(--ink);
+    line-height: 1.55;
+    margin: 0;
+  }
+  .visit-card .hours{
+    margin-top: 18px;
+    font: 500 12px/1 Inter, sans-serif;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  .ctaband{
+    text-align: center;
+    padding: 150px 40px;
+    background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(232,184,154,0.30), rgba(250,243,230,0) 60%), var(--cream);
+    border-top: 1px solid rgba(182,138,78,0.25);
+  }
+  .ctaband h2{ max-width: 18ch; margin: 16px auto 30px; }
+
+  .ft{
+    border-top: 1px solid rgba(182,138,78,0.25);
+    padding: 56px 56px;
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    color: var(--muted);
+    font: 400 13px/1.8 Inter, sans-serif;
+  }
+  .ft strong{
+    color: var(--ink);
+    letter-spacing: 0.18em;
+    font: 500 12px/1.6 Inter, sans-serif;
+  }
+  .ft a{ color: var(--ink-soft); }
+  .ft a:hover{ color: var(--gold); }
+  .specnote{
+    padding: 22px 40px 50px;
+    text-align: center;
+    color: var(--muted);
+    font: 400 10.5px/1.4 Inter, sans-serif;
+    letter-spacing: 0.10em;
+  }
+
+  /* Responsive */
+  @media(max-width: 980px){
+    .studio-grid{ grid-template-columns: 1fr; gap: 40px; }
+    .studio-grid .right{ border-left: 0; padding-left: 0; border-top: 1px solid rgba(182,138,78,0.30); padding-top: 40px; }
+    .steps, .services{ grid-template-columns: repeat(2, 1fr); }
+    .ft{ grid-template-columns: 1fr; }
+  }
+
+  @media(max-width: 880px){
+    :root{ --pad-x: 22px; --pad-y: 22px; }
+    body{ min-height: 100vh; }
+    .stage, .window, .window-label, .lead-col, .wordmark, .topnav, .topbadges, .motes{ position: static !important; }
+    .stage{ height: auto; background: var(--cream); }
+    .window{ width: 100%; height: 60vh; transform: none; box-shadow: none; border-left: 0; border-right: 0; }
+    .wordmark{ display: block; padding: 22px 22px 0; font-size: 18px; text-align: center; transform: none; }
+    .topnav, .topbadges{ display: none; }
+    .lead-col{ width: auto; opacity: 1; margin: 0; padding: 32px 22px 40px; transform: none; top: auto; }
+    .lead-col .headline{ font-size: clamp(32px, 8vw, 46px); }
+    .content{ margin-top: 0; }
+    .sec{ padding: 80px 22px; }
+    .services, .steps{ grid-template-columns: 1fr; gap: 22px; }
+    .gallery{ grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="loader" aria-hidden="true"></div>
+
+<main class="stage" aria-label="Whisper &amp; Vow">
+  <div class="motes" aria-hidden="true"></div>
+
+  <aside class="window" aria-hidden="true">
+    <video class="window-media"
+           src="assets/whisper_vow_scrub.mp4"
+           poster="assets/whisper_vow_still.jpg"
+           muted playsinline preload="auto" disablepictureinpicture></video>
+  </aside>
+
+  <h1 class="wordmark">WHISPER<span class="amp">&amp;</span>VOW</h1>
+
+  <nav class="topnav" aria-label="Primary">
+    <a href="#studio">Studio</a>
+    <a href="#services">Services</a>
+    <a href="#experience">Experience</a>
+    <a href="#book">Book</a>
+  </nav>
+
+  <div class="topbadges" aria-hidden="false">
+    <span>Black-owned</span>
+    <span>Women-led</span>
+  </div>
+
+  <div class="window-label" aria-hidden="true">A WINDOW INTO THE STUDIO</div>
+
+  <div class="lead-col" aria-label="Hero details">
+    <div class="eyebrow">Austin &middot; Bridal Boudoir &middot; Weddings &middot; Elopements</div>
+    <h2 class="headline">A softer kind<br><em>of vow.</em></h2>
+    <p class="subline">A small, intimate Austin studio for bridal boudoir, intimate weddings, and elopements. By appointment. Quiet rooms, considered light, and a single afternoon that feels like a held breath.</p>
+    <div class="trust">
+      <div class="ti"><b>4.9<span>&#9733;</span></b><i>Google rating</i></div>
+      <div class="ti"><b>151</b><i>Reviews</i></div>
+      <div class="ti"><b>ATX</b><i>By appointment</i></div>
+    </div>
+    <div class="cta-row">
+      <a href="https://www.whisperandvow.com/" target="_blank" rel="noopener" class="btn">Schedule a Visit</a>
+      <span class="byline">with Candace</span>
+    </div>
+  </div>
+</main>
+
+<div class="content">
+
+  <!-- THE STUDIO -->
+  <section class="sec" id="studio">
+    <div class="ey">The Studio</div>
+    <h2>An Austin practice, <em>quietly built.</em></h2>
+    <p class="lead">Whisper &amp; Vow is a small, by-appointment studio for bridal boudoir, intimate weddings, and elopements. Founded and led by Candace &mdash; with a focus on the slow, intentional kind of imagery that holds up at the end of a long day, and a long life.</p>
+  </section>
+
+  <div class="divline"></div>
+
+  <!-- SERVICES -->
+  <section class="sec" id="services">
+    <div class="ey">Services</div>
+    <h2>Three things, <em>done with care.</em></h2>
+    <p class="lead">Different occasions, the same considered hand &mdash; styling, posing, light, and time.</p>
+    <div class="services">
+      <div class="svc">
+        <div class="n">01</div>
+        <h3>Bridal <em>Boudoir</em></h3>
+        <p>A pre-wedding portrait session in the studio &mdash; with styling guidance, professional hair &amp; makeup, gentle posing direction, and a same-day reveal. The album becomes a private gift, or simply a held keepsake.</p>
+      </div>
+      <div class="svc">
+        <div class="n">02</div>
+        <h3>Intimate <em>Weddings</em></h3>
+        <p>For small ceremonies of twenty or fewer. Coverage of the morning prep, the vows, the dinner, and the quiet in-between moments that get missed at larger weddings.</p>
+      </div>
+      <div class="svc">
+        <div class="n">03</div>
+        <h3>Elopements</h3>
+        <p>For couples who choose just-the-two-of-us, or just-the-two-of-us-and-witnesses. Austin courthouse, Hill Country backdrop, or somewhere only you two know. Full-day coverage included.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divline"></div>
+
+  <!-- EXPERIENCE -->
+  <section class="sec" id="experience">
+    <div class="ey">The Experience</div>
+    <h2>One afternoon, <em>start to print.</em></h2>
+    <p class="lead">A full experience &mdash; consultation, styling, the session, and a same-day reveal.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="n">01</div>
+        <h3>Consult</h3>
+        <p>A pre-shoot conversation to talk through your vision, comfort, and the kind of imagery you want to leave with.</p>
+      </div>
+      <div class="step">
+        <div class="n">02</div>
+        <h3>Styling &amp; HMUA</h3>
+        <p>Wardrobe guidance and professional hair &amp; makeup the day of, so you arrive without thinking about logistics.</p>
+      </div>
+      <div class="step">
+        <div class="n">03</div>
+        <h3>The Session</h3>
+        <p>Relaxed, unhurried, and gently directed &mdash; with the kind of posing instruction that 11 reviews specifically mention by name.</p>
+      </div>
+      <div class="step">
+        <div class="n">04</div>
+        <h3>Same-Day Reveal</h3>
+        <p>Choose your favorites the same day. Albums and prints are available; the file delivery is simple and clear.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divline"></div>
+
+  <!-- GALLERY placeholder -->
+  <section class="sec" id="gallery">
+    <div class="ey">The Gallery</div>
+    <h2>A few from <em>the studio.</em></h2>
+    <p class="lead">Selected portraits and ceremony fragments. The full archive lives in private galleries shared after your session.</p>
+    <div class="gallery">
+      <div class="frame"><div class="cap">No. 01</div><div class="lbl">Bridal Boudoir</div></div>
+      <div class="frame"><div class="cap">No. 02</div><div class="lbl">Intimate Wedding</div></div>
+      <div class="frame"><div class="cap">No. 03</div><div class="lbl">Elopement</div></div>
+    </div>
+    <p class="ba-note">Concept layout &mdash; Whisper &amp; Vow&rsquo;s real curated portraits slot in here on launch.</p>
+  </section>
+
+  <!-- THE WOMAN BEHIND IT — Candace + identity -->
+  <section class="studio-band" id="about">
+    <div class="sec">
+      <div class="ey">The studio behind the vow</div>
+      <h2>Run by <em>Candace.</em></h2>
+      <div class="studio-grid">
+        <div class="left">
+          <p class="pull">A small studio, deliberately. The slowness is the point &mdash; the styling, the posing, the same-day reveal &mdash; every part is meant to feel like a held breath, not a transaction.</p>
+          <div class="pull-attr">Whisper &amp; Vow &middot; Austin, TX</div>
+        </div>
+        <div class="right">
+          <ul class="identity-list">
+            <li>
+              <b>Black-<br>owned</b>
+              <span><strong>Identified on Google as a Black-owned business.</strong> Listed publicly so the women who walk in see themselves in who&rsquo;s holding the camera.</span>
+            </li>
+            <li>
+              <b>Women-<br>led</b>
+              <span><strong>Women-owned and women-led.</strong> Posing direction, styling, hair, makeup &mdash; the entire room is set up by women, for the woman in front of the lens.</span>
+            </li>
+            <li>
+              <b>148<br>/151</b>
+              <span><strong>148 five-star reviews out of 151.</strong> A 98% five-star rate that&rsquo;s held across years &mdash; the kind of pattern that&rsquo;s hard to fake or buy.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="sec" id="visit">
+    <div class="ey">Visit</div>
+    <h2>Austin metro. <em>By appointment.</em></h2>
+    <p class="lead">Studio details and scheduling live on the main site &mdash; visits are arranged after the initial consult.</p>
+    <div class="visit-card">
+      <h4>Whisper &amp; Vow</h4>
+      <p>Austin, Texas<br>By appointment only</p>
+      <div class="hours">Opens 9:00 AM &middot; Schedule via website</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ctaband" id="book">
+    <div class="ey">Begin</div>
+    <h2>A consultation, <em>quietly.</em></h2>
+    <a href="https://www.whisperandvow.com/" target="_blank" rel="noopener" class="btn">Schedule on whisperandvow.com</a>
+    <a href="#about" class="btn btn-o" style="margin-left:14px">Meet Candace</a>
+  </section>
+
+  <!-- Footer -->
+  <div class="ft">
+    <div>
+      <strong>WHISPER &amp; VOW</strong><br>
+      Bridal boudoir, intimate weddings, elopements<br>
+      Austin, Texas
+    </div>
+    <div>
+      <strong>VISIT</strong><br>
+      Austin metro &middot; by appointment<br>
+      Opens 9:00 AM<br>
+      Schedule via website
+    </div>
+    <div>
+      <strong>FOLLOW</strong><br>
+      <a href="https://www.whisperandvow.com/" target="_blank" rel="noopener">whisperandvow.com</a>
+    </div>
+  </div>
+
+  <div class="specnote">Concept preview by Kerblabs for Whisper &amp; Vow &mdash; not affiliated; for demonstration only.</div>
+</div>
+
+
+<script>
+/* === Hero engine: loader -> intro -> window scroll-scrub === */
+(() => {
+  const stage      = document.querySelector('.stage');
+  const wordmark   = document.querySelector('.wordmark');
+  const topnav     = document.querySelector('.topnav');
+  const topbadges  = document.querySelector('.topbadges');
+  const windowEl   = document.querySelector('.window');
+  const windowLbl  = document.querySelector('.window-label');
+  const leadcol    = document.querySelector('.lead-col');
+  const loaderEl   = document.querySelector('.loader');
+  const video      = windowEl.querySelector('video');
+
+  const MOBILE_BP = 880;
+  const isMobile  = () => window.innerWidth < MOBILE_BP;
+  const reduced   = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (isMobile()) {
+    if (video) {
+      video.removeAttribute('preload');
+      video.autoplay = true; video.loop = true; video.muted = true;
+      video.play().catch(()=>{});
+    }
+    if (loaderEl) loaderEl.style.display = 'none';
+    return;
+  }
+
+  let videoDuration = 0;
+  if (video) {
+    video.addEventListener('loadedmetadata', () => {
+      videoDuration = video.duration || 0;
+      apply();
+    });
+    video.pause();
+  }
+
+  const LOAD_HOLD = 800, LOAD_DUR = 700;
+  let loadT0 = null, loading = true;
+  function loaderProgress(){
+    if (loadT0 == null) return 0;
+    return Math.max(0, Math.min(1, (performance.now() - loadT0 - LOAD_HOLD) / LOAD_DUR));
+  }
+  function tickLoader(){
+    apply();
+    const p = loaderProgress();
+    if (loaderEl) loaderEl.style.opacity = String(1 - p);
+    if (p < 1) {
+      requestAnimationFrame(tickLoader);
+    } else {
+      loading = false;
+      if (loaderEl) loaderEl.style.display = 'none';
+      introT0 = performance.now();
+      requestAnimationFrame(tickIntro);
+    }
+  }
+
+  const INTRO_DELAY = 100, INTRO_DUR = 1100;
+  let introT0 = null;
+  function getIntro(){
+    if (introT0 == null) return 0;
+    const elapsed = performance.now() - introT0 - INTRO_DELAY;
+    return Math.max(0, Math.min(1, elapsed / INTRO_DUR));
+  }
+  function tickIntro(){
+    apply();
+    if (getIntro() < 1) requestAnimationFrame(tickIntro);
+  }
+
+  const lerp = (a,b,t) => a + (b-a)*t;
+  const clamp01 = v => Math.max(0, Math.min(1, v));
+  const easeInOut = t => t < 0.5 ? 2*t*t : 1 - Math.pow(-2*t+2, 2)/2;
+
+  function apply(){
+    const vh = window.innerHeight;
+    const raw  = clamp01(window.scrollY / vh);
+    const card = easeInOut(raw);
+
+    // Video scrub
+    if (video && videoDuration > 0) {
+      const t = raw * videoDuration;
+      if (Math.abs(video.currentTime - t) > 0.03) {
+        try { video.currentTime = t; } catch(e){}
+      }
+    }
+
+    // Intro fade-in for content
+    const intro = getIntro();
+    leadcol.style.opacity = String(intro);
+    leadcol.style.transform = `translateY(calc(-50% + ${lerp(20, 0, intro)}px))`;
+    wordmark.style.opacity = String(intro);
+    if (topnav) topnav.style.opacity = String(intro);
+    if (topbadges) topbadges.style.opacity = String(intro);
+    if (windowLbl) windowLbl.style.opacity = String(intro * 0.9 * (1 - card));
+
+    // Window: gentle parallax-style float on scroll (subtle)
+    const floatY = lerp(0, -24, card);
+    windowEl.style.transform = `translateY(calc(-50% + ${floatY}px))`;
+  }
+
+  function init(){ apply(); if (loadT0 == null) { loadT0 = performance.now(); requestAnimationFrame(tickLoader); } }
+  window.addEventListener('scroll', apply, { passive: true });
+  window.addEventListener('resize', () => { if (isMobile()) location.reload(); else apply(); });
+  init();
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => apply());
+  }
+
+  if (reduced) {
+    leadcol.style.opacity = '1';
+    leadcol.style.transform = 'translateY(-50%)';
+    wordmark.style.opacity = '1';
+    if (topnav) topnav.style.opacity = '1';
+    if (topbadges) topbadges.style.opacity = '1';
+  }
+})();
+</script>
+
+<script>
+/* Blob preload */
+(function(){
+  const v = document.querySelector('video');
+  if (!v) return;
+  if (window.innerWidth < 880) return;
+  const s = v.getAttribute('src') || v.currentSrc;
+  if (!s || s.indexOf('blob:') === 0) return;
+  fetch(s).then(r => r.blob()).then(b => {
+    v.src = URL.createObjectURL(b);
+    v.load();
+  }).catch(()=>{});
+})();
+</script>
+</body>
+</html>
