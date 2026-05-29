@@ -1,0 +1,852 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Juniper and Ivy Boudoir &mdash; Baltimore-Area Boudoir Photography</title>
+<meta name="description" content="A women-owned, veteran-owned boudoir studio in Elkridge, Maryland. By Joni & Virginia. 5.0 stars × 157 reviews.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Forum&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:       #F7F1E4;
+    --ivory:       #FCF6E8;
+    --sage:        #B8C5A6;
+    --sage-deep:   #5A6B4E;
+    --sage-soft:   #D6DDC9;
+    --rose:        #D9B5A6;
+    --brass:       #A88656;
+    --brass-light: #C2A074;
+    --ink:         #3A2E1F;
+    --ink-soft:    #5C4733;
+    --muted:       #8E8068;
+    --pad-x:       56px;
+    --pad-y:       40px;
+  }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; background: var(--cream); }
+  body{
+    min-height: 320vh;
+    color: var(--ink-soft);
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection{ background: var(--sage); color: var(--ink); }
+  a{ color: var(--brass); text-decoration: none; }
+
+  /* ============ HERO STAGE ============ */
+  .stage{
+    position: fixed; inset: 0;
+    width: 100vw; height: 100vh;
+    background:
+      radial-gradient(ellipse 70% 60% at 24% 50%, rgba(184,197,166,0.12) 0%, rgba(247,241,228,0) 65%),
+      var(--cream);
+    overflow: hidden;
+    z-index: 2;
+  }
+
+  /* Video container — full-bleed right 62vw */
+  .stage-video{
+    position: fixed;
+    top: 0; right: 0;
+    width: 62vw;
+    height: 100vh;
+    background: var(--ivory);
+    overflow: hidden;
+    z-index: 2;
+    border-left: 1px solid var(--sage-soft);
+  }
+  .stage-video video,
+  .stage-video img{
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    filter: brightness(1.04) saturate(1.04);
+  }
+  /* Soft cream scrim on left edge so editorial column reads clean */
+  .stage-video::before{
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 220px;
+    background: linear-gradient(90deg, rgba(247,241,228,0.55) 0%, rgba(247,241,228,0.20) 50%, rgba(247,241,228,0) 100%);
+    pointer-events: none;
+    z-index: 4;
+  }
+  /* Subtle top + bottom soft shadow for room ambiance */
+  .stage-video::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(58,46,31,0.08) 0%, rgba(58,46,31,0) 12%, rgba(58,46,31,0) 80%, rgba(58,46,31,0.14) 100%);
+    pointer-events: none;
+    z-index: 4;
+  }
+  .stage-label{
+    position: fixed;
+    right: clamp(32px, 4vw, 64px);
+    bottom: 32px;
+    font: 500 10px/1 Inter, sans-serif;
+    letter-spacing: 0.40em;
+    text-transform: uppercase;
+    color: var(--brass);
+    z-index: 5;
+    opacity: 0;
+  }
+
+  /* Wordmark top-left — botanical-typographic */
+  .wordmark{
+    position: fixed;
+    top: var(--pad-y);
+    left: var(--pad-x);
+    margin: 0;
+    font-family: "Forum", serif;
+    font-weight: 400;
+    font-size: clamp(20px, 1.7vw, 28px);
+    line-height: 1;
+    letter-spacing: 0.20em;
+    color: var(--ink);
+    white-space: nowrap;
+    z-index: 6;
+  }
+  .wordmark em{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--sage-deep);
+    letter-spacing: 0.02em;
+    text-transform: lowercase;
+    margin: 0 6px;
+  }
+
+  /* Top-right trust badges — three slim chips */
+  .topbadges{
+    position: fixed;
+    top: var(--pad-y);
+    right: var(--pad-x);
+    z-index: 6;
+    display: flex;
+    gap: 10px;
+    font: 500 9.5px/1 Inter, sans-serif;
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+    color: var(--brass);
+  }
+  .topbadges span{
+    padding: 7px 11px;
+    border: 1px solid rgba(168,134,86,0.40);
+    border-radius: 100px;
+    background: rgba(252,246,232,0.65);
+    backdrop-filter: blur(8px);
+  }
+
+  /* Nav below wordmark */
+  .topnav{
+    position: fixed;
+    top: calc(var(--pad-y) + 60px);
+    left: var(--pad-x);
+    z-index: 6;
+    display: flex;
+    gap: 22px;
+    font: 500 10.5px/1 Inter, sans-serif;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .topnav a{ color: var(--ink-soft); }
+  .topnav a:hover{ color: var(--brass); }
+
+  /* Editorial left column */
+  .lead-col{
+    position: fixed;
+    left: clamp(32px, 5vw, 80px);
+    top: 50%;
+    transform: translateY(-50%);
+    width: min(34vw, 480px);
+    opacity: 1;
+    z-index: 6;
+    pointer-events: none;
+  }
+  .lead-col .eyebrow{
+    font: 600 11px/1 Inter, sans-serif;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin: 0 0 26px;
+  }
+  .lead-col .headline{
+    font-family: "Forum", serif;
+    font-weight: 400;
+    font-size: clamp(42px, 5.6vw, 88px);
+    line-height: 1.04;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+    margin: 0 0 24px;
+  }
+  .lead-col .headline em{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--sage-deep);
+  }
+  .lead-col .subline{
+    font: 400 16px/1.7 Inter, sans-serif;
+    color: var(--ink-soft);
+    max-width: 42ch;
+    margin: 0 0 36px;
+  }
+  .trust{
+    display: flex;
+    gap: clamp(20px, 2.4vw, 38px);
+    margin: 0 0 38px;
+    flex-wrap: wrap;
+  }
+  .trust .ti b{
+    display: block;
+    font-family: "Forum", serif;
+    font-weight: 400;
+    font-size: clamp(30px, 2.6vw, 42px);
+    color: var(--sage-deep);
+    line-height: 1;
+  }
+  .trust .ti b span{
+    font: 600 10px/1 Inter, sans-serif;
+    color: var(--brass);
+    margin-left: 4px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    vertical-align: super;
+  }
+  .trust .ti i{
+    display: block;
+    font: 600 10px/1.3 Inter, sans-serif;
+    font-style: normal;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 10px;
+  }
+  .cta-row{ display: flex; align-items: center; gap: 18px; pointer-events: auto; }
+  .byline{
+    font: 500 11px/1 Inter, sans-serif;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--brass);
+  }
+
+  .btn{
+    display: inline-block;
+    background: var(--sage-deep);
+    border: 1px solid var(--sage-deep);
+    color: var(--cream);
+    font: 500 12px/1 Inter, sans-serif;
+    letter-spacing: 0.30em;
+    text-transform: uppercase;
+    padding: 17px 30px;
+    text-decoration: none;
+    transition: background .35s, color .35s, border-color .35s;
+  }
+  .btn:hover{ background: var(--brass); border-color: var(--brass); color: var(--ivory); }
+  .btn-o{
+    background: transparent;
+    border: 1px solid var(--brass);
+    color: var(--ink);
+  }
+  .btn-o:hover{ background: var(--brass); color: var(--ivory); }
+
+  /* Loader */
+  .loader{
+    position: fixed; inset: 0;
+    background: var(--cream);
+    z-index: 12;
+    pointer-events: none;
+    opacity: 1;
+  }
+
+  /* ============ HOMEPAGE SECTIONS ============ */
+  .content{
+    position: relative;
+    z-index: 7;
+    background: var(--cream);
+    color: var(--ink-soft);
+    margin-top: 220vh;
+  }
+  .content::before{
+    content: '';
+    position: absolute;
+    top: -100px; left: 0; right: 0;
+    height: 100px;
+    background: linear-gradient(180deg, transparent, var(--cream));
+    pointer-events: none;
+  }
+
+  .sec{ max-width: 1180px; margin: 0 auto; padding: 130px 56px; }
+  .sec .ey, .ctaband .ey{
+    font: 600 11px/1 Inter, sans-serif;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--brass);
+  }
+  .sec h2, .ctaband h2{
+    font-family: "Forum", serif;
+    font-weight: 400;
+    font-size: clamp(36px, 4.8vw, 70px);
+    line-height: 1.06;
+    color: var(--ink);
+    margin: 20px 0 22px;
+    letter-spacing: -0.005em;
+  }
+  .sec h2 em, .ctaband h2 em{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--sage-deep);
+    font-weight: 500;
+  }
+  .sec p.lead{
+    font: 400 17px/1.75 Inter, sans-serif;
+    color: var(--ink-soft);
+    max-width: 62ch;
+  }
+  .divline{
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(168,134,86,0.30) 20%, rgba(168,134,86,0.30) 80%, transparent 100%);
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  /* Pattern band — "Comfortable atmosphere" pull-quote moment */
+  .pattern-band{
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 50%, rgba(184,197,166,0.30), rgba(247,241,228,0) 60%),
+      linear-gradient(180deg, var(--cream) 0%, var(--sage-soft) 50%, var(--cream) 100%);
+    border-top: 1px solid rgba(168,134,86,0.20);
+    border-bottom: 1px solid rgba(168,134,86,0.20);
+    text-align: center;
+    padding: 120px 40px;
+  }
+  .pattern-band .pull-number{
+    font-family: "Forum", serif;
+    font-weight: 400;
+    font-size: clamp(72px, 10vw, 160px);
+    color: var(--sage-deep);
+    line-height: 0.9;
+    margin: 0;
+  }
+  .pattern-band .pull-quote{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(22px, 2.4vw, 36px);
+    color: var(--ink);
+    max-width: 32ch;
+    margin: 30px auto 0;
+    line-height: 1.4;
+  }
+  .pattern-band .pull-attr{
+    font: 600 11px/1 Inter, sans-serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin-top: 28px;
+  }
+
+  /* Duo — Joni + Virginia */
+  .duo-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 50px;
+  }
+  .duo-card{
+    border: 1px solid rgba(168,134,86,0.30);
+    padding: 40px 36px;
+    background: var(--ivory);
+    transition: transform .3s, border-color .3s;
+  }
+  .duo-card:hover{ transform: translateY(-4px); border-color: rgba(168,134,86,0.55); }
+  .duo-card h3{
+    font-family: "Forum", serif;
+    font-weight: 400;
+    font-size: 32px;
+    color: var(--ink);
+    margin: 0 0 6px;
+    letter-spacing: -0.005em;
+  }
+  .duo-card h3 em{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--sage-deep);
+    font-weight: 500;
+  }
+  .duo-card .role{
+    font: 500 11px/1 Inter, sans-serif;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin: 0 0 22px;
+  }
+  .duo-card p{
+    font: 400 15px/1.7 Inter, sans-serif;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  /* Experience */
+  .steps{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-top: 56px;
+  }
+  .step{ border-top: 1px solid rgba(168,134,86,0.30); padding: 28px 0 0; }
+  .step .n{
+    font-family: "Forum", serif;
+    font-weight: 400;
+    font-size: 30px;
+    color: var(--sage-deep);
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+  .step h3{
+    font: 500 12px/1 Inter, sans-serif;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin: 0 0 14px;
+  }
+  .step p{
+    font: 400 14px/1.7 Inter, sans-serif;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  /* Gallery */
+  .gallery{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 56px;
+  }
+  .frame{
+    aspect-ratio: 3/4;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 60%, rgba(184,197,166,0.18), rgba(247,241,228,0) 70%),
+      linear-gradient(180deg, var(--ivory) 0%, var(--sage-soft) 100%);
+    border: 1px solid rgba(168,134,86,0.28);
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 22px;
+  }
+  .frame .lbl{
+    font: 600 10px/1 Inter, sans-serif;
+    letter-spacing: 0.30em;
+    text-transform: uppercase;
+    color: var(--brass);
+  }
+  .frame .cap{
+    position: absolute;
+    top: 22px; left: 22px;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--sage-deep);
+    line-height: 1.1;
+  }
+  .ba-note{ margin-top: 28px; font: 400 12px/1.5 Inter, sans-serif; color: var(--muted); font-style: italic; }
+
+  /* Visit */
+  .visit-card{
+    border: 1px solid rgba(168,134,86,0.30);
+    padding: 38px 40px;
+    max-width: 520px;
+    margin-top: 38px;
+    background: var(--ivory);
+  }
+  .visit-card h4{
+    font: 600 11px/1 Inter, sans-serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin: 0 0 18px;
+  }
+  .visit-card p{
+    font-family: "Forum", serif;
+    font-weight: 400;
+    font-size: 19px;
+    color: var(--ink);
+    line-height: 1.55;
+    margin: 0;
+  }
+  .visit-card .phone{
+    margin-top: 18px;
+    font: 500 12px/1 Inter, sans-serif;
+    letter-spacing: 0.22em;
+    color: var(--brass);
+    text-transform: uppercase;
+  }
+
+  .ctaband{
+    text-align: center;
+    padding: 150px 40px;
+    background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(217,181,166,0.30), rgba(247,241,228,0) 60%), var(--cream);
+    border-top: 1px solid rgba(168,134,86,0.20);
+  }
+  .ctaband h2{ max-width: 20ch; margin: 16px auto 30px; }
+
+  .ft{
+    border-top: 1px solid rgba(168,134,86,0.25);
+    padding: 56px 56px;
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    color: var(--muted);
+    font: 400 13px/1.8 Inter, sans-serif;
+  }
+  .ft strong{
+    color: var(--ink);
+    letter-spacing: 0.18em;
+    font: 500 12px/1.6 Inter, sans-serif;
+  }
+  .ft a{ color: var(--ink-soft); }
+  .ft a:hover{ color: var(--brass); }
+  .specnote{
+    padding: 22px 40px 50px;
+    text-align: center;
+    color: var(--muted);
+    font: 400 10.5px/1.4 Inter, sans-serif;
+    letter-spacing: 0.10em;
+  }
+
+  /* Responsive */
+  @media(max-width: 980px){
+    .duo-grid{ grid-template-columns: 1fr; }
+    .steps{ grid-template-columns: repeat(2, 1fr); }
+    .ft{ grid-template-columns: 1fr; }
+  }
+
+  @media(max-width: 880px){
+    :root{ --pad-x: 22px; --pad-y: 22px; }
+    body{ min-height: 100vh; }
+    .stage, .stage-video, .stage-label, .lead-col, .wordmark, .topnav, .topbadges{ position: static !important; }
+    .stage{ height: auto; background: var(--cream); }
+    .stage-video{ width: 100%; height: 60vh; border-left: 0; }
+    .stage-video::before{ display: none; }
+    .wordmark{ display: block; padding: 22px 22px 0; font-size: 18px; }
+    .topnav, .topbadges{ display: none; }
+    .lead-col{ width: auto; opacity: 1; margin: 0; padding: 32px 22px 40px; transform: none; top: auto; }
+    .lead-col .headline{ font-size: clamp(32px, 8vw, 46px); }
+    .content{ margin-top: 0; }
+    .sec, .pattern-band{ padding: 80px 22px; }
+    .steps, .gallery{ grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="loader" aria-hidden="true"></div>
+
+<main class="stage" aria-label="Juniper and Ivy Boudoir">
+  <aside class="stage-video" aria-hidden="true">
+    <video class="stage-media"
+           src="assets/juniper_ivy_scrub.mp4"
+           poster="assets/juniper_ivy_still.jpg"
+           muted playsinline preload="auto" disablepictureinpicture></video>
+  </aside>
+
+  <h1 class="wordmark">JUNIPER<em>and</em>IVY</h1>
+
+  <nav class="topnav" aria-label="Primary">
+    <a href="#studio">Studio</a>
+    <a href="#duo">Joni &amp; Virginia</a>
+    <a href="#experience">Experience</a>
+    <a href="#book">Book</a>
+  </nav>
+
+  <div class="topbadges" aria-hidden="false">
+    <span>Women-Owned</span>
+    <span>Veteran-Owned</span>
+    <span>LGBTQ+ Friendly</span>
+  </div>
+
+  <div class="stage-label" aria-hidden="true">A BALTIMORE-AREA STUDIO &middot; BY APPOINTMENT</div>
+
+  <div class="lead-col" aria-label="Hero details">
+    <div class="eyebrow">Elkridge, Maryland &middot; By Joni &amp; Virginia</div>
+    <h2 class="headline">A boudoir<br><em>garden room.</em></h2>
+    <p class="subline">A women-owned, veteran-owned studio in the Baltimore area. By appointment only. The kind of room <em>46 reviewers</em> describe with the same two words: <em>comfortable atmosphere.</em></p>
+    <div class="trust">
+      <div class="ti"><b>5.0<span>&#9733;</span></b><i>Google rating</i></div>
+      <div class="ti"><b>157</b><i>Reviews</i></div>
+      <div class="ti"><b>46</b><i>&ldquo;Comfortable atmosphere&rdquo;</i></div>
+    </div>
+    <div class="cta-row">
+      <a href="tel:+14582021085" class="btn">Call (458) 202-1085</a>
+      <span class="byline">or book online</span>
+    </div>
+  </div>
+</main>
+
+<div class="content">
+
+  <!-- THE STUDIO -->
+  <section class="sec" id="studio">
+    <div class="ey">The Studio</div>
+    <h2>Slow boudoir, <em>by design.</em></h2>
+    <p class="lead">Juniper and Ivy Boudoir is a 5-star, women-owned, veteran-owned studio in Elkridge, Maryland &mdash; just outside Baltimore. Sessions are booked, not browsed; the work is editorial; the room is built so the woman in front of the camera leaves more like herself than less.</p>
+  </section>
+
+  <div class="divline"></div>
+
+  <!-- COMFORTABLE ATMOSPHERE BAND — the signature pattern -->
+  <section class="pattern-band" id="pattern">
+    <div class="pull-number">46</div>
+    <p class="pull-quote">&ldquo;Comfortable atmosphere.&rdquo; The same two words, in 46 separate reviews, written by 46 separate women, each in her own handwriting.</p>
+    <div class="pull-attr">A pattern, not a tagline</div>
+  </section>
+
+  <!-- THE DUO -->
+  <section class="sec" id="duo">
+    <div class="ey">The Duo</div>
+    <h2>Two women, <em>one room.</em></h2>
+    <p class="lead">Reviewers name them by their first names &mdash; Joni for the camera, Virginia for the hair and makeup. The whole experience runs through these two hands.</p>
+    <div class="duo-grid">
+      <div class="duo-card">
+        <h3><em>Joni</em></h3>
+        <div class="role">Photographer &middot; Founder</div>
+        <p>Joni leads the session &mdash; consultation by phone, posing guidance in the room, the steady hand that, in one reviewer&rsquo;s words, &ldquo;immediately put me at ease.&rdquo; Posing direction is mentioned by name in 5 separate reviews.</p>
+      </div>
+      <div class="duo-card">
+        <h3><em>Virginia</em></h3>
+        <div class="role">Hair &amp; Makeup Artistry</div>
+        <p>Virginia handles the look. Hair and makeup are explicitly named in 17 reviews &mdash; the kind of artistry one client described as making her feel &ldquo;like the baddest baddie of all time.&rdquo;</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divline"></div>
+
+  <!-- EXPERIENCE -->
+  <section class="sec" id="experience">
+    <div class="ey">The Experience</div>
+    <h2>From the call to <em>the album.</em></h2>
+    <p class="lead">An end-to-end studio experience &mdash; consultation, styling, the session, and a reveal.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="n">01</div>
+        <h3>Phone Consult</h3>
+        <p>The first call is the relationship. As one client put it: &ldquo;Everything was explained so clearly there were no surprises &mdash; I knew I was in the right place.&rdquo;</p>
+      </div>
+      <div class="step">
+        <div class="n">02</div>
+        <h3>Hair &amp; Makeup</h3>
+        <p>Virginia takes over the styling chair before the camera ever comes out. The session begins after you already feel like yourself, dialed up.</p>
+      </div>
+      <div class="step">
+        <div class="n">03</div>
+        <h3>The Session</h3>
+        <p>With Joni at the camera. Gently directed posing, no pressure, the editorial quality of the work doing the talking. Couple sessions available.</p>
+      </div>
+      <div class="step">
+        <div class="n">04</div>
+        <h3>Reveal</h3>
+        <p>Review your favorites at the studio. Albums and prints available; gallery delivery is simple and unhurried.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divline"></div>
+
+  <!-- GALLERY -->
+  <section class="sec" id="gallery">
+    <div class="ey">The Gallery</div>
+    <h2>A few from <em>the garden room.</em></h2>
+    <p class="lead">Selected portraits, curated. The full archive lives in private galleries shared after your session.</p>
+    <div class="gallery">
+      <div class="frame"><div class="cap">No. 01</div><div class="lbl">Boudoir</div></div>
+      <div class="frame"><div class="cap">No. 02</div><div class="lbl">Couples</div></div>
+      <div class="frame"><div class="cap">No. 03</div><div class="lbl">Editorial</div></div>
+    </div>
+    <p class="ba-note">Concept layout &mdash; Juniper and Ivy&rsquo;s real curated portraits slot in here on launch.</p>
+  </section>
+
+  <!-- VISIT -->
+  <section class="sec" id="visit">
+    <div class="ey">Visit</div>
+    <h2>Elkridge, Maryland. <em>By appointment.</em></h2>
+    <p class="lead">Located on Main Street in Elkridge, just outside Baltimore. Visits are arranged after the initial consult call.</p>
+    <div class="visit-card">
+      <h4>Juniper and Ivy Boudoir</h4>
+      <p>5800 Main Street, Suite 4<br>Elkridge, Maryland 21075</p>
+      <div class="phone">(458) 202-1085 &middot; Opens 9:30 AM</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ctaband" id="book">
+    <div class="ey">Begin</div>
+    <h2>A garden room <em>afternoon.</em></h2>
+    <a href="tel:+14582021085" class="btn">Call (458) 202-1085</a>
+    <a href="http://www.juniperandivyboudoir.com/" target="_blank" rel="noopener" class="btn btn-o" style="margin-left:14px">Visit juniperandivyboudoir.com</a>
+  </section>
+
+  <!-- Footer -->
+  <div class="ft">
+    <div>
+      <strong>JUNIPER AND IVY</strong><br>
+      Boudoir photography<br>
+      Elkridge, Maryland
+    </div>
+    <div>
+      <strong>VISIT</strong><br>
+      5800 Main Street, Suite 4<br>
+      Elkridge, MD 21075<br>
+      Opens 9:30 AM<br>
+      <a href="tel:+14582021085">(458) 202-1085</a>
+    </div>
+    <div>
+      <strong>FOLLOW</strong><br>
+      <a href="http://www.juniperandivyboudoir.com/" target="_blank" rel="noopener">juniperandivyboudoir.com</a><br>
+      Joni &amp; Virginia
+    </div>
+  </div>
+
+  <div class="specnote">Concept preview by Kerblabs for Juniper and Ivy Boudoir &mdash; not affiliated; for demonstration only.</div>
+</div>
+
+
+<script>
+/* === Hero engine === */
+(() => {
+  const wordmark   = document.querySelector('.wordmark');
+  const topnav     = document.querySelector('.topnav');
+  const topbadges  = document.querySelector('.topbadges');
+  const stageVideo = document.querySelector('.stage-video');
+  const stageLbl   = document.querySelector('.stage-label');
+  const leadcol    = document.querySelector('.lead-col');
+  const loaderEl   = document.querySelector('.loader');
+  const video      = stageVideo.querySelector('video');
+
+  const MOBILE_BP = 880;
+  const isMobile  = () => window.innerWidth < MOBILE_BP;
+  const reduced   = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (isMobile()) {
+    if (video) {
+      video.removeAttribute('preload');
+      video.autoplay = true; video.loop = true; video.muted = true;
+      video.play().catch(()=>{});
+    }
+    if (loaderEl) loaderEl.style.display = 'none';
+    return;
+  }
+
+  let videoDuration = 0;
+  if (video) {
+    video.addEventListener('loadedmetadata', () => {
+      videoDuration = video.duration || 0;
+      apply();
+    });
+    video.pause();
+  }
+
+  const LOAD_HOLD = 800, LOAD_DUR = 700;
+  let loadT0 = null, loading = true;
+  function loaderProgress(){
+    if (loadT0 == null) return 0;
+    return Math.max(0, Math.min(1, (performance.now() - loadT0 - LOAD_HOLD) / LOAD_DUR));
+  }
+  function tickLoader(){
+    apply();
+    const p = loaderProgress();
+    if (loaderEl) loaderEl.style.opacity = String(1 - p);
+    if (p < 1) {
+      requestAnimationFrame(tickLoader);
+    } else {
+      loading = false;
+      if (loaderEl) loaderEl.style.display = 'none';
+      introT0 = performance.now();
+      requestAnimationFrame(tickIntro);
+    }
+  }
+
+  const INTRO_DELAY = 100, INTRO_DUR = 1100;
+  let introT0 = null;
+  function getIntro(){
+    if (introT0 == null) return 0;
+    const elapsed = performance.now() - introT0 - INTRO_DELAY;
+    return Math.max(0, Math.min(1, elapsed / INTRO_DUR));
+  }
+  function tickIntro(){
+    apply();
+    if (getIntro() < 1) requestAnimationFrame(tickIntro);
+  }
+
+  const lerp = (a,b,t) => a + (b-a)*t;
+  const clamp01 = v => Math.max(0, Math.min(1, v));
+  const easeInOut = t => t < 0.5 ? 2*t*t : 1 - Math.pow(-2*t+2, 2)/2;
+
+  function apply(){
+    const vh = window.innerHeight;
+    const raw  = clamp01(window.scrollY / vh);
+    const card = easeInOut(raw);
+
+    if (video && videoDuration > 0) {
+      const t = raw * videoDuration;
+      if (Math.abs(video.currentTime - t) > 0.03) {
+        try { video.currentTime = t; } catch(e){}
+      }
+    }
+
+    const intro = getIntro();
+    leadcol.style.opacity = String(intro);
+    leadcol.style.transform = `translateY(calc(-50% + ${lerp(20, 0, intro)}px))`;
+    wordmark.style.opacity = String(intro);
+    if (topnav) topnav.style.opacity = String(intro);
+    if (topbadges) topbadges.style.opacity = String(intro);
+    if (stageLbl) stageLbl.style.opacity = String(intro * 0.85 * (1 - card));
+  }
+
+  function init(){ apply(); if (loadT0 == null) { loadT0 = performance.now(); requestAnimationFrame(tickLoader); } }
+  window.addEventListener('scroll', apply, { passive: true });
+  window.addEventListener('resize', () => { if (isMobile()) location.reload(); else apply(); });
+  init();
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => apply());
+  }
+
+  if (reduced) {
+    leadcol.style.opacity = '1';
+    leadcol.style.transform = 'translateY(-50%)';
+    wordmark.style.opacity = '1';
+    if (topnav) topnav.style.opacity = '1';
+    if (topbadges) topbadges.style.opacity = '1';
+  }
+})();
+</script>
+
+<script>
+(function(){
+  const v = document.querySelector('video');
+  if (!v) return;
+  if (window.innerWidth < 880) return;
+  const s = v.getAttribute('src') || v.currentSrc;
+  if (!s || s.indexOf('blob:') === 0) return;
+  fetch(s).then(r => r.blob()).then(b => {
+    v.src = URL.createObjectURL(b);
+    v.load();
+  }).catch(()=>{});
+})();
+</script>
+</body>
+</html>
