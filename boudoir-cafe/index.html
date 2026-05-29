@@ -1,0 +1,825 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Boudoir Cafe Las Vegas &mdash; Editorial Boudoir Photography</title>
+<meta name="description" content="A 5-star, women-owned boudoir photography studio in Las Vegas. By Cherie & Hedley.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --espresso:    #1F1417;
+    --espresso-2:  #2A1B1F;
+    --plum:        #3A2330;
+    --cream:       #F3E4D6;
+    --pearl:       #FBEEDF;
+    --gold:        #D4A864;
+    --gold-light:  #E8C68B;
+    --rose:        #B85C5C;
+    --muted:       #8A7765;
+    --pad-x:       56px;
+    --pad-y:       40px;
+  }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; background: var(--espresso); }
+  body{
+    min-height: 320vh;
+    color: var(--cream);
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection{ background: var(--gold); color: var(--espresso); }
+  a{ color: var(--gold-light); text-decoration: none; }
+
+  /* ============ HERO STAGE ============ */
+  .stage{
+    position: fixed; inset: 0;
+    width: 100vw; height: 100vh;
+    background: var(--espresso);
+    overflow: hidden;
+    z-index: 2;
+  }
+
+  /* Warm amber glow from the right (where the video pools light) */
+  .vignette{
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 50% 60% at 76% 50%, rgba(212,168,100,0.10) 0%, rgba(31,20,23,0) 70%),
+      linear-gradient(180deg, rgba(31,20,23,0.55) 0%, rgba(31,20,23,0) 28%, rgba(31,20,23,0) 70%, rgba(31,20,23,0.85) 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Video container — full-bleed right 62vw */
+  .stage-video{
+    position: fixed;
+    top: 0; right: 0;
+    width: 62vw;
+    height: 100vh;
+    background: var(--espresso-2);
+    overflow: hidden;
+    z-index: 2;
+    border-left: 1px solid rgba(212,168,100,0.20);
+  }
+  .stage-video video,
+  .stage-video img{
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    filter: brightness(1.04) contrast(1.06) saturate(1.05);
+  }
+  /* Soft espresso scrim on left edge so editorial column reads clean */
+  .stage-video::before{
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 240px;
+    background: linear-gradient(90deg, rgba(31,20,23,0.85) 0%, rgba(31,20,23,0.40) 50%, rgba(31,20,23,0) 100%);
+    pointer-events: none;
+    z-index: 4;
+  }
+  /* Subtle top-bottom darken for cinematic frame */
+  .stage-video::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(31,20,23,0.30) 0%, rgba(31,20,23,0) 14%, rgba(31,20,23,0) 80%, rgba(31,20,23,0.35) 100%);
+    pointer-events: none;
+    z-index: 4;
+  }
+  .stage-label{
+    position: fixed;
+    right: clamp(32px, 4vw, 64px);
+    bottom: 32px;
+    font: 500 10px/1 Inter, sans-serif;
+    letter-spacing: 0.40em;
+    text-transform: uppercase;
+    color: var(--gold);
+    z-index: 5;
+    opacity: 0;
+  }
+
+  /* Wordmark top-left */
+  .wordmark{
+    position: fixed;
+    top: var(--pad-y);
+    left: var(--pad-x);
+    margin: 0;
+    font-family: "Bodoni Moda", serif;
+    font-weight: 600;
+    font-size: clamp(20px, 1.7vw, 26px);
+    line-height: 1;
+    letter-spacing: 0.32em;
+    color: var(--cream);
+    white-space: nowrap;
+    z-index: 6;
+  }
+  .wordmark em{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+    text-transform: lowercase;
+    margin-left: 12px;
+  }
+
+  /* Top-right trust badges */
+  .topbadges{
+    position: fixed;
+    top: var(--pad-y);
+    right: var(--pad-x);
+    z-index: 6;
+    display: flex;
+    gap: 12px;
+    font: 500 9.5px/1 Inter, sans-serif;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .topbadges span{
+    padding: 6px 11px;
+    border: 1px solid rgba(212,168,100,0.40);
+    border-radius: 100px;
+    background: rgba(31,20,23,0.50);
+    backdrop-filter: blur(8px);
+  }
+
+  /* Small mid-nav (left-middle vertical or top below wordmark) */
+  .topnav{
+    position: fixed;
+    top: calc(var(--pad-y) + 60px);
+    left: var(--pad-x);
+    z-index: 6;
+    display: flex;
+    gap: 22px;
+    font: 500 10.5px/1 Inter, sans-serif;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--cream);
+  }
+  .topnav a{ color: var(--cream); }
+  .topnav a:hover{ color: var(--gold); }
+
+  /* Editorial left column */
+  .lead-col{
+    position: fixed;
+    left: clamp(32px, 5vw, 80px);
+    top: 50%;
+    transform: translateY(-50%);
+    width: min(34vw, 480px);
+    opacity: 1;
+    z-index: 6;
+    pointer-events: none;
+  }
+  .lead-col .eyebrow{
+    font: 600 11px/1 Inter, sans-serif;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 26px;
+  }
+  .lead-col .headline{
+    font-family: "Bodoni Moda", serif;
+    font-weight: 400;
+    font-size: clamp(40px, 5.2vw, 80px);
+    line-height: 1.02;
+    color: var(--pearl);
+    letter-spacing: -0.012em;
+    margin: 0 0 24px;
+  }
+  .lead-col .headline em{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--gold);
+  }
+  .lead-col .subline{
+    font: 400 16px/1.7 Inter, sans-serif;
+    color: var(--cream);
+    opacity: 0.86;
+    max-width: 40ch;
+    margin: 0 0 36px;
+  }
+  .trust{
+    display: flex;
+    gap: clamp(20px, 2.4vw, 36px);
+    margin: 0 0 36px;
+    flex-wrap: wrap;
+  }
+  .trust .ti b{
+    display: block;
+    font-family: "Bodoni Moda", serif;
+    font-weight: 400;
+    font-size: clamp(28px, 2.4vw, 38px);
+    color: var(--gold);
+    line-height: 1;
+  }
+  .trust .ti b span{
+    font: 600 10px/1 Inter, sans-serif;
+    color: var(--gold);
+    margin-left: 4px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    vertical-align: super;
+  }
+  .trust .ti i{
+    display: block;
+    font: 600 10px/1.3 Inter, sans-serif;
+    font-style: normal;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 10px;
+  }
+  .cta-row{ display: flex; align-items: center; gap: 18px; pointer-events: auto; }
+  .byline{
+    font: 500 11px/1 Inter, sans-serif;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .btn{
+    display: inline-block;
+    background: var(--gold);
+    border: 1px solid var(--gold);
+    color: var(--espresso);
+    font: 500 12px/1 Inter, sans-serif;
+    letter-spacing: 0.30em;
+    text-transform: uppercase;
+    padding: 17px 30px;
+    text-decoration: none;
+    transition: background .35s, color .35s, border-color .35s;
+  }
+  .btn:hover{ background: var(--gold-light); border-color: var(--gold-light); }
+  .btn-o{
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--cream);
+  }
+  .btn-o:hover{ background: var(--gold); color: var(--espresso); }
+
+  /* Loader */
+  .loader{
+    position: fixed; inset: 0;
+    background: var(--espresso);
+    z-index: 12;
+    pointer-events: none;
+    opacity: 1;
+  }
+
+  /* ============ HOMEPAGE SECTIONS ============ */
+  .content{
+    position: relative;
+    z-index: 7;
+    background: var(--espresso);
+    color: var(--cream);
+    margin-top: 220vh;
+  }
+  .content::before{
+    content: '';
+    position: absolute;
+    top: -100px; left: 0; right: 0;
+    height: 100px;
+    background: linear-gradient(180deg, transparent, var(--espresso));
+    pointer-events: none;
+  }
+
+  .sec{ max-width: 1180px; margin: 0 auto; padding: 130px 56px; }
+  .sec .ey, .ctaband .ey{
+    font: 600 11px/1 Inter, sans-serif;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .sec h2, .ctaband h2{
+    font-family: "Bodoni Moda", serif;
+    font-weight: 400;
+    font-size: clamp(36px, 4.6vw, 66px);
+    line-height: 1.04;
+    color: var(--pearl);
+    margin: 20px 0 22px;
+    letter-spacing: -0.005em;
+  }
+  .sec h2 em, .ctaband h2 em{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 500;
+  }
+  .sec p.lead{
+    font: 400 17px/1.75 Inter, sans-serif;
+    color: var(--cream);
+    opacity: 0.88;
+    max-width: 62ch;
+  }
+  .divline{
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(212,168,100,0.30) 20%, rgba(212,168,100,0.30) 80%, transparent 100%);
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  /* Duo card — Cherie + Hedley */
+  .duo{
+    background: linear-gradient(180deg, var(--espresso-2) 0%, var(--plum) 100%);
+    border-top: 1px solid rgba(212,168,100,0.25);
+    border-bottom: 1px solid rgba(212,168,100,0.25);
+  }
+  .duo-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+    margin-top: 50px;
+  }
+  .duo-card{
+    border: 1px solid rgba(212,168,100,0.30);
+    padding: 40px 36px;
+    background: rgba(42,27,31,0.55);
+    backdrop-filter: blur(2px);
+  }
+  .duo-card h3{
+    font-family: "Bodoni Moda", serif;
+    font-weight: 400;
+    font-size: 32px;
+    color: var(--pearl);
+    margin: 0 0 6px;
+    letter-spacing: -0.005em;
+  }
+  .duo-card h3 em{
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 500;
+  }
+  .duo-card .role{
+    font: 500 11px/1 Inter, sans-serif;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 22px;
+  }
+  .duo-card p{
+    font: 400 15px/1.7 Inter, sans-serif;
+    color: var(--cream);
+    opacity: 0.86;
+    margin: 0;
+  }
+
+  /* Experience */
+  .steps{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-top: 56px;
+  }
+  .step{ border-top: 1px solid rgba(212,168,100,0.30); padding: 28px 0 0; }
+  .step .n{
+    font-family: "Bodoni Moda", serif;
+    font-weight: 400;
+    font-size: 30px;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+  .step h3{
+    font: 500 12px/1 Inter, sans-serif;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--pearl);
+    margin: 0 0 14px;
+  }
+  .step p{
+    font: 400 14px/1.7 Inter, sans-serif;
+    color: var(--cream);
+    opacity: 0.78;
+    margin: 0;
+  }
+
+  /* Gallery */
+  .gallery{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 56px;
+  }
+  .frame{
+    aspect-ratio: 3/4;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 60%, rgba(212,168,100,0.10), rgba(31,20,23,0) 70%),
+      linear-gradient(180deg, var(--espresso-2) 0%, var(--plum) 100%);
+    border: 1px solid rgba(212,168,100,0.25);
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 22px;
+  }
+  .frame .lbl{
+    font: 600 10px/1 Inter, sans-serif;
+    letter-spacing: 0.30em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .frame .cap{
+    position: absolute;
+    top: 22px; left: 22px;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--gold-light);
+    line-height: 1.1;
+  }
+  .ba-note{ margin-top: 28px; font: 400 12px/1.5 Inter, sans-serif; color: var(--muted); font-style: italic; }
+
+  /* Visit */
+  .visit-card{
+    border: 1px solid rgba(212,168,100,0.30);
+    padding: 38px 40px;
+    max-width: 520px;
+    margin-top: 38px;
+    background: rgba(42,27,31,0.55);
+  }
+  .visit-card h4{
+    font: 600 11px/1 Inter, sans-serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 18px;
+  }
+  .visit-card p{
+    font-family: "Bodoni Moda", serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--pearl);
+    line-height: 1.55;
+    margin: 0;
+  }
+  .visit-card .phone{
+    margin-top: 18px;
+    font: 500 12px/1 Inter, sans-serif;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+  }
+
+  .ctaband{
+    text-align: center;
+    padding: 150px 40px;
+    background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(184,92,92,0.20), rgba(31,20,23,0) 60%), var(--espresso);
+    border-top: 1px solid rgba(212,168,100,0.25);
+  }
+  .ctaband h2{ max-width: 18ch; margin: 16px auto 30px; }
+
+  .ft{
+    border-top: 1px solid rgba(212,168,100,0.25);
+    padding: 56px 56px;
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    color: var(--muted);
+    font: 400 13px/1.8 Inter, sans-serif;
+  }
+  .ft strong{
+    color: var(--pearl);
+    letter-spacing: 0.18em;
+    font: 500 12px/1.6 Inter, sans-serif;
+  }
+  .ft a{ color: var(--cream); }
+  .ft a:hover{ color: var(--gold); }
+  .specnote{
+    padding: 22px 40px 50px;
+    text-align: center;
+    color: var(--muted);
+    font: 400 10.5px/1.4 Inter, sans-serif;
+    letter-spacing: 0.10em;
+  }
+
+  /* Responsive */
+  @media(max-width: 980px){
+    .duo-grid{ grid-template-columns: 1fr; gap: 28px; }
+    .steps{ grid-template-columns: repeat(2, 1fr); }
+    .ft{ grid-template-columns: 1fr; }
+  }
+
+  @media(max-width: 880px){
+    :root{ --pad-x: 22px; --pad-y: 22px; }
+    body{ min-height: 100vh; }
+    .stage, .stage-video, .stage-label, .lead-col, .wordmark, .topnav, .topbadges, .vignette{ position: static !important; }
+    .stage{ height: auto; background: var(--espresso); }
+    .stage-video{ width: 100%; height: 60vh; border-left: 0; }
+    .stage-video::before{ display: none; }
+    .wordmark{ display: block; padding: 22px 22px 0; font-size: 18px; }
+    .topnav, .topbadges, .vignette{ display: none; }
+    .lead-col{ width: auto; opacity: 1; margin: 0; padding: 32px 22px 40px; transform: none; top: auto; }
+    .lead-col .headline{ font-size: clamp(32px, 8vw, 46px); }
+    .content{ margin-top: 0; }
+    .sec{ padding: 80px 22px; }
+    .steps, .gallery{ grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="loader" aria-hidden="true"></div>
+
+<main class="stage" aria-label="Boudoir Cafe Las Vegas">
+  <aside class="stage-video" aria-hidden="true">
+    <video class="stage-media"
+           src="assets/boudoir_cafe_scrub.mp4"
+           poster="assets/boudoir_cafe_still.jpg"
+           muted playsinline preload="auto" disablepictureinpicture></video>
+  </aside>
+
+  <div class="vignette" aria-hidden="true"></div>
+
+  <h1 class="wordmark">BOUDOIR <em>cafe</em></h1>
+
+  <nav class="topnav" aria-label="Primary">
+    <a href="#studio">Studio</a>
+    <a href="#experience">Experience</a>
+    <a href="#duo">Cherie &amp; Hedley</a>
+    <a href="#book">Book</a>
+  </nav>
+
+  <div class="topbadges" aria-hidden="false">
+    <span>Women-Owned</span>
+    <span>LGBTQ+ Friendly</span>
+  </div>
+
+  <div class="stage-label" aria-hidden="true">A LAS VEGAS STUDIO &middot; BY APPOINTMENT</div>
+
+  <div class="lead-col" aria-label="Hero details">
+    <div class="eyebrow">Las Vegas &middot; By Cherie &amp; Hedley</div>
+    <h2 class="headline">Iconic.<br><em>By design.</em></h2>
+    <p class="subline">A 5-star Las Vegas boudoir studio led by Cherie &amp; Hedley &mdash; the kind of session reviewers call <em>epic, iconic, supermodel.</em></p>
+    <div class="trust">
+      <div class="ti"><b>5.0<span>&#9733;</span></b><i>Google rating</i></div>
+      <div class="ti"><b>45</b><i>Reviews &mdash; all 5-star</i></div>
+      <div class="ti"><b>LV</b><i>By appointment</i></div>
+    </div>
+    <div class="cta-row">
+      <a href="tel:+17257773600" class="btn">Call (725) 777-3600</a>
+      <span class="byline">or book online</span>
+    </div>
+  </div>
+</main>
+
+<div class="content">
+
+  <!-- THE STUDIO -->
+  <section class="sec" id="studio">
+    <div class="ey">The Studio</div>
+    <h2>A Las Vegas studio, <em>by appointment.</em></h2>
+    <p class="lead">Boudoir Cafe is a 5-star Las Vegas boudoir photography studio &mdash; women-owned, LGBTQ+ friendly, and led by Cherie &amp; Hedley. Sessions are booked, not browsed; the work is editorial; the room is built for comfort first and camera second.</p>
+  </section>
+
+  <div class="divline"></div>
+
+  <!-- THE DUO -->
+  <section class="duo" id="duo">
+    <div class="sec">
+      <div class="ey">The Duo</div>
+      <h2>Two photographers, <em>one room.</em></h2>
+      <p class="lead">A reviewer recently put it simply: &ldquo;Cherie and Hedley are truly exceptional at what they do. From the moment we met, I felt comfortable and at ease.&rdquo; The studio runs as a duo &mdash; with the kind of attentiveness that 15 separate reviews describe with the same phrase: <em>comfortable atmosphere.</em></p>
+      <div class="duo-grid">
+        <div class="duo-card">
+          <h3><em>Cherie</em></h3>
+          <div class="role">Lead Photographer &middot; Founder</div>
+          <p>Cherie leads the session &mdash; styling direction, light, posing, the steady hand that turns a first-timer&rsquo;s nerves into a portrait the client wants to print. Listed online and in reviews as &ldquo;Cheriefoto.&rdquo;</p>
+        </div>
+        <div class="duo-card">
+          <h3><em>Hedley</em></h3>
+          <div class="role">Studio Partner</div>
+          <p>Hedley handles the room &mdash; the welcome, the wardrobe staging, the steady presence that makes a boudoir session feel less like a shoot and more like an afternoon with a friend who happens to be exceptional at this.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="sec" id="experience">
+    <div class="ey">The Experience</div>
+    <h2>One afternoon, <em>start to print.</em></h2>
+    <p class="lead">A complete experience &mdash; consultation, styling guidance, the session, and reveal. Booked by appointment only.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="n">01</div>
+        <h3>Consult</h3>
+        <p>A pre-shoot conversation by phone or in-person to talk through your vision, comfort level, and the look you want to leave with.</p>
+      </div>
+      <div class="step">
+        <div class="n">02</div>
+        <h3>Studio Day</h3>
+        <p>Wardrobe direction, posing guidance, and the steady duo direction that 15 reviews call out by name: <em>comfortable atmosphere.</em></p>
+      </div>
+      <div class="step">
+        <div class="n">03</div>
+        <h3>The Session</h3>
+        <p>The session itself &mdash; relaxed, gently directed, and shot for the kind of imagery reviewers describe as <em>iconic</em> and <em>epic.</em></p>
+      </div>
+      <div class="step">
+        <div class="n">04</div>
+        <h3>Reveal</h3>
+        <p>Review your favorites at the studio. Albums and prints are available; gallery delivery is simple and clear.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divline"></div>
+
+  <!-- GALLERY placeholder -->
+  <section class="sec" id="gallery">
+    <div class="ey">The Gallery</div>
+    <h2>A few from <em>the studio.</em></h2>
+    <p class="lead">Selected portraits, curated. The full archive lives in private galleries shared after your session.</p>
+    <div class="gallery">
+      <div class="frame"><div class="cap">No. 01</div><div class="lbl">Editorial</div></div>
+      <div class="frame"><div class="cap">No. 02</div><div class="lbl">Studio</div></div>
+      <div class="frame"><div class="cap">No. 03</div><div class="lbl">Couples</div></div>
+    </div>
+    <p class="ba-note">Concept layout &mdash; Boudoir Cafe&rsquo;s real curated portraits slot in here on launch.</p>
+  </section>
+
+  <!-- VISIT -->
+  <section class="sec" id="visit">
+    <div class="ey">Visit</div>
+    <h2>Las Vegas. <em>By appointment.</em></h2>
+    <p class="lead">Studio location and scheduling are arranged after the initial consult call. Opens daily at 9:30 AM.</p>
+    <div class="visit-card">
+      <h4>Boudoir Cafe Las Vegas</h4>
+      <p>Las Vegas, Nevada<br>By appointment only</p>
+      <div class="phone">(725) 777-3600 &middot; Opens 9:30 AM</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ctaband" id="book">
+    <div class="ey">Begin</div>
+    <h2>An iconic afternoon, <em>booked.</em></h2>
+    <a href="tel:+17257773600" class="btn">Call (725) 777-3600</a>
+    <a href="https://theboudoircafe.com/" target="_blank" rel="noopener" class="btn btn-o" style="margin-left:14px">Visit theboudoircafe.com</a>
+  </section>
+
+  <!-- Footer -->
+  <div class="ft">
+    <div>
+      <strong>BOUDOIR CAFE</strong><br>
+      Editorial boudoir photography<br>
+      Las Vegas, Nevada
+    </div>
+    <div>
+      <strong>VISIT</strong><br>
+      By appointment<br>
+      Opens 9:30 AM daily<br>
+      <a href="tel:+17257773600">(725) 777-3600</a>
+    </div>
+    <div>
+      <strong>FOLLOW</strong><br>
+      <a href="https://theboudoircafe.com/" target="_blank" rel="noopener">theboudoircafe.com</a><br>
+      Cherie &amp; Hedley
+    </div>
+  </div>
+
+  <div class="specnote">Concept preview by Kerblabs for Boudoir Cafe Las Vegas &mdash; not affiliated; for demonstration only.</div>
+</div>
+
+
+<script>
+/* === Hero engine === */
+(() => {
+  const stage      = document.querySelector('.stage');
+  const wordmark   = document.querySelector('.wordmark');
+  const topnav     = document.querySelector('.topnav');
+  const topbadges  = document.querySelector('.topbadges');
+  const stageVideo = document.querySelector('.stage-video');
+  const stageLbl   = document.querySelector('.stage-label');
+  const leadcol    = document.querySelector('.lead-col');
+  const loaderEl   = document.querySelector('.loader');
+  const video      = stageVideo.querySelector('video');
+
+  const MOBILE_BP = 880;
+  const isMobile  = () => window.innerWidth < MOBILE_BP;
+  const reduced   = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (isMobile()) {
+    if (video) {
+      video.removeAttribute('preload');
+      video.autoplay = true; video.loop = true; video.muted = true;
+      video.play().catch(()=>{});
+    }
+    if (loaderEl) loaderEl.style.display = 'none';
+    return;
+  }
+
+  let videoDuration = 0;
+  if (video) {
+    video.addEventListener('loadedmetadata', () => {
+      videoDuration = video.duration || 0;
+      apply();
+    });
+    video.pause();
+  }
+
+  const LOAD_HOLD = 800, LOAD_DUR = 700;
+  let loadT0 = null, loading = true;
+  function loaderProgress(){
+    if (loadT0 == null) return 0;
+    return Math.max(0, Math.min(1, (performance.now() - loadT0 - LOAD_HOLD) / LOAD_DUR));
+  }
+  function tickLoader(){
+    apply();
+    const p = loaderProgress();
+    if (loaderEl) loaderEl.style.opacity = String(1 - p);
+    if (p < 1) {
+      requestAnimationFrame(tickLoader);
+    } else {
+      loading = false;
+      if (loaderEl) loaderEl.style.display = 'none';
+      introT0 = performance.now();
+      requestAnimationFrame(tickIntro);
+    }
+  }
+
+  const INTRO_DELAY = 100, INTRO_DUR = 1100;
+  let introT0 = null;
+  function getIntro(){
+    if (introT0 == null) return 0;
+    const elapsed = performance.now() - introT0 - INTRO_DELAY;
+    return Math.max(0, Math.min(1, elapsed / INTRO_DUR));
+  }
+  function tickIntro(){
+    apply();
+    if (getIntro() < 1) requestAnimationFrame(tickIntro);
+  }
+
+  const lerp = (a,b,t) => a + (b-a)*t;
+  const clamp01 = v => Math.max(0, Math.min(1, v));
+  const easeInOut = t => t < 0.5 ? 2*t*t : 1 - Math.pow(-2*t+2, 2)/2;
+
+  function apply(){
+    const vh = window.innerHeight;
+    const raw  = clamp01(window.scrollY / vh);
+    const card = easeInOut(raw);
+
+    if (video && videoDuration > 0) {
+      const t = raw * videoDuration;
+      if (Math.abs(video.currentTime - t) > 0.03) {
+        try { video.currentTime = t; } catch(e){}
+      }
+    }
+
+    const intro = getIntro();
+    leadcol.style.opacity = String(intro);
+    leadcol.style.transform = `translateY(calc(-50% + ${lerp(20, 0, intro)}px))`;
+    wordmark.style.opacity = String(intro);
+    if (topnav) topnav.style.opacity = String(intro);
+    if (topbadges) topbadges.style.opacity = String(intro);
+    if (stageLbl) stageLbl.style.opacity = String(intro * 0.85 * (1 - card));
+  }
+
+  function init(){ apply(); if (loadT0 == null) { loadT0 = performance.now(); requestAnimationFrame(tickLoader); } }
+  window.addEventListener('scroll', apply, { passive: true });
+  window.addEventListener('resize', () => { if (isMobile()) location.reload(); else apply(); });
+  init();
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => apply());
+  }
+
+  if (reduced) {
+    leadcol.style.opacity = '1';
+    leadcol.style.transform = 'translateY(-50%)';
+    wordmark.style.opacity = '1';
+    if (topnav) topnav.style.opacity = '1';
+    if (topbadges) topbadges.style.opacity = '1';
+  }
+})();
+</script>
+
+<script>
+/* Blob preload */
+(function(){
+  const v = document.querySelector('video');
+  if (!v) return;
+  if (window.innerWidth < 880) return;
+  const s = v.getAttribute('src') || v.currentSrc;
+  if (!s || s.indexOf('blob:') === 0) return;
+  fetch(s).then(r => r.blob()).then(b => {
+    v.src = URL.createObjectURL(b);
+    v.load();
+  }).catch(()=>{});
+})();
+</script>
+</body>
+</html>
