@@ -1122,5 +1122,22 @@
   }).catch(()=>{});
 })();
 </script>
+
+<script>
+/* Force-play all section videos (Chrome sometimes ignores the autoplay attribute) */
+(function(){
+  const sections = document.querySelectorAll(
+    '.studio-grid .col-card video, .pull-band .bg video, ' +
+    '.visit-band .bg video, .brass-divider video, .gallery .frame.cine video'
+  );
+  function kick() {
+    sections.forEach(v => { v.play().catch(()=>{}); });
+  }
+  // Initial attempt + retry after load + retry on first scroll
+  kick();
+  window.addEventListener('load', kick);
+  window.addEventListener('scroll', kick, { once: true, passive: true });
+})();
+</script>
 </body>
 </html>
