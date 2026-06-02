@@ -260,6 +260,28 @@ img,video{display:block;max-width:100%}
   *{animation:none!important;transition:none!important}
   .editorial h1 .w,.reveal,.brass-rule,.wordmark,.edition,.portrait,.editorial,.portrait-plaque,.scrollcue,.botnav{opacity:1!important;transform:none!important}
 }
+/* === Gallery (5 plates: 3 video + 2 image) === */
+.gallery-section{padding-top:80px;padding-bottom:60px}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
+.gallery-grid.gallery-2up{grid-template-columns:repeat(2,1fr);gap:28px;margin-top:24px}
+.gallery-card{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--ink);
+  border:1px solid color-mix(in srgb,var(--brass) 32%,transparent);
+  box-shadow:0 30px 60px -25px color-mix(in srgb,var(--ink) 50%,transparent);
+  transition:transform 0.6s cubic-bezier(.2,.6,.3,1)}
+.gallery-2up .gallery-card{aspect-ratio:16/9}
+.gallery-card:hover{transform:translateY(-6px)}
+.gallery-card video,.gallery-card img{width:100%;height:100%;object-fit:cover;display:block}
+.gallery-card::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 55%,color-mix(in srgb,var(--ink) 70%,transparent));
+  pointer-events:none}
+.gallery-card .cap{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);
+  font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;font-size:14px;
+  color:var(--bone);text-shadow:0 1px 8px rgba(0,0,0,0.7);letter-spacing:0.04em;
+  white-space:nowrap;z-index:2}
+@media(max-width:880px){
+  .gallery-grid,.gallery-grid.gallery-2up{grid-template-columns:1fr;gap:18px}
+  .gallery-2up .gallery-card{aspect-ratio:4/5}
+}
 </style>
 </head>
 <body>
@@ -335,6 +357,38 @@ img,video{display:block;max-width:100%}
     <div class="inner">
       <p class="q">A first portrait is just <em>family, properly remembered.</em></p>
       <div class="attr">Unique Baby Studio &middot; The Atelier</div>
+    </div>
+  </section>
+
+  <span class="brass-rule reveal" aria-hidden="true"><span class="dot"></span></span>
+
+  <section class="sec gallery-section reveal" id="gallery">
+    <span class="ey">Selected work</span>
+    <h2>A few from <em>the studio.</em></h2>
+    <p class="lead">Plates from the room &mdash; the moments that become prints.</p>
+    <div class="gallery-grid">
+      <div class="gallery-card reveal">
+        <video src="assets/gallery-A.mp4" poster="assets/gallery-A.jpg" muted playsinline autoplay loop disablepictureinpicture></video>
+        <div class="cap">Plate I &middot; A first hat</div>
+      </div>
+      <div class="gallery-card reveal">
+        <video src="assets/gallery-B.mp4" poster="assets/gallery-B.jpg" muted playsinline autoplay loop disablepictureinpicture></video>
+        <div class="cap">Plate II &middot; First letters</div>
+      </div>
+      <div class="gallery-card reveal">
+        <video src="assets/gallery-C.mp4" poster="assets/gallery-C.jpg" muted playsinline autoplay loop disablepictureinpicture></video>
+        <div class="cap">Plate III &middot; A small brass moon</div>
+      </div>
+    </div>
+    <div class="gallery-grid gallery-2up">
+      <div class="gallery-card reveal">
+        <img src="assets/plate-D.jpg" alt="The first book">
+        <div class="cap">Plate IV &middot; The first book</div>
+      </div>
+      <div class="gallery-card reveal">
+        <img src="assets/plate-E.jpg" alt="Knitted, kept">
+        <div class="cap">Plate V &middot; Knitted, kept</div>
+      </div>
     </div>
   </section>
 
