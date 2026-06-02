@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Purple Boudoir × Kerblabs — GMB Audit & 60-Day Sprint</title>
+<meta name="description" content="Live GMB audit for Purple Boudoir Chicago. Findings, benchmarks, and the 60-day sprint plan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;0,800;1,500&family=Cormorant+Garamond:ital,wght@0,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:      #4A1B3A;
+  --purple-deep: #2B0A20;
+  --purple-soft: #6E3858;
+  --gold:        #C9A14C;
+  --gold-light:  #E8C97A;
+  --bone:        #F4ECD9;
+  --bone-2:      #E6DCC2;
+  --cream:       #FAF4DF;
+  --ink:         #1A0A12;
+  --ink-soft:    #3A1F2E;
+  --muted:       #8A6F7E;
+  --pad-x: clamp(20px, 4vw, 60px);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--bone)}
+body{
+  background:var(--bone); color:var(--ink-soft);
+  font-family:"Inter",ui-sans-serif,system-ui,sans-serif;
+  font-size:16px; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+a{color:var(--purple);text-decoration:none}
+a:hover{color:var(--purple-deep)}
+::selection{background:var(--purple);color:var(--bone)}
+
+.display{font-family:"Bodoni Moda",serif;font-weight:400;letter-spacing:-0.018em;line-height:1.04}
+.script{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-weight:500;letter-spacing:-0.01em}
+.ey{font:600 11px/1 "Inter",sans-serif;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:14px}
+.ey::before{content:'';display:block;width:32px;height:1px;background:var(--gold)}
+
+/* Section base */
+section{padding:120px var(--pad-x);max-width:1180px;margin:0 auto;position:relative}
+section.dark{background:var(--purple-deep);color:var(--bone);max-width:none;margin:0;padding-left:0;padding-right:0}
+section.dark > .inner{max-width:1180px;margin:0 auto;padding:0 var(--pad-x)}
+section.dark .ey{color:var(--gold-light)}
+section.dark .ey::before{background:var(--gold-light)}
+
+/* Reveal */
+.reveal{opacity:0;transform:translate3d(0,40px,0);transition:opacity 1s cubic-bezier(.2,.6,.3,1),transform 1s cubic-bezier(.2,.6,.3,1)}
+.reveal.in{opacity:1;transform:translate3d(0,0,0)}
+
+h1.title{font-family:"Bodoni Moda",serif;font-weight:400;font-size:clamp(48px,7vw,110px);line-height:0.98;letter-spacing:-0.024em;color:var(--ink);margin:24px 0 28px;text-wrap:balance}
+h1.title em{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--purple);font-weight:500}
+h2{font-family:"Bodoni Moda",serif;font-weight:400;font-size:clamp(36px,5vw,72px);line-height:1.05;letter-spacing:-0.018em;color:var(--ink);margin:22px 0 32px;text-wrap:balance}
+h2 em{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--purple);font-weight:500}
+section.dark h2{color:var(--bone)}
+section.dark h2 em{color:var(--gold-light)}
+h3{font-family:"Bodoni Moda",serif;font-weight:400;font-size:clamp(22px,2.2vw,30px);letter-spacing:-0.01em;color:var(--ink);margin:0 0 12px}
+section.dark h3{color:var(--bone)}
+.lead{font:400 18px/1.75 "Inter",sans-serif;color:var(--ink-soft);max-width:64ch;margin-bottom:24px}
+section.dark .lead{color:var(--bone-2)}
+.kicker{font:500 12px/1.4 "Inter",sans-serif;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.tag{display:inline-block;font:600 10px/1 "Inter",sans-serif;letter-spacing:0.22em;text-transform:uppercase;color:var(--purple);background:rgba(74,27,58,0.08);padding:6px 12px;margin-right:8px;margin-bottom:8px;border:1px solid rgba(74,27,58,0.18)}
+section.dark .tag{color:var(--gold-light);background:rgba(201,161,76,0.12);border-color:rgba(201,161,76,0.3)}
+
+/* === Cards & data === */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
+
+.card{background:var(--cream);padding:32px;border:1px solid rgba(74,27,58,0.14)}
+section.dark .card{background:rgba(255,255,255,0.04);border-color:rgba(201,161,76,0.22)}
+.card h3{margin-bottom:8px}
+.card p{font:400 15px/1.7 "Inter",sans-serif;color:var(--ink-soft);margin:0}
+section.dark .card p{color:var(--bone-2)}
+
+.stat{display:flex;flex-direction:column;gap:6px}
+.stat b{font-family:"Bodoni Moda",serif;font-weight:400;font-size:clamp(38px,5.5vw,68px);color:var(--ink);letter-spacing:-0.02em;line-height:1}
+section.dark .stat b{color:var(--bone)}
+.stat b span{color:var(--gold);font-size:0.55em;margin-left:6px}
+.stat i{font:500 11px/1 "Inter",sans-serif;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);font-style:normal}
+
+/* Comparison bars */
+.compare{margin:48px 0;display:flex;flex-direction:column;gap:22px}
+.compare .row{display:grid;grid-template-columns:160px 1fr 90px;gap:16px;align-items:center;font:500 13px/1.4 "Inter",sans-serif}
+.compare .row .label{color:var(--muted);font-size:11px;letter-spacing:0.22em;text-transform:uppercase}
+.compare .row .bar{height:14px;background:rgba(74,27,58,0.10);position:relative;overflow:hidden}
+section.dark .compare .row .bar{background:rgba(255,255,255,0.08)}
+.compare .row .bar .fill{position:absolute;top:0;left:0;height:100%;background:var(--purple);transition:width 1.6s cubic-bezier(.2,.6,.3,1)}
+.compare .row.them .bar .fill{background:var(--gold)}
+.compare .row.them .label{color:var(--gold)}
+.compare .row .v{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--ink);text-align:right;font-weight:500}
+section.dark .compare .row .v{color:var(--bone)}
+
+/* Split table */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:40px;border:1px solid rgba(74,27,58,0.18)}
+section.dark .split{border-color:rgba(201,161,76,0.3)}
+.split .col{padding:28px}
+.split .col + .col{border-left:1px solid rgba(74,27,58,0.18)}
+section.dark .split .col + .col{border-left-color:rgba(201,161,76,0.3)}
+.split .col h4{font-family:"Bodoni Moda",serif;font-weight:400;font-size:20px;color:var(--ink);margin-bottom:6px}
+.split .col h4 em{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--purple)}
+section.dark .split .col h4{color:var(--bone)}
+section.dark .split .col h4 em{color:var(--gold-light)}
+.split .col .sub{font:600 10px/1.4 "Inter",sans-serif;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.split .col ul{list-style:none;padding:0;margin:0}
+.split .col li{padding:10px 0;font:400 14px/1.5 "Inter",sans-serif;color:var(--ink-soft);border-bottom:1px solid rgba(74,27,58,0.08)}
+section.dark .split .col li{color:var(--bone-2);border-bottom-color:rgba(201,161,76,0.12)}
+.split .col li:last-child{border-bottom:0}
+
+/* Timeline */
+.timeline{margin-top:42px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(74,27,58,0.18)}
+section.dark .timeline{border-top-color:rgba(201,161,76,0.3)}
+.timeline .step{padding:26px 22px;border-right:1px solid rgba(74,27,58,0.10);position:relative}
+section.dark .timeline .step{border-right-color:rgba(201,161,76,0.16)}
+.timeline .step:last-child{border-right:0}
+.timeline .step .n{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:0.22em;color:var(--gold);margin-bottom:10px;text-transform:uppercase}
+.timeline .step h4{font-family:"Bodoni Moda",serif;font-weight:400;font-size:18px;color:var(--ink);margin-bottom:8px}
+section.dark .timeline .step h4{color:var(--bone)}
+.timeline .step p{font:400 13px/1.6 "Inter",sans-serif;color:var(--ink-soft);margin:0}
+section.dark .timeline .step p{color:var(--bone-2)}
+
+/* KPI matrix */
+.kpis{margin-top:40px;border:1px solid rgba(201,161,76,0.4);overflow:hidden}
+.kpis .head,.kpis .row{display:grid;grid-template-columns:2fr 1fr 1fr;align-items:center;padding:16px 22px}
+.kpis .head{background:var(--purple);color:var(--bone);font:600 10.5px/1 "Inter",sans-serif;letter-spacing:0.22em;text-transform:uppercase}
+.kpis .row{border-top:1px solid rgba(201,161,76,0.18);font:500 14px/1.5 "Inter",sans-serif}
+.kpis .row .k{color:var(--ink)}
+section.dark .kpis .row .k{color:var(--bone)}
+.kpis .row .floor{font-family:"JetBrains Mono",monospace;font-size:14px;color:var(--gold);font-weight:600}
+.kpis .row .stretch{font-family:"JetBrains Mono",monospace;font-size:14px;color:var(--purple);font-weight:600}
+section.dark .kpis .row .stretch{color:var(--gold-light)}
+
+/* CTA */
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.cta{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;font:600 11.5px/1 "Inter",sans-serif;letter-spacing:0.22em;text-transform:uppercase;cursor:pointer;border:none;transition:all 0.3s ease}
+.cta.primary{background:var(--gold);color:var(--purple-deep)}
+.cta.primary:hover{background:var(--gold-light)}
+.cta.outline{background:transparent;color:var(--bone);border:1px solid var(--gold)}
+.cta.outline:hover{background:var(--gold);color:var(--purple-deep)}
+
+/* Hero */
+.hero{padding:140px var(--pad-x) 90px;max-width:1180px;margin:0 auto;position:relative}
+.hero .meta{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:0.18em;color:var(--muted);text-transform:uppercase;margin-bottom:12px}
+.hero p.intro{font:400 19px/1.65 "Inter",sans-serif;color:var(--ink-soft);max-width:62ch;margin-top:14px}
+
+/* Footer */
+.ft{padding:54px var(--pad-x);background:var(--purple-deep);color:var(--bone-2);font:400 13px/1.7 "Inter",sans-serif;text-align:center}
+.ft strong{color:var(--gold);font:600 11px/1 "Inter",sans-serif;letter-spacing:0.32em;text-transform:uppercase;display:block;margin-bottom:14px}
+.ft em{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--gold-light)}
+
+/* Responsive */
+@media(max-width:880px){
+  .grid-2,.grid-3,.grid-4,.split,.timeline,.kpis .head,.kpis .row{grid-template-columns:1fr!important}
+  .split .col + .col{border-left:0;border-top:1px solid rgba(74,27,58,0.18)}
+  section.dark .split .col + .col{border-top-color:rgba(201,161,76,0.3)}
+  .timeline .step{border-right:0;border-bottom:1px solid rgba(74,27,58,0.18)}
+  section.dark .timeline .step{border-bottom-color:rgba(201,161,76,0.16)}
+  .compare .row{grid-template-columns:1fr 110px;grid-template-rows:auto auto;gap:6px}
+  .compare .row .label{grid-column:1/-1}
+  .compare .row .bar{grid-column:1;grid-row:2}
+  .compare .row .v{grid-column:2;grid-row:2}
+  .kpis .head{display:none}
+  .kpis .row{grid-template-rows:auto auto auto;gap:6px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="hero reveal">
+  <div class="meta">PURPLE BOUDOIR × KERBLABS · GMB AUDIT · TUE JUN 2 2026 · 11:00 AM CT</div>
+  <span class="ey">For Jacob</span>
+  <h1 class="title">A 60-day plan that<br>shows up <em>in your dashboard.</em></h1>
+  <p class="intro">Every KPI you'll see in this audit lives inside your own Google Business Profile Insights panel. The plan is small, the floor is honest, and the only signal that matters is the one you can verify yourself, on your own login, every week.</p>
+</div>
+
+<section class="reveal">
+  <span class="ey">What's working</span>
+  <h2>Purple Boudoir is <em>already winning</em> on the metrics no agency can buy.</h2>
+  <p class="lead">5.0 stars across 60 verified reviews is rare. The LGBTQ+ and transgender safespace attributes are differentiators on Maps. The mission to end domestic violence — and the CBS Chicago feature — are positioning assets no competitor in the city has.</p>
+  <div class="grid-4">
+    <div class="card stat reveal"><b>5.0<span>★</span></b><i>Google rating</i></div>
+    <div class="card stat reveal"><b>60</b><i>Verified reviews</i></div>
+    <div class="card stat reveal"><b>LGBTQ+</b><i>Safespace tagged</i></div>
+    <div class="card stat reveal"><b>CBS</b><i>Chicago feature</i></div>
+  </div>
+  <p class="lead" style="margin-top:36px">Top review topics already mine the right language — <em>empowering</em> ×10 · <em>professional staff</em> ×10 · <em>exceptional team</em> ×5 · <em>boudoir photography</em> ×11. The brand promise lands. The discovery layer is where it doesn't.</p>
+</section>
+
+<section class="dark reveal">
+  <div class="inner">
+    <span class="ey">The gap</span>
+    <h2>The discovery layer is <em>broken</em>.</h2>
+    <p class="lead">Five concrete signals pulled from the live profile this morning. Every one of them is fixable; most are free.</p>
+    <div class="grid-2">
+      <div class="card reveal">
+        <span class="tag">Zero · Critical</span>
+        <h3>0 GBP Posts, ever</h3>
+        <p>Google rewards weekly cadence with local-pack visibility. Your competitors at 300+ reviews are running this every week. You haven't published one.</p>
+      </div>
+      <div class="card reveal">
+        <span class="tag">5 months · Stale</span>
+        <h3>Review velocity is dead</h3>
+        <p>The most recent verified review is from ~5 months ago. New reviews are a Google ranking signal — momentum, not just totals.</p>
+      </div>
+      <div class="card reveal">
+        <span class="tag">Mis-tagged</span>
+        <h3>"Lingerie store" category</h3>
+        <p>Your business types include "Lingerie store" alongside "Photographer" — diluting the intent match for "boudoir photographer Chicago." 60-second fix.</p>
+      </div>
+      <div class="card reveal">
+        <span class="tag">Invisible</span>
+        <h3>Mission doesn't surface</h3>
+        <p>"Domestic violence," "CBS," "survivor," "mission" — zero mentions in any review-topic cluster. Your moat is invisible to searchers.</p>
+      </div>
+      <div class="card reveal">
+        <span class="tag">Underused</span>
+        <h3>5 photo categories of 8–12 possible</h3>
+        <p>Photo categories drive both ranking and click-through. Currently "All / Photograph / Love / By owner / Street View" — could be expanded by 5–7 more sub-categories.</p>
+      </div>
+      <div class="card reveal">
+        <span class="tag">Empty</span>
+        <h3>No owner Q&A seeded</h3>
+        <p>The Q&A section is owner-controllable. Seeding 10 pre-loaded Q&A (price, mission, session length, parking) lifts both ranking and conversion-from-search.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <span class="ey">The benchmark</span>
+  <h2>Pure Boudoir is <em>302</em>. You're 60.</h2>
+  <p class="lead">Pure Boudoir doesn't outshoot you. They out-publish you on Google Business Profile, week after week, on a steady cadence. That's the gap — not quality. Closing the gap is mechanical.</p>
+  <div class="compare">
+    <div class="row"><div class="label">Verified reviews</div><div class="bar"><div class="fill" data-pct="20"></div></div><div class="v">60</div></div>
+    <div class="row them"><div class="label">Pure Boudoir</div><div class="bar"><div class="fill" data-pct="100"></div></div><div class="v">302</div></div>
+    <div class="row"><div class="label">GBP Posts / week</div><div class="bar"><div class="fill" data-pct="0"></div></div><div class="v">0</div></div>
+    <div class="row them"><div class="label">Pure Boudoir</div><div class="bar"><div class="fill" data-pct="80"></div></div><div class="v">~weekly</div></div>
+    <div class="row"><div class="label">Months since last review</div><div class="bar"><div class="fill" data-pct="95"></div></div><div class="v">~5</div></div>
+    <div class="row them"><div class="label">Pure Boudoir</div><div class="bar"><div class="fill" data-pct="15"></div></div><div class="v">recent</div></div>
+  </div>
+</section>
+
+<section class="reveal">
+  <span class="ey">The split</span>
+  <h2>Lindsey makes the album cover.<br><em>I make sure the bride finds it.</em></h2>
+  <p class="lead">Two roles. Zero overlap. You pay each for the work that's actually theirs.</p>
+  <div class="split">
+    <div class="col">
+      <h4>Lindsey owns</h4>
+      <div class="sub">Content production</div>
+      <ul>
+        <li>Edit behind-the-scenes clips</li>
+        <li>Cut post-session interviews</li>
+        <li>Schedule across FB / IG / TikTok / YT / GMB</li>
+        <li>Run GoHighLevel CRM workflow</li>
+        <li>Capture session moments</li>
+        <li>Manage the day-to-day calendar</li>
+        <li>The story</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4>Chandu owns</h4>
+      <div class="sub">SEO + rank engine</div>
+      <ul>
+        <li>Which 4 queries Purple Boudoir ranks for</li>
+        <li>GBP Post format that wins the local pack (not the same as IG)</li>
+        <li>Review-velocity SMS workflow (30-min post-session)</li>
+        <li>Owner Q&A seeding (Lindsey can't do this)</li>
+        <li>LocalBusiness JSON-LD schema on the Elementor site</li>
+        <li>GBP Insights interpretation, weekly</li>
+        <li>The findability of the story</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="dark reveal">
+  <div class="inner">
+    <span class="ey">The 14-day trial · free</span>
+    <h2>$0 to start. <em>Nothing</em> to sign.</h2>
+    <p class="lead">Two weeks of work, before you spend a cent or sign anything. If the dashboard doesn't move, I walk and don't email you again.</p>
+    <div class="timeline">
+      <div class="step reveal"><div class="n">Day 1</div><h4>Listing rewrite</h4><p>Your BPC directory page rewritten to lead with the mission and the CBS feature. Free, same-day delivery.</p></div>
+      <div class="step reveal"><div class="n">Day 2–4</div><h4>GBP foundations</h4><p>First 2 GBP Posts published. 10 owner Q&A seeded. Type tag cleaned. Photo categories expanded. Day-1 baseline snapshot locked.</p></div>
+      <div class="step reveal"><div class="n">Day 5–9</div><h4>Review velocity wave</h4><p>30-min post-session SMS template installed in your GHL. First wave fires after Friday's sessions. Schema markup pushed to Elementor (you read it before it goes live).</p></div>
+      <div class="step reveal"><div class="n">Day 10–14</div><h4>Dashboard delivered</h4><p>You see post engagement, review-request response rate, and rank-position deltas in your own GBP Insights — weekly, on your own login.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <span class="ey">The KPIs</span>
+  <h2>Numbers <em>verifiable in your own dashboard</em> — not on my word.</h2>
+  <p class="lead">Floor = the threshold that locks $1,200/month. Stretch = what I'm aiming to over-deliver. Both measured against the Day-1 baseline, both visible to you in GBP Insights → Performance.</p>
+  <div class="kpis">
+    <div class="head">
+      <div>Metric (verify in your Insights tab)</div>
+      <div>Floor (Day 60)</div>
+      <div>Stretch target</div>
+    </div>
+    <div class="row reveal"><div class="k">Direction requests <span style="color:var(--muted);font-size:11px;letter-spacing:0.18em">/ vs baseline</span></div><div class="floor">+50%</div><div class="stretch">+80%</div></div>
+    <div class="row reveal"><div class="k">Phone calls from GBP</div><div class="floor">+40%</div><div class="stretch">+60%</div></div>
+    <div class="row reveal"><div class="k">Website clicks from GBP</div><div class="floor">+50%</div><div class="stretch">+80%</div></div>
+    <div class="row reveal"><div class="k">Photo views</div><div class="floor">+60%</div><div class="stretch">+100%</div></div>
+    <div class="row reveal"><div class="k">Profile views</div><div class="floor">+35%</div><div class="stretch">+60%</div></div>
+    <div class="row reveal"><div class="k">New verified reviews (absolute)</div><div class="floor">+15 → 75</div><div class="stretch">+25 → 85</div></div>
+    <div class="row reveal"><div class="k">GBP Posts published (absolute)</div><div class="floor">8</div><div class="stretch">16+</div></div>
+    <div class="row reveal"><div class="k">Profile completeness</div><div class="floor">100% by Day 14</div><div class="stretch">+ schema on Elementor</div></div>
+  </div>
+</section>
+
+<section class="dark reveal">
+  <div class="inner">
+    <span class="ey">The mechanics</span>
+    <h2>$0 → $99 → $1,200 <em>only if</em> the floor hits.</h2>
+    <div class="grid-3">
+      <div class="card reveal">
+        <h3>Day 1 → Day 14</h3>
+        <p>$0. No contract. No obligation. I run the cadence, you watch the dashboard.</p>
+      </div>
+      <div class="card reveal">
+        <h3>Day 14 → Day 60</h3>
+        <p>$99 refundable hold to keep me running for the next 45 days. Reviews build, posts publish, Insights move.</p>
+      </div>
+      <div class="card reveal">
+        <h3>Day 60 onward</h3>
+        <p>$1,200/month, month-to-month, no contract — <strong>only</strong> if the floor KPIs hit. Miss any one and the $99 refunds. We part friends.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <span class="ey">Why now</span>
+  <h2>Every week the cadence sits cold, <em>the gap compounds.</em></h2>
+  <p class="lead">Pure Boudoir's reviews aren't going to slow down. Google's local pack rewards cadence — and there are only three slots. The longer the gap between your most recent review and theirs, the further the algorithm drifts away from you, and the more expensive it gets to climb back.</p>
+  <p class="lead" style="margin-top:24px">A 14-day trial that costs you $0 and risks nothing but the time it takes you to grant me Manager access on your GBP. The downside is "I don't email you again." The upside is the dashboard moves and you make the $1,200/mo decision from actual data, not a pitch.</p>
+</section>
+
+<section class="dark reveal">
+  <div class="inner">
+    <span class="ey">Three answers</span>
+    <h2>At the end of the call, <em>one of these.</em></h2>
+    <div class="grid-3">
+      <div class="card reveal">
+        <h3>Yes — start the trial</h3>
+        <p>I rewrite the BPC listing today, snapshot the GBP baseline tomorrow, and run the cadence for the next 14 days. We talk again at Day 14.</p>
+      </div>
+      <div class="card reveal">
+        <h3>Table it for Lindsey</h3>
+        <p>You'd rather give Lindsey 30 days to ramp before adding a second vendor. I respect that. Pick a date and I'll send one reminder, no follow-up barrage.</p>
+      </div>
+      <div class="card reveal">
+        <h3>Walk away</h3>
+        <p>It isn't the right fit. I'll wish you the best, take you off the list, and won't email again. The audit findings above are yours to keep regardless.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ft">
+  <strong>Kerblabs · Boudoir Photography Club</strong>
+  Prepared for Jacob Miller, Purple Boudoir &mdash; Chicago.<br>
+  Discovery call on Google Meet · Tuesday June 2 2026 · 11:00 AM CT.<br>
+  <em>Lindsey edits the album cover. I make sure the bride finds it.</em>
+</div>
+
+<script>
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      // animate comparison bars on first reveal
+      e.target.querySelectorAll('.compare .fill').forEach(f => {
+        const p = f.dataset.pct || '0';
+        f.style.width = p + '%';
+      });
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
