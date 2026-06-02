@@ -260,6 +260,33 @@ img,video{display:block;max-width:100%}
   *{animation:none!important;transition:none!important}
   .editorial h1 .w,.reveal,.brass-rule,.wordmark,.edition,.portrait,.editorial,.portrait-plaque,.scrollcue,.botnav{opacity:1!important;transform:none!important}
 }
+/* === Overflow guardrails (long brand names) === */
+.wordmark{max-width:38vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.editorial .kicker{max-width:42vw;line-height:1.4}
+.editorial{padding-right:24px}
+.editorial h1{text-wrap:balance}
+.editorial .body{text-wrap:pretty;max-width:46ch}
+@media(max-width:1100px){.wordmark{max-width:50vw}.editorial .kicker{font-size:10px;letter-spacing:0.24em}}
+@media(max-width:880px){.wordmark{max-width:none;overflow:visible;white-space:normal}.editorial .kicker{max-width:none}}
+
+/* === Midband motion section (Position 7) === */
+.midband{position:relative;height:70vh;overflow:hidden;margin:80px 0;
+  border-top:1px solid color-mix(in srgb,var(--brass) 28%,transparent);
+  border-bottom:1px solid color-mix(in srgb,var(--brass) 28%,transparent)}
+.midband video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.midband::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 50%,color-mix(in srgb,var(--bone) 55%,transparent))}
+.midband .label{position:absolute;bottom:48px;left:50%;transform:translateX(-50%);
+  font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;
+  font-size:clamp(20px,2.4vw,32px);color:#fff;text-shadow:0 2px 14px rgba(0,0,0,0.6);
+  text-align:center;letter-spacing:0.01em;z-index:2;white-space:nowrap}
+.midband .label em{color:var(--brass-light);font-family:"Bodoni Moda",serif;font-style:italic}
+@media(max-width:880px){.midband{height:50vh;margin:48px 0}.midband .label{font-size:18px;white-space:normal;padding:0 20px}}
+
+/* === $5K-tier polish (hover + accent animation) === */
+.gallery-card{transition:transform 0.6s cubic-bezier(.2,.6,.3,1),box-shadow 0.6s cubic-bezier(.2,.6,.3,1)}
+.gallery-card:hover{box-shadow:0 36px 70px -25px color-mix(in srgb,var(--ink) 65%,transparent)}
+
 /* === Gallery (5 plates: 3 video + 2 image) === */
 .gallery-section{padding-top:80px;padding-bottom:60px}
 .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
@@ -308,7 +335,7 @@ img,video{display:block;max-width:100%}
   </div>
 
   <div class="editorial" aria-label="Editorial">
-    <div class="kicker">A Hyderabad newborn studio · newborn portraits, the considered way</div>
+    <div class="kicker">Hyderabad &middot; newborn studio</div>
     <h1 data-words>The first portrait, <em>kept.</em></h1>
     <p class="body">A Hyderabad newborn studio with 360 verified Google reviews. <em>By appointment</em>, in the considered register — work intended to be kept, not just consumed.</p>
     <div class="meta-row">
@@ -352,6 +379,11 @@ img,video{display:block;max-width:100%}
   </section>
 
   <span class="brass-rule reveal" aria-hidden="true"><span class="dot"></span></span>
+
+  <div class="midband reveal" aria-hidden="false">
+    <video src="assets/hero2.mp4" poster="assets/hero2.jpg" muted playsinline autoplay loop disablepictureinpicture></video>
+    <div class="label">The session, <em>held quietly.</em></div>
+  </div>
 
   <section class="pull reveal" id="heritage">
     <div class="inner">
