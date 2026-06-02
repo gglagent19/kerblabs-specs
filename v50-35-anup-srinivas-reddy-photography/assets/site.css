@@ -90,7 +90,7 @@ img,video{display:block;max-width:100%}
 .portrait-plaque .title{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:14px;color:var(--ink);line-height:1.3}
 .portrait-plaque .sub{font:500 9.5px/1 "Inter",sans-serif;letter-spacing:0.32em;text-transform:uppercase;color:var(--brass);margin-top:6px}
 
-.editorial{position:absolute;top:50%;left:var(--pad-x);transform:translateY(-50%);
+.editorial{position:absolute;top:clamp(104px,15vh,170px);left:var(--pad-x);
   width:min(50vw,640px);z-index:10;
   opacity:0;transition:opacity 1.4s ease 0.4s}
 
@@ -155,7 +155,7 @@ img,video{display:block;max-width:100%}
 .brass-rule .dot{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(45deg);width:12px;height:12px;border:1px solid var(--brass);background:var(--bone)}
 
 /* === Studio block === */
-.studio{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:start;margin-top:36px}
+.studio{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center;margin-top:36px}
 .studio p{font:400 16.5px/1.78 "Inter",sans-serif;color:var(--ink-soft);margin-bottom:20px}
 .studio p em{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--maroon-deep)}
 .studio .card{position:relative;aspect-ratio:3/4;background:var(--ink);overflow:hidden;
