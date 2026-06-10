@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ticket Factory® — Your Ticket to Being Famous — Hyderabad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Telugu:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E0C11;          /* theatre black */
+  --ink-2:#15121B;        /* raised black */
+  --red:#F5333F;          /* stamp red */
+  --amber:#FFC043;        /* marquee amber */
+  --stub:#F1EADB;         /* ticket-paper cream */
+  --muted:#8E8798;        /* dim violet grey */
+  --line:rgba(241,234,219,.14);
+  --disp:'Anton', Impact, sans-serif;
+  --body:'Space Grotesk', system-ui, sans-serif;
+  --mono:'IBM Plex Mono', monospace;
+  --pad:clamp(20px,4vw,72px);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{background:var(--ink);color:var(--stub)}
+body{font-family:var(--body);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--red);color:var(--stub)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font:inherit;border:0;background:none;color:inherit;cursor:pointer}
+
+/* ---------- film grain ---------- */
+.grain{position:fixed;inset:-100%;pointer-events:none;z-index:90;opacity:.07;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain 1.2s steps(4) infinite}
+@keyframes grain{0%{transform:translate(0,0)}25%{transform:translate(-2%,3%)}50%{transform:translate(3%,-2%)}75%{transform:translate(-3%,-3%)}100%{transform:translate(2%,2%)}}
+
+/* ---------- custom cursor ---------- */
+#cursor{position:fixed;top:0;left:0;width:10px;height:10px;border-radius:50%;
+  background:var(--stub);z-index:120;pointer-events:none;mix-blend-mode:difference;
+  transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s}
+#cursor.is-view{width:84px;height:84px;background:var(--red);mix-blend-mode:normal}
+#cursor span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font:500 11px/1 var(--mono);letter-spacing:.18em;color:var(--stub);opacity:0;transition:opacity .2s}
+#cursor.is-view span{opacity:1}
+@media (hover:none){#cursor{display:none}}
+
+/* ---------- hover ticket preview ---------- */
+#preview{position:fixed;top:0;left:0;width:min(340px,30vw);aspect-ratio:3/4;z-index:60;
+  pointer-events:none;opacity:0;transform:translate(-50%,-50%) rotate(4deg) scale(.85);
+  transition:opacity .3s,transform .3s;will-change:transform}
+#preview.on{opacity:1;transform:translate(-50%,-50%) rotate(4deg) scale(1)}
+#preview .card{position:absolute;inset:0;border-radius:6px;overflow:hidden;
+  background:var(--pv-bg,linear-gradient(160deg,#F5333F,#7A0E1D));
+  box-shadow:0 30px 80px rgba(0,0,0,.6)}
+#preview .card::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(120% 90% at 20% 0%,rgba(255,255,255,.22),transparent 55%)}
+#preview .pv-te{position:absolute;left:14px;right:14px;bottom:46px;
+  font:700 clamp(15px,1.5vw,20px)/1.2 "Noto Sans Telugu",sans-serif;color:var(--amber);
+  text-shadow:0 2px 12px rgba(0,0,0,.4)}
+#preview .pv-title{position:absolute;left:14px;right:14px;bottom:72px;
+  font-family:var(--disp);font-size:clamp(24px,2.6vw,40px);line-height:.95;
+  text-transform:uppercase;color:var(--stub);text-shadow:0 2px 18px rgba(0,0,0,.35)}
+#preview .pv-serial{position:absolute;top:12px;left:14px;font:500 10px/1 var(--mono);
+  letter-spacing:.2em;color:rgba(241,234,219,.85)}
+#preview .pv-admit{position:absolute;top:12px;right:14px;font:500 10px/1 var(--mono);
+  letter-spacing:.2em;color:rgba(241,234,219,.85);border:1px solid rgba(241,234,219,.5);
+  padding:5px 7px;border-radius:2px;transform:rotate(6deg)}
+#preview .pv-tear{position:absolute;left:0;right:0;bottom:26px;height:0;
+  border-top:2px dashed rgba(241,234,219,.5)}
+#preview .pv-foot{position:absolute;left:14px;bottom:8px;font:400 9px/1 var(--mono);
+  letter-spacing:.22em;color:rgba(241,234,219,.7)}
+@media (hover:none),(max-width:760px){#preview{display:none}}
+
+/* ---------- loader ---------- */
+#loader{position:fixed;inset:0;z-index:200;background:var(--stub);color:var(--ink);
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .9s cubic-bezier(.76,0,.24,1)}
+#loader.done{transform:translateY(-101%)}
+#loader::after{content:"";position:absolute;left:0;right:0;bottom:-14px;height:28px;
+  background:radial-gradient(circle at 14px 0,transparent 13px,var(--stub) 14px);
+  background-size:28px 28px;background-position:0 0}
+.ticket-print{width:min(420px,84vw);border:2px solid var(--ink);border-radius:8px;
+  padding:26px 26px 20px;position:relative;background:var(--stub)}
+.ticket-print::before,.ticket-print::after{content:"";position:absolute;top:50%;width:22px;height:22px;
+  background:var(--stub);border:2px solid var(--ink);border-radius:50%;transform:translateY(-50%)}
+.ticket-print::before{left:-13px;clip-path:inset(0 0 0 50%)}
+.ticket-print::after{right:-13px;clip-path:inset(0 50% 0 0)}
+.tp-row{display:flex;justify-content:space-between;align-items:baseline;
+  font:500 11px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase}
+.tp-title{font-family:var(--disp);font-size:clamp(34px,7vw,52px);line-height:1;margin:14px 0 10px;
+  text-transform:uppercase}
+.tp-bar{height:34px;margin-top:14px;background:repeating-linear-gradient(90deg,var(--ink) 0 3px,transparent 3px 7px,var(--ink) 7px 8px,transparent 8px 13px)}
+#tp-count{font-variant-numeric:tabular-nums}
+
+/* ---------- header ---------- */
+header{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;
+  justify-content:space-between;padding:18px var(--pad);mix-blend-mode:difference}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-size:18px;
+  letter-spacing:.04em;text-transform:uppercase;color:var(--stub)}
+.logo svg{width:30px;height:20px}
+nav{display:flex;gap:clamp(14px,3vw,34px);font:500 12px/1 var(--mono);
+  letter-spacing:.18em;text-transform:uppercase}
+nav a{position:relative;padding:6px 0;color:var(--stub)}
+nav a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;
+  background:var(--stub);transform:scaleX(0);transform-origin:right;transition:transform .35s}
+nav a:hover::after{transform:scaleX(1);transform-origin:left}
+</style>
+<style>
+/* ---------- hero ---------- */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:120px var(--pad) 0;position:relative}
+.hero-kicker{display:flex;gap:14px;align-items:center;font:500 12px/1 var(--mono);
+  letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-bottom:22px}
+.hero-kicker .dot{width:8px;height:8px;border-radius:50%;background:var(--red);
+  animation:blink 1.6s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+h1{font-family:var(--disp);text-transform:uppercase;font-weight:400;
+  font-size:clamp(56px,12.5vw,200px);line-height:.92;letter-spacing:.005em}
+h1 .line{display:block;overflow:hidden}
+h1 .line>span{display:block;transform:translateY(110%);transition:transform 1s cubic-bezier(.22,1,.36,1)}
+body.ready h1 .line>span{transform:translateY(0)}
+h1 .line:nth-child(2)>span{transition-delay:.08s}
+h1 .line:nth-child(3)>span{transition-delay:.16s}
+h1 em{font-style:normal;color:var(--red)}
+h1 .outline{color:transparent;-webkit-text-stroke:2px var(--stub)}
+.hero-sub{display:grid;grid-template-columns:1fr minmax(280px,520px);gap:40px;
+  align-items:end;padding:34px 0 28px;border-bottom:1px solid var(--line);margin-top:26px}
+.hero-sub p{font-size:clamp(15px,1.4vw,19px);line-height:1.55;color:var(--muted)}
+.hero-sub p strong{color:var(--stub);font-weight:500}
+.badge{position:absolute;right:var(--pad);top:16vh;width:clamp(110px,12vw,170px);
+  aspect-ratio:1;animation:spin 16s linear infinite}
+.badge svg{width:100%;height:100%}
+.badge text{font:500 11.5px var(--mono);letter-spacing:.32em;fill:var(--amber);text-transform:uppercase}
+@keyframes spin{to{transform:rotate(360deg)}}
+.scroll-hint{display:flex;gap:10px;align-items:center;font:500 11px/1 var(--mono);
+  letter-spacing:.22em;color:var(--muted);padding:18px 0 22px;text-transform:uppercase}
+.scroll-hint::before{content:"";width:42px;height:1px;background:var(--red)}
+
+/* ---------- marquee ---------- */
+.marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:14px 0;white-space:nowrap;background:var(--ink-2)}
+.marquee .track{display:inline-flex;gap:0;animation:slide 26s linear infinite;will-change:transform}
+.marquee:hover .track{animation-play-state:paused}
+.marquee span{font-family:var(--disp);font-size:clamp(20px,2.6vw,34px);text-transform:uppercase;
+  color:var(--amber);padding:0 .55em;letter-spacing:.02em}
+.marquee span i{font-style:normal;color:transparent;-webkit-text-stroke:1px var(--amber)}
+.marquee.alt{background:var(--red);border-color:var(--red)}
+.marquee.alt span{color:var(--ink)}
+.marquee.alt span i{-webkit-text-stroke-color:var(--ink)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ---------- work index ---------- */
+.work{padding:clamp(70px,10vw,140px) 0 40px}
+.work-head{display:flex;justify-content:space-between;align-items:baseline;
+  padding:0 var(--pad) 26px}
+.work-head h2{font-family:var(--disp);font-size:clamp(34px,5.5vw,84px);
+  text-transform:uppercase;line-height:1}
+.work-head .count{font:500 clamp(12px,1.2vw,14px)/1.6 var(--mono);letter-spacing:.2em;
+  text-transform:uppercase;color:var(--muted);text-align:right}
+.work-head .count b{color:var(--red);font-weight:500}
+.year-group{position:relative}
+.year-label{position:sticky;top:84px;float:left;margin-left:var(--pad);
+  font:500 clamp(13px,1.3vw,16px)/1 var(--mono);letter-spacing:.22em;color:var(--amber);
+  padding:8px 0;z-index:5;pointer-events:none}
+.rows{clear:none}
+.row{display:grid;grid-template-columns:130px minmax(0,1fr) auto;align-items:center;
+  gap:clamp(14px,3vw,40px);padding:clamp(20px,2.6vw,34px) var(--pad);
+  padding-left:calc(var(--pad) + 110px);border-top:1px solid var(--line);
+  position:relative;transition:background .35s;cursor:pointer;
+  opacity:0;transform:translateY(26px)}
+.row.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1),background .35s}
+.row:last-child{border-bottom:1px solid var(--line)}
+.row:hover{background:var(--ink-2)}
+.row .serial{font:500 11px/1.7 var(--mono);letter-spacing:.16em;color:var(--muted);
+  text-transform:uppercase;transition:color .3s}
+.row:hover .serial{color:var(--red)}
+.row .title{font-family:var(--disp);font-size:clamp(28px,4.6vw,68px);line-height:1;
+  text-transform:uppercase;transition:transform .45s cubic-bezier(.22,1,.36,1),color .3s;
+  display:flex;align-items:baseline;gap:18px;min-width:0}
+.row:hover .title{transform:translateX(18px)}
+.row .client{font:500 11px/1 var(--mono);letter-spacing:.2em;color:var(--muted);
+  text-transform:uppercase;white-space:nowrap}
+.row .meta{display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.row .tags{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.row .tag{font:500 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--stub);border:1px solid var(--line);border-radius:99px;padding:6px 11px;
+  transition:border-color .3s,color .3s}
+.row:hover .tag{border-color:var(--amber);color:var(--amber)}
+.row .arrow{font-family:var(--body);font-weight:700;font-size:clamp(20px,2vw,28px);
+  color:var(--red);opacity:0;transform:translateX(-12px);transition:opacity .35s,transform .35s}
+.row:hover .arrow{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .row{grid-template-columns:1fr;gap:10px;padding-left:var(--pad)}
+  .row .meta{align-items:flex-start}
+  .row .tags{justify-content:flex-start}
+  .year-label{position:static;float:none;padding:26px var(--pad) 10px}
+  .hero-sub{grid-template-columns:1fr}
+  .badge{top:12vh}
+}
+</style>
+<style>
+/* ---------- process stubs ---------- */
+.process{padding:clamp(80px,11vw,150px) var(--pad)}
+.process-head{max-width:880px;margin-bottom:clamp(36px,5vw,64px)}
+.process-head .eyebrow{font:500 12px/1 var(--mono);letter-spacing:.26em;color:var(--red);
+  text-transform:uppercase;display:block;margin-bottom:16px}
+.process-head h2{font-family:var(--disp);font-size:clamp(34px,5.5vw,80px);
+  line-height:.98;text-transform:uppercase}
+.process-head h2 i{font-style:normal;color:transparent;-webkit-text-stroke:1.5px var(--stub)}
+.stubs{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.stub{background:var(--stub);color:var(--ink);border-radius:8px;padding:26px 22px 22px;
+  position:relative;min-height:330px;display:flex;flex-direction:column;
+  transition:transform .45s cubic-bezier(.22,1,.36,1);
+  opacity:0;transform:translateY(30px)}
+.stub.in{opacity:1;transform:none;transition:opacity .7s,transform .7s cubic-bezier(.22,1,.36,1)}
+.stub:hover{transform:translateY(-10px) rotate(-1.2deg)}
+.stub::before{content:"";position:absolute;left:0;right:0;top:64px;
+  border-top:2px dashed rgba(14,12,17,.25)}
+.stub::after{content:"";position:absolute;top:64px;left:-9px;width:18px;height:18px;
+  border-radius:50%;background:var(--ink);transform:translateY(-50%)}
+.stub .punch{position:absolute;top:64px;right:-9px;width:18px;height:18px;border-radius:50%;
+  background:var(--ink);transform:translateY(-50%)}
+.stub .no{font:500 11px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;
+  display:flex;justify-content:space-between;margin-bottom:34px}
+.stub .no b{color:var(--red);font-weight:500}
+.stub h3{font-family:var(--disp);font-size:clamp(26px,2.4vw,36px);text-transform:uppercase;
+  margin:18px 0 12px;line-height:1}
+.stub p{font-size:14px;line-height:1.6;color:#3E3947}
+.stub .stamp{margin-top:auto;align-self:flex-start;font:500 10px/1 var(--mono);
+  letter-spacing:.2em;text-transform:uppercase;color:var(--red);
+  border:1.5px solid var(--red);border-radius:3px;padding:7px 10px;transform:rotate(-4deg)}
+@media(max-width:1020px){.stubs{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.stubs{grid-template-columns:1fr}}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line)}
+.cta{padding:clamp(80px,12vw,160px) var(--pad);text-align:left;position:relative;overflow:hidden}
+.cta .eyebrow{font:500 12px/1 var(--mono);letter-spacing:.26em;color:var(--muted);
+  text-transform:uppercase;display:block;margin-bottom:18px}
+.cta a.big{display:block;font-family:var(--disp);text-transform:uppercase;
+  font-size:clamp(46px,11vw,170px);line-height:.95;color:var(--stub);width:fit-content;
+  transition:color .3s}
+.cta a.big:hover{color:var(--red)}
+.cta a.big .tear{color:transparent;-webkit-text-stroke:2px var(--red);transition:color .3s}
+.cta a.big:hover .tear{color:var(--red);-webkit-text-stroke-color:var(--red)}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;
+  padding:0 var(--pad) 50px;font-size:14px;line-height:1.7;color:var(--muted)}
+.foot-grid h4{font:500 11px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;
+  color:var(--amber);margin-bottom:14px}
+.foot-grid a{display:block;width:fit-content;padding:2px 0;color:var(--stub);transition:color .25s}
+.foot-grid a:hover{color:var(--red)}
+.legal{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  padding:22px var(--pad);border-top:1px solid var(--line);
+  font:400 11px/1.6 var(--mono);letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+@media(max-width:760px){.foot-grid{grid-template-columns:1fr;gap:28px}}
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  h1 .line>span{transform:none}
+  .row,.stub{opacity:1;transform:none}
+  #loader{display:none}
+  html{scroll-behavior:auto}
+}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+
+/* ---------- the story: your ticket to being famous ---------- */
+.story{position:relative;height:560vh}
+.story.static{height:auto}
+.s-stage{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;
+  align-items:center;justify-content:center;background:var(--ink)}
+.story.static .s-stage{position:static;height:auto;padding:90px var(--pad)}
+.s-tint{position:absolute;inset:0;background:radial-gradient(110% 90% at 50% 60%,#48060F 0%,#16040A 70%);
+  opacity:0;pointer-events:none}
+.s-cap{position:absolute;top:14vh;left:0;right:0;text-align:center;opacity:0;padding:0 var(--pad)}
+.s-cap .act{display:block;font:500 11px/1 var(--mono);letter-spacing:.3em;color:var(--amber);
+  text-transform:uppercase;margin-bottom:14px}
+.s-cap .cap{font-family:var(--disp);font-size:clamp(26px,4.2vw,58px);line-height:1.05;
+  text-transform:uppercase;color:var(--stub)}
+.s-cap .cap i{font-style:normal;color:transparent;-webkit-text-stroke:1.5px var(--stub)}
+
+/* center ticket */
+.s-ticket{position:relative;width:min(560px,86vw);z-index:3;filter:drop-shadow(0 24px 70px rgba(0,0,0,.55))}
+.s-half{will-change:transform}
+.s-half.bot{margin-top:-2px}
+.tk{background:var(--stub);color:var(--ink);border:2px solid var(--ink);border-radius:10px;
+  padding:26px 28px 22px;position:relative}
+.s-half.top .tk{border-bottom:2px dashed rgba(14,12,17,.45);border-bottom-left-radius:0;border-bottom-right-radius:0}
+.s-half.bot .tk{border-top:0;border-top-left-radius:0;border-top-right-radius:0;
+  padding-top:14px;padding-bottom:16px}
+.tk-row{display:flex;justify-content:space-between;align-items:baseline;
+  font:500 11px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:#3E3947}
+.tk-name{font-family:var(--disp);font-size:clamp(36px,6.4vw,72px);line-height:1;
+  text-transform:uppercase;margin:16px 0 12px;min-height:1em;white-space:nowrap}
+.tk-name .caret{display:inline-block;width:.5ch;background:var(--red);height:.85em;
+  vertical-align:-0.07em;animation:blink 1s steps(1) infinite}
+.tk-bar{height:30px;margin-top:6px;background:repeating-linear-gradient(90deg,var(--ink) 0 3px,transparent 3px 7px,var(--ink) 7px 8px,transparent 8px 13px)}
+.tk-glow{position:absolute;inset:-3px;border-radius:12px;pointer-events:none;opacity:0;
+  box-shadow:0 0 0 3px var(--amber),0 0 60px 6px rgba(255,192,67,.55)}
+.s-stamp{position:absolute;top:50%;left:50%;z-index:4;pointer-events:none;
+  font-family:var(--disp);font-size:clamp(34px,5.5vw,64px);letter-spacing:.04em;color:var(--red);
+  border:5px solid var(--red);border-radius:10px;padding:6px 22px;text-transform:uppercase;
+  transform:translate(-50%,-50%) rotate(-10deg) scale(3);opacity:0;
+  text-shadow:0 0 24px rgba(245,51,63,.5);background:rgba(241,234,219,.06);backdrop-filter:blur(1px)}
+
+/* marquee bulbs */
+.bulbs{position:absolute;top:-46px;left:50%;transform:translateX(-50%);display:flex;gap:14px;z-index:4}
+.bulbs b{width:14px;height:14px;border-radius:50%;background:#2A2433;
+  box-shadow:inset 0 0 0 2px rgba(241,234,219,.12);transition:background .2s,box-shadow .2s}
+.bulbs b.lit{background:var(--amber);box-shadow:0 0 18px 4px rgba(255,192,67,.65)}
+
+/* seats counter */
+.seats{position:absolute;bottom:13vh;left:0;right:0;text-align:center;opacity:0;
+  font:500 12px/1.9 var(--mono);letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
+.seats b{display:block;font-family:var(--disp);font-size:clamp(30px,4.5vw,56px);letter-spacing:.02em;
+  color:var(--stub);font-variant-numeric:tabular-nums}
+
+/* finale */
+.finale{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center;z-index:5;pointer-events:none;padding:0 var(--pad)}
+.finale .fl{overflow:hidden}
+.finale .fl span{display:block;font-family:var(--disp);text-transform:uppercase;line-height:.92;
+  font-size:clamp(52px,12vw,180px);color:var(--stub);transform:translateY(115%)}
+.finale .fl.fam span{color:var(--red);
+  text-shadow:0 0 36px rgba(245,51,63,.55),0 0 110px rgba(255,192,67,.3)}
+.finale .now{margin-top:26px;font:500 12px/1 var(--mono);letter-spacing:.3em;
+  text-transform:uppercase;color:var(--amber);opacity:0}
+.finale .go{pointer-events:auto;margin-top:22px;opacity:0;display:inline-flex;gap:10px;
+  align-items:center;font:500 12px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ink);background:var(--stub);border-radius:99px;padding:14px 22px;transition:background .25s}
+.finale .go:hover{background:var(--amber)}
+.story.static .s-cap,.story.static .seats{display:none}
+.story.static .finale{position:static;margin-top:40px;pointer-events:auto}
+.story.static .finale .fl span{transform:none}
+.story.static .finale .now,.story.static .finale .go{opacity:1}
+.story.static .s-tint{display:none}
+@media(max-width:760px){.tk-name{white-space:normal}.bulbs{gap:9px}.bulbs b{width:10px;height:10px}}
+
+/* ---------- work dome (sphere of screens) ---------- */
+.dome{position:relative;height:100svh;overflow:hidden;background:radial-gradient(120% 80% at 50% 120%,#1B1424 0%,var(--ink) 60%)}
+.dome canvas{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none;cursor:grab}
+.dome canvas.dragging{cursor:grabbing}
+.dome-hud{position:absolute;inset:0;pointer-events:none;display:flex;flex-direction:column;
+  justify-content:space-between;padding:110px var(--pad) 34px;z-index:5}
+.dome-top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+.dome-kicker{font:500 12px/1.7 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.dome-kicker b{color:var(--amber);font-weight:500}
+.dome-count{font:500 12px/1.7 var(--mono);letter-spacing:.24em;text-transform:uppercase;
+  color:var(--muted);text-align:right}
+.dome-count b{color:var(--red);font-weight:500}
+.dome-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+#dome-title{font-family:var(--disp);font-size:clamp(34px,6.5vw,104px);line-height:.95;
+  text-transform:uppercase;color:var(--stub);max-width:14ch;
+  transition:opacity .25s,transform .25s}
+#dome-title.dim{opacity:.25}
+#dome-meta{font:500 11px/1.9 var(--mono);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);text-align:right;white-space:nowrap}
+#dome-meta b{color:var(--amber);font-weight:500}
+.drag-pill{position:absolute;left:50%;bottom:120px;transform:translateX(-50%);
+  font:500 10px/1 var(--mono);letter-spacing:.26em;text-transform:uppercase;color:var(--ink);
+  background:var(--amber);border-radius:99px;padding:10px 16px;pointer-events:none;
+  animation:pillFloat 2.6s ease-in-out infinite;z-index:6}
+@keyframes pillFloat{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-8px)}}
+.dome .vignette{position:absolute;inset:0;pointer-events:none;z-index:4;
+  background:radial-gradient(85% 70% at 50% 45%,transparent 55%,rgba(14,12,17,.88) 100%)}
+.add-btn{pointer-events:auto;font:500 10px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--stub);background:rgba(241,234,219,.07);border:1px solid var(--line);border-radius:99px;
+  padding:10px 16px;cursor:pointer;transition:border-color .25s,color .25s}
+.add-btn:hover{border-color:var(--amber);color:var(--amber)}
+.dome.dropping::after{content:"DROP POSTERS TO PRINT";position:absolute;inset:14px;z-index:9;
+  display:flex;align-items:center;justify-content:center;font:500 13px/1 var(--mono);
+  letter-spacing:.3em;color:var(--amber);border:2px dashed var(--amber);border-radius:14px;
+  background:rgba(14,12,17,.72);pointer-events:none}
+@media(max-width:760px){.dome-hud{padding-top:90px}.drag-pill{bottom:96px}}
+</style>
+</head>
+<body>
+
+<div id="loader" aria-hidden="true">
+  <div class="ticket-print">
+    <div class="tp-row"><span>Ticket Factory®</span><span id="tp-count">000</span></div>
+    <div class="tp-title">Admit One</div>
+    <div class="tp-row"><span>Hyderabad</span><span>Row A · Seat 1</span></div>
+    <div class="tp-bar"></div>
+  </div>
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+<div id="cursor" aria-hidden="true"><span>VIEW</span></div>
+
+<div id="preview" aria-hidden="true">
+  <div class="card">
+    <div class="pv-serial"></div>
+    <div class="pv-admit">ADMIT ONE</div>
+    <div class="pv-title"></div>
+    <div class="pv-te"></div>
+    <div class="pv-tear"></div>
+    <div class="pv-foot">TICKET FACTORY® · HYD</div>
+  </div>
+</div>
+
+<header>
+  <a class="logo" href="#" aria-label="Ticket Factory home">
+    <svg viewBox="0 0 30 20" fill="none" aria-hidden="true">
+      <path d="M1 1h28v6a3 3 0 0 0 0 6v6H1v-6a3 3 0 0 0 0-6V1Z" stroke="#F1EADB" stroke-width="2"/>
+      <path d="M11 4v2M11 9v2M11 14v2" stroke="#F1EADB" stroke-width="2" stroke-dasharray="2 2"/>
+    </svg>
+    Ticket Factory
+  </a>
+  <nav aria-label="Primary">
+    <a href="#story">Story</a>
+    <a href="#work">Work</a>
+    <a href="#process">Process</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+<main>
+  <section class="dome" id="top" aria-label="Work showcase sphere">
+    <canvas id="dome-canvas"></canvas>
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="dome-hud">
+      <div class="dome-top">
+        <p class="dome-kicker"><b>Ticket Factory®</b><br>Your ticket to being famous<br>Hyderabad · Est. 2020</p>
+        <p class="dome-count"><b>16 pictures</b><br>Tollywood slate<br>2023 — 2026</p>
+      </div>
+      <div class="dome-bottom">
+        <h1 id="dome-title">Your ticket<br>to being <em style="font-style:normal;color:var(--red)">famous</em></h1>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:10px">
+          <p id="dome-meta">Spin the sphere · <b>hover a screen</b> · click to read</p>
+          <button class="add-btn" id="add-posters" type="button">+ Drop poster images here or click</button>
+        </div>
+      </div>
+    </div>
+    <span class="drag-pill" id="drag-pill">Drag to explore</span>
+  </section>
+
+  <section class="story" id="story" aria-label="Your ticket to being famous — the story">
+    <div class="s-stage">
+      <div class="s-tint" id="s-tint"></div>
+
+      <div class="s-cap" data-cap="0">
+        <span class="act">Act I · The queue</span>
+        <p class="cap">Every brand starts <i>in the dark.</i></p>
+      </div>
+      <div class="s-cap" data-cap="1">
+        <span class="act">Act II · The print</span>
+        <p class="cap">So we press <i>your name</i> into a ticket.</p>
+      </div>
+      <div class="s-cap" data-cap="2">
+        <span class="act">Act III · The marquee</span>
+        <p class="cap">Then we <i>light it up.</i></p>
+      </div>
+      <div class="s-cap" data-cap="3">
+        <span class="act">Act IV · Housefull</span>
+        <p class="cap">Until every show <i>sells out.</i></p>
+      </div>
+
+      <div class="s-ticket" id="s-ticket">
+        <div class="bulbs" id="bulbs" aria-hidden="true"></div>
+        <div class="s-half top" id="half-top">
+          <div class="tk">
+            <div class="tk-glow" id="tk-glow"></div>
+            <div class="tk-row"><span>Ticket Factory®</span><span id="tk-serial">TF-????-???</span></div>
+            <div class="tk-name" id="tk-name"><span id="tk-typed"></span><span class="caret" id="tk-caret"></span></div>
+            <div class="tk-row"><span id="tk-admit">Admit · — — —</span><span>Row A · Seat 1</span></div>
+          </div>
+        </div>
+        <div class="s-half bot" id="half-bot">
+          <div class="tk">
+            <div class="tk-bar"></div>
+          </div>
+        </div>
+        <div class="s-stamp" id="s-stamp">Housefull</div>
+      </div>
+
+      <div class="seats" id="seats">Seats filled<b id="seat-num">0</b></div>
+
+      <div class="finale" id="finale">
+        <div class="fl"><span>Your</span></div>
+        <div class="fl"><span>Ticket</span></div>
+        <div class="fl"><span>to being</span></div>
+        <div class="fl fam"><span>Famous</span></div>
+        <p class="now">Now showing · your brand</p>
+        <a class="go" href="#work">See the proof ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>Brand</span><span><i>Influencer</i></span><span>Content</span><span><i>Film</i></span><span>Social</span><span><i>Campaigns</i></span>
+      <span>Brand</span><span><i>Influencer</i></span><span>Content</span><span><i>Film</i></span><span>Social</span><span><i>Campaigns</i></span>
+    </div>
+  </div>
+
+  <section class="work" id="work">
+    <div class="work-head">
+      <h2>All productions</h2>
+      <p class="count"><b>16 pictures</b><br>2023 — 2026</p>
+    </div>
+
+    <div class="year-group">
+      <div class="year-label">2026</div>
+      <div class="rows">
+        <a class="row" href="#" data-serial="TF-26-001" data-art="figure" data-tagline="The rule begins" data-te="పుష్ప 2" data-bg="linear-gradient(160deg,#B3001B 0%,#2B0004 95%)">
+          <span class="serial">Admit №<br>TF-26-001</span>
+          <span class="title">Pushpa 2: The Rule<span class="client">Theatrical promo</span></span>
+          <span class="meta"><span class="tags"><span class="tag">film</span><span class="tag">event</span><span class="tag">social</span></span><span class="arrow">→</span></span>
+        </a>
+        <a class="row" href="#" data-serial="TF-26-002" data-art="orb" data-tagline="Year 2898" data-te="కల్కి 2898" data-bg="linear-gradient(160deg,#00C2D1 0%,#021B33 95%)">
+          <span class="serial">Admit №<br>TF-26-002</span>
+          <span class="title">Kalki 2898 AD<span class="client">Digital blitz</span></span>
+          <span class="meta"><span class="tags"><span class="tag">film</span><span class="tag">vfx</span><span class="tag">launch</span></span><span class="arrow">→</span></span>
+        </a>
+        <a class="row" href="#" data-serial="TF-26-003" data-art="falls" data-tagline="Fear the sea" data-te="దేవర" data-bg="linear-gradient(160deg,#1E6FA8 0%,#04121F 95%)">
+          <span class="serial">Admit №<br>TF-26-003</span>
+          <span class="title">Devara<span class="client">Audio launch</span></span>
+          <span class="meta"><span class="tags"><span class="tag">film</span><span class="tag">music</span><span class="tag">event</span></span><span class="arrow">→</span></span>
+        </a>
+        <a class="row" href="#" data-serial="TF-26-004" data-art="rays" data-tagline="One vote. One storm." data-te="గేమ్ ఛేంజర్" data-bg="linear-gradient(160deg,#FFB525 0%,#7A1B00 95%)">
+          <span class="serial">Admit №<br>TF-26-004</span>
+          <span class="title">Game Changer<span class="client">Pre-release pulse</span></span>
+          <span class="meta"><span class="tags"><span class="tag">film</span><span class="tag">influencer</span></span><span class="arrow">→</span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="year-group">
+      <div class="year-label">2025</div>
+      <div class="rows">
+        <a class="row" href="#" data-serial="TF-25-014" data-art="figure" data-tagline="Violence has a name" data-te="సలార్" data-bg="linear-gradient(160deg,#C41E2F 0%,#101013 95%)">
+          <span class="serial">Admit №<br>TF-25-014</span>
+          <span class="title">Salaar<span class="client">Fan premiere</span></span>
+          <span class="meta"><span class="tags"><span class="tag">film</span><span class="tag">event</span><span class="tag">ugc</span></span><span class="arrow">→</span></span>
+        </a>
+        <a class="row" href="#" data-serial="TF-25-011" data-art="rays" data-tagline="A hero rises" data-te="హనుమాన్" data-bg="linear-gradient(160deg,#FF7A00 0%,#5C1A00 95%)">
+          <span class="serial">Admit №<br>TF-25-011</span>
+          <span class="title">HanuMan<span class="client">Release-day push</span></span>
+          <span class="meta"><span class="tags"><span class="tag">film</span><span class="tag">social</span></span><span class="arrow">→</span></span>
+        </a>
+        <a class="row" href="#" data-serial="TF-25-009" data-art="retro" data-tagline="A father, a story" data-te="హాయ్ నాన్న" data-bg="linear-gradient(160deg,#FFB6A3 0%,#5E2A3A 95%)">
+          <span class="serial">Admit №<br>TF-25-009</span>
+          <span class="title">Hi Nanna<span class="client">Digital release</span></span>
+          <span class="meta"><span class="tags"><span class="tag">film</span><span class="tag">ott</span><span class="tag">content</span></span><span class="arrow">→</span></span>
+        </a>
+        <a class="row" href="#" data-serial="TF-25-006" data-art="rays" data-tagline="Spice level: max" data-te="గుంటూరు కారం" data-bg="linear-gradient(160deg,#E8222A 0%,#7A3B00 95%)">
+          <span class="serial">Admit №<br>TF-25-006</span>
+          <span class="title">Guntur Kaaram<span class="client">Sankranti slate</span></span>
+          <span class="meta"><span class="tags"><span class="tag">film</span><span class="tag">festive</span></span><span class="arrow">→</span></span>
+        </a>
+        <a class="row" href="#" data-serial="TF-25-003" data-art="retro" data-tagline="Fortune favours" data-te="లక్కీ భాస్కర్" data-bg="linear-gradient(160deg,#C9A227 0%,#1F3D2B 95%)">
+          <span class="serial">Admit №<br>TF-25-003</span>
+          <span class="title">Lucky Baskhar<span class="client">Retro rollout</span></span>
+          <span class="meta"><span class="tags"><span class="tag">film</span><span class="tag">content</span></span><span class="arrow">→</span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="year-group">
+      <div class="year-label">2024</div>
+      <div class="rows">
+        <a class="row" href="#" data-serial="TF-24-012" data-art="split" data-tagline="Two legends, one fire" data-te="ఆర్ఆర్ఆర్" data-bg="linear-gradient(160deg,#FF5E13 0%,#0E2A4F 95%)">
+          <span class="serial">Admit №<br>TF-24-012</span>
+          <span class="title">RRR<span class="client">Global encore</span></span>
+          <span class="meta"><span class="tags"><span class="tag">film</span><span class="tag">event</span><span class="tag">social</span></span><span class="arrow">→</span></span>
+        </a>
+        <a class="row" href="#" data-serial="TF-24-010" data-art="retro" data-tagline="A love letter" data-te="సీతా రామం" data-bg="linear-gradient(160deg,#F4C7C3 0%,#7E3B4D 95%)">
+          <span class="serial">Admit №<br>TF-24-010</span>
+          <span class="title">Sita Ramam<span class="client">Re-release wave</span></span>
+          <span class="meta"><span class="tags"><span class="tag">film</span><span class="tag">music</span></span><span class="arrow">→</span></span>
+        </a>
+        <a class="row" href="#" data-serial="TF-24-007" data-art="figure" data-tagline="In his honour" data-te="మేజర్" data-bg="linear-gradient(160deg,#6B7A3A 0%,#0E1B2E 95%)">
+          <span class="serial">Admit №<br>TF-24-007</span>
+          <span class="title">Major<span class="client">Tribute campaign</span></span>
+          <span class="meta"><span class="tags"><span class="tag">film</span><span class="tag">content</span></span><span class="arrow">→</span></span>
+        </a>
+        <a class="row" href="#" data-serial="TF-24-004" data-art="retro" data-tagline="Three gems" data-te="జాతి రత్నాలు" data-bg="linear-gradient(160deg,#FFD23F 0%,#5B2A86 95%)">
+          <span class="serial">Admit №<br>TF-24-004</span>
+          <span class="title">Jathi Ratnalu<span class="client">Meme machine</span></span>
+          <span class="meta"><span class="tags"><span class="tag">film</span><span class="tag">ugc</span><span class="tag">social</span></span><span class="arrow">→</span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="year-group">
+      <div class="year-label">2023</div>
+      <div class="rows">
+        <a class="row" href="#" data-serial="TF-23-008" data-art="falls" data-tagline="The kingdom calls" data-te="బాహుబలి 2" data-bg="linear-gradient(160deg,#D4AF37 0%,#4A0E0E 95%)">
+          <span class="serial">Admit №<br>TF-23-008</span>
+          <span class="title">Baahubali 2<span class="client">Anniversary show</span></span>
+          <span class="meta"><span class="tags"><span class="tag">film</span><span class="tag">event</span></span><span class="arrow">→</span></span>
+        </a>
+        <a class="row" href="#" data-serial="TF-23-005" data-art="figure" data-tagline="The village stage" data-te="రంగస్థలం" data-bg="linear-gradient(160deg,#7FB069 0%,#4A2511 95%)">
+          <span class="serial">Admit №<br>TF-23-005</span>
+          <span class="title">Rangasthalam<span class="client">Classic encore</span></span>
+          <span class="meta"><span class="tags"><span class="tag">film</span><span class="tag">music</span></span><span class="arrow">→</span></span>
+        </a>
+        <a class="row" href="#" data-serial="TF-23-002" data-art="retro" data-tagline="The greatest actress" data-te="మహానటి" data-bg="linear-gradient(160deg,#E0C9A6 0%,#4B3621 95%)">
+          <span class="serial">Admit №<br>TF-23-002</span>
+          <span class="title">Mahanati<span class="client">Heritage reel</span></span>
+          <span class="meta"><span class="tags"><span class="tag">film</span><span class="tag">content</span></span><span class="arrow">→</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="process" id="process">
+    <div class="process-head">
+      <span class="eyebrow">This is how we roll</span>
+      <h2>Four stubs.<br>One <i>blockbuster</i> brand.</h2>
+    </div>
+    <div class="stubs">
+      <article class="stub">
+        <div class="punch"></div>
+        <div class="no"><span>Stub <b>01</b></span><span>Seat S-1</span></div>
+        <h3>Strategize</h3>
+        <p>Plan how to get to the finish line before the reel rolls. We map the audience, the moment and the medium — careful planning is where the magic gets manufactured.</p>
+        <span class="stamp">Approved</span>
+      </article>
+      <article class="stub">
+        <div class="punch"></div>
+        <div class="no"><span>Stub <b>02</b></span><span>Seat C-2</span></div>
+        <h3>Create</h3>
+        <p>Brains plus tools, dispensing remarkable content. Scripts, shoots, edits and motion — built to an exceptional standard so every frame earns its place on screen.</p>
+        <span class="stamp">Approved</span>
+      </article>
+      <article class="stub">
+        <div class="punch"></div>
+        <div class="no"><span>Stub <b>03</b></span><span>Seat M-3</span></div>
+        <h3>Market</h3>
+        <p>We read the slightest pulse of the customer persona — research, analysis and the right creators putting your story exactly where your audience is already looking.</p>
+        <span class="stamp">Approved</span>
+      </article>
+      <article class="stub">
+        <div class="punch"></div>
+        <div class="no"><span>Stub <b>04</b></span><span>Seat D-4</span></div>
+        <h3>Deliver</h3>
+        <p>Quantifiable, scalable results that speak for themselves — reach, recall and sales taking a ride to the sky. The deliverables are the encore.</p>
+        <span class="stamp">Approved</span>
+      </article>
+    </div>
+  </section>
+
+  <div class="marquee alt" aria-hidden="true">
+    <div class="track">
+      <span>Now booking</span><span><i>2026 slate</i></span><span>Now booking</span><span><i>2026 slate</i></span>
+      <span>Now booking</span><span><i>2026 slate</i></span><span>Now booking</span><span><i>2026 slate</i></span>
+    </div>
+  </div>
+</main>
+
+<footer id="contact">
+  <div class="cta">
+    <span class="eyebrow">Box office is open</span>
+    <a class="big" href="mailto:hello@ticketfactory.co.in">Get your<br><span class="tear">ticket →</span></a>
+  </div>
+  <div class="foot-grid">
+    <div>
+      <h4>Box office</h4>
+      <p>Road No. 5, Women's Welfare Housing Society,<br>Jubilee Hills, Hyderabad,<br>Telangana 500034, India</p>
+    </div>
+    <div>
+      <h4>Follow</h4>
+      <a href="https://www.instagram.com/ticketfactoryoffl/">Instagram</a>
+      <a href="https://www.facebook.com/ticketfactory">Facebook</a>
+      <a href="https://twitter.com/Ticket_Factory">Twitter</a>
+      <a href="https://www.behance.net/ticket_factory/">Behance</a>
+    </div>
+    <div>
+      <h4>Programme</h4>
+      <a href="#work">Work</a>
+      <a href="#process">Process</a>
+      <a href="#">Careers</a>
+      <a href="#">Case studies</a>
+    </div>
+  </div>
+  <div class="legal">
+    <span>© 2026 Ticket Factory® — All rights reserved</span>
+    <span>No re-entry without a stamp</span>
+  </div>
+</footer>
+<input type="file" id="poster-input" accept="image/*" multiple hidden>
+
+<script>
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* loader: print the ticket, then tear it away */
+  var loader = document.getElementById('loader');
+  var count = document.getElementById('tp-count');
+  function finishLoad(){
+    loader.classList.add('done');
+    document.body.classList.add('ready');
+    setTimeout(function(){ loader.remove(); }, 1000);
+  }
+  if (reduced){ document.body.classList.add('ready'); if(loader) loader.remove(); }
+  else {
+    var n = 0;
+    var t = setInterval(function(){
+      n = Math.min(100, n + Math.ceil(Math.random()*9));
+      count.textContent = String(n).padStart(3,'0');
+      if (n >= 100){ clearInterval(t); setTimeout(finishLoad, 350); }
+    }, 60);
+  }
+
+  /* custom cursor */
+  var cursor = document.getElementById('cursor');
+  var cx = innerWidth/2, cy = innerHeight/2, tx = cx, ty = cy;
+  addEventListener('pointermove', function(e){ tx = e.clientX; ty = e.clientY; });
+
+  /* floating ticket preview */
+  var preview = document.getElementById('preview');
+  var pvTitle = preview.querySelector('.pv-title');
+  var pvSerial = preview.querySelector('.pv-serial');
+  var pvTe = preview.querySelector('.pv-te');
+  var card = preview.querySelector('.card');
+  var px = cx, py = cy, active = false;
+
+  document.querySelectorAll('.row').forEach(function(row){
+    row.addEventListener('pointerenter', function(){
+      var t = row.querySelector('.title');
+      pvTitle.textContent = t ? t.childNodes[0].textContent : '';
+      pvSerial.textContent = row.dataset.serial || '';
+      pvTe.textContent = row.dataset.te || '';
+      card.style.background = row.dataset.img
+        ? "#000 url('" + row.dataset.img + "') center/cover no-repeat"
+        : (row.dataset.bg || '');
+      preview.classList.add('on');
+      cursor.classList.add('is-view');
+      active = true;
+    });
+    row.addEventListener('pointerleave', function(){
+      preview.classList.remove('on');
+      cursor.classList.remove('is-view');
+      active = false;
+    });
+    row.addEventListener('click', function(e){ if(row.getAttribute('href')==='#') e.preventDefault(); });
+  });
+
+  function raf(){
+    cx += (tx - cx) * 0.2;  cy += (ty - cy) * 0.2;
+    px += (tx - px) * 0.09; py += (ty - py) * 0.09;
+    cursor.style.transform = 'translate(' + (cx-0) + 'px,' + (cy-0) + 'px) translate(-50%,-50%)';
+    preview.style.transform = 'translate(' + px + 'px,' + py + 'px) translate(-50%,-50%) rotate(4deg) scale(' + (active?1:.85) + ')';
+    requestAnimationFrame(raf);
+  }
+  if (!reduced && matchMedia('(hover:hover)').matches) requestAnimationFrame(raf);
+
+  /* scroll-in reveals */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, {threshold:.12});
+  document.querySelectorAll('.row,.stub').forEach(function(el){ io.observe(el); });
+  if (reduced) document.querySelectorAll('.row,.stub').forEach(function(el){ el.classList.add('in'); });
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  if (!window.THREE) return;
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var isMobile = matchMedia('(max-width:760px)').matches;
+  var canvas = document.getElementById('dome-canvas');
+  var titleEl = document.getElementById('dome-title');
+  var pill = document.getElementById('drag-pill');
+  var cursor = document.getElementById('cursor');
+  var cursorLbl = cursor ? cursor.querySelector('span') : null;
+
+  /* ---- pull project data straight from the index rows ---- */
+  var rows = Array.prototype.slice.call(document.querySelectorAll('.row'));
+  var projects = rows.map(function(r){
+    var hex = (r.dataset.bg || '').match(/#[0-9A-Fa-f]{6}/g) || ['#F5333F','#5B0712'];
+    return {
+      title: r.querySelector('.title').childNodes[0].textContent.trim(),
+      client: (r.querySelector('.client')||{}).textContent || '',
+      serial: r.dataset.serial || '',
+      te: r.dataset.te || '',
+      art: r.dataset.art || 'rays',
+      tag: r.dataset.tagline || '',
+      c1: hex[0], c2: hex[1] || hex[0],
+      row: r
+    };
+  });
+  if (!projects.length) return;
+
+  /* ---- poster texture painted on canvas (no external images) ---- */
+  function paintMotif(x,p){
+    var W=512,H=680;
+    if (p.art==='rays'){
+      var g=x.createRadialGradient(256,200,10,256,200,360);
+      g.addColorStop(0,'rgba(255,235,180,.55)'); g.addColorStop(1,'rgba(255,235,180,0)');
+      x.fillStyle=g; x.fillRect(0,0,W,H);
+      x.save(); x.translate(256,200);
+      for(var i=0;i<22;i++){ if(i%2)continue;
+        x.rotate(Math.PI/11);
+        x.fillStyle='rgba(255,255,255,.07)';
+        x.beginPath(); x.moveTo(0,0); x.lineTo(-46,-640); x.lineTo(46,-640); x.fill();
+      } x.restore();
+    } else if (p.art==='split'){
+      x.fillStyle='rgba(0,0,0,.32)';
+      x.beginPath(); x.moveTo(W,0); x.lineTo(W,H); x.lineTo(0,H); x.fill();
+      var s=x.createLinearGradient(0,0,W,H);
+      s.addColorStop(.46,'rgba(255,230,160,0)'); s.addColorStop(.5,'rgba(255,230,160,.85)');
+      s.addColorStop(.54,'rgba(255,230,160,0)');
+      x.fillStyle=s; x.fillRect(0,0,W,H);
+    } else if (p.art==='orb'){
+      var o=x.createRadialGradient(256,216,20,256,216,150);
+      o.addColorStop(0,'rgba(255,255,255,.5)'); o.addColorStop(1,'rgba(255,255,255,0)');
+      x.fillStyle=o; x.beginPath(); x.arc(256,216,150,0,7); x.fill();
+      x.strokeStyle='rgba(255,255,255,.55)'; x.lineWidth=5;
+      x.beginPath(); x.arc(256,216,128,0,7); x.stroke();
+      x.lineWidth=1;
+      for(var j=0;j<9;j++){ var y=372+j*j*4.2;
+        x.strokeStyle='rgba(255,255,255,'+(0.16-j*0.015)+')';
+        x.beginPath(); x.moveTo(0,y); x.lineTo(W,y); x.stroke(); }
+    } else if (p.art==='falls'){
+      for(var k=0;k<34;k++){ var fx=Math.random()*W, fw=1.5+Math.random()*4;
+        var f=x.createLinearGradient(0,0,0,H);
+        f.addColorStop(0,'rgba(255,255,255,'+(0.05+Math.random()*0.12)+')');
+        f.addColorStop(1,'rgba(255,255,255,0)');
+        x.fillStyle=f; x.fillRect(fx,0,fw,H); }
+      x.fillStyle='rgba(255,255,255,.10)'; x.fillRect(0,0,W,8);
+    } else if (p.art==='figure'){
+      var bl=x.createRadialGradient(256,300,20,256,300,330);
+      bl.addColorStop(0,'rgba(255,225,170,.5)'); bl.addColorStop(1,'rgba(255,225,170,0)');
+      x.fillStyle=bl; x.fillRect(0,0,W,H);
+      x.fillStyle='rgba(8,6,10,.9)';
+      x.beginPath(); x.ellipse(256,318,25,29,0,0,7); x.fill();
+      x.beginPath(); x.moveTo(208,H); x.lineTo(216,408);
+      x.quadraticCurveTo(222,360,256,352); x.quadraticCurveTo(290,360,296,408);
+      x.lineTo(304,H); x.fill();
+    } else { /* retro */
+      for(var r2=0;r2<7;r2++){ x.fillStyle = r2%2 ? 'rgba(0,0,0,.10)' : 'rgba(255,255,255,.05)';
+        x.fillRect(0,60+r2*52,W,30); }
+      x.fillStyle='rgba(255,255,255,.10)';
+      for(var dy=0;dy<6;dy++) for(var dx=0;dx<6;dx++){
+        var rr=6-dy; if(rr>0){ x.beginPath(); x.arc(36+dx*24,430+dy*24,rr,0,7); x.fill(); } }
+    }
+  }
+
+  function makeTexture(p){
+    var c = document.createElement('canvas'); c.width = 512; c.height = 680;
+    var x = c.getContext('2d');
+    if (p.img){
+      var iw=p.img.width, ih=p.img.height, s=Math.max(512/iw,680/ih);
+      x.drawImage(p.img,(512-iw*s)/2,(680-ih*s)/2,iw*s,ih*s);
+    } else {
+      var g = x.createLinearGradient(0,0,512,680);
+      g.addColorStop(0,p.c1); g.addColorStop(1,p.c2);
+      x.fillStyle = g; x.fillRect(0,0,512,680);
+      paintMotif(x,p);
+      /* grain */
+      for(var n=0;n<700;n++){
+        x.fillStyle = Math.random()<.5 ? 'rgba(255,255,255,.05)' : 'rgba(0,0,0,.06)';
+        x.fillRect(Math.random()*512, Math.random()*680, 1.4, 1.4);
+      }
+    }
+    /* vignette + bottom legibility */
+    var v = x.createRadialGradient(256,300,160,256,340,520);
+    v.addColorStop(0,'rgba(0,0,0,0)'); v.addColorStop(1,'rgba(0,0,0,.42)');
+    x.fillStyle=v; x.fillRect(0,0,512,680);
+    var lg = x.createLinearGradient(0,360,0,680);
+    lg.addColorStop(0,'rgba(0,0,0,0)'); lg.addColorStop(1,'rgba(0,0,0,.74)');
+    x.fillStyle=lg; x.fillRect(0,360,512,320);
+    /* serial + admit stamp */
+    x.fillStyle = 'rgba(241,234,219,.92)';
+    x.font = '500 22px "IBM Plex Mono", monospace';
+    x.fillText(p.serial, 28, 52);
+    x.save(); x.translate(440,52); x.rotate(0.10);
+    x.strokeStyle = 'rgba(241,234,219,.7)'; x.lineWidth = 3;
+    x.strokeRect(-78,-30,128,44);
+    x.font = '500 19px "IBM Plex Mono", monospace'; x.textAlign='center';
+    x.fillText('ADMIT ONE', -14, 0); x.restore();
+    /* title block */
+    x.textAlign='left'; x.fillStyle = '#F1EADB';
+    x.font = '400 58px Anton, Impact, sans-serif';
+    var words = p.title.toUpperCase().split(' ');
+    var lines = [], line = '';
+    words.forEach(function(w){
+      var t = line ? line + ' ' + w : w;
+      if (x.measureText(t).width > 444 && line){ lines.push(line); line = w; } else line = t;
+    });
+    lines.push(line);
+    var y = 516 - (lines.length-1)*58;
+    lines.forEach(function(l,i){ x.fillText(l, 28, y + i*58); });
+    if (p.te){
+      x.font = '700 36px "Noto Sans Telugu", sans-serif';
+      x.fillStyle = '#FFC043';
+      x.fillText(p.te, 28, 566);
+    }
+    if (p.tag){
+      x.font = '500 17px "IBM Plex Mono", monospace';
+      x.fillStyle = 'rgba(241,234,219,.85)';
+      x.fillText(p.tag.toUpperCase(), 28, 602);
+    }
+    /* tear + billing block */
+    x.setLineDash([10,8]); x.strokeStyle='rgba(241,234,219,.5)'; x.lineWidth=3;
+    x.beginPath(); x.moveTo(0,622); x.lineTo(512,622); x.stroke(); x.setLineDash([]);
+    x.font = '400 15px "IBM Plex Mono", monospace'; x.fillStyle='rgba(241,234,219,.72)';
+    x.fillText('TICKET FACTORY\u00AE \u00B7 ' + (p.client||'').toUpperCase(), 28, 648);
+    x.fillStyle='rgba(241,234,219,.32)';
+    for(var bI=0;bI<14;bI++){ x.fillRect(28+bI*33, 660, 18+Math.random()*12, 3); }
+    var tex = new THREE.CanvasTexture(c);
+    tex.anisotropy = 4;
+    return tex;
+  }
+
+  /* ---- scene ---- */
+  var renderer = new THREE.WebGLRenderer({canvas:canvas, antialias:true, alpha:true});
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+  var scene = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(isMobile?92:74, 1, .1, 100);
+  camera.position.set(0,0,0.001);
+  var sphere = new THREE.Group(); scene.add(sphere);
+
+  var R = 16;
+  var bands = isMobile ? [{lat:-0.55,n:9},{lat:0,n:11},{lat:0.55,n:9}]
+                       : [{lat:-0.58,n:12},{lat:0,n:14},{lat:0.58,n:12}];
+  var tiles = [];
+  function build(){
+    var k = 0;
+    bands.forEach(function(b,bi){
+      var rad = R*Math.cos(b.lat);
+      var w = (2*Math.PI*rad/b.n)*0.74, h = w*1.33;
+      for (var i=0;i<b.n;i++){
+        var p = projects[(k++) % projects.length];
+        var theta = (i/b.n)*Math.PI*2 + bi*0.35;
+        var geo = new THREE.PlaneGeometry(w,h,1,1);
+        var mat = new THREE.MeshBasicMaterial({map:makeTexture(p), color:0xb9b4c2});
+        var m = new THREE.Mesh(geo,mat);
+        m.position.set(rad*Math.sin(theta), R*Math.sin(b.lat), rad*Math.cos(theta));
+        m.lookAt(0,0,0);
+        m.userData = p;
+        sphere.add(m); tiles.push(m);
+      }
+    });
+  }
+
+  /* ---- drag / inertia / autorotate ---- */
+  var vy=0, vx=0, dragging=false, lx=0, ly=0, moved=0, hovered=null;
+  var ray = new THREE.Raycaster(), ndc = new THREE.Vector2(-2,-2);
+
+  canvas.addEventListener('pointerdown', function(e){
+    dragging=true; moved=0; lx=e.clientX; ly=e.clientY;
+    canvas.classList.add('dragging'); canvas.setPointerCapture(e.pointerId);
+    if (pill) { pill.style.opacity=0; pill.style.transition='opacity .5s'; }
+  });
+  canvas.addEventListener('pointermove', function(e){
+    var r = canvas.getBoundingClientRect();
+    ndc.x = ((e.clientX-r.left)/r.width)*2-1;
+    ndc.y = -((e.clientY-r.top)/r.height)*2+1;
+    if (dragging){
+      var dx=e.clientX-lx, dy=e.clientY-ly;
+      moved += Math.abs(dx)+Math.abs(dy);
+      vy = dx*0.0024; vx = dy*0.0016;
+      lx=e.clientX; ly=e.clientY;
+    }
+  });
+  function endDrag(){ dragging=false; canvas.classList.remove('dragging'); }
+  canvas.addEventListener('pointerup', endDrag);
+  canvas.addEventListener('pointercancel', endDrag);
+  canvas.addEventListener('pointerleave', function(){ ndc.set(-2,-2); });
+
+  canvas.addEventListener('click', function(){
+    if (moved < 8 && hovered){
+      hovered.userData.row.scrollIntoView({behavior:reduced?'auto':'smooth', block:'center'});
+    }
+  });
+  canvas.addEventListener('pointerenter', function(){
+    if (cursor){ cursor.classList.add('is-view'); if(cursorLbl) cursorLbl.textContent='DRAG'; }
+  });
+  canvas.addEventListener('pointerout', function(e){
+    if (e.target===canvas && cursor){ cursor.classList.remove('is-view'); if(cursorLbl) cursorLbl.textContent='VIEW'; }
+  });
+  rows.forEach(function(r){
+    r.addEventListener('pointerenter', function(){ if(cursorLbl) cursorLbl.textContent='VIEW'; });
+  });
+
+  var defaultTitle = titleEl.innerHTML;
+  function setHover(tile){
+    if (hovered === tile) return;
+    if (hovered){ hovered.material.color.setHex(0xb9b4c2); hovered.scale.set(1,1,1); }
+    hovered = tile;
+    if (tile){
+      tile.material.color.setHex(0xffffff); tile.scale.set(1.07,1.07,1.07);
+      titleEl.textContent = tile.userData.title;
+      titleEl.classList.remove('dim');
+    } else {
+      titleEl.innerHTML = defaultTitle;
+      titleEl.classList.add('dim');
+    }
+  }
+
+  function resize(){
+    var w = canvas.clientWidth || innerWidth, h = canvas.clientHeight || innerHeight;
+    renderer.setSize(w,h,false);
+    camera.aspect = w/h; camera.updateProjectionMatrix();
+  }
+  addEventListener('resize', resize);
+
+  var auto = reduced ? 0 : 0.0009;
+  function loop(){
+    if (!dragging){ vy *= 0.94; vx *= 0.94; }
+    sphere.rotation.y += vy + (dragging?0:auto);
+    sphere.rotation.x = Math.max(-0.6, Math.min(0.6, sphere.rotation.x + vx));
+    if (!dragging) sphere.rotation.x *= 0.985;
+    if (matchMedia('(hover:hover)').matches){
+      ray.setFromCamera(ndc, camera);
+      var hit = ray.intersectObjects(tiles)[0];
+      setHover(hit ? hit.object : null);
+    }
+    renderer.render(scene,camera);
+    requestAnimationFrame(loop);
+  }
+
+
+  /* ---- poster slots: drop in real artwork client-side ----
+     Option A: drag image files onto the dome (auto-matched by filename)
+     Option B: click the "+ Drop poster images" button
+     Option C: hard-code URLs you have rights to use:            */
+  var POSTERS = {
+    /* 'TF-26-001': 'posters/pushpa2.jpg',
+       'TF-24-012': 'https://your-cdn/rrr.jpg', */
+  };
+
+  function slug(s){ return s.toLowerCase().replace(/[^a-z0-9]/g,''); }
+
+  function retexture(p){
+    tiles.forEach(function(m){
+      if (m.userData === p){
+        var old = m.material.map;
+        m.material.map = makeTexture(p);
+        m.material.needsUpdate = true;
+        if (old) old.dispose();
+      }
+    });
+  }
+
+  var loadedCount = 0;
+  var domeMeta = document.getElementById('dome-meta');
+  function applyImage(p, url){
+    var img = new Image();
+    if (/^https?:/i.test(url)) img.crossOrigin = 'anonymous';
+    img.onload = function(){
+      p.img = img;
+      retexture(p);
+      p.row.dataset.img = url;
+      loadedCount++;
+      if (domeMeta) domeMeta.innerHTML = '<b>' + loadedCount + ' poster' + (loadedCount>1?'s':'') + ' printed</b> \u00b7 drop more anytime';
+    };
+    img.onerror = function(){ /* keep generative art */ };
+    img.src = url;
+  }
+
+  Object.keys(POSTERS).forEach(function(serial){
+    var p = projects.filter(function(q){ return q.serial === serial; })[0];
+    if (p) applyImage(p, POSTERS[serial]);
+  });
+
+  function assignFiles(fileList){
+    var files = Array.prototype.slice.call(fileList).filter(function(f){ return /^image\//.test(f.type); });
+    files.forEach(function(f){
+      var name = slug(f.name);
+      var p = projects.filter(function(q){ return !q.img && name.indexOf(slug(q.title).slice(0,5)) !== -1; })[0]
+           || projects.filter(function(q){ return !q.img; })[0];
+      if (p) applyImage(p, URL.createObjectURL(f));
+    });
+  }
+
+  var domeSec = canvas.closest('.dome');
+  var input = document.getElementById('poster-input');
+  var addBtn = document.getElementById('add-posters');
+  if (addBtn && input){
+    addBtn.addEventListener('click', function(){ input.click(); });
+    input.addEventListener('change', function(){ assignFiles(input.files); input.value=''; });
+  }
+  if (domeSec){
+    ['dragenter','dragover'].forEach(function(ev){
+      domeSec.addEventListener(ev, function(e){ e.preventDefault(); domeSec.classList.add('dropping'); });
+    });
+    ['dragleave','drop'].forEach(function(ev){
+      domeSec.addEventListener(ev, function(e){ e.preventDefault(); if(ev==='drop'||e.target===domeSec) domeSec.classList.remove('dropping'); });
+    });
+    domeSec.addEventListener('drop', function(e){
+      if (e.dataTransfer && e.dataTransfer.files.length) assignFiles(e.dataTransfer.files);
+    });
+  }
+
+  function start(){ build(); resize(); loop(); }
+  if (document.fonts && document.fonts.load){
+    Promise.all([
+      document.fonts.load('400 64px Anton'),
+      document.fonts.load('500 22px "IBM Plex Mono"'),
+      document.fonts.load('700 38px "Noto Sans Telugu"')
+    ]).then(start).catch(start);
+  } else start();
+})();
+</script>
+<script>
+(function(){
+  var story = document.getElementById('story');
+  if (!story) return;
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* build marquee bulbs */
+  var bulbsEl = document.getElementById('bulbs');
+  var NB = 11, bulbs = [];
+  for (var i=0;i<NB;i++){ var b=document.createElement('b'); bulbsEl.appendChild(b); bulbs.push(b); }
+
+  var caps = Array.prototype.slice.call(story.querySelectorAll('.s-cap'));
+  var typed = document.getElementById('tk-typed');
+  var caret = document.getElementById('tk-caret');
+  var serial = document.getElementById('tk-serial');
+  var admit = document.getElementById('tk-admit');
+  var glow = document.getElementById('tk-glow');
+  var stamp = document.getElementById('s-stamp');
+  var tint = document.getElementById('s-tint');
+  var seats = document.getElementById('seats');
+  var seatNum = document.getElementById('seat-num');
+  var ticket = document.getElementById('s-ticket');
+  var halfTop = document.getElementById('half-top');
+  var halfBot = document.getElementById('half-bot');
+  var finale = document.getElementById('finale');
+  var flines = Array.prototype.slice.call(finale.querySelectorAll('.fl span'));
+  var nowLine = finale.querySelector('.now');
+  var goBtn = finale.querySelector('.go');
+
+  var NAME = 'YOUR BRAND';
+
+  if (reduced){
+    story.classList.add('static');
+    typed.textContent = NAME; caret.style.display='none';
+    serial.textContent = 'TF-2026-YOU'; admit.textContent = 'Admit · Everyone';
+    bulbs.forEach(function(b){ b.classList.add('lit'); });
+    return;
+  }
+
+  function clamp(v,a,b){ return v<a?a:(v>b?b:v); }
+  /* progress 0..1 inside window [a,b], eased */
+  function win(p,a,b){ return clamp((p-a)/(b-a),0,1); }
+  function ease(t){ return t<.5 ? 2*t*t : 1-Math.pow(-2*t+2,2)/2; }
+
+  var seatTarget = 1200000;
+  var ticking = false;
+
+  function render(){
+    ticking = false;
+    var r = story.getBoundingClientRect();
+    var total = r.height - innerHeight;
+    var p = clamp(-r.top/total, 0, 1);
+
+    /* caption windows */
+    var capW = [[0.00,0.16],[0.20,0.38],[0.42,0.58],[0.62,0.78]];
+    caps.forEach(function(c,i){
+      var w = capW[i], t;
+      if (p < w[0]) t = 0;
+      else if (p > w[1]) t = 1 - win(p, w[1], w[1]+0.05);
+      else t = win(p, w[0], w[0]+0.05);
+      c.style.opacity = t;
+      c.style.transform = 'translateY(' + (1-t)*18 + 'px)';
+    });
+
+    /* ACT II — type the name + serial */
+    var tType = ease(win(p, 0.22, 0.36));
+    var chars = Math.round(tType * NAME.length);
+    if (typed.textContent.length !== chars) typed.textContent = NAME.slice(0, chars);
+    caret.style.display = (p > 0.20 && p < 0.40) ? 'inline-block' : 'none';
+    serial.textContent = tType >= 1 ? 'TF-2026-YOU' : 'TF-????-???';
+    admit.textContent = tType >= 1 ? 'Admit · One' : 'Admit · — — —';
+
+    /* ACT III — marquee bulbs + glow */
+    var tLit = win(p, 0.44, 0.58);
+    var lit = Math.round(tLit * NB);
+    bulbs.forEach(function(b,i){ b.classList.toggle('lit', i < lit); });
+    glow.style.opacity = ease(tLit) * 0.9;
+
+    /* ACT IV — seats counter + housefull stamp */
+    var tSeat = ease(win(p, 0.62, 0.78));
+    seats.style.opacity = (p>0.60 && p<0.82) ? win(p,0.60,0.64) : (p>=0.82 ? 1-win(p,0.82,0.86) : 0);
+    seatNum.textContent = Math.round(tSeat*seatTarget).toLocaleString('en-IN');
+    var tStamp = win(p, 0.72, 0.78);
+    stamp.style.opacity = tStamp;
+    stamp.style.transform = 'translate(-50%,-50%) rotate(-10deg) scale(' + (3 - 2*ease(tStamp)) + ')';
+    if (tStamp >= 1) admit.textContent = 'Admit · Everyone';
+
+    /* tint warms the room */
+    tint.style.opacity = ease(win(p, 0.55, 0.95)) * 0.9;
+
+    /* FINALE — tear the ticket, slam the tagline */
+    var tTear = ease(win(p, 0.82, 0.90));
+    halfTop.style.transform = 'translate(' + (-26*tTear) + 'px,' + (-46*tTear) + 'px) rotate(' + (-7*tTear) + 'deg)';
+    halfBot.style.transform = 'translate(' + (30*tTear) + 'px,' + (60*tTear) + 'px) rotate(' + (5*tTear) + 'deg)';
+    ticket.style.opacity = 1 - ease(win(p, 0.86, 0.93));
+    stamp.style.opacity = Math.min(+stamp.style.opacity || 0, 1 - win(p, 0.84, 0.90));
+
+    flines.forEach(function(s,i){
+      var t = ease(win(p, 0.86 + i*0.022, 0.92 + i*0.022));
+      s.style.transform = 'translateY(' + (115 - 115*t) + '%)';
+    });
+    var tEnd = win(p, 0.955, 0.985);
+    nowLine.style.opacity = tEnd;
+    goBtn.style.opacity = tEnd;
+    goBtn.style.pointerEvents = tEnd > 0.5 ? 'auto' : 'none';
+  }
+
+  addEventListener('scroll', function(){
+    if (!ticking){ ticking = true; requestAnimationFrame(render); }
+  }, {passive:true});
+  addEventListener('resize', render);
+  render();
+})();
+</script>
+</body>
+</html>
