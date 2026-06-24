@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Luma Interiors &mdash; Interior Design Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ovo&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:        #F6EFE3;
+    --bone:      #5C4733;
+    --sand:      #A87C50;
+    --ink:       #3E2D1E;
+    --pad-x:     56px;
+    --pad-y:     56px;
+    --gap:       clamp(40px, 5vw, 80px);
+    --left-max:  960px;
+  }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; }
+  body{ min-height: 200vh; }
+  body{
+    background: var(--bg);
+    color: var(--bone);
+    font-family: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .stage{
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;
+    padding: var(--pad-y) 0 var(--pad-y) var(--pad-x);
+    display: grid;
+    grid-template-columns: 0px minmax(0, 1fr) 32vw;
+    grid-template-rows: auto 1fr auto; column-gap: var(--gap); row-gap: 0;
+  }
+  .wordmark{
+    grid-column: 1 / span 2; grid-row: 1; margin: 0;
+    font-family: "Montserrat", sans-serif; font-weight: 500;
+    font-size: clamp(40px, 6.4vw, 96px); line-height: 1; letter-spacing: 0.32em;
+    color: var(--sand); white-space: nowrap;
+  }
+  .portrait{
+    grid-column: 3; grid-row: 1 / span 3; align-self: stretch; width: 100%; height: 100vh;
+    margin: calc(var(--pad-y) * -1) 0; background: #F6EFE3; overflow: hidden; min-height: 0;
+  }
+  .portrait img, .portrait video{
+    width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block;
+  }
+  @media (max-width: 880px){
+    :root{ --pad-x: 20px; --pad-y: 20px; --gap: 16px; --left-max: 60vw; }
+    .wordmark{ font-size: clamp(20px, 5.6vw, 44px); }
+  }
+  .loader{ position: fixed; inset: 0; background: #F6EFE3; z-index: 10; pointer-events: none; opacity: 1; }
+  ::selection{ background: var(--sand); color: var(--ink); }
+
+  .content{position:relative;z-index:5;background:var(--bg);margin-top:200vh;}
+  .sec{max-width:1100px;margin:0 auto;padding:110px 40px;}
+  .sec .ey,.ctaband .ey{font:600 12px/1 Montserrat;letter-spacing:.28em;text-transform:uppercase;color:var(--sand);}
+  .sec h2,.ctaband h2{font:400 clamp(30px,4vw,52px)/1.12 Ovo,serif;color:var(--bone);margin:16px 0 18px;}
+  .sec p.lead{font:400 18px/1.7 Montserrat;color:#7A6A56;max-width:62ch;}
+  .divline{height:1px;background:rgba(160,124,80,.30);max-width:1100px;margin:0 auto;}
+  .stats{display:flex;gap:46px;flex-wrap:wrap;margin-top:34px;}
+  .stat .n{font:400 42px/1 Ovo,serif;color:var(--sand);} .stat .l{font:500 13px/1.4 Montserrat;color:#9A8770;margin-top:6px;letter-spacing:.03em;}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px;}
+  .tcard{border:1px solid rgba(160,124,80,.30);border-radius:16px;padding:32px 28px;background:linear-gradient(180deg,#FCF8F1,#F1E9DB);transition:transform .3s,border-color .3s;}
+  .tcard:hover{transform:translateY(-5px);border-color:rgba(160,124,80,.55);}
+  .tcard h3{font:600 22px/1.2 Ovo,serif;color:var(--bone);margin:0 0 12px;}
+  .tcard ul{list-style:none;padding:0;margin:0;color:#897760;font:400 14.5px/1 Montserrat;}
+  .tcard li{padding:7px 0;border-bottom:1px solid rgba(92,71,51,.10);} .tcard li:last-child{border:0;}
+  .locs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px;}
+  .loc{border:1px solid rgba(160,124,80,.30);border-radius:14px;padding:26px;} .loc h4{font:600 18px/1 Ovo,serif;color:var(--sand);margin:0 0 10px;} .loc p{font:400 14px/1.7 Montserrat;color:#897760;margin:0;}
+  .ctaband{text-align:center;padding:120px 40px;background:linear-gradient(180deg,#F1E9DB,#F1E9DB);}
+  .ctaband h2{max-width:18ch;margin:14px auto 26px;}
+  .btn{display:inline-block;background:var(--sand);color:#3E2D1E;font:600 15px/1 Montserrat;padding:16px 32px;border-radius:100px;text-decoration:none;transition:transform .25s,box-shadow .25s;}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(160,124,80,.30);}
+  .btn-o{background:transparent;border:1px solid rgba(201,168,106,.4);color:var(--bone);margin-left:10px;}
+  .ft{border-top:1px solid rgba(160,124,80,.30);padding:46px 40px;max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;color:#9A8770;font:400 13px/1.8 Montserrat;}
+  .specnote{padding:18px 40px 40px;text-align:center;color:#B3A790;font:400 11px/1 Montserrat;}
+  @media(max-width:880px){.cards,.locs{grid-template-columns:1fr;} .sec{padding:80px 24px;}}
+
+  .lead-col{position:fixed;left:clamp(40px,7vw,112px);top:50%;transform:translateY(-46%);width:min(60vw,840px);opacity:0;z-index:3;}
+  .lead-col .eyebrow{font:600 12px/1 Montserrat;letter-spacing:.26em;text-transform:uppercase;color:var(--sand);margin:0 0 24px;}
+  .headline{font:400 clamp(46px,6.2vw,108px)/0.96 Ovo,serif;color:var(--bone);letter-spacing:-.015em;margin:0 0 22px;}
+  .headline em{font-style:italic;color:var(--sand);}
+  .subline{font:400 clamp(15px,1.2vw,18px)/1.62 Montserrat;color:#7a6a56;max-width:48ch;margin:0 0 36px;}
+  .trust{display:flex;gap:clamp(28px,3.2vw,56px);margin:0 0 38px;align-items:flex-start;}
+  .trust .ti b{display:block;font:400 clamp(28px,2.5vw,38px)/1 Ovo,serif;color:var(--bone);}
+  .trust .ti b span{font:600 11px/1 Montserrat;color:var(--sand);margin-left:4px;letter-spacing:.05em;text-transform:uppercase;vertical-align:super;}
+  .trust .ti i{display:block;font:600 10.5px/1.3 Montserrat;font-style:normal;letter-spacing:.11em;text-transform:uppercase;color:#9a8770;margin-top:10px;}
+  .cta-row{display:flex;align-items:center;gap:22px;}
+  .byline{font:600 12px/1 Montserrat;letter-spacing:.16em;text-transform:uppercase;color:var(--sand);}
+  @media(max-width:880px){.lead-col{left:24px;right:24px;width:auto;bottom:40px;top:auto;transform:none;}.trust{flex-wrap:wrap;gap:22px;}}
+
+  .results .ba-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px;}
+  .ba{border:1px solid rgba(160,124,80,.30);border-radius:16px;overflow:hidden;background:#FCF8F1;transition:transform .3s,border-color .3s;}
+  .ba:hover{transform:translateY(-5px);border-color:rgba(160,124,80,.55);}
+  .ba-img{position:relative;aspect-ratio:4/3;display:flex;}
+  .ba-img .half{flex:1;display:flex;align-items:flex-end;padding:14px;font:600 11px/1 Montserrat;letter-spacing:.16em;text-transform:uppercase;}
+  .ba-img .bf{background:linear-gradient(140deg,#e9dfcd,#d7c9af);color:#6b5a44;}
+  .ba-img .af{background:linear-gradient(140deg,#f4ecda,#ecdcbd);color:#9b7a4c;justify-content:flex-end;}
+  .ba-cap{padding:18px 20px;font:600 15px/1 Ovo,serif;color:var(--bone);}
+  .ba-note{margin-top:24px;font:400 12px/1.5 Montserrat;color:#b3a790;}
+  @media(max-width:880px){.results .ba-row{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<main class="stage">
+  <div class="loader" aria-hidden="true"></div>
+  <h1 class="wordmark">LUMA</h1>
+
+  <div class="lead-col">
+    <div class="eyebrow">Full-service interior design &middot; Residential &amp; commercial</div>
+    <h2 class="headline">Spaces that feel<br><em>inevitable</em>.</h2>
+    <p class="subline">From first concept to final styling &mdash; interiors designed around how you actually live, then executed down to the last detail.</p>
+    <div class="trust">
+      <div class="ti"><b>12<span>yrs</span></b><i>Studio practice</i></div>
+      <div class="ti"><b>180<span>+</span></b><i>Spaces designed</i></div>
+      <div class="ti"><b>4.9&#9733;</b><i>Client rating</i></div>
+      <div class="ti"><b>A&ndash;Z</b><i>Design &amp; build</i></div>
+    </div>
+    <div class="cta-row">
+      <a href="#book" class="btn">Book a Consultation</a>
+      <span class="byline">the Luma studio</span>
+    </div>
+  </div>
+
+  <aside class="portrait" aria-label="Luma Interiors">
+    <video class="portrait-media" src="assets/luma_scrub.mp4" poster="assets/luma_still.jpg" muted playsinline preload="auto" disablepictureinpicture></video>
+  </aside>
+</main>
+
+<div class="content">
+  <section class="sec" id="about">
+    <div class="ey">The studio &middot; A considered approach</div>
+    <h2>Where architecture meets atmosphere.</h2>
+    <p class="lead">Luma is a full-service interior design studio. We shape spaces that are beautiful to look at and effortless to live in &mdash; balancing light, material and proportion so a room feels right the moment you walk in. Every project is led start to finish by the studio, never handed off.</p>
+    <div class="stats">
+      <div class="stat"><div class="n">12+</div><div class="l">Years in practice</div></div>
+      <div class="stat"><div class="n">180+</div><div class="l">Spaces designed</div></div>
+      <div class="stat"><div class="n">4.9&#9733;</div><div class="l">Client rating</div></div>
+      <div class="stat"><div class="n">A&ndash;Z</div><div class="l">Design through build</div></div>
+    </div>
+  </section>
+  <div class="divline"></div>
+  <section class="sec" id="services">
+    <div class="ey">Services</div>
+    <h2>From first sketch to the final cushion.</h2>
+    <div class="cards">
+      <div class="tcard"><h3>Full-Service Design</h3><ul><li>Space planning &amp; layout</li><li>Concept &amp; moodboards</li><li>Furniture, fixtures &amp; finishes</li><li>Custom millwork &amp; joinery</li></ul></div>
+      <div class="tcard"><h3>Renovations</h3><ul><li>Kitchens &amp; bathrooms</li><li>Layout reconfiguration</li><li>Contractor coordination</li><li>Lighting &amp; electrical plans</li></ul></div>
+      <div class="tcard"><h3>Styling &amp; Staging</h3><ul><li>Final styling &amp; art</li><li>Photography-ready setup</li><li>Seasonal refresh</li><li>Sale &amp; rental staging</li></ul></div>
+    </div>
+  </section>
+  <div class="divline"></div>
+  <section class="sec results" id="work">
+    <div class="ey">Selected work</div>
+    <h2>Rooms designed to be lived in.</h2>
+    <p class="lead">A few recent transformations &mdash; from tired and dated to warm, considered and unmistakably yours.</p>
+    <div class="ba-row">
+      <div class="ba"><div class="ba-img"><div class="half bf">Before</div><div class="half af">After</div></div><div class="ba-cap">Living &amp; lounge</div></div>
+      <div class="ba"><div class="ba-img"><div class="half bf">Before</div><div class="half af">After</div></div><div class="ba-cap">Kitchen &amp; dining</div></div>
+      <div class="ba"><div class="ba-img"><div class="half bf">Before</div><div class="half af">After</div></div><div class="ba-cap">Primary suite</div></div>
+    </div>
+    <p class="ba-note">Representative layout &mdash; your real project photos slot in here on launch.</p>
+  </section>
+  <section class="sec" id="process">
+    <div class="ey">How it works</div>
+    <h2>Three steps, no guesswork.</h2>
+    <div class="locs">
+      <div class="loc"><h4>01 &middot; Discover</h4><p>We walk your space, learn how you live in it, and agree on a vision and budget before any design begins.</p></div>
+      <div class="loc"><h4>02 &middot; Design</h4><p>Concepts, layouts and material palettes &mdash; presented so you can see and feel the room before a thing is bought.</p></div>
+      <div class="loc"><h4>03 &middot; Deliver</h4><p>We manage trades, procurement and install, then style it down to the last detail. You just move in.</p></div>
+    </div>
+  </section>
+  <section class="ctaband" id="book">
+    <div class="ey">Begin</div>
+    <h2>Let&rsquo;s design a space that feels like you.</h2>
+    <a href="#about" class="btn">Book a Consultation</a>
+    <a href="#work" class="btn btn-o">See the Work</a>
+  </section>
+  <div class="ft">
+    <div><strong style="color:var(--sand);letter-spacing:.18em">LUMA</strong> &middot; Interior Design Studio<br>Residential &amp; commercial interiors</div>
+    <div style="text-align:right">Full-service design &amp; build<br>Studio-led, start to finish</div>
+  </div>
+  <div class="specnote">Concept template designed by Kerblabs &mdash; demonstration only; Luma is a sample studio.</div>
+</div>
+
+<script>
+(() => {
+  const portrait = document.querySelector('.portrait');
+  const wordmark = document.querySelector('.wordmark');
+  const leadcol  = document.querySelector('.lead-col');
+  const video    = portrait.querySelector('video');
+  let videoDuration = 0;
+  if (video) {
+    video.addEventListener('loadedmetadata', () => { videoDuration = video.duration || 0; apply(); });
+    video.pause();
+  }
+  let pRect, wRect, ready = false;
+  function reset(){ for (const el of [portrait, wordmark]) el.style.cssText = ''; if (leadcol) leadcol.style.opacity = ''; }
+  function measure(){ reset(); pRect = portrait.getBoundingClientRect(); wRect = wordmark.getBoundingClientRect(); ready = true; }
+  const lerp = (a,b,t) => a + (b-a)*t;
+  const ease = t => t<.5 ? 2*t*t : 1-Math.pow(-2*t+2,2)/2;
+
+  const loaderEl = document.querySelector('.loader');
+  const LOAD_HOLD = 1100, LOAD_DUR = 900;
+  let loadT0 = null, loading = true;
+  function loaderProgress(){ if (loadT0 == null) return 0; return Math.max(0, Math.min(1, (performance.now() - loadT0 - LOAD_HOLD) / LOAD_DUR)); }
+  function tickLoader(){
+    apply();
+    const p = loaderProgress();
+    if (loaderEl) loaderEl.style.opacity = String(1 - p);
+    if (p < 1) requestAnimationFrame(tickLoader);
+    else { loading = false; if (loaderEl) loaderEl.style.display = 'none'; introT0 = performance.now(); requestAnimationFrame(tickIntro); }
+  }
+  const INTRO_DELAY = 200, INTRO_DUR = 900;
+  let introT0 = null;
+  function getIntro(){ if (introT0 == null) return 0; const e = performance.now() - introT0 - INTRO_DELAY; return Math.max(0, Math.min(1, e / INTRO_DUR)); }
+  function tickIntro(){ apply(); if (getIntro() < 1) requestAnimationFrame(tickIntro); }
+
+  function apply(){
+    if (!ready) return;
+    const raw  = Math.max(0, Math.min(1, window.scrollY / window.innerHeight));
+    const card = ease(raw);
+    const vw = document.documentElement.clientWidth;
+    const vh = document.documentElement.clientHeight;
+    const left  = lerp(0,  pRect.left,  card);
+    const width = lerp(vw, pRect.width, card);
+    portrait.style.position = 'fixed'; portrait.style.top = '0'; portrait.style.left = left + 'px';
+    portrait.style.width = width + 'px'; portrait.style.height = '100vh'; portrait.style.margin = '0'; portrait.style.zIndex = '2';
+    if (video && videoDuration > 0) { const t = raw * videoDuration; if (Math.abs(video.currentTime - t) > 0.03) video.currentTime = t; }
+    const wcx = wRect.left + wRect.width/2, wcy = wRect.top + wRect.height/2;
+    const dx  = (vw/2 - wcx) * (1 - card), dy = (vh/2 - wcy) * (1 - card);
+    wordmark.style.position = 'fixed'; wordmark.style.top = wRect.top + 'px'; wordmark.style.left = wRect.left + 'px';
+    wordmark.style.width = wRect.width + 'px'; wordmark.style.margin = '0';
+    var _ix = lerp(-180, 0, getIntro());
+    wordmark.style.transform = `translate(${dx + _ix}px, ${dy}px)`;
+    wordmark.style.zIndex = loading ? '11' : '3'; wordmark.style.willChange = 'transform, color';
+    let r, g, b;
+    if (loading) { const lp = loaderProgress(); r = Math.round(lerp(0xF6,0x5C,lp)); g = Math.round(lerp(0xEF,0x47,lp)); b = Math.round(lerp(0xE3,0x33,lp)); }
+    else { r = Math.round(lerp(0x5C,0xA8,card)); g = Math.round(lerp(0x47,0x7C,card)); b = Math.round(lerp(0x33,0x50,card)); }
+    wordmark.style.color = `rgb(${r},${g},${b})`;
+    const reveal = Math.max(0, Math.min(1, (card - 0.4) / 0.6));
+    if (leadcol) leadcol.style.opacity = reveal;
+  }
+  function init(){ measure(); apply(); if (loadT0 == null) { loadT0 = performance.now(); requestAnimationFrame(tickLoader); } }
+  window.addEventListener('scroll', apply, {passive:true});
+  window.addEventListener('resize', () => { ready = false; requestAnimationFrame(init); });
+  init();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { ready = false; requestAnimationFrame(() => { measure(); apply(); }); });
+})();
+</script>
+<script>
+(function(){
+  var v=document.querySelector("video"); if(!v) return;
+  var s=v.getAttribute("src")||v.currentSrc; if(!s||s.indexOf("blob:")===0) return;
+  fetch(s).then(function(r){return r.blob();}).then(function(b){ v.src=URL.createObjectURL(b); v.load(); }).catch(function(){});
+})();
+</script>
+</body>
+</html>
