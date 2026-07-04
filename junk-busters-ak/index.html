@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Junk Busters AK — Junk Removal in Wasilla, Palmer &amp; the Mat-Su Valley</title>
+<meta name="description" content="Junk Busters AK is your full junk removal service in Wasilla, AK. 5.0★ on Google. Free estimates, fair prices, same-day hauling — garages, estates, hot tubs, hoarder houses and more. Call (907) 315-3486." />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Junk Busters AK",
+  "telephone": "+19073153486",
+  "url": "https://www.junkbustersak.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Wasilla", "addressRegion": "AK", "addressCountry": "US" },
+  "areaServed": ["Wasilla AK", "Palmer AK", "Mat-Su Valley"],
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "50" },
+  "openingHours": "Mo-Sa 08:00-18:00",
+  "priceRange": "$$"
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600&family=Chivo+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   GONE. — the video IS the site. Text lives in its empty zones.
+   ============================================================ */
+:root{
+  --tar:#0e100d;
+  --lime:#d9ff3f;
+  --bone:#eef0e4;
+  --rust:#c65a2e;
+  --ash:#aab19c;
+  --ink:var(--bone);
+  --hair:rgba(238,240,228,.22);
+  --shadow:0 2px 26px rgba(0,0,0,.65), 0 1px 4px rgba(0,0,0,.5);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:var(--tar);color:var(--ink)}
+body{
+  font-family:"Archivo",sans-serif;
+  font-size:17px;line-height:1.55;
+  overflow-x:hidden;
+  transition:color .6s ease;
+}
+body.lit{--ink:#1c1e10;--hair:rgba(20,22,10,.3);--ash:#4f5340;
+  --shadow:0 1px 14px rgba(255,250,220,.55)}
+::selection{background:var(--lime);color:#101208}
+
+h1,h2,h3{
+  font-family:"Anton",sans-serif;
+  font-weight:400;text-transform:uppercase;
+  letter-spacing:.01em;line-height:.92;
+  text-shadow:var(--shadow);
+}
+.mono{font-family:"Chivo Mono",monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase}
+
+/* --- fixed video stage: full brightness, the hero of the page --- */
+#stage{position:fixed;inset:0;z-index:0;overflow:hidden;background:var(--tar)}
+#stage video,#stage img.fallback{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transform-origin:62% 50%;
+  will-change:transform;
+}
+#stage img.fallback{display:none}
+body.novid #stage video{display:none}
+body.novid #stage img.fallback{display:block}
+
+/* whisper-thin edge shading only — no more veil */
+.edges{position:fixed;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(10,12,9,.42) 0%,transparent 16%,transparent 86%,rgba(10,12,9,.4) 100%);
+  transition:opacity .8s ease}
+body.lit .edges{opacity:.25}
+
+/* --- film grain (lighter now) --- */
+.grain{
+  position:fixed;inset:-50%;z-index:5;pointer-events:none;opacity:.28;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain 6s steps(8) infinite;
+}
+@keyframes grain{
+  0%,100%{transform:translate(0,0)}20%{transform:translate(-4%,3%)}
+  40%{transform:translate(3%,-5%)}60%{transform:translate(-2%,-3%)}80%{transform:translate(4%,4%)}
+}
+
+/* --- shared --- */
+main{position:relative;z-index:2}
+.wrap{width:min(1280px,94vw);margin-inline:auto}
+section{position:relative}
+.tag{
+  display:inline-flex;align-items:center;gap:.6em;
+  border:1px solid var(--hair);padding:.5em 1em;border-radius:99px;
+  background:rgba(10,12,9,.45);backdrop-filter:blur(8px);
+}
+body.lit .tag{background:rgba(255,252,235,.4)}
+.tag::before{content:"";width:.55em;height:.55em;background:var(--lime);border-radius:50%;
+  box-shadow:0 0 12px var(--lime)}
+body.lit .tag::before{background:#1c1e10;box-shadow:none}
+
+/* --- header --- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:10;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1.1rem clamp(1rem,4vw,3rem);
+}
+.logo{font-family:"Anton",sans-serif;font-size:1.5rem;color:var(--ink);text-decoration:none;text-shadow:var(--shadow)}
+.logo em{font-style:normal;color:var(--lime)}
+body.lit .logo em{color:#1c1e10}
+.nav-cta{
+  font-family:"Chivo Mono",monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  color:#101208;background:var(--lime);text-decoration:none;
+  padding:.8em 1.4em;border-radius:99px;transition:transform .2s ease;
+  box-shadow:0 4px 20px rgba(0,0,0,.35);
+}
+.nav-cta:hover{transform:translateY(-2px) rotate(-1deg)}
+body.lit .nav-cta{background:#1c1e10;color:var(--lime)}
+
+/* ============ HERO — text in the SKY, junk stays visible ============ */
+#hero{min-height:100svh;display:flex;flex-direction:column}
+#hero .sky{padding-top:14vh}
+#hero h1{font-size:clamp(3rem,8.5vw,8.2rem)}
+#hero h1 .row{display:block;overflow:hidden}
+#hero h1 .row span{display:inline-block;transform:translateY(110%)}
+#hero h1 .hollow{color:transparent;-webkit-text-stroke:2px var(--bone);text-shadow:none}
+#hero h1 .lime{color:var(--lime)}
+#hero .tag{margin-bottom:1.2rem}
+#hero .sub{max-width:36ch;color:var(--bone);margin-top:1.2rem;text-shadow:var(--shadow);font-size:1.05rem}
+
+/* callouts pinned to video elements */
+.callout{position:fixed;z-index:3;pointer-events:none;opacity:0}
+.callout .dot{width:.6rem;height:.6rem;border-radius:50%;background:var(--lime);
+  box-shadow:0 0 0 4px rgba(217,255,63,.25),0 0 18px var(--lime);display:inline-block}
+.callout .line{display:inline-block;vertical-align:middle;width:3.4rem;height:1px;background:var(--lime);opacity:.8;margin:0 .5em}
+.callout .lbl{font-family:"Chivo Mono",monospace;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--bone);background:rgba(10,12,9,.55);backdrop-filter:blur(6px);
+  border:1px solid var(--hair);padding:.45em .9em;border-radius:99px}
+#co-junk{left:6vw;top:66vh}
+#co-truck{right:5vw;top:34vh;text-align:right}
+
+#hero .foot{margin-top:auto;padding-bottom:4vh;display:flex;justify-content:space-between;align-items:flex-end;gap:2rem}
+.scroll-hint{display:flex;align-items:center;gap:.8em;color:var(--bone);text-shadow:var(--shadow)}
+.scroll-hint .bar{width:1px;height:3.2em;background:rgba(238,240,228,.4);position:relative;overflow:hidden}
+.scroll-hint .bar::after{content:"";position:absolute;inset:0;background:var(--lime);animation:drip 1.6s ease-in-out infinite}
+@keyframes drip{0%{transform:translateY(-100%)}60%,100%{transform:translateY(100%)}}
+
+/* --- marquee --- */
+.marquee{
+  border-block:1px solid var(--hair);
+  overflow:hidden;white-space:nowrap;padding:.8rem 0;
+  transform:rotate(-1.2deg) scale(1.02);margin:6vh 0 12vh;
+  background:rgba(10,12,9,.5);backdrop-filter:blur(8px);
+}
+body.lit .marquee{background:rgba(255,252,235,.35)}
+.marquee .lane{display:inline-block;animation:slide 26s linear infinite}
+.marquee span{font-family:"Anton",sans-serif;text-transform:uppercase;font-size:1.25rem;margin-right:2.4rem}
+.marquee span em{font-style:normal;color:var(--lime)}
+body.lit .marquee span em{color:#1c1e10}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ============ STATEMENT — headline left, stats as slim pills ============ */
+#statement{padding:10vh 0 30vh}
+#statement h2{font-size:clamp(2.2rem,5.6vw,5.2rem);max-width:15ch}
+#statement h2 .strike{position:relative;white-space:nowrap}
+#statement h2 .strike::after{
+  content:"";position:absolute;left:-2%;right:-2%;top:52%;height:.09em;background:var(--rust);transform:rotate(-2deg)}
+.stat-row{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:5vh}
+.stat{
+  display:flex;align-items:baseline;gap:.7em;
+  border:1px solid var(--hair);border-radius:99px;
+  background:rgba(10,12,9,.5);backdrop-filter:blur(8px);
+  padding:.8em 1.5em;
+}
+body.lit .stat{background:rgba(255,252,235,.4)}
+.stat b{font-family:"Anton",sans-serif;font-weight:400;font-size:clamp(1.5rem,2.6vw,2.2rem);line-height:1}
+.stat b i{font-style:normal;color:var(--lime)}
+body.lit .stat b i{color:#1c1e10}
+.stat .mono{color:var(--ash)}
+
+/* ============ STEPS — compact corner cards, action unobstructed ============ */
+#steps{overflow:hidden}
+#steps .track{display:flex;width:300vw;height:100svh}
+.step{
+  width:100vw;height:100%;flex-shrink:0;position:relative;
+}
+.step .card{
+  position:absolute;max-width:min(440px,86vw);
+  padding:1.6rem 1.8rem;border-radius:18px;
+  background:rgba(10,12,9,.55);backdrop-filter:blur(10px);
+  border:1px solid var(--hair);
+}
+body.lit .step .card{background:rgba(255,252,235,.42)}
+.step:nth-child(1) .card{left:clamp(1rem,5vw,5rem);bottom:10vh}
+.step:nth-child(2) .card{left:clamp(1rem,5vw,5rem);top:12vh}
+.step:nth-child(3) .card{right:clamp(1rem,5vw,5rem);bottom:12vh;text-align:right}
+.step .num{font-family:"Chivo Mono",monospace;color:var(--lime);font-size:.75rem;letter-spacing:.3em}
+body.lit .step .num{color:#1c1e10}
+.step h3{font-size:clamp(2.4rem,5.5vw,4.6rem);margin:.15em 0 .25em}
+.step h3 .ghost{color:transparent;-webkit-text-stroke:1.5px var(--bone);text-shadow:none}
+.step p{color:var(--bone);font-size:.98rem;opacity:.92}
+
+/* ============ SERVICES — chip cloud, low footprint ============ */
+#services{padding:16vh 0 20vh}
+#services h2{font-size:clamp(2.2rem,5.6vw,5rem);margin-bottom:4vh;max-width:14ch}
+#services h2 em{font-style:normal;color:var(--lime)}
+body.lit #services h2 em{color:#1c1e10}
+.svc-cloud{display:flex;flex-wrap:wrap;gap:.7rem;max-width:820px}
+.svc{
+  display:inline-flex;align-items:center;gap:.8em;
+  border:1px solid var(--hair);border-radius:99px;
+  background:rgba(10,12,9,.5);backdrop-filter:blur(8px);
+  padding:.85em 1.4em;transition:all .22s ease;cursor:default;
+}
+body.lit .svc{background:rgba(255,252,235,.4)}
+.svc:hover{background:var(--lime);color:#101208;transform:rotate(-1deg) scale(1.04);border-color:transparent}
+.svc:hover .mono{color:#101208}
+.svc .mono{color:var(--ash)}
+.svc h4{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;font-size:1.15rem;letter-spacing:.03em}
+
+/* ============ GONE — big center, over the clean reveal ============ */
+#gone{min-height:160svh;display:flex;align-items:center;justify-content:center;text-align:center}
+#gone .inner{position:sticky;top:0;min-height:100svh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:1.4rem;width:100%}
+#gone h2{font-size:clamp(3.6rem,14vw,14rem)}
+#gone h2 span{display:inline-block}
+#gone .mono{color:var(--ink);text-shadow:var(--shadow)}
+
+/* ============ REVIEWS ============ */
+#reviews{padding:4vh 0 16vh}
+#reviews h2{font-size:clamp(2.2rem,5.6vw,5rem)}
+#reviews h2 em{font-style:normal;color:var(--lime)}
+body.lit #reviews h2 em{color:#1c1e10}
+.review-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:4vh}
+.review{
+  border:1px solid var(--hair);border-radius:18px;padding:1.7rem 1.6rem;
+  background:rgba(10,12,9,.55);backdrop-filter:blur(10px);
+  display:flex;flex-direction:column;justify-content:space-between;gap:1.2rem;
+  transition:transform .25s ease;
+}
+.review:hover{transform:translateY(-4px) rotate(-.4deg)}
+body.lit .review{background:rgba(255,252,235,.42)}
+.review blockquote{font-size:1.02rem;line-height:1.55}
+.review figcaption{color:var(--lime)}
+body.lit .review figcaption{color:#1c1e10}
+
+/* ============ BOOKING ============ */
+#book{padding:6vh 0}
+.book-card{
+  border:1px solid var(--hair);border-radius:22px;
+  padding:clamp(1.8rem,5vw,4rem);
+  background:rgba(10,12,9,.55);backdrop-filter:blur(14px);
+  display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;
+}
+body.lit .book-card{background:rgba(255,252,235,.45)}
+.book-card h2{font-size:clamp(2.1rem,5vw,4.2rem)}
+.book-card h2 em{font-style:normal;color:var(--lime)}
+body.lit .book-card h2 em{color:#1c1e10}
+.book-card>div p{color:var(--ash);margin-top:1em;max-width:36ch}
+form{display:flex;flex-direction:column;gap:.9rem}
+input{
+  font:inherit;color:var(--ink);background:rgba(10,12,9,.35);
+  border:1px solid var(--hair);border-radius:12px;padding:1em 1.2em;outline:none;
+  transition:border-color .2s;
+}
+body.lit input{background:rgba(255,252,235,.45)}
+input::placeholder{color:var(--ash)}
+input:focus{border-color:var(--lime)}
+body.lit input:focus{border-color:#1c1e10}
+button{
+  font-family:"Anton",sans-serif;font-size:1.25rem;text-transform:uppercase;letter-spacing:.04em;
+  background:var(--lime);color:#101208;border:0;border-radius:12px;padding:1em;cursor:pointer;
+  transition:transform .15s ease;
+}
+button:hover{transform:translateY(-2px) rotate(-.5deg)}
+body.lit button{background:#1c1e10;color:var(--lime)}
+.fine{font-size:.75rem;color:var(--ash);text-align:center}
+
+/* --- footer --- */
+footer{border-top:1px solid var(--hair);padding:2.2rem 0 3rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:space-between;align-items:center}
+footer .mono{color:var(--ash)}
+.big-gone{
+  font-family:"Anton",sans-serif;text-transform:uppercase;line-height:.8;
+  font-size:clamp(4rem,19vw,19rem);text-align:center;
+  color:transparent;-webkit-text-stroke:1.5px var(--hair);
+  user-select:none;margin-top:4vh;
+}
+
+.rv{opacity:0;transform:translateY(34px)}
+
+@media (max-width:820px){
+  .book-card{grid-template-columns:1fr}
+  .review-row{grid-template-columns:1fr}
+  .marquee span{font-size:1rem}
+  #co-truck{top:28vh}
+  #co-junk{top:70vh}
+  .step:nth-child(3) .card{text-align:left;right:auto;left:clamp(1rem,5vw,5rem)}
+}
+@media (prefers-reduced-motion:reduce){
+  .grain,.scroll-hint .bar::after{animation:none}
+  .marquee .lane{animation-duration:80s}
+}
+</style>
+</head>
+<body>
+
+<div id="stage">
+  <video id="bgvid" muted playsinline preload="auto" poster="assets/poster.jpg"></video>
+  <img class="fallback" src="assets/poster.jpg" alt="">
+</div>
+<div class="edges"></div>
+<div class="grain"></div>
+
+<!-- callouts pointing at video elements (hero only) -->
+<div class="callout" id="co-junk"><span class="dot"></span><span class="line"></span><span class="lbl">Your weekend, held hostage</span></div>
+<div class="callout" id="co-truck"><span class="lbl">Our very hungry truck</span><span class="line"></span><span class="dot"></span></div>
+
+<header>
+  <a class="logo" href="#hero">JUNK BUSTERS <em>AK</em></a>
+  <a class="nav-cta" href="tel:+19073153486">Call (907) 315-3486</a>
+</header>
+
+<main>
+
+  <!-- HERO — headline lives in the sky; junk pile & truck stay in view -->
+  <section id="hero">
+    <div class="wrap sky">
+      <span class="tag mono">Wasilla · Palmer · Mat-Su Valley — 5.0★ on Google</span>
+      <h1 aria-label="Junk piles up. We bust it.">
+        <span class="row"><span>Junk <span class="hollow">piles up.</span></span></span>
+        <span class="row"><span>We <span class="lime">bust it.</span></span></span>
+      </h1>
+    </div>
+    <div class="wrap foot">
+      <p class="sub">Garages, driveways, estates, hoarder houses — you point at the pile, our truck eats it. Free estimates, fair Alaska prices. Scroll and watch.</p>
+      <div class="scroll-hint mono"><span class="bar"></span> Scroll — you drive the truck</div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="lane" id="lane"></div>
+  </div>
+
+  <!-- STATEMENT — left-anchored, stats as slim pills; truck stays visible right -->
+  <section id="statement">
+    <div class="wrap">
+      <span class="tag mono rv">The problem</span>
+      <h2 class="rv">Your driveway isn't <span class="strike">storage.</span> It's a hostage situation.</h2>
+      <div class="stat-row">
+        <div class="stat rv"><b><i>5.0</i>★</b><span class="mono">Google rating</span></div>
+        <div class="stat rv"><b><i data-count="50">0</i>+</b><span class="mono">Five-star reviews</span></div>
+        <div class="stat rv"><b>$0</b><span class="mono">Estimates — always free</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEPS — corner cards while the junk flies into the truck center-frame -->
+  <section id="steps">
+    <div class="track" id="track">
+      <div class="step">
+        <div class="card">
+          <span class="num">STEP / 01</span>
+          <h3>You <span class="ghost">point.</span></h3>
+          <p>Snap a photo or wave your arm at the pile. Flat, upfront, volume-based pricing.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="card">
+          <span class="num">STEP / 02</span>
+          <h3>We <span class="ghost">haul.</span></h3>
+          <p>Keep scrolling — watch the truck eat. Tires, sofa, mattress. All of it.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="card">
+          <span class="num">STEP / 03</span>
+          <h3>It's <span class="ghost">gone.</span></h3>
+          <p>Donated, recycled, or responsibly dumped — in that order. Receipt included.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES — chip cloud, video stays the star -->
+  <section id="services">
+    <div class="wrap">
+      <span class="tag mono rv">What we take</span>
+      <h2 class="rv">If it fits the truck, it's <em>history.</em></h2>
+      <div class="svc-cloud">
+        <div class="svc rv"><span class="mono">01</span><h4>Junk removal &amp; hauling</h4></div>
+        <div class="svc rv"><span class="mono">02</span><h4>House &amp; garage clean-outs</h4></div>
+        <div class="svc rv"><span class="mono">03</span><h4>Furniture &amp; mattresses</h4></div>
+        <div class="svc rv"><span class="mono">04</span><h4>Appliance disposal</h4></div>
+        <div class="svc rv"><span class="mono">05</span><h4>Hoarder house cleanouts</h4></div>
+        <div class="svc rv"><span class="mono">06</span><h4>Estate &amp; storage lockers</h4></div>
+        <div class="svc rv"><span class="mono">07</span><h4>Hot tub &amp; shed removal</h4></div>
+        <div class="svc rv"><span class="mono">08</span><h4>Yard &amp; garden debris</h4></div>
+        <div class="svc rv"><span class="mono">09</span><h4>Post-construction debris</h4></div>
+        <div class="svc rv"><span class="mono">10</span><h4>E-waste disposal</h4></div>
+        <div class="svc rv"><span class="mono">11</span><h4>Junk car removal &amp; towing</h4></div>
+        <div class="svc rv"><span class="mono">12</span><h4>Donation pickup</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GONE — clean golden reveal -->
+  <section id="gone">
+    <div class="inner">
+      <span class="tag mono">Watch this</span>
+      <h2 id="goneWord" aria-label="And it's gone"></h2>
+      <p class="mono">That's the whole business model.</p>
+    </div>
+  </section>
+
+  <!-- REVIEWS — real words, 5.0 across 50 -->
+  <section id="reviews">
+    <div class="wrap">
+      <span class="tag mono rv">★★★★★ 5.0 · 50 Google reviews</span>
+      <h2 class="rv">The Valley <em>talks.</em></h2>
+      <div class="review-row">
+        <figure class="review rv">
+          <blockquote>"Showed up on time, fair price and everything. Absolutely recommend over the bigger companies."</blockquote>
+          <figcaption class="mono">★★★★★ — Google review</figcaption>
+        </figure>
+        <figure class="review rv">
+          <blockquote>"The big guys wanted a $300 base rate just to come to your home. Junk Busters did the job perfectly for $120."</blockquote>
+          <figcaption class="mono">★★★★★ — Google review</figcaption>
+        </figure>
+        <figure class="review rv">
+          <blockquote>"The owner was very personable, friendly and caring. I would definitely use them again."</blockquote>
+          <figcaption class="mono">★★★★★ — Google review</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="book">
+    <div class="wrap">
+      <div class="book-card">
+        <div>
+          <h2 class="rv">Free estimate.<br><em>Fair Alaska price.</em></h2>
+          <p class="rv">Call or text a photo of the pile — a real local (the owner, usually) gets back to you with a flat number. No $300 show-up fees, no upsells.</p>
+          <p class="rv"><a class="nav-cta" href="tel:+19073153486" style="display:inline-block;margin-top:.5rem">📞 (907) 315-3486</a></p>
+        </div>
+        <form id="quoteForm">
+          <input type="text" name="name" placeholder="Your name" required autocomplete="name">
+          <input type="tel" name="phone" placeholder="Phone number" required autocomplete="tel">
+          <input type="text" name="city" placeholder="City (Wasilla, Palmer…)" required autocomplete="address-level2">
+          <button type="submit">Bust my junk →</button>
+          <span class="fine">Open Mon–Sat from 8 AM · Wasilla, Palmer &amp; surrounding areas</span>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span class="mono">Junk Busters AK — Wasilla, Alaska</span>
+      <span class="mono"><a href="tel:+19073153486" style="color:inherit;text-decoration:none">(907) 315-3486</a></span>
+      <span class="mono"><a href="https://www.junkbustersak.com" style="color:inherit;text-decoration:none">junkbustersak.com</a></span>
+    </div>
+    <div class="big-gone" aria-hidden="true">BUSTED.</div>
+  </footer>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isMobile = /iPhone|iPad|Android/i.test(navigator.userAgent) || innerWidth < 760;
+
+/* ---------- marquee ---------- */
+document.getElementById('lane').innerHTML = Array(2).fill(
+  Array(4).fill('<span>Wasilla <em>●</em> Palmer <em>●</em> Mat-Su Valley <em>●</em> Free estimates <em>●</em> 5.0★ on Google <em>●</em> Locally owned <em>●</em> </span>').join('')
+).join('');
+
+/* ---------- split "AND IT'S GONE." ---------- */
+const goneWord = document.getElementById('goneWord');
+"AND IT'S GONE.".split('').forEach(ch => {
+  const s = document.createElement('span');
+  s.textContent = ch === ' ' ? ' ' : ch;
+  goneWord.appendChild(s);
+});
+
+/* ============================================================
+   SCROLL-SCRUBBED VIDEO + CINEMATIC CAMERA
+   scroll = playhead; a scripted zoom pushes into the action
+   while the junk flies, then pulls back for the clean reveal.
+   ============================================================ */
+const video = document.getElementById('bgvid');
+video.addEventListener('error', () => document.body.classList.add('novid'), true);
+
+const clamp01 = v => Math.min(1, Math.max(0, v));
+const smooth = t => t * t * (3 - 2 * t);
+const phase = (p, a, b) => clamp01((p - a) / (b - a));
+
+if (isMobile || reduced) {
+  video.src = 'assets/cleanup.mp4';
+  video.loop = true;
+  video.autoplay = true;
+  video.play().catch(() => {});
+} else {
+  video.src = 'assets/cleanup-scrub.mp4'; /* all-keyframe encode: instant seeks */
+
+  /* scroll progress -> video time (fractions of 8s) */
+  const vKeys = [
+    [0.00, 0.00],  // top          -> full mess, truck tipping in
+    [0.14, 0.10],  // hero         -> truck settles
+    [0.34, 0.28],  // statement    -> first items stir
+    [0.66, 0.80],  // steps pinned -> the feeding frenzy
+    [0.84, 1.00],  // gone         -> golden clean reveal
+    [1.00, 1.00],
+  ];
+  const mapTime = p => {
+    for (let i = 0; i < vKeys.length - 1; i++) {
+      const [a, ta] = vKeys[i], [b, tb] = vKeys[i + 1];
+      if (p >= a && p <= b) return ta + (tb - ta) * ((p - a) / (b - a));
+    }
+    return 1;
+  };
+
+  let target = 0, current = 0, dur = 0;
+  video.addEventListener('loadedmetadata', () => { dur = video.duration; });
+
+  ScrollTrigger.create({
+    trigger: document.body, start: 'top top', end: 'bottom bottom',
+    onUpdate: self => target = self.progress,
+  });
+
+  (function tick() {
+    current += (target - current) * 0.12;
+    if (dur && !video.seeking) {
+      const t = Math.min(mapTime(current) * dur, dur - 0.05);
+      if (Math.abs(video.currentTime - t) > 0.008) video.currentTime = t;
+    }
+    /* camera: push toward the truck during the frenzy, pull back for reveal */
+    const push = smooth(phase(current, .18, .5)) * (1 - smooth(phase(current, .68, .88)));
+    const zoom = 1 + push * .14;
+    const panX = push * -3;            /* drift toward the action on the right */
+    video.style.transform = `scale(${zoom}) translateX(${panX}%)`;
+    requestAnimationFrame(tick);
+  })();
+}
+
+/* ============================================================
+   GSAP — DOM choreography
+   ============================================================ */
+
+/* hero reveal + callouts fade in, then all hero chrome fades on scroll */
+gsap.to('#hero h1 .row span', { y: 0, duration: 1.1, ease: 'power4.out', stagger: .14, delay: .2 });
+gsap.from('#hero .tag, #hero .foot', { opacity: 0, y: 20, duration: 1, ease: 'power3.out', stagger: .15, delay: .7 });
+gsap.to('.callout', { opacity: 1, duration: .8, stagger: .25, delay: 1.3 });
+gsap.to('.callout', {
+  opacity: 0, ease: 'none',
+  scrollTrigger: { trigger: '#hero', start: '30% top', end: '70% top', scrub: true },
+});
+
+/* generic reveals */
+document.querySelectorAll('.rv').forEach(el => {
+  gsap.to(el, {
+    opacity: 1, y: 0, duration: .9, ease: 'power3.out',
+    scrollTrigger: { trigger: el, start: 'top 85%' },
+  });
+});
+
+/* counters */
+document.querySelectorAll('[data-count]').forEach(el => {
+  const targetN = +el.dataset.count;
+  ScrollTrigger.create({
+    trigger: el, start: 'top 85%', once: true,
+    onEnter: () => gsap.to({ v: 0 }, {
+      v: targetN, duration: 1.6, ease: 'power2.out',
+      onUpdate: function () { el.firstChild.textContent = Math.round(this.targets()[0].v).toLocaleString(); },
+    }),
+  });
+});
+
+/* pinned horizontal steps */
+gsap.to('#track', {
+  xPercent: -66.666, ease: 'none',
+  scrollTrigger: {
+    trigger: '#steps', pin: true, scrub: reduced ? false : .5,
+    end: () => '+=' + innerWidth * 2,
+    invalidateOnRefresh: true,
+  },
+});
+
+/* GONE moment: letters pop, page flips to daylight */
+gsap.from('#goneWord span', {
+  y: 90, opacity: 0, rotate: () => gsap.utils.random(-14, 14),
+  stagger: .045, ease: 'back.out(1.8)', duration: .7,
+  scrollTrigger: { trigger: '#gone', start: 'top 55%' },
+});
+ScrollTrigger.create({
+  trigger: '#gone', start: 'top 40%', end: 'bottom bottom',
+  onEnter: () => document.body.classList.add('lit'),
+  onLeaveBack: () => document.body.classList.remove('lit'),
+});
+
+/* form */
+document.getElementById('quoteForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const btn = e.target.querySelector('button');
+  btn.textContent = '✓ Crew dispatched';
+  btn.style.pointerEvents = 'none';
+  gsap.fromTo(btn, { scale: .92 }, { scale: 1, duration: .5, ease: 'back.out(3)' });
+});
+
+ScrollTrigger.refresh();
+</script>
+</body>
+</html>
