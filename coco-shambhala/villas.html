@@ -220,7 +220,11 @@ secs.forEach((sec,idx)=>{
 
 /* WATERFALL SCRUB: the falls pour with your scroll (blob preload, all-keyframe encode) */
 const wf=document.getElementById('wf');
-let wfReady=false;
+let wfReady=false,wfTarget=0,wfCur=0;
+gsap.ticker.add(()=>{if(!wfReady||!wf.duration)return;
+  wfCur+=(wfTarget-wfCur)*0.18;
+  const t=Math.max(0,Math.min(wf.duration-.05,wfCur));
+  if(Math.abs(wf.currentTime-t)>0.01) wf.currentTime=t;});
 fetch('assets/waterfall-scrub.mp4').then(r=>r.blob()).then(b=>{wf.src=URL.createObjectURL(b);
   wf.addEventListener('loadedmetadata',()=>{wfReady=true},{once:true});}).catch(()=>{wfReady=false});
 const lines=['#fl1','#fl2','#fl3'];let curLine=-1;
@@ -228,7 +232,7 @@ function showLine(k){if(k===curLine)return;curLine=k;
   lines.forEach((id,i)=>gsap.to(id,{opacity:i===k?1:0,y:i===k?0:30,duration:.5,overwrite:true}));}
 ScrollTrigger.create({trigger:'#falls',start:'top top',end:'+=2600',pin:'#falls .pin',scrub:true,
   onUpdate:s=>{const p=s.progress;
-    if(wfReady&&wf.duration) wf.currentTime=Math.min(wf.duration-.05,p*wf.duration);
+    if(wfReady&&wf.duration) wfTarget=p*wf.duration;
     showLine(p<.33?0:p<.72?1:2);
     document.getElementById('fprog').textContent='FALLS · '+Math.round(p*100)+'%';}});
 
