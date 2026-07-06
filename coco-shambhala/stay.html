@@ -1,0 +1,126 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Your stay — Coco Shambhala · Enquiries</title><meta name="description" content="Plan your stay at Coco Shambhala: four private villas above Bhogave Beach, Sindhudurg. Honeymoons, anniversaries, full buyouts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Archivo:wght@300;400;500&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+:root{--night:#12211D;--salt:#E9E2D2;--laterite:#B4552D;--palm:#7A8C6E;--gold:#D9A441;--ink:#1A2420}
+*{margin:0;padding:0;box-sizing:border-box}
+html::-webkit-scrollbar,body::-webkit-scrollbar{display:none}html,body{scrollbar-width:none}
+body{background:var(--night);color:var(--salt);font-family:'Archivo',sans-serif;font-weight:300;overflow-x:hidden;cursor:none}
+::selection{background:var(--laterite);color:var(--salt)}
+a{color:inherit;text-decoration:none}img,video{display:block;width:100%;height:100%;object-fit:cover}
+.mono{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.cur{position:fixed;top:0;left:0;width:10px;height:10px;border-radius:50%;background:var(--salt);pointer-events:none;z-index:2000;mix-blend-mode:difference}
+.curo{position:fixed;top:0;left:0;width:44px;height:44px;border-radius:50%;border:1px solid rgba(233,226,210,.5);pointer-events:none;z-index:2000;transition:width .3s,height .3s;mix-blend-mode:difference}
+.curo.big{width:92px;height:92px}
+@media(hover:none){.cur,.curo{display:none}body{cursor:auto}}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:26px 40px;mix-blend-mode:difference}
+nav .wordmark{font-family:'Fraunces',serif;font-size:19px}
+nav .wordmark em{font-style:italic}
+nav .links{display:flex;gap:30px;align-items:center}
+nav .links a{font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:.85}
+nav .links a.on{border-bottom:1px solid var(--gold);padding-bottom:4px}
+nav .book{border:1px solid rgba(233,226,210,.6);border-radius:40px;padding:10px 22px;font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+@media(max-width:860px){nav .links a:not(.book){display:none}}
+.vhero{position:relative;height:92vh;overflow:hidden;display:flex;align-items:flex-end}
+.vhero .media{position:absolute;inset:0}
+.vhero .media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,33,29,.5),rgba(18,33,29,.2) 45%,rgba(18,33,29,.88))}
+.vhero .inner{position:relative;z-index:3;padding:0 8vw 9vh;max-width:1200px}
+.vhero .kicker{color:var(--gold)}
+.vhero h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(46px,7.6vw,120px);line-height:1.02;margin-top:16px}
+.vhero h1 em{font-style:italic;color:var(--gold)}
+.vhero h1 .ln{display:block;overflow:hidden}.vhero h1 .ln span{display:inline-block;transform:translateY(110%)}
+.vhero .lede{margin-top:22px;max-width:56ch;color:rgba(233,226,210,.85);line-height:1.7;opacity:0}
+section.body{padding:14vh 8vw}
+.rule{height:1px;background:rgba(233,226,210,.14);margin:0 8vw}
+h2.sec{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(34px,4.6vw,72px);line-height:1.08}
+h2.sec em{font-style:italic;color:var(--gold)}
+.rev{opacity:0;transform:translateY(46px)}
+footer{padding:14vh 8vw 7vh;text-align:center}
+footer h2{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(40px,6.4vw,100px)}
+footer h2 em{font-style:italic;color:var(--gold)}
+footer .btn{display:inline-block;margin-top:44px;border:1px solid rgba(233,226,210,.4);border-radius:60px;padding:22px 54px;font-size:13px;letter-spacing:.24em;text-transform:uppercase;position:relative;overflow:hidden}
+footer .btn i{position:absolute;inset:0;background:var(--laterite);transform:translateY(101%);transition:transform .45s cubic-bezier(.6,0,.2,1);z-index:-1}
+footer .btn:hover i{transform:translateY(0)}
+footer .fine{margin-top:11vh;color:rgba(233,226,210,.5)}
+
+.splitrow{display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:stretch}
+.splitrow .vid{height:80vh;overflow:hidden;border-radius:3px;position:relative}
+.splitrow .vid video{position:absolute;inset:0}
+.faq{margin-top:12vh}
+.qa{border-top:1px solid rgba(233,226,210,.14);padding:44px 0}
+.qa h4{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(22px,2.6vw,34px)}
+.qa p{margin-top:14px;color:rgba(233,226,210,.75);line-height:1.75;max-width:70ch}
+.pack{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px;margin-top:7vh}
+.pcard{border:1px solid rgba(233,226,210,.18);border-radius:3px;padding:40px 34px}
+.pcard .mono{color:var(--gold)}
+.pcard h4{font-family:'Fraunces',serif;font-weight:400;font-size:30px;margin-top:12px}
+.pcard p{margin-top:12px;color:rgba(233,226,210,.72);font-size:14px;line-height:1.65}
+
+</style></head><body>
+<div class="cur" id="cur"></div><div class="curo" id="curo"></div>
+<nav>
+  <a class="wordmark hov" href="index.html">Coco <em>Shambhala</em></a>
+  <div class="links">
+    <a class="hov " href="villas.html">Villas</a>
+    <a class="hov " href="experiences.html">Experiences</a>
+    <a class="hov on" href="stay.html">Your stay</a>
+    <a class="book hov" href="stay.html">Reserve</a>
+  </div>
+</nav>
+<section class="vhero" style="height:78vh">
+  <div class="media"><video src="https://videos.pexels.com/video-files/10761087/10761087-hd_1920_1080_30fps.mp4" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1439066615861-d1af74d74000?q=80&w=1600&auto=format&fit=crop"></video></div>
+  <div class="inner">
+    <div class="mono kicker">Your stay · Enquiries &amp; planning</div>
+    <h1><span class="ln"><span>Begin the</span></span><span class="ln"><span><em>descent</em></span></span></h1>
+    <p class="lede">Four villas, twenty guests at most, and a calendar that fills quietly. Tell us your dates and who's coming; the concierge builds everything else around you.</p>
+  </div>
+</section>
+<section class="body">
+  <div class="splitrow">
+    <div class="rev">
+      <h2 class="sec">Made for <em>occasions</em></h2>
+      <div class="pack">
+        <div class="pcard hov"><div class="mono">For two</div><h4>Honeymoons</h4><p>A villa to yourselves, dinners on the sand, and a coastline that keeps no schedule.</p></div>
+        <div class="pcard hov"><div class="mono">For the years</div><h4>Anniversaries</h4><p>Private pool, private chef, and the same sunset that never repeats itself.</p></div>
+        <div class="pcard hov"><div class="mono">For everyone</div><h4>Celebrations &amp; buyouts</h4><p>Take all four villas: twenty guests, one hillside, your own private resort.</p></div>
+      </div>
+      <div class="faq">
+        <div class="qa rev"><h4>Where exactly are you?</h4><p>Above Bhogave Beach near Parole village, Sindhudurg district, Maharashtra, on the quiet coast just north of Goa. 15°58′ N — 73°32′ E.</p></div>
+        <div class="qa rev"><h4>How do rates work?</h4><p>Villas are let whole, with staff, breakfast and housekeeping included. Send your dates through the enquiry link below and the team responds with availability and a quote.</p></div>
+        <div class="qa rev"><h4>What about getting there?</h4><p>The concierge arranges transfers from the nearest airports and rail heads; ask when you enquire and it will be planned for you.</p></div>
+        <div class="qa rev"><h4>Recognition</h4><p>Condé Nast Traveller's world's top 25 beach villas, Outlook Traveller's best boutique hotel, and TripAdvisor's top hotels in India.</p></div>
+      </div>
+    </div>
+    <div class="vid rev hov"><video src="https://videos.pexels.com/video-files/6981400/6981400-hd_1920_1080_25fps.mp4" autoplay muted loop playsinline></video></div>
+  </div>
+</section>
+
+<footer>
+  <div class="mono" style="color:var(--palm)">The calendar is short</div>
+  <h2 style="margin-top:18px">Ask for your <em>dates</em></h2>
+  <a class="btn hov" href="https://cocoshambhala.com/enquiries-information/">Send an enquiry<i></i></a>
+  <div class="fine mono">Bhogave · Sindhudurg · 15°58′ N — 73°32′ E · Concept redesign by Kerblabs</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+const lenis=new Lenis({lerp:.09});lenis.on('scroll',ScrollTrigger.update);
+gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);
+const cur=document.getElementById('cur'),curo=document.getElementById('curo');
+let cx=0,cy=0,ox=0,oy=0;
+addEventListener('mousemove',e=>{cx=e.clientX;cy=e.clientY;cur.style.transform=`translate(${cx-5}px,${cy-5}px)`});
+gsap.ticker.add(()=>{ox+=(cx-ox)*.12;oy+=(cy-oy)*.12;curo.style.transform=`translate(${ox-22}px,${oy-22}px)`});
+document.querySelectorAll('.hov,a').forEach(el=>{el.addEventListener('mouseenter',()=>curo.classList.add('big'));el.addEventListener('mouseleave',()=>curo.classList.remove('big'))});
+gsap.to('.vhero h1 .ln span',{y:0,duration:1.1,ease:'power4.out',stagger:.12,delay:.2});
+gsap.to('.vhero .lede',{opacity:1,duration:.9,delay:.9});
+const hm=document.querySelector('.vhero .media');
+if(hm) gsap.to(hm,{yPercent:14,scale:1.08,ease:'none',scrollTrigger:{trigger:'.vhero',start:'top top',end:'bottom top',scrub:true}});
+document.querySelectorAll('.rev').forEach(el=>{gsap.to(el,{opacity:1,y:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 84%'}})});
+
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){lenis.destroy();gsap.globalTimeline.timeScale(100)}
+</script></body></html>

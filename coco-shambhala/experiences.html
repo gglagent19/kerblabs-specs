@@ -1,0 +1,150 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Experiences — Coco Shambhala · Sea, jungle, craft</title><meta name="description" content="Nineteen curated Konkan experiences: dolphins at dawn, scuba, sea forts, waterfall treks, Malvani cooking, Chitrakathi art.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Archivo:wght@300;400;500&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+:root{--night:#12211D;--salt:#E9E2D2;--laterite:#B4552D;--palm:#7A8C6E;--gold:#D9A441;--ink:#1A2420}
+*{margin:0;padding:0;box-sizing:border-box}
+html::-webkit-scrollbar,body::-webkit-scrollbar{display:none}html,body{scrollbar-width:none}
+body{background:var(--night);color:var(--salt);font-family:'Archivo',sans-serif;font-weight:300;overflow-x:hidden;cursor:none}
+::selection{background:var(--laterite);color:var(--salt)}
+a{color:inherit;text-decoration:none}img,video{display:block;width:100%;height:100%;object-fit:cover}
+.mono{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.cur{position:fixed;top:0;left:0;width:10px;height:10px;border-radius:50%;background:var(--salt);pointer-events:none;z-index:2000;mix-blend-mode:difference}
+.curo{position:fixed;top:0;left:0;width:44px;height:44px;border-radius:50%;border:1px solid rgba(233,226,210,.5);pointer-events:none;z-index:2000;transition:width .3s,height .3s;mix-blend-mode:difference}
+.curo.big{width:92px;height:92px}
+@media(hover:none){.cur,.curo{display:none}body{cursor:auto}}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:26px 40px;mix-blend-mode:difference}
+nav .wordmark{font-family:'Fraunces',serif;font-size:19px}
+nav .wordmark em{font-style:italic}
+nav .links{display:flex;gap:30px;align-items:center}
+nav .links a{font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:.85}
+nav .links a.on{border-bottom:1px solid var(--gold);padding-bottom:4px}
+nav .book{border:1px solid rgba(233,226,210,.6);border-radius:40px;padding:10px 22px;font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+@media(max-width:860px){nav .links a:not(.book){display:none}}
+.vhero{position:relative;height:92vh;overflow:hidden;display:flex;align-items:flex-end}
+.vhero .media{position:absolute;inset:0}
+.vhero .media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,33,29,.5),rgba(18,33,29,.2) 45%,rgba(18,33,29,.88))}
+.vhero .inner{position:relative;z-index:3;padding:0 8vw 9vh;max-width:1200px}
+.vhero .kicker{color:var(--gold)}
+.vhero h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(46px,7.6vw,120px);line-height:1.02;margin-top:16px}
+.vhero h1 em{font-style:italic;color:var(--gold)}
+.vhero h1 .ln{display:block;overflow:hidden}.vhero h1 .ln span{display:inline-block;transform:translateY(110%)}
+.vhero .lede{margin-top:22px;max-width:56ch;color:rgba(233,226,210,.85);line-height:1.7;opacity:0}
+section.body{padding:14vh 8vw}
+.rule{height:1px;background:rgba(233,226,210,.14);margin:0 8vw}
+h2.sec{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(34px,4.6vw,72px);line-height:1.08}
+h2.sec em{font-style:italic;color:var(--gold)}
+.rev{opacity:0;transform:translateY(46px)}
+footer{padding:14vh 8vw 7vh;text-align:center}
+footer h2{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(40px,6.4vw,100px)}
+footer h2 em{font-style:italic;color:var(--gold)}
+footer .btn{display:inline-block;margin-top:44px;border:1px solid rgba(233,226,210,.4);border-radius:60px;padding:22px 54px;font-size:13px;letter-spacing:.24em;text-transform:uppercase;position:relative;overflow:hidden}
+footer .btn i{position:absolute;inset:0;background:var(--laterite);transform:translateY(101%);transition:transform .45s cubic-bezier(.6,0,.2,1);z-index:-1}
+footer .btn:hover i{transform:translateY(0)}
+footer .fine{margin-top:11vh;color:rgba(233,226,210,.5)}
+
+.groups{display:flex;flex-direction:column;gap:16vh}
+.group .gh{display:flex;align-items:baseline;gap:26px;margin-bottom:6vh}
+.group .gh .mono{color:var(--laterite)}
+.egrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1px;background:rgba(233,226,210,.12)}
+.ecell{background:var(--night);padding:40px 32px;position:relative;overflow:hidden}
+.ecell h4{font-family:'Fraunces',serif;font-weight:400;font-size:26px}
+.ecell p{margin-top:12px;color:rgba(233,226,210,.72);font-size:14px;line-height:1.65}
+.ecell .mono{color:var(--palm);margin-bottom:14px;display:block}
+.ecell::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--laterite);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.6,0,.2,1)}
+.ecell:hover::after{transform:scaleX(1)}
+.featband{position:relative;height:86vh;overflow:hidden;margin:16vh 0 0;border-radius:3px}
+.featband video,.featband img{position:absolute;inset:0}
+.featband::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(10,18,15,.8))}
+.featband .cap{position:absolute;bottom:40px;left:44px;z-index:2;max-width:600px}
+.featband .cap h3{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(28px,3.6vw,52px)}
+.featband .cap p{margin-top:10px;color:rgba(233,226,210,.8);line-height:1.65}
+
+</style></head><body>
+<div class="cur" id="cur"></div><div class="curo" id="curo"></div>
+<nav>
+  <a class="wordmark hov" href="index.html">Coco <em>Shambhala</em></a>
+  <div class="links">
+    <a class="hov " href="villas.html">Villas</a>
+    <a class="hov on" href="experiences.html">Experiences</a>
+    <a class="hov " href="stay.html">Your stay</a>
+    <a class="book hov" href="stay.html">Reserve</a>
+  </div>
+</nav>
+<section class="vhero">
+  <div class="media"><video src="https://videos.pexels.com/video-files/17454112/17454112-hd_1920_1080_25fps.mp4" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop"></video></div>
+  <div class="inner">
+    <div class="mono kicker">Experiences · Nineteen ways into the Konkan</div>
+    <h1><span class="ln"><span>The sea sets</span></span><span class="ln"><span>the <em>schedule</em></span></span></h1>
+    <p class="lede">Every day here is arranged around water, jungle, stone, and the people who know them. Tell the concierge what kind of day you want; the coast does the rest.</p>
+  </div>
+</section>
+<section class="body">
+  <div class="groups">
+    <div class="group rev"><div class="gh"><span class="mono">By sea</span><h2 class="sec">Into the <em>blue</em></h2></div>
+      <div class="egrid">
+        <div class="ecell hov"><span class="mono">01</span><h4>Dolphins at dawn</h4><p>A fisherman's boat out on a flat morning sea, and the pods that patrol this coast most days of the season.</p></div>
+        <div class="ecell hov"><span class="mono">02</span><h4>Scuba diving</h4><p>PADI courses and first-time discovery dives over the reef waters off Sindhudurg.</p></div>
+        <div class="ecell hov"><span class="mono">03</span><h4>Snorkelling</h4><p>Coral, reef fish, and warm shallow water. No experience needed, just a mask.</p></div>
+        <div class="ecell hov"><span class="mono">04</span><h4>Sea foraging</h4><p>Line-fish, gather edible seaweed and urchins, then hand the basket to the chef.</p></div>
+        <div class="ecell hov"><span class="mono">05</span><h4>Fishing trip</h4><p>Open-water angling the way the village has always done it.</p></div>
+        <div class="ecell hov"><span class="mono">06</span><h4>Watersports at Tarkarli</h4><p>Parasailing, jet ski, banana boat and wake surfing on the famous white-sand stretch.</p></div>
+      </div></div>
+    <div class="group rev"><div class="gh"><span class="mono">By land</span><h2 class="sec">Jungle &amp; <em>stone</em></h2></div>
+      <div class="egrid">
+        <div class="ecell hov"><span class="mono">07</span><h4>Waterfall trail</h4><p>A guided trek through forest to cascades and natural pools. Swim where the jungle drinks.</p></div>
+        <div class="ecell hov"><span class="mono">08</span><h4>Nivati fort expedition</h4><p>A rugged climb to laterite ruins with the sea on three sides of the summit.</p></div>
+        <div class="ecell hov"><span class="mono">09</span><h4>Sindhudurg fort &amp; Malvan</h4><p>The great sea fortress and the fishing town beside it, a short boat ride away.</p></div>
+        <div class="ecell hov"><span class="mono">10</span><h4>Hiking the groves</h4><p>Forest paths through villages and sacred groves that don't appear on maps.</p></div>
+        <div class="ecell hov"><span class="mono">11</span><h4>Birdwatching at Pat Lake</h4><p>Local and migratory species over a quiet water sanctuary inland.</p></div>
+        <div class="ecell hov"><span class="mono">12</span><h4>Walawal river</h4><p>A slow boat through mangrove channels, past temples and river villages.</p></div>
+      </div></div>
+    <div class="group rev"><div class="gh"><span class="mono">By hand</span><h2 class="sec">Craft &amp; <em>fire</em></h2></div>
+      <div class="egrid">
+        <div class="ecell hov"><span class="mono">13</span><h4>Chitrakathi art class</h4><p>Learn a rare Konkan storytelling art form from the artisans keeping it alive.</p></div>
+        <div class="ecell hov"><span class="mono">14</span><h4>Puppetry showcase</h4><p>Traditional puppet theatre, performed the way it has been for generations.</p></div>
+        <div class="ecell hov"><span class="mono">15</span><h4>Malvani cooking</h4><p>An interactive class in the region's own cuisine: sol kadhi, reef fish, coconut and kokum.</p></div>
+        <div class="ecell hov"><span class="mono">16</span><h4>Barbeque on the beach</h4><p>A private bonfire dinner on the sand as the sun goes down.</p></div>
+      </div></div>
+    <div class="group rev"><div class="gh"><span class="mono">By shore</span><h2 class="sec">Slow <em>water</em></h2></div>
+      <div class="egrid">
+        <div class="ecell hov"><span class="mono">17</span><h4>Canoe the Karli</h4><p>Paddle the mangrove ecosystems of the Karli river at your own pace.</p></div>
+        <div class="ecell hov"><span class="mono">18</span><h4>Nivati cove picnic</h4><p>A boat to a hidden cove, a hamper, and nowhere to be until the light changes.</p></div>
+        <div class="ecell hov"><span class="mono">19</span><h4>Two beaches</h4><p>Bhogave, where the fishing village wakes; Nivati, dramatic and usually empty.</p></div>
+      </div></div>
+  </div>
+  <div class="featband rev">
+    <video src="https://videos.pexels.com/video-files/18420612/18420612-hd_1920_1080_25fps.mp4" autoplay muted loop playsinline></video>
+    <div class="cap"><h3>The waterfall trail</h3><p>Monsoon feeds the falls; the falls feed the pools; the pools are why you brought a swimsuit on a hike.</p></div>
+  </div>
+</section>
+
+<footer>
+  <div class="mono" style="color:var(--palm)">The concierge is listening</div>
+  <h2 style="margin-top:18px">Build your <em>days</em></h2>
+  <a class="btn hov" href="stay.html">Plan your stay<i></i></a>
+  <div class="fine mono">Bhogave · Sindhudurg · 15°58′ N — 73°32′ E · Concept redesign by Kerblabs</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+const lenis=new Lenis({lerp:.09});lenis.on('scroll',ScrollTrigger.update);
+gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);
+const cur=document.getElementById('cur'),curo=document.getElementById('curo');
+let cx=0,cy=0,ox=0,oy=0;
+addEventListener('mousemove',e=>{cx=e.clientX;cy=e.clientY;cur.style.transform=`translate(${cx-5}px,${cy-5}px)`});
+gsap.ticker.add(()=>{ox+=(cx-ox)*.12;oy+=(cy-oy)*.12;curo.style.transform=`translate(${ox-22}px,${oy-22}px)`});
+document.querySelectorAll('.hov,a').forEach(el=>{el.addEventListener('mouseenter',()=>curo.classList.add('big'));el.addEventListener('mouseleave',()=>curo.classList.remove('big'))});
+gsap.to('.vhero h1 .ln span',{y:0,duration:1.1,ease:'power4.out',stagger:.12,delay:.2});
+gsap.to('.vhero .lede',{opacity:1,duration:.9,delay:.9});
+const hm=document.querySelector('.vhero .media');
+if(hm) gsap.to(hm,{yPercent:14,scale:1.08,ease:'none',scrollTrigger:{trigger:'.vhero',start:'top top',end:'bottom top',scrub:true}});
+document.querySelectorAll('.rev').forEach(el=>{gsap.to(el,{opacity:1,y:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 84%'}})});
+
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){lenis.destroy();gsap.globalTimeline.timeScale(100)}
+</script></body></html>
