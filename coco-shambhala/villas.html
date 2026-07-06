@@ -1,136 +1,191 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Villas — Coco Shambhala · Arka, Amaresha, Inaya, Varenya</title><meta name="description" content="Four two-bedroom villas with private infinity pools above Bhogave Beach, Sindhudurg.">
+<title>Villas — Coco Shambhala · One day above the sea</title>
+<meta name="description" content="Four two-bedroom villas above Bhogave Beach, told as one day: dawn in Arka, midday in Amaresha, dusk in Inaya, night in Varenya.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Archivo:wght@300;400;500&family=Space+Mono&display=swap" rel="stylesheet">
 <style>
-:root{--night:#12211D;--salt:#E9E2D2;--laterite:#B4552D;--palm:#7A8C6E;--gold:#D9A441;--ink:#1A2420}
+:root{--pgbg:#12211D;--pgfg:#E9E2D2;--acc:#D9A441;--laterite:#B4552D}
 *{margin:0;padding:0;box-sizing:border-box}
 html::-webkit-scrollbar,body::-webkit-scrollbar{display:none}html,body{scrollbar-width:none}
-body{background:var(--night);color:var(--salt);font-family:'Archivo',sans-serif;font-weight:300;overflow-x:hidden;cursor:none}
-::selection{background:var(--laterite);color:var(--salt)}
+body{background:var(--pgbg);color:var(--pgfg);font-family:'Archivo',sans-serif;font-weight:300;
+  overflow-x:hidden;cursor:none}
+::selection{background:var(--laterite);color:#E9E2D2}
 a{color:inherit;text-decoration:none}img,video{display:block;width:100%;height:100%;object-fit:cover}
 .mono{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
-.cur{position:fixed;top:0;left:0;width:10px;height:10px;border-radius:50%;background:var(--salt);pointer-events:none;z-index:2000;mix-blend-mode:difference}
+.cur{position:fixed;top:0;left:0;width:10px;height:10px;border-radius:50%;background:#E9E2D2;pointer-events:none;z-index:2000;mix-blend-mode:difference}
 .curo{position:fixed;top:0;left:0;width:44px;height:44px;border-radius:50%;border:1px solid rgba(233,226,210,.5);pointer-events:none;z-index:2000;transition:width .3s,height .3s;mix-blend-mode:difference}
 .curo.big{width:92px;height:92px}
 @media(hover:none){.cur,.curo{display:none}body{cursor:auto}}
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:26px 40px;mix-blend-mode:difference}
-nav .wordmark{font-family:'Fraunces',serif;font-size:19px}
+nav .wordmark{font-family:'Fraunces',serif;font-size:19px;color:#fff}
 nav .wordmark em{font-style:italic}
-nav .links{display:flex;gap:30px;align-items:center}
+nav .links{display:flex;gap:30px;align-items:center;color:#fff}
 nav .links a{font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:.85}
-nav .links a.on{border-bottom:1px solid var(--gold);padding-bottom:4px}
-nav .book{border:1px solid rgba(233,226,210,.6);border-radius:40px;padding:10px 22px;font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+nav .links a.on{border-bottom:1px solid #fff;padding-bottom:4px}
+nav .book{border:1px solid rgba(255,255,255,.6);border-radius:40px;padding:10px 22px;font-size:12px;letter-spacing:.18em;text-transform:uppercase}
 @media(max-width:860px){nav .links a:not(.book){display:none}}
+/* hero */
 .vhero{position:relative;height:92vh;overflow:hidden;display:flex;align-items:flex-end}
 .vhero .media{position:absolute;inset:0}
 .vhero .media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,33,29,.5),rgba(18,33,29,.2) 45%,rgba(18,33,29,.88))}
-.vhero .inner{position:relative;z-index:3;padding:0 8vw 9vh;max-width:1200px}
-.vhero .kicker{color:var(--gold)}
+.vhero .inner{position:relative;z-index:3;padding:0 8vw 9vh;max-width:1200px;color:#E9E2D2}
+.vhero .kicker{color:#D9A441}
 .vhero h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(46px,7.6vw,120px);line-height:1.02;margin-top:16px}
-.vhero h1 em{font-style:italic;color:var(--gold)}
+.vhero h1 em{font-style:italic;color:#D9A441}
 .vhero h1 .ln{display:block;overflow:hidden}.vhero h1 .ln span{display:inline-block;transform:translateY(110%)}
 .vhero .lede{margin-top:22px;max-width:56ch;color:rgba(233,226,210,.85);line-height:1.7;opacity:0}
-section.body{padding:14vh 8vw}
-.rule{height:1px;background:rgba(233,226,210,.14);margin:0 8vw}
-h2.sec{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(34px,4.6vw,72px);line-height:1.08}
-h2.sec em{font-style:italic;color:var(--gold)}
-.rev{opacity:0;transform:translateY(46px)}
-footer{padding:14vh 8vw 7vh;text-align:center}
-footer h2{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(40px,6.4vw,100px)}
-footer h2 em{font-style:italic;color:var(--gold)}
-footer .btn{display:inline-block;margin-top:44px;border:1px solid rgba(233,226,210,.4);border-radius:60px;padding:22px 54px;font-size:13px;letter-spacing:.24em;text-transform:uppercase;position:relative;overflow:hidden}
-footer .btn i{position:absolute;inset:0;background:var(--laterite);transform:translateY(101%);transition:transform .45s cubic-bezier(.6,0,.2,1);z-index:-1}
-footer .btn:hover i{transform:translateY(0)}
-footer .fine{margin-top:11vh;color:rgba(233,226,210,.5)}
-
-.vlist{display:flex;flex-direction:column;gap:16vh}
-.vrow{display:grid;grid-template-columns:1.15fr .85fr;gap:5vw;align-items:center}
-.vrow:nth-child(even){grid-template-columns:.85fr 1.15fr}
-.vrow:nth-child(even) .vmedia{order:2}
+/* story chapters */
+.chapter{padding:20vh 8vw;position:relative}
+.vrow{display:grid;grid-template-columns:1.15fr .85fr;gap:5vw;align-items:center;max-width:1500px;margin:0 auto}
+.vrow.flip{grid-template-columns:.85fr 1.15fr}
+.vrow.flip .vmedia{order:2}
 .vmedia{height:74vh;overflow:hidden;border-radius:3px;position:relative}
 .vmedia img{transform:scale(1.15)}
-.vmedia .tag{position:absolute;top:22px;left:22px;background:rgba(18,33,29,.72);backdrop-filter:blur(6px);padding:10px 16px;border-radius:30px;color:var(--gold)}
-.vinfo .idx{font-family:'Fraunces',serif;font-style:italic;font-size:78px;color:transparent;-webkit-text-stroke:1px rgba(233,226,210,.35);line-height:1}
-.vinfo h3{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(38px,4.4vw,64px);margin-top:10px}
-.vinfo .mean{color:var(--gold);font-style:italic;font-family:'Fraunces',serif;font-size:21px;margin-top:6px}
-.vinfo p{margin-top:20px;color:rgba(233,226,210,.8);line-height:1.75;max-width:52ch}
+.vmedia .tag{position:absolute;top:22px;left:22px;background:rgba(0,0,0,.45);backdrop-filter:blur(6px);padding:10px 16px;border-radius:30px;color:#fff}
+.vinfo .time{color:var(--acc);display:flex;align-items:center;gap:14px}
+.vinfo .time i{display:inline-block;width:44px;height:1px;background:var(--acc)}
+.vinfo .idx{font-family:'Fraunces',serif;font-style:italic;font-size:78px;color:transparent;-webkit-text-stroke:1px currentColor;opacity:.35;line-height:1;margin-top:12px}
+.vinfo h3{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(38px,4.4vw,64px);margin-top:6px}
+.vinfo .mean{color:var(--acc);font-style:italic;font-family:'Fraunces',serif;font-size:21px;margin-top:6px}
+.vinfo p{margin-top:20px;opacity:.82;line-height:1.75;max-width:52ch}
 .vinfo .specs{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
-.vinfo .specs span{border:1px solid rgba(233,226,210,.25);border-radius:30px;padding:9px 18px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(233,226,210,.75)}
-.amen{margin-top:18vh;border-top:1px solid rgba(233,226,210,.14);padding-top:9vh}
-.amen .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:rgba(233,226,210,.12);margin-top:7vh}
-.amen .cell{background:var(--night);padding:38px 30px}
+.vinfo .specs span{border:1px solid currentColor;opacity:.75;border-radius:30px;padding:9px 18px;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.rev{opacity:0;transform:translateY(46px)}
+@media(max-width:900px){.vrow,.vrow.flip{grid-template-columns:1fr}.vrow.flip .vmedia{order:0}.vmedia{height:52vh}}
+/* waterfall scrub */
+#falls{position:relative}
+#falls .pin{height:100vh;overflow:hidden;position:relative}
+#falls video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#falls .shade{position:absolute;inset:0;background:rgba(8,14,12,.34)}
+#falls .fcap{position:absolute;left:8vw;bottom:12vh;z-index:3;max-width:700px;color:#E9E2D2}
+#falls .fcap .line{position:absolute;bottom:0;left:0;opacity:0;transform:translateY(30px)}
+#falls .fcap h3{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4.4vw,64px);line-height:1.1}
+#falls .fcap h3 em{font-style:italic;color:#D9A441}
+#falls .fcap p{margin-top:14px;color:rgba(233,226,210,.85);line-height:1.7;max-width:48ch}
+#falls .prog{position:absolute;right:40px;bottom:12vh;z-index:3;color:#E9E2D2}
+/* amenities */
+.amen{padding:16vh 8vw 8vh}
+.amen .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:rgba(233,226,210,.14);margin-top:7vh}
+.amen .cell{background:var(--pgbg);padding:38px 30px;transition:background 1s}
 .amen .cell .mono{color:var(--laterite)}
 .amen .cell h4{font-family:'Fraunces',serif;font-weight:400;font-size:24px;margin-top:12px}
-.vidband{position:relative;height:78vh;overflow:hidden;margin-top:18vh;border-radius:3px}
-.vidband video{position:absolute;inset:0}
-.vidband::after{content:"";position:absolute;inset:0;background:rgba(12,20,17,.35)}
-.vidband .cap{position:absolute;bottom:34px;left:38px;z-index:2}
-@media(max-width:900px){.vrow,.vrow:nth-child(even){grid-template-columns:1fr}.vrow:nth-child(even) .vmedia{order:0}.vmedia{height:52vh}}
-
+h2.sec{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(34px,4.6vw,72px);line-height:1.08}
+h2.sec em{font-style:italic;color:var(--acc)}
+footer{padding:14vh 8vw 7vh;text-align:center}
+footer h2{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(40px,6.4vw,100px)}
+footer h2 em{font-style:italic;color:var(--acc)}
+footer .btn{display:inline-block;margin-top:44px;border:1px solid currentColor;border-radius:60px;padding:22px 54px;font-size:13px;letter-spacing:.24em;text-transform:uppercase;position:relative;overflow:hidden}
+footer .btn i{position:absolute;inset:0;background:var(--laterite);transform:translateY(101%);transition:transform .45s cubic-bezier(.6,0,.2,1);z-index:-1}
+footer .btn:hover i{transform:translateY(0)}
+footer .fine{margin-top:11vh;opacity:.55}
 </style></head><body>
 <div class="cur" id="cur"></div><div class="curo" id="curo"></div>
 <nav>
   <a class="wordmark hov" href="index.html">Coco <em>Shambhala</em></a>
   <div class="links">
     <a class="hov on" href="villas.html">Villas</a>
-    <a class="hov " href="experiences.html">Experiences</a>
-    <a class="hov " href="stay.html">Your stay</a>
+    <a class="hov" href="experiences.html">Experiences</a>
+    <a class="hov" href="stay.html">Your stay</a>
     <a class="book hov" href="stay.html">Reserve</a>
   </div>
 </nav>
+
 <section class="vhero">
-  <div class="media"><img src="https://cocoshambhala.com/wp-content/uploads/2023/11/Main-image-1-1-e1720067150796-1500x663.jpg" alt="Coco Shambhala villas"></div>
+  <div class="media"><img src="https://cocoshambhala.com/wp-content/uploads/2023/11/Main-image-1-1-e1720067150796-1500x663.jpg" alt="Coco Shambhala villas above Bhogave"></div>
   <div class="inner">
-    <div class="mono kicker">The villas · Four residences, twenty guests</div>
-    <h1><span class="ln"><span>Four names for</span></span><span class="ln"><span>the same <em>horizon</em></span></span></h1>
-    <p class="lede">Each villa holds two bedrooms, an open-air living pavilion, and a private infinity pool aimed at the Arabian Sea. Built into the hillside without cutting the terrain, furnished in coconut wood, cooled by the same breeze that moves the palms.</p>
+    <div class="mono kicker">The villas · A story in four rooms</div>
+    <h1><span class="ln"><span>One day above the sea,</span></span><span class="ln"><span>told in <em>four villas</em></span></span></h1>
+    <p class="lede">Each villa here is named for a moment of the day, and each holds it: two bedrooms, an open pavilion, a private infinity pool aimed at the Arabian Sea. Scroll through the day. The light will change with you.</p>
   </div>
 </section>
-<section class="body">
-  <div class="vlist">
-    <div class="vrow rev"><div class="vmedia hov"><img class="pz" src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1600&auto=format&fit=crop" alt="Villa Arka"><div class="tag mono">Sea &amp; beach views</div></div>
-      <div class="vinfo"><div class="idx">No.1</div><h3>Arka</h3><div class="mean">named for the tropical sun</div>
-      <p>The first villa you reach, and the one the light finds first. Arka faces the water squarely, so the pool, the pavilion, and both bedrooms share the same wide view of sand and sea.</p>
-      <div class="specs"><span>2 bedrooms</span><span>Sleeps 5</span><span>Private infinity pool</span><span>Open-air pavilion</span></div></div></div>
-    <div class="vrow rev"><div class="vmedia hov"><img class="pz" src="https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=1600&auto=format&fit=crop" alt="Villa Amaresha"><div class="tag mono">Framed by kokum trees</div></div>
-      <div class="vinfo"><div class="idx">No.2</div><h3>Amaresha</h3><div class="mean">named for the sky and its hues</div>
-      <p>Amaresha watches the weather. Kokum trees frame its terraces, and the villa is set so that dawn, monsoon cloud, and the long violet dusk all play out over the beach below.</p>
-      <div class="specs"><span>2 bedrooms</span><span>Sleeps 5</span><span>Private infinity pool</span><span>Kokum-framed terraces</span></div></div></div>
-    <div class="vrow rev"><div class="vmedia hov"><img class="pz" src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=1600&auto=format&fit=crop" alt="Villa Inaya"><div class="tag mono">Palms to the water</div></div>
-      <div class="vinfo"><div class="idx">No.3</div><h3>Inaya</h3><div class="mean">named for grace and kindness</div>
-      <p>The gentlest of the four. From Inaya the sea appears through a screen of coconut palms, and the villa's pavilion is where long afternoons tend to dissolve.</p>
-      <div class="specs"><span>2 bedrooms</span><span>Sleeps 5</span><span>Private infinity pool</span><span>Palm-dotted sea view</span></div></div></div>
-    <div class="vrow rev"><div class="vmedia hov"><img class="pz" src="https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=1600&auto=format&fit=crop" alt="Villa Varenya"><div class="tag mono">Horizon views</div></div>
-      <div class="vinfo"><div class="idx">No.4</div><h3>Varenya</h3><div class="mean">named for excellence and perseverance</div>
-      <p>The villa of the long view. Red clay-tiled roofs step down the hill beneath it, and past them there is nothing but horizon. This is the one photographers ask for.</p>
-      <div class="specs"><span>2 bedrooms</span><span>Sleeps 5</span><span>Private infinity pool</span><span>Clay-tile rooflines</span></div></div></div>
-  </div>
-  <div class="amen rev">
-    <h2 class="sec">In every <em>villa</em></h2>
-    <div class="grid">
-      <div class="cell"><div class="mono">01</div><h4>Daily housekeeping</h4></div>
-      <div class="cell"><div class="mono">02</div><h4>24-hour concierge &amp; security</h4></div>
-      <div class="cell"><div class="mono">03</div><h4>In-villa spa therapies</h4></div>
-      <div class="cell"><div class="mono">04</div><h4>Kitchenette &amp; house phone</h4></div>
-      <div class="cell"><div class="mono">05</div><h4>Complimentary Wi-Fi</h4></div>
-      <div class="cell"><div class="mono">06</div><h4>Coconut-wood interiors</h4></div>
+
+<!-- DAWN -->
+<section class="chapter" data-bg="#E7D7B8" data-fg="#3A2C18" data-acc="#B4552D">
+  <div class="vrow rev">
+    <div class="vmedia hov"><img class="pz" src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1600&auto=format&fit=crop" alt="Villa Arka at first light"><div class="tag mono">Sea &amp; beach views</div></div>
+    <div class="vinfo">
+      <div class="mono time"><i></i>06:12 · Dawn</div>
+      <div class="idx">No.1</div><h3>Arka</h3><div class="mean">named for the tropical sun</div>
+      <p>The day begins here because the light does. Arka is the first villa the sun reaches, and it faces the water squarely: pool, pavilion, and both bedrooms sharing the same wide view while the beach below is still cool.</p>
+      <div class="specs"><span>2 bedrooms</span><span>Sleeps 5</span><span>Private infinity pool</span><span>Open-air pavilion</span></div>
     </div>
   </div>
-  <div class="vidband rev hov">
-    <video src="https://videos.pexels.com/video-files/7108800/7108800-hd_1080_1920_25fps.mp4" autoplay muted loop playsinline></video>
-    <div class="cap mono">The coast below the villas · film</div>
+</section>
+
+<!-- MIDDAY -->
+<section class="chapter" data-bg="#D9E4E2" data-fg="#1F3436" data-acc="#2E6E6A">
+  <div class="vrow flip rev">
+    <div class="vmedia hov"><img class="pz" src="https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=1600&auto=format&fit=crop" alt="Villa Amaresha under a wide sky"><div class="tag mono">Framed by kokum trees</div></div>
+    <div class="vinfo">
+      <div class="mono time"><i></i>12:40 · Midday</div>
+      <div class="idx">No.2</div><h3>Amaresha</h3><div class="mean">named for the sky and its hues</div>
+      <p>By noon the sky owns everything, and Amaresha is built to watch it. Kokum trees frame the terraces; the pool holds a rectangle of blue; lunch stretches until it becomes something else.</p>
+      <div class="specs"><span>2 bedrooms</span><span>Sleeps 5</span><span>Private infinity pool</span><span>Kokum-framed terraces</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- AFTERNOON: waterfall scrub interlude -->
+<section id="falls">
+  <div class="pin">
+    <video id="wf" src="assets/waterfall-scrub.mp4" muted playsinline preload="auto"></video>
+    <div class="shade"></div>
+    <div class="fcap">
+      <div class="line" id="fl1"><h3>The afternoon belongs<br>to the <em>jungle</em></h3><p>Between midday and dusk, most guests walk. The trail leaves from behind the villas and follows water uphill.</p></div>
+      <div class="line" id="fl2"><h3>Monsoon feeds the <em>falls</em></h3><p>The falls feed the pools. The pools are why you brought a swimsuit on a hike.</p></div>
+      <div class="line" id="fl3"><h3>Then the light turns, and you head <em>home</em></h3><p>Back down the trail as the jungle goes amber, in time for the hour this coast is famous for.</p></div>
+    </div>
+    <div class="prog mono" id="fprog">SCROLL · THE FALLS POUR WITH YOU</div>
+  </div>
+</section>
+
+<!-- DUSK -->
+<section class="chapter" data-bg="#E2CCC2" data-fg="#40262A" data-acc="#8C4A5E">
+  <div class="vrow rev">
+    <div class="vmedia hov"><img class="pz" src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=1600&auto=format&fit=crop" alt="Villa Inaya at dusk"><div class="tag mono">Palms to the water</div></div>
+    <div class="vinfo">
+      <div class="mono time"><i></i>18:25 · Dusk</div>
+      <div class="idx">No.3</div><h3>Inaya</h3><div class="mean">named for grace and kindness</div>
+      <p>Dusk is Inaya's hour. The sea shows through a screen of coconut palms that turn to silhouettes, the pool goes rose-gold, and the pavilion becomes the softest room on the coast.</p>
+      <div class="specs"><span>2 bedrooms</span><span>Sleeps 5</span><span>Private infinity pool</span><span>Palm-dotted sea view</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- NIGHT -->
+<section class="chapter" data-bg="#101B22" data-fg="#E9E2D2" data-acc="#D9A441">
+  <div class="vrow flip rev">
+    <div class="vmedia hov"><img class="pz" src="https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=1600&auto=format&fit=crop" alt="Villa Varenya at night"><div class="tag mono">Horizon views</div></div>
+    <div class="vinfo">
+      <div class="mono time"><i></i>21:03 · Night</div>
+      <div class="idx">No.4</div><h3>Varenya</h3><div class="mean">named for excellence and perseverance</div>
+      <p>The day ends on the long view. Red clay rooftops step down the dark hill beneath Varenya, and past them fishing-boat lights mark where the sea meets the sky. This is the villa photographers ask for, and the night is why.</p>
+      <div class="specs"><span>2 bedrooms</span><span>Sleeps 5</span><span>Private infinity pool</span><span>Clay-tile rooflines</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="amen" data-bg="#101B22" data-fg="#E9E2D2" data-acc="#D9A441">
+  <h2 class="sec rev">Whatever the <em>hour</em></h2>
+  <div class="grid rev">
+    <div class="cell"><div class="mono">01</div><h4>Daily housekeeping</h4></div>
+    <div class="cell"><div class="mono">02</div><h4>24-hour concierge &amp; security</h4></div>
+    <div class="cell"><div class="mono">03</div><h4>In-villa spa therapies</h4></div>
+    <div class="cell"><div class="mono">04</div><h4>Kitchenette &amp; house phone</h4></div>
+    <div class="cell"><div class="mono">05</div><h4>Complimentary Wi-Fi</h4></div>
+    <div class="cell"><div class="mono">06</div><h4>Coconut-wood interiors</h4></div>
   </div>
 </section>
 
 <footer>
-  <div class="mono" style="color:var(--palm)">Two bedrooms, one horizon</div>
-  <h2 style="margin-top:18px">Which villa is <em>yours?</em></h2>
+  <div class="mono" style="opacity:.7">Dawn in Arka, night in Varenya</div>
+  <h2 style="margin-top:18px">Which hour is <em>yours?</em></h2>
   <a class="btn hov" href="stay.html">Plan your stay<i></i></a>
   <div class="fine mono">Bhogave · Sindhudurg · 15°58′ N — 73°32′ E · Concept redesign by Kerblabs</div>
 </footer>
+
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
@@ -145,11 +200,37 @@ gsap.ticker.add(()=>{ox+=(cx-ox)*.12;oy+=(cy-oy)*.12;curo.style.transform=`trans
 document.querySelectorAll('.hov,a').forEach(el=>{el.addEventListener('mouseenter',()=>curo.classList.add('big'));el.addEventListener('mouseleave',()=>curo.classList.remove('big'))});
 gsap.to('.vhero h1 .ln span',{y:0,duration:1.1,ease:'power4.out',stagger:.12,delay:.2});
 gsap.to('.vhero .lede',{opacity:1,duration:.9,delay:.9});
-const hm=document.querySelector('.vhero .media');
-if(hm) gsap.to(hm,{yPercent:14,scale:1.08,ease:'none',scrollTrigger:{trigger:'.vhero',start:'top top',end:'bottom top',scrub:true}});
+gsap.to('.vhero .media',{yPercent:14,scale:1.08,ease:'none',scrollTrigger:{trigger:'.vhero',start:'top top',end:'bottom top',scrub:true}});
 document.querySelectorAll('.rev').forEach(el=>{gsap.to(el,{opacity:1,y:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 84%'}})});
-
 document.querySelectorAll('.pz').forEach(img=>{gsap.to(img,{scale:1,ease:'none',scrollTrigger:{trigger:img,start:'top bottom',end:'bottom top',scrub:true}})});
 
-if(matchMedia('(prefers-reduced-motion: reduce)').matches){lenis.destroy();gsap.globalTimeline.timeScale(100)}
+/* THEME STORY: page melts to each chapter's palette (dawn -> midday -> dusk -> night) */
+const root=document.documentElement;
+function theme(bg,fg,acc,dur){gsap.to('body',{backgroundColor:bg,color:fg,duration:dur,ease:'power2.out'});
+  gsap.to(root,{'--pgbg':bg,'--pgfg':fg,'--acc':acc,duration:dur,ease:'power2.out'});}
+const HERO=['#12211D','#E9E2D2','#D9A441'];
+const secs=[...document.querySelectorAll('[data-bg]')];
+secs.forEach((sec,idx)=>{
+  const to=[sec.dataset.bg,sec.dataset.fg,sec.dataset.acc];
+  const prev=idx? [secs[idx-1].dataset.bg,secs[idx-1].dataset.fg,secs[idx-1].dataset.acc] : HERO;
+  ScrollTrigger.create({trigger:sec,start:'top 58%',end:'bottom 58%',
+    onEnter:()=>theme(...to,1.2),onEnterBack:()=>theme(...to,1.2),
+    onLeaveBack:()=>theme(...prev,1.2)});
+});
+
+/* WATERFALL SCRUB: the falls pour with your scroll (blob preload, all-keyframe encode) */
+const wf=document.getElementById('wf');
+let wfReady=false;
+fetch('assets/waterfall-scrub.mp4').then(r=>r.blob()).then(b=>{wf.src=URL.createObjectURL(b);
+  wf.addEventListener('loadedmetadata',()=>{wfReady=true},{once:true});}).catch(()=>{wfReady=false});
+const lines=['#fl1','#fl2','#fl3'];let curLine=-1;
+function showLine(k){if(k===curLine)return;curLine=k;
+  lines.forEach((id,i)=>gsap.to(id,{opacity:i===k?1:0,y:i===k?0:30,duration:.5,overwrite:true}));}
+ScrollTrigger.create({trigger:'#falls',start:'top top',end:'+=2600',pin:'#falls .pin',scrub:true,
+  onUpdate:s=>{const p=s.progress;
+    if(wfReady&&wf.duration) wf.currentTime=Math.min(wf.duration-.05,p*wf.duration);
+    showLine(p<.33?0:p<.72?1:2);
+    document.getElementById('fprog').textContent='FALLS · '+Math.round(p*100)+'%';}});
+
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){lenis.destroy();gsap.globalTimeline.timeScale(100);wf.play()}
 </script></body></html>
