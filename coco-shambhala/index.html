@@ -14,6 +14,7 @@
   --palm:#7A8C6E; --gold:#D9A441; --ink:#1A2420;
 }
 *{margin:0;padding:0;box-sizing:border-box}
+html::-webkit-scrollbar,body::-webkit-scrollbar{display:none}html,body{scrollbar-width:none}
 html{scroll-behavior:auto}
 body{background:var(--night);color:var(--salt);font-family:'Archivo',sans-serif;
   font-weight:300;overflow-x:hidden;cursor:none;transition:none}
@@ -67,7 +68,7 @@ nav .book{border:1px solid rgba(233,226,210,.6);border-radius:40px;padding:10px 
 #hero .media{position:absolute;inset:0;will-change:transform}
 #hero .media::after{content:"";position:absolute;inset:0;
   background:linear-gradient(180deg,rgba(18,33,29,.55),rgba(18,33,29,.15) 45%,rgba(18,33,29,.75))}
-#hero .title{position:absolute;left:0;right:0;bottom:11vh;text-align:center;z-index:5}
+#hero .title{position:absolute;left:0;right:0;bottom:17vh;text-align:center;z-index:5}
 #hero h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(52px,10.5vw,168px);
   line-height:.95;letter-spacing:.01em}
 #hero h1 .ln{display:block;overflow:hidden}
