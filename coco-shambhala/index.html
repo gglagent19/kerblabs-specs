@@ -278,20 +278,20 @@ nav .book{border:1px solid rgba(233,226,210,.6);border-radius:40px;padding:10px 
 
 <section id="falls">
   <div class="pin" style="height:100vh;overflow:hidden;position:relative">
-    <video id="wf" src="assets/waterfall-scrub.mp4" muted playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>
+    <video id="wf" src="assets/property-scrub.mp4" muted playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>
     <div style="position:absolute;inset:0;background:rgba(8,14,12,.32)"></div>
     <div class="fcap" style="position:absolute;left:8vw;bottom:12vh;z-index:3;max-width:720px;color:#E9E2D2">
       <div class="fline" id="fl1" style="position:absolute;bottom:0;left:0;opacity:0;transform:translateY(30px)">
-        <h3 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4.4vw,64px);line-height:1.1">Seventy metres is not<br>a straight line <em style="font-style:italic;color:#D9A441">down</em></h3>
-        <p style="margin-top:14px;color:rgba(233,226,210,.85);line-height:1.7;max-width:48ch">The hill folds. The path folds with it, and follows the sound of water.</p></div>
+        <h3 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4.4vw,64px);line-height:1.1">This is the coast<br>it stands <em style="font-style:italic;color:#D9A441">on</em></h3>
+        <p style="margin-top:14px;color:rgba(233,226,210,.85);line-height:1.7;max-width:48ch">Turquoise coves, laterite headlands, and a beach that is usually yours alone.</p></div>
       <div class="fline" id="fl2" style="position:absolute;bottom:0;left:0;opacity:0;transform:translateY(30px)">
-        <h3 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4.4vw,64px);line-height:1.1">The water knows the way<br>to the <em style="font-style:italic;color:#D9A441">sea</em></h3>
-        <p style="margin-top:14px;color:rgba(233,226,210,.85);line-height:1.7;max-width:48ch">Monsoon falls feed the jungle pools; the pools feed the streams; the streams reach Bhogave before you do.</p></div>
+        <h3 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4.4vw,64px);line-height:1.1">Four villas hidden<br>in the <em style="font-style:italic;color:#D9A441">canopy</em></h3>
+        <p style="margin-top:14px;color:rgba(233,226,210,.85);line-height:1.7;max-width:48ch">Red clay roofs in twelve acres of jungle, and every villa holds its own infinity edge over the sea.</p></div>
       <div class="fline" id="fl3" style="position:absolute;bottom:0;left:0;opacity:0;transform:translateY(30px)">
-        <h3 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4.4vw,64px);line-height:1.1">Follow it <em style="font-style:italic;color:#D9A441">all the way</em></h3>
-        <p style="margin-top:14px;color:rgba(233,226,210,.85);line-height:1.7;max-width:48ch">The rest of the descent is yours: sand, salt, and the villa light coming on above.</p></div>
+        <h3 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4.4vw,64px);line-height:1.1">At sunset, the table<br>is <em style="font-style:italic;color:#D9A441">set</em></h3>
+        <p style="margin-top:14px;color:rgba(233,226,210,.85);line-height:1.7;max-width:48ch">Dinner on the open pavilion, as the fishing-boat lights come out along the horizon.</p></div>
     </div>
-    <div class="mono" id="fprog" style="position:absolute;right:40px;bottom:12vh;z-index:3;color:#E9E2D2">THE DESCENT, IN MOTION</div>
+    <div class="mono" id="fprog" style="position:absolute;right:40px;bottom:12vh;z-index:3;color:#E9E2D2">FILMED AT THE VILLAS</div>
     <div style="position:absolute;left:8vw;right:8vw;top:8vh;z-index:3;height:1px;background:rgba(233,226,210,.25)"><i id="fbar" style="position:absolute;left:0;top:0;bottom:0;width:0;background:#D9A441;display:block"></i></div>
   </div>
 </section>
@@ -437,7 +437,7 @@ gsap.fromTo('#cta h2',{opacity:0,y:80},{opacity:1,y:0,duration:1,ease:'power3.ou
 const wf=document.getElementById('wf');
 let wfReady=false,wfTarget=0,wfCur=0;
 wf.addEventListener('loadedmetadata',()=>{wfReady=true},{once:false});
-fetch('assets/waterfall-scrub.mp4').then(r=>r.blob()).then(b=>{wf.src=URL.createObjectURL(b);
+fetch('assets/property-scrub.mp4').then(r=>r.blob()).then(b=>{wf.src=URL.createObjectURL(b);
   wf.addEventListener('loadedmetadata',()=>{wfReady=true},{once:true});}).catch(()=>{});
 gsap.ticker.add(()=>{if(!wfReady||!wf.duration)return;
   wfCur+=(wfTarget-wfCur)*0.18;
@@ -449,7 +449,7 @@ function fShow(k){if(k===fCur)return;fCur=k;
 ScrollTrigger.create({trigger:'#falls',start:'top top',end:'+=2800',pin:'#falls .pin',scrub:true,
   onUpdate:s=>{const p=s.progress;
     if(wfReady&&wf.duration) wfTarget=p*wf.duration;
-    fShow(p<.33?0:p<.72?1:2);
+    fShow(p<.26?0:p<.74?1:2);
     document.getElementById('fbar').style.width=(p*100)+'%';
     document.getElementById('fprog').textContent='THE DESCENT · '+Math.round(p*100)+'%';}});
 
