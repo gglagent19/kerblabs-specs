@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Coco Shambhala — Sindhudurg · Two villas above the Arabian Sea</title>
+<meta name="description" content="Two handcrafted villas hidden in Konkan jungle, seventy metres above Bhogave Beach. Concept redesign by Kerblabs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Archivo:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#12211D; --salt:#E9E2D2; --laterite:#B4552D;
+  --palm:#7A8C6E; --gold:#D9A441; --ink:#1A2420;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:auto}
+body{background:var(--night);color:var(--salt);font-family:'Archivo',sans-serif;
+  font-weight:300;overflow-x:hidden;cursor:none;transition:none}
+::selection{background:var(--laterite);color:var(--salt)}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.serif{font-family:'Fraunces',serif}
+.mono{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+
+/* ---------- cursor ---------- */
+.cur{position:fixed;top:0;left:0;width:10px;height:10px;border-radius:50%;
+  background:var(--salt);pointer-events:none;z-index:2000;mix-blend-mode:difference}
+.curo{position:fixed;top:0;left:0;width:44px;height:44px;border-radius:50%;
+  border:1px solid rgba(233,226,210,.5);pointer-events:none;z-index:2000;
+  transition:width .3s,height .3s,border-color .3s;mix-blend-mode:difference}
+.curo.big{width:92px;height:92px;border-color:var(--salt)}
+@media (hover:none){.cur,.curo{display:none}body{cursor:auto}}
+
+/* ---------- preloader ---------- */
+#pre{position:fixed;inset:0;background:var(--ink);z-index:1500;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;gap:22px}
+#pre .coords{color:var(--palm)}
+#pre .pct{font-family:'Fraunces',serif;font-size:15vw;font-weight:300;font-style:italic;
+  line-height:1;color:var(--salt)}
+#pre .bar{width:180px;height:1px;background:rgba(233,226,210,.2);position:relative}
+#pre .bar i{position:absolute;inset:0;background:var(--laterite);transform:scaleX(0);transform-origin:left}
+
+/* ---------- elevation rail (signature) ---------- */
+#rail{position:fixed;right:26px;top:0;bottom:0;width:40px;z-index:900;
+  display:flex;align-items:center;pointer-events:none}
+#rail .line{position:absolute;right:19px;top:12vh;bottom:12vh;width:1px;background:rgba(233,226,210,.22)}
+#rail .tick{position:absolute;right:14px;width:11px;height:1px;background:rgba(233,226,210,.35)}
+#rail .dot{position:absolute;right:15px;width:9px;height:9px;border-radius:50%;
+  background:var(--laterite);top:12vh}
+#alt{position:fixed;right:56px;top:50%;transform:translateY(-50%);z-index:900;
+  text-align:right;pointer-events:none}
+#alt .v{font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.1em}
+#alt .l{font-size:9px;letter-spacing:.3em;color:var(--palm);text-transform:uppercase}
+@media(max-width:760px){#rail,#alt{display:none}}
+
+/* ---------- nav ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;
+  justify-content:space-between;align-items:center;padding:26px 40px;mix-blend-mode:difference}
+nav .wordmark{font-family:'Fraunces',serif;font-size:19px;letter-spacing:.06em}
+nav .wordmark em{font-style:italic;color:inherit}
+nav .book{border:1px solid rgba(233,226,210,.6);border-radius:40px;padding:10px 22px;
+  font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+
+/* ---------- hero ---------- */
+#hero{position:relative;height:100vh;overflow:hidden}
+#hero .media{position:absolute;inset:0;will-change:transform}
+#hero .media::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(18,33,29,.55),rgba(18,33,29,.15) 45%,rgba(18,33,29,.75))}
+#hero .title{position:absolute;left:0;right:0;bottom:11vh;text-align:center;z-index:5}
+#hero h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(52px,10.5vw,168px);
+  line-height:.95;letter-spacing:.01em}
+#hero h1 .ln{display:block;overflow:hidden}
+#hero h1 .ln span{display:inline-block;transform:translateY(110%)}
+#hero h1 em{font-style:italic;color:var(--gold)}
+#hero .sub{margin-top:26px;color:rgba(233,226,210,.85);letter-spacing:.32em;
+  text-transform:uppercase;font-size:12px;opacity:0}
+#hero .coord-tag{position:absolute;top:110px;left:40px;color:rgba(233,226,210,.7);opacity:0}
+#hero .scrollcue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0}
+#hero .scrollcue .stem{width:1px;height:44px;background:rgba(233,226,210,.5);overflow:hidden;position:relative}
+#hero .scrollcue .stem i{position:absolute;top:-100%;left:0;width:100%;height:100%;background:var(--salt)}
+
+/* ---------- manifesto ---------- */
+#manifesto{padding:24vh 8vw;max-width:1300px;margin:0 auto}
+#manifesto p{font-family:'Fraunces',serif;font-weight:300;
+  font-size:clamp(30px,4.6vw,72px);line-height:1.22}
+#manifesto .w{display:inline-block;opacity:.13;will-change:opacity}
+#manifesto em{font-style:italic;color:var(--laterite)}
+#manifesto .foot{margin-top:9vh;display:flex;gap:60px;color:var(--palm)}
+
+/* ---------- villas horizontal ---------- */
+#villas{position:relative}
+#villas .pinwrap{height:100vh;overflow:hidden;display:flex;align-items:center}
+#track{display:flex;gap:6vw;padding:0 8vw;will-change:transform}
+.villa{flex:0 0 auto;width:min(72vw,900px);position:relative}
+.villa .frame{height:64vh;overflow:hidden;position:relative;border-radius:2px}
+.villa .frame img{transform:scale(1.18);will-change:transform}
+.villa .num{position:absolute;top:-70px;left:-8px;font-family:'Fraunces',serif;
+  font-style:italic;font-size:120px;font-weight:300;color:transparent;
+  -webkit-text-stroke:1px rgba(26,36,32,.35);line-height:1}
+.villa h3{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(34px,4vw,58px);
+  margin-top:26px;color:var(--ink)}
+.villa .meta{display:flex;gap:34px;margin-top:12px;color:rgba(26,36,32,.62)}
+.villa .desc{margin-top:14px;max-width:52ch;color:rgba(26,36,32,.75);
+  font-size:15px;line-height:1.7}
+.villa-intro{flex:0 0 auto;width:38vw;min-width:340px;display:flex;
+  flex-direction:column;justify-content:center;color:var(--ink)}
+.villa-intro .mono{color:var(--laterite)}
+.villa-intro h2{font-family:'Fraunces',serif;font-weight:300;
+  font-size:clamp(40px,5vw,84px);line-height:1.05;margin-top:18px}
+.villa-intro h2 em{font-style:italic}
+
+/* ---------- experiences ---------- */
+#exp{padding:20vh 8vw 12vh;position:relative}
+#exp .head{margin-bottom:12vh;max-width:900px}
+#exp .head h2{font-family:'Fraunces',serif;font-weight:300;
+  font-size:clamp(38px,5.4vw,86px);line-height:1.06}
+#exp .head h2 em{font-style:italic;color:var(--gold)}
+.excard{position:sticky;top:12vh;height:72vh;margin-bottom:9vh;border-radius:3px;
+  overflow:hidden;display:flex;align-items:flex-end}
+.excard .bg{position:absolute;inset:0}
+.excard .bg::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 30%,rgba(10,18,15,.82))}
+.excard .txt{position:relative;z-index:2;padding:44px 48px;display:flex;
+  justify-content:space-between;align-items:flex-end;width:100%;gap:30px}
+.excard h3{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(28px,3.4vw,52px)}
+.excard p{max-width:44ch;color:rgba(233,226,210,.8);font-size:14px;line-height:1.65;margin-top:10px}
+.excard .idx{color:var(--gold)}
+
+/* ---------- quote ---------- */
+#quote{position:relative;height:120vh;display:flex;align-items:center;
+  justify-content:center;overflow:hidden}
+#quote .media{position:absolute;inset:-18% 0;will-change:transform}
+#quote .media::after{content:"";position:absolute;inset:0;background:rgba(12,20,17,.6)}
+#quote blockquote{position:relative;z-index:2;text-align:center;max-width:1000px;padding:0 7vw}
+#quote blockquote p{font-family:'Fraunces',serif;font-style:italic;font-weight:300;
+  font-size:clamp(30px,4.4vw,66px);line-height:1.25}
+#quote cite{display:block;margin-top:34px;font-style:normal;color:var(--gold)}
+
+/* ---------- awards marquee ---------- */
+#awards{padding:11vh 0;border-top:1px solid rgba(233,226,210,.12);
+  border-bottom:1px solid rgba(233,226,210,.12);overflow:hidden;white-space:nowrap}
+#awards .row{display:inline-block;will-change:transform}
+#awards .item{display:inline-flex;align-items:center;gap:26px;margin-right:70px;
+  font-family:'Fraunces',serif;font-size:clamp(20px,2.4vw,34px);font-weight:300}
+#awards .item i{width:7px;height:7px;border-radius:50%;background:var(--laterite);display:inline-block}
+
+/* ---------- footer cta ---------- */
+#cta{padding:26vh 8vw 8vh;text-align:center;position:relative}
+#cta .mono{color:var(--palm)}
+#cta h2{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(46px,8vw,130px);
+  line-height:1.02;margin-top:24px}
+#cta h2 em{font-style:italic;color:var(--gold)}
+#cta .btn{display:inline-block;margin-top:56px;position:relative;
+  border:1px solid rgba(233,226,210,.4);border-radius:60px;padding:24px 58px;
+  font-size:13px;letter-spacing:.24em;text-transform:uppercase;overflow:hidden}
+#cta .btn i{position:absolute;inset:0;background:var(--laterite);
+  transform:translateY(101%);transition:transform .45s cubic-bezier(.6,0,.2,1);z-index:-1;font-style:normal}
+#cta .btn:hover i{transform:translateY(0)}
+#cta .foot{margin-top:18vh;display:flex;justify-content:space-between;
+  align-items:flex-end;text-align:left;color:rgba(233,226,210,.55);flex-wrap:wrap;gap:20px}
+#cta .foot .big{font-family:'Fraunces',serif;font-size:26px;color:var(--salt)}
+.reveal{clip-path:inset(0 0 100% 0)}
+@media(max-width:760px){
+  nav{padding:20px 22px}
+  #manifesto{padding:18vh 7vw}
+  .villa{width:86vw}
+  .excard .txt{padding:26px 24px;flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+<div class="cur" id="cur"></div><div class="curo" id="curo"></div>
+
+<div id="pre">
+  <div class="mono coords" id="coords"></div>
+  <div class="pct" id="pct">0</div>
+  <div class="bar"><i id="bari"></i></div>
+</div>
+
+<div id="rail"><div class="line"></div><div class="dot" id="dot"></div></div>
+<div id="alt"><div class="v" id="altv">ALT 72 M</div><div class="l">above the sea</div></div>
+
+<nav>
+  <div class="wordmark">Coco <em>Shambhala</em></div>
+  <a class="book hov" href="#cta">Reserve</a>
+</nav>
+
+<section id="hero">
+  <div class="media" id="heromedia">
+    <img src="https://cocoshambhala.com/wp-content/uploads/2023/11/Main-image-1-1-e1720067150796-1500x663.jpg" alt="Coco Shambhala villas above Bhogave Beach">
+  </div>
+  <div class="mono coord-tag" id="coordtag">15°58′ N — 73°32′ E · Sindhudurg, Konkan Coast</div>
+  <div class="title">
+    <h1 id="h1">
+      <span class="ln"><span>Coco</span></span>
+      <span class="ln"><span><em>Shambhala</em></span></span>
+    </h1>
+    <div class="sub" id="herosub">Two villas · Jungle above · Sea below</div>
+  </div>
+  <div class="scrollcue" id="cue">
+    <div class="mono">Descend</div>
+    <div class="stem"><i id="stemi"></i></div>
+  </div>
+</section>
+
+<section id="manifesto">
+  <p id="mtext">Seventy metres above <em>Bhogave Beach,</em> hidden inside twelve acres of Konkan jungle, two handcrafted villas look out over nothing but the <em>Arabian Sea.</em> No lobby. No neighbours. Just the descent.</p>
+  <div class="foot mono">
+    <span>Sindhudurg · Maharashtra</span><span>Est. among the palms</span><span>Barefoot luxury</span>
+  </div>
+</section>
+
+<section id="villas">
+  <div class="pinwrap" id="pinwrap">
+    <div id="track">
+      <div class="villa-intro">
+        <div class="mono">The villas</div>
+        <h2>Choose your <em>horizon</em></h2>
+      </div>
+      <article class="villa hov">
+        <div class="num">No.1</div>
+        <div class="frame"><img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1600&auto=format&fit=crop" alt="Villa Varenya infinity pool"></div>
+        <h3>Varenya</h3>
+        <div class="meta mono"><span>Sleeps 6</span><span>Private infinity pool</span><span>Sea-facing</span></div>
+        <p class="desc">The name means "most excellent." An open-sided living pavilion, a pool that pours into the horizon, and mornings measured in dolphin sightings.</p>
+      </article>
+      <article class="villa hov">
+        <div class="num">No.2</div>
+        <div class="frame"><img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=1600&auto=format&fit=crop" alt="Villa Arka pool at dusk"></div>
+        <h3>Arka</h3>
+        <div class="meta mono"><span>Sleeps 6</span><span>Private infinity pool</span><span>Jungle canopy</span></div>
+        <p class="desc">Named for the sun. Laterite stone, hand-cut timber, and the long gold hour when the jungle turns amber and the sea holds the light.</p>
+      </article>
+      <article class="villa hov">
+        <div class="num">&nbsp;</div>
+        <div class="frame"><img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?q=80&w=1600&auto=format&fit=crop" alt="The descent to Bhogave beach"></div>
+        <h3>The beach below</h3>
+        <div class="meta mono"><span>0 m</span><span>Bhogave sands</span><span>Yours at dawn</span></div>
+        <p class="desc">A footpath winds down through the palms. At the bottom: a kilometre of empty sand, a fishing village waking up, and the sea.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="exp">
+  <div class="head">
+    <div class="mono" style="color:var(--laterite)">Days here</div>
+    <h2>The sea sets the <em>schedule</em></h2>
+  </div>
+  <div class="excard hov"><div class="bg"><img src="https://images.unsplash.com/photo-1607153333879-c174d265f1d2?q=80&w=1800&auto=format&fit=crop" alt="Dolphins off the Konkan coast"></div>
+    <div class="txt"><div><h3>Dolphins before breakfast</h3><p>A fisherman's boat, a flat dawn sea, and pods of humpback dolphins that arrive most mornings like clockwork.</p></div><div class="idx mono">01 / 04</div></div>
+  </div>
+  <div class="excard hov"><div class="bg"><img src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1800&auto=format&fit=crop" alt="Nivati fort laterite walls"></div>
+    <div class="txt"><div><h3>Forts of laterite</h3><p>Nivati's rust-red ramparts were cut from the same stone the villas stand on. Walk them at sunset, the sea on three sides.</p></div><div class="idx mono">02 / 04</div></div>
+  </div>
+  <div class="excard hov"><div class="bg"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1800&auto=format&fit=crop" alt="Ayurvedic spa therapy"></div>
+    <div class="txt"><div><h3>Ayurveda, properly</h3><p>Therapists trained in the old Kerala lineages. Warm oil, jungle sounds, and nowhere you need to be.</p></div><div class="idx mono">03 / 04</div></div>
+  </div>
+  <div class="excard hov"><div class="bg"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1800&auto=format&fit=crop" alt="Curated Konkan dining"></div>
+    <div class="txt"><div><h3>The Konkan table</h3><p>Sol kadhi, reef fish grilled in banana leaf, mangoes from the estate. Menus written each morning around the day's catch.</p></div><div class="idx mono">04 / 04</div></div>
+  </div>
+</section>
+
+<section id="quote">
+  <div class="media" id="quotemedia"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1800&auto=format&fit=crop" alt="Bhogave beach at golden hour"></div>
+  <blockquote>
+    <p id="qtext">"One of the world's top twenty-five beach villas. A truly magical place."</p>
+    <cite class="mono">Condé Nast Traveller</cite>
+  </blockquote>
+</section>
+
+<div id="awards">
+  <div class="row" id="marq">
+    <span class="item">Condé Nast — World's Top 25 Beach Villas <i></i></span>
+    <span class="item">Best Boutique Hotel, India <i></i></span>
+    <span class="item">India's Top 25 Hotels <i></i></span>
+    <span class="item">NDTV Design &amp; Architecture Award <i></i></span>
+    <span class="item">Global Architecture &amp; Design Award <i></i></span>
+  </div>
+</div>
+
+<section id="cta">
+  <div class="mono">Two villas only — the calendar is short</div>
+  <h2>Begin the <em>descent</em></h2>
+  <a class="btn hov" href="https://cocoshambhala.com/" target="_blank" rel="noopener">Reserve your villa<i></i></a>
+  <div class="foot">
+    <div><div class="mono" style="margin-bottom:8px">Find us</div><div class="big">Bhogave, Sindhudurg</div><div class="mono" style="margin-top:6px">15°58′ N — 73°32′ E</div></div>
+    <div class="mono">Concept redesign by Kerblabs · imagery placeholders where noted</div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* smooth scroll */
+const lenis = new Lenis({lerp:.09});
+lenis.on('scroll', ScrollTrigger.update);
+gsap.ticker.add(t=>lenis.raf(t*1000));
+gsap.ticker.lagSmoothing(0);
+
+/* cursor */
+const cur=document.getElementById('cur'),curo=document.getElementById('curo');
+let cx=0,cy=0,ox=0,oy=0;
+addEventListener('mousemove',e=>{cx=e.clientX;cy=e.clientY;
+  cur.style.transform=`translate(${cx-5}px,${cy-5}px)`});
+gsap.ticker.add(()=>{ox+=(cx-ox)*.12;oy+=(cy-oy)*.12;
+  curo.style.transform=`translate(${ox-22}px,${oy-22}px)`});
+document.querySelectorAll('.hov,a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>curo.classList.add('big'));
+  el.addEventListener('mouseleave',()=>curo.classList.remove('big'));
+});
+
+/* preloader: type coordinates + count % */
+const coordsEl=document.getElementById('coords');
+const CO="15°58′ N — 73°32′ E · SINDHUDURG";
+const pct={v:0};
+const pre=gsap.timeline({onComplete:intro});
+pre.to(pct,{v:100,duration:1.9,ease:'power2.inOut',
+   onUpdate:()=>{document.getElementById('pct').textContent=Math.floor(pct.v);
+     coordsEl.textContent=CO.slice(0,Math.floor(CO.length*pct.v/100))}},0)
+  .to('#bari',{scaleX:1,duration:1.9,ease:'power2.inOut'},0)
+  .to('#pre',{yPercent:-100,duration:.9,ease:'power4.inOut'},2.15);
+
+function intro(){
+  gsap.set('#pre',{display:'none'});
+  const t=gsap.timeline();
+  t.to('#h1 .ln span',{y:0,duration:1.1,ease:'power4.out',stagger:.12},0)
+   .fromTo('#heromedia',{scale:1.14},{scale:1,duration:1.8,ease:'power3.out'},0)
+   .to('#herosub',{opacity:1,duration:.8},.7)
+   .to(['#coordtag','#cue'],{opacity:1,duration:.8},.95);
+  gsap.to('#stemi',{top:'100%',duration:1.4,ease:'power2.inOut',repeat:-1},1.5);
+}
+
+/* hero scroll: image scales & drifts, title parallax up */
+gsap.to('#heromedia',{scale:1.22,yPercent:12,ease:'none',
+  scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:true}});
+gsap.to('#hero .title',{yPercent:-60,opacity:.15,ease:'none',
+  scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:true}});
+
+/* THE DESCENT: bg night -> sand as you approach the villas/beach, back to night */
+const bgTo=(el,bg,fg)=>ScrollTrigger.create({trigger:el,start:'top 62%',end:'top 20%',
+  onEnter:()=>gsap.to('body',{backgroundColor:bg,color:fg,duration:1.1,ease:'power2.out'}),
+  onLeaveBack:()=>gsap.to('body',{backgroundColor:'#12211D',color:'#E9E2D2',duration:1.1})});
+bgTo('#villas','#E9E2D2','#1A2420');
+ScrollTrigger.create({trigger:'#exp',start:'top 55%',
+  onEnter:()=>gsap.to('body',{backgroundColor:'#12211D',color:'#E9E2D2',duration:1.2}),
+  onLeaveBack:()=>gsap.to('body',{backgroundColor:'#E9E2D2',color:'#1A2420',duration:1.2})});
+
+/* elevation rail: 72m -> 0m across full page */
+const altv=document.getElementById('altv'),dot=document.getElementById('dot');
+ScrollTrigger.create({trigger:document.body,start:'top top',end:'max',
+  onUpdate:s=>{const p=s.progress;
+    altv.textContent='ALT '+Math.max(0,Math.round(72*(1-p)))+' M';
+    dot.style.top=(12+p*76)+'vh';
+    document.querySelector('#alt .l').textContent=p>.96?'sea level':'above the sea';}});
+/* rail ticks */
+const rail=document.getElementById('rail');
+for(let k=0;k<=8;k++){const t=document.createElement('div');t.className='tick';
+  t.style.top=(12+k*9.5)+'vh';rail.appendChild(t)}
+
+/* manifesto word-by-word */
+const m=document.getElementById('mtext');
+m.innerHTML=m.innerHTML.split(/(<em>.*?<\/em>)/g).map(seg=>{
+  if(seg.startsWith('<em>')) return '<span class="w">'+seg+'</span>';
+  return seg.split(' ').filter(Boolean).map(w=>'<span class="w">'+w+'</span>').join(' ');
+}).join(' ');
+gsap.to('#mtext .w',{opacity:1,stagger:.06,ease:'none',
+  scrollTrigger:{trigger:'#manifesto',start:'top 70%',end:'bottom 60%',scrub:true}});
+
+/* villas horizontal pin */
+const track=document.getElementById('track');
+const hlen=()=>track.scrollWidth-innerWidth;
+gsap.to(track,{x:()=>-hlen(),ease:'none',
+  scrollTrigger:{trigger:'#villas',start:'top top',end:()=>'+='+hlen(),
+    scrub:1,pin:true,invalidateOnRefresh:true}});
+document.querySelectorAll('.villa .frame img').forEach(img=>{
+  gsap.to(img,{scale:1,ease:'none',
+    scrollTrigger:{trigger:'#villas',start:'top top',end:()=>'+='+hlen(),scrub:1}});
+});
+
+/* experience cards: subtle scale-in as each stacks */
+document.querySelectorAll('.excard').forEach(card=>{
+  gsap.fromTo(card,{scale:.96,opacity:.7},{scale:1,opacity:1,ease:'none',
+    scrollTrigger:{trigger:card,start:'top 90%',end:'top 30%',scrub:true}});
+});
+
+/* quote parallax */
+gsap.fromTo('#quotemedia',{yPercent:-12},{yPercent:12,ease:'none',
+  scrollTrigger:{trigger:'#quote',start:'top bottom',end:'bottom top',scrub:true}});
+gsap.fromTo('#qtext',{opacity:0,y:60},{opacity:1,y:0,duration:1,
+  scrollTrigger:{trigger:'#quote',start:'top 55%'}});
+
+/* awards marquee: scroll-velocity driven */
+let mx=0;
+const marq=document.getElementById('marq');
+marq.innerHTML+=marq.innerHTML;
+gsap.ticker.add(()=>{mx-=0.6+Math.min(6,Math.abs(lenis.velocity)*.35);
+  const w=marq.scrollWidth/2; if(-mx>w) mx+=w;
+  marq.style.transform=`translateX(${mx}px)`});
+
+/* cta title reveal */
+gsap.fromTo('#cta h2',{opacity:0,y:80},{opacity:1,y:0,duration:1,ease:'power3.out',
+  scrollTrigger:{trigger:'#cta',start:'top 65%'}});
+
+if(reduced){lenis.destroy();gsap.globalTimeline.timeScale(100)}
+</script>
+</body>
+</html>
