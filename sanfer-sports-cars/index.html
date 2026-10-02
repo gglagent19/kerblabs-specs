@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sanfer Sports Cars | Pre-Owned Exotic &amp; Luxury Cars, Miami since 1973</title>
+<meta name="description" content="Sanfer Sports Cars: pre-owned exotic, sports and luxury cars in Miami, Florida since 1973. Concept site by Kerblabs.">
+<meta name="theme-color" content="#0b0a09">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0a09;--bg2:#141210;--ink:#f4efe8;--muted:#9a9187;--amber:#ffb020;--amber2:#ff7a1a;--red:#e5301f;--line:rgba(244,239,232,.14)}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.disp{font-family:"Bebas Neue",Impact,sans-serif;letter-spacing:.02em;font-weight:400}
+.label{font-weight:600;letter-spacing:.28em;text-transform:uppercase;font-size:12px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:16px 30px;transition:.4s;border-bottom:1px solid transparent}
+.nav.s{background:rgba(11,10,9,.78);backdrop-filter:blur(12px);border-bottom-color:var(--line)}
+.brand{font-family:"Bebas Neue";font-size:26px;letter-spacing:.08em;line-height:1}
+.brand small{display:block;font-family:Inter;font-size:9px;letter-spacing:.3em;color:var(--amber);margin-top:3px;font-weight:600}
+.nav .links{display:flex;gap:30px;align-items:center}
+.nav .links a{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.nav .links a:hover{color:var(--ink)}
+.btn{display:inline-block;border:1px solid var(--amber);padding:12px 24px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;transition:.3s;color:var(--ink)}
+.btn:hover{background:var(--amber);color:#111;box-shadow:0 0 30px -6px var(--amber)}
+@media(max-width:820px){.nav .links a:not(.btn){display:none}}
+@media(max-width:480px){.nav{padding:12px 16px}.brand{font-size:19px}.brand small{font-size:8px;letter-spacing:.22em}.btn{padding:9px 12px;font-size:10px;letter-spacing:.1em}
+ .top{top:11vh}.top h1{font-size:clamp(38px,11vw,52px)}.gauge{width:min(64vh,90vw);margin-top:8vh}.marques{gap:6px 14px}.marques span{font-size:16px}.wrap{padding:0 20px}.band{padding:84px 0}}
+
+/* HERO MECHANIC: scroll-driven tachometer + odometer year counter, 1973 -> now */
+.hero{height:500vh;position:relative}
+.pin{position:sticky;top:0;height:100vh;overflow:hidden;display:grid;place-items:center;
+ background:radial-gradient(70% 60% at 50% 55%,rgba(255,122,26,.16),transparent 70%),radial-gradient(circle at 50% 120%,#1d1712,var(--bg) 70%)}
+.pin:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 78px,rgba(244,239,232,.03) 78px 79px);pointer-events:none}
+.gauge{position:relative;width:min(52vh,80vw);aspect-ratio:1;margin-top:24vh}
+.gauge svg{width:100%;height:100%;overflow:visible}
+.needle{transform-origin:200px 200px;transition:transform .08s linear}
+.glow{filter:drop-shadow(0 0 8px rgba(255,122,26,.8))}
+.center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-top:22%}
+.year{font-family:"Bebas Neue";font-size:clamp(56px,11vh,112px);line-height:.9;color:var(--ink);font-variant-numeric:tabular-nums}
+.era{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--amber);margin-top:6px;min-height:20px;font-weight:600}
+.top{position:absolute;top:9vh;left:0;right:0;text-align:center;padding:0 24px;z-index:2}
+.top h1{font-family:"Bebas Neue";font-weight:400;font-size:clamp(44px,6.4vw,96px);line-height:.92;margin:14px 0 0;letter-spacing:.01em}
+.top h1 em{font-style:normal;color:var(--amber)}
+.marques{position:absolute;bottom:7vh;left:0;right:0;display:flex;justify-content:center;flex-wrap:wrap;gap:8px 22px;padding:0 20px}
+.marques span{font-family:"Bebas Neue";font-size:clamp(18px,2.4vw,28px);letter-spacing:.14em;color:rgba(244,239,232,.22);transition:color .4s,text-shadow .4s}
+.marques span.on{color:var(--ink);text-shadow:0 0 22px rgba(255,176,32,.7)}
+.cue{position:absolute;bottom:2.2vh;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+
+.band{padding:120px 0;border-top:1px solid var(--line)}
+h2.sec{font-family:"Bebas Neue";font-weight:400;font-size:clamp(44px,7vw,96px);line-height:.95;margin:12px 0 0;max-width:16ch}
+h2.sec em{font-style:normal;color:var(--amber)}
+.lead{color:var(--muted);max-width:56ch;margin:22px 0 0;font-size:17px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;border:1px solid var(--line)}
+.tile{padding:34px 26px;border-right:1px solid var(--line);min-height:200px;transition:background .3s}
+.tile:last-child{border-right:0}
+.tile:hover{background:var(--bg2)}
+.tile .n{font-family:"Bebas Neue";font-size:20px;color:var(--amber)}
+.tile h3{font-family:"Bebas Neue";font-weight:400;font-size:34px;margin:8px 0 8px;letter-spacing:.03em}
+.tile p{color:var(--muted);font-size:14.5px;margin:0}
+@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}.tile:nth-child(2){border-right:0}.tile:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.tile{border-right:0;border-bottom:1px solid var(--line)}}
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+@media(max-width:900px){.split{grid-template-columns:1fr}}
+.big{font-family:"Bebas Neue";font-size:clamp(90px,16vw,220px);line-height:.85;color:transparent;-webkit-text-stroke:1.5px var(--amber)}
+.facts{list-style:none;padding:0;margin:28px 0 0}
+.facts li{padding:14px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;font-size:15px}
+.facts li span:first-child{color:var(--muted);letter-spacing:.16em;text-transform:uppercase;font-size:11px;padding-top:3px}
+.cta{padding:150px 0;text-align:center;border-top:1px solid var(--line);background:radial-gradient(60% 80% at 50% 100%,rgba(255,122,26,.14),transparent)}
+.cta h2{font-family:"Bebas Neue";font-weight:400;font-size:clamp(50px,9vw,130px);line-height:.92;margin:0}
+.cta h2 em{font-style:normal;color:var(--amber)}
+.phone{font-family:"Bebas Neue";font-size:clamp(34px,5vw,64px);color:var(--amber);display:block;margin:26px 0 30px}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--muted);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.specnote{text-align:center;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(154,145,135,.55);padding:20px}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .9s,transform .9s}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.needle{transition:none}}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="brand">SANFER SPORTS CARS<small>MIAMI · SINCE 1973</small></div>
+  <div class="links"><a href="#inventory">Inventory</a><a href="#story">Since 1973</a><a href="#visit">Visit</a><a class="btn" href="tel:+13054700001">305.470.0001</a></div>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="pin">
+    <div class="top">
+      <div class="label" style="color:var(--amber)">Pre-owned exotic &amp; luxury · Miami, Florida</div>
+      <h1>Fifty-three years <em>on the throttle.</em></h1>
+    </div>
+    <div class="gauge">
+      <svg viewBox="0 0 400 400" aria-hidden="true">
+        <defs><linearGradient id="arc" x1="0" x2="1"><stop offset="0" stop-color="#ffb020"/><stop offset="1" stop-color="#e5301f"/></linearGradient></defs>
+        <path d="M 56.6 343.4 A 200 200 0 1 1 343.4 343.4" transform="translate(0 0) scale(.9) translate(22 22)" fill="none" stroke="rgba(244,239,232,.12)" stroke-width="6"/>
+        <path id="prog" d="M 56.6 343.4 A 200 200 0 1 1 343.4 343.4" transform="translate(0 0) scale(.9) translate(22 22)" fill="none" stroke="url(#arc)" stroke-width="6" stroke-linecap="round" class="glow" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+        <g id="ticks" stroke="rgba(244,239,232,.35)"></g>
+        <g class="needle" id="needle"><line x1="200" y1="200" x2="200" y2="52" stroke="#ff7a1a" stroke-width="3" stroke-linecap="round" class="glow"/><circle cx="200" cy="200" r="9" fill="#141210" stroke="#ff7a1a" stroke-width="3"/></g>
+      </svg>
+      <div class="center"><div class="year disp" id="year">1973</div><div class="era" id="era">Doors open in Miami</div></div>
+    </div>
+    <div class="marques" id="marques">
+      <span>Ferrari</span><span>Lamborghini</span><span>McLaren</span><span>Porsche</span><span>Bentley</span><span>Mercedes-Benz</span><span>BMW</span><span>Audi</span>
+    </div>
+    <div class="cue">Scroll to accelerate</div>
+  </div>
+</section>
+
+<section class="band" id="inventory">
+  <div class="wrap">
+    <div class="label reveal" style="color:var(--amber)">The floor</div>
+    <h2 class="sec reveal">One of Miami's largest pre-owned <em>sports car</em> inventories</h2>
+    <p class="lead reveal">Imported and domestic. Exotic, sports, luxury and SUV. Every car on the lot is pre-owned and chosen to be the best example of its kind.</p>
+    <div class="grid">
+      <div class="tile reveal"><div class="n">01</div><h3>Exotics</h3><p>Ferrari, Lamborghini and McLaren, the cars that stop traffic.</p></div>
+      <div class="tile reveal"><div class="n">02</div><h3>Sports</h3><p>Porsche, and the sharpest performance metal from Europe and Detroit.</p></div>
+      <div class="tile reveal"><div class="n">03</div><h3>Luxury</h3><p>Bentley and Mercedes-Benz for owners who want the quiet kind of fast.</p></div>
+      <div class="tile reveal"><div class="n">04</div><h3>Performance SUVs</h3><p>BMW and Audi utility with the numbers of a sports car.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="story">
+  <div class="wrap split">
+    <div class="reveal"><div class="big disp">1973</div></div>
+    <div class="reveal">
+      <div class="label" style="color:var(--amber)">Independent. Since 1973.</div>
+      <h2 class="sec" style="font-size:clamp(38px,5vw,68px)">Straight talk. <em>Real cars.</em></h2>
+      <p class="lead">Sanfer has been selling pre-owned exotic and luxury cars in Miami since 1973. Buyers come to an independent dealer because they want a straight conversation about a car, not a script.</p>
+      <ul class="facts">
+        <li><span>Founded</span><span>1973</span></li>
+        <li><span>Location</span><span>7198 NW 51st St, Miami</span></li>
+        <li><span>Inventory</span><span>Pre-owned exotic, sports &amp; luxury</span></li>
+        <li><span>Led by</span><span>Carlos Santisteban, President</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="visit">
+  <div class="wrap reveal">
+    <div class="label" style="color:var(--amber)">Come see it in person</div>
+    <h2>Find your next <em>keys.</em></h2>
+    <a class="phone" href="tel:+13054700001">305.470.0001</a>
+    <a class="btn" href="https://www.google.com/maps/search/?api=1&query=7198+NW+51st+St+Miami+FL+33166" target="_blank" rel="noopener">7198 NW 51st St, Miami FL 33166</a>
+  </div>
+</section>
+
+<footer><div class="wrap"><div><strong>SANFER SPORTS CARS</strong><br>7198 NW 51st St, Miami, FL 33166</div><div>Pre-owned exotic &amp; luxury cars since 1973</div></div></footer>
+<div class="specnote">Concept design by Kerblabs. Not affiliated with or endorsed by Sanfer Sports Cars.</div>
+
+<script>
+(function(){
+  var NS="http://www.w3.org/2000/svg",ticks=document.getElementById('ticks');
+  // gauge sweeps -135deg..+135deg, ticks every 13.5deg
+  for(var i=0;i<=20;i++){
+    var a=(-135+i*13.5)*Math.PI/180,long=i%5===0,r1=long?150:158,r2=170;
+    var l=document.createElementNS(NS,'line');
+    l.setAttribute('x1',200+r1*Math.sin(a));l.setAttribute('y1',200-r1*Math.cos(a));
+    l.setAttribute('x2',200+r2*Math.sin(a));l.setAttribute('y2',200-r2*Math.cos(a));
+    l.setAttribute('stroke-width',long?3:1.5);ticks.appendChild(l);
+  }
+  var hero=document.getElementById('hero'),needle=document.getElementById('needle'),prog=document.getElementById('prog'),
+      yr=document.getElementById('year'),era=document.getElementById('era'),m=document.querySelectorAll('#marques span'),nav=document.getElementById('nav');
+  var END=new Date().getFullYear();
+  var eras=[[0,'Doors open in Miami'],[.25,'Decades of pre-owned exotics'],[.55,'Ferrari · Lamborghini · McLaren'],[.85,'Still independent. Still here.']];
+  function tick(){
+    var r=hero.getBoundingClientRect(),p=Math.min(1,Math.max(0,-r.top/(hero.offsetHeight-innerHeight)));
+    needle.style.transform='rotate('+(-135+p*270)+'deg)';
+    prog.style.strokeDashoffset=100-p*100;
+    yr.textContent=Math.round(1973+p*(END-1973));
+    for(var i=0;i<eras.length;i++)if(p>=eras[i][0])era.textContent=eras[i][1];
+    var n=Math.floor(p*(m.length+1));
+    for(i=0;i<m.length;i++)m[i].classList.toggle('on',i<n);
+    nav.classList.toggle('s',scrollY>40);
+  }
+  addEventListener('scroll',tick,{passive:true});addEventListener('resize',tick);tick();
+  var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>
