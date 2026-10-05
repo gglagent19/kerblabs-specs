@@ -1,0 +1,14 @@
+# First Class Exotics (concept by Kerblabs)
+
+> Concept site, not the business's official site. Facts from firstclassexotics.com.
+
+First Class Exotics is a family-run exotic and luxury car rental in Costa Mesa, CA (2060 Placentia Ave Ste A4, 92627), founded by Ali Hojat. Open daily 8am to 10pm. Rentals start at $799 per day; delivery across Orange County, Los Angeles and San Diego. Renters 25+ with license and full coverage insurance.
+
+## Machine-readable
+- [services.json](services.json)
+
+## FAQ
+- How do I book? Reservation form on firstclassexotics.com, (949) 294-5958 or ali@firstclassexotics.com.
+
+## Actions
+- Request a rental: call (949) 294-5958 or email ali@firstclassexotics.com with car, dates and delivery location.

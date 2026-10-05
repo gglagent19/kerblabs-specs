@@ -1,0 +1,12 @@
+{
+  "business": "First Class Exotics",
+  "note": "Concept file by Kerblabs. Facts from firstclassexotics.com. Per-car rates are by request.",
+  "locations": ["Costa Mesa", "Orange County", "Los Angeles", "San Diego", "Inland Empire"],
+  "services": [
+    {"name": "Exotic and luxury car rental (48+ vehicles listed)", "price": null, "pricing": "starting at $799 per day; specific car rates on request"},
+    {"name": "White-glove delivery to hotel, home or venue (same day available)", "price": null, "pricing": "on request"}
+  ],
+  "requirements": {"min_age": 25, "license": "valid", "insurance": "full coverage", "deposit": "major credit card for security deposit"},
+  "hours": "Daily 08:00-22:00",
+  "booking": {"method": "reservation request form, phone or email", "phone": "(949) 294-5958", "email": "ali@firstclassexotics.com", "needs": ["vehicle", "start and end dates", "pickup or delivery location"], "response": "about 2 hours per site", "live_availability": false}
+}

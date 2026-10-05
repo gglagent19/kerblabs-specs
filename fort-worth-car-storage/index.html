@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fort Worth Car Storage | 150,000 sq ft climate-controlled (concept)</title>
+<meta name="description" content="Concept site for Fort Worth Car Storage and Dallas Car Storage at 2550 McMillan Pkwy, Fort Worth: a 150,000 sq ft climate-controlled floor fills in as you scroll.">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/fort-worth-car-storage/">
+<meta property="og:title" content="Fort Worth Car Storage | concept site by Kerblabs">
+<meta property="og:description" content="Concept for a 150,000 sq ft climate-controlled car storage facility, with a floor plan that fills in as you scroll.">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/fort-worth-car-storage/">
+<meta name="twitter:card" content="summary">
+<meta name="robots" content="noindex,follow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#10150e;color:#ece8da;font-family:"Helvetica Neue",Arial,sans-serif;line-height:1.55}
+a{color:inherit}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:700;letter-spacing:-.01em}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 16px;background:rgba(16,21,14,.94);backdrop-filter:blur(8px);border-bottom:1px solid #2b3326}
+nav b{font-family:Georgia,serif;font-size:17px;letter-spacing:.02em}
+nav .r{display:flex;gap:14px;align-items:center;font-size:13px}
+.btn{display:inline-block;text-decoration:none;background:#c8a24a;color:#10150e;padding:11px 20px;border-radius:6px;font-size:14px;font-weight:700;white-space:nowrap}
+.btn.alt{background:transparent;color:#ece8da;border:2px solid #ece8da}
+.track{height:600vh;position:relative}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#10150e}
+.stage svg{position:absolute;right:24px;bottom:40px;width:58%;height:auto;max-height:72%}
+.hud{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr;padding:100px 24px 22px;max-width:1280px;margin:0 auto;pointer-events:none}
+.copy{pointer-events:auto;max-width:520px}
+.hud h1{font-size:clamp(34px,4.6vw,64px);line-height:1}
+.hud p{margin-top:12px;max-width:440px;font-size:clamp(14px,1.5vw,18px);opacity:.9}
+.book{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px}
+.cnt{position:absolute;left:24px;bottom:44px;pointer-events:none}
+.cnt .n{font-family:Georgia,serif;font-weight:700;font-size:clamp(44px,6.4vw,92px);line-height:1;color:#c8a24a;font-variant-numeric:tabular-nums}
+.cnt .u{font-size:12px;letter-spacing:.22em;text-transform:uppercase;opacity:.8}
+.cnt .v{font-family:Georgia,serif;font-size:clamp(18px,2vw,26px);margin-top:8px}
+.cnt .d{font-size:13px;opacity:.8;max-width:340px}
+.note{position:absolute;left:24px;bottom:10px;font-size:10.5px;background:#2b3326;padding:3px 10px;border-radius:6px}
+section.blk{padding:80px 22px;max-width:1100px;margin:0 auto}
+.eye{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#c8a24a;margin-bottom:12px;font-weight:700}
+h2{font-size:clamp(28px,4.2vw,48px);line-height:1.05;margin-bottom:16px;max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:24px}
+.card{background:#182013;border:1px solid #2b3326;border-radius:10px;padding:20px}
+.card h3{font-size:19px;margin-bottom:6px}
+.card p{font-size:14px;opacity:.8}
+.facts{margin-top:22px;border-top:2px solid #c8a24a}
+.facts div{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #2b3326;font-size:16px}
+.facts b{font-family:Georgia,serif;color:#c8a24a;text-align:right}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:24px;counter-reset:s}
+.steps div{border-top:2px solid #c8a24a;padding-top:12px;font-size:14px;counter-increment:s}
+.steps div::before{content:"0" counter(s);display:block;font-family:Georgia,serif;font-size:26px;color:#c8a24a}
+.pitch{background:#c8a24a;color:#10150e;border-radius:14px;padding:32px 26px;margin:0 16px}
+.pitch .eye{color:#10150e}
+.pitch ul{margin:12px 0 0 18px}
+.faq details{border-bottom:1px solid #2b3326;padding:14px 0}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{margin-top:8px;opacity:.85;max-width:680px}
+.ar{margin:0 auto;max-width:1100px;padding:20px 22px 70px}
+.ar div{border:2px dashed #c8a24a;border-radius:10px;padding:20px;font-size:14px}
+footer{padding:44px 22px 96px;text-align:center;font-size:12px;opacity:.7;border-top:1px solid #2b3326}
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none;gap:8px}
+.sticky .btn{flex:1;text-align:center;padding:14px}
+.sticky .btn.alt{background:#10150e}
+@media(max-width:760px){
+.track{height:540vh}
+.stage svg{right:12px;left:12px;width:auto;bottom:178px;max-height:34%}
+.hud{padding:112px 16px 14px}
+.copy{background:rgba(16,21,14,.88);border-radius:10px;padding:12px 14px}
+.hud p,.book{display:none}
+.hud h1{font-size:27px}
+.cnt{left:16px;right:16px;bottom:70px}
+.cnt .n{font-size:40px}
+.cnt .d{display:none}
+.note{display:none}
+nav b{font-size:14px;line-height:1.15}
+nav .r a.t{display:none}
+nav .btn{padding:9px 14px;font-size:12px}
+.sticky{display:flex}
+}
+@media(prefers-reduced-motion:reduce){.track{height:auto}.stage{position:relative;height:auto;min-height:100svh}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"SelfStorage","name":"Fort Worth Car Storage","alternateName":"Dallas Car Storage","url":"https://www.fortworthcarstorage.com/","telephone":"+1 817 980 4695","address":{"@type":"PostalAddress","streetAddress":"2550 McMillan Pkwy","addressLocality":"Fort Worth","addressRegion":"TX","postalCode":"76137","addressCountry":"US"},"openingHours":["Tu-Sa 09:00-18:00","Su 11:00-19:00"],"description":"Climate-controlled short and long-term car storage in a 150,000 sq ft facility, with 24/7 electronically controlled access and camera monitoring."},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does Fort Worth Car Storage offer?","acceptedAnswer":{"@type":"Answer","text":"Per its site: short and long-term climate-controlled storage for exotic and collector cars, plus military, truck, boat and RV storage, door-to-door transport for out-of-state vehicles, wash bay and vehicle lift access, and bubble storage."}},{"@type":"Question","name":"How big is the facility?","acceptedAnswer":{"@type":"Answer","text":"The site describes a 150,000 sq ft climate-controlled museum setting."}},{"@type":"Question","name":"How is access and security handled?","acceptedAnswer":{"@type":"Answer","text":"The site lists 24/7 availability with electronically controlled access and security camera monitoring, a backup power generator, and customer key storage in security lock boxes."}},{"@type":"Question","name":"Where is it and when is it open?","acceptedAnswer":{"@type":"Answer","text":"2550 McMillan Pkwy, Fort Worth, TX 76137. Tuesday to Saturday 9am to 6pm, Sunday 11am to 7pm (CT). Phone (817) 980-4695."}},{"@type":"Question","name":"What does storage cost?","acceptedAnswer":{"@type":"Answer","text":"Prices are not published on the home page; the site points to a rates page. Call (817) 980-4695."}}]}]}
+</script>
+</head>
+<body>
+<nav><b>Fort Worth Car Storage</b><div class="r"><a class="t" href="#facility">Facility</a><a class="t" href="#services">Services</a><a class="t" href="#faq">FAQ</a><a class="btn" href="tel:+18179804695">Call (817) 980-4695</a></div></nav>
+
+<div class="track" id="track">
+ <div class="stage">
+  <svg id="plan" viewBox="0 0 1000 560" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg>
+  <div class="hud">
+   <div class="copy">
+    <h1>150,000 square feet. Climate-controlled. Yours to park in.</h1>
+    <p>Exotic and collector car storage at 2550 McMillan Pkwy, Fort Worth, also serving Dallas.</p>
+    <div class="book"><a class="btn" href="tel:+18179804695">Call (817) 980-4695</a><a class="btn alt" href="https://www.fortworthcarstorage.com/">fortworthcarstorage.com</a></div>
+   </div>
+  </div>
+  <div class="cnt"><div class="n" id="cn">0</div><div class="u">square feet filled</div><div class="v" id="cv">Empty floor</div><div class="d" id="cd">Scroll to fill the floor plan.</div></div>
+  <div class="note">Illustrative plan, one tile = 1,000 sq ft. Not the real layout. Figures are those listed on the site.</div>
+ </div>
+</div>
+
+<section class="blk" id="facility">
+ <div class="eye">The building (from fortworthcarstorage.com)</div>
+ <h2>A museum floor for cars that matter.</h2>
+ <div class="facts">
+  <div><span>Floor area</span><b>150,000 sq ft</b></div>
+  <div><span>Climate</span><b>Climate-controlled</b></div>
+  <div><span>Access</span><b>24/7, electronically controlled</b></div>
+  <div><span>Monitoring</span><b>Security cameras, backup generator</b></div>
+  <div><span>Hours</span><b>Tue to Sat 9am to 6pm, Sun 11am to 7pm</b></div>
+  <div><span>Neighbour</span><b>Hilton Garden Inn next door</b></div>
+ </div>
+ <div class="grid">
+  <div class="card"><h3>Members' space</h3><p>Private lounge and conference room, full kitchen and pool table.</p></div>
+  <div class="card"><h3>Photo studio</h3><p>A professional photo studio on site.</p></div>
+  <div class="card"><h3>Find us</h3><p>2550 McMillan Pkwy, Fort Worth, TX 76137. (817) 980-4695. Dallas Car Storage line: (817) 999-0980.</p></div>
+ </div>
+</section>
+
+<section class="blk" id="services">
+ <div class="eye">Services listed on the sites</div>
+ <h2>Storage, and everything around it.</h2>
+ <div class="grid">
+  <div class="card"><h3>Short and long term</h3><p>Exotic, collector, classic, investment and project car storage.</p></div>
+  <div class="card"><h3>Wash bay and lifts</h3><p>Wash bay access and vehicle lift access.</p></div>
+  <div class="card"><h3>Key storage</h3><p>Customer keys held in security lock boxes.</p></div>
+  <div class="card"><h3>Door-to-door transport</h3><p>For vehicles coming from out of state.</p></div>
+  <div class="card"><h3>More than cars</h3><p>Military, truck, motorcycle, boat and RV storage, plus bubble storage.</p></div>
+  <div class="card"><h3>DFW Car &amp; Toy Museum</h3><p>The site lists free membership access to the museum, 200+ cars.</p></div>
+ </div>
+ <p style="margin-top:18px;font-size:13px;opacity:.7">Prices are not shown on the home page, so none appear here.</p>
+</section>
+
+<section class="blk">
+ <div class="eye">How enquiring could feel</div>
+ <h2>One brand, one page, one tap to call.</h2>
+ <div class="steps">
+  <div>Watch the floor fill and feel the scale of the building.</div>
+  <div>One site for both the Fort Worth and Dallas names, so nobody wonders which to call.</div>
+  <div>Tap to call, always one tap away on mobile.</div>
+  <div>Book a visit during listed hours.</div>
+ </div>
+</section>
+
+<div class="pitch">
+ <div class="eye">Concept by Kerblabs</div>
+ <h2>Show the scale before they visit.</h2>
+ <ul>
+  <li>A scroll hero built from your own number: 150,000 sq ft.</li>
+  <li>The lounge, studio, wash bay and security story told on one screen.</li>
+  <li>Two web addresses that point at one clear, current page.</li>
+  <li>Agent-ready: AI assistants can read your services, hours and how to reach you.</li>
+ </ul>
+</div>
+
+<section class="blk faq" id="faq">
+ <div class="eye">FAQ</div>
+ <h2>Quick answers</h2>
+ <details><summary>What does Fort Worth Car Storage offer?</summary><p>Per its site: short and long-term climate-controlled storage for exotic and collector cars, plus military, truck, boat and RV storage, door-to-door transport for out-of-state vehicles, wash bay and vehicle lift access, and bubble storage.</p></details>
+ <details><summary>How big is the facility?</summary><p>The site describes a 150,000 sq ft climate-controlled museum setting.</p></details>
+ <details><summary>How is access and security handled?</summary><p>The site lists 24/7 availability with electronically controlled access and security camera monitoring, a backup power generator, and customer key storage in security lock boxes.</p></details>
+ <details><summary>Where is it and when is it open?</summary><p>2550 McMillan Pkwy, Fort Worth, TX 76137. Tuesday to Saturday 9am to 6pm, Sunday 11am to 7pm (CT). Phone (817) 980-4695.</p></details>
+ <details><summary>What does storage cost?</summary><p>Prices are not published on the home page; the site points to a rates page. Call (817) 980-4695.</p></details>
+</section>
+
+<div class="ar" id="agent-ready"><div><b>Agent-Ready included.</b> JSON-LD, FAQ and machine-readable services so AI assistants can answer "car storage in Fort Worth" or "car storage in Dallas" with your details. Illustrative concept, not yet live for this business.</div></div>
+
+<footer>Concept site by Kerblabs for Fort Worth Car Storage and Dallas Car Storage. Not affiliated or approved. Business details from fortworthcarstorage.com and dallascarstorage.com.</footer>
+<div class="sticky"><a class="btn" href="tel:+18179804695">Call</a><a class="btn alt" href="https://www.fortworthcarstorage.com/">Website</a></div>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var track=$('track'),svg=$('plan'),NS='http://www.w3.org/2000/svg';
+function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);(p||svg).appendChild(e);return e}
+var COLS=15,ROWS=10,TW=64,TH=50,OX=20,OY=30;
+el('rect',{x:6,y:16,width:988,height:528,rx:6,fill:'none',stroke:'#3a4532','stroke-width':2});
+var tiles=[],car=['#c8a24a','#b5523b','#6b8f71','#d9d2bd','#5f86a8'];
+for(var r=0;r<ROWS;r++){for(var c=0;c<COLS;c++){
+ var x=OX+c*TW,y=OY+r*TH;
+ var g=el('g',{});
+ var base=el('rect',{x:x+2,y:y+2,width:TW-4,height:TH-4,rx:3,fill:'#182013',stroke:'#2b3326','stroke-width':1},g);
+ var fill=el('rect',{x:x+2,y:y+2,width:TW-4,height:TH-4,rx:3,fill:'#c8a24a',opacity:0},g);
+ var cr=el('rect',{x:x+14,y:y+15,width:TW-28,height:TH-30,rx:5,fill:car[(c*3+r*2)%car.length],opacity:0},g);
+ tiles.push({fill:fill,cr:cr,order:c+r*.6+((c*7+r*3)%5)*.02});
+}}
+var ord=tiles.map(function(t,i){return i}).sort(function(a,b){return tiles[a].order-tiles[b].order});
+var rank=[];ord.forEach(function(ti,k){rank[ti]=k});
+function rg(t,a,b){return Math.min(1,Math.max(0,(t-a)/(b-a)))}
+var stages=[
+ [0,'Empty floor','Scroll to fill the floor plan.'],
+ [.1,'Climate-controlled','Short and long-term storage, per the site.'],
+ [.3,'24/7 access','Electronically controlled, with security camera monitoring.'],
+ [.5,'Wash bay and lifts','Wash bay access and vehicle lift access.'],
+ [.7,'Lounge and photo studio','Private lounge, conference room, professional photo studio.'],
+ [.88,'150,000 sq ft','Call (817) 980-4695.']
+];
+var last=-1,N=tiles.length;
+function draw(){
+ var rc=track.getBoundingClientRect(),max=Math.max(1,track.offsetHeight-innerHeight);
+ var t=reduce?1:Math.min(1,Math.max(0,-rc.top/max));
+ var f=Math.min(1,t/.9)*N,filled=0;
+ tiles.forEach(function(tl,i){
+  var p=Math.min(1,Math.max(0,f-rank[i]));
+  if(p>=1)filled++;
+  tl.fill.setAttribute('opacity',(p*.28).toFixed(2));
+  tl.cr.setAttribute('opacity',(rg(p,.4,1)).toFixed(2));
+ });
+ $('cn').textContent=(filled*1000).toLocaleString('en-US');
+ var k=0;stages.forEach(function(s,i){if(t>=s[0])k=i});
+ if(k!==last){last=k;$('cv').textContent=stages[k][1];$('cd').textContent=stages[k][2]}
+}
+addEventListener('scroll',draw,{passive:true});addEventListener('resize',draw);draw();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>First Class Exotics | Exotic Car Rental, Costa Mesa CA (concept)</title>
+<meta name="description" content="Concept site for First Class Exotics: family-run exotic and luxury car rental in Costa Mesa, with white-glove delivery across Orange County, LA and San Diego. Pull a key as you scroll.">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/first-class-exotics/">
+<meta property="og:title" content="First Class Exotics | concept site by Kerblabs">
+<meta property="og:description" content="Concept for a family-run exotic rental fleet in Costa Mesa, with a wall of keys that swing as you scroll.">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/first-class-exotics/">
+<meta name="twitter:card" content="summary">
+<meta name="robots" content="noindex,follow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#0e1116;color:#f3ede2;font-family:"Helvetica Neue",Arial,sans-serif;line-height:1.55}
+a{color:inherit}
+h1,h2,h3,.serif{font-family:Georgia,"Times New Roman",serif;font-weight:400}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 16px;background:rgba(14,17,22,.92);backdrop-filter:blur(8px);border-bottom:1px solid #2a2f38}
+nav b{font-family:Georgia,serif;font-size:16px;font-weight:400;letter-spacing:.05em}
+nav .r{display:flex;gap:14px;align-items:center;font-size:13px}
+.btn{display:inline-block;text-decoration:none;background:#d9b779;color:#14110b;padding:11px 20px;border-radius:99px;font-size:14px;font-weight:700;white-space:nowrap}
+.btn.alt{background:transparent;color:#f3ede2;border:1.5px solid #d9b779}
+.track{height:560vh;position:relative}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:radial-gradient(ellipse at 70% 40%,#1c222c,#0e1116 70%)}
+.stage svg{position:absolute;right:0;bottom:0;width:62%;height:100%}
+.hud{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);grid-template-rows:1fr auto;padding:96px 24px 22px;max-width:1280px;margin:0 auto;pointer-events:none}
+.copy{grid-column:1;pointer-events:auto;align-self:start}
+.hud h1{font-size:clamp(34px,5vw,70px);line-height:1.03}
+.hud p{margin-top:12px;max-width:430px;font-size:clamp(14px,1.5vw,18px);opacity:.88}
+.book{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px}
+.leg{grid-column:1;grid-row:2;align-self:end;background:#f3ede2;color:#14110b;padding:16px 20px;border-radius:14px;max-width:390px;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.leg .k{font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.7}
+.leg .v{font-family:Georgia,serif;font-size:clamp(22px,2.8vw,34px);line-height:1.05;margin:4px 0}
+.leg .d{font-size:13px;opacity:.85}
+.bar{height:4px;border-radius:2px;background:rgba(20,17,11,.15);margin-top:12px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:#b8893a}
+.note{position:absolute;right:24px;bottom:10px;font-size:10.5px;background:rgba(243,237,226,.9);color:#14110b;padding:3px 10px;border-radius:8px}
+section.blk{padding:80px 22px;max-width:1100px;margin:0 auto}
+.eye{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#d9b779;margin-bottom:12px;font-weight:700}
+h2{font-size:clamp(26px,4vw,44px);line-height:1.1;margin-bottom:16px;max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:24px}
+.card{background:#171c24;border:1px solid #2a2f38;border-radius:14px;padding:20px}
+.card h3{font-size:21px;margin-bottom:6px}
+.card p{font-size:14px;opacity:.8}
+.fleet{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin-top:22px}
+.fleet div{border-top:1px solid #d9b779;padding-top:8px;font-size:14px}
+.fleet b{display:block;font-family:Georgia,serif;font-weight:400;font-size:18px;color:#d9b779}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:24px;counter-reset:s}
+.steps div{border-top:2px solid #d9b779;padding-top:12px;font-size:14px;counter-increment:s}
+.steps div::before{content:"0" counter(s);display:block;font-family:Georgia,serif;font-size:26px;color:#d9b779}
+.cal{margin-top:24px;border:1.5px dashed #d9b779;border-radius:16px;padding:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.cal .days{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;font-size:12px;text-align:center}
+.cal .days span{padding:7px 0;border-radius:6px;background:#171c24}
+.cal .days span.x{opacity:.35;text-decoration:line-through}
+.cal .days span.o{background:#d9b779;color:#14110b;font-weight:700}
+.pitch{background:#f3ede2;color:#14110b;border-radius:22px;padding:32px 26px;margin:0 16px}
+.pitch ul{margin:12px 0 0 18px}
+.pitch .eye{color:#8a6420}
+.faq details{border-bottom:1px solid #2a2f38;padding:14px 0}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{margin-top:8px;opacity:.85;max-width:680px}
+.ar{margin:0 auto;max-width:1100px;padding:20px 22px 70px}
+.ar div{border:1px dashed #d9b779;border-radius:14px;padding:20px;font-size:14px}
+footer{padding:44px 22px 96px;text-align:center;font-size:12px;opacity:.7;border-top:1px solid #2a2f38}
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none;gap:8px}
+.sticky .btn{flex:1;text-align:center;padding:14px}
+.sticky .btn.alt{background:#0e1116}
+@media(max-width:760px){
+.track{height:520vh}
+.stage svg{width:100%;height:46%;bottom:128px}
+.hud{grid-template-columns:1fr;padding:104px 16px 14px}
+.copy{background:rgba(14,17,22,.88);border-radius:14px;padding:12px 14px}
+.hud p,.book{display:none}
+.hud h1{font-size:28px}
+.leg{max-width:none;padding:12px 16px;margin-bottom:62px}
+.note{display:none}
+nav b{font-size:14px}
+nav .r a.t{display:none}
+nav .btn{padding:9px 14px;font-size:12px}
+.sticky{display:flex}
+}
+@media(prefers-reduced-motion:reduce){.track{height:auto}.stage{position:relative;height:auto;min-height:100svh}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"AutoRental","name":"First Class Exotics","url":"https://www.firstclassexotics.com/","email":"ali@firstclassexotics.com","telephone":"+1 949 294 5958","founder":{"@type":"Person","name":"Ali Hojat"},"address":{"@type":"PostalAddress","streetAddress":"2060 Placentia Ave Ste A4","addressLocality":"Costa Mesa","addressRegion":"CA","postalCode":"92627","addressCountry":"US"},"openingHours":"Mo-Su 08:00-22:00","description":"Exotic and luxury car rental in Costa Mesa with delivery across Orange County, Los Angeles and San Diego."},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does First Class Exotics rent?","acceptedAnswer":{"@type":"Answer","text":"A fleet its site lists at 48+ vehicles, including Lamborghini, Ferrari, McLaren, Porsche, Rolls-Royce, Mercedes-AMG, Bentley and Corvette models."}},{"@type":"Question","name":"What does it cost?","acceptedAnswer":{"@type":"Answer","text":"The site lists exotic rentals starting at $799 per day. Rates for specific cars are by request."}},{"@type":"Question","name":"Do they deliver?","acceptedAnswer":{"@type":"Answer","text":"Yes. White-glove delivery to a hotel, home or venue in Orange County, Los Angeles or San Diego, with same-day delivery available, per the site."}},{"@type":"Question","name":"What are the requirements?","acceptedAnswer":{"@type":"Answer","text":"Renters must be 25 or older with a valid license and full coverage insurance, plus a major credit card for the security deposit."}},{"@type":"Question","name":"How do I book?","acceptedAnswer":{"@type":"Answer","text":"Submit the reservation request form on firstclassexotics.com, call (949) 294-5958 or email ali@firstclassexotics.com. No payment is required to inquire."}}]}]}
+</script>
+</head>
+<body>
+<nav><b>First Class Exotics</b><div class="r"><a class="t" href="#fleet">Fleet</a><a class="t" href="#book">Booking</a><a class="t" href="#faq">FAQ</a><a class="btn" href="tel:+19492945958">Call (949) 294-5958</a></div></nav>
+
+<div class="track" id="track">
+ <div class="stage">
+  <svg viewBox="0 0 800 560" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+   <defs>
+    <linearGradient id="boardG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#232a35"/><stop offset="1" stop-color="#171c24"/></linearGradient>
+   </defs>
+   <rect x="40" y="40" width="720" height="480" rx="22" fill="url(#boardG)" stroke="#d9b779" stroke-opacity=".5" stroke-width="2"/>
+   <rect x="300" y="52" width="200" height="22" rx="6" fill="#0e1116" stroke="#d9b779" stroke-opacity=".6"/>
+   <text x="400" y="68" text-anchor="middle" font-size="12" letter-spacing="4" fill="#d9b779" font-family="Arial">KEY WALL</text>
+   <g id="keys"></g>
+  </svg>
+  <div class="hud">
+   <div class="copy">
+    <h1>Pick a key.<br>Ali's crew brings the car.</h1>
+    <p>Family-run exotic and luxury rentals out of Costa Mesa, delivered to your hotel, home or venue across OC, LA and San Diego.</p>
+    <div class="book"><a class="btn" href="tel:+19492945958">Call (949) 294-5958</a><a class="btn alt" href="mailto:ali@firstclassexotics.com">Email Ali</a></div>
+   </div>
+   <div class="leg"><div class="k" id="lk">Key 1 of 8</div><div class="v" id="lv">Lamborghini Huracán EVO</div><div class="d" id="ld">One of 48+ cars listed on the current site.</div><div class="bar"><i id="bar"></i></div></div>
+  </div>
+  <div class="note">Illustrative: 8 of the cars listed at firstclassexotics.com.</div>
+ </div>
+</div>
+
+<section class="blk" id="fleet">
+ <div class="eye">The fleet (from firstclassexotics.com)</div>
+ <h2>Forty-eight cars is a lot to scroll past. Make it feel like a wall of keys.</h2>
+ <div class="fleet">
+  <div><b>Lamborghini</b>Aventador SVJ, Huracán variants, Urus</div>
+  <div><b>Ferrari</b>SF90 Stradale, 296 GTB, F8, 488 GTB, 458 Italia</div>
+  <div><b>McLaren</b>750S Spider, 720S Spider, 570S, Artura</div>
+  <div><b>Porsche</b>911 GT3 RS, Carrera 4 GTS and 4S</div>
+  <div><b>Rolls-Royce</b>Cullinan, Cullinan Black Badge</div>
+  <div><b>Mercedes</b>G 63, Brabus 800 G-Wagon, S 580, GLS 600</div>
+  <div><b>Also</b>Bentley Continental GTC, Corvette Z06 and Z51, Audi R8 V10 Plus, Maserati MC20 Cielo, BMW M3 and M4, Range Rover SV, Escalade ESV</div>
+ </div>
+ <p style="margin-top:18px;font-size:13px;opacity:.7">Listed as "starting at $799 / day"; rates for specific cars are by request, so none are invented here. Open daily 8am to 10pm. 25+ with a valid license and full coverage insurance; major credit card for the security deposit.</p>
+</section>
+
+<section class="blk" id="book">
+ <div class="eye">Booking today vs. booking next</div>
+ <h2>Today it is a form. It could show which cars are free.</h2>
+ <p style="max-width:680px;opacity:.88">The current site takes a reservation request (name, car, dates, delivery) and replies within about two hours, per the site. No payment to inquire. A guest planning a weekend cannot see what is open.</p>
+ <div class="cal">
+  <div>
+   <div class="eye" style="margin-bottom:6px">Concept: availability widget</div>
+   <p style="font-size:14px;opacity:.85">A slot for an embedded rental calendar. Embeddable options exist (FareHarbor is confirmed; Booqable states website integration with live availability; RentWorks is not verified). The platform is chosen with Ali, not assumed here.</p>
+   <p style="margin-top:12px"><a class="btn" href="tel:+19492945958">Request a car now</a></p>
+  </div>
+  <div class="days" aria-label="Illustrative calendar, not real availability"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span><span class="x">1</span><span class="x">2</span><span>3</span><span>4</span><span class="o">5</span><span class="o">6</span><span class="o">7</span><span>8</span><span>9</span><span class="x">10</span><span class="x">11</span><span>12</span><span>13</span><span>14</span><span>15</span></div>
+ </div>
+ <p style="margin-top:10px;font-size:11px;opacity:.6">Calendar is a visual placeholder, not real availability.</p>
+</section>
+
+<section class="blk">
+ <div class="eye">How enquiring could feel</div>
+ <h2>From a scroll to a key in your hand.</h2>
+ <div class="steps">
+  <div>Pull a key from the wall and see the car.</div>
+  <div>See the fleet, delivery area and requirements.</div>
+  <div>Call or email Ali directly, one tap away on mobile.</div>
+  <div>Confirm dates and delivery.</div>
+ </div>
+</section>
+
+<div class="pitch">
+ <div class="eye">Concept by Kerblabs</div>
+ <h2 class="serif">Let the fleet sell the weekend.</h2>
+ <ul>
+  <li>A cinematic scroll hero built from your own fleet list.</li>
+  <li>Delivery area, requirements and from-price up front, so fewer back-and-forth messages.</li>
+  <li>A slot for live availability so guests book without waiting.</li>
+  <li>Agent-ready: AI assistants can read your fleet, area and how to book.</li>
+ </ul>
+</div>
+
+<section class="blk faq" id="faq">
+ <div class="eye">FAQ</div>
+ <h2>Quick answers</h2>
+ <details><summary>What does First Class Exotics rent?</summary><p>A fleet its site lists at 48+ vehicles, including Lamborghini, Ferrari, McLaren, Porsche, Rolls-Royce, Mercedes-AMG, Bentley and Corvette models.</p></details>
+ <details><summary>What does it cost?</summary><p>The site lists exotic rentals starting at $799 per day. Rates for specific cars are by request.</p></details>
+ <details><summary>Do they deliver?</summary><p>Yes. White-glove delivery to a hotel, home or venue in Orange County, Los Angeles or San Diego, with same-day delivery available, per the site.</p></details>
+ <details><summary>What are the requirements?</summary><p>Renters must be 25 or older with a valid license and full coverage insurance, plus a major credit card for the security deposit.</p></details>
+ <details><summary>How do I book?</summary><p>Submit the reservation request form on firstclassexotics.com, call (949) 294-5958 or email ali@firstclassexotics.com. No payment is required to inquire.</p></details>
+</section>
+
+<div class="ar" id="agent-ready"><div><b>Agent-Ready included.</b> JSON-LD, FAQ and machine-readable services so AI assistants can answer "exotic car rental in Orange County" with your details. Illustrative concept, not yet live for this business.</div></div>
+
+<footer>Concept site by Kerblabs for First Class Exotics. Not affiliated or approved. Business details from firstclassexotics.com.</footer>
+<div class="sticky"><a class="btn" href="tel:+19492945958">Call</a><a class="btn alt" href="mailto:ali@firstclassexotics.com">Email</a></div>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var track=$('track'),bar=$('bar'),keysG=$('keys');
+var cars=[['Lamborghini','Lamborghini Huracán EVO'],['Ferrari','Ferrari SF90 Stradale'],['McLaren','McLaren 750S Spider'],['Porsche','Porsche 911 GT3 RS'],['Rolls-Royce','Rolls-Royce Cullinan Black Badge'],['Mercedes-AMG','Mercedes-AMG G 63'],['Bentley','Bentley Continental GTC'],['Corvette','Corvette Z06']];
+var NS='http://www.w3.org/2000/svg',ks=[];
+cars.forEach(function(c,i){
+ var col=i%4,row=(i/4)|0,x=160+col*160,y=130+row*210;
+ var g=document.createElementNS(NS,'g');
+ g.innerHTML='<circle cx="'+x+'" cy="'+y+'" r="6" fill="#0e1116" stroke="#d9b779" stroke-width="2"/><g class="sw"><line x1="'+x+'" y1="'+y+'" x2="'+x+'" y2="'+(y+26)+'" stroke="#a9a39a" stroke-width="3"/><rect class="fob" x="'+(x-38)+'" y="'+(y+26)+'" width="76" height="104" rx="14" fill="#232a35" stroke="#d9b779" stroke-opacity=".5" stroke-width="2"/><circle cx="'+x+'" cy="'+(y+44)+'" r="5" fill="#0e1116"/><text class="tx" x="'+x+'" y="'+(y+92)+'" text-anchor="middle" font-size="9.5" font-family="Arial" font-weight="700" fill="#d9b779">'+c[0]+'</text><text x="'+x+'" y="'+(y+112)+'" text-anchor="middle" font-size="9" font-family="Arial" fill="#8f98a6">'+(i+1<10?'0':'')+(i+1)+'</text></g>';
+ keysG.appendChild(g);
+ ks.push({sw:g.querySelector('.sw'),fob:g.querySelector('.fob'),tx:g.querySelector('.tx'),x:x,y:y});
+});
+var descs=['Aventador SVJ, Huracán variants and Urus are on the list.','SF90 Stradale, 296 GTB, F8 and more.','750S, 720S, 570S and Artura variants.','GT3 RS and Carrera 4 GTS / 4S.','Cullinan and Black Badge.','G 63, Brabus 800 and more.','Convertible grand tourer.','Z06 and C8 Z51.'];
+function rg(t,a,b){return Math.min(1,Math.max(0,(t-a)/(b-a)))}
+var last=-1;
+function draw(){
+ var r=track.getBoundingClientRect(),max=Math.max(1,track.offsetHeight-innerHeight);
+ var t=reduce?1:Math.min(1,Math.max(0,-r.top/max));
+ var n=cars.length,act=Math.min(n-1,Math.floor(t*n));
+ ks.forEach(function(k,i){
+  var l=rg(t,i/n,(i+1)/n),on=(i===act&&t<1);
+  var rot=(l>0&&l<1)?Math.sin(l*18)*(1-l)*11:0,lift=(l>0&&l<1)?-16*Math.sin(Math.PI*l):0;
+  k.sw.setAttribute('transform','rotate('+rot+' '+k.x+' '+k.y+') translate(0 '+lift+')');
+  k.fob.setAttribute('fill',on?'#d9b779':'#232a35');
+  k.fob.setAttribute('stroke-opacity',l>0?1:.5);
+  k.tx.setAttribute('fill',on?'#14110b':'#d9b779');
+ });
+ bar.style.width=(t*100)+'%';
+ if(act!==last){last=act;$('lk').textContent='Key '+(act+1)+' of 8 (of 48+ in the fleet)';$('lv').textContent=cars[act][1];$('ld').textContent=descs[act]}
+}
+addEventListener('scroll',draw,{passive:true});addEventListener('resize',draw);draw();
+})();
+</script>
+</body>
+</html>

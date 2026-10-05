@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MTB Exotics | Exotic Car Rental, Dallas TX (concept)</title>
+<meta name="description" content="Concept site for MTB Exotics: independently owned exotic and luxury car rental in Dallas with listed 24-hour specials. A 24-hour dial sweeps the fleet as you scroll.">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/mtb-exotics/">
+<meta property="og:title" content="MTB Exotics | concept site by Kerblabs">
+<meta property="og:description" content="Concept for an independent Dallas exotic rental, with a 24-hour dial that lights each car's listed 24-hour special.">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/mtb-exotics/">
+<meta name="twitter:card" content="summary">
+<meta name="robots" content="noindex,follow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#efece6;color:#121212;font-family:"Helvetica Neue",Arial,sans-serif;line-height:1.55}
+a{color:inherit}
+h1,h2,h3{font-family:Impact,"Arial Narrow Bold",Arial,sans-serif;font-weight:400;letter-spacing:.01em;text-transform:uppercase}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 16px;background:rgba(239,236,230,.93);backdrop-filter:blur(8px);border-bottom:1px solid #d3cdc1}
+nav b{font-family:Impact,Arial,sans-serif;font-size:18px;font-weight:400;letter-spacing:.06em;text-transform:uppercase}
+nav .r{display:flex;gap:14px;align-items:center;font-size:13px}
+.btn{display:inline-block;text-decoration:none;background:#e4312b;color:#fff;padding:11px 20px;border-radius:6px;font-size:14px;font-weight:700;white-space:nowrap}
+.btn.alt{background:transparent;color:#121212;border:2px solid #121212}
+.track{height:600vh;position:relative}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#efece6}
+.stage svg{position:absolute;right:0;bottom:0;width:60%;height:100%}
+.hud{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);grid-template-rows:1fr auto;padding:96px 24px 22px;max-width:1280px;margin:0 auto;pointer-events:none}
+.copy{grid-column:1;pointer-events:auto;align-self:start}
+.hud h1{font-size:clamp(36px,5.4vw,78px);line-height:.98}
+.hud p{margin-top:12px;max-width:430px;font-size:clamp(14px,1.5vw,18px)}
+.book{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px}
+.leg{grid-column:1;grid-row:2;align-self:end;background:#121212;color:#efece6;padding:16px 20px;border-radius:10px;max-width:390px}
+.leg .k{font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.75}
+.leg .v{font-family:Impact,Arial,sans-serif;font-size:clamp(24px,3vw,36px);line-height:1.05;margin:4px 0;text-transform:uppercase}
+.leg .d{font-size:13px;opacity:.9}
+.bar{height:4px;border-radius:2px;background:rgba(239,236,230,.25);margin-top:12px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:#e4312b}
+.note{position:absolute;right:24px;bottom:10px;font-size:10.5px;background:#121212;color:#efece6;padding:3px 10px;border-radius:6px}
+section.blk{padding:80px 22px;max-width:1100px;margin:0 auto}
+.eye{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#e4312b;margin-bottom:12px;font-weight:700}
+h2{font-size:clamp(28px,4.4vw,50px);line-height:1.02;margin-bottom:16px;max-width:760px}
+.rates{margin-top:22px;border-top:3px solid #121212}
+.rates div{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #cfc9bd;font-size:16px}
+.rates b{font-family:Impact,Arial,sans-serif;font-weight:400;font-size:22px;color:#e4312b}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:24px}
+.card{background:#fff;border:1px solid #d3cdc1;border-radius:10px;padding:20px}
+.card h3{font-size:20px;margin-bottom:6px}
+.card p{font-size:14px;opacity:.8}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:24px;counter-reset:s}
+.steps div{border-top:3px solid #121212;padding-top:12px;font-size:14px;counter-increment:s}
+.steps div::before{content:"0" counter(s);display:block;font-family:Impact,Arial,sans-serif;font-size:28px;color:#e4312b}
+.cal{margin-top:24px;border:2px dashed #121212;border-radius:12px;padding:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;background:#fff}
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:12px;text-align:center}
+.slots span{padding:8px 0;border-radius:6px;background:#efece6}
+.slots span.o{background:#e4312b;color:#fff;font-weight:700}
+.slots span.x{opacity:.35;text-decoration:line-through}
+.pitch{background:#121212;color:#efece6;border-radius:14px;padding:32px 26px;margin:0 16px}
+.pitch ul{margin:12px 0 0 18px}
+.faq details{border-bottom:1px solid #cfc9bd;padding:14px 0}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{margin-top:8px;opacity:.85;max-width:680px}
+.ar{margin:0 auto;max-width:1100px;padding:20px 22px 70px}
+.ar div{border:2px dashed #121212;border-radius:10px;padding:20px;font-size:14px}
+footer{padding:44px 22px 96px;text-align:center;font-size:12px;opacity:.7;border-top:1px solid #cfc9bd}
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none;gap:8px}
+.sticky .btn{flex:1;text-align:center;padding:14px}
+.sticky .btn.alt{background:#efece6}
+@media(max-width:760px){
+.track{height:540vh}
+.stage svg{width:100%;height:46%;bottom:128px}
+.hud{grid-template-columns:1fr;padding:104px 16px 14px}
+.copy{background:rgba(239,236,230,.9);border-radius:10px;padding:12px 14px}
+.hud p,.book{display:none}
+.hud h1{font-size:30px}
+.leg{max-width:none;padding:12px 16px;margin-bottom:62px}
+.note{display:none}
+nav b{font-size:15px}
+nav .r a.t{display:none}
+nav .btn{padding:9px 14px;font-size:12px}
+.sticky{display:flex}
+}
+@media(prefers-reduced-motion:reduce){.track{height:auto}.stage{position:relative;height:auto;min-height:100svh}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"AutoRental","name":"MTB Exotics","url":"https://mtbexotics.com/","telephone":"+1 469 815 7013","address":{"@type":"PostalAddress","streetAddress":"9100 John W. Carpenter Fwy","addressLocality":"Dallas","addressRegion":"TX","postalCode":"75247","addressCountry":"US"},"description":"Independently owned exotic and luxury car rental in Dallas, with delivery in the DFW area."},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does MTB Exotics rent?","acceptedAnswer":{"@type":"Answer","text":"Exotic and luxury cars listed on its site include the Lamborghini Urus, Huracan Evo and Huracan Spyder, Ferrari 488 GTB Spyder, Rolls Royce Dawn and Ghost, Corvette C8 Z06 and Mercedes-Benz G63 AMG."}},{"@type":"Question","name":"What are the listed 24-hour specials?","acceptedAnswer":{"@type":"Answer","text":"Per the site: Huracan Evo $1,599, Huracan Spyder $1,699, Ferrari 488 GTB Spyder $1,799, Rolls Royce Dawn $1,799, Rolls Royce Ghost $1,499, Corvette C8 Z06 $599."}},{"@type":"Question","name":"Do they deliver?","acceptedAnswer":{"@type":"Answer","text":"The site lists delivery within the DFW area at $200 round trip."}},{"@type":"Question","name":"What are the rental requirements?","acceptedAnswer":{"@type":"Answer","text":"Per the site: 21 or older (surcharge under 25), a United States drivers license, full coverage insurance, and a refundable security deposit of $1,000 to $2,000. 100 miles per day are included; extra miles are $3 to $5."}},{"@type":"Question","name":"How do I book?","acceptedAnswer":{"@type":"Answer","text":"Call 469-815-7013 or use the contact form on mtbexotics.com."}}]}]}
+</script>
+</head>
+<body>
+<nav><b>MTB Exotics</b><div class="r"><a class="t" href="#rates">Rates</a><a class="t" href="#book">Booking</a><a class="t" href="#faq">FAQ</a><a class="btn" href="tel:+14698157013">Call 469-815-7013</a></div></nav>
+
+<div class="track" id="track">
+ <div class="stage">
+  <svg viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+   <circle cx="300" cy="300" r="268" fill="#fff" stroke="#121212" stroke-width="6"/>
+   <g id="wedges"></g>
+   <g id="ticks"></g>
+   <circle cx="300" cy="300" r="132" fill="#121212"/>
+   <text id="cn" x="300" y="292" text-anchor="middle" font-family="Impact,Arial,sans-serif" font-size="25" fill="#efece6">24 HOURS</text>
+   <text id="cp" x="300" y="336" text-anchor="middle" font-family="Impact,Arial,sans-serif" font-size="40" fill="#e4312b">DALLAS</text>
+   <line id="hand" x1="300" y1="300" x2="300" y2="40" stroke="#e4312b" stroke-width="5" stroke-linecap="round"/>
+   <circle cx="300" cy="300" r="10" fill="#e4312b"/>
+  </svg>
+  <div class="hud">
+   <div class="copy">
+    <h1>One day.<br>One car. Name your 24 hours.</h1>
+    <p>Independently owned exotic rentals in Dallas, with 24-hour specials listed up front and delivery across DFW.</p>
+    <div class="book"><a class="btn" href="tel:+14698157013">Call 469-815-7013</a><a class="btn alt" href="https://mtbexotics.com/" rel="noopener">Contact form</a></div>
+   </div>
+   <div class="leg"><div class="k" id="lk">Hour 0 of 24</div><div class="v" id="lv">Start the clock</div><div class="d" id="ld">Scroll to sweep the dial across six listed cars.</div><div class="bar"><i id="bar"></i></div></div>
+  </div>
+  <div class="note">Illustrative dial. Prices are the 24-hour specials listed at mtbexotics.com.</div>
+ </div>
+</div>
+
+<section class="blk" id="rates">
+ <div class="eye">Listed 24-hour specials (from mtbexotics.com)</div>
+ <h2>Prices on the page, not behind a call.</h2>
+ <div class="rates">
+  <div><span>Lamborghini Huracan Evo</span><b>$1,599</b></div>
+  <div><span>Lamborghini Huracan Spyder</span><b>$1,699</b></div>
+  <div><span>Ferrari 488 GTB Spyder</span><b>$1,799</b></div>
+  <div><span>Rolls Royce Dawn</span><b>$1,799</b></div>
+  <div><span>Rolls Royce Ghost</span><b>$1,499</b></div>
+  <div><span>Corvette C8 Z06</span><b>$599</b></div>
+ </div>
+ <div class="grid">
+  <div class="card"><h3>Miles</h3><p>100 miles per day included; $3 to $5 per mile over, per the site.</p></div>
+  <div class="card"><h3>Delivery</h3><p>Within DFW, $200 round trip, per the site.</p></div>
+  <div class="card"><h3>Requirements</h3><p>21+ (surcharge under 25), US license, full coverage insurance, refundable $1,000 to $2,000 deposit.</p></div>
+  <div class="card"><h3>Find us</h3><p>9100 John W. Carpenter Fwy, Dallas, TX 75247. Open 7 days.</p></div>
+ </div>
+ <p style="margin-top:18px;font-size:13px;opacity:.7">Fleet also lists the Lamborghini Urus and Mercedes-Benz G63 AMG; Porsche and McLaren are mentioned without models. Rates and hours as currently published and subject to change.</p>
+</section>
+
+<section class="blk" id="book">
+ <div class="eye">Booking today vs. booking next</div>
+ <h2>Phone or form today. A live calendar next.</h2>
+ <p style="max-width:680px">The current site books by phone or contact form, so a guest cannot see whether the Huracan is free on Saturday before asking.</p>
+ <div class="cal">
+  <div>
+   <div class="eye" style="margin-bottom:6px">Concept: availability widget</div>
+   <p style="font-size:14px">A slot for an embedded rental calendar. Embeddable options exist (FareHarbor is confirmed; Booqable states website integration with live availability; RentWorks is not verified). The platform is chosen with the owner, not assumed here.</p>
+   <p style="margin-top:12px"><a class="btn" href="tel:+14698157013">Call to book</a></p>
+  </div>
+  <div>
+   <div class="slots" aria-label="Illustrative slots, not real availability"><span class="x">Fri</span><span class="o">Sat</span><span class="o">Sun</span><span>Mon</span><span class="x">Tue</span><span>Wed</span><span>Thu</span><span>Fri</span></div>
+   <p style="margin-top:8px;font-size:11px;opacity:.6">Visual placeholder, not real availability.</p>
+  </div>
+ </div>
+</section>
+
+<section class="blk">
+ <div class="eye">How enquiring could feel</div>
+ <h2>From a scroll to a booked day.</h2>
+ <div class="steps">
+  <div>Watch the dial sweep six cars with their listed prices.</div>
+  <div>See miles, delivery and requirements on one screen.</div>
+  <div>Tap to call, always one tap away on mobile.</div>
+  <div>Confirm the car and the day.</div>
+ </div>
+</section>
+
+<div class="pitch">
+ <div class="eye">Concept by Kerblabs</div>
+ <h2 style="color:#efece6">Make the price list the show.</h2>
+ <ul>
+  <li>A cinematic scroll hero built from your own listed specials.</li>
+  <li>Miles, delivery and requirements answered before the first call.</li>
+  <li>A slot for live availability so guests can book at midnight.</li>
+  <li>Agent-ready: AI assistants can read your cars, prices and how to book.</li>
+ </ul>
+</div>
+
+<section class="blk faq" id="faq">
+ <div class="eye">FAQ</div>
+ <h2>Quick answers</h2>
+ <details><summary>What does MTB Exotics rent?</summary><p>Exotic and luxury cars listed on its site include the Lamborghini Urus, Huracan Evo and Huracan Spyder, Ferrari 488 GTB Spyder, Rolls Royce Dawn and Ghost, Corvette C8 Z06 and Mercedes-Benz G63 AMG.</p></details>
+ <details><summary>What are the listed 24-hour specials?</summary><p>Per the site: Huracan Evo $1,599, Huracan Spyder $1,699, Ferrari 488 GTB Spyder $1,799, Rolls Royce Dawn $1,799, Rolls Royce Ghost $1,499, Corvette C8 Z06 $599.</p></details>
+ <details><summary>Do they deliver?</summary><p>The site lists delivery within the DFW area at $200 round trip.</p></details>
+ <details><summary>What are the rental requirements?</summary><p>Per the site: 21 or older (surcharge under 25), a United States drivers license, full coverage insurance, and a refundable security deposit of $1,000 to $2,000. 100 miles per day are included; extra miles are $3 to $5.</p></details>
+ <details><summary>How do I book?</summary><p>Call 469-815-7013 or use the contact form on mtbexotics.com.</p></details>
+</section>
+
+<div class="ar" id="agent-ready"><div><b>Agent-Ready included.</b> JSON-LD, FAQ and machine-readable services and prices so AI assistants can answer "exotic car rental in Dallas" with your details. Illustrative concept, not yet live for this business.</div></div>
+
+<footer>Concept site by Kerblabs for MTB Exotics. Not affiliated or approved. Business details from mtbexotics.com.</footer>
+<div class="sticky"><a class="btn" href="tel:+14698157013">Call</a><a class="btn alt" href="https://mtbexotics.com/" rel="noopener">Contact form</a></div>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var track=$('track'),bar=$('bar'),hand=$('hand'),NS='http://www.w3.org/2000/svg',cx=300,cy=300;
+var cars=[['Huracan Evo','$1,599'],['Huracan Spyder','$1,699'],['488 GTB Spyder','$1,799'],['Rolls Royce Dawn','$1,799'],['Rolls Royce Ghost','$1,499'],['Corvette C8 Z06','$599']];
+function pt(r,a){var d=(a-90)*Math.PI/180;return[cx+r*Math.cos(d),cy+r*Math.sin(d)]}
+var wg=$('wedges'),ws=[];
+cars.forEach(function(c,i){
+ var a0=i*60+1.5,a1=(i+1)*60-1.5,p0=pt(256,a0),p1=pt(256,a1),p2=pt(140,a1),p3=pt(140,a0);
+ var p=document.createElementNS(NS,'path');
+ p.setAttribute('d','M'+p0+'A256 256 0 0 1 '+p1+'L'+p2+'A140 140 0 0 0 '+p3+'Z');
+ p.setAttribute('fill','#e3ded3');wg.appendChild(p);
+ var m=pt(200,i*60+30),tx=document.createElementNS(NS,'text');
+ tx.setAttribute('x',m[0]);tx.setAttribute('y',m[1]);tx.setAttribute('text-anchor','middle');tx.setAttribute('font-family','Impact,Arial,sans-serif');tx.setAttribute('font-size','21');tx.setAttribute('fill','#121212');
+ tx.innerHTML='<tspan x="'+m[0]+'" dy="-4">'+c[0].split(' ').slice(0,2).join(' ')+'</tspan><tspan x="'+m[0]+'" dy="22" font-size="19">'+c[1]+'</tspan>';
+ wg.appendChild(tx);ws.push({p:p,t:tx});
+});
+var tk=$('ticks');
+for(var h=0;h<24;h++){var a=h*15,o=pt(268,a),n=pt(h%6===0?248:258,a),l=document.createElementNS(NS,'line');l.setAttribute('x1',o[0]);l.setAttribute('y1',o[1]);l.setAttribute('x2',n[0]);l.setAttribute('y2',n[1]);l.setAttribute('stroke','#121212');l.setAttribute('stroke-width',h%6===0?4:2);tk.appendChild(l)}
+function rg(t,a,b){return Math.min(1,Math.max(0,(t-a)/(b-a)))}
+var last=-2;
+function draw(){
+ var r=track.getBoundingClientRect(),max=Math.max(1,track.offsetHeight-innerHeight);
+ var t=reduce?1:Math.min(1,Math.max(0,-r.top/max));
+ var ang=t*360;hand.setAttribute('transform','rotate('+ang+' '+cx+' '+cy+')');
+ var act=Math.min(5,Math.floor(ang/60));
+ ws.forEach(function(w,i){
+  var lit=ang>=i*60;
+  w.p.setAttribute('fill',lit?(i===act&&t<1?'#e4312b':'#f2a9a5'):'#e3ded3');
+  w.t.setAttribute('fill',(lit&&i===act&&t<1)?'#fff':'#121212');
+ });
+ var hr=Math.round(t*24);
+ $('lk').textContent='Hour '+hr+' of 24';
+ bar.style.width=(t*100)+'%';
+ var key=t<=0?-1:act;
+ if(key!==last){last=key;
+  if(key<0){$('lv').textContent='Start the clock';$('ld').textContent='Scroll to sweep the dial across six listed cars.';$('cn').textContent='24 HOURS';$('cp').textContent='DALLAS'}
+  else{$('lv').textContent=cars[key][0];$('ld').textContent='Listed 24-hour special: '+cars[key][1]+'. 100 miles per day included.';$('cn').textContent=cars[key][0].split(' ').slice(-2).join(' ').toUpperCase();$('cp').textContent=cars[key][1]}
+ }
+}
+addEventListener('scroll',draw,{passive:true});addEventListener('resize',draw);draw();
+})();
+</script>
+</body>
+</html>

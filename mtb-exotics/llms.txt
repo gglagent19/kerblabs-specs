@@ -1,0 +1,14 @@
+# MTB Exotics (concept by Kerblabs)
+
+> Concept site, not the business's official site. Facts from mtbexotics.com.
+
+MTB Exotics is an independently owned exotic and luxury car rental at 9100 John W. Carpenter Fwy, Dallas, TX 75247. Listed 24-hour specials run from $599 (Corvette C8 Z06) to $1,799 (Ferrari 488 GTB Spyder, Rolls Royce Dawn). 100 miles per day included. DFW delivery $200 round trip.
+
+## Machine-readable
+- [services.json](services.json)
+
+## FAQ
+- How do I book? Call 469-815-7013 or use the contact form on mtbexotics.com.
+
+## Actions
+- Request a rental: call 469-815-7013 with car, dates and delivery location.

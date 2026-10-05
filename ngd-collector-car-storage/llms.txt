@@ -1,0 +1,17 @@
+# NGD Collector Car Storage (concept by Kerblabs)
+
+> Climate-controlled collector car storage and restoration in Denver, CO. 40,000 sq ft, 200+ vehicles, 22 car lifts. Details from ngdcars.com.
+
+- Address: 2155 S Sheridan Blvd, Denver, CO 80227
+- Phone: (303) 947-0444
+- Hours: Mon-Fri 9am-5pm
+- Machine-readable services: services.json
+
+## Services
+Storage (covers, monthly battery maintenance), repair and restoration (1920-1976), enhancements, butler and valet, curation, club events, transport.
+
+## FAQ
+Prices are not published; call (303) 947-0444.
+
+## Actions
+Call (303) 947-0444 or email ngdfitz@msn.com.

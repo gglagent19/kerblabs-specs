@@ -1,0 +1,17 @@
+{
+  "business": "MTB Exotics",
+  "note": "Concept file by Kerblabs. Facts and 24-hour special prices as listed on mtbexotics.com.",
+  "locations": ["Dallas", "DFW area"],
+  "services": [
+    {"name": "Lamborghini Huracan Evo, 24-hour special", "price": 1599, "currency": "USD"},
+    {"name": "Lamborghini Huracan Spyder, 24-hour special", "price": 1699, "currency": "USD"},
+    {"name": "Ferrari 488 GTB Spyder, 24-hour special", "price": 1799, "currency": "USD"},
+    {"name": "Rolls Royce Dawn, 24-hour special", "price": 1799, "currency": "USD"},
+    {"name": "Rolls Royce Ghost, 24-hour special", "price": 1499, "currency": "USD"},
+    {"name": "Corvette C8 Z06, 24-hour special", "price": 599, "currency": "USD"},
+    {"name": "DFW delivery", "price": 200, "currency": "USD", "pricing": "round trip"}
+  ],
+  "terms": {"miles_included_per_day": 100, "extra_mile": "$3 to $5", "min_age": 21, "under_25": "surcharge", "deposit": "$1,000 to $2,000 refundable", "insurance": "full coverage", "license": "US drivers license"},
+  "address": "9100 John W. Carpenter Fwy, Dallas, TX 75247",
+  "booking": {"method": "phone or contact form", "phone": "469-815-7013", "needs": ["vehicle", "dates", "delivery or pickup"], "live_availability": false}
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NGD Collector Car Storage | Denver CO (concept)</title>
+<meta name="description" content="Concept site for NGD Collector Car Storage in Denver: climate-controlled collector car storage and restoration. 22 car lifts rise as you scroll.">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/ngd-collector-car-storage/">
+<meta property="og:title" content="NGD Collector Car Storage | concept site by Kerblabs">
+<meta property="og:description" content="Concept for a Denver collector car storage and restoration shop, with a rack of 22 car lifts that rises as you scroll.">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/ngd-collector-car-storage/">
+<meta name="twitter:card" content="summary">
+<meta name="robots" content="noindex,follow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#14181c;color:#e9e6df;font-family:"Helvetica Neue",Arial,sans-serif;line-height:1.55}
+a{color:inherit}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:700;letter-spacing:-.01em}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 16px;background:rgba(20,24,28,.93);backdrop-filter:blur(8px);border-bottom:1px solid #2c343b}
+nav b{font-family:Georgia,serif;font-size:17px;letter-spacing:.02em}
+nav .r{display:flex;gap:14px;align-items:center;font-size:13px}
+.btn{display:inline-block;text-decoration:none;background:#f0a62b;color:#14181c;padding:11px 20px;border-radius:6px;font-size:14px;font-weight:700;white-space:nowrap}
+.btn.alt{background:transparent;color:#e9e6df;border:2px solid #e9e6df}
+.track{height:600vh;position:relative}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#14181c}
+.stage svg{position:absolute;left:0;right:0;bottom:0;width:100%;height:58%}
+.hud{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr;padding:96px 24px 22px;max-width:1280px;margin:0 auto;pointer-events:none}
+.copy{pointer-events:auto;max-width:620px}
+.hud h1{font-size:clamp(34px,5vw,70px);line-height:1}
+.hud p{margin-top:12px;max-width:470px;font-size:clamp(14px,1.5vw,18px);opacity:.9}
+.book{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px}
+.leg{position:absolute;right:24px;top:100px;background:#f0a62b;color:#14181c;padding:16px 20px;border-radius:10px;width:300px}
+.leg .k{font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.8}
+.leg .v{font-family:Georgia,serif;font-weight:700;font-size:clamp(22px,2.6vw,32px);line-height:1.05;margin:4px 0}
+.leg .d{font-size:13px}
+.bar{height:4px;border-radius:2px;background:rgba(20,24,28,.25);margin-top:12px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:#14181c}
+.note{position:absolute;left:24px;bottom:10px;font-size:10.5px;background:#2c343b;padding:3px 10px;border-radius:6px}
+section.blk{padding:80px 22px;max-width:1100px;margin:0 auto}
+.eye{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#f0a62b;margin-bottom:12px;font-weight:700}
+h2{font-size:clamp(28px,4.2vw,48px);line-height:1.05;margin-bottom:16px;max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:24px}
+.card{background:#1d2328;border:1px solid #2c343b;border-radius:10px;padding:20px}
+.card h3{font-size:19px;margin-bottom:6px}
+.card p{font-size:14px;opacity:.8}
+.facts{margin-top:22px;border-top:2px solid #f0a62b}
+.facts div{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #2c343b;font-size:16px}
+.facts b{font-family:Georgia,serif;color:#f0a62b;text-align:right}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:24px;counter-reset:s}
+.steps div{border-top:2px solid #f0a62b;padding-top:12px;font-size:14px;counter-increment:s}
+.steps div::before{content:"0" counter(s);display:block;font-family:Georgia,serif;font-size:26px;color:#f0a62b}
+.pitch{background:#f0a62b;color:#14181c;border-radius:14px;padding:32px 26px;margin:0 16px}
+.pitch .eye{color:#14181c}
+.pitch ul{margin:12px 0 0 18px}
+.faq details{border-bottom:1px solid #2c343b;padding:14px 0}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{margin-top:8px;opacity:.85;max-width:680px}
+.ar{margin:0 auto;max-width:1100px;padding:20px 22px 70px}
+.ar div{border:2px dashed #f0a62b;border-radius:10px;padding:20px;font-size:14px}
+footer{padding:44px 22px 96px;text-align:center;font-size:12px;opacity:.7;border-top:1px solid #2c343b}
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none;gap:8px}
+.sticky .btn{flex:1;text-align:center;padding:14px}
+.sticky .btn.alt{background:#14181c}
+@media(max-width:760px){
+.track{height:540vh}
+.stage svg{height:44%;bottom:190px;width:200%;left:-50%;right:auto}
+.hud{padding:96px 16px 14px}
+.copy{background:rgba(20,24,28,.88);border-radius:10px;padding:12px 14px}
+.hud p,.book{display:none}
+.hud h1{font-size:28px}
+.leg{right:16px;left:16px;top:auto;bottom:62px;width:auto;padding:10px 14px}
+.leg .d{display:none}
+.note{display:none}
+nav b{font-size:15px}
+nav .r a.t{display:none}
+nav .btn{padding:9px 14px;font-size:12px}
+.sticky{display:flex}
+}
+@media(prefers-reduced-motion:reduce){.track{height:auto}.stage{position:relative;height:auto;min-height:100svh}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"SelfStorage","name":"NGD Collector Car Storage","url":"https://www.ngdcars.com/","telephone":"+1 303 947 0444","email":"ngdfitz@msn.com","address":{"@type":"PostalAddress","streetAddress":"2155 S Sheridan Blvd","addressLocality":"Denver","addressRegion":"CO","postalCode":"80227","addressCountry":"US"},"openingHours":"Mo-Fr 09:00-17:00","description":"Climate-controlled indoor collector car storage with restoration and repair, in a 40,000 square foot Denver facility."},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does NGD Collector Car Storage offer?","acceptedAnswer":{"@type":"Answer","text":"Per its site: collector car storage with car covers and monthly battery maintenance, repair and restoration (specializing in vehicles 1920-1976), vehicle enhancements, butler and valet services, collection curation and consulting, transport, and event hosting for car clubs."}},{"@type":"Question","name":"How big is the facility?","acceptedAnswer":{"@type":"Answer","text":"The site lists 40,000 square feet, indoor storage for 200+ vehicles and 22 car lifts, all climate-controlled."}},{"@type":"Question","name":"How is the building protected?","acceptedAnswer":{"@type":"Answer","text":"The site lists a sprinkler system with smoke, security and camera alarms."}},{"@type":"Question","name":"Where is it and when is it open?","acceptedAnswer":{"@type":"Answer","text":"2155 S Sheridan Blvd, Denver, CO 80227. Monday to Friday, 9am to 5pm. Phone (303) 947-0444."}},{"@type":"Question","name":"What does storage cost?","acceptedAnswer":{"@type":"Answer","text":"Prices are not published on the site. Call (303) 947-0444."}}]}]}
+</script>
+</head>
+<body>
+<nav><b>NGD Collector Car Storage</b><div class="r"><a class="t" href="#facility">Facility</a><a class="t" href="#services">Services</a><a class="t" href="#faq">FAQ</a><a class="btn" href="tel:+13039470444">Call (303) 947-0444</a></div></nav>
+
+<div class="track" id="track">
+ <div class="stage">
+  <svg id="rack" viewBox="0 0 1100 420" preserveAspectRatio="xMidYMax meet" aria-hidden="true"></svg>
+  <div class="hud">
+   <div class="copy">
+    <h1>Every car on its own lift. Denver, climate-controlled.</h1>
+    <p>Collector car storage and restoration in a 40,000 square foot building on S Sheridan Blvd.</p>
+    <div class="book"><a class="btn" href="tel:+13039470444">Call (303) 947-0444</a><a class="btn alt" href="mailto:ngdfitz@msn.com">Email David</a></div>
+   </div>
+   <div class="leg"><div class="k" id="lk">Lifts raised: 0 of 22</div><div class="v" id="lv">Empty floor</div><div class="d" id="ld">Scroll to raise the rack.</div><div class="bar"><i id="bar"></i></div></div>
+  </div>
+  <div class="note">Illustrative rack. Figures are those listed at ngdcars.com.</div>
+ </div>
+</div>
+
+<section class="blk" id="facility">
+ <div class="eye">The building (from ngdcars.com)</div>
+ <h2>A serious room for serious cars.</h2>
+ <div class="facts">
+  <div><span>Floor area</span><b>40,000 sq ft</b></div>
+  <div><span>Indoor capacity</span><b>200+ vehicles</b></div>
+  <div><span>Car lifts</span><b>22</b></div>
+  <div><span>Climate</span><b>Climate-controlled</b></div>
+  <div><span>Protection</span><b>Sprinklers, smoke, security and camera alarms</b></div>
+  <div><span>Hours</span><b>Mon to Fri, 9am to 5pm</b></div>
+ </div>
+ <div class="grid">
+  <div class="card"><h3>Easy in</h3><p>12-foot tall door for trailer access, concrete floors, low-dust environment.</p></div>
+  <div class="card"><h3>On site</h3><p>Wash bay, tire air station, and a lounge and meeting room with Wi-Fi.</p></div>
+  <div class="card"><h3>Find us</h3><p>2155 S Sheridan Blvd, Denver, CO 80227. (303) 947-0444.</p></div>
+ </div>
+</section>
+
+<section class="blk" id="services">
+ <div class="eye">Services listed on the site</div>
+ <h2>Storage is where it starts.</h2>
+ <div class="grid">
+  <div class="card"><h3>Storage</h3><p>Car covers and monthly battery maintenance.</p></div>
+  <div class="card"><h3>Repair and restoration</h3><p>Specializing in vehicles 1920 to 1976.</p></div>
+  <div class="card"><h3>Enhancements</h3><p>Paintless dent repair, clear bra, detailing, ceramic coat, upholstery repair.</p></div>
+  <div class="card"><h3>Butler and valet</h3><p>Drop-off and pick-up at dealerships, shops, homes, DMV. Valet with 1-hour notice.</p></div>
+  <div class="card"><h3>Curation and consulting</h3><p>Help shaping and caring for a collection.</p></div>
+  <div class="card"><h3>Club events</h3><p>Space for car clubs to meet, plus transport, shipping and receiving.</p></div>
+ </div>
+ <p style="margin-top:18px;font-size:13px;opacity:.7">Prices are not published on the current site, so none are shown here.</p>
+</section>
+
+<section class="blk">
+ <div class="eye">How enquiring could feel</div>
+ <h2>From a scroll to a walk-through.</h2>
+ <div class="steps">
+  <div>Watch the rack rise and see the scale of the building.</div>
+  <div>See storage, restoration and butler services on one page.</div>
+  <div>Tap to call or email David, always one tap away on mobile.</div>
+  <div>Book a visit during weekday hours.</div>
+ </div>
+</section>
+
+<div class="pitch">
+ <div class="eye">Concept by Kerblabs</div>
+ <h2>Show the building before they visit.</h2>
+ <ul>
+  <li>A scroll hero built from your own numbers: 22 lifts, 200+ cars, 40,000 sq ft.</li>
+  <li>Storage, restoration and club hosting explained on one screen.</li>
+  <li>A clear path to call, email or book a visit.</li>
+  <li>Agent-ready: AI assistants can read your services, hours and how to reach you.</li>
+ </ul>
+</div>
+
+<section class="blk faq" id="faq">
+ <div class="eye">FAQ</div>
+ <h2>Quick answers</h2>
+ <details><summary>What does NGD Collector Car Storage offer?</summary><p>Per its site: collector car storage with car covers and monthly battery maintenance, repair and restoration (specializing in vehicles 1920-1976), vehicle enhancements, butler and valet services, collection curation and consulting, transport, and event hosting for car clubs.</p></details>
+ <details><summary>How big is the facility?</summary><p>The site lists 40,000 square feet, indoor storage for 200+ vehicles and 22 car lifts, all climate-controlled.</p></details>
+ <details><summary>How is the building protected?</summary><p>The site lists a sprinkler system with smoke, security and camera alarms.</p></details>
+ <details><summary>Where is it and when is it open?</summary><p>2155 S Sheridan Blvd, Denver, CO 80227. Monday to Friday, 9am to 5pm. Phone (303) 947-0444.</p></details>
+ <details><summary>What does storage cost?</summary><p>Prices are not published on the site. Call (303) 947-0444.</p></details>
+</section>
+
+<div class="ar" id="agent-ready"><div><b>Agent-Ready included.</b> JSON-LD, FAQ and machine-readable services so AI assistants can answer "collector car storage in Denver" with your details. Illustrative concept, not yet live for this business.</div></div>
+
+<footer>Concept site by Kerblabs for NGD Collector Car Storage. Not affiliated or approved. Business details from ngdcars.com.</footer>
+<div class="sticky"><a class="btn" href="tel:+13039470444">Call</a><a class="btn alt" href="mailto:ngdfitz@msn.com">Email</a></div>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var track=$('track'),bar=$('bar'),svg=$('rack'),NS='http://www.w3.org/2000/svg';
+function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);(p||svg).appendChild(e);return e}
+var COLS=11,W=100,colors=['#c9503c','#3f7fa6','#e9e6df','#6a9c6b','#f0a62b','#8a6fb0'];
+el('rect',{x:0,y:392,width:1100,height:28,fill:'#2c343b'});
+el('rect',{x:0,y:0,width:1100,height:6,fill:'#2c343b'});
+var lifts=[];
+for(var c=0;c<COLS;c++){
+ for(var r=0;r<2;r++){
+  var x=c*W+10,base=r===0?392:200;
+  var g=el('g',{});
+  el('rect',{x:x+6,y:base-170,width:6,height:170,fill:'#3a444c'},g);
+  el('rect',{x:x+68,y:base-170,width:6,height:170,fill:'#3a444c'},g);
+  var plat=el('g',{},g);
+  el('rect',{x:x,y:-8,width:80,height:8,rx:2,fill:'#f0a62b'},plat);
+  var col=colors[(c*2+r)%colors.length];
+  el('path',{d:'M'+(x+4)+' -9 L'+(x+4)+' -20 Q'+(x+14)+' -34 '+(x+30)+' -34 L'+(x+50)+' -34 Q'+(x+66)+' -32 '+(x+76)+' -20 L'+(x+76)+' -9Z',fill:col,opacity:.9},plat);
+  el('circle',{cx:x+20,cy:-9,r:7,fill:'#14181c'},plat);
+  el('circle',{cx:x+60,cy:-9,r:7,fill:'#14181c'},plat);
+  lifts.push({plat:plat,base:base,i:lifts.length});
+ }
+}
+function rg(t,a,b){return Math.min(1,Math.max(0,(t-a)/(b-a)))}
+function ease(x){return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2}
+var stages=[
+ [0,'Empty floor','Scroll to raise the rack.'],
+ [.12,'Climate-controlled','Indoor storage for 200+ vehicles.'],
+ [.35,'Covers and battery care','Car covers and monthly battery maintenance, per the site.'],
+ [.55,'Restoration bay','Repair and restoration, specializing in 1920 to 1976.'],
+ [.75,'Butler and valet','Drop-off and pick-up at shops, homes, DMV.'],
+ [.93,'Club night','Space for car clubs to meet. Call (303) 947-0444.']
+];
+var last=-1;
+function draw(){
+ var rc=track.getBoundingClientRect(),max=Math.max(1,track.offsetHeight-innerHeight);
+ var t=reduce?1:Math.min(1,Math.max(0,-rc.top/max));
+ var n=0;
+ lifts.forEach(function(l){
+  var s=l.i/22*.8,p=ease(rg(t,s,s+.2));
+  if(p>=1)n++;
+  var rise=(l.base===392?150:110)*p;
+  l.plat.setAttribute('transform','translate(0,'+(l.base-30-rise)+')');
+ });
+ $('lk').textContent='Lifts raised: '+n+' of 22';
+ bar.style.width=(t*100)+'%';
+ var k=0;stages.forEach(function(s,i){if(t>=s[0])k=i});
+ if(k!==last){last=k;$('lv').textContent=stages[k][1];$('ld').textContent=stages[k][2]}
+}
+addEventListener('scroll',draw,{passive:true});addEventListener('resize',draw);draw();
+})();
+</script>
+</body>
+</html>
