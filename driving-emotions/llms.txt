@@ -1,0 +1,27 @@
+# Driving Emotions
+
+> Exotic and luxury car dealer in Lake Park (Palm Beach area), Florida.
+
+Concept note: part of an unofficial Kerblabs design concept. Facts come from drivingemotions.com. Confirm details and live inventory with the business.
+
+## Services
+- Exotic and luxury car sales
+- Vehicle consignment
+- Financing options
+- Car locator service
+- Vehicle shipping
+- Marques listed on their site: Aston Martin, Bentley, Bugatti, Ferrari, Lamborghini, Mercedes-Benz, Porsche, Rolls-Royce, McLaren
+- Tuning partners listed: RENNtech, Kleeman, Carlsson, Champion, WeisTec
+
+## Location
+- 848 12th Street, Suite 102, Lake Park, FL 33403
+
+## Actions
+Plain-language actions an assistant can offer the buyer. At launch each one is wired to the business's real booking or quote channel.
+- Ask about a specific car: send the marque and model
+- Consign a car: send the vehicle details
+- Request a car search: describe the car you want located
+- Request a shipping quote
+
+## Official site
+- https://www.drivingemotions.com
