@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fish 'N Chicks &amp; Nauti Buoys Charters | Key West Private Boat Trips (concept)</title>
+<meta name="description" content="Concept site for Fish 'N Chicks &amp; Nauti Buoys Charters: sunset cruises, dolphin watching, sandbar and snorkel trips aboard a 25ft Robalo Cayman with Captain Raquel Crummitt, Key West FL.">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/fish-n-chicks-key-west/">
+<meta property="og:title" content="Fish 'N Chicks Charters | concept site by Kerblabs">
+<meta property="og:description" content="Concept for a one-boat Key West charter, with a scroll-driven afternoon-to-night sky.">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/fish-n-chicks-key-west/">
+<meta name="twitter:card" content="summary">
+<meta name="robots" content="noindex,follow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#120b24;color:#f6eefc;font-family:"Helvetica Neue",Arial,sans-serif;line-height:1.55}
+a{color:inherit}
+h1,h2,h3,.serif{font-family:Georgia,"Times New Roman",serif;font-weight:400}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 22px;background:rgba(18,11,36,.78);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.1)}
+nav b{font-family:Georgia,serif;font-size:17px;font-weight:400;letter-spacing:.03em}
+nav .r{display:flex;gap:16px;align-items:center;font-size:13px}
+.btn{display:inline-block;text-decoration:none;background:#ff4f9a;color:#fff;padding:11px 22px;border-radius:99px;font-size:14px;font-weight:700}
+.btn.alt{background:transparent;border:1.5px solid #fff}
+.track{height:440vh;position:relative}
+.stage{position:sticky;top:0;height:100vh;overflow:hidden}
+.stage svg{position:absolute;inset:0;width:100%;height:100%}
+.hud{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:1fr auto;padding:84px 28px 28px;max-width:1240px;margin:0 auto;pointer-events:none}
+.hud .copy{pointer-events:auto;align-self:start;text-shadow:0 2px 18px rgba(0,0,0,.5)}
+.hud h1{font-size:clamp(34px,5.6vw,78px);line-height:1.02}
+.hud p{margin-top:12px;max-width:440px;font-size:clamp(14px,1.5vw,18px)}
+.book{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px}
+.clock{align-self:end;justify-self:end;text-align:right;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+.clock .t{font-family:Georgia,serif;font-size:clamp(40px,6vw,84px);line-height:1}
+.clock .k{font-size:11px;letter-spacing:.24em;text-transform:uppercase;opacity:.85;margin-top:6px}
+.clock .v{font-family:Georgia,serif;font-size:clamp(20px,2.6vw,32px)}
+.clock .d{font-size:13px;opacity:.9;max-width:300px;margin-left:auto}
+.dots{display:flex;gap:8px;justify-content:flex-end;margin-bottom:10px}
+.dots i{width:26px;height:4px;border-radius:2px;background:rgba(255,255,255,.3)}
+.dots i.on{background:#ff4f9a}
+.note{position:absolute;left:28px;bottom:14px;font-size:10.5px;opacity:.8;background:rgba(0,0,0,.4);padding:3px 10px;border-radius:8px}
+section.blk{padding:84px 24px;max-width:1100px;margin:0 auto}
+.eye{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#ff4f9a;margin-bottom:12px;font-weight:700}
+h2{font-size:clamp(26px,4vw,44px);line-height:1.1;margin-bottom:16px;max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:26px}
+.card{background:#1d1238;border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:22px}
+.card h3{font-size:21px;margin-bottom:6px}
+.card p{font-size:14px;opacity:.78}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:24px;counter-reset:s}
+.steps div{border-top:2px solid #ffc857;padding-top:12px;font-size:14px;counter-increment:s}
+.steps div::before{content:"0" counter(s);display:block;font-family:Georgia,serif;font-size:26px;color:#ffc857}
+.pitch{background:linear-gradient(135deg,#ff4f9a,#7a3cff);color:#fff;border-radius:22px;padding:36px;margin:0 24px}
+.pitch ul{margin:12px 0 0 18px}
+.pitch .eye{color:#ffe3a3}
+.faq details{border-bottom:1px solid rgba(255,255,255,.12);padding:14px 0}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{margin-top:8px;opacity:.8;max-width:680px}
+.ar{margin:0 auto;max-width:1100px;padding:20px 24px 70px}
+.ar div{border:1px dashed #ffc857;border-radius:14px;padding:20px;font-size:14px}
+footer{padding:46px 24px 90px;text-align:center;font-size:12px;opacity:.6;border-top:1px solid rgba(255,255,255,.1)}
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none}
+.sticky .btn{display:block;text-align:center;padding:14px}
+@media(max-width:760px){
+.hud{grid-template-columns:1fr;padding:70px 18px 18px}
+.hud p,.book{display:none}
+.clock{justify-self:start;text-align:left}.clock .d{margin-left:0}.dots{justify-content:flex-start}
+.note{display:none}
+nav .r a.t{display:none}.sticky{display:block}
+}
+
+/* QA fix 2026-10-05: nav overlap on mobile + contrast */
+.hud h1{text-shadow:0 2px 6px rgba(0,0,0,.55),0 0 30px rgba(0,0,0,.45)}
+@media(max-width:760px){.hud{padding-top:112px;padding-bottom:92px}nav .btn{padding:9px 14px;font-size:12px;white-space:nowrap}.clock{background:rgba(10,12,30,.5);padding:8px 12px;border-radius:12px;backdrop-filter:blur(4px)}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"TouristTrip","name":"Private boat charters in Key West","provider":{"@type":"LocalBusiness","name":"Fish 'N Chicks & Nauti Buoys Charters Key West","url":"https://fishnchickskeywest.com","email":"fishnchickscharters@gmail.com","telephone":"+1 904 994 5824","address":{"@type":"PostalAddress","streetAddress":"5710 Overseas Highway","addressLocality":"Key West","addressRegion":"FL","postalCode":"33040","addressCountry":"US"},"sameAs":["https://www.instagram.com/fishnchickscharterskey"]}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What boat is it?","acceptedAnswer":{"@type":"Answer","text":"A 25ft Robalo Cayman with a 300 HP engine, captained by founder Raquel Crummitt, who lists more than 25 years on the waters around the Florida Keys."}},{"@type":"Question","name":"What trips are offered?","acceptedAnswer":{"@type":"Answer","text":"Sunset cruises, dolphin watching, sandbar tours, snorkeling and scattering ashes at sea."}},{"@type":"Question","name":"How do I book?","acceptedAnswer":{"@type":"Answer","text":"Through FareHarbor from fishnchickskeywest.com, or call (904) 994-5824."}},{"@type":"Question","name":"What does it cost?","acceptedAnswer":{"@type":"Answer","text":"The current site does not publish prices. Confirm with the captain."}}]}]}
+</script>
+</head>
+<body>
+<nav><b>Fish 'N Chicks Charters</b><div class="r"><a class="t" href="#faq">FAQ</a><a class="t" href="#trips">Trips</a><a class="btn" href="tel:+19049945824">Call Captain Raquel</a></div></nav>
+
+<div class="track" id="track">
+ <div class="stage">
+  <svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+   <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop id="s0" offset="0" stop-color="#4fb6e8"/><stop id="s1" offset=".62" stop-color="#cdeefa"/></linearGradient>
+    <linearGradient id="wat" x1="0" y1="0" x2="0" y2="1"><stop id="w0" offset="0" stop-color="#1aa7c4"/><stop id="w1" offset="1" stop-color="#0a5878"/></linearGradient>
+    <linearGradient id="glit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff2b8" stop-opacity=".9"/><stop offset="1" stop-color="#fff2b8" stop-opacity="0"/></linearGradient>
+   </defs>
+   <rect width="1200" height="700" fill="url(#sky)"/>
+   <g id="stars" fill="#fff" opacity="0"></g>
+   <g id="sun"><circle r="90" fill="#fff0a8" opacity=".25"/><circle r="46" fill="#fff6c8"/></g>
+   <g id="moon" opacity="0"><circle r="34" fill="#f4f1ff"/><circle cx="-12" cy="-6" r="6" fill="#d9d4ee"/><circle cx="10" cy="10" r="4" fill="#d9d4ee"/></g>
+   <g id="clouds" fill="#fff" opacity=".6"><ellipse cx="240" cy="170" rx="110" ry="18"/><ellipse cx="320" cy="152" rx="60" ry="15"/><ellipse cx="880" cy="120" rx="120" ry="17"/></g>
+   <rect id="wat1" y="400" width="1200" height="300" fill="url(#wat)"/>
+   <rect id="glitter" x="0" y="400" width="120" height="300" fill="url(#glit)" opacity=".7"/>
+   <g id="fin" opacity="0"><path d="M0 0 Q18 -34 52 -44 Q40 -18 56 0Z" fill="#33414f"/></g>
+   <g id="sand" opacity="0"><ellipse cx="0" cy="0" rx="210" ry="14" fill="#f3dfae"/></g>
+   <g id="waves"></g>
+   <g id="bow">
+    <path d="M360 700 L600 470 L840 700Z" fill="#f6eefc"/>
+    <path d="M360 700 L600 470 L640 505 L430 700Z" fill="#ff4f9a" opacity=".92"/>
+    <path d="M520 560 L600 478 L680 560" fill="none" stroke="#120b24" stroke-width="7" stroke-linecap="round"/>
+    <rect x="596" y="440" width="8" height="40" fill="#120b24"/>
+   </g>
+   <rect id="dusk" width="1200" height="700" fill="#2a0f4a" opacity="0"/>
+  </svg>
+  <div class="hud">
+   <div class="copy">
+    <h1>One boat.<br>Every Key West sky.</h1>
+    <p>Private charters on a 25ft Robalo Cayman with Captain Raquel Crummitt. Dolphins, sandbar, snorkel, sunset.</p>
+    <div class="book"><a class="btn" href="tel:+19049945824">Call (904) 994-5824</a><a class="btn alt" href="mailto:fishnchickscharters@gmail.com">Email the Captain</a></div>
+   </div>
+   <div class="clock"><div class="dots" id="dots"><i></i><i></i><i></i><i></i></div><div class="t" id="tm">3:00 PM</div><div class="k" id="sk">Stop 1 of 4</div><div class="v" id="sv">Dolphin watching</div><div class="d" id="sd">Fins off the bow in open Keys water.</div></div>
+  </div>
+  <div class="note">Illustrative animation, not a photo of the boat or route.</div>
+ </div>
+</div>
+
+<section class="blk" id="trips">
+ <div class="eye">Trips (from the current site)</div>
+ <h2>Pick the sky you want to be under.</h2>
+ <p style="max-width:640px;opacity:.8">These are the trip types listed on fishnchickskeywest.com. The current site does not publish prices or durations, so none are shown here. Bookings run through FareHarbor; this concept keeps that and adds a call and email path beside it.</p>
+ <div class="grid">
+  <div class="card"><h3>Sunset cruise</h3><p>Golden hour on the water.</p></div>
+  <div class="card"><h3>Dolphin watching</h3><p>Out on open water with a captain who knows it.</p></div>
+  <div class="card"><h3>Sandbar tour</h3><p>Anchor up and step out.</p></div>
+  <div class="card"><h3>Snorkeling</h3><p>Reef and clear water, private boat.</p></div>
+  <div class="card"><h3>Scatter ashes at sea</h3><p>A quiet, respectful charter. The site also notes a clothing optional option is available.</p></div>
+ </div>
+</section>
+
+<section class="blk">
+ <div class="eye">How booking could feel</div>
+ <h2>From a scrolling sunset to a confirmed date.</h2>
+ <p style="max-width:640px;opacity:.8">Guests on your Instagram already feel the vibe. The site's job is to turn that into a booking fast.</p>
+ <div class="steps">
+  <div>Scroll the afternoon into sunset in one pass.</div>
+  <div>Pick a trip type that fits the group.</div>
+  <div>Book on FareHarbor, or call or email Captain Raquel.</div>
+  <div>Meet the Robalo and head out.</div>
+ </div>
+</section>
+
+<div class="pitch">
+ <div class="eye">Concept by Kerblabs</div>
+ <h2 class="serif" style="color:#fff">A first impression that glows like a Key West sunset.</h2>
+ <ul>
+  <li>Cinematic scroll hero, built around one boat and one captain.</li>
+  <li>Your FareHarbor booking kept exactly as it is.</li>
+  <li>Fast on phones, where charter guests browse.</li>
+  <li>Agent-ready: AI assistants can read your trips and booking path.</li>
+ </ul>
+</div>
+
+<section class="blk faq" id="faq">
+ <div class="eye">FAQ</div>
+ <h2>Quick answers</h2>
+ <details><summary>What boat is it?</summary><p>A 25ft Robalo Cayman with a 300 HP engine. Founder Captain Raquel Crummitt lists more than 25 years on the waters around the Florida Keys, and the site says additional captains are available.</p></details>
+ <details><summary>What trips are offered?</summary><p>Sunset cruises, dolphin watching, sandbar tours, snorkeling and scattering ashes at sea.</p></details>
+ <details><summary>How do I book?</summary><p>Online through FareHarbor on fishnchickskeywest.com, or call (904) 994-5824.</p></details>
+ <details><summary>What does it cost?</summary><p>The current site does not publish prices. Confirm with the captain.</p></details>
+</section>
+
+<div class="ar" id="agent-ready"><div><b>Agent-Ready included.</b> llms.txt, JSON-LD and machine-readable trips so AI assistants can answer "sunset charter in Key West" with your details. Illustrative concept, not yet live for this business.</div></div>
+
+<footer>Concept site by Kerblabs for Fish 'N Chicks &amp; Nauti Buoys Charters. Not affiliated or approved. Business details from fishnchickskeywest.com.</footer>
+<div class="sticky"><a class="btn" href="tel:+19049945824">Call Captain Raquel</a></div>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var track=$('track'),sun=$('sun'),moon=$('moon'),stars=$('stars'),fin=$('fin'),sand=$('sand'),dusk=$('dusk'),glit=$('glitter'),clouds=$('clouds'),bow=$('bow');
+var NS='http://www.w3.org/2000/svg';
+function hx(h){return[1,3,5].map(function(i){return parseInt(h.substr(i,2),16)})}
+function mix(a,b,t){var A=hx(a),B=hx(b);return'rgb('+A.map(function(v,i){return Math.round(v+(B[i]-v)*t)}).join(',')+')'}
+function seg(t,a,b){return Math.max(0,Math.min(1,(t-a)/(b-a)))}
+for(var i=0;i<60;i++){var c=document.createElementNS(NS,'circle');c.setAttribute('cx',(i*173+37)%1200);c.setAttribute('cy',(i*89+13)%340);c.setAttribute('r',i%7==0?1.8:1);stars.appendChild(c)}
+var wg=$('waves'),wp=[];
+for(var k=0;k<3;k++){var p=document.createElementNS(NS,'path');p.setAttribute('fill',k%2?'rgba(10,40,70,.28)':'rgba(255,255,255,.12)');wg.appendChild(p);wp.push(p)}
+function wave(y,amp,ph,len){var d='M-200 '+y;for(var x=-200;x<=1400;x+=20)d+=' L'+x+' '+(y+Math.sin((x+ph)/len)*amp);return d+' L1400 720 L-200 720Z'}
+var stops=[['Dolphin watching','Fins off the bow in open Keys water.'],['Sandbar and snorkel','Anchor up, step out, clear water.'],['Sunset cruise','Golden hour with Captain Raquel.'],['Heading home','The Keys sky after dark, back to the dock.']];
+var dots=$('dots').children,last=-1;
+function draw(){
+ var r=track.getBoundingClientRect(),max=track.offsetHeight-innerHeight;
+ var t=Math.min(1,Math.max(0,-r.top/max));
+ var sd=seg(t,.35,.75),nt=seg(t,.7,1);
+ var mins=15*60+Math.round(t*390),h=Math.floor(mins/60),m=mins%60,ap=h>=12?'PM':'AM';h=h%12||12;
+ $('tm').textContent=h+':'+(m<10?'0':'')+m+' '+ap;
+ var sx=300+t*330,sy=170+Math.pow(seg(t,.2,.78),2)*230;
+ sun.setAttribute('transform','translate('+sx+','+sy+')');
+ sun.style.opacity=1-seg(t,.76,.84);
+ glit.setAttribute('x',sx-60);glit.setAttribute('opacity',(.75*(1-seg(t,.72,.82))).toFixed(2));
+ moon.setAttribute('transform','translate('+(950-nt*160)+','+(320-nt*190)+')');
+ moon.setAttribute('opacity',seg(t,.78,.95).toFixed(2));
+ stars.setAttribute('opacity',(seg(t,.72,.95)*.9).toFixed(2));
+ clouds.setAttribute('transform','translate('+(-t*120)+',0)');
+ clouds.setAttribute('opacity',(.6*(1-nt)).toFixed(2));
+ var f=seg(t,.04,.26);
+ fin.setAttribute('opacity',f>0&&f<1?'.9':'0');
+ fin.setAttribute('transform','translate('+(250+f*620)+','+(455-Math.sin(f*Math.PI)*34)+')');
+ var sb=Math.sin(seg(t,.26,.5)*Math.PI);
+ sand.setAttribute('opacity',Math.min(1,sb*2).toFixed(2));
+ sand.setAttribute('transform','translate(300,'+(470+(1-Math.min(1,sb*1.6))*40)+')');
+ var A=sd<.5?[ '#4fb6e8','#ff9a5c']:['#ff9a5c','#120b24'];
+ var tt=sd<.5?sd*2:(sd-.5)*2;
+ $('s0').setAttribute('stop-color',sd<.5?mix('#4fb6e8','#7a4bb8',tt):mix('#7a4bb8','#0a0620',tt));
+ $('s1').setAttribute('stop-color',sd<.5?mix('#cdeefa','#ff8f5a',tt):mix('#ff8f5a','#2b1650',tt));
+ $('w0').setAttribute('stop-color',mix('#1aa7c4','#14123a',sd));
+ $('w1').setAttribute('stop-color',mix('#0a5878','#07041a',sd));
+ dusk.setAttribute('opacity',(sd*.2).toFixed(3));
+ wp[0].setAttribute('d',wave(430,5,t*900,60));wp[1].setAttribute('d',wave(480,8,-t*1200,90));wp[2].setAttribute('d',wave(560,12,t*1500,130));
+ bow.setAttribute('transform','translate(0,'+(Math.sin(t*34)*5)+')');
+ var i=Math.min(3,Math.floor(t*4));
+ if(i!==last){last=i;$('sk').textContent='Stop '+(i+1)+' of 4';$('sv').textContent=stops[i][0];$('sd').textContent=stops[i][1];for(var q=0;q<4;q++)dots[q].className=q<=i?'on':''}
+}
+addEventListener('scroll',draw,{passive:true});addEventListener('resize',draw);draw();
+})();
+</script>
+</body>
+</html>

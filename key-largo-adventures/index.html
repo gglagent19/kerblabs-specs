@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Key Largo Adventures | TIKI TIKI Private Boat Charters, Islamorada FL (concept)</title>
+<meta name="description" content="Concept site for Key Largo Adventures: private sandbar, snorkel, sunset and multi-activity charters aboard TIKI TIKI with Captain Charlie Filpes, departing Islamorada, FL.">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/key-largo-adventures/">
+<meta property="og:title" content="Key Largo Adventures | concept site by Kerblabs">
+<meta property="og:description" content="Concept for a single-boat Islamorada charter, with a scroll-driven day-to-sunset sail.">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/key-largo-adventures/">
+<meta name="twitter:card" content="summary">
+<meta name="robots" content="noindex,follow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#fff8ec;color:#0b2a3c;font-family:"Helvetica Neue",Arial,sans-serif;line-height:1.55}
+a{color:inherit}
+h1,h2,h3,.serif{font-family:Georgia,"Times New Roman",serif;font-weight:400}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 22px;background:rgba(255,248,236,.88);backdrop-filter:blur(8px);border-bottom:1px solid #f0dfc4}
+nav b{font-family:Georgia,serif;font-size:17px;letter-spacing:.03em;font-weight:400}
+nav .r{display:flex;gap:16px;align-items:center;font-size:13px}
+.btn{display:inline-block;text-decoration:none;background:#ff6b4a;color:#fff;padding:11px 22px;border-radius:99px;font-size:14px;font-weight:700}
+.btn.alt{background:transparent;color:#0b2a3c;border:1.5px solid #0b2a3c}
+.track{height:420vh;position:relative}
+.stage{position:sticky;top:0;height:100vh;overflow:hidden}
+.stage svg{position:absolute;inset:0;width:100%;height:100%}
+.hud{position:absolute;left:0;right:0;top:0;bottom:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);padding:84px 28px 28px;max-width:1240px;margin:0 auto;pointer-events:none}
+.hud .copy{pointer-events:auto;align-self:start;color:#fff;text-shadow:0 2px 18px rgba(0,30,50,.45)}
+.hud h1{font-size:clamp(34px,5.6vw,78px);line-height:1.02}
+.hud p{margin-top:12px;max-width:430px;font-size:clamp(14px,1.5vw,18px)}
+.book{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px;text-shadow:none}
+.stop{align-self:end;justify-self:end;text-align:right;color:#fff;text-shadow:0 2px 14px rgba(0,30,50,.5)}
+.stop .k{font-size:11px;letter-spacing:.24em;text-transform:uppercase;opacity:.85}
+.stop .v{font-family:Georgia,serif;font-size:clamp(26px,4vw,52px);line-height:1.05}
+.stop .d{font-size:13px;opacity:.9;max-width:300px;margin-left:auto}
+.dots{display:flex;gap:8px;justify-content:flex-end;margin-bottom:10px}
+.dots i{width:26px;height:4px;border-radius:2px;background:rgba(255,255,255,.35)}
+.dots i.on{background:#fff}
+.note{position:absolute;left:28px;bottom:14px;font-size:10.5px;color:#fff;opacity:.8;background:rgba(0,30,50,.4);padding:3px 10px;border-radius:8px}
+section.blk{padding:84px 24px;max-width:1100px;margin:0 auto}
+.eye{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#ff6b4a;margin-bottom:12px;font-weight:700}
+h2{font-size:clamp(26px,4vw,44px);line-height:1.1;margin-bottom:16px;max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:26px}
+.card{background:#fff;border:1px solid #f0dfc4;border-radius:16px;padding:22px}
+.card h3{font-size:21px;margin-bottom:4px}
+.card .p{color:#ff6b4a;font-weight:700;font-size:14px;margin-bottom:6px}
+.card p{font-size:14px;opacity:.78}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:24px;counter-reset:s}
+.steps div{border-top:2px solid #0fa3b1;padding-top:12px;font-size:14px;counter-increment:s}
+.steps div::before{content:"0" counter(s);display:block;font-family:Georgia,serif;font-size:26px;color:#0fa3b1}
+.pitch{background:#0b2a3c;color:#fff8ec;border-radius:22px;padding:36px;margin:0 24px}
+.pitch ul{margin:12px 0 0 18px}
+.pitch .eye{color:#ffb39f}
+.faq details{border-bottom:1px solid #f0dfc4;padding:14px 0}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{margin-top:8px;opacity:.8;max-width:680px}
+.ar{margin:0 auto;max-width:1100px;padding:20px 24px 70px}
+.ar div{border:1px dashed #0fa3b1;border-radius:14px;padding:20px;font-size:14px}
+footer{padding:46px 24px 90px;text-align:center;font-size:12px;opacity:.65;border-top:1px solid #f0dfc4}
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none}
+.sticky .btn{display:block;text-align:center;padding:14px}
+@media(max-width:760px){
+.hud{grid-template-columns:1fr;grid-template-rows:auto 1fr;padding:70px 18px 18px}
+.hud p{display:none}.book{display:none}
+.stop{justify-self:start;text-align:left}.stop .d{margin-left:0}.dots{justify-content:flex-start}
+.note{display:none}
+nav .r a.t{display:none}.sticky{display:block}
+}
+
+/* QA fix 2026-10-05: nav overlap on mobile + contrast */
+.hud h1{text-shadow:0 2px 6px rgba(0,0,0,.55),0 0 30px rgba(0,0,0,.45)}
+@media(max-width:760px){.hud{padding-top:112px;padding-bottom:92px}nav .btn{padding:9px 14px;font-size:12px;white-space:nowrap}.stop{background:rgba(10,12,30,.5);padding:8px 12px;border-radius:12px;backdrop-filter:blur(4px)}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"TouristTrip","name":"Private boat charters aboard TIKI TIKI","provider":{"@type":"LocalBusiness","name":"Key Largo Adventures","url":"https://keylargoadventures.com","email":"Charlie@KeyLargoAdventures.com","telephone":"+1 305 209 9634","address":{"@type":"PostalAddress","streetAddress":"85501 Overseas Hwy (Island Grill dock)","addressLocality":"Islamorada","addressRegion":"FL","postalCode":"33036","addressCountry":"US"},"sameAs":["https://www.instagram.com/keylargoadventures"]}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where does the boat leave from?","acceptedAnswer":{"@type":"Answer","text":"Island Grill, 85501 Overseas Hwy, Islamorada, FL 33036."}},{"@type":"Question","name":"How do I book?","acceptedAnswer":{"@type":"Answer","text":"Book online through FareHarbor on keylargoadventures.com, or call (305) 209-9634."}},{"@type":"Question","name":"What boat is it?","acceptedAnswer":{"@type":"Answer","text":"TIKI TIKI, a 25-foot open fisherman, captained by Charlie Filpes."}},{"@type":"Question","name":"What does a charter cost?","acceptedAnswer":{"@type":"Answer","text":"The site lists the Islamorada Sandbar Boat from $490, the Half-Day Multi-Activity Charter from $550 and the Full-Day Private Multi-Activity Boat from $730."}}]}]}
+</script>
+</head>
+<body>
+<nav><b>Key Largo Adventures</b><div class="r"><a class="t" href="#faq">FAQ</a><a class="t" href="#trips">Trips</a><a class="btn" href="tel:+13052099634">Call Captain Charlie</a></div></nav>
+
+<div class="track" id="track">
+ <div class="stage">
+  <svg id="sea" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+   <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop id="s0" offset="0" stop-color="#5ec8e5"/><stop id="s1" offset="1" stop-color="#d9f5f0"/></linearGradient>
+    <linearGradient id="wat" x1="0" y1="0" x2="0" y2="1"><stop id="w0" offset="0" stop-color="#16b5c4"/><stop id="w1" offset="1" stop-color="#0a6f86"/></linearGradient>
+   </defs>
+   <rect width="1200" height="700" fill="url(#sky)"/>
+   <g id="sun"><circle r="70" fill="#fff3b0" opacity=".35"/><circle r="42" fill="#fff3b0"/></g>
+   <g id="cloud" opacity=".7" fill="#fff"><ellipse cx="260" cy="140" rx="90" ry="18"/><ellipse cx="330" cy="126" rx="55" ry="16"/><ellipse cx="900" cy="190" rx="110" ry="20"/></g>
+   <path d="M0 400 L1200 400 L1200 700 L0 700Z" fill="url(#wat)"/>
+   <g id="bar"><ellipse cx="0" cy="0" rx="250" ry="26" fill="#f3dfae"/><ellipse cx="0" cy="-6" rx="190" ry="14" fill="#fbecc4"/></g>
+   <g id="fish" fill="#fff" opacity="0"><path d="M0 0 q16 -10 30 0 q-14 10 -30 0z M30 0 l10 -8 v16z"/></g>
+   <g id="boat">
+    <path d="M-120 0 L120 0 L96 38 L-92 38Z" fill="#fff8ec"/>
+    <path d="M-120 0 L120 0 L116 10 L-116 10Z" fill="#ff6b4a"/>
+    <rect x="-30" y="-52" width="6" height="52" fill="#0b2a3c"/><rect x="30" y="-52" width="6" height="52" fill="#0b2a3c"/>
+    <path d="M-40 -56 L46 -56 L40 -46 L-34 -46Z" fill="#0fa3b1"/>
+    <rect x="-96" y="-30" width="34" height="30" rx="4" fill="#0b2a3c" opacity=".85"/>
+    <circle cx="70" cy="-14" r="9" fill="#ffd9b3"/><rect x="62" y="-5" width="16" height="12" fill="#0b2a3c"/>
+   </g>
+   <g id="w1g"></g><g id="w2g"></g>
+   <rect id="dusk" width="1200" height="700" fill="#ff7a3d" opacity="0"/>
+  </svg>
+  <div class="hud">
+   <div class="copy">
+    <h1>One boat.<br>The whole Florida Keys.</h1>
+    <p>Private charters aboard TIKI TIKI, a 25-foot open fisherman, with Captain Charlie Filpes out of Islamorada. Sandbar, snorkel, sunset.</p>
+    <div class="book"><a class="btn" href="tel:+13052099634">Call (305) 209-9634</a><a class="btn alt" style="color:#fff;border-color:#fff" href="mailto:Charlie@KeyLargoAdventures.com">Email the Captain</a></div>
+   </div>
+   <div class="stop"><div class="dots" id="dots"><i></i><i></i><i></i><i></i></div><div class="k" id="sk">Stop 1 of 4</div><div class="v" id="sv">Island Grill dock</div><div class="d" id="sd">Where TIKI TIKI leaves from, 85501 Overseas Hwy, Islamorada.</div></div>
+  </div>
+  <div class="note">Illustrative animation, not a photo of the boat or route.</div>
+ </div>
+</div>
+
+<section class="blk" id="trips">
+ <div class="eye">Trips (from the current site)</div>
+ <h2>Pick the day, the boat does the rest.</h2>
+ <p style="max-width:640px;opacity:.8">Prices are the "from" figures listed on keylargoadventures.com today. Bookings run through FareHarbor; this concept keeps that and puts a call and email path right beside it.</p>
+ <div class="grid">
+  <div class="card"><h3>Islamorada Sandbar Boat</h3><div class="p">From $490 · 3 to 6 hours</div><p>Sandbar time on a private boat.</p></div>
+  <div class="card"><h3>Half-Day Multi-Activity</h3><div class="p">From $550 · 3 to 4 hours</div><p>Sandbar, paddleboarding, snorkeling and sightseeing in one trip.</p></div>
+  <div class="card"><h3>Full-Day Private Boat</h3><div class="p">From $730 · 6 hours</div><p>Multi-activity day with room for bar hopping, fishing and flats exploration. Optional BBQ grill upgrade.</p></div>
+  <div class="card"><h3>Snorkel, Sunset or Sightseeing</h3><div class="p">2 to 3 hours · private</div><p>A shorter private tour. Also a family eco-tour and customized large-group charters.</p></div>
+ </div>
+</section>
+
+<section class="blk">
+ <div class="eye">How booking could feel</div>
+ <h2>From a scrolling reel to a confirmed date.</h2>
+ <p style="max-width:640px;opacity:.8">The Instagram already sells the vibe. The site's job is to turn that feeling into a booking fast.</p>
+ <div class="steps">
+  <div>Watch the sail. See the day in one scroll.</div>
+  <div>Choose a trip and see the listed "from" price.</div>
+  <div>Book on FareHarbor, or call or email the captain directly.</div>
+  <div>Show up at Island Grill and step aboard.</div>
+ </div>
+</section>
+
+<div class="pitch">
+ <div class="eye">Concept by Kerblabs</div>
+ <h2 class="serif" style="color:#fff8ec">A first impression that moves like your reels.</h2>
+ <ul>
+  <li>Cinematic scroll hero, built around TIKI TIKI.</li>
+  <li>Your FareHarbor booking kept exactly as it is.</li>
+  <li>Fast on phones, where charter guests browse.</li>
+  <li>Agent-ready: AI assistants can read your trips, prices and booking path.</li>
+ </ul>
+</div>
+
+<section class="blk faq" id="faq">
+ <div class="eye">FAQ</div>
+ <h2>Quick answers</h2>
+ <details><summary>Where does the boat leave from?</summary><p>Island Grill, 85501 Overseas Hwy, Islamorada, FL 33036.</p></details>
+ <details><summary>How do I book?</summary><p>Online through FareHarbor on keylargoadventures.com, or call (305) 209-9634.</p></details>
+ <details><summary>What boat is it?</summary><p>TIKI TIKI, a 25-foot open fisherman, captained by Charlie Filpes with first mate Claire.</p></details>
+ <details><summary>What does it cost?</summary><p>The current site lists Sandbar from $490, Half-Day from $550 and Full-Day from $730. Confirm final pricing with the captain.</p></details>
+</section>
+
+<div class="ar" id="agent-ready"><div><b>Agent-Ready included.</b> llms.txt, JSON-LD and machine-readable trips so AI assistants can answer "private sandbar charter in Islamorada" with your details. Illustrative concept, not yet live for this business.</div></div>
+
+<footer>Concept site by Kerblabs for Key Largo Adventures. Not affiliated or approved. Business details from keylargoadventures.com.</footer>
+<div class="sticky"><a class="btn" href="tel:+13052099634">Call Captain Charlie</a></div>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var track=$('track'),boat=$('boat'),sun=$('sun'),bar=$('bar'),dusk=$('dusk'),fish=$('fish'),cloud=$('cloud');
+function hx(h){return[1,3,5].map(function(i){return parseInt(h.substr(i,2),16)})}
+function mix(a,b,t){var A=hx(a),B=hx(b);return'rgb('+A.map(function(v,i){return Math.round(v+(B[i]-v)*t)}).join(',')+')'}
+function wave(y,amp,ph,len){var d='M-200 '+y;for(var x=-200;x<=1400;x+=20)d+=' L'+x+' '+(y+Math.sin((x+ph)/len)*amp);return d+' L1400 720 L-200 720Z'}
+var w1=$('w1g'),w2=$('w2g');
+var p1=document.createElementNS('http://www.w3.org/2000/svg','path'),p2=document.createElementNS('http://www.w3.org/2000/svg','path');
+p1.setAttribute('fill','rgba(255,255,255,.14)');p2.setAttribute('fill','rgba(8,60,80,.35)');w1.appendChild(p1);w2.appendChild(p2);
+var stops=[['Island Grill dock','Where TIKI TIKI leaves from, 85501 Overseas Hwy, Islamorada.'],['Snorkel water','Private snorkel and sightseeing stops on the half-day and full-day trips.'],['The sandbar','Sandbar time on the Islamorada Sandbar Boat, plus paddleboarding.'],['Sunset run','Private sunset tours run 2 to 3 hours.']];
+var dots=$('dots').children,last=-1;
+function draw(){
+ var r=track.getBoundingClientRect(),max=track.offsetHeight-innerHeight;
+ var t=Math.min(1,Math.max(0,-r.top/max));
+ var W=Math.max(innerWidth,1),mob=innerWidth<760;
+ var bx=mob?300+t*620:170+t*760, by=420+Math.sin(t*38)*7;
+ boat.setAttribute('transform','translate('+bx+','+by+') rotate('+(Math.sin(t*38+1)*2.2)+')');
+ var st=Math.min(1,Math.max(0,(t-.1)/.7));
+ var sd=Math.max(0,Math.min(1,(t-.55)/.4));
+ sun.setAttribute('transform','translate('+(900-t*260)+','+(150+sd*250+Math.sin(t*3)*10)+')');
+ cloud.setAttribute('transform','translate('+(-t*140)+',0)');
+ var sandUp=Math.sin(Math.min(1,Math.max(0,(t-.25)/.45))*Math.PI);
+ bar.setAttribute('transform','translate(930,'+(470+(1-Math.min(1,sandUp*1.6))*60)+')');
+ bar.style.opacity=Math.min(1,sandUp*2);
+ fish.setAttribute('opacity',t>.12&&t<.4?'.7':'0');
+ fish.setAttribute('transform','translate('+(300+t*500)+','+(520+Math.sin(t*30)*12)+')');
+ $('s0').setAttribute('stop-color',mix('#5ec8e5','#2b2a5e',sd));
+ $('s1').setAttribute('stop-color',mix('#d9f5f0','#ff8a4c',sd));
+ $('w0').setAttribute('stop-color',mix('#16b5c4','#26496e',sd));
+ $('w1').setAttribute('stop-color',mix('#0a6f86','#0f2238',sd));
+ dusk.setAttribute('opacity',(sd*.18).toFixed(3));
+ p1.setAttribute('d',wave(440,6,t*900,60));p2.setAttribute('d',wave(480,9,-t*1200,90));
+ var i=Math.min(3,Math.floor(t*4));
+ if(i!==last){last=i;$('sk').textContent='Stop '+(i+1)+' of 4';$('sv').textContent=stops[i][0];$('sd').textContent=stops[i][1];for(var k=0;k<4;k++)dots[k].className=k<=i?'on':''}
+}
+addEventListener('scroll',draw,{passive:true});addEventListener('resize',draw);draw();
+})();
+</script>
+</body>
+</html>
