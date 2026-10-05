@@ -1,0 +1,18 @@
+{
+  "business": "Minorca Smiles",
+  "note": "Kerblabs concept. Facts from minorcasmiles.com. Prices not published, so null.",
+  "type": "Dentist",
+  "doctor": "Dr. Raymond del Castillo",
+  "address": "2030 S. Douglas Rd., Suite 110, Coral Gables, FL 33134",
+  "phone": "+1-305-443-4713",
+  "languages": ["English", "Spanish"],
+  "hours": {"mon-thu": "08:00-17:00", "fri": "08:00-14:00", "sat-sun": "closed"},
+  "booking": {"methods": ["phone", "online appointment request form"], "url": "https://www.minorcasmiles.com"},
+  "services": [
+    {"name": "Cosmetic dentistry", "includes": ["smile design", "teeth whitening", "porcelain veneers", "clear aligners", "smile makeovers"], "price": null},
+    {"name": "Restorative dentistry", "includes": ["dental implants", "dental bridges", "dentures", "root canal therapy", "composite fillings"], "price": null},
+    {"name": "Periodontics", "includes": ["gum grafting", "bone grafting", "nonsurgical treatments"], "price": null},
+    {"name": "General and family dentistry", "includes": ["cleanings", "exams", "emergency care", "children's dentistry", "sleep apnea treatment", "tooth extraction"], "price": null},
+    {"name": "Dental technology", "includes": ["CEREC same-day crowns", "dental X-rays", "laser dentistry", "Pearl AI"], "price": null}
+  ]
+}

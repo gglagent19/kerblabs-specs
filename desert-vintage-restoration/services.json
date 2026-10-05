@@ -1,0 +1,19 @@
+{
+ "business": "Desert Vintage Restoration",
+ "address": "103 S River Dr, Tempe, AZ 85288",
+ "phone": "+1-480-625-0329",
+ "founded": 2015,
+ "source": "desertvintagerestoration.com",
+ "services": [
+  {"name": "Vehicle restoration", "price": null},
+  {"name": "Body and paint work", "price": null},
+  {"name": "Paint correction", "price": null},
+  {"name": "General repairs (engine, transmission, exhaust, suspension)", "price": null},
+  {"name": "Brake service", "price": null},
+  {"name": "Oil change and maintenance", "price": null},
+  {"name": "Tire services", "price": null},
+  {"name": "Battery and electrical", "price": null}
+ ],
+ "booking": "Call 480-625-0329",
+ "prices_note": "Not published; call for a quote."
+}

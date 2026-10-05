@@ -1,0 +1,19 @@
+# MD Periodontics (Kerblabs concept)
+
+> Concept site for MD Periodontics, Beverly Hills, CA. Not the practice's official site. Official: https://mdperio.com
+
+## Practice
+- Doctors: Dr. Abdy Moshrefi, Dr. Nazanin Daneshmand
+- Focus: periodontics and dental implants (All-on-4 listed on Instagram bio)
+- Instagram: https://instagram.com/mdperiodontics
+- Address, phone, hours and prices: not published on this concept; see the official site.
+
+## Actions
+- Request a consult: https://mdperio.com
+
+## FAQ
+- Who are the doctors? Dr. Abdy Moshrefi and Dr. Nazanin Daneshmand.
+- How do I book? Use the practice's own site or Instagram.
+
+## Machine-readable
+- /services.json

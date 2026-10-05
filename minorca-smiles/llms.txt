@@ -1,0 +1,24 @@
+# Minorca Smiles (Kerblabs concept)
+
+> Concept site, not the practice's official site. Facts come from minorcasmiles.com. Dr. Raymond del Castillo, dental practice in Coral Gables, FL.
+
+## Practice
+- Address: 2030 S. Douglas Rd., Suite 110, Coral Gables, FL 33134
+- Phone: 305-443-4713
+- Hours: Mon-Thu 8:00-17:00, Fri 8:00-14:00, Sat-Sun closed
+- Languages: English, Spanish
+- Booking: phone or online appointment request form on minorcasmiles.com
+- Prices: not published
+
+## Services
+Cosmetic (smile design, whitening, veneers, clear aligners), restorative (dental implants, bridges, dentures, root canal, composite fillings), periodontics (gum and bone grafting), general and family, CEREC same-day crowns, laser dentistry.
+
+## Machine-readable
+- services.json
+
+## FAQ
+- Implants? Yes, listed under restorative dentistry.
+- Cost? Not published; call the office.
+
+## Actions
+- Call 305-443-4713 or use the request form on the official site.

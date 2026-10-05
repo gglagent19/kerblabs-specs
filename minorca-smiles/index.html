@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Minorca Smiles | Dr. Raymond del Castillo, Coral Gables FL (concept)</title>
+<meta name="description" content="Concept site for Minorca Smiles, a Coral Gables dental practice: cosmetic, general, periodontics and restorative care including dental implants.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/minorca-smiles/">
+<meta property="og:title" content="Minorca Smiles | Coral Gables (concept)">
+<meta property="og:description" content="A Kerblabs concept site for Minorca Smiles with a scroll-driven panoramic X-ray hero.">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/minorca-smiles/">
+<meta property="og:type" content="website">
+<style>
+:root{--ink:#0e1a24;--paper:#f4f1ea;--sea:#0f7c86;--glow:#9fe8ee;--coral:#e8735a;--nav:64px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.55}
+a{color:inherit}
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav);z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 18px;background:rgba(14,26,36,.94);color:#fff;font-family:system-ui,sans-serif}
+nav b{font-size:15px;letter-spacing:.04em}
+nav a.btn{background:var(--coral);color:#fff;text-decoration:none;padding:9px 14px;border-radius:999px;font-size:13px;font-weight:600}
+.track{height:360vh;position:relative;background:var(--ink)}
+.stick{position:sticky;top:0;height:100vh;overflow:hidden;color:#fff;display:grid;grid-template-rows:auto 1fr auto;padding:calc(var(--nav) + 24px) 18px 20px;gap:10px}
+.stick h1{font-size:clamp(28px,7vw,64px);line-height:1.05;font-weight:400}
+.stick h1 em{color:var(--glow);font-style:normal}
+.sub{font-family:system-ui,sans-serif;font-size:14px;color:#b7c7d1;max-width:560px;margin-top:8px}
+.film{position:relative;min-height:0}
+.film svg{width:100%;height:100%;display:block}
+.read{display:flex;justify-content:space-between;gap:12px;font-family:system-ui,sans-serif;font-size:13px;color:var(--glow);letter-spacing:.06em;text-transform:uppercase}
+.read span:last-child{text-align:right}
+section{padding:72px 20px;max-width:1000px;margin:0 auto}
+h2{font-size:clamp(26px,5vw,40px);font-weight:400;margin-bottom:18px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:#fff;border:1px solid #ddd6c8;border-radius:14px;padding:18px}
+.card h3{font-size:18px;margin-bottom:6px;font-weight:400;color:var(--sea)}
+.card p{font-family:system-ui,sans-serif;font-size:14px;color:#44525c}
+.dark{background:var(--ink);color:#fff;max-width:none}
+.dark .in{max-width:1000px;margin:0 auto}
+.dark p,.dark li{font-family:system-ui,sans-serif;font-size:15px;color:#c3d0d8}
+.dark ul{padding-left:18px;margin-top:10px}
+.cta{display:inline-block;margin-top:18px;background:var(--coral);color:#fff;text-decoration:none;padding:13px 22px;border-radius:999px;font-family:system-ui,sans-serif;font-weight:600}
+details{background:#fff;border:1px solid #ddd6c8;border-radius:12px;padding:14px 16px;margin-bottom:10px}
+summary{cursor:pointer;font-size:17px}
+details p{font-family:system-ui,sans-serif;font-size:14px;color:#44525c;margin-top:8px}
+.ar{border:1px dashed var(--sea);border-radius:14px;padding:20px;font-family:system-ui,sans-serif;font-size:14px;color:#33444f;background:#eaf5f5}
+footer{background:#08111a;color:#9fb0ba;font-family:system-ui,sans-serif;font-size:13px;padding:28px 20px;text-align:center}
+@media(max-width:480px){.read{font-size:11px}.stick{padding-left:14px;padding-right:14px}}
+@media(prefers-reduced-motion:reduce){.track{height:auto}.stick{position:relative;height:auto;min-height:100vh}}
+</style>
+</head>
+<body>
+<nav><b>MINORCA SMILES</b><a class="btn" href="tel:+13054434713">Call 305-443-4713</a></nav>
+
+<div class="track" id="track">
+<div class="stick">
+ <div>
+  <h1>See the whole <em>smile</em> before the first appointment.</h1>
+  <p class="sub">Dr. Raymond del Castillo. Cosmetic, general, periodontal and restorative dentistry, including dental implants, in Coral Gables.</p>
+ </div>
+ <div class="film">
+  <svg id="xr" viewBox="0 0 800 300" preserveAspectRatio="xMidYMid meet" aria-label="Illustrative panoramic X-ray scan of an upper and lower dental arch with one implant crown being placed">
+   <defs>
+    <linearGradient id="beam" x1="0" x2="1"><stop offset="0" stop-color="#9fe8ee" stop-opacity="0"/><stop offset=".5" stop-color="#9fe8ee" stop-opacity=".55"/><stop offset="1" stop-color="#9fe8ee" stop-opacity="0"/></linearGradient>
+    <clipPath id="scanclip"><rect id="scanrect" x="0" y="0" width="0" height="300"/></clipPath>
+    <g id="tooth"><path d="M-14 -30 Q-16 -4 -9 22 Q-6 36 0 30 Q6 36 9 22 Q16 -4 14 -30 Q0 -38 -14 -30Z"/></g>
+   </defs>
+   <rect width="800" height="300" fill="#07121b"/>
+   <g stroke="#1b3342" stroke-width="1"><path d="M0 150H800M0 75H800M0 225H800"/></g>
+   <g id="dim" fill="#16303f" opacity=".9"></g>
+   <g clip-path="url(#scanclip)"><g id="lit" fill="#cfeff2" stroke="#9fe8ee" stroke-width="1.5"></g></g>
+   <g id="gapgrp"><rect id="gap" x="0" y="0" width="0" height="0" fill="none"/>
+    <g id="implant" opacity="0"><rect x="-4" y="140" width="8" height="46" rx="3" fill="#e8735a"/><path d="M-9 148H9M-9 158H9M-9 168H9M-9 178H9" stroke="#07121b" stroke-width="2"/>
+     <path id="crown" d="M-14 100 Q-16 126 -9 140 Q0 146 9 140 Q16 126 14 100 Q0 92 -14 100Z" fill="#fff" stroke="#e8735a" stroke-width="2"/></g>
+   </g>
+   <rect id="beamrect" x="0" y="0" width="60" height="300" fill="url(#beam)" opacity="0"/>
+  </svg>
+ </div>
+ <div class="read"><span id="stage">Stage 1 · Scan</span><span id="pct">0% scanned</span></div>
+</div>
+</div>
+
+<section id="services">
+ <h2>What Minorca Smiles offers</h2>
+ <p style="font-family:system-ui,sans-serif;font-size:14px;color:#44525c;margin-bottom:16px">Listed on their own site. No prices are published, so none appear here.</p>
+ <div class="grid">
+  <div class="card"><h3>Cosmetic dentistry</h3><p>Smile design, teeth whitening, porcelain veneers, clear aligners, smile makeovers.</p></div>
+  <div class="card"><h3>Restorative dentistry</h3><p>Dental implants, dental bridges, dentures, root canal therapy, composite fillings.</p></div>
+  <div class="card"><h3>Periodontics</h3><p>Gum grafting, bone grafting, nonsurgical treatments.</p></div>
+  <div class="card"><h3>General and family</h3><p>Cleanings, exams, emergency care, children's dentistry, sleep apnea treatment, tooth extraction.</p></div>
+  <div class="card"><h3>Dental technology</h3><p>CEREC same-day crowns, dental X-rays, laser dentistry, Pearl AI.</p></div>
+ </div>
+</section>
+
+<section class="dark"><div class="in" id="visit">
+ <h2>Plan your visit</h2>
+ <p>2030 S. Douglas Rd., Suite 110, Coral Gables, FL 33134. Se habla español.</p>
+ <ul><li>Monday to Thursday: 8:00 a.m. to 5:00 p.m.</li><li>Friday: 8:00 a.m. to 2:00 p.m.</li><li>Saturday and Sunday: closed</li></ul>
+ <a class="cta" href="tel:+13054434713">Call 305-443-4713</a>
+ <p style="margin-top:12px">Their site also has an online appointment request form.</p>
+</div></section>
+
+<section id="faq">
+ <h2>Questions patients ask</h2>
+ <details><summary>Where is Minorca Smiles?</summary><p>2030 S. Douglas Rd., Suite 110, Coral Gables, FL 33134.</p></details>
+ <details><summary>What are the office hours?</summary><p>Monday to Thursday 8:00 a.m. to 5:00 p.m., Friday 8:00 a.m. to 2:00 p.m., closed weekends.</p></details>
+ <details><summary>Do they offer dental implants?</summary><p>Yes, dental implants are listed under restorative dentistry, alongside bridges, dentures and root canal therapy.</p></details>
+ <details><summary>How do I book?</summary><p>Call 305-443-4713 or use the online appointment request form on their site.</p></details>
+ <details><summary>What does it cost?</summary><p>Prices are not published. Call the office for details.</p></details>
+</section>
+
+<section>
+ <div class="ar" id="agent-ready"><b>Agent-Ready included.</b> This concept ships with JSON-LD (Dentist), a machine-readable services.json with hours, address and booking, llms.txt and AI-crawler access, so AI assistants can read the practice accurately and point patients to the phone line or request form.</div>
+</section>
+
+<footer>Concept by Kerblabs. Not affiliated with or endorsed by Minorca Smiles. Facts from the practice's public website; the X-ray visual is illustrative, not a patient image.</footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Dentist","name":"Minorca Smiles","founder":{"@type":"Person","name":"Raymond del Castillo"},"telephone":"+1-305-443-4713","url":"https://www.minorcasmiles.com","address":{"@type":"PostalAddress","streetAddress":"2030 S. Douglas Rd., Suite 110","addressLocality":"Coral Gables","addressRegion":"FL","postalCode":"33134","addressCountry":"US"},"knowsLanguage":["en","es"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"14:00"}],"medicalSpecialty":["Dentistry","Periodontics"]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Where is Minorca Smiles?","acceptedAnswer":{"@type":"Answer","text":"2030 S. Douglas Rd., Suite 110, Coral Gables, FL 33134."}},
+{"@type":"Question","name":"What are the office hours?","acceptedAnswer":{"@type":"Answer","text":"Monday to Thursday 8:00 a.m. to 5:00 p.m., Friday 8:00 a.m. to 2:00 p.m., closed weekends."}},
+{"@type":"Question","name":"Do they offer dental implants?","acceptedAnswer":{"@type":"Answer","text":"Yes, dental implants are listed under restorative dentistry, alongside bridges, dentures and root canal therapy."}},
+{"@type":"Question","name":"How do I book?","acceptedAnswer":{"@type":"Answer","text":"Call 305-443-4713 or use the online appointment request form on their site."}},
+{"@type":"Question","name":"What does it cost?","acceptedAnswer":{"@type":"Answer","text":"Prices are not published. Call the office for details."}}]}]}
+</script>
+<script>
+(function(){
+var NS="http://www.w3.org/2000/svg",reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+var dim=document.getElementById("dim"),lit=document.getElementById("lit");
+var N=14,GAP=6,pos=[];
+function mk(parent,x,y,rot,sc){var u=document.createElementNS(NS,"use");u.setAttribute("href","#tooth");u.setAttribute("transform","translate("+x+","+y+") rotate("+rot+") scale("+sc+")");parent.appendChild(u)}
+for(var i=0;i<N;i++){
+ var x=70+i*(660/(N-1));var t=(i/(N-1))*2-1;
+ var yU=95+t*t*38, yL=205-t*t*38;
+ pos.push(x);
+ if(i!==GAP){mk(dim,x,yU,0,1);mk(lit,x,yU,0,1)}
+ mk(dim,x,yL,180,.92);mk(lit,x,yL,180,.92);
+}
+var gx=pos[GAP],gt=(GAP/(N-1))*2-1,gy=95+gt*gt*38;
+var imp=document.getElementById("implant");
+var beam=document.getElementById("beamrect"),sr=document.getElementById("scanrect");
+var st=document.getElementById("stage"),pc=document.getElementById("pct"),tr=document.getElementById("track");
+var names=["Stage 1 · Scan","Stage 2 · Review","Stage 3 · Implant placed","Stage 4 · Crown seated"];
+function draw(t){
+ var s=Math.min(1,t/.6);
+ sr.setAttribute("width",800*s);
+ beam.setAttribute("x",800*s-30);beam.setAttribute("opacity",s>0&&s<1?1:0);
+ pc.textContent=Math.round(s*100)+"% scanned";
+ var k=t<.6?0:t<.75?1:t<.88?2:3;
+ st.textContent=names[k];
+ var a=Math.max(0,Math.min(1,(t-.6)/.28));
+ var ty=gy-100+(1-a)*-40;
+ imp.setAttribute("transform","translate("+gx+","+ty+")");
+ imp.setAttribute("opacity",a);
+ document.getElementById("crown").setAttribute("opacity",t>.88?1:0);
+}
+function onS(){
+ if(reduce){draw(1);return}
+ var r=tr.getBoundingClientRect(),m=tr.offsetHeight-innerHeight;
+ draw(Math.max(0,Math.min(1,-r.top/m)));
+}
+addEventListener("scroll",onS,{passive:true});addEventListener("resize",onS);onS();
+})();
+</script>
+</body>
+</html>

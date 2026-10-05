@@ -1,0 +1,23 @@
+# Doral Tinting (concept site by Kerblabs)
+
+> Window tint, vinyl wraps and paint protection film shop at 4300 NW 72 Ave, Miami, FL 33166. Phone 305-763-7759. Site: https://www.doraltinting.com
+
+## Services
+- Window tint: nano-carbon, ceramic, hyper ceramic
+- Vinyl car wraps, boat wraps, custom decals, graphic design
+- Paint protection film (PPF)
+- Car audio, starlights/LED lighting, rock lights
+- Wheel powder coating
+- Mobile service for residential and commercial work (per their site)
+
+## Listed promotions (confirm with shop)
+- Nano-carbon tint $120, ceramic tint $199, hyper ceramic tint $299, full front PPF $1,699
+
+## FAQ
+- How do I book? Call 305-763-7759 or use the Get a Quote form on doraltinting.com.
+
+## Machine-readable
+- [services.json](services.json)
+
+## Actions
+- Call 305-763-7759 or request a quote at https://www.doraltinting.com

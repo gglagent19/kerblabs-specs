@@ -1,0 +1,17 @@
+# Desert Vintage Restoration (Kerblabs concept)
+
+> Family-owned restoration, body and paint shop at 103 S River Dr, Tempe, AZ 85288. Founded 2015 by Larry Garrel with sons Samuel and Joseph. Phone 480-625-0329. Facts from desertvintagerestoration.com. This is an unaffiliated concept site.
+
+## Services
+- Vehicle restoration
+- Body and paint work
+- Paint correction
+- General repairs (engine, transmission, exhaust, suspension), brake service, oil change and maintenance, tires, battery and electrical
+
+## FAQ
+- Where? 103 S River Dr, Tempe, AZ 85288.
+- Prices? Not published. Call 480-625-0329 for a quote.
+
+## Machine-readable
+- [services.json](services.json)
+- [sitemap.xml](sitemap.xml)

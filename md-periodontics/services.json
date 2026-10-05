@@ -1,0 +1,15 @@
+{
+  "business": "MD Periodontics",
+  "type": "Dentist",
+  "location": {"city": "Beverly Hills", "region": "CA", "country": "US", "street": null, "phone": null},
+  "website": "https://mdperio.com",
+  "instagram": "https://instagram.com/mdperiodontics",
+  "doctors": ["Dr. Abdy Moshrefi", "Dr. Nazanin Daneshmand"],
+  "services": [
+    {"name": "Periodontics", "price": null},
+    {"name": "Dental implants", "price": null},
+    {"name": "All-on-4", "price": null, "source": "Instagram bio"}
+  ],
+  "booking": {"method": "practice website or Instagram", "url": "https://mdperio.com"},
+  "note": "Kerblabs concept. Prices, hours and address not published here."
+}

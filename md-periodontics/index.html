@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MD Periodontics | Beverly Hills periodontics and implants (concept)</title>
+<meta name="description" content="Concept site for MD Periodontics, Beverly Hills: periodontics and dental implants (All-on-4) with Dr. Abdy Moshrefi and Dr. Nazanin Daneshmand.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/md-periodontics/">
+<meta property="og:title" content="MD Periodontics | Beverly Hills (concept)">
+<meta property="og:description" content="A Kerblabs concept site for MD Periodontics with a scroll-flipped consultation calendar hero.">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/md-periodontics/">
+<meta property="og:type" content="website">
+<style>
+:root{--ink:#1b1a1f;--paper:#f6f2ec;--wine:#7a1f3d;--gold:#c9a45c;--soft:#ebe3d8;--nav:64px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.55}
+a{color:inherit}
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav);z-index:50;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 16px;background:rgba(27,26,31,.95);color:#fff;font-family:system-ui,sans-serif}
+nav b{font-size:14px;letter-spacing:.06em;line-height:1.1}
+nav a.btn{background:var(--gold);color:#1b1a1f;text-decoration:none;padding:9px 14px;border-radius:999px;font-size:13px;font-weight:700;white-space:nowrap}
+.track{height:420vh;position:relative;background:var(--ink)}
+.stick{position:sticky;top:0;height:100vh;overflow:hidden;color:#fff;display:grid;grid-template-columns:1fr;grid-template-rows:auto 1fr auto;gap:12px;padding:calc(var(--nav) + 24px) 18px 18px}
+.stick h1{font-size:clamp(28px,6.5vw,62px);line-height:1.05;font-weight:400}
+.stick h1 em{color:var(--gold);font-style:normal}
+.sub{font-family:system-ui,sans-serif;font-size:14px;color:#c9c4cc;max-width:580px;margin-top:8px}
+.desk{position:relative;min-height:0;display:flex;align-items:center;justify-content:center;perspective:1200px}
+.cal{position:relative;width:min(420px,88%);height:100%;max-height:300px}
+.sheet{position:absolute;inset:0;background:var(--paper);color:var(--ink);border-radius:12px;transform-origin:50% 0;backface-visibility:hidden;box-shadow:0 8px 24px rgba(0,0,0,.45);padding:16px 18px;display:flex;flex-direction:column;font-family:system-ui,sans-serif;overflow:hidden}
+.sheet:before{content:"";position:absolute;top:0;left:0;right:0;height:10px;background:var(--wine)}
+.sheet small{margin-top:8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--wine);font-weight:700}
+.sheet h3{font-family:Georgia,serif;font-weight:400;font-size:clamp(22px,5vw,32px);line-height:1.1;margin:6px 0}
+.sheet p{font-size:13px;color:#4a4650}
+.days{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:auto}
+.days span{border:1px solid #d7cdbd;border-radius:6px;text-align:center;font-size:11px;padding:8px 0;color:#6b6570}
+.days span.on{background:var(--wine);border-color:var(--wine);color:#fff;font-weight:700}
+.stamp{position:absolute;right:14px;bottom:44px;border:3px solid var(--wine);color:var(--wine);font-weight:800;letter-spacing:.14em;padding:4px 10px;border-radius:6px;transform:rotate(-9deg) scale(1.6);opacity:0;font-size:15px}
+.read{display:flex;justify-content:space-between;gap:12px;font-family:system-ui,sans-serif;font-size:12px;color:var(--gold);letter-spacing:.08em;text-transform:uppercase}
+.read span:last-child{text-align:right}
+.herocta{display:inline-block;margin-top:12px;background:var(--gold);color:#1b1a1f;text-decoration:none;padding:12px 20px;border-radius:999px;font-family:system-ui,sans-serif;font-weight:700;font-size:14px}
+section{padding:72px 20px;max-width:1000px;margin:0 auto}
+h2{font-size:clamp(26px,5vw,40px);font-weight:400;margin-bottom:18px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:#fff;border:1px solid #ddd2c2;border-radius:14px;padding:18px}
+.card h3{font-size:18px;font-weight:400;color:var(--wine);margin-bottom:6px}
+.card p{font-family:system-ui,sans-serif;font-size:14px;color:#4a4650}
+.dark{background:var(--ink);color:#fff;max-width:none}
+.dark .in{max-width:1000px;margin:0 auto}
+.dark p{font-family:system-ui,sans-serif;font-size:15px;color:#cbc6ce;margin-bottom:10px}
+.cta{display:inline-block;margin:10px 10px 0 0;background:var(--gold);color:#1b1a1f;text-decoration:none;padding:13px 22px;border-radius:999px;font-family:system-ui,sans-serif;font-weight:700}
+.cta.alt{background:transparent;color:#fff;border:1px solid var(--gold)}
+.slot{border:1px dashed var(--wine);border-radius:12px;padding:16px;font-family:system-ui,sans-serif;font-size:14px;color:#4a4650;margin-top:16px;background:#fbf8f3}
+details{background:#fff;border:1px solid #ddd2c2;border-radius:12px;padding:14px 16px;margin-bottom:10px}
+summary{cursor:pointer;font-size:17px}
+details p{font-family:system-ui,sans-serif;font-size:14px;color:#4a4650;margin-top:8px}
+.ar{border:1px dashed var(--wine);border-radius:14px;padding:20px;font-family:system-ui,sans-serif;font-size:14px;color:#3d3943;background:var(--soft)}
+footer{background:#0f0e12;color:#a49fa8;font-family:system-ui,sans-serif;font-size:13px;padding:28px 20px 90px;text-align:center}
+.bar{display:none}
+@media(max-width:600px){nav b{font-size:12px}.stick{padding-left:14px;padding-right:14px}.read{font-size:10.5px}.bar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--gold);text-align:center;padding:14px;font-family:system-ui,sans-serif;font-weight:700;font-size:15px;color:#1b1a1f;text-decoration:none}}
+@media(prefers-reduced-motion:reduce){.track{height:auto}.stick{position:relative;height:auto;min-height:100vh}.cal{height:auto;max-height:none;display:grid;gap:10px}.sheet{position:relative;transform:none!important}.stamp{opacity:1;transform:rotate(-9deg)}}
+</style>
+</head>
+<body>
+<nav><b>MD PERIODONTICS<br><span style="font-weight:400;opacity:.7">Beverly Hills</span></b><a class="btn" href="#book">Request a consult</a></nav>
+
+<div class="track" id="track">
+<div class="stick">
+ <div>
+  <h1>Your consult, <em>on the calendar</em> before you scroll past it.</h1>
+  <p class="sub">Periodontics and dental implants, including All-on-4, with Dr. Abdy Moshrefi and Dr. Nazanin Daneshmand in Beverly Hills.</p>
+  <a class="herocta" href="#book">Request a consult</a>
+ </div>
+ <div class="desk">
+  <div class="cal" id="cal" role="img" aria-label="Illustrative desk calendar whose pages flip through four consultation steps and end on a booked slot">
+   <div class="sheet" data-i="3">
+    <small>Step 4 · Illustrative</small><h3>Your slot is held</h3><p>Pick a day that suits you. The practice confirms the time with you.</p>
+    <div class="days"><span>Mon</span><span>Tue</span><span class="on">Wed</span><span>Thu</span><span>Fri</span></div>
+    <div class="stamp" id="stamp">BOOKED</div>
+   </div>
+   <div class="sheet" data-i="2">
+    <small>Step 3 · Illustrative</small><h3>A plan, in plain words</h3><p>Options for gums and implants explained before any decision.</p>
+    <div class="days"><span>Mon</span><span>Tue</span><span>Wed</span><span class="on">Thu</span><span>Fri</span></div>
+   </div>
+   <div class="sheet" data-i="1">
+    <small>Step 2 · Illustrative</small><h3>The doctors look closely</h3><p>Dr. Moshrefi and Dr. Daneshmand review your gums, bite and goals.</p>
+    <div class="days"><span>Mon</span><span class="on">Tue</span><span>Wed</span><span>Thu</span><span>Fri</span></div>
+   </div>
+   <div class="sheet" data-i="0">
+    <small>Step 1 · Illustrative</small><h3>Ask for a consult</h3><p>Tell the practice what you are looking for: periodontal care or implants.</p>
+    <div class="days"><span class="on">Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span></div>
+   </div>
+  </div>
+ </div>
+ <div class="read"><span id="rd1">Step 1 of 4</span><span id="rd2">Ask for a consult</span></div>
+</div>
+</div>
+
+<section id="services">
+ <h2>What the practice focuses on</h2>
+ <div class="grid">
+  <div class="card"><h3>Periodontics</h3><p>Care for the gums and the structures that support your teeth.</p></div>
+  <div class="card"><h3>Dental implants</h3><p>Implant dentistry with two doctors in one practice.</p></div>
+  <div class="card"><h3>All-on-4</h3><p>Listed in the practice's Instagram bio as a service.</p></div>
+ </div>
+</section>
+
+<section class="dark" id="about"><div class="in">
+ <h2>Two doctors, one Beverly Hills practice</h2>
+ <p>Dr. Abdy Moshrefi and Dr. Nazanin Daneshmand lead MD Periodontics. This concept puts the one action a new patient needs, asking for a consult, in front from the first screen to the last.</p>
+ <p>The calendar above is an illustration of how a visit could be framed. It shows no real appointments, results or patients.</p>
+</div></section>
+
+<section id="book">
+ <h2>Request a consult</h2>
+ <p style="font-family:system-ui,sans-serif;font-size:15px;color:#4a4650">Start with the practice directly.</p>
+ <a class="cta" href="https://mdperio.com" rel="noopener">Visit mdperio.com</a>
+ <a class="cta alt" style="color:#1b1a1f" href="https://instagram.com/mdperiodontics" rel="noopener">Message @mdperiodontics</a>
+ <div class="slot">Booking widget slot (concept): a live scheduling form or the practice's own booking tool drops in here. No fake widget is shown.</div>
+</section>
+
+<section id="faq">
+ <h2>Questions</h2>
+ <details><summary>Who are the doctors?</summary><p>Dr. Abdy Moshrefi and Dr. Nazanin Daneshmand, at MD Periodontics in Beverly Hills.</p></details>
+ <details><summary>Does the practice offer All-on-4?</summary><p>Its Instagram bio lists All-on-4. Ask the practice whether it suits your case.</p></details>
+ <details><summary>How do I book?</summary><p>Use the practice's own site or Instagram. This concept page does not take bookings.</p></details>
+</section>
+
+<section id="agent-ready">
+ <div class="ar"><b>Agent-Ready included.</b> This page ships with llms.txt, schema markup and a machine-readable services file so AI assistants can read what the practice offers and point people to book.</div>
+</section>
+
+<footer>Concept by Kerblabs for MD Periodontics, Beverly Hills. Not affiliated with or endorsed by the practice.</footer>
+<a class="bar" href="#book">Request a consult</a>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Dentist","name":"MD Periodontics","url":"https://mdperio.com","address":{"@type":"PostalAddress","addressLocality":"Beverly Hills","addressRegion":"CA","addressCountry":"US"},"sameAs":["https://instagram.com/mdperiodontics"],"employee":[{"@type":"Person","name":"Dr. Abdy Moshrefi"},{"@type":"Person","name":"Dr. Nazanin Daneshmand"}],"medicalSpecialty":"Periodontics"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Who are the doctors?","acceptedAnswer":{"@type":"Answer","text":"Dr. Abdy Moshrefi and Dr. Nazanin Daneshmand, at MD Periodontics in Beverly Hills."}},{"@type":"Question","name":"Does the practice offer All-on-4?","acceptedAnswer":{"@type":"Answer","text":"Its Instagram bio lists All-on-4. Ask the practice whether it suits your case."}},{"@type":"Question","name":"How do I book?","acceptedAnswer":{"@type":"Answer","text":"Use the practice's own site or Instagram. This concept page does not take bookings."}}]}]}</script>
+<script>
+(function(){
+ var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ var track=document.getElementById('track');
+ var sheets=[].slice.call(document.querySelectorAll('.sheet'));
+ var byI={};sheets.forEach(function(s,k){byI[s.getAttribute('data-i')]=s;s.style.zIndex=10-(3-k)});
+ // sheets in DOM are i=3..0; z-index so i=0 is on top
+ sheets.forEach(function(s){s.style.zIndex=10-(+s.getAttribute('data-i'))});
+ var titles=['Ask for a consult','The doctors look closely','A plan, in plain words','Your slot is held'];
+ var stamp=document.getElementById('stamp'),r1=document.getElementById('rd1'),r2=document.getElementById('rd2');
+ function clamp(x){return Math.max(0,Math.min(1,x))}
+ function draw(){
+  if(reduce)return;
+  var r=track.getBoundingClientRect();
+  var t=clamp(-r.top/(track.offsetHeight-innerHeight));
+  var p=t*3.2; // 3 flips, then hold
+  for(var i=0;i<3;i++){
+   var f=clamp(p-i);
+   byI[i].style.transform='rotateX('+(-f*110)+'deg)';
+   byI[i].style.opacity=f>=1?0:1;
+  }
+  var step=Math.min(3,Math.floor(p+0.0001));
+  stamp.style.opacity=clamp((p-3)/0.2);
+  stamp.style.transform='rotate(-9deg) scale('+(1+0.6*(1-clamp((p-3)/0.2)))+')';
+  r1.textContent='Step '+(step+1)+' of 4';r2.textContent=titles[step];
+ }
+ addEventListener('scroll',draw,{passive:true});addEventListener('resize',draw);draw();
+})();
+</script>
+</body>
+</html>
