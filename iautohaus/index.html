@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>iAUTOHAUS | Concept by Kerblabs</title>
+<meta name="description" content="Concept site for iAUTOHAUS, Tempe: exceptional cars, outstanding value, a memorable experience.">
+<style>
+:root{--paper:#f3eee4;--ink:#111a21;--teal:#0e5a58;--brass:#b98a3c;--mute:#5d6a70;--line:#d9d1c1}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:14px 18px;background:linear-gradient(var(--paper) 55%,transparent)}
+nav b{font-family:Helvetica,Arial,sans-serif;letter-spacing:.14em;font-size:.82rem}
+nav a{background:var(--ink);color:var(--paper);text-decoration:none;font:700 .75rem Helvetica,Arial,sans-serif;padding:9px 14px;border-radius:99px;white-space:nowrap}
+.hero{height:400vh;position:relative}
+.stage{position:sticky;top:0;height:100vh;height:100svh;display:grid;grid-template-rows:auto 1fr auto;gap:10px;padding:66px 18px 16px;overflow:hidden}
+.eyebrow{font:600 .7rem Helvetica,Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+h1{font-size:clamp(2.4rem,13vw,5.4rem);line-height:.92;letter-spacing:-.03em;font-weight:700;overflow-wrap:anywhere}
+h1 em{color:var(--brass);font-style:italic}
+.sub{margin-top:10px;color:var(--mute);font-size:.95rem;max-width:36ch;line-height:1.4}
+.panel{position:relative;min-height:0;border-radius:18px;overflow:hidden;background:#d8d0be;border:1px solid var(--line)}
+.panel .dim{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#a79f8d;font:600 .7rem Helvetica,Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase}
+.lens{position:absolute;inset:0;background:var(--ink);clip-path:circle(0px at 50% 50%);display:flex;align-items:center;justify-content:center;padding:14px}
+.wall{display:grid;grid-template-columns:repeat(3,1fr);gap:8px 10px;width:100%;max-width:760px}
+.wall span{color:#f3eee4;font:600 .72rem Helvetica,Arial,sans-serif;letter-spacing:.04em;text-align:center;padding:7px 4px;border:1px solid #2c3a43;border-radius:8px;opacity:.25;transition:opacity .25s,border-color .25s,color .25s}
+.wall span.on{opacity:1;border-color:var(--brass);color:#f0cf93}
+.edge{position:absolute;left:50%;top:50%;border:2px solid var(--brass);border-radius:50%;transform:translate(-50%,-50%);width:0;height:0;pointer-events:none}
+.read{display:flex;justify-content:space-between;gap:12px;font:600 .75rem Helvetica,Arial,sans-serif;color:var(--mute);letter-spacing:.06em}
+@media(min-width:560px){.wall{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:900px){
+ nav{padding:20px 40px}
+ .stage{grid-template-columns:minmax(0,.9fr) minmax(0,1.2fr);grid-template-rows:1fr auto;padding:92px 40px 26px;gap:12px 36px}
+ .copy{align-self:center}
+ .wall{grid-template-columns:repeat(3,1fr)}
+ .wall span{font-size:.85rem;padding:10px 6px}
+ .read{grid-column:1/3}
+}
+section{padding:80px 18px;max-width:1100px;margin:auto}
+h2{font-size:clamp(1.8rem,6vw,3rem);letter-spacing:-.02em;line-height:1;margin-bottom:26px}
+.bays{display:grid;gap:12px}
+.bay{border-top:2px solid var(--ink);padding-top:12px}
+.bay b{display:block;font-size:1.15rem;margin-bottom:4px}
+.bay p{font:.92rem/1.5 Helvetica,Arial,sans-serif;color:var(--mute)}
+@media(min-width:700px){.bays{grid-template-columns:repeat(3,1fr)}}
+.areas{display:flex;flex-wrap:wrap;gap:8px}
+.areas span{border:1px solid var(--ink);border-radius:99px;padding:7px 14px;font:.82rem Helvetica,Arial,sans-serif}
+.info{display:grid;gap:18px;font:1rem/1.6 Helvetica,Arial,sans-serif}
+.info b{font-family:Georgia,serif;display:block;font-size:1.15rem}
+@media(min-width:700px){.info{grid-template-columns:repeat(3,1fr)}}
+.contact{text-align:center}
+.contact a{display:inline-block;margin-top:8px;background:var(--teal);color:#fff;font:700 1rem Helvetica,Arial,sans-serif;text-decoration:none;padding:16px 26px;border-radius:99px}
+footer{background:var(--ink);color:#b9c0c3;padding:26px 18px 40px;font:.78rem/1.6 Helvetica,Arial,sans-serif;text-align:center}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoDealer","name":"iAUTOHAUS","description":"One-stop-shop for luxury car drivers in Tempe, Arizona: used luxury sales, service and repair by ASE-certified technicians, and an on-site vehicle spa.","url":"https://iautohaus.com","telephone":"+1-480-317-0777","sameAs":["https://www.instagram.com/iautohaus"],"address":{"@type":"PostalAddress","streetAddress":"1876 E. Broadway Rd","addressLocality":"Tempe","addressRegion":"AZ","postalCode":"85282","addressCountry":"US"},"contactPoint":[{"@type":"ContactPoint","contactType":"sales","telephone":"+1-480-317-0777"},{"@type":"ContactPoint","contactType":"customer service","telephone":"+1-480-317-0783"}],"areaServed":["Phoenix","Scottsdale","Paradise Valley","Chandler","Gilbert","Mesa","Tempe","Queen Creek"],"brand":[{"@type":"Brand","name":"Alfa Romeo"},{"@type":"Brand","name":"Audi"},{"@type":"Brand","name":"Bentley"},{"@type":"Brand","name":"BMW"},{"@type":"Brand","name":"Ferrari"},{"@type":"Brand","name":"Jaguar"},{"@type":"Brand","name":"Land Rover"},{"@type":"Brand","name":"Maserati"},{"@type":"Brand","name":"Mercedes-Benz"},{"@type":"Brand","name":"Mini"},{"@type":"Brand","name":"Porsche"},{"@type":"Brand","name":"Range Rover"},{"@type":"Brand","name":"Rivian"},{"@type":"Brand","name":"Rolls Royce"},{"@type":"Brand","name":"Sprinter"},{"@type":"Brand","name":"Tesla"},{"@type":"Brand","name":"Volkswagen"},{"@type":"Brand","name":"Volvo"}]}
+</script>
+</head>
+<body>
+<nav><b>iAUTOHAUS</b><a href="tel:4803170777">480-317-0777</a></nav>
+
+<div class="hero" id="hero">
+ <div class="stage">
+  <div class="copy">
+   <div class="eyebrow">Tempe, Arizona</div>
+   <h1>Exceptional cars. <em>Outstanding value.</em></h1>
+   <p class="sub">A memorable experience. Scroll to open the lens.</p>
+  </div>
+  <div class="panel" id="panel">
+   <div class="dim">Open the lens</div>
+   <div class="lens" id="lens"><div class="wall" id="wall"></div></div>
+   <div class="edge" id="edge"></div>
+  </div>
+  <div class="read"><span id="cnt">00 / 18 marques</span><span>Used luxury sales &middot; Service &middot; Spa</span></div>
+ </div>
+</div>
+
+<section>
+ <h2>One-stop-shop for luxury car drivers</h2>
+ <div class="bays">
+  <div class="bay"><b>Sales</b><p>Used luxury cars, with trade-in valuations and auto financing.</p></div>
+  <div class="bay"><b>Service and repair</b><p>Luxury vehicle service by ASE-certified technicians.</p></div>
+  <div class="bay"><b>iAUTOHAUS Vehicle Spa</b><p>Detailing, on site.</p></div>
+  <div class="bay"><b>Shipping</b><p>Nationwide and international shipping.</p></div>
+  <div class="bay"><b>Financing</b><p>Auto financing arranged for you.</p></div>
+  <div class="bay"><b>Competitive pricing</b><p>Outstanding value is the promise.</p></div>
+ </div>
+</section>
+
+<section>
+ <h2>Serving the Valley</h2>
+ <div class="areas"><span>Phoenix</span><span>Scottsdale</span><span>Paradise Valley</span><span>Chandler</span><span>Gilbert</span><span>Mesa</span><span>Tempe</span><span>Queen Creek</span></div>
+</section>
+
+<section>
+ <h2>Visit</h2>
+ <div class="info">
+  <div><b>Address</b>1876 E. Broadway Rd<br>Tempe, AZ 85282</div>
+  <div><b>Sales</b>480-317-0777<br>Service: 480-317-0783</div>
+  <div><b>Instagram</b>@iautohaus</div>
+ </div>
+</section>
+
+<section class="contact"><a href="tel:4803170777">Call 480-317-0777</a></section>
+
+<footer>
+ Concept design by Kerblabs for iAUTOHAUS. This is an unofficial spec concept, not their live website, and iAUTOHAUS has not endorsed it.<br>
+ Business details, services and marques come from iautohaus.com.
+</footer>
+
+<script>
+(function(){
+ var brands=["Alfa Romeo","Audi","Bentley","BMW","Ferrari","Jaguar","Land Rover","Maserati","Mercedes-Benz","Mini","Porsche","Range Rover","Rivian","Rolls Royce","Sprinter","Tesla","Volkswagen","Volvo"];
+ var wall=document.getElementById("wall"),lens=document.getElementById("lens"),edge=document.getElementById("edge"),panel=document.getElementById("panel"),hero=document.getElementById("hero"),cnt=document.getElementById("cnt");
+ brands.forEach(function(b){var s=document.createElement("span");s.textContent=b;wall.appendChild(s)});
+ var chips=wall.children,reduce=matchMedia("(prefers-reduced-motion:reduce)").matches,last=-1;
+ function upd(){
+  var r=hero.getBoundingClientRect(),max=hero.offsetHeight-innerHeight;
+  var p=reduce?1:Math.min(1,Math.max(0,-r.top/max));
+  var w=panel.clientWidth,h=panel.clientHeight,R=Math.hypot(w,h)/2;
+  var o=Math.min(1,p/0.6),rad=R*o;
+  lens.style.clipPath="circle("+rad+"px at 50% 50%)";
+  edge.style.width=edge.style.height=(rad*2)+"px";
+  edge.style.opacity=o>=1?0:1;
+  var n=Math.round(Math.max(0,(p-0.3)/0.65)*18);n=Math.min(18,n);
+  if(n!==last){last=n;for(var i=0;i<chips.length;i++)chips[i].classList.toggle("on",i<n);cnt.textContent=(n<10?"0":"")+n+" / 18 marques";}
+ }
+ addEventListener("scroll",upd,{passive:true});addEventListener("resize",upd);upd();
+})();
+</script>
+</body>
+</html>

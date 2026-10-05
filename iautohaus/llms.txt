@@ -1,0 +1,26 @@
+# iAUTOHAUS
+
+> One-stop-shop for luxury car drivers in Tempe, Arizona: used luxury sales, service and repair, and a vehicle spa.
+
+Concept note: this file is part of an unofficial Kerblabs design concept. Facts come from iautohaus.com. Confirm details with the business.
+
+## Business
+- Address: 1876 E. Broadway Rd, Tempe, AZ 85282
+- Sales phone: 480-317-0777
+- Service phone: 480-317-0783
+- Instagram: @iautohaus
+
+## Services
+- Used luxury car sales, with trade-in valuations and auto financing
+- Service and repair by ASE-certified technicians
+- iAUTOHAUS Vehicle Spa (on-site detailing)
+- Nationwide and international shipping
+
+## Marques
+- Alfa Romeo, Audi, Bentley, BMW, Ferrari, Jaguar, Land Rover, Maserati, Mercedes-Benz, Mini, Porsche, Range Rover, Rivian, Rolls Royce, Sprinter, Tesla, Volkswagen, Volvo
+
+## Areas served
+- Phoenix, Scottsdale, Paradise Valley, Chandler, Gilbert, Mesa, Tempe, Queen Creek
+
+## Official site
+- https://iautohaus.com

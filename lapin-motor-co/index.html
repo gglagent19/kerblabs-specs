@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lapin Motor Co. | Concept by Kerblabs</title>
+<meta name="description" content="Concept site for Lapin Motor Co.: exotic, luxury and more. Buy. Sell. Consign.">
+<style>
+:root{--bg:#0d1013;--ink:#eef2ee;--mute:#8d9890;--lime:#c8ff3d;--card:#171c20;--line:#2a3238}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"Helvetica Neue",Arial,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:14px 18px;background:linear-gradient(var(--bg),transparent)}
+nav b{letter-spacing:.14em;font-size:.8rem;text-transform:uppercase}
+nav a.cta{background:var(--lime);color:#0d1013;text-decoration:none;font-weight:700;font-size:.75rem;padding:9px 14px;border-radius:99px;white-space:nowrap}
+.hero{height:420vh;position:relative}
+.stage{position:sticky;top:0;height:100vh;height:100svh;display:grid;grid-template-rows:auto 1fr auto;gap:8px;padding:68px 18px 18px;overflow:hidden}
+.copy{align-self:start}
+.eyebrow{color:var(--lime);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px}
+h1{font-size:clamp(2.3rem,11.5vw,4.6rem);line-height:.95;letter-spacing:-.03em;font-weight:800;overflow-wrap:anywhere}
+h1 span{color:var(--lime)}
+.sub{color:var(--mute);margin-top:12px;font-size:.95rem;max-width:34ch}
+.ringwrap{position:relative;display:flex;align-items:center;justify-content:center;perspective:1100px;min-height:0}
+.ring{--w:150px;--h:210px;position:relative;width:var(--w);height:var(--h);transform-style:preserve-3d;will-change:transform}
+.card{position:absolute;inset:0;border:1px solid var(--line);border-radius:14px;background:linear-gradient(160deg,#1d2429,#0f1316);display:flex;flex-direction:column;justify-content:space-between;padding:14px;backface-visibility:hidden;transform:rotateY(calc(var(--i)*45deg)) translateZ(calc(var(--w)*1.4));transition:border-color .3s,box-shadow .3s}
+.card small{color:var(--mute);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase}
+.card strong{font-size:1.15rem;line-height:1.05;letter-spacing:-.01em}
+.card i{font-style:normal;color:var(--lime);font-size:.7rem;letter-spacing:.12em}
+.card.on{border-color:var(--lime);box-shadow:0 0 38px rgba(200,255,61,.22)}
+.read{display:flex;justify-content:space-between;align-items:end;gap:12px;font-size:.78rem;color:var(--mute)}
+.verbs{display:flex;gap:14px;font-weight:800;font-size:1.05rem;color:var(--ink)}
+.verbs span{opacity:.3;transition:opacity .3s,color .3s}
+.verbs span.on{opacity:1;color:var(--lime)}
+.read em{font-style:normal;text-align:right}
+@media(min-width:900px){
+ nav{padding:20px 40px}
+ .stage{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);grid-template-rows:1fr auto;padding:90px 40px 28px;gap:10px 30px}
+ .copy{align-self:center}
+ .ring{--w:230px;--h:320px}
+ .read{grid-column:1/3}
+ .card strong{font-size:1.5rem}
+}
+section{padding:80px 18px;max-width:1100px;margin:auto}
+h2{font-size:clamp(1.8rem,6vw,3rem);letter-spacing:-.02em;line-height:1;margin-bottom:28px}
+.grid{display:grid;gap:14px;grid-template-columns:1fr}
+.box{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--card)}
+.box h3{color:var(--lime);margin-bottom:8px;font-size:1.05rem}
+.box p{color:var(--mute);line-height:1.5;font-size:.95rem}
+.locs{display:grid;gap:14px}
+.loc{border-top:1px solid var(--line);padding-top:14px;line-height:1.5}
+.loc b{display:block}
+@media(min-width:700px){.grid{grid-template-columns:repeat(2,1fr)}.locs{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}
+.contact{text-align:center}
+.contact a.big{display:inline-block;margin-top:10px;background:var(--lime);color:#0d1013;font-weight:800;text-decoration:none;padding:16px 26px;border-radius:99px}
+footer{border-top:1px solid var(--line);padding:26px 18px 40px;color:var(--mute);font-size:.78rem;line-height:1.6;text-align:center}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoDealer","name":"Lapin Motor Co.","description":"Exotic and luxury vehicles: buy, sell and consign, with financing, trade-ins and transportation.","url":"https://lapinmotorco.com","telephone":"+1-480-590-4504","address":[{"@type":"PostalAddress","streetAddress":"14982 N 83rd Pl","addressLocality":"Scottsdale","addressRegion":"AZ","postalCode":"85260","addressCountry":"US"},{"@type":"PostalAddress","streetAddress":"8909 SW Barbur Blvd","addressLocality":"Portland","addressRegion":"OR","postalCode":"97219","addressCountry":"US"}],"knowsAbout":["Used exotic and luxury vehicles","Vehicle consignment","Vehicle assessment and trade-ins","Auto financing"]}
+</script>
+</head>
+<body>
+<nav><b>Lapin Motor Co.</b><a class="cta" href="tel:4805904504">480-590-4504</a></nav>
+
+<div class="hero" id="hero">
+ <div class="stage">
+  <div class="copy">
+   <div class="eyebrow">Scottsdale, AZ &middot; Portland, OR</div>
+   <h1>Exotic, luxury <span>and more.</span></h1>
+   <p class="sub">Buy. Sell. Consign. Scroll to turn the ring.</p>
+  </div>
+  <div class="ringwrap"><div class="ring" id="ring"></div></div>
+  <div class="read">
+   <div class="verbs" id="verbs"><span>Buy.</span><span>Sell.</span><span>Consign.</span></div>
+   <em id="lbl">Scroll</em>
+  </div>
+ </div>
+</div>
+
+<section>
+ <h2>What Lapin Motor Co. does</h2>
+ <div class="grid">
+  <div class="box"><h3>Buy and sell</h3><p>Used exotic and luxury vehicles, bought and sold.</p></div>
+  <div class="box"><h3>Consignment</h3><p>A consignment experience tailored for high-end automotive vehicles.</p></div>
+  <div class="box"><h3>Trade-ins and assessment</h3><p>Vehicle assessment and valuation, plus trade-ins.</p></div>
+  <div class="box"><h3>Transportation</h3><p>Transportation handled as part of the service.</p></div>
+  <div class="box"><h3>Financing</h3><p>Financing with a payment calculator.</p></div>
+  <div class="box"><h3>Rooted in expertise</h3><p>Guided by a passion for progress.</p></div>
+ </div>
+</section>
+
+<section>
+ <h2>Two locations</h2>
+ <div class="locs">
+  <div class="loc"><b>Scottsdale, AZ</b>14982 N 83rd Pl, Scottsdale, AZ 85260</div>
+  <div class="loc"><b>Portland, OR</b>8909 SW Barbur Blvd, Portland, OR 97219</div>
+ </div>
+</section>
+
+<section class="contact">
+ <h2>Talk to Lapin Motor Co.</h2>
+ <a class="big" href="tel:4805904504">480-590-4504</a>
+</section>
+
+<footer>
+ Concept design by Kerblabs for Lapin Motor Co. This is an unofficial spec concept, not their live website, and Lapin Motor Co. has not endorsed it.<br>
+ Business details and marques shown come from lapinmotorco.com. Model names on the ring are from their sold-inventory listings.
+</footer>
+
+<script>
+(function(){
+ var cars=[["Ford","Ford GT"],["Lamborghini","Revuelto"],["Lamborghini","Aventador"],["McLaren","765LT"],["McLaren","750S"],["Porsche","911 GT3 RS"],["Porsche","911 GT2 RS"],["Ferrari","SF90 Stradale"]];
+ var ring=document.getElementById("ring"),hero=document.getElementById("hero"),lbl=document.getElementById("lbl"),verbs=document.querySelectorAll("#verbs span");
+ cars.forEach(function(c,i){var d=document.createElement("div");d.className="card";d.style.setProperty("--i",i);d.innerHTML="<small>"+c[0]+"</small><strong>"+c[1]+"</strong><i>0"+(i+1)+" / 08</i>";ring.appendChild(d)});
+ var cards=ring.children,last=-1,reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+ function upd(){
+  var r=hero.getBoundingClientRect(),max=hero.offsetHeight-innerHeight;
+  var p=Math.min(1,Math.max(0,-r.top/max));
+  var a=reduce?0:p*315;
+  ring.style.transform="rotateY("+(-a)+"deg)";
+  var idx=Math.round(a/45)%8;
+  if(idx!==last){last=idx;for(var i=0;i<cards.length;i++)cards[i].classList.toggle("on",i===idx);lbl.textContent=cars[idx][0]+" "+cars[idx][1];}
+  var v=Math.min(2,Math.floor(p*3));
+  for(var j=0;j<3;j++)verbs[j].classList.toggle("on",j===v);
+ }
+ addEventListener("scroll",upd,{passive:true});addEventListener("resize",upd);upd();
+})();
+</script>
+</body>
+</html>

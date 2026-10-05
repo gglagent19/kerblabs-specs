@@ -1,0 +1,26 @@
+# Gul Luxury Automotive
+
+> Pre-owned luxury and exotic vehicle dealer in Scottsdale, Arizona.
+
+Concept note: this file is part of an unofficial Kerblabs design concept. Facts come from gulluxury.com. Confirm details and live inventory with the business.
+
+## Business
+- Name: Gul Luxury Automotive
+- Address: 15770 N Greenway Hayden Loop Ste 102, Scottsdale, AZ 85260
+- Phone: 480-319-9650
+- Instagram: @gulscottsdale
+
+## Marques
+- Ferrari, Porsche, Lamborghini, Aston Martin, Mercedes-Benz, Rolls-Royce
+
+## Services
+- Pre-owned luxury and exotic vehicle sales (convertibles, coupes, sedans, SUVs)
+- Financing: loan calculator and online credit application
+- Sell us your exotic: trade-in and sell-your-car requests
+- Appointment scheduling
+
+## Inventory
+- Live stock is listed on gulluxury.com. Prices change; do not quote from this file.
+
+## Official site
+- https://gulluxury.com

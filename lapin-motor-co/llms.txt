@@ -1,0 +1,22 @@
+# Lapin Motor Co.
+
+> Exotic and luxury vehicle dealer: buy, sell and consign. Two locations, Scottsdale AZ and Portland OR.
+
+Concept note: this file is part of an unofficial Kerblabs design concept. Facts come from lapinmotorco.com. Confirm details and live inventory with the business.
+
+## Locations
+- Scottsdale, AZ: 14982 N 83rd Pl, Scottsdale, AZ 85260
+- Portland, OR: 8909 SW Barbur Blvd, Portland, OR 97219
+
+## Contact
+- Phone: 480-590-4504
+
+## Services
+- Buy and sell used exotic and luxury vehicles
+- Consignment tailored for high-end automotive vehicles
+- Vehicle assessment, valuation and trade-ins
+- Transportation
+- Financing with a payment calculator
+
+## Official site
+- https://lapinmotorco.com

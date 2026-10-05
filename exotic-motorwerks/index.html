@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exotic Motorwerks | Independent Porsche Specialist, Scottsdale (Concept)</title>
+<meta name="description" content="Concept site for Exotic Motorwerks, independent Porsche specialist in Scottsdale, AZ.">
+<style>
+:root{--paper:#f3efe6;--ink:#15130f;--mute:#4a453c;--sig:#b83a08;--line:#cfc7b6;--card:#fffdf8}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:"Helvetica Neue",Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:20;background:rgba(243,239,230,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:12px}
+.logo{font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.85rem}
+.logo b{color:var(--sig)}
+.call{background:var(--ink);color:var(--paper);text-decoration:none;font-weight:700;font-size:.85rem;padding:9px 14px;border-radius:999px;white-space:nowrap}
+.hero{padding:44px 0 28px}
+.kick{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sig);font-weight:800}
+h1{font-size:clamp(2.3rem,11vw,6.2rem);line-height:.96;letter-spacing:-.03em;margin:14px 0 18px;font-weight:900;overflow-wrap:break-word}
+h1 em{font-style:normal;color:var(--sig)}
+.lead{font-size:1.08rem;color:var(--mute);max-width:560px}
+.scroll-hint{margin-top:22px;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+/* shifter track */
+.track{height:520vh;position:relative}
+.stage{position:sticky;top:56px;height:calc(100vh - 56px);min-height:520px;display:grid;grid-template-rows:auto 1fr;gap:10px;padding:10px 20px 16px;max-width:1180px;margin:0 auto}
+.gear-read{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--ink);padding-bottom:8px}
+.gear-read .g{font-size:clamp(3rem,14vw,5.5rem);font-weight:900;line-height:1;color:var(--sig);min-width:1.1em}
+.gear-read .t{font-size:clamp(1.15rem,5vw,2rem);font-weight:800;line-height:1.1}
+.stage-body{display:grid;grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) auto;gap:12px;min-height:0}
+.shifter{min-height:0;display:flex;justify-content:center}
+.shifter svg{height:100%;max-height:100%;width:auto;max-width:100%}
+.list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.list li{display:flex;gap:8px;align-items:center;border:1px solid var(--line);background:var(--card);border-radius:10px;padding:7px 9px;font-size:.78rem;font-weight:700;line-height:1.2;color:var(--mute);transition:.2s}
+.list li b{font-size:1rem;color:var(--mute)}
+.list li.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.list li.on b{color:#ff8a4c}
+@media(min-width:900px){
+ .hero{padding:80px 0 40px}
+ .stage{grid-template-rows:auto 1fr;padding:16px 20px 24px}
+ .stage-body{grid-template-columns:1fr 1fr;grid-template-rows:1fr;gap:40px;align-items:center}
+ .shifter{order:2;height:100%}
+ .list{order:1;grid-template-columns:1fr;gap:8px}
+ .list li{font-size:1rem;padding:12px 16px}
+}
+section.blk{padding:72px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(1.8rem,7vw,3.4rem);line-height:1;letter-spacing:-.02em;font-weight:900;margin-bottom:22px;overflow-wrap:break-word}
+.cols{display:grid;gap:18px;grid-template-columns:1fr}
+@media(min-width:760px){.cols{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h3{font-size:1.15rem;margin-bottom:6px}
+.card p{color:var(--mute)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chips span{border:1px solid var(--ink);border-radius:999px;padding:6px 12px;font-weight:700;font-size:.9rem}
+.big{font-size:clamp(1.3rem,5vw,2rem);font-weight:800;line-height:1.2}
+.quote{background:var(--ink);color:#fff;border-radius:18px;padding:32px 24px}
+.quote .big em{font-style:normal;color:#ff8a4c}
+.facts{display:grid;gap:10px;margin-top:16px;font-size:1.05rem}
+footer{background:var(--ink);color:#e9e3d6;padding:40px 0 48px;font-size:.88rem}
+footer .disc{border:1px solid #6b6455;border-radius:10px;padding:14px 16px;margin-top:18px;color:#f3efe6}
+footer a{color:#fff}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoRepair","name":"Exotic Motorwerks","description":"Independent Porsche specialist in Scottsdale, Arizona. Every repair carries a 2-year warranty on parts and labor.","url":"https://exoticmotorwerks.com","telephone":"+1-602-820-2685","foundingDate":"2002","founder":{"@type":"Person","name":"Dan Warner"},"address":{"@type":"PostalAddress","streetAddress":"15035 N 74th St","addressLocality":"Scottsdale","addressRegion":"AZ","postalCode":"85260","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"17:00"}],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Pre-purchase inspections"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Engine diagnostics"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Brake service"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Scheduled maintenance"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Clutch and transmission service"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Cooling system repair"}}]}}
+</script>
+</head>
+<body>
+<nav><div class="wrap"><div class="logo">Exotic <b>Motorwerks</b></div><a class="call" href="tel:+16028202685">Call 602-820-2685</a></div></nav>
+
+<header class="hero"><div class="wrap">
+ <div class="kick">Scottsdale, Arizona &middot; Since 2002</div>
+ <h1>The Valley&rsquo;s independent <em>Porsche</em> specialist.</h1>
+ <p class="lead">Factory-trained technicians, a 2-year warranty on parts and labor, and the kind of work the dealer hands off. Scroll to run through the gears.</p>
+ <div class="scroll-hint">Scroll &darr; shift through six gears</div>
+</div></header>
+
+<div class="track" id="track">
+ <div class="stage">
+  <div class="gear-read"><div class="g" id="gnum">N</div><div class="t" id="gname">Neutral. Start scrolling.</div></div>
+  <div class="stage-body">
+   <div class="shifter">
+    <svg viewBox="0 0 300 360" role="img" aria-label="Six-speed gear shifter gate. The knob moves through gears 1 to 6 as you scroll.">
+     <rect x="14" y="14" width="272" height="332" rx="28" fill="#fffdf8" stroke="#15130f" stroke-width="3"/>
+     <path d="M60 70V290M150 70V290M240 70V290M60 180H240" stroke="#15130f" stroke-width="16" stroke-linecap="round" fill="none" opacity=".12"/>
+     <path d="M60 70V290M150 70V290M240 70V290M60 180H240" stroke="#15130f" stroke-width="2" stroke-linecap="round" fill="none"/>
+     <g font-family="Helvetica,Arial,sans-serif" font-weight="800" font-size="20" text-anchor="middle" fill="#15130f">
+      <text x="60" y="48">1</text><text x="60" y="326">2</text>
+      <text x="150" y="48">3</text><text x="150" y="326">4</text>
+      <text x="240" y="48">5</text><text x="240" y="326">6</text>
+     </g>
+     <g id="dots"></g>
+     <g id="knob">
+      <circle r="24" fill="#b83a08" stroke="#15130f" stroke-width="3"/>
+      <circle r="9" fill="#fffdf8" opacity=".9"/>
+     </g>
+    </svg>
+   </div>
+   <ul class="list" id="list">
+    <li><b>1</b>Pre-purchase inspections</li>
+    <li><b>2</b>Engine diagnostics</li>
+    <li><b>3</b>Brake service</li>
+    <li><b>4</b>Scheduled maintenance</li>
+    <li><b>5</b>Clutch &amp; transmission</li>
+    <li><b>6</b>Cooling system repair</li>
+   </ul>
+  </div>
+ </div>
+</div>
+
+<section class="blk"><div class="wrap">
+ <h2>Porsche, start to finish.</h2>
+ <div class="cols">
+  <div class="card"><h3>Modern</h3><p>911, 718 Cayman and Boxster, Cayenne, Macan, Panamera and Taycan.</p></div>
+  <div class="card"><h3>Classic</h3><p>924S, 944, 968 and 928, with full-service maintenance and restoration.</p></div>
+  <div class="card"><h3>Warrantied</h3><p>Every repair carries a 2-year warranty on parts and labor.</p></div>
+ </div>
+</div></section>
+
+<section class="blk"><div class="wrap">
+ <div class="quote"><div class="big">&ldquo;The dealer sends us <em>the hard ones.</em>&rdquo;</div>
+ <p style="margin-top:12px;color:#e9e3d6">Their own words on exoticmotorwerks.com: dealer-referred work. Your Porsche belongs with people who do only Porsche.</p></div>
+</div></section>
+
+<section class="blk"><div class="wrap">
+ <h2>Book the bay.</h2>
+ <div class="facts">
+  <div><strong>Exotic Motorwerks</strong><br>15035 N 74th St, Scottsdale, AZ 85260</div>
+  <div><a href="tel:+16028202685"><strong>602-820-2685</strong></a><br>Monday to Friday, 8 AM to 5 PM</div>
+  <div>Dan Warner, founder</div>
+ </div>
+</div></section>
+
+<footer><div class="wrap">
+ <div>Exotic Motorwerks &middot; 15035 N 74th St, Scottsdale, AZ 85260 &middot; 602-820-2685</div>
+ <div class="disc"><strong>Concept only.</strong> This page is an unsolicited design concept created by Kerblabs for Exotic Motorwerks. It is not their official website. Business details come from exoticmotorwerks.com. Nothing here is an offer or endorsement by Exotic Motorwerks.</div>
+</div></footer>
+
+<script>
+(function(){
+ var P=[[150,180],[60,180],[60,70],[60,180],[60,290],[60,180],[150,180],[150,70],[150,180],[150,290],[150,180],[240,180],[240,70],[240,180],[240,290]];
+ var G=[{x:60,y:70,n:'1',t:'Pre-purchase inspections'},{x:60,y:290,n:'2',t:'Engine diagnostics'},{x:150,y:70,n:'3',t:'Brake service'},{x:150,y:290,n:'4',t:'Scheduled maintenance'},{x:240,y:70,n:'5',t:'Clutch and transmission service'},{x:240,y:290,n:'6',t:'Cooling system repair'}];
+ var ns='http://www.w3.org/2000/svg',dots=document.getElementById('dots');
+ G.forEach(function(g){var c=document.createElementNS(ns,'circle');c.setAttribute('cx',g.x);c.setAttribute('cy',g.y);c.setAttribute('r',7);c.setAttribute('fill','#15130f');dots.appendChild(c);});
+ var seg=[],tot=0,i;
+ for(i=1;i<P.length;i++){var d=Math.hypot(P[i][0]-P[i-1][0],P[i][1]-P[i-1][1]);seg.push(d);tot+=d;}
+ var knob=document.getElementById('knob'),gn=document.getElementById('gnum'),gt=document.getElementById('gname'),lis=document.querySelectorAll('#list li'),track=document.getElementById('track');
+ function pos(p){var s=p*tot,k=0;while(k<seg.length-1&&s>seg[k]){s-=seg[k];k++;}var f=seg[k]?Math.min(1,s/seg[k]):1;return[P[k][0]+(P[k+1][0]-P[k][0])*f,P[k][1]+(P[k+1][1]-P[k][1])*f];}
+ function upd(){
+  var r=track.getBoundingClientRect(),h=r.height-window.innerHeight;
+  var p=Math.max(0,Math.min(1,(-r.top)/h));
+  p=Math.max(0,Math.min(1,(p-.03)/.94));
+  var q=pos(p);knob.setAttribute('transform','translate('+q[0]+' '+q[1]+')');
+  var a=-1;G.forEach(function(g,j){if(Math.hypot(q[0]-g.x,q[1]-g.y)<14)a=j;});
+  lis.forEach(function(l,j){l.className=j===a?'on':'';});
+  if(a>=0){gn.textContent=G[a].n;gt.textContent=G[a].t;}else{gn.textContent='N';gt.textContent=p<=0?'Neutral. Start scrolling.':'Shifting...';}
+ }
+ addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+})();
+</script>
+</body>
+</html>

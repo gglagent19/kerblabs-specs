@@ -1,0 +1,30 @@
+# Exotic Motorwerks
+
+> Independent Porsche specialist in Scottsdale, Arizona. Since 2002. Every repair carries a 2-year warranty on parts and labor.
+
+Concept note: this file is part of an unofficial Kerblabs design concept. Facts come from exoticmotorwerks.com. Confirm details with the business.
+
+## Business
+- Name: Exotic Motorwerks
+- Founder: Dan Warner
+- Address: 15035 N 74th St, Scottsdale, AZ 85260
+- Phone: 602-820-2685
+- Hours: Monday to Friday, 8 AM to 5 PM
+
+## Services
+- Pre-purchase inspections
+- Engine diagnostics
+- Brake service
+- Scheduled maintenance
+- Clutch and transmission service
+- Cooling system repair
+
+## Vehicles serviced
+- Modern: 911, 718 Cayman and Boxster, Cayenne, Macan, Panamera, Taycan
+- Classic: 924S, 944, 968, 928 (full-service maintenance and restoration)
+
+## Booking
+- Call 602-820-2685 during business hours.
+
+## Official site
+- https://exoticmotorwerks.com
