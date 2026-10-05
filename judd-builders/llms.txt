@@ -1,0 +1,24 @@
+# Judd Builders, LLC (concept by Kerblabs)
+
+> Father-son custom home builder in Arden, NC serving Asheville, Hendersonville and Western North Carolina. Facts from juddbuilders.net. This is a free concept, not their official site.
+
+- Address: 2349 Hendersonville Rd, Arden, NC 28704
+- Phone: 828-274-4448
+- Email: johnsr@juddbuilders.net
+- Founded: 2007
+- Principals: John Judd Sr., John Judd Jr.
+
+## Services
+- Custom home construction
+- Luxury home remodels and additions
+- Commercial construction
+
+## FAQ
+- Where? Asheville, Hendersonville, Western NC.
+- Prices? Not published in the source pages; their site mentions transparent budgets.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Call 828-274-4448 or email johnsr@juddbuilders.net to start a conversation.
