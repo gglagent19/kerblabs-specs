@@ -1,0 +1,22 @@
+# Beverly Hills Car Club
+
+> Los Angeles dealer of European and American classic cars.
+
+Concept note: part of an unofficial Kerblabs design concept. Facts come from beverlyhillscarclub.com. Confirm details, address and live inventory with the business.
+
+## Services
+- Buy classic cars in any condition, with nationwide pickup
+- Sell classic cars: Ferrari, Porsche, Mercedes-Benz, Maserati, Jaguar, Chevrolet, Plymouth and more
+- Luxury car rentals
+- Vehicle shipping
+- Right-hand drive cars
+- Cryptocurrency payment accepted through BitPay
+
+## Actions
+Plain-language actions an assistant can offer the buyer. At launch each one is wired to the business's real booking or quote channel.
+- Sell us your car: send the vehicle details for an offer
+- Ask about a specific classic: send the marque and model
+- Request a rental or shipping quote
+
+## Official site
+- https://www.beverlyhillscarclub.com
