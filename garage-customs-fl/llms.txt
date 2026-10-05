@@ -1,0 +1,29 @@
+# Garage Customs FL (concept by Kerblabs)
+
+> Owner-installed paint protection film, vinyl wrap, ceramic coating, window tint and wheel powder coating in Doral, FL, serving Miami and South Florida.
+
+## Facts (from garagecustomsfl.com)
+- Address: 3004 NW 79th Ave, Doral, FL 33122
+- Phone: (786) 795-0237
+- Email: garagecustomsfl@gmail.com
+- Instagram: @garagecustomsfl
+- Hours: Mon-Sat 10 am-7 pm; Sundays and after hours by appointment only. No walk-ins.
+- XPEL and STEK certified installer; owner-installed work; 10-year PPF manufacturer warranty
+- 5.0 stars on Google, 218 reviews (as stated on their site)
+
+## Services
+- Paint Protection Film: XPEL (including Ultimate Plus), STEK DYNOshield, Stealth
+- Vinyl Car Wrapping: 3M, Avery Dennison, Inozetek
+- Ceramic Coating: Ceramic Pro
+- Window Tinting: XPEL
+- Powder Coating for Wheels
+
+## Actions
+- Book: call (786) 795-0237, email garagecustomsfl@gmail.com, or message @garagecustomsfl on Instagram
+
+## FAQ
+- Can I walk in? No, appointments only; see hours above.
+- Prices: the studio's site says PPF full front packages start at $1,499; other prices not published, ask the studio.
+
+## Machine-readable
+- services.json
