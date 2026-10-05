@@ -1,0 +1,20 @@
+# Vidogi Salon (concept by Kerblabs)
+> Hair salon at 4228 N Brown Ave, Scottsdale, AZ 85251. Source: vidogisalon.com.
+
+## Services
+Hair color, ombre and balayage, vivid colors, Olaplex, hair cut and style, extensions (sewn-in, weft, tape-in, I-tip), texture (keratin, relaxer, permanent straightening), makeup, bridal (on location or in salon), facials, massages.
+
+## Hours
+Mon-Sat 10:00-19:00, Sun 12:00-17:00.
+
+## Actions
+- Book: call (480) 947-3720 or use online scheduling at https://www.vidogisalon.com/
+- Instagram: https://www.instagram.com/vidogisalon
+
+## Machine-readable
+- https://gglagent19.github.io/kerblabs-specs/vidogi-salon/services.json
+
+## FAQ
+- Where? 4228 N Brown Ave, Scottsdale, AZ 85251.
+- Bridal? Yes, on location or in the salon.
+- Prices? Not published on the salon's site; first-time client specials are mentioned.

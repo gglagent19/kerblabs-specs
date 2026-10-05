@@ -1,0 +1,11 @@
+# Exotic Motorsports of Oklahoma (Kerblabs concept)
+> Concept site, not live for the business. Facts from exoticmotorsportsok.com.
+
+- Address: 800 Hundred Oaks Drive, Edmond, OK 73013
+- Phone: (405) 633-1142
+- Services: pre-owned sales, trade-in valuations, consignment, financing (multiple lenders), nationwide shipping
+- Machine-readable: services.json
+
+## FAQ
+- Where? 800 Hundred Oaks Drive, Edmond, OK 73013.
+- What services? Sales, trade-ins, consignment, financing, nationwide shipping.

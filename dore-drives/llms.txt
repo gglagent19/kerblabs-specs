@@ -1,0 +1,11 @@
+# Dore Drives (Kerblabs concept)
+> Concept site, not live for the business. Facts from doredrives.com and public listings.
+
+- Location: Jacksonville, FL (street address and phone not verified)
+- Founder and CEO: Johnson Dore
+- Type: boutique and consignment exotic dealer
+- Machine-readable: services.json
+
+## FAQ
+- Who runs it? Johnson Dore, founder and CEO.
+- Where? Jacksonville, Florida.

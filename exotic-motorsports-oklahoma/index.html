@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exotic Motorsports of Oklahoma | Edmond, OK (concept)</title>
+<meta name="description" content="Concept site for Exotic Motorsports of Oklahoma in Edmond: a balance scale tips level as trade-in, consignment, financing and nationwide shipping are weighed.">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/exotic-motorsports-oklahoma/">
+<meta property="og:title" content="Exotic Motorsports of Oklahoma | concept site by Kerblabs">
+<meta property="og:description" content="Concept for an Edmond dealer: a scroll-tipped balance scale weighs trade-in, consignment, financing and shipping.">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/exotic-motorsports-oklahoma/">
+<meta name="twitter:card" content="summary">
+<meta name="robots" content="noindex,follow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#f4efe6;color:#14213d;font-family:"Helvetica Neue",Arial,sans-serif;line-height:1.55}
+a{color:inherit}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:700;letter-spacing:-.01em}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 16px;background:rgba(244,239,230,.94);backdrop-filter:blur(8px);border-bottom:1px solid #d9d0bf}
+nav b{font-family:Georgia,serif;font-size:17px;line-height:1.1}
+nav .r{display:flex;gap:14px;align-items:center;font-size:13px}
+.btn{display:inline-block;text-decoration:none;background:#b4472b;color:#fff;padding:11px 20px;border-radius:6px;font-size:14px;font-weight:700;white-space:nowrap}
+.btn.alt{background:transparent;color:#14213d;border:2px solid #14213d}
+.track{height:560vh;position:relative}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#f4efe6}
+.stage svg{position:absolute;right:0;bottom:0;width:58%;height:100%}
+.hud{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);grid-template-rows:1fr auto;padding:96px 24px 22px;max-width:1280px;margin:0 auto;pointer-events:none}
+.copy{grid-column:1;pointer-events:auto;align-self:start}
+.hud h1{font-size:clamp(34px,5vw,72px);line-height:1}
+.hud p{margin-top:12px;max-width:430px;font-size:clamp(14px,1.5vw,18px)}
+.book{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px}
+.leg{grid-column:1;grid-row:2;align-self:end;background:#14213d;color:#f4efe6;padding:16px 20px;border-radius:10px;max-width:390px}
+.leg .k{font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.75}
+.leg .v{font-family:Georgia,serif;font-size:clamp(22px,2.8vw,32px);line-height:1.1;margin:4px 0}
+.leg .d{font-size:13px;opacity:.9}
+.bar{height:4px;border-radius:2px;background:rgba(244,239,230,.25);margin-top:12px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:#e08a6d}
+.note{position:absolute;right:24px;bottom:10px;font-size:10.5px;background:#14213d;color:#f4efe6;padding:3px 10px;border-radius:6px}
+section.blk{padding:80px 22px;max-width:1100px;margin:0 auto}
+.eye{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#b4472b;margin-bottom:12px;font-weight:700}
+h2{font-size:clamp(28px,4.2vw,48px);line-height:1.05;margin-bottom:16px;max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:24px}
+.card{background:#fff;border:1px solid #d9d0bf;border-radius:10px;padding:20px}
+.card h3{font-size:19px;margin-bottom:6px}
+.card p{font-size:14px;opacity:.82}
+.listed{margin-top:22px;border-top:3px solid #14213d}
+.listed div{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #d9d0bf;font-size:16px}
+.listed b{font-family:Georgia,serif;color:#b4472b}
+.pitch{background:#14213d;color:#f4efe6;border-radius:14px;padding:32px 26px;margin:0 16px}
+.pitch ul{margin:12px 0 0 18px}
+.faq details{border-bottom:1px solid #d9d0bf;padding:14px 0}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{margin-top:8px;opacity:.85;max-width:680px}
+.ar{margin:0 auto;max-width:1100px;padding:20px 22px 70px}
+.ar div{border:2px dashed #14213d;border-radius:10px;padding:20px;font-size:14px}
+footer{padding:44px 22px 96px;text-align:center;font-size:12px;opacity:.7;border-top:1px solid #d9d0bf}
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none;gap:8px}
+.sticky .btn{flex:1;text-align:center;padding:14px}
+.sticky .btn.alt{background:#f4efe6}
+@media(max-width:760px){
+.track{height:520vh}
+.stage svg{width:100%;height:48%;bottom:128px}
+.hud{grid-template-columns:1fr;padding:112px 16px 14px}
+.copy{background:rgba(244,239,230,.92);border-radius:10px;padding:12px 14px}
+.hud p,.book{display:none}
+.hud h1{font-size:28px}
+.leg{max-width:none;padding:12px 16px;margin-bottom:62px}
+.note{display:none}
+nav b{font-size:14px}
+nav .r a.t{display:none}
+nav .btn{padding:9px 14px;font-size:12px}
+.sticky{display:flex}
+}
+@media(prefers-reduced-motion:reduce){.track{height:auto}.stage{position:relative;height:auto;min-height:100svh}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"AutoDealer","name":"Exotic Motorsports of Oklahoma","url":"https://www.exoticmotorsportsok.com/","telephone":"+1 405 633 1142","address":{"@type":"PostalAddress","streetAddress":"800 Hundred Oaks Drive","addressLocality":"Edmond","addressRegion":"OK","postalCode":"73013","addressCountry":"US"},"description":"Pre-owned vehicle dealer in Edmond, Oklahoma, with trade-in valuations, consignment, financing through multiple lenders and nationwide shipping."},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where is Exotic Motorsports of Oklahoma?","acceptedAnswer":{"@type":"Answer","text":"800 Hundred Oaks Drive, Edmond, OK 73013. Phone (405) 633-1142."}},{"@type":"Question","name":"What services does the dealership list?","acceptedAnswer":{"@type":"Answer","text":"Per its site: pre-owned sales, trade-in valuations, vehicle consignment, financing through multiple lenders and nationwide shipping."}},{"@type":"Question","name":"What brands are in stock?","acceptedAnswer":{"@type":"Answer","text":"The site lists a mix including Ferrari, Audi, Chevrolet, BMW, Chrysler, Ford, Lexus, RAM and GMC. Stock changes, so check the current inventory."}}]}]}
+</script>
+</head>
+<body>
+<nav><b>Exotic Motorsports<br>of Oklahoma</b><div class="r"><a class="t" href="#services">Services</a><a class="t" href="#faq">FAQ</a><a class="btn" href="tel:+14056331142">Call (405) 633-1142</a></div></nav>
+
+<div class="track" id="track">
+ <div class="stage">
+  <svg viewBox="-90 -10 780 620" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+   <rect x="292" y="150" width="16" height="400" fill="#14213d"/>
+   <rect x="190" y="540" width="220" height="22" rx="6" fill="#14213d"/>
+   <g id="beam">
+    <rect x="70" y="140" width="460" height="14" rx="7" fill="#14213d"/>
+    <circle cx="300" cy="147" r="14" fill="#b4472b"/>
+   </g>
+   <g id="pl"><line x1="0" y1="0" x2="-70" y2="150" stroke="#14213d" stroke-width="3"/><line x1="0" y1="0" x2="70" y2="150" stroke="#14213d" stroke-width="3"/><path d="M-90 150H90Q80 185 40 185H-40Q-80 185 -90 150Z" fill="#14213d"/><rect x="-60" y="102" width="120" height="48" rx="6" fill="#b4472b"/><text x="0" y="132" text-anchor="middle" font-family="Georgia,serif" font-size="20" font-weight="700" fill="#fff">YOUR CAR</text></g>
+   <g id="pr"><line x1="0" y1="0" x2="-70" y2="150" stroke="#14213d" stroke-width="3"/><line x1="0" y1="0" x2="70" y2="150" stroke="#14213d" stroke-width="3"/><path d="M-90 150H90Q80 185 40 185H-40Q-80 185 -90 150Z" fill="#14213d"/><g id="blocks"></g></g>
+  </svg>
+  <div class="hud">
+   <div class="copy">
+    <h1>Whatever you drive in with, weighed fairly.</h1>
+    <p>A concept for Exotic Motorsports of Oklahoma in Edmond: trade-ins, consignment, financing and nationwide shipping, laid out on one scale.</p>
+    <div class="book"><a class="btn" href="tel:+14056331142">Call (405) 633-1142</a><a class="btn alt" href="https://www.exoticmotorsportsok.com/" rel="noopener">See current inventory</a></div>
+   </div>
+   <div class="leg"><div class="k" id="lk">Step 0 of 4</div><div class="v" id="lv">Put your car on the scale</div><div class="d" id="ld">Scroll to weigh each service the dealership lists.</div><div class="bar"><i id="bar"></i></div></div>
+  </div>
+  <div class="note">Illustrative scale. Services as listed at exoticmotorsportsok.com.</div>
+ </div>
+</div>
+
+<section class="blk" id="services">
+ <div class="eye">Listed on exoticmotorsportsok.com</div>
+ <h2>Four ways in, one place in Edmond.</h2>
+ <div class="grid">
+  <div class="card"><h3>Trade-in valuation</h3><p>Bring in what you have; the site lists trade-in valuations.</p></div>
+  <div class="card"><h3>Consignment</h3><p>The site offers vehicle consignment for owners who would rather not sell alone.</p></div>
+  <div class="card"><h3>Financing</h3><p>Financing through multiple lenders, per the site.</p></div>
+  <div class="card"><h3>Nationwide shipping</h3><p>Shipping is listed, so a buyer does not have to be in Oklahoma.</p></div>
+ </div>
+ <div class="listed">
+  <div><span>Where</span><b>800 Hundred Oaks Drive, Edmond, OK 73013</b></div>
+  <div><span>Phone</span><b>(405) 633-1142</b></div>
+  <div><span>Stock mix</span><b>Ferrari to domestic trucks</b></div>
+ </div>
+ <p style="margin-top:18px;font-size:13px;opacity:.7">Inventory and prices change daily; the live site is the source. Hours are not published on the site, so none are shown.</p>
+</section>
+
+<div class="pitch">
+ <div class="eye">Concept by Kerblabs</div>
+ <h2 style="color:#f4efe6">Make the first ten seconds feel like the cars.</h2>
+ <ul>
+  <li>A scroll hero built from your own listed services, not a template banner.</li>
+  <li>Phone and inventory one tap away on mobile.</li>
+  <li>Your stock stays on your current platform; we sit in front of it.</li>
+  <li>Agent-ready: AI assistants can read your services, address and how to reach you.</li>
+ </ul>
+</div>
+
+<section class="blk faq" id="faq">
+ <div class="eye">FAQ</div>
+ <h2>Quick answers</h2>
+ <details><summary>Where is Exotic Motorsports of Oklahoma?</summary><p>800 Hundred Oaks Drive, Edmond, OK 73013. Phone (405) 633-1142.</p></details>
+ <details><summary>What services does the dealership list?</summary><p>Per its site: pre-owned sales, trade-in valuations, vehicle consignment, financing through multiple lenders and nationwide shipping.</p></details>
+ <details><summary>What brands are in stock?</summary><p>The site lists a mix including Ferrari, Audi, Chevrolet, BMW, Chrysler, Ford, Lexus, RAM and GMC. Stock changes, so check the current inventory.</p></details>
+</section>
+
+<div class="ar" id="agent-ready"><div><b>Agent-Ready included.</b> JSON-LD, FAQ and machine-readable services so AI assistants can answer "exotic car dealer near Edmond" with your details. Illustrative concept, not yet live for this business.</div></div>
+
+<footer>Concept site by Kerblabs for Exotic Motorsports of Oklahoma. Not affiliated or approved. Business details from exoticmotorsportsok.com.</footer>
+<div class="sticky"><a class="btn" href="tel:+14056331142">Call</a><a class="btn alt" href="https://www.exoticmotorsportsok.com/" rel="noopener">Inventory</a></div>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var track=$('track'),bar=$('bar'),beam=$('beam'),pl=$('pl'),pr=$('pr'),bl=$('blocks'),NS='http://www.w3.org/2000/svg';
+var steps=[['Trade-in valuation','The site lists trade-in valuations.'],['Consignment','The site lists vehicle consignment.'],['Financing','Financing through multiple lenders, per the site.'],['Nationwide shipping','Shipping is listed, so the buyer can be anywhere.']];
+var blocks=[];
+steps.forEach(function(s,i){
+ var g=document.createElementNS(NS,'g'),r=document.createElementNS(NS,'rect'),t=document.createElementNS(NS,'text');
+ var w=150,h=34,y=150-h*(i+1)-2*i;
+ r.setAttribute('x',-w/2);r.setAttribute('y',y);r.setAttribute('width',w);r.setAttribute('height',h);r.setAttribute('rx',5);r.setAttribute('fill',i%2?'#14213d':'#e08a6d');r.setAttribute('stroke','#14213d');r.setAttribute('stroke-width',2);
+ t.setAttribute('x',0);t.setAttribute('y',y+h/2+4);t.setAttribute('text-anchor','middle');t.setAttribute('font-family','Georgia,serif');t.setAttribute('font-size','11');if(s[0].length>13){t.setAttribute('textLength',w-16);t.setAttribute('lengthAdjust','spacingAndGlyphs')};t.setAttribute('font-weight','700');t.setAttribute('fill',i%2?'#f4efe6':'#14213d');
+ t.textContent=s[0].toUpperCase();
+ g.appendChild(r);g.appendChild(t);g.setAttribute('opacity','0');bl.appendChild(g);blocks.push(g);
+});
+function rg(t,a,b){return Math.min(1,Math.max(0,(t-a)/(b-a)))}
+var cx=300,cy=147,L=230,last=-2;
+function draw(){
+ var r=track.getBoundingClientRect(),max=Math.max(1,track.offsetHeight-innerHeight);
+ var t=reduce?1:Math.min(1,Math.max(0,-r.top/max));
+ var ang=-9*(1-rg(t,0,.9));
+ var rad=ang*Math.PI/180,dx=L*Math.cos(rad),dy=L*Math.sin(rad);
+ beam.setAttribute('transform','rotate('+ang+' '+cx+' '+cy+')');
+ pl.setAttribute('transform','translate('+(cx-dx)+' '+(cy-dy)+')');
+ pr.setAttribute('transform','translate('+(cx+dx)+' '+(cy+dy)+')');
+ var n=Math.min(4,Math.floor(t*4.0001));
+ blocks.forEach(function(b,i){b.setAttribute('opacity',i<n||(t>=1)?'1':(i===n&&t>0?String(.35+.65*rg(t*4,i,i+1)):'0'))});
+ bar.style.width=(t*100)+'%';
+ $('lk').textContent='Step '+n+' of 4';
+ var key=t<=0?-1:Math.min(3,n);
+ if(key!==last){last=key;
+  if(key<0){$('lv').textContent='Put your car on the scale';$('ld').textContent='Scroll to weigh each service the dealership lists.'}
+  else{$('lv').textContent=steps[key][0];$('ld').textContent=steps[key][1]}
+ }
+ if(t>=1){$('lv').textContent='Level';$('ld').textContent='Call (405) 633-1142 or open the live inventory.'}
+}
+addEventListener('scroll',draw,{passive:true});addEventListener('resize',draw);draw();
+})();
+</script>
+</body>
+</html>

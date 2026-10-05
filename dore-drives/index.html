@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dore Drives | Jacksonville, FL (concept)</title>
+<meta name="description" content="Concept site for Dore Drives, a founder-run boutique and consignment exotic dealer in Jacksonville. Leather stitching draws itself as you scroll.">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/dore-drives/">
+<meta property="og:title" content="Dore Drives | concept site by Kerblabs">
+<meta property="og:description" content="Concept for a founder-run Jacksonville boutique dealer, with hand-stitching that sews itself across a leather panel.">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/dore-drives/">
+<meta name="twitter:card" content="summary">
+<meta name="robots" content="noindex,follow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#15110f;color:#f1e8da;font-family:"Helvetica Neue",Arial,sans-serif;line-height:1.55}
+a{color:inherit}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:.005em}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 16px;background:rgba(21,17,15,.93);backdrop-filter:blur(8px);border-bottom:1px solid #3a2f27}
+nav b{font-family:Georgia,serif;font-size:19px;font-weight:400;letter-spacing:.1em;text-transform:uppercase}
+nav .r{display:flex;gap:14px;align-items:center;font-size:13px}
+.btn{display:inline-block;text-decoration:none;background:#c27a3d;color:#15110f;padding:11px 20px;border-radius:4px;font-size:14px;font-weight:700;white-space:nowrap}
+.btn.alt{background:transparent;color:#f1e8da;border:1px solid #c27a3d}
+.track{height:560vh;position:relative}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#15110f}
+.stage svg{position:absolute;right:0;bottom:0;width:60%;height:100%}
+.hud{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);grid-template-rows:1fr auto;padding:96px 24px 22px;max-width:1280px;margin:0 auto;pointer-events:none}
+.copy{grid-column:1;pointer-events:auto;align-self:start}
+.hud h1{font-size:clamp(34px,5vw,70px);line-height:1.02}
+.hud p{margin-top:12px;max-width:430px;font-size:clamp(14px,1.5vw,18px);opacity:.88}
+.book{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px}
+.leg{grid-column:1;grid-row:2;align-self:end;background:#241c17;border:1px solid #3a2f27;padding:16px 20px;border-radius:8px;max-width:390px}
+.leg .k{font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.7}
+.leg .v{font-family:Georgia,serif;font-size:clamp(22px,2.8vw,32px);line-height:1.1;margin:4px 0;color:#e2a566}
+.leg .d{font-size:13px;opacity:.88}
+.bar{height:3px;background:rgba(241,232,218,.2);margin-top:12px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:#c27a3d}
+.note{position:absolute;right:24px;bottom:10px;font-size:10.5px;background:#241c17;color:#f1e8da;padding:3px 10px;border-radius:6px;opacity:.85}
+section.blk{padding:80px 22px;max-width:1100px;margin:0 auto}
+.eye{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#c27a3d;margin-bottom:12px;font-weight:700}
+h2{font-size:clamp(28px,4.2vw,48px);line-height:1.06;margin-bottom:16px;max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:24px}
+.card{background:#241c17;border:1px solid #3a2f27;border-radius:8px;padding:20px}
+.card h3{font-size:20px;margin-bottom:6px;color:#e2a566}
+.card p{font-size:14px;opacity:.85}
+.pitch{background:#c27a3d;color:#15110f;border-radius:12px;padding:32px 26px;margin:0 16px}
+.pitch .eye{color:#15110f}
+.pitch ul{margin:12px 0 0 18px}
+.faq details{border-bottom:1px solid #3a2f27;padding:14px 0}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{margin-top:8px;opacity:.85;max-width:680px}
+.ar{margin:0 auto;max-width:1100px;padding:20px 22px 70px}
+.ar div{border:1px dashed #c27a3d;border-radius:8px;padding:20px;font-size:14px}
+footer{padding:44px 22px 96px;text-align:center;font-size:12px;opacity:.65;border-top:1px solid #3a2f27}
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none;gap:8px}
+.sticky .btn{flex:1;text-align:center;padding:14px}
+.sticky .btn.alt{background:#15110f}
+@media(max-width:760px){
+.track{height:520vh}
+.stage svg{width:100%;height:48%;bottom:128px}
+.hud{grid-template-columns:1fr;padding:104px 16px 14px}
+.copy{background:rgba(21,17,15,.9);border-radius:8px;padding:12px 14px}
+.hud p,.book{display:none}
+.hud h1{font-size:30px}
+.leg{max-width:none;padding:12px 16px;margin-bottom:62px}
+.note{display:none}
+nav b{font-size:16px}
+nav .r a.t{display:none}
+nav .btn{padding:9px 14px;font-size:12px}
+.sticky{display:flex}
+}
+@media(prefers-reduced-motion:reduce){.track{height:auto}.stage{position:relative;height:auto;min-height:100svh}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"AutoDealer","name":"Dore Drives","url":"https://www.doredrives.com/","address":{"@type":"PostalAddress","addressLocality":"Jacksonville","addressRegion":"FL","addressCountry":"US"},"founder":{"@type":"Person","name":"Johnson Dore"},"description":"Founder-run boutique and consignment exotic dealer in Jacksonville, Florida."},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Who runs Dore Drives?","acceptedAnswer":{"@type":"Answer","text":"Johnson Dore is listed as founder and CEO."}},{"@type":"Question","name":"Where is Dore Drives?","acceptedAnswer":{"@type":"Answer","text":"Jacksonville, Florida. Street address and phone are not shown on this concept; see doredrives.com."}}]}]}
+</script>
+</head>
+<body>
+<nav><b>Dore Drives</b><div class="r"><a class="t" href="#about">About</a><a class="t" href="#faq">FAQ</a><a class="btn" href="https://www.doredrives.com/" rel="noopener">Visit doredrives.com</a></div></nav>
+
+<div class="track" id="track">
+ <div class="stage">
+  <svg viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+   <defs>
+    <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a2a20"/><stop offset="1" stop-color="#1f1610"/></linearGradient>
+    <clipPath id="panelclip"><rect x="60" y="80" width="480" height="440" rx="22"/></clipPath>
+   </defs>
+   <rect x="60" y="80" width="480" height="440" rx="22" fill="url(#lg)" stroke="#4a3a2e" stroke-width="3"/>
+   <g clip-path="url(#panelclip)" id="quilt"></g>
+   <g id="stitch"></g>
+   <circle id="needle" r="7" fill="#e2a566" opacity="0"/>
+   <text id="pn" x="300" y="500" text-anchor="middle" font-family="Georgia,serif" font-size="26" letter-spacing="8" fill="#e2a566" opacity="0">DORE DRIVES</text>
+  </svg>
+  <div class="hud">
+   <div class="copy">
+    <h1>Small shop. Founder at the wheel.</h1>
+    <p>A concept for Dore Drives, a boutique and consignment exotic dealer in Jacksonville run by Johnson Dore. Each line of stitching is one promise.</p>
+    <div class="book"><a class="btn" href="https://www.doredrives.com/" rel="noopener">Visit doredrives.com</a></div>
+   </div>
+   <div class="leg"><div class="k" id="lk">Stitch 0 of 4</div><div class="v" id="lv">Threaded and ready</div><div class="d" id="ld">Scroll to sew the panel, one line at a time.</div><div class="bar"><i id="bar"></i></div></div>
+  </div>
+  <div class="note">Illustrative leather panel, not a photo of their cars.</div>
+ </div>
+</div>
+
+<section class="blk" id="about">
+ <div class="eye">What we know from the site</div>
+ <h2>Boutique means one person answers.</h2>
+ <div class="grid">
+  <div class="card"><h3>Founder-led</h3><p>Johnson Dore is listed as founder and CEO.</p></div>
+  <div class="card"><h3>Boutique and consignment</h3><p>A small Jacksonville operation that works with consigned and boutique-sourced cars.</p></div>
+  <div class="card"><h3>Dealer background</h3><p>Johnson's background includes Bentley Jacksonville, per the site.</p></div>
+ </div>
+ <p style="margin-top:18px;font-size:13px;opacity:.65">Street address, phone and hours are not shown here because we could not verify them; the live site is the source.</p>
+</section>
+
+<div class="pitch">
+ <div class="eye">Concept by Kerblabs</div>
+ <h2>A first impression that matches the cars.</h2>
+ <ul>
+  <li>A cinematic scroll hero in place of a stock dealer-platform banner.</li>
+  <li>Your story and your name up front, because that is what a boutique sells.</li>
+  <li>Your inventory stays on its current platform; we sit in front of it.</li>
+  <li>Agent-ready: AI assistants can read who you are, where you are and how to reach you.</li>
+ </ul>
+</div>
+
+<section class="blk faq" id="faq">
+ <div class="eye">FAQ</div>
+ <h2>Quick answers</h2>
+ <details><summary>Who runs Dore Drives?</summary><p>Johnson Dore is listed as founder and CEO.</p></details>
+ <details><summary>Where is Dore Drives?</summary><p>Jacksonville, Florida. See doredrives.com for current contact details.</p></details>
+</section>
+
+<div class="ar" id="agent-ready"><div><b>Agent-Ready included.</b> JSON-LD, FAQ and machine-readable details so AI assistants can answer "exotic car dealer in Jacksonville" with yours. Illustrative concept, not yet live for this business.</div></div>
+
+<footer>Concept site by Kerblabs for Dore Drives. Not affiliated or approved. Details from doredrives.com.</footer>
+<div class="sticky"><a class="btn" href="https://www.doredrives.com/" rel="noopener">Visit doredrives.com</a></div>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var track=$('track'),bar=$('bar'),NS='http://www.w3.org/2000/svg',needle=$('needle');
+function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e}
+var q=$('quilt');
+for(var i=-12;i<22;i++){
+ el('line',{x1:60+i*40,y1:80,x2:60+i*40+440,y2:520,stroke:'#2c2019','stroke-width':2},q);
+ el('line',{x1:60+i*40+440,y1:80,x2:60+i*40,y2:520,stroke:'#2c2019','stroke-width':2},q);
+}
+var rows=[
+ {y:150,txt:'Founder-run',d:'Johnson Dore is listed as founder and CEO.'},
+ {y:260,txt:'Boutique',d:'A small Jacksonville shop, not a chain.'},
+ {y:370,txt:'Consignment',d:'The concept is boutique and consignment cars.'},
+ {y:480,txt:'One conversation',d:'DM or visit the site and a person answers.'}
+];
+var st=$('stitch'),segs=[];
+rows.forEach(function(r,ri){
+ var x0=100,x1=500,n=20,dx=(x1-x0)/n,path=[];
+ var p=el('path',{d:'',stroke:'#f1e8da','stroke-width':4,'stroke-linecap':'round',fill:'none','stroke-dasharray':'14 8'},st);
+ var dd='M'+x0+' '+r.y;
+ for(var i=1;i<=n;i++){dd+=' L'+(x0+i*dx)+' '+(r.y+(i%2?0:0))}
+ p.setAttribute('d',dd);
+ var len=x1-x0;
+ p.setAttribute('stroke-dasharray','14 8');
+ var mask=el('line',{x1:x0,y1:r.y,x2:x0,y2:r.y,stroke:'#fff'},st);
+ mask.setAttribute('opacity','0');
+ var lab=el('text',{x:300,y:r.y-16,'text-anchor':'middle','font-family':'Georgia,serif','font-size':22,fill:'#e2a566',opacity:0},st);
+ lab.textContent=r.txt;
+ segs.push({p:p,x0:x0,x1:x1,y:r.y,lab:lab,len:len});
+ // reveal via dashoffset trick: draw as clip using stroke-dasharray with total
+});
+function rg(t,a,b){return Math.min(1,Math.max(0,(t-a)/(b-a)))}
+// build clip rects so only stitched portion shows
+var defs=document.querySelector('defs');
+segs.forEach(function(s,i){
+ var cp=el('clipPath',{id:'sc'+i},defs);
+ s.r=el('rect',{x:s.x0-6,y:s.y-12,width:0,height:24},cp);
+ s.p.setAttribute('clip-path','url(#sc'+i+')');
+});
+var last=-2;
+function draw(){
+ var r=track.getBoundingClientRect(),max=Math.max(1,track.offsetHeight-innerHeight);
+ var t=reduce?1:Math.min(1,Math.max(0,-r.top/max));
+ var act=Math.min(3,Math.floor(t*4)),done=0;
+ segs.forEach(function(s,i){
+  var f=rg(t*4,i,i+1);
+  s.r.setAttribute('width',f*(s.len+12));
+  s.lab.setAttribute('opacity',f>0.02?Math.min(1,f*2):0);
+  if(f>=1)done++;
+ });
+ var cs=segs[act],cf=rg(t*4,act,act+1);
+ if(t>0&&t<1){needle.setAttribute('opacity',1);needle.setAttribute('cx',cs.x0+cf*cs.len);needle.setAttribute('cy',cs.y)}else needle.setAttribute('opacity',0);
+ $('pn').setAttribute('opacity',rg(t,.92,1));
+ bar.style.width=(t*100)+'%';
+ $('lk').textContent='Stitch '+Math.min(4,t>=1?4:act+(cf>0?0:0))+' of 4';
+ var key=t<=0?-1:(t>=1?4:act);
+ if(key!==last){last=key;
+  if(key<0){$('lv').textContent='Threaded and ready';$('ld').textContent='Scroll to sew the panel, one line at a time.'}
+  else if(key===4){$('lv').textContent='Stitched';$('ld').textContent='Visit doredrives.com or start a conversation.'}
+  else{$('lv').textContent=rows[key].txt;$('ld').textContent=rows[key].d}
+ }
+}
+addEventListener('scroll',draw,{passive:true});addEventListener('resize',draw);draw();
+})();
+</script>
+</body>
+</html>
