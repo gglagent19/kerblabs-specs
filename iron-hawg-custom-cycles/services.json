@@ -1,0 +1,18 @@
+{
+  "business": "Iron Hawg Custom Cycles Inc.",
+  "url": "https://www.ironhawgcustomcycles.com/",
+  "address": "640 W. 15th St., Hazleton, PA 18201",
+  "phone": "+1 570 455 7988",
+  "hours": {"Mon-Fri": "09:00-17:00", "Sat": "09:00-15:00", "Sun": "closed"},
+  "booking": "Call the shop",
+  "services": [
+    {"name": "Custom motorcycle builds", "detail": "Baggers, bobbers, choppers, board track racers, cafe racers, trikes", "price": null},
+    {"name": "Harley and Buell service and repair", "detail": "Service, tune-ups, inspections; certified Buell service center per site", "price": null},
+    {"name": "Engine rebuilding and restoration", "price": null},
+    {"name": "Custom fabrication, suspension, driveline alignment", "price": null},
+    {"name": "Custom paint, graphics, chrome, hydrographics", "price": null},
+    {"name": "Accident and insurance claim repairs", "price": null},
+    {"name": "Parts sales and financing", "price": null}
+  ],
+  "note": "Concept by Kerblabs, not approved by the business. Prices not published, so null."
+}

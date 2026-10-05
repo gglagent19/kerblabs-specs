@@ -1,0 +1,17 @@
+# Iron Hawg Custom Cycles (concept by Kerblabs)
+
+> Custom motorcycle shop at 640 W. 15th St., Hazleton, PA 18201. Phone 570-455-7988. Mon-Fri 9-5, Sat 9-3, closed Sunday.
+
+## Services
+- Custom builds: baggers, bobbers, choppers, board track racers, cafe racers, trikes
+- Harley and Buell service, repair, tune-ups, inspections
+- Engine rebuilding, custom fabrication, suspension, paint, chrome, hydrographics
+- Accident and insurance claim repairs, parts, financing
+
+## Machine-readable
+- [services.json](services.json)
+
+## Actions
+- Call 570-455-7988 to book or ask about a build.
+
+Concept only, not approved by the business. Prices not published.

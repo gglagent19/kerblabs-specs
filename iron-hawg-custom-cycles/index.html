@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Iron Hawg Custom Cycles | Custom Motorcycle Builds, Hazleton PA (concept)</title>
+<meta name="description" content="Concept site for Iron Hawg Custom Cycles, Hazleton, Pennsylvania. A custom bike goes together from bare frame to finished paint as you scroll.">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/iron-hawg-custom-cycles/">
+<meta property="og:title" content="Iron Hawg Custom Cycles | concept site by Kerblabs">
+<meta property="og:description" content="A custom build told in one scroll: frame, engine, wheels, tank, paint.">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/iron-hawg-custom-cycles/">
+<meta name="twitter:card" content="summary">
+<meta name="robots" content="noindex,follow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#0e0e0f;color:#ece7df;font-family:"Helvetica Neue",Arial,sans-serif;line-height:1.55}
+a{color:inherit}
+h1,h2,h3{font-family:Impact,"Arial Narrow",Haettenschweiler,sans-serif;font-weight:400;letter-spacing:.02em;text-transform:uppercase}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 16px;background:rgba(14,14,15,.93);backdrop-filter:blur(8px);border-bottom:1px solid #2b2a28}
+nav b{font-family:Impact,sans-serif;font-size:17px;font-weight:400;letter-spacing:.1em}
+nav .r{display:flex;gap:14px;align-items:center;font-size:13px}
+.btn{display:inline-block;text-decoration:none;background:#e0a21b;color:#111;padding:11px 20px;border-radius:4px;font-size:14px;font-weight:800;white-space:nowrap}
+.btn.alt{background:transparent;color:#ece7df;border:1.5px solid #ece7df}
+.track{height:600vh;position:relative}
+@media(prefers-reduced-motion:reduce){.track{height:auto}html{scroll-behavior:auto}}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:radial-gradient(ellipse at 50% 90%,#2a2724,#0e0e0f 70%)}
+.hud{position:absolute;inset:0;display:grid;grid-template-rows:auto 1fr auto;padding:78px 24px 20px;max-width:1280px;margin:0 auto;pointer-events:none}
+.copy{pointer-events:auto}
+.hud h1{font-size:clamp(36px,6vw,82px);line-height:1;max-width:820px}
+.hud p{margin-top:10px;max-width:460px;font-size:clamp(14px,1.5vw,18px);opacity:.85}
+.book{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px}
+.svgwrap{position:relative;min-height:0}
+.svgwrap svg{position:absolute;inset:0;width:100%;height:100%}
+.leg{background:#ece7df;color:#111;padding:14px 20px;border-radius:6px;max-width:420px}
+.leg .k{font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.7}
+.leg .v{font-family:Impact,sans-serif;font-size:clamp(24px,3vw,36px);line-height:1.05;margin:3px 0;text-transform:uppercase}
+.leg .d{font-size:13px;opacity:.85}
+.bar{height:4px;border-radius:2px;background:rgba(17,17,17,.2);margin-top:10px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:#c4421a}
+.note{position:absolute;right:24px;bottom:12px;font-size:10.5px;background:rgba(236,231,223,.12);padding:3px 10px;border-radius:8px}
+section.blk{padding:80px 22px;max-width:1100px;margin:0 auto}
+.eye{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#e0a21b;margin-bottom:12px;font-weight:700}
+h2{font-size:clamp(28px,4.4vw,50px);line-height:1.05;margin-bottom:16px;max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:24px}
+.card{background:#181716;border:1px solid #2b2a28;border-radius:8px;padding:20px}
+.card h3{font-size:22px;margin-bottom:6px}
+.card p{font-size:14px;opacity:.8}
+.pitch{background:#ece7df;color:#111;border-radius:14px;padding:32px 26px;margin:0 16px}
+.pitch .eye{color:#c4421a}
+.pitch ul{margin:12px 0 0 18px}
+.faq details{border-bottom:1px solid #2b2a28;padding:14px 0}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{margin-top:8px;opacity:.85;max-width:680px}
+.ar{margin:0 auto;max-width:1100px;padding:20px 22px 70px}
+.ar div{border:1px dashed #ece7df;border-radius:10px;padding:20px;font-size:14px}
+footer{padding:44px 22px 96px;text-align:center;font-size:12px;opacity:.7;border-top:1px solid #2b2a28}
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none;gap:8px}
+.sticky .btn{flex:1;text-align:center;padding:14px}
+@media(max-width:760px){
+.hud{padding:96px 14px 12px}
+.hud p,.book{display:none}
+.hud h1{font-size:32px}
+.leg{max-width:none;padding:10px 14px;margin-bottom:60px}
+.note{display:none}
+nav .r a.t{display:none}
+nav .btn{padding:9px 14px;font-size:12px}
+.sticky{display:flex}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MotorcycleRepair","name":"Iron Hawg Custom Cycles Inc.","url":"https://www.ironhawgcustomcycles.com/","telephone":"+1 570 455 7988","address":{"@type":"PostalAddress","streetAddress":"640 W. 15th St.","addressLocality":"Hazleton","addressRegion":"PA","postalCode":"18201","addressCountry":"US"},"openingHours":["Mo-Fr 09:00-17:00","Sa 09:00-15:00"],"description":"Custom motorcycle builds, Harley and Buell service and repair, engine rebuilding, custom fabrication, paint, chrome and parts."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What does Iron Hawg Custom Cycles do?","acceptedAnswer":{"@type":"Answer","text":"Custom motorcycle builds (baggers, bobbers, choppers, board track racers, cafe racers, trikes), Harley and Buell service and repair, engine rebuilding, custom fabrication, paint and graphics, chrome and hydrographics, suspension, and parts sales."}},
+{"@type":"Question","name":"Where is the shop?","acceptedAnswer":{"@type":"Answer","text":"640 W. 15th St., Hazleton, PA 18201."}},
+{"@type":"Question","name":"When is it open?","acceptedAnswer":{"@type":"Answer","text":"Monday to Friday 9 am to 5 pm, Saturday 9 am to 3 pm, closed Sunday, per the current site."}},
+{"@type":"Question","name":"How do I get in touch?","acceptedAnswer":{"@type":"Answer","text":"Call 570-455-7988."}}
+]}
+</script>
+</head>
+<body>
+<nav><b>IRON HAWG CUSTOM CYCLES</b><div class="r"><a class="t" href="#work">What we do</a><a class="t" href="#faq">FAQ</a><a class="btn" href="tel:+15704557988">Call 570-455-7988</a></div></nav>
+
+<div class="track" id="track">
+ <div class="stage">
+  <div class="hud">
+   <div class="copy">
+    <h1>Built from the frame up. Built to ride.</h1>
+    <p>Full custom motorcycles and Harley and Buell service in Hazleton, Pennsylvania.</p>
+    <div class="book"><a class="btn" href="tel:+15704557988">Call 570-455-7988</a><a class="btn alt" href="#work">What we do</a></div>
+   </div>
+   <div class="svgwrap">
+    <svg viewBox="0 0 800 360" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+     <defs>
+      <clipPath id="paintClip"><rect id="paintRect" x="0" y="0" width="0" height="360"/></clipPath>
+      <linearGradient id="glintG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".8"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+      <clipPath id="tankClip"><path id="tankClipP" d="M300 130Q330 98 400 100Q450 102 470 128Q440 150 380 150Q330 150 300 130Z"/></clipPath>
+     </defs>
+     <path d="M40 330H760" stroke="#4a4540" stroke-width="3"/>
+     <!-- frame -->
+     <g id="p_frame" fill="none" stroke="#b9b1a5" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M215 270L300 200L400 190L470 250"/><path d="M300 200L330 130L470 128"/><path d="M215 270L360 270L470 250"/><path d="M470 128L560 150L610 90" stroke-width="5"/>
+      <path d="M215 270L190 230" stroke-width="4"/>
+     </g>
+     <!-- engine -->
+     <g id="p_engine" stroke="#b9b1a5" stroke-width="3" fill="#2b2926">
+      <rect x="335" y="205" width="105" height="62" rx="6"/>
+      <g transform="rotate(-28 360 215)"><rect x="345" y="150" width="30" height="62" rx="3"/><path d="M342 160h36M342 172h36M342 184h36" stroke-width="2"/></g>
+      <g transform="rotate(28 420 215)"><rect x="405" y="150" width="30" height="62" rx="3"/><path d="M402 160h36M402 172h36M402 184h36" stroke-width="2"/></g>
+     </g>
+     <!-- wheels -->
+     <g id="p_rear" fill="none" stroke="#b9b1a5"><circle cx="190" cy="270" r="58" stroke-width="9" stroke="#1a1918"/><circle cx="190" cy="270" r="58" stroke-width="3"/><circle cx="190" cy="270" r="30" stroke-width="2"/><path d="M190 212V328M132 270H248M149 229L231 311M231 229L149 311" stroke-width="1.5"/></g>
+     <g id="p_front" fill="none" stroke="#b9b1a5"><circle cx="620" cy="270" r="58" stroke-width="9" stroke="#1a1918"/><circle cx="620" cy="270" r="58" stroke-width="3"/><circle cx="620" cy="270" r="30" stroke-width="2"/><path d="M620 212V328M562 270H678M579 229L661 311M661 229L579 311" stroke-width="1.5"/></g>
+     <!-- forks and bars -->
+     <g id="p_fork" fill="none" stroke="#b9b1a5" stroke-width="5" stroke-linecap="round"><path d="M610 90L640 220L620 270"/><path d="M560 150L575 140" /><path d="M600 80L585 70L545 72" stroke-width="4"/></g>
+     <!-- exhaust -->
+     <g id="p_exh" fill="none" stroke="#d9d3c8" stroke-width="9" stroke-linecap="round"><path d="M380 262Q300 290 215 300L140 296"/></g>
+     <!-- seat -->
+     <g id="p_seat"><path d="M215 188Q260 172 320 190L330 200L220 205Z" fill="#241f1b" stroke="#b9b1a5" stroke-width="3"/></g>
+     <!-- tank with paint -->
+     <g id="p_tank">
+      <path d="M300 130Q330 98 400 100Q450 102 470 128Q440 150 380 150Q330 150 300 130Z" fill="#59544d" stroke="#b9b1a5" stroke-width="3"/>
+      <g clip-path="url(#tankClip)"><g clip-path="url(#paintClip)"><rect x="0" y="80" width="800" height="90" fill="#c4421a"/><path d="M300 138Q380 128 470 134" stroke="#e0a21b" stroke-width="5" fill="none"/></g>
+      <rect id="glint" x="-200" y="80" width="90" height="90" fill="url(#glintG)" transform="skewX(-20)"/></g>
+     </g>
+     <g id="p_sparks" opacity="0" stroke="#ffb347" stroke-width="2.5" stroke-linecap="round"><path d="M300 190l-14-8M308 180l-6-14M322 192l8-14M292 204l-16-2"/></g>
+    </svg>
+   </div>
+   <div class="leg"><div class="k" id="lk">Step 1 of 6</div><div class="v" id="lv">Bare frame</div><div class="d" id="ld">Every build starts as tubing on the table.</div><div class="bar"><i id="bar"></i></div></div>
+  </div>
+  <div class="note">Illustrative sequence. Not a photo of an Iron Hawg build.</div>
+ </div>
+</div>
+
+<section class="blk" id="work">
+ <div class="eye">What Iron Hawg does (from ironhawgcustomcycles.com)</div>
+ <h2>Custom builds, service and fabrication under one roof.</h2>
+ <div class="grid">
+  <div class="card"><h3>Custom builds</h3><p>Baggers, bobbers, choppers, board track racers, cafe racers and trikes.</p></div>
+  <div class="card"><h3>Harley and Buell service</h3><p>Service, repair, tune-ups and inspections. Listed as the area's only certified official Buell service center, with factory-trained Buell technicians.</p></div>
+  <div class="card"><h3>Engine and fabrication</h3><p>Engine rebuilding and restoration, custom parts fabrication and modification, suspension upgrades, driveline alignment.</p></div>
+  <div class="card"><h3>Paint, chrome, graphics</h3><p>Custom paint and graphics, chrome work and hydrographics.</p></div>
+  <div class="card"><h3>Claims and parts</h3><p>Motorcycle accident and insurance claim repairs, plus parts sales and financing.</p></div>
+  <div class="card"><h3>2 Wheels &amp; Tattoos</h3><p>An on-site tattoo artist, Angelo Rodriguez.</p></div>
+ </div>
+ <p style="margin-top:18px;font-size:13px;opacity:.7">640 W. 15th St., Hazleton, PA 18201. Mon to Fri 9 am to 5 pm, Sat 9 am to 3 pm, closed Sunday. Phone 570-455-7988. No prices are published, so none appear here.</p>
+</section>
+
+<section class="blk">
+ <div class="eye">Since 1992</div>
+ <h2>Three decades of builds deserve a site that shows them.</h2>
+ <p style="max-width:680px;opacity:.85">Iron Hawg's Instagram describes a full custom motorcycle shop, est. 1992. The current website is an older static layout that is hard to use on a phone. A site for a builder should show the build, put the number one tap away, and work on the phone riders actually use.</p>
+</section>
+
+<div class="pitch">
+ <div class="eye">Concept by Kerblabs</div>
+ <h2>Show the build before the first call.</h2>
+ <ul>
+  <li>A scroll hero that takes a bike from bare frame to finished paint in front of the visitor.</li>
+  <li>Services, address, hours and a tap-to-call button on every screen.</li>
+  <li>A mobile layout, replacing a dated static page.</li>
+  <li>Agent-ready: AI assistants can read what you build, where, and how to reach you.</li>
+ </ul>
+</div>
+
+<section class="blk faq" id="faq">
+ <div class="eye">FAQ</div>
+ <h2>Quick answers</h2>
+ <details><summary>What does Iron Hawg Custom Cycles do?</summary><p>Custom motorcycle builds (baggers, bobbers, choppers, board track racers, cafe racers, trikes), Harley and Buell service and repair, engine rebuilding, custom fabrication, paint and graphics, chrome and hydrographics, suspension, and parts sales.</p></details>
+ <details><summary>Where is the shop?</summary><p>640 W. 15th St., Hazleton, PA 18201.</p></details>
+ <details><summary>When is it open?</summary><p>Monday to Friday 9 am to 5 pm, Saturday 9 am to 3 pm, closed Sunday, per the current site.</p></details>
+ <details><summary>How do I get in touch?</summary><p>Call 570-455-7988.</p></details>
+</section>
+
+<div class="ar" id="agent-ready"><div><b>Agent-Ready included.</b> llms.txt, JSON-LD and machine-readable services so AI assistants can answer "custom motorcycle builder near Hazleton" with your details. Illustrative concept, not yet live for this business.</div></div>
+
+<footer>Concept site by Kerblabs for Iron Hawg Custom Cycles. Not affiliated or approved. Business details from ironhawgcustomcycles.com.</footer>
+<div class="sticky"><a class="btn" href="tel:+15704557988">Call the shop</a></div>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var track=$('track'),paintRect=$('paintRect'),glint=$('glint'),sparks=$('p_sparks'),bar=$('bar');
+var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function rg(t,a,b){return Math.min(1,Math.max(0,(t-a)/(b-a)))}
+// id, start, end, dx, dy (fly-in offset)
+var parts=[['p_frame',0.02,0.16,0,-60],['p_engine',0.18,0.32,0,-90],['p_rear',0.34,0.44,-160,0],['p_front',0.38,0.48,160,0],['p_fork',0.46,0.54,120,-40],['p_exh',0.52,0.6,-80,40],['p_seat',0.58,0.64,0,-60],['p_tank',0.62,0.7,0,-100]];
+var st=[['Bare frame','Every build starts as tubing on the table.'],['Engine in','The V-twin drops into the cradle.'],['Wheels and forks','Rolling chassis, front end on.'],['Exhaust and seat','Pipes bolted up, seat set.'],['Tank and paint','Colour goes on, edge to edge.'],['Finish','Clear coat and a last look. Ready to ride.']];
+var cuts=[.16,.32,.54,.64,.84,1.01],last=-1;
+function draw(){
+ var r=track.getBoundingClientRect(),max=track.offsetHeight-innerHeight;
+ var t=reduce?1:Math.min(1,Math.max(0,-r.top/max));
+ for(var i=0;i<parts.length;i++){var p=parts[i],g=rg(t,p[1],p[2]),e=$(p[0]);e.style.opacity=g;e.setAttribute('transform','translate('+(p[3]*(1-g))+','+(p[4]*(1-g))+')')}
+ sparks.style.opacity=(t>.2&&t<.34)?1:0;
+ paintRect.setAttribute('width',800*rg(t,.72,.88));
+ glint.setAttribute('x',-200+900*rg(t,.9,1));
+ bar.style.width=(t*100)+'%';
+ var k=0;while(t>=cuts[k])k++;
+ if(k!==last){last=k;$('lk').textContent='Step '+(k+1)+' of 6';$('lv').textContent=st[k][0];$('ld').textContent=st[k][1]}
+}
+addEventListener('scroll',draw,{passive:true});addEventListener('resize',draw);draw();
+})();
+</script>
+</body>
+</html>
