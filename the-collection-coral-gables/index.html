@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Collection | Luxury Automotive, Coral Gables</title>
+<meta name="description" content="The Collection: Ferrari, Porsche, Lamborghini, Maserati, Aston Martin, McLaren and more at 200 Bird Road, Coral Gables. Concept site by Kerblabs.">
+<meta name="theme-color" content="#f3ecdf">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3ecdf;--ink:#14231c;--green:#0f3b2c;--muted:#6b6a5e;--gold:#b8893a;--line:rgba(20,35,28,.16);--hue:#0f3b2c}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.serif{font-family:Fraunces,Georgia,serif;font-weight:300}
+.label{font-weight:600;letter-spacing:.26em;text-transform:uppercase;font-size:11px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:16px 30px;transition:.4s;border-bottom:1px solid transparent}
+.nav.s{background:rgba(243,236,223,.86);backdrop-filter:blur(12px);border-bottom-color:var(--line)}
+.brand{font-family:Fraunces,serif;font-size:24px;font-weight:600;letter-spacing:.02em;line-height:1}
+.brand small{display:block;font:600 9px Inter;letter-spacing:.3em;color:var(--gold);margin-top:4px;text-transform:uppercase}
+.btn{display:inline-block;border:1px solid var(--green);padding:12px 22px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;transition:.3s;background:var(--green);color:#f3ecdf}
+.btn:hover{background:transparent;color:var(--green)}
+.btn.o{background:transparent;color:var(--green)}
+.btn.o:hover{background:var(--green);color:#f3ecdf}
+
+/* HERO MECHANIC: pinned horizontal showroom walk. Scroll translates a long track of marque bays; the backdrop tone and counter follow the active bay. */
+.hero{height:650vh;position:relative}
+.pin{position:sticky;top:0;height:100vh;overflow:hidden;background:var(--bg)}
+.tint{position:absolute;inset:0;background:radial-gradient(80% 70% at 30% 60%,var(--hue),transparent 75%);opacity:.14;transition:background .6s}
+.intro{position:absolute;left:5vw;top:15vh;z-index:3;max-width:min(560px,90vw);transition:opacity .4s}
+.intro h1{font-family:Fraunces,serif;font-weight:300;font-size:clamp(40px,6.4vw,92px);line-height:.98;margin:14px 0 0;letter-spacing:-.02em}
+.intro h1 em{font-style:italic;color:var(--gold)}
+.intro p{color:var(--muted);max-width:40ch;margin:16px 0 0}
+.track{position:absolute;left:0;bottom:16vh;display:flex;align-items:flex-end;gap:0;will-change:transform}
+.bay{flex:0 0 auto;width:62vw;max-width:820px;padding:0 3vw;border-left:1px solid var(--line);opacity:.28;transition:opacity .4s}
+.bay.on{opacity:1}
+.bay .n{font:600 11px Inter;letter-spacing:.26em;color:var(--gold)}
+.bay .name{font-family:Fraunces,serif;font-weight:300;font-size:clamp(56px,11vw,168px);line-height:.95;letter-spacing:-.03em;margin:6px 0 0;color:transparent;-webkit-text-stroke:1.5px var(--ink);transition:color .5s}
+.bay.on .name{color:var(--ink)}
+.bay .note{color:var(--muted);font-size:14px;margin-top:8px;letter-spacing:.04em}
+.lead-in{flex:0 0 auto;width:48vw}
+.rule{position:absolute;left:5vw;right:5vw;bottom:8vh;height:1px;background:var(--line);z-index:3}
+.rule i{position:absolute;left:0;top:-1px;height:3px;width:0;background:var(--green)}
+.count{position:absolute;right:5vw;bottom:10vh;font-family:Fraunces,serif;font-size:clamp(28px,4vw,52px);font-weight:300;font-variant-numeric:tabular-nums;z-index:3}
+.count small{font:600 11px Inter;letter-spacing:.22em;color:var(--muted);margin-left:8px}
+.cue{position:absolute;left:5vw;bottom:3.5vh;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);z-index:3}
+
+.band{padding:120px 0;border-top:1px solid var(--line)}
+h2.sec{font-family:Fraunces,serif;font-weight:300;font-size:clamp(38px,5.6vw,76px);line-height:1;margin:12px 0 0;max-width:18ch;letter-spacing:-.02em}
+h2.sec em{font-style:italic;color:var(--gold)}
+.lead{color:var(--muted);max-width:58ch;margin:20px 0 0;font-size:17px}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);margin-top:52px;border:1px solid var(--line)}
+.svc div{padding:32px 26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-height:170px}
+.svc div:nth-child(3n){border-right:0}
+.svc div:nth-last-child(-n+3){border-bottom:0}
+.svc h3{font-family:Fraunces,serif;font-weight:600;font-size:22px;margin:0 0 8px}
+.svc p{margin:0;color:var(--muted);font-size:15px}
+.locs{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0;margin-top:44px;border-top:1px solid var(--line)}
+.locs div{padding:20px 20px 20px 0;border-bottom:1px solid var(--line)}
+.locs b{font-family:Fraunces,serif;font-weight:600;font-size:19px;display:block}
+.locs span{color:var(--muted);font-size:14px}
+.dark{background:var(--green);color:#f3ecdf;border-top:0}
+.dark .lead{color:rgba(243,236,223,.7)}
+.dark h2.sec em{color:#e0b96a}
+.dark .btn{background:#f3ecdf;color:var(--green);border-color:#f3ecdf}
+.dark .btn.o{background:transparent;color:#f3ecdf}
+.contact{display:flex;gap:16px;flex-wrap:wrap;margin-top:32px}
+footer{padding:34px 0;color:var(--muted);font-size:12px;letter-spacing:.04em}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(24px);transition:.8s}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:820px){.svc{grid-template-columns:1fr}.svc div{border-right:0!important;border-bottom:1px solid var(--line)!important}.bay{width:80vw}}
+@media(max-width:480px){.nav{padding:12px 16px}.brand{font-size:19px}.btn{padding:9px 12px;font-size:10px;letter-spacing:.1em}.intro{top:12vh}.wrap{padding:0 20px}.band{padding:84px 0}.bay{width:86vw;padding:0 5vw}.bay .name{font-size:clamp(34px,11.5vw,60px)}.bay .note{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <a class="brand" href="#top">The Collection<small>Coral Gables, Florida</small></a>
+  <a class="btn" href="#visit">Visit us</a>
+</nav>
+
+<section class="hero" id="top">
+  <div class="pin">
+    <div class="tint" id="tint"></div>
+    <div class="intro" id="intro">
+      <span class="label" style="color:var(--gold)">200 Bird Road, Coral Gables</span>
+      <h1>Eleven marques. <em>One address.</em></h1>
+      <p>Over 40 years of luxury automotive in South Florida. Keep scrolling to walk the showroom.</p>
+    </div>
+    <div class="track" id="track"></div>
+    <div class="rule"><i id="bar"></i></div>
+    <div class="count" id="count">01<small>/ 11</small></div>
+    <div class="cue">Scroll to walk the showroom</div>
+  </div>
+</section>
+
+<section class="band" id="services">
+  <div class="wrap">
+    <span class="label" style="color:var(--gold)">What we do</span>
+    <h2 class="sec reveal">From first test drive to <em>every service visit.</em></h2>
+    <p class="lead reveal">Everything a luxury owner needs, in one South Florida group.</p>
+    <div class="svc reveal">
+      <div><h3>New and pre-owned</h3><p>Browse new and pre-owned vehicles across the marques on the wall above.</p></div>
+      <div><h3>Test drives</h3><p>Schedule a drive with the brand you are considering.</p></div>
+      <div><h3>Trade-in valuations</h3><p>Find out what your current car is worth before you visit.</p></div>
+      <div><h3>Service and maintenance</h3><p>Book a service appointment online.</p></div>
+      <div><h3>Parts and accessories</h3><p>Parts and accessories for your vehicle.</p></div>
+      <div><h3>Ferrari boutique</h3><p>A dedicated Ferrari boutique.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <span class="label" style="color:var(--gold)">Locations</span>
+    <h2 class="sec reveal">Find your <em>brand's home.</em></h2>
+    <div class="locs reveal">
+      <div><b>The Collection</b><span>200 Bird Road, Coral Gables</span></div>
+      <div><b>Ferrari of Miami</b><span>1550 Biscayne Blvd.</span></div>
+      <div><b>Land Rover Coral Gables</b><span>Coral Gables</span></div>
+      <div><b>Jaguar Coral Gables</b><span>Coral Gables</span></div>
+      <div><b>Audi Miami South</b><span>Miami</span></div>
+      <div><b>Lamborghini South Dade</b><span>South Dade</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band dark" id="visit">
+  <div class="wrap">
+    <span class="label" style="color:#e0b96a">Visit</span>
+    <h2 class="sec reveal">Come see <em>the wall in person.</em></h2>
+    <p class="lead reveal">200 Bird Road, Coral Gables, FL 33146</p>
+    <div class="contact reveal">
+      <a class="btn" href="tel:+13054445555">Call (305) 444-5555</a>
+      <a class="btn o" href="https://www.thecollection.com">Current website</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>Concept design by Kerblabs. Not affiliated with The Collection until approved.</span><span>Details from thecollection.com</span></div></footer>
+
+<script>
+(function(){
+  var M=[["Ferrari","Ferrari of Miami, 1550 Biscayne Blvd."],["Porsche","Sold at The Collection"],["Lamborghini","Lamborghini South Dade"],["Maserati","Sold at The Collection"],["Aston Martin","Sold at The Collection"],["McLaren","Sold at The Collection"],["Audi","Audi Miami South"],["Land Rover","Land Rover Coral Gables"],["Jaguar","Jaguar Coral Gables"],["Alfa Romeo","Sold at The Collection"],["Pininfarina","Sold at The Collection"]];
+  var H=["#8a1f1a","#3a4a52","#8a6a10","#1b2f5a","#0f3b2c","#a34a00","#4a4a4a","#0f3b2c","#0f3b2c","#7a1a2a","#5a3a1a"];
+  var track=document.getElementById('track'),hero=document.getElementById('top'),bar=document.getElementById('bar'),
+      cnt=document.getElementById('count'),tint=document.getElementById('tint'),intro=document.getElementById('intro'),nav=document.getElementById('nav');
+  var html='<div class="lead-in"></div>';
+  M.forEach(function(m,i){html+='<div class="bay"><div class="n">BAY '+(i<9?'0':'')+(i+1)+'</div><div class="name">'+m[0]+'</div><div class="note">'+m[1]+'</div></div>';});
+  html+='<div class="lead-in"></div>';
+  track.innerHTML=html;
+  var bays=track.querySelectorAll('.bay');
+  function upd(){
+    var y=window.scrollY,h=hero.offsetHeight-innerHeight;
+    var p=Math.max(0,Math.min(1,y/h));
+    nav.classList.toggle('s',y>40);
+    var start=innerWidth*.36, total=track.scrollWidth-innerWidth;
+    track.style.transform='translateX('+(-(p*total)+0)+'px)';
+    bar.style.width=(p*100)+'%';
+    intro.style.opacity=Math.max(0,1-p*7);
+    var centre=innerWidth*.45,best=0,bd=1e9;
+    bays.forEach(function(b,i){var r=b.getBoundingClientRect(),d=Math.abs(r.left+r.width*.35-centre);if(d<bd){bd=d;best=i}});
+    bays.forEach(function(b,i){b.classList.toggle('on',i===best)});
+    cnt.innerHTML=(best<9?'0':'')+(best+1)+'<small>/ 11</small>';
+    tint.style.background='radial-gradient(80% 70% at 30% 60%,'+H[best]+',transparent 75%)';
+  }
+  addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+  var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('in')})},{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>
