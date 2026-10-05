@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Carpe Vita Sailboat Charters | 42-ft Catamaran Charters, West Palm Beach FL (concept)</title>
+<meta name="description" content="Concept site for Carpe Vita Sailboat Charters: private day, sunset, brunch and overnight charters aboard a 42-ft Fountaine Pajot Venezia catamaran with Captains Cal and Marty Landau, West Palm Beach, FL.">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/carpe-vita-sailboat-charters/">
+<meta property="og:title" content="Carpe Vita Sailboat Charters | concept site by Kerblabs">
+<meta property="og:description" content="Concept for a single-catamaran West Palm Beach charter, with a scroll-plotted course on a nautical chart.">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/carpe-vita-sailboat-charters/">
+<meta name="twitter:card" content="summary">
+<meta name="robots" content="noindex,follow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#f3ead3;color:#14304f;font-family:"Helvetica Neue",Arial,sans-serif;line-height:1.55}
+a{color:inherit}
+h1,h2,h3,.serif{font-family:Georgia,"Times New Roman",serif;font-weight:400}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 16px;background:rgba(243,234,211,.92);backdrop-filter:blur(8px);border-bottom:1px solid #d9ccaa}
+nav b{font-family:Georgia,serif;font-size:16px;font-weight:400;letter-spacing:.03em}
+nav .r{display:flex;gap:14px;align-items:center;font-size:13px}
+.btn{display:inline-block;text-decoration:none;background:#d4472b;color:#fff;padding:11px 20px;border-radius:99px;font-size:14px;font-weight:700;white-space:nowrap}
+.btn.alt{background:transparent;color:#14304f;border:1.5px solid #14304f}
+.track{height:460vh;position:relative}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#f3ead3}
+.stage svg{position:absolute;inset:0;width:100%;height:100%}
+.hud{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto 1fr;padding:78px 24px 22px;max-width:1240px;margin:0 auto;pointer-events:none}
+.copy{grid-column:1;pointer-events:auto}
+.hud h1{font-size:clamp(34px,5.4vw,74px);line-height:1.02;color:#14304f}
+.hud p{margin-top:12px;max-width:430px;font-size:clamp(14px,1.5vw,18px)}
+.book{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px}
+.leg{grid-column:2;grid-row:2;align-self:end;justify-self:end;text-align:right;background:#14304f;color:#f3ead3;padding:16px 20px;border-radius:14px;max-width:340px;box-shadow:0 10px 30px rgba(20,48,79,.3)}
+.leg .k{font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.75}
+.leg .v{font-family:Georgia,serif;font-size:clamp(24px,3.4vw,40px);line-height:1.05;margin:4px 0}
+.leg .d{font-size:13px;opacity:.9}
+.dots{display:flex;gap:6px;justify-content:flex-end;margin-bottom:10px}
+.dots i{width:24px;height:4px;border-radius:2px;background:rgba(243,234,211,.3)}
+.dots i.on{background:#f0b429}
+.note{position:absolute;left:24px;bottom:12px;font-size:10.5px;background:rgba(20,48,79,.8);color:#f3ead3;padding:3px 10px;border-radius:8px}
+section.blk{padding:80px 22px;max-width:1100px;margin:0 auto}
+.eye{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#d4472b;margin-bottom:12px;font-weight:700}
+h2{font-size:clamp(26px,4vw,44px);line-height:1.1;margin-bottom:16px;max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:24px}
+.card{background:#fbf6e8;border:1px solid #d9ccaa;border-radius:14px;padding:20px}
+.card h3{font-size:21px;margin-bottom:4px}
+.card .p{color:#d4472b;font-weight:700;font-size:15px;margin-bottom:6px}
+.card p{font-size:14px;opacity:.8}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:24px;counter-reset:s}
+.steps div{border-top:2px solid #14304f;padding-top:12px;font-size:14px;counter-increment:s}
+.steps div::before{content:"0" counter(s);display:block;font-family:Georgia,serif;font-size:26px;color:#d4472b}
+.pitch{background:#14304f;color:#f3ead3;border-radius:22px;padding:32px 26px;margin:0 16px}
+.pitch ul{margin:12px 0 0 18px}
+.pitch .eye{color:#f0b429}
+.faq details{border-bottom:1px solid #d9ccaa;padding:14px 0}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{margin-top:8px;opacity:.85;max-width:680px}
+.ar{margin:0 auto;max-width:1100px;padding:20px 22px 70px}
+.ar div{border:1px dashed #14304f;border-radius:14px;padding:20px;font-size:14px}
+footer{padding:44px 22px 96px;text-align:center;font-size:12px;opacity:.7;border-top:1px solid #d9ccaa}
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none;gap:8px}
+.sticky .btn{flex:1;text-align:center;padding:14px}
+@media(max-width:760px){
+.hud{grid-template-columns:1fr;padding:64px 16px 14px}
+.copy{background:rgba(243,234,211,.86);border-radius:14px;padding:12px 14px;backdrop-filter:blur(4px)}
+.hud p,.book{display:none}
+.hud h1{font-size:30px}
+.leg{grid-column:1;justify-self:stretch;max-width:none;text-align:left;padding:12px 16px;margin-bottom:62px}
+.dots{justify-content:flex-start}
+.note{display:none}
+nav .r a.t{display:none}
+nav .btn{padding:9px 14px;font-size:12px}
+.sticky{display:flex}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"TouristTrip","name":"Private catamaran charters aboard Carpe Vita","provider":{"@type":"LocalBusiness","name":"Carpe Vita Sailboat Charters","url":"https://www.florida-sailboatcharters.com/","email":"clandau3@gmail.com","telephone":"+1 561 312 0010","address":{"@type":"PostalAddress","addressLocality":"West Palm Beach","addressRegion":"FL","addressCountry":"US"}}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where does the boat leave from?","acceptedAnswer":{"@type":"Answer","text":"The dock at the end of Evernia Street on Flagler Drive, West Palm Beach. Peanut Island charters leave from Sailfish Marina."}},{"@type":"Question","name":"What boat is it?","acceptedAnswer":{"@type":"Answer","text":"Carpe Vita, a 42-ft Fountaine Pajot Venezia catamaran, captained by Cal and Marty Landau."}},{"@type":"Question","name":"How many guests?","acceptedAnswer":{"@type":"Answer","text":"Up to 6 guests. Overnight charters are limited to 2 guests."}},{"@type":"Question","name":"What does a charter cost?","acceptedAnswer":{"@type":"Answer","text":"The site lists Day Cruise at $350 per hour, Sunday Brunch $1,075 to $1,500, Sunset Dinner $1,250 to $1,700 and a 3-day Florida Keys trip at $5,000."}},{"@type":"Question","name":"How do I book?","acceptedAnswer":{"@type":"Answer","text":"Call (561) 312-0010 or email clandau3@gmail.com."}}]}]}
+</script>
+</head>
+<body>
+<nav><b>Carpe Vita</b><div class="r"><a class="t" href="#faq">FAQ</a><a class="t" href="#trips">Trips</a><a class="btn" href="tel:+15613120010">Call (561) 312-0010</a></div></nav>
+
+<div class="track" id="track">
+ <div class="stage">
+  <svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+   <defs>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M60 0H0V60" fill="none" stroke="#14304f" stroke-opacity=".08"/></pattern>
+    <clipPath id="plot"><rect id="plotRect" x="0" y="0" width="0" height="700"/></clipPath>
+   </defs>
+   <rect width="1200" height="700" fill="url(#grid)"/>
+   <!-- land (schematic) -->
+   <path d="M0 0H1200V120C1050 140 980 110 880 150C760 200 700 160 600 210C480 270 400 250 300 300C200 350 120 330 0 380Z" fill="#e3d6b0" stroke="#14304f" stroke-opacity=".4"/>
+   <!-- depth contours -->
+   <g fill="none" stroke="#14304f" stroke-opacity=".22" stroke-width="1.4">
+    <path d="M0 440C200 410 360 470 560 430S900 380 1200 430"/>
+    <path d="M0 520C220 490 380 560 600 520S940 470 1200 520"/>
+    <path d="M0 600C240 570 400 640 640 600S960 560 1200 610"/>
+   </g>
+   <g font-family="Georgia,serif" font-size="13" fill="#14304f" fill-opacity=".45">
+    <text x="90" y="470">12</text><text x="420" y="500">18</text><text x="760" y="440">9</text><text x="980" y="560">24</text><text x="240" y="620">30</text><text x="560" y="590">40</text>
+   </g>
+   <!-- compass rose -->
+   <g id="rose" transform="translate(1040,560)">
+    <circle r="62" fill="none" stroke="#14304f" stroke-opacity=".5"/>
+    <path d="M0 -62L8 0L0 62L-8 0Z" fill="#14304f" fill-opacity=".75"/>
+    <path d="M-62 0L0 -8L62 0L0 8Z" fill="#14304f" fill-opacity=".35"/>
+    <text y="-70" text-anchor="middle" font-family="Georgia,serif" font-size="16" fill="#14304f">N</text>
+   </g>
+   <!-- route: base (faint) + drawn -->
+   <path id="routeBase" d="M170 330C260 380 330 400 430 410S600 330 700 360S820 470 900 500S1020 600 1100 640" fill="none" stroke="#14304f" stroke-opacity=".18" stroke-width="3" stroke-dasharray="4 8"/>
+   <path id="route" d="M170 330C260 380 330 400 430 410S600 330 700 360S820 470 900 500S1020 600 1100 640" fill="none" stroke="#d4472b" stroke-width="4.5" stroke-linecap="round"/>
+   <!-- waypoints -->
+   <g id="wps" font-family="Georgia,serif" font-size="15" fill="#14304f">
+    <g id="wp0" transform="translate(170,330)"><circle r="9" fill="#14304f"/><circle r="4" fill="#f3ead3"/></g>
+    <g id="wp1" transform="translate(430,410)"><circle r="9" fill="#14304f"/><circle r="4" fill="#f3ead3"/></g>
+    <g id="wp2" transform="translate(700,360)"><circle r="9" fill="#14304f"/><circle r="4" fill="#f3ead3"/></g>
+    <g id="wp3" transform="translate(1100,640)"><circle r="9" fill="#14304f"/><circle r="4" fill="#f3ead3"/></g>
+   </g>
+   <!-- boat marker: twin hulls from above -->
+   <g id="boat">
+    <path d="M-26 -9C-8 -13 14 -12 30 0C14 12 -8 13 -26 9Z" fill="#fbf6e8" stroke="#14304f" stroke-width="2"/>
+    <circle r="3.5" fill="#d4472b"/>
+   </g>
+  </svg>
+  <div class="hud">
+   <div class="copy">
+    <h1>One catamaran.<br>Your whole day on the water.</h1>
+    <p>Private charters aboard Carpe Vita, a 42-ft Fountaine Pajot Venezia, with Captains Cal and Marty Landau out of West Palm Beach.</p>
+    <div class="book"><a class="btn" href="tel:+15613120010">Call (561) 312-0010</a><a class="btn alt" href="mailto:clandau3@gmail.com">Email the Captains</a></div>
+   </div>
+   <div class="leg"><div class="dots" id="dots"><i></i><i></i><i></i><i></i></div><div class="k" id="lk">Leg 1 of 4</div><div class="v" id="lv">Evernia Street dock</div><div class="d" id="ld">Departure point, Flagler Drive, West Palm Beach.</div></div>
+  </div>
+  <div class="note">Schematic chart, not to scale. Not a real route plot.</div>
+ </div>
+</div>
+
+<section class="blk" id="trips">
+ <div class="eye">Trips (as listed on the current site)</div>
+ <h2>Choose the day. The captains plot the rest.</h2>
+ <p style="max-width:640px;opacity:.85">Rates are the figures published on florida-sailboatcharters.com today. Up to 6 guests aboard; overnight charters are limited to 2.</p>
+ <div class="grid">
+  <div class="card"><h3>Day Cruise</h3><div class="p">$350 per hour</div><p>Private time on the water aboard the 42-ft catamaran.</p></div>
+  <div class="card"><h3>Intracoastal Cruise</h3><div class="p">$350 to $700 · 1 to 2 hours</div><p>A shorter cruise along the Intracoastal.</p></div>
+  <div class="card"><h3>Sunday Brunch</h3><div class="p">$1,075 to $1,500 · 2.5 hours</div><p>Brunch on the water.</p></div>
+  <div class="card"><h3>Sunset Dinner</h3><div class="p">$1,250 to $1,700 · 3 hours</div><p>An evening sail with dinner.</p></div>
+  <div class="card"><h3>Peanut Island, Summer</h3><div class="p">$300 per hour</div><p>Departs from Sailfish Marina.</p></div>
+  <div class="card"><h3>Florida Keys</h3><div class="p">$5,000 · 3 days, 2 nights</div><p>An overnight expedition for up to 2 guests.</p></div>
+ </div>
+</section>
+
+<section class="blk">
+ <div class="eye">How booking could feel</div>
+ <h2>From a chart on a phone to a confirmed date.</h2>
+ <div class="steps">
+  <div>Scroll the course and see where the day could go.</div>
+  <div>Pick a trip and see the listed rate.</div>
+  <div>Call or email Captains Cal and Marty directly.</div>
+  <div>Step aboard at the end of Evernia Street.</div>
+ </div>
+</section>
+
+<div class="pitch">
+ <div class="eye">Concept by Kerblabs</div>
+ <h2 class="serif" style="color:#f3ead3">A first impression as calm as the boat.</h2>
+ <ul>
+  <li>Cinematic scroll hero built around Carpe Vita.</li>
+  <li>Your rates and trips laid out clearly, phone-first.</li>
+  <li>Call and email buttons always within thumb reach.</li>
+  <li>Agent-ready: AI assistants can read your trips, rates and contact details.</li>
+ </ul>
+</div>
+
+<section class="blk faq" id="faq">
+ <div class="eye">FAQ</div>
+ <h2>Quick answers</h2>
+ <details><summary>Where does the boat leave from?</summary><p>The dock at the end of Evernia Street on Flagler Drive, West Palm Beach. Peanut Island charters leave from Sailfish Marina.</p></details>
+ <details><summary>What boat is it?</summary><p>Carpe Vita, a 42-ft Fountaine Pajot Venezia catamaran, captained by Cal and Marty Landau.</p></details>
+ <details><summary>How many guests?</summary><p>Up to 6 guests. Overnight charters are limited to 2 guests.</p></details>
+ <details><summary>What does it cost?</summary><p>The current site lists Day Cruise at $350 per hour, Sunday Brunch $1,075 to $1,500, Sunset Dinner $1,250 to $1,700 and the 3-day Keys trip at $5,000. Confirm final pricing with the captains.</p></details>
+ <details><summary>How do I book?</summary><p>Call (561) 312-0010 or email clandau3@gmail.com.</p></details>
+</section>
+
+<div class="ar" id="agent-ready"><div><b>Agent-Ready included.</b> llms.txt, JSON-LD and machine-readable trips so AI assistants can answer "private catamaran charter in West Palm Beach" with your details. Illustrative concept, not yet live for this business.</div></div>
+
+<footer>Concept site by Kerblabs for Carpe Vita Sailboat Charters. Not affiliated or approved. Business details from florida-sailboatcharters.com.</footer>
+<div class="sticky"><a class="btn" href="tel:+15613120010">Call</a><a class="btn alt" style="background:#f3ead3" href="mailto:clandau3@gmail.com">Email</a></div>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var track=$('track'),route=$('route'),boat=$('boat'),rose=$('rose');
+var len=route.getTotalLength();
+route.style.strokeDasharray=len;
+var legs=[['Evernia Street dock','Departure point, Flagler Drive, West Palm Beach.'],['The Intracoastal','Intracoastal cruises, 1 to 2 hours.'],['Peanut Island','Summer charters, leaving from Sailfish Marina.'],['The Florida Keys','A 3-day, 2-night expedition for up to 2 guests.']];
+var wp=[0,1,2,3].map(function(i){return $('wp'+i)});
+var wpT=[0,.33,.66,1];
+var dots=$('dots').children,last=-1;
+function draw(){
+ var r=track.getBoundingClientRect(),max=track.offsetHeight-innerHeight;
+ var t=Math.min(1,Math.max(0,-r.top/max));
+ route.style.strokeDashoffset=len*(1-t);
+ var p=route.getPointAtLength(len*t),q=route.getPointAtLength(Math.min(len,len*t+2));
+ boat.setAttribute('transform','translate('+p.x+','+p.y+') rotate('+(Math.atan2(q.y-p.y,q.x-p.x)*180/Math.PI)+')');
+ rose.setAttribute('transform','translate(1040,560) rotate('+(t*50)+')');
+ for(var k=0;k<4;k++){wp[k].style.opacity=t>=wpT[k]-.02?1:.35;wp[k].setAttribute('transform',wp[k].getAttribute('transform').replace(/ scale\(.*\)/,'')+(t>=wpT[k]-.02?' scale(1.25)':''))}
+ var i=Math.min(3,Math.floor(t*4));
+ if(i!==last){last=i;$('lk').textContent='Leg '+(i+1)+' of 4';$('lv').textContent=legs[i][0];$('ld').textContent=legs[i][1];for(var k2=0;k2<4;k2++)dots[k2].className=k2<=i?'on':''}
+}
+addEventListener('scroll',draw,{passive:true});addEventListener('resize',draw);draw();
+})();
+</script>
+</body>
+</html>

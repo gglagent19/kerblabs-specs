@@ -1,0 +1,22 @@
+{
+  "schema": "kerblabs-agent-ready/1",
+  "concept_note": "Unofficial Kerblabs design concept. Facts from florida-sailboatcharters.com. Confirm final pricing with the captains.",
+  "business": {"name": "Carpe Vita Sailboat Charters", "type": "BoatCharter", "vessel": "Carpe Vita, 42-ft Fountaine Pajot Venezia catamaran", "captains": ["Cal Landau", "Marty Landau"], "url": "https://florida-sailboatcharters.com"},
+  "locations": [
+    {"name": "West Palm Beach dock", "address": "Dock at the end of Evernia Street on Flagler Drive, West Palm Beach, FL"},
+    {"name": "Peanut Island charters", "address": "Sailfish Marina"}
+  ],
+  "contact": {"phone": "+1-561-312-0010", "email": "clandau3@gmail.com"},
+  "capacity": {"max_guests": 6, "overnight_max_guests": 2},
+  "services": [
+    {"id": "day-cruise", "name": "Day Cruise", "price_usd": 350, "price_unit": "per hour"},
+    {"id": "intracoastal", "name": "Intracoastal Cruise", "duration": "1-2 hours", "price_from_usd": 350, "price_to_usd": 700},
+    {"id": "sunday-brunch", "name": "Sunday Brunch", "duration": "2.5 hours", "price_from_usd": 1075, "price_to_usd": 1500},
+    {"id": "sunset-dinner", "name": "Sunset Dinner", "duration": "3 hours", "price_from_usd": 1250, "price_to_usd": 1700},
+    {"id": "peanut-island", "name": "Peanut Island Summer", "price_usd": 300, "price_unit": "per hour"},
+    {"id": "florida-keys", "name": "Florida Keys", "duration": "3 days, 2 nights", "price_usd": 5000}
+  ],
+  "actions": [
+    {"id": "book", "name": "Book or enquire", "channel": "phone or email", "status": "available"}
+  ]
+}

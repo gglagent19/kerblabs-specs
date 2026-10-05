@@ -1,0 +1,11 @@
+{
+  "business": "The Wedding Forever",
+  "note": "Concept file by Kerblabs. Facts from the public Instagram profile @theweddingforever. Prices not published.",
+  "locations": ["Delhi", "Jaipur", "Dubai"],
+  "services": [
+    {"name": "Wedding photography", "price": null, "pricing": "quote on request"},
+    {"name": "Wedding films", "price": null, "pricing": "quote on request"}
+  ],
+  "booking": {"method": "WhatsApp", "url": "https://wa.me/918929344434", "needs": ["wedding date", "city"]},
+  "social": {"instagram": "https://www.instagram.com/theweddingforever/"}
+}

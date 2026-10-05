@@ -1,0 +1,21 @@
+# The Wedding Forever (concept site by Kerblabs)
+
+> Luxury wedding films and photography. Cities: Delhi, Jaipur, Dubai. Instagram: @theweddingforever. Concept only, not the official site.
+
+## Services
+- Wedding photography
+- Wedding films
+
+## Actions
+- Enquire / check a date: https://wa.me/918929344434 (WhatsApp, include date and city)
+- Instagram: https://www.instagram.com/theweddingforever/
+
+## Pricing
+Not published. Quotes on request (see services.json).
+
+## FAQ
+- Where do they work? Delhi, Jaipur and Dubai.
+- How do I get a quote? WhatsApp or Instagram DM with date and city.
+
+## Machine-readable
+- https://gglagent19.github.io/kerblabs-specs/the-wedding-forever/services.json

@@ -1,0 +1,23 @@
+# Carpe Vita Sailboat Charters (concept by Kerblabs, not live)
+
+> Private catamaran charters out of West Palm Beach, FL aboard Carpe Vita, a 42-ft Fountaine Pajot Venezia, captained by Cal and Marty Landau. Facts from florida-sailboatcharters.com.
+
+## Details
+- Departure: dock at the end of Evernia Street on Flagler Drive, West Palm Beach (Peanut Island charters: Sailfish Marina)
+- Capacity: up to 6 guests; overnight charters limited to 2 guests
+- Phone: (561) 312-0010
+- Email: clandau3@gmail.com
+
+## Trips and listed rates
+- Day Cruise: $350 per hour
+- Intracoastal Cruise: $350 to $700 (1 to 2 hours)
+- Sunday Brunch: $1,075 to $1,500 (2.5 hours)
+- Sunset Dinner: $1,250 to $1,700 (3 hours)
+- Peanut Island Summer: $300 per hour
+- Florida Keys: $5,000 (3 days, 2 nights)
+
+## Actions
+- Book or enquire: call (561) 312-0010 or email clandau3@gmail.com. Confirm final pricing with the captains.
+
+## Machine-readable
+- /services.json lists trips, rates, capacity and booking actions
