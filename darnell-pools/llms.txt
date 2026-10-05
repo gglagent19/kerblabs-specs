@@ -1,0 +1,23 @@
+# Darnell Pools (concept page by Kerblabs)
+
+> Custom pools and outdoor living in Austin and Dallas, Texas, run by father-daughter team Bill and Lexi Darnell. Details from darnellpools.com.
+
+## Services
+- Custom pool construction
+- Pool remodeling and restoration
+- Outdoor living and landscapes
+- BBQ islands and kitchens
+- Custom patio covers
+- Fire pits and lounge areas
+- Hardscapes and landscaping
+
+## Facts (as listed on darnellpools.com)
+- Service areas: Austin, TX and Dallas, TX
+- Address listed: 12600 Hill Country Blvd Ste. R130 #5134, Austin, TX 78738
+- Prices: not published
+
+## Contact
+- Phone: (512) 592-9030
+
+## Machine-readable
+- https://gglagent19.github.io/kerblabs-specs/darnell-pools/services.json

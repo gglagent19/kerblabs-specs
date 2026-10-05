@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AZ Street Custom | Frame-Off Restoration and Custom Paint, Phoenix AZ (concept)</title>
+<meta name="description" content="Concept site for AZ Street Custom: three generations of paint, body and frame-off restoration in Phoenix, Arizona. The body lifts off the frame and comes back painted as you scroll.">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/az-street-custom/">
+<meta property="og:title" content="AZ Street Custom | concept site by Kerblabs">
+<meta property="og:description" content="A frame-off restoration told in one scroll: teardown, primer, colour, gloss.">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/az-street-custom/">
+<meta name="twitter:card" content="summary">
+<meta name="robots" content="noindex,follow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#14110f;color:#efe6da;font-family:"Helvetica Neue",Arial,sans-serif;line-height:1.55}
+a{color:inherit}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 16px;background:rgba(20,17,15,.92);backdrop-filter:blur(8px);border-bottom:1px solid #2e2823}
+nav b{font-family:Georgia,serif;font-size:16px;font-weight:400;letter-spacing:.06em}
+nav .r{display:flex;gap:14px;align-items:center;font-size:13px}
+.btn{display:inline-block;text-decoration:none;background:#d9552b;color:#fff;padding:11px 20px;border-radius:6px;font-size:14px;font-weight:700;white-space:nowrap}
+.btn.alt{background:transparent;color:#efe6da;border:1.5px solid #efe6da}
+.track{height:560vh;position:relative}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:radial-gradient(ellipse at 50% 85%,#2a221c,#14110f 70%)}
+.hud{position:absolute;inset:0;display:grid;grid-template-rows:auto 1fr auto;padding:78px 24px 20px;max-width:1280px;margin:0 auto;pointer-events:none}
+.copy{pointer-events:auto}
+.hud h1{font-size:clamp(32px,5vw,68px);line-height:1.03;max-width:760px}
+.hud p{margin-top:10px;max-width:460px;font-size:clamp(14px,1.5vw,18px);opacity:.85}
+.book{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px}
+.svgwrap{position:relative;min-height:0}
+.svgwrap svg{position:absolute;inset:0;width:100%;height:100%}
+.leg{background:#efe6da;color:#14110f;padding:14px 20px;border-radius:10px;max-width:420px}
+.leg .k{font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.7}
+.leg .v{font-family:Georgia,serif;font-size:clamp(22px,3vw,34px);line-height:1.05;margin:3px 0}
+.leg .d{font-size:13px;opacity:.85}
+.bar{height:4px;border-radius:2px;background:rgba(20,17,15,.2);margin-top:10px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:#d9552b}
+.note{position:absolute;right:24px;bottom:12px;font-size:10.5px;background:rgba(239,230,218,.12);padding:3px 10px;border-radius:8px}
+section.blk{padding:80px 22px;max-width:1100px;margin:0 auto}
+.eye{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#d9552b;margin-bottom:12px;font-weight:700}
+h2{font-size:clamp(26px,4vw,44px);line-height:1.1;margin-bottom:16px;max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:24px}
+.card{background:#1e1915;border:1px solid #2e2823;border-radius:12px;padding:20px}
+.card h3{font-size:21px;margin-bottom:6px}
+.card p{font-size:14px;opacity:.8}
+.pitch{background:#efe6da;color:#14110f;border-radius:20px;padding:32px 26px;margin:0 16px}
+.pitch ul{margin:12px 0 0 18px}
+.faq details{border-bottom:1px solid #2e2823;padding:14px 0}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{margin-top:8px;opacity:.85;max-width:680px}
+.ar{margin:0 auto;max-width:1100px;padding:20px 22px 70px}
+.ar div{border:1px dashed #efe6da;border-radius:12px;padding:20px;font-size:14px}
+footer{padding:44px 22px 96px;text-align:center;font-size:12px;opacity:.7;border-top:1px solid #2e2823}
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none;gap:8px}
+.sticky .btn{flex:1;text-align:center;padding:14px}
+@media(max-width:760px){
+.hud{padding:64px 14px 12px}
+.hud p,.book{display:none}
+.hud h1{font-size:27px}
+.leg{max-width:none;padding:10px 14px;margin-bottom:60px}
+.note{display:none}
+nav .r a.t{display:none}
+nav .btn{padding:9px 14px;font-size:12px}
+.sticky{display:flex}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoBodyShop","name":"AZ Street Custom","url":"https://www.azstreetcustom.com/","telephone":"+1 480 703 1153","address":{"@type":"PostalAddress","streetAddress":"1415 E. University Dr., Suite C","addressLocality":"Phoenix","addressRegion":"AZ","postalCode":"85034","addressCountry":"US"},"openingHours":"Mo-Fr 08:00-17:00","description":"Custom paint, frame-off restoration, body work, collision and insurance claim repair for hot rods, muscle, classic and antique cars and trucks."}
+</script>
+</head>
+<body>
+<nav><b>AZ STREET CUSTOM</b><div class="r"><a class="t" href="#work">What we do</a><a class="t" href="#faq">FAQ</a><a class="btn" href="tel:+14807031153">Call 480-703-1153</a></div></nav>
+
+<div class="track" id="track">
+ <div class="stage">
+  <div class="hud">
+   <div class="copy">
+    <h1>Frame off.<br>Paint on. Built to last.</h1>
+    <p>Custom paint and frame-off restoration in Phoenix, by three generations of the Albero family.</p>
+    <div class="book"><a class="btn" href="tel:+14807031153">Call 480-703-1153</a><a class="btn alt" href="#work">What we do</a></div>
+   </div>
+   <div class="svgwrap">
+    <svg viewBox="0 0 800 340" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+     <defs>
+      <clipPath id="paintClip"><rect id="paintRect" x="0" y="0" width="0" height="340"/></clipPath>
+      <linearGradient id="glintG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".75"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+      <clipPath id="bodyClip"><path id="bodyClipP" d="M70 210L70 178Q78 160 138 154L270 148Q310 96 392 86L530 86Q590 92 630 148L726 158Q756 168 750 210Z"/></clipPath>
+     </defs>
+     <!-- lift stand -->
+     <g stroke="#6d6258" stroke-width="3" opacity=".7"><path d="M120 330V270M680 330V270M60 330H760"/></g>
+     <!-- frame / chassis -->
+     <g id="chassis" stroke="#b9ab9a" stroke-width="5" fill="none" stroke-linecap="round">
+      <path d="M90 258H720"/><path d="M90 272H720" stroke-width="3"/>
+      <path d="M200 258V272M330 258V272M460 258V272M590 258V272" stroke-width="3"/>
+      <rect x="150" y="238" width="70" height="20" stroke-width="3"/>
+     </g>
+     <!-- wheels -->
+     <g fill="#0c0a09" stroke="#b9ab9a" stroke-width="4"><circle cx="190" cy="268" r="44"/><circle cx="610" cy="268" r="44"/></g>
+     <g fill="none" stroke="#6d6258" stroke-width="3"><circle cx="190" cy="268" r="22"/><circle cx="610" cy="268" r="22"/></g>
+     <!-- body group lifts -->
+     <g id="body">
+      <path id="shell" d="M70 210L70 178Q78 160 138 154L270 148Q310 96 392 86L530 86Q590 92 630 148L726 158Q756 168 750 210Z" fill="#6f655b" stroke="#b9ab9a" stroke-width="3"/>
+      <path d="M320 150Q340 104 396 98L520 98Q566 102 596 150Z" fill="#14110f" opacity=".8"/>
+      <g clip-path="url(#bodyClip)">
+       <rect id="primer" x="0" y="60" width="800" height="170" fill="#8d8f93" opacity="0"/>
+       <g clip-path="url(#paintClip)"><rect x="0" y="60" width="800" height="170" fill="#c63a1e"/><path d="M60 196L750 196" stroke="#fff" stroke-opacity=".25" stroke-width="3"/></g>
+       <rect id="glint" x="-200" y="60" width="140" height="170" fill="url(#glintG)" transform="skewX(-20)"/>
+      </g>
+      <path d="M326 150H592" stroke="#14110f" stroke-opacity=".5" stroke-width="2"/>
+      <g id="sparks" opacity="0" stroke="#ffb347" stroke-width="2.5" stroke-linecap="round"><path d="M140 168l-12-8M150 160l-6-14M162 170l8-14M130 180l-16-2"/></g>
+     </g>
+    </svg>
+   </div>
+   <div class="leg"><div class="k" id="lk">Stage 1 of 5</div><div class="v" id="lv">Frame off</div><div class="d" id="ld">The body comes off the chassis.</div><div class="bar"><i id="bar"></i></div></div>
+  </div>
+  <div class="note">Illustrative sequence. Not a photo of AZ Street Custom's work.</div>
+ </div>
+</div>
+
+<section class="blk" id="work">
+ <div class="eye">What AZ Street Custom does (from azstreetcustom.com)</div>
+ <h2>Paint, bodywork and full restoration under one roof.</h2>
+ <div class="grid">
+  <div class="card"><h3>Frame-off restoration</h3><p>Hot rods, muscle cars, vintage, classic and antique cars and trucks.</p></div>
+  <div class="card"><h3>Custom paint</h3><p>Custom paint jobs and factory paint colour matching.</p></div>
+  <div class="card"><h3>Body work</h3><p>Body kit installation and repair, custom body work, fiberglass and carbon fiber repair.</p></div>
+  <div class="card"><h3>Collision and insurance</h3><p>Collision repair, with insurance claim work for all major carriers.</p></div>
+ </div>
+ <p style="margin-top:18px;font-size:13px;opacity:.7">1415 E. University Dr., Suite C, Phoenix, AZ 85034. Mon to Fri 8:00 am to 5:00 pm. Phone 480-703-1153, office 480-645-5445. No prices are published, so none appear here.</p>
+</section>
+
+<section class="blk">
+ <div class="eye">Three generations</div>
+ <h2>Quality first, a line the family has kept.</h2>
+ <p style="max-width:680px;opacity:.85">The current site is led by Joaquin "Quino" Albero's words: "The bitterness of poor quality lingers long after the sweetness of low cost is forgotten." The shop is run today by Martin S. Albero, following his father Joaquin A. Albero and grandfather Quino. A site should carry that story up front, with the work shown in motion.</p>
+</section>
+
+<div class="pitch">
+ <div class="eye">Concept by Kerblabs</div>
+ <h2>Show the restoration before the first call.</h2>
+ <ul>
+  <li>A scroll hero that takes a car from teardown to gloss in front of the visitor.</li>
+  <li>Services, address, hours and a tap-to-call button on every screen.</li>
+  <li>A mobile layout, replacing a dated template.</li>
+  <li>Agent-ready: AI assistants can read what you do, where, and how to reach you.</li>
+ </ul>
+</div>
+
+<section class="blk faq" id="faq">
+ <div class="eye">FAQ</div>
+ <h2>Quick answers</h2>
+ <details><summary>What does AZ Street Custom do?</summary><p>Custom paint, frame-off restoration, body kits and body work, collision repair, fiberglass and carbon fiber repair, and insurance claim work for hot rods, muscle, vintage and classic cars and trucks.</p></details>
+ <details><summary>Where is the shop?</summary><p>1415 E. University Dr., Suite C, Phoenix, AZ 85034.</p></details>
+ <details><summary>When is it open?</summary><p>Monday to Friday, 8:00 am to 5:00 pm. Closed Saturday, per the current site.</p></details>
+ <details><summary>How do I get in touch?</summary><p>Call 480-703-1153 or the office on 480-645-5445.</p></details>
+</section>
+
+<div class="ar" id="agent-ready"><div><b>Agent-Ready included.</b> llms.txt, JSON-LD and machine-readable services so AI assistants can answer "frame-off restoration in Phoenix" with your details. Illustrative concept, not yet live for this business.</div></div>
+
+<footer>Concept site by Kerblabs for AZ Street Custom. Not affiliated or approved. Business details from azstreetcustom.com.</footer>
+<div class="sticky"><a class="btn" href="tel:+14807031153">Call the shop</a></div>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var track=$('track'),body=$('body'),primer=$('primer'),paintRect=$('paintRect'),glint=$('glint'),sparks=$('sparks'),bar=$('bar');
+var st=[['Frame off','The body comes off the chassis.'],['Teardown','Down to bare metal on a clean frame.'],['Primer','Panels sealed and straightened.'],['Colour','Paint goes on, edge to edge.'],['Gloss','Clear coat, then the body goes back on.']];
+var cuts=[.12,.3,.5,.72,1.01],last=-1;
+function rg(t,a,b){return Math.min(1,Math.max(0,(t-a)/(b-a)))}
+function draw(){
+ var r=track.getBoundingClientRect(),max=track.offsetHeight-innerHeight;
+ var t=Math.min(1,Math.max(0,-r.top/max));
+ var lift=rg(t,0,.12)-rg(t,.78,.92);
+ body.setAttribute('transform','translate(0,'+(-70*lift)+')');
+ primer.style.opacity=rg(t,.3,.42);
+ paintRect.setAttribute('width',800*rg(t,.52,.72));
+ var g=rg(t,.88,1);
+ glint.setAttribute('x',-200+1100*g);
+ sparks.style.opacity=(t>.12&&t<.3)?1:0;
+ bar.style.width=(t*100)+'%';
+ var i=0;while(t>=cuts[i])i++;
+ if(i!==last){last=i;$('lk').textContent='Stage '+(i+1)+' of 5';$('lv').textContent=st[i][0];$('ld').textContent=st[i][1]}
+}
+addEventListener('scroll',draw,{passive:true});addEventListener('resize',draw);draw();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Saturn Pool Company | Custom Concrete Pools, Phoenix AZ (concept)</title>
+<meta name="description" content="Concept site for Saturn Pool Company: custom in-ground concrete pools and spas built by Nate Green's crew in Phoenix, Arizona. The pool fills as you scroll.">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/saturn-pool-company/">
+<meta property="og:title" content="Saturn Pool Company | concept site by Kerblabs">
+<meta property="og:description" content="Concept for a single-crew Phoenix pool builder, with a pool that is dug, shot, finished and filled as you scroll.">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/saturn-pool-company/">
+<meta name="twitter:card" content="summary">
+<meta name="robots" content="noindex,follow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#f6ece0;color:#2a1d17;font-family:"Helvetica Neue",Arial,sans-serif;line-height:1.55}
+a{color:inherit}
+h1,h2,h3,.serif{font-family:Georgia,"Times New Roman",serif;font-weight:400}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 16px;background:rgba(246,236,224,.93);backdrop-filter:blur(8px);border-bottom:1px solid #e0cdb4}
+nav b{font-family:Georgia,serif;font-size:16px;font-weight:400;letter-spacing:.03em}
+nav .r{display:flex;gap:14px;align-items:center;font-size:13px}
+.btn{display:inline-block;text-decoration:none;background:#c8553d;color:#fff;padding:11px 20px;border-radius:99px;font-size:14px;font-weight:700;white-space:nowrap}
+.btn.alt{background:transparent;color:#2a1d17;border:1.5px solid #2a1d17}
+.track{height:520vh;position:relative}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#f6ece0}
+.stage svg{position:absolute;right:0;bottom:0;width:62%;height:100%}
+.hud{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);grid-template-rows:1fr auto;padding:84px 24px 22px;max-width:1280px;margin:0 auto;pointer-events:none}
+.copy{grid-column:1;pointer-events:auto;align-self:start}
+.hud h1{font-size:clamp(34px,5vw,70px);line-height:1.03}
+.hud p{margin-top:12px;max-width:420px;font-size:clamp(14px,1.5vw,18px)}
+.book{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px}
+.leg{grid-column:1;grid-row:2;align-self:end;background:#2a1d17;color:#f6ece0;padding:16px 20px;border-radius:14px;max-width:380px;box-shadow:0 10px 30px rgba(42,29,23,.25)}
+.leg .k{font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.75}
+.leg .v{font-family:Georgia,serif;font-size:clamp(24px,3vw,36px);line-height:1.05;margin:4px 0}
+.leg .d{font-size:13px;opacity:.9}
+.bar{height:4px;border-radius:2px;background:rgba(246,236,224,.25);margin-top:12px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:#2cc4cf}
+.note{position:absolute;right:24px;bottom:10px;font-size:10.5px;background:rgba(42,29,23,.8);color:#f6ece0;padding:3px 10px;border-radius:8px}
+section.blk{padding:80px 22px;max-width:1100px;margin:0 auto}
+.eye{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#c8553d;margin-bottom:12px;font-weight:700}
+h2{font-size:clamp(26px,4vw,44px);line-height:1.1;margin-bottom:16px;max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:24px}
+.card{background:#fffaf2;border:1px solid #e0cdb4;border-radius:14px;padding:20px}
+.card h3{font-size:21px;margin-bottom:6px}
+.card p{font-size:14px;opacity:.8}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:24px;counter-reset:s}
+.steps div{border-top:2px solid #2a1d17;padding-top:12px;font-size:14px;counter-increment:s}
+.steps div::before{content:"0" counter(s);display:block;font-family:Georgia,serif;font-size:26px;color:#c8553d}
+.pitch{background:#2a1d17;color:#f6ece0;border-radius:22px;padding:32px 26px;margin:0 16px}
+.pitch ul{margin:12px 0 0 18px}
+.pitch .eye{color:#2cc4cf}
+.faq details{border-bottom:1px solid #e0cdb4;padding:14px 0}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{margin-top:8px;opacity:.85;max-width:680px}
+.ar{margin:0 auto;max-width:1100px;padding:20px 22px 70px}
+.ar div{border:1px dashed #2a1d17;border-radius:14px;padding:20px;font-size:14px}
+footer{padding:44px 22px 96px;text-align:center;font-size:12px;opacity:.7;border-top:1px solid #e0cdb4}
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none;gap:8px}
+.sticky .btn{flex:1;text-align:center;padding:14px}
+@media(max-width:760px){
+.stage svg{width:100%;height:46%}
+.hud{grid-template-columns:1fr;padding:64px 16px 14px}
+.copy{background:rgba(246,236,224,.9);border-radius:14px;padding:12px 14px}
+.hud p,.book{display:none}
+.hud h1{font-size:28px}
+.leg{max-width:none;padding:12px 16px;margin-bottom:62px}
+.note{display:none}
+nav .r a.t{display:none}
+nav .btn{padding:9px 14px;font-size:12px}
+.sticky{display:flex}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"HomeAndConstructionBusiness","name":"Saturn Pool Company","url":"https://saturnpools.com/","email":"nateg@saturnpools.com","telephone":"+1 623 869 9699","founder":{"@type":"Person","name":"Nate Green"},"address":{"@type":"PostalAddress","addressLocality":"Phoenix","addressRegion":"AZ","postalCode":"85086","addressCountry":"US"},"description":"Custom in-ground concrete pools, spas and pool features in the Phoenix area."},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does Saturn Pool Company build?","acceptedAnswer":{"@type":"Answer","text":"Custom in-ground concrete pools, spas (raised spillover and standalone) and features such as waterfalls, tanning ledges, lighting, fire pits and automation."}},{"@type":"Question","name":"How long does a build take?","acceptedAnswer":{"@type":"Answer","text":"Saturn's site lists a typical build of 8 to 12 weeks."}},{"@type":"Question","name":"Where does Saturn work?","acceptedAnswer":{"@type":"Answer","text":"Phoenix and nearby communities including Scottsdale, Glendale, Peoria, Surprise, Anthem, New River, Cave Creek, Carefree, Waddell, Wittmann and Wickenburg."}},{"@type":"Question","name":"How do I get in touch?","acceptedAnswer":{"@type":"Answer","text":"Call 623-869-9699 or email nateg@saturnpools.com."}}]}]}
+</script>
+</head>
+<body>
+<nav><b>Saturn Pool Company</b><div class="r"><a class="t" href="#build">What we build</a><a class="t" href="#faq">FAQ</a><a class="btn" href="tel:+16238699699">Call 623-869-9699</a></div></nav>
+
+<div class="track" id="track">
+ <div class="stage">
+  <svg viewBox="240 190 720 440" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+   <defs>
+    <clipPath id="shell"><path d="M300 260L300 340L560 450L560 540Q560 560 580 560L880 560Q900 560 900 540L900 260Z"/></clipPath>
+    <clipPath id="dig"><rect id="digRect" x="240" y="260" width="720" height="0"/></clipPath>
+    <linearGradient id="finG"x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8fe0e4"/><stop offset="1" stop-color="#4fbfc9"/></linearGradient>
+   </defs>
+   <!-- dirt -->
+   <rect x="240" y="260" width="720" height="370" fill="#c99a6a"/>
+   <g stroke="#a97c4f" stroke-width="2" stroke-linecap="round" opacity=".6"><path d="M260 300h30M330 580h40M940 330h-30M930 600h-50M250 450h26M620 610h40"/></g>
+   <!-- desert surface strip -->
+   <rect x="240" y="244" width="720" height="16" fill="#e3b98a"/>
+   <path d="M270 244c0-24 6-40 10-52M276 214l-14-8M278 224l16-10" stroke="#5a7a3c" stroke-width="3" fill="none" stroke-linecap="round"/>
+   <!-- excavation void -->
+   <g clip-path="url(#dig)"><path d="M300 260L300 340L560 450L560 540Q560 560 580 560L880 560Q900 560 900 540L900 260Z" fill="#f1e2cc"/></g>
+   <!-- rebar -->
+   <g id="rebar" opacity="0" stroke="#4a4540" stroke-width="2.2" fill="none">
+    <path d="M308 262L308 338L568 448L568 538Q568 552 580 552L880 552Q892 552 892 538L892 262"/>
+    <path d="M318 262L318 332L572 440M580 548L880 548M884 262L884 540"/>
+    <path d="M308 300h-0M330 262v70M360 262v88M390 262v106M420 262v120M450 262v134M480 262v146M510 262v160M540 262v174" stroke-dasharray="2 8" stroke-opacity=".7"/>
+    <path d="M600 552v-60M640 552v-60M680 552v-60M720 552v-60M760 552v-60M800 552v-60M840 552v-60" stroke-dasharray="2 8" stroke-opacity=".7"/>
+   </g>
+   <!-- shotcrete shell -->
+   <path id="shellLine" d="M300 260L300 340L560 450L560 540Q560 560 580 560L880 560Q900 560 900 540L900 260" fill="none" stroke="#8d877d" stroke-width="16" stroke-linejoin="round"/>
+   <!-- pebble finish -->
+   <g clip-path="url(#shell)"><rect id="fin" x="240" y="250" width="720" height="330" fill="url(#finG)" opacity="0"/></g>
+   <!-- tile band -->
+   <g id="tile" opacity="0"><rect x="292" y="262" width="16" height="22" fill="#1a8c97"/><rect x="892" y="262" width="16" height="22" fill="#1a8c97"/><path d="M292 273h16M892 273h16" stroke="#e8f8f9" stroke-width="1.5"/></g>
+   <!-- water -->
+   <g clip-path="url(#shell)"><path id="water" d="M240 560H960V570H240Z" fill="#12a7b6" fill-opacity=".72"/></g>
+   <!-- pump house -->
+   <g id="pump" opacity="0.25"><rect x="930" y="214" width="26" height="30" fill="#6d5a4a"/><path d="M930 214l13-10l13 10" fill="#c8553d"/></g>
+  </svg>
+  <div class="hud">
+   <div class="copy">
+    <h1>Your pool,<br>built right, week by week.</h1>
+    <p>Custom concrete pools and spas by Nate Green and the Saturn crew, Phoenix, Arizona.</p>
+    <div class="book"><a class="btn" href="tel:+16238699699">Call 623-869-9699</a><a class="btn alt" href="mailto:nateg@saturnpools.com">Email Nate</a></div>
+   </div>
+   <div class="leg"><div class="k" id="lk">Week 0 of about 12</div><div class="v" id="lv">Layout and dig</div><div class="d" id="ld">The shape is marked out and the earth comes out.</div><div class="bar"><i id="bar"></i></div></div>
+  </div>
+  <div class="note">Illustrative build sequence. Typical 8 to 12 weeks, per saturnpools.com.</div>
+ </div>
+</div>
+
+<section class="blk" id="build">
+ <div class="eye">What Saturn builds (from saturnpools.com)</div>
+ <h2>Custom concrete pools, spas and the details around them.</h2>
+ <div class="grid">
+  <div class="card"><h3>Custom in-ground pools</h3><p>Concrete pools designed around your yard, with Pebble Tec interior finishes.</p></div>
+  <div class="card"><h3>Spas</h3><p>Raised spillover spas and standalone spas.</p></div>
+  <div class="card"><h3>Pool features</h3><p>Waterfalls, tanning ledges, lighting, fire pits and automation.</p></div>
+  <div class="card"><h3>Service area</h3><p>Phoenix, Scottsdale, Glendale, Peoria, Surprise, Anthem, New River, Cave Creek, Carefree, Waddell, Wittmann and Wickenburg.</p></div>
+ </div>
+ <p style="margin-top:18px;font-size:13px;opacity:.7">Licensed, bonded and insured, ROC #199211, building since 2004, as listed on the current site. No prices are published, so none appear here.</p>
+</section>
+
+<section class="blk">
+ <div class="eye">How enquiring could feel</div>
+ <h2>From a scroll to a site visit.</h2>
+ <div class="steps">
+  <div>Watch a pool go from layout to filled in under a minute.</div>
+  <div>See what Saturn builds and where it works.</div>
+  <div>Call or email Nate directly, always one tap away on mobile.</div>
+  <div>Book a design conversation.</div>
+ </div>
+</section>
+
+<div class="pitch">
+ <div class="eye">Concept by Kerblabs</div>
+ <h2 class="serif" style="color:#f6ece0">Show the craft before the first call.</h2>
+ <ul>
+  <li>A cinematic scroll hero that builds a pool in front of the visitor.</li>
+  <li>Your services, service area and licence laid out clearly.</li>
+  <li>Call and email within thumb reach on every screen.</li>
+  <li>Agent-ready: AI assistants can read what you build, where, and how to reach you.</li>
+ </ul>
+</div>
+
+<section class="blk faq" id="faq">
+ <div class="eye">FAQ</div>
+ <h2>Quick answers</h2>
+ <details><summary>What does Saturn Pool Company build?</summary><p>Custom in-ground concrete pools, spas (raised spillover and standalone) and features such as waterfalls, tanning ledges, lighting, fire pits and automation.</p></details>
+ <details><summary>How long does a build take?</summary><p>Saturn's current site lists a typical build of 8 to 12 weeks.</p></details>
+ <details><summary>Where does Saturn work?</summary><p>Phoenix and nearby communities including Scottsdale, Glendale, Peoria, Surprise, Anthem, New River, Cave Creek, Carefree, Waddell, Wittmann and Wickenburg.</p></details>
+ <details><summary>How do I get in touch?</summary><p>Call 623-869-9699 or email nateg@saturnpools.com.</p></details>
+</section>
+
+<div class="ar" id="agent-ready"><div><b>Agent-Ready included.</b> llms.txt, JSON-LD and machine-readable services so AI assistants can answer "custom pool builder in Phoenix" with your details. Illustrative concept, not yet live for this business.</div></div>
+
+<footer>Concept site by Kerblabs for Saturn Pool Company. Not affiliated or approved. Business details from saturnpools.com.</footer>
+<div class="sticky"><a class="btn" href="tel:+16238699699">Call</a><a class="btn alt" style="background:#f6ece0" href="mailto:nateg@saturnpools.com">Email</a></div>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var track=$('track'),digRect=$('digRect'),rebar=$('rebar'),shellLine=$('shellLine'),fin=$('fin'),tile=$('tile'),water=$('water'),pump=$('pump'),bar=$('bar');
+var sl=shellLine.getTotalLength();
+shellLine.style.strokeDasharray=sl;
+var st=[['Layout and dig','The shape is marked out and the earth comes out.'],['Steel','Rebar cage tied in to the shape of the pool.'],['Shell','The concrete shell is formed.'],['Tile and finish','Waterline tile and an interior finish go in.'],['Fill','Water rises to the tile line.'],['Ready to swim','Illustrative: the finished pool.']];
+var cuts=[.18,.36,.54,.7,.94,1.01],last=-1;
+function rg(t,a,b){return Math.min(1,Math.max(0,(t-a)/(b-a)))}
+function draw(){
+ var r=track.getBoundingClientRect(),max=track.offsetHeight-innerHeight;
+ var t=Math.min(1,Math.max(0,-r.top/max));
+ digRect.setAttribute('height',310*rg(t,0,.18));
+ rebar.style.opacity=rg(t,.18,.3);
+ shellLine.style.strokeDashoffset=sl*(1-rg(t,.34,.54));
+ fin.style.opacity=rg(t,.56,.68);
+ tile.style.opacity=rg(t,.62,.7);
+ var f=rg(t,.72,.94),y=560-270*f,ph=t*40;
+ var w='M240 '+y;
+ for(var x=240;x<=960;x+=20){w+='L'+x+' '+(y+Math.sin((x+ph*8)/38)*(f>0&&f<1?4:2))}
+ w+='L960 570L240 570Z';
+ water.setAttribute('d',f>0?w:'M240 570H960V571H240Z');
+ pump.style.opacity=.25+.75*t;
+ var wk=Math.round(t*12);
+ $('lk').textContent='Week '+wk+' of about 12';
+ bar.style.width=(t*100)+'%';
+ var i=0;while(t>=cuts[i])i++;
+ if(i!==last){last=i;$('lv').textContent=st[i][0];$('ld').textContent=st[i][1]}
+}
+addEventListener('scroll',draw,{passive:true});addEventListener('resize',draw);draw();
+})();
+</script>
+</body>
+</html>

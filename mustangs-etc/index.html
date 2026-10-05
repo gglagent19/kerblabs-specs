@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mustangs, Etc. | Classic Mustang and Ford Parts, Service and Restoration, Van Nuys CA (concept)</title>
+<meta name="description" content="Concept site for Mustangs, Etc.: classic Mustang and vintage Ford parts, service, repair and restoration, owner-run in Van Nuys since 1976. A rusty Mustang comes apart and goes back together restored as you scroll.">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/mustangs-etc/">
+<meta property="og:title" content="Mustangs, Etc. | concept site by Kerblabs">
+<meta property="og:description" content="Teardown to finished: a Mustang restoration explained in one scroll.">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/mustangs-etc/">
+<meta name="twitter:card" content="summary">
+<meta name="robots" content="noindex,follow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#f1ead9;color:#13233a;font-family:"Helvetica Neue",Arial,sans-serif;line-height:1.55}
+a{color:inherit}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 16px;background:rgba(241,234,217,.94);backdrop-filter:blur(8px);border-bottom:1px solid #d6cbb0}
+nav b{font-family:Georgia,serif;font-size:16px;font-weight:400;letter-spacing:.03em}
+nav .r{display:flex;gap:14px;align-items:center;font-size:13px}
+.btn{display:inline-block;text-decoration:none;background:#1c4c8c;color:#fff;padding:11px 20px;border-radius:4px;font-size:14px;font-weight:700;white-space:nowrap}
+.btn.alt{background:transparent;color:#13233a;border:1.5px solid #13233a}
+.track{height:560vh;position:relative}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#f1ead9}
+.hud{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);grid-template-rows:1fr auto;padding:84px 24px 20px;max-width:1320px;margin:0 auto;pointer-events:none}
+.copy{grid-column:1;grid-row:1;pointer-events:auto;align-self:start;position:relative;z-index:2}
+.hud h1{font-size:clamp(32px,4.6vw,64px);line-height:1.04}
+.hud p{margin-top:10px;max-width:400px;font-size:clamp(14px,1.5vw,18px)}
+.book{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px}
+.svgwrap{grid-column:1/3;grid-row:1/2;position:relative;min-height:0}
+.svgwrap svg{position:absolute;right:0;bottom:0;width:66%;height:78%}
+.leg{grid-column:1;grid-row:2;position:relative;z-index:2;background:#13233a;color:#f1ead9;padding:14px 20px;border-radius:6px;max-width:400px}
+.leg .k{font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.75}
+.leg .v{font-family:Georgia,serif;font-size:clamp(22px,3vw,34px);line-height:1.05;margin:3px 0}
+.leg .d{font-size:13px;opacity:.9}
+.bar{height:4px;border-radius:2px;background:rgba(241,234,217,.25);margin-top:10px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:#e0a526}
+.note{position:absolute;right:24px;bottom:10px;font-size:10.5px;background:rgba(19,35,58,.82);color:#f1ead9;padding:3px 10px;border-radius:8px;z-index:3}
+section.blk{padding:80px 22px;max-width:1100px;margin:0 auto}
+.eye{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#b5461f;margin-bottom:12px;font-weight:700}
+h2{font-size:clamp(26px,4vw,44px);line-height:1.1;margin-bottom:16px;max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:24px}
+.card{background:#fbf6e9;border:1px solid #d6cbb0;border-radius:8px;padding:20px}
+.card h3{font-size:21px;margin-bottom:6px}
+.card p{font-size:14px;opacity:.8}
+.pitch{background:#13233a;color:#f1ead9;border-radius:16px;padding:32px 26px;margin:0 16px}
+.pitch ul{margin:12px 0 0 18px}
+.pitch .eye{color:#e0a526}
+.faq details{border-bottom:1px solid #d6cbb0;padding:14px 0}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{margin-top:8px;opacity:.85;max-width:680px}
+.ar{margin:0 auto;max-width:1100px;padding:20px 22px 70px}
+.ar div{border:1px dashed #13233a;border-radius:8px;padding:20px;font-size:14px}
+footer{padding:44px 22px 96px;text-align:center;font-size:12px;opacity:.7;border-top:1px solid #d6cbb0}
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none;gap:8px}
+.sticky .btn{flex:1;text-align:center;padding:14px}
+@media(max-width:760px){
+.hud{grid-template-columns:1fr;padding:64px 14px 12px}
+.svgwrap{grid-column:1;}
+.svgwrap svg{width:100%;height:56%}
+.copy{background:rgba(241,234,217,.92);border-radius:8px;padding:10px 12px}
+.hud p,.book{display:none}
+.hud h1{font-size:26px}
+.leg{max-width:none;padding:10px 14px;margin-bottom:60px}
+.note{display:none}
+nav .r a.t{display:none}
+nav .btn{padding:9px 14px;font-size:12px}
+.sticky{display:flex}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoPartsStore","name":"Mustangs, Etc.","url":"https://www.mustangsetc.com/","address":{"@type":"PostalAddress","addressLocality":"Van Nuys","addressRegion":"CA","addressCountry":"US"},"description":"Classic Mustang and vintage Ford parts (used, rebuilt, reproduction, NOS) plus service, repair and restoration."}
+</script>
+</head>
+<body>
+<nav><b>Mustangs, Etc.</b><div class="r"><a class="t" href="#work">What we do</a><a class="t" href="#faq">FAQ</a><a class="btn" href="https://www.mustangsetc.com/">Parts and service</a></div></nav>
+
+<div class="track" id="track">
+ <div class="stage">
+  <div class="hud">
+   <div class="copy">
+    <h1>Every part found.<br>Every car finished.</h1>
+    <p>Classic Mustang and vintage Ford parts, service and restoration in Van Nuys, owner-run since 1976.</p>
+    <div class="book"><a class="btn" href="https://www.instagram.com/mustangsetc/">@mustangsetc</a><a class="btn alt" href="#work">What we do</a></div>
+   </div>
+   <div class="svgwrap">
+    <svg viewBox="0 0 800 380" preserveAspectRatio="xMaxYMax meet" aria-hidden="true">
+     <defs>
+      <clipPath id="hoodC"><path d="M60 230L60 196Q64 178 110 170L250 160L250 230Z"/></clipPath>
+     </defs>
+     <rect x="30" y="330" width="760" height="6" fill="#13233a" opacity=".25"/>
+     <!-- parts tags column -->
+     <g id="tags" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#13233a" opacity="0">
+      <text x="40" y="60">NOS</text><text x="740" y="60" text-anchor="end">REPRO</text>
+     </g>
+     <!-- front group: hood+fender -->
+     <g id="gFront"><path id="pFront" d="M60 250L60 206Q64 188 110 180L250 168L250 250Z" fill="#8a5a3c"/><rect x="62" y="226" width="30" height="14" fill="#c9c4b8" id="bumpF"/><circle cx="82" cy="206" r="9" fill="#d9d2bf" stroke="#13233a" stroke-width="2"/></g>
+     <!-- cabin group -->
+     <g id="gCab"><path id="pCab" d="M250 168L330 112Q350 100 400 100L500 100Q540 104 580 140L610 176L610 250L250 250Z" fill="#8a5a3c"/><path d="M335 164L360 118Q372 110 400 110L492 110Q520 112 548 150L552 164Z" fill="#13233a" opacity=".85"/></g>
+     <!-- rear group -->
+     <g id="gRear"><path id="pRear" d="M610 176L722 190Q744 196 744 214L744 250L610 250Z" fill="#8a5a3c"/><rect x="712" y="226" width="32" height="14" fill="#c9c4b8" id="bumpR"/></g>
+     <!-- wheels -->
+     <g id="gW1"><circle cx="170" cy="258" r="46" fill="#14110f"/><circle cx="170" cy="258" r="22" fill="#cfcabd" stroke="#13233a" stroke-width="2"/></g>
+     <g id="gW2"><circle cx="640" cy="258" r="46" fill="#14110f"/><circle cx="640" cy="258" r="22" fill="#cfcabd" stroke="#13233a" stroke-width="2"/></g>
+     <!-- rust specks, fade as restored -->
+     <g id="rust" fill="#6a2f14"><circle cx="120" cy="214" r="4"/><circle cx="200" cy="200" r="5"/><circle cx="430" cy="214" r="6"/><circle cx="560" cy="220" r="4"/><circle cx="690" cy="206" r="5"/><circle cx="300" cy="230" r="4"/></g>
+     <!-- chrome shine -->
+     <g id="shine" opacity="0" stroke="#fff" stroke-opacity=".7" stroke-width="3" stroke-linecap="round" fill="none"><path d="M100 184L240 172M350 108L500 104M640 182L720 192"/></g>
+    </svg>
+   </div>
+   <div class="leg"><div class="k" id="lk">Stage 1 of 5</div><div class="v" id="lv">As it arrives</div><div class="d" id="ld">A tired classic rolls into the shop.</div><div class="bar"><i id="bar"></i></div></div>
+  </div>
+  <div class="note">Illustrative sequence. Not a photo of a Mustangs, Etc. car.</div>
+ </div>
+</div>
+
+<section class="blk" id="work">
+ <div class="eye">What Mustangs, Etc. does (from mustangsetc.com)</div>
+ <h2>Your favorite Ford part shop and service center.</h2>
+ <div class="grid">
+  <div class="card"><h3>Parts</h3><p>Used, rebuilt, reproduction and NOS parts for classic Mustangs and vintage Fords.</p></div>
+  <div class="card"><h3>Service and repair</h3><p>Hands-on service for the cars the parts are made for.</p></div>
+  <div class="card"><h3>Restoration</h3><p>Restoration work, today buried under a parts catalogue on the current site.</p></div>
+  <div class="card"><h3>Hard-to-find lines</h3><p>FoMoCo and All Classic Parts, plus their own reproduction line.</p></div>
+ </div>
+ <p style="margin-top:18px;font-size:13px;opacity:.7">Van Nuys, California, owner-run since 1976. The site lists parts from roughly $7 to $650. Phone and street address are not on the current homepage, so none appear here.</p>
+</section>
+
+<section class="blk">
+ <div class="eye">The gap this fills</div>
+ <h2>Show the restoration, not just the catalogue.</h2>
+ <p style="max-width:680px;opacity:.85">A parts-store template makes a restoration shop look like a webshop. A site that opens on a car coming apart and going back together tells a visitor what the shop can do, then points them to parts, service or a booking in one tap.</p>
+</section>
+
+<div class="pitch">
+ <div class="eye">Concept by Kerblabs</div>
+ <h2>Lead with the work, keep the shop.</h2>
+ <ul>
+  <li>A scroll hero that takes a Mustang from teardown to finished.</li>
+  <li>Restoration, service and parts each get a clear front door.</li>
+  <li>Your existing catalogue stays; the first impression changes.</li>
+  <li>Agent-ready: AI assistants can read what you stock, fix and restore.</li>
+ </ul>
+</div>
+
+<section class="blk faq" id="faq">
+ <div class="eye">FAQ</div>
+ <h2>Quick answers</h2>
+ <details><summary>What is Mustangs, Etc.?</summary><p>A Van Nuys, California Ford parts shop and service center for classic Mustangs and vintage Fords, offering parts, service, repair and restoration.</p></details>
+ <details><summary>What kinds of parts?</summary><p>Used, rebuilt, reproduction and NOS parts, including FoMoCo and All Classic Parts lines and their own hard-to-find reproduction line.</p></details>
+ <details><summary>How long has the shop run?</summary><p>Owner-run since 1976.</p></details>
+ <details><summary>How do I get in touch?</summary><p>Through mustangsetc.com or Instagram @mustangsetc.</p></details>
+</section>
+
+<div class="ar" id="agent-ready"><div><b>Agent-Ready included.</b> llms.txt, JSON-LD and machine-readable services so AI assistants can answer "classic Mustang restoration in Van Nuys" with your details. Illustrative concept, not yet live for this business.</div></div>
+
+<footer>Concept site by Kerblabs for Mustangs, Etc. Not affiliated or approved. Business details from mustangsetc.com.</footer>
+<div class="sticky"><a class="btn" href="https://www.mustangsetc.com/">Parts and service</a></div>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var track=$('track'),bar=$('bar');
+var gF=$('gFront'),gC=$('gCab'),gR=$('gRear'),w1=$('gW1'),w2=$('gW2'),rust=$('rust'),shine=$('shine');
+var pF=$('pFront'),pC=$('pCab'),pR=$('pRear');
+var st=[['As it arrives','A tired classic rolls into the shop.'],['Teardown','Panels and wheels come off, piece by piece.'],['Bare and sorted','Every part cleaned, rebuilt or replaced.'],['Paint','Colour goes on each panel.'],['Finished','Back together, rust gone, chrome shining.']];
+var cuts=[.08,.3,.5,.76,1.01],last=-1;
+function rg(t,a,b){return Math.min(1,Math.max(0,(t-a)/(b-a)))}
+function mix(a,b,k){var r=[0,0,0].map(function(_,i){return Math.round(parseInt(a.substr(1+i*2,2),16)*(1-k)+parseInt(b.substr(1+i*2,2),16)*k)});return 'rgb('+r.join(',')+')'}
+function draw(){
+ var r=track.getBoundingClientRect(),max=track.offsetHeight-innerHeight;
+ var t=Math.min(1,Math.max(0,-r.top/max));
+ var out=rg(t,.08,.3)-rg(t,.5,.76);
+ gF.setAttribute('transform','translate('+(-70*out)+','+(10*out)+')');
+ gR.setAttribute('transform','translate('+(70*out)+','+(10*out)+')');
+ gC.setAttribute('transform','translate(0,'+(-70*out)+')');
+ w1.setAttribute('transform','translate('+(-50*out)+','+(30*out)+')');
+ w2.setAttribute('transform','translate('+(50*out)+','+(30*out)+')');
+ var k=rg(t,.52,.74),c=mix('#8a5a3c','#1c4c8c',k);
+ pF.setAttribute('fill',c);pC.setAttribute('fill',c);pR.setAttribute('fill',c);
+ rust.style.opacity=1-rg(t,.3,.55);
+ shine.style.opacity=rg(t,.84,.96);
+ bar.style.width=(t*100)+'%';
+ var i=0;while(t>=cuts[i])i++;
+ if(i!==last){last=i;$('lk').textContent='Stage '+(i+1)+' of 5';$('lv').textContent=st[i][0];$('ld').textContent=st[i][1]}
+}
+addEventListener('scroll',draw,{passive:true});addEventListener('resize',draw);draw();
+})();
+</script>
+</body>
+</html>

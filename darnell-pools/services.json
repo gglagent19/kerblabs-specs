@@ -1,0 +1,15 @@
+{
+  "business": "Darnell Pools",
+  "note": "Concept file by Kerblabs. Facts from darnellpools.com. Prices not published.",
+  "locations": ["Austin, TX", "Dallas, TX"],
+  "services": [
+    {"name": "Custom pool construction", "price": null, "pricing": "quote on request"},
+    {"name": "Pool remodeling and restoration", "price": null, "pricing": "quote on request"},
+    {"name": "Outdoor living and landscapes", "price": null, "pricing": "quote on request"},
+    {"name": "BBQ islands and kitchens", "price": null, "pricing": "quote on request"},
+    {"name": "Custom patio covers", "price": null, "pricing": "quote on request"},
+    {"name": "Fire pits and lounge areas", "price": null, "pricing": "quote on request"},
+    {"name": "Hardscapes and landscaping", "price": null, "pricing": "quote on request"}
+  ],
+  "booking": {"method": "phone", "phone": "(512) 592-9030", "needs": ["city", "project type"]}
+}

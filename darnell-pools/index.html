@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Darnell Pools | Custom Pools and Outdoor Living, Austin and Dallas TX (concept)</title>
+<meta name="description" content="Concept site for Darnell Pools: custom pools, outdoor kitchens, patio covers and fire pits by father-daughter team Bill and Lexi Darnell, Austin and Dallas, Texas. The backyard lights up as you scroll.">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/darnell-pools/">
+<meta property="og:title" content="Darnell Pools | concept site by Kerblabs">
+<meta property="og:description" content="Concept for an Austin pool and outdoor living builder, with a backyard that lights up zone by zone as you scroll.">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/darnell-pools/">
+<meta name="twitter:card" content="summary">
+<meta name="robots" content="noindex,follow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#07161c;color:#e6f4f2;font-family:"Helvetica Neue",Arial,sans-serif;line-height:1.55}
+a{color:inherit}
+h1,h2,h3,.serif{font-family:Georgia,"Times New Roman",serif;font-weight:400}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 16px;background:rgba(7,22,28,.9);backdrop-filter:blur(8px);border-bottom:1px solid #16343d}
+nav b{font-family:Georgia,serif;font-size:16px;font-weight:400;letter-spacing:.03em}
+nav .r{display:flex;gap:14px;align-items:center;font-size:13px}
+.btn{display:inline-block;text-decoration:none;background:#ffb347;color:#1b1206;padding:11px 20px;border-radius:99px;font-size:14px;font-weight:700;white-space:nowrap}
+.btn.alt{background:transparent;color:#e6f4f2;border:1.5px solid #3b6872}
+.track{height:520vh;position:relative}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#07161c}
+.stage svg{position:absolute;right:0;bottom:0;width:62%;height:100%}
+.hud{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);grid-template-rows:1fr auto;padding:84px 24px 22px;max-width:1280px;margin:0 auto;pointer-events:none}
+.copy{grid-column:1;pointer-events:auto;align-self:start}
+.hud h1{font-size:clamp(34px,5vw,70px);line-height:1.03}
+.hud p{margin-top:12px;max-width:420px;font-size:clamp(14px,1.5vw,18px);opacity:.9}
+.book{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px}
+.leg{grid-column:1;grid-row:2;align-self:end;background:#0d2630;border:1px solid #1d4450;padding:16px 20px;border-radius:14px;max-width:380px}
+.leg .k{font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.7}
+.leg .v{font-family:Georgia,serif;font-size:clamp(24px,3vw,36px);line-height:1.05;margin:4px 0;color:#ffb347}
+.leg .d{font-size:13px;opacity:.9}
+.dots{display:flex;gap:6px;margin-top:12px}
+.dots i{width:26px;height:4px;border-radius:2px;background:#1d4450}
+.dots i.on{background:#2ee6d6}
+.note{position:absolute;right:24px;bottom:10px;font-size:10.5px;background:rgba(13,38,48,.9);padding:3px 10px;border-radius:8px}
+section.blk{padding:80px 22px;max-width:1100px;margin:0 auto}
+.eye{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#2ee6d6;margin-bottom:12px;font-weight:700}
+h2{font-size:clamp(26px,4vw,44px);line-height:1.1;margin-bottom:16px;max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:24px}
+.card{background:#0d2630;border:1px solid #1d4450;border-radius:14px;padding:20px}
+.card h3{font-size:21px;margin-bottom:6px}
+.card p{font-size:14px;opacity:.8}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:24px;counter-reset:s}
+.steps div{border-top:2px solid #2ee6d6;padding-top:12px;font-size:14px;counter-increment:s}
+.steps div::before{content:"0" counter(s);display:block;font-family:Georgia,serif;font-size:26px;color:#ffb347}
+.pitch{background:#ffb347;color:#1b1206;border-radius:22px;padding:32px 26px;margin:0 16px}
+.pitch ul{margin:12px 0 0 18px}
+.pitch .eye{color:#7a3d00}
+.faq details{border-bottom:1px solid #1d4450;padding:14px 0}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{margin-top:8px;opacity:.85;max-width:680px}
+.ar{margin:0 auto;max-width:1100px;padding:20px 22px 70px}
+.ar div{border:1px dashed #3b6872;border-radius:14px;padding:20px;font-size:14px}
+footer{padding:44px 22px 96px;text-align:center;font-size:12px;opacity:.7;border-top:1px solid #16343d}
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none;gap:8px}
+.sticky .btn{flex:1;text-align:center;padding:14px}
+@media(max-width:760px){
+.stage svg{width:100%;height:48%}
+.hud{grid-template-columns:1fr;padding:64px 16px 14px}
+.copy{background:rgba(7,22,28,.88);border-radius:14px;padding:12px 14px}
+.hud p,.book{display:none}
+.hud h1{font-size:28px}
+.leg{max-width:none;padding:12px 16px;margin-bottom:62px}
+.note{display:none}
+nav .r a.t{display:none}
+nav .btn{padding:9px 14px;font-size:12px}
+.sticky{display:flex}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"HomeAndConstructionBusiness","name":"Darnell Pools","url":"https://darnellpools.com/","telephone":"+1 512 592 9030","founder":[{"@type":"Person","name":"Bill Darnell"},{"@type":"Person","name":"Lexi Darnell"}],"address":{"@type":"PostalAddress","streetAddress":"12600 Hill Country Blvd Ste. R130 #5134","addressLocality":"Austin","addressRegion":"TX","postalCode":"78738","addressCountry":"US"},"areaServed":["Austin, TX","Dallas, TX"],"description":"Custom pools, pool remodels, outdoor living, BBQ islands and kitchens, patio covers, fire pits and hardscapes."},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does Darnell Pools build?","acceptedAnswer":{"@type":"Answer","text":"Custom pools, pool remodeling and restoration, outdoor living and landscapes, BBQ islands and kitchens, custom patio covers, fire pits and lounge areas, and hardscapes."}},{"@type":"Question","name":"Who runs Darnell Pools?","acceptedAnswer":{"@type":"Answer","text":"Bill Darnell and his daughter Lexi Darnell."}},{"@type":"Question","name":"Where does Darnell Pools work?","acceptedAnswer":{"@type":"Answer","text":"Austin and Dallas, Texas."}},{"@type":"Question","name":"How do I get in touch?","acceptedAnswer":{"@type":"Answer","text":"Call (512) 592-9030."}}]}]}
+</script>
+</head>
+<body>
+<nav><b>Darnell Pools</b><div class="r"><a class="t" href="#build">What we build</a><a class="t" href="#faq">FAQ</a><a class="btn" href="tel:+15125929030">Call (512) 592-9030</a></div></nav>
+
+<div class="track" id="track">
+ <div class="stage">
+  <svg viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+   <defs>
+    <radialGradient id="poolG" cx=".5" cy=".5" r=".6"><stop offset="0" stop-color="#7ffcf0"/><stop offset="1" stop-color="#0f7f8c"/></radialGradient>
+    <radialGradient id="fireG"><stop offset="0" stop-color="#ffd27a"/><stop offset=".5" stop-color="#ff8a1f" stop-opacity=".6"/><stop offset="1" stop-color="#ff8a1f" stop-opacity="0"/></radialGradient>
+    <radialGradient id="warmG"><stop offset="0" stop-color="#ffb347" stop-opacity=".5"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient>
+    <clipPath id="poolClip"><path d="M470 250C560 230 700 240 760 300C820 360 800 470 700 500C620 524 540 490 480 520C420 548 360 500 380 400C390 330 410 270 470 250Z"/></clipPath>
+    <filter id="caus" x="0" y="0" width="100%" height="100%"><feTurbulence id="turb" type="fractalNoise" baseFrequency=".02 .03" numOctaves="2" seed="3"/><feColorMatrix type="matrix" values="0 0 0 0 .8  0 0 0 0 1  0 0 0 0 1  0 0 0 3.2 -1.35"/></filter>
+   </defs>
+   <!-- lot -->
+   <rect x="20" y="20" width="960" height="660" rx="18" fill="#0b1d24" stroke="#16343d"/>
+   <!-- house -->
+   <rect x="60" y="40" width="880" height="120" rx="6" fill="#12303a" stroke="#1d4450"/>
+   <text x="500" y="108" text-anchor="middle" font-family="Georgia,serif" font-size="20" fill="#4d7d89">HOUSE</text>
+   <!-- patio slab -->
+   <rect x="60" y="170" width="880" height="48" fill="#10262e" stroke="#1d4450" stroke-dasharray="6 6"/>
+   <!-- patio cover -->
+   <g id="cover"><rect x="120" y="176" width="300" height="190" rx="4" fill="none" stroke="#244b57" stroke-width="2" stroke-dasharray="8 6" id="coverR"/>
+    <g id="bulbs" fill="#ffd27a"></g></g>
+   <!-- lounge + fire pit -->
+   <g id="lounge" opacity=".3"><rect x="90" y="520" width="52" height="86" rx="12" fill="#12303a" stroke="#244b57"/><rect x="260" y="520" width="52" height="86" rx="12" fill="#12303a" stroke="#244b57"/><rect x="150" y="620" width="100" height="36" rx="12" fill="#12303a" stroke="#244b57"/></g>
+   <circle id="fireGlow" cx="201" cy="560" r="130" fill="url(#fireG)" opacity="0"/>
+   <circle cx="201" cy="560" r="34" fill="#12303a" stroke="#244b57" stroke-width="3"/>
+   <circle id="flame" cx="201" cy="560" r="12" fill="#ffb347" opacity="0"/>
+   <!-- BBQ island -->
+   <circle id="bbqGlow" cx="205" cy="262" r="120" fill="url(#warmG)" opacity="0"/>
+   <g id="bbq"><path d="M140 240h130a14 14 0 0 1 14 14v14a14 14 0 0 1-14 14H140z" fill="#12303a" stroke="#244b57" stroke-width="2"/><circle cx="170" cy="261" r="8" fill="#244b57" id="burner1"/><circle cx="205" cy="261" r="8" fill="#244b57" id="burner2"/><circle cx="240" cy="261" r="8" fill="#244b57" id="burner3"/></g>
+   <!-- pool -->
+   <path d="M470 250C560 230 700 240 760 300C820 360 800 470 700 500C620 524 540 490 480 520C420 548 360 500 380 400C390 330 410 270 470 250Z" fill="#0e2a33" stroke="#244b57" stroke-width="6"/>
+   <g clip-path="url(#poolClip)"><rect id="poolFill" x="340" y="220" width="500" height="340" fill="url(#poolG)" opacity="0"/><rect id="caust" x="340" y="220" width="500" height="340" filter="url(#caus)" opacity="0"/></g>
+   <path d="M470 250C560 230 700 240 760 300C820 360 800 470 700 500C620 524 540 490 480 520C420 548 360 500 380 400C390 330 410 270 470 250Z" fill="none" stroke="#e6f4f2" stroke-opacity=".25" stroke-width="2"/>
+   <!-- path lights -->
+   <g id="pathLights" fill="#2ee6d6"></g>
+   <path d="M540 580C600 610 700 620 860 600" fill="none" stroke="#1d4450" stroke-width="3" stroke-dasharray="3 12" stroke-linecap="round"/>
+   <path d="M820 220C860 300 880 420 860 520" fill="none" stroke="#1d4450" stroke-width="3" stroke-dasharray="3 12" stroke-linecap="round"/>
+  </svg>
+  <div class="hud">
+   <div class="copy">
+    <h1>Switch on<br>the whole backyard.</h1>
+    <p>Custom pools and outdoor living by Bill and Lexi Darnell, father and daughter, in Austin and Dallas.</p>
+    <div class="book"><a class="btn" href="tel:+15125929030">Call (512) 592-9030</a></div>
+   </div>
+   <div class="leg"><div class="k" id="lk">Zone 1 of 5</div><div class="v" id="lv">The pool</div><div class="d" id="ld">Custom pool construction.</div><div class="dots" id="dots"><i></i><i></i><i></i><i></i><i></i></div></div>
+  </div>
+  <div class="note">Illustrative plan, not a real Darnell project.</div>
+ </div>
+</div>
+
+<section class="blk" id="build">
+ <div class="eye">What Darnell Pools offers (from darnellpools.com)</div>
+ <h2>The pool, and everything that makes the yard worth staying in.</h2>
+ <div class="grid">
+  <div class="card"><h3>Custom pools</h3><p>Pools designed and built for the way you live.</p></div>
+  <div class="card"><h3>Remodel and restoration</h3><p>New life for an existing pool.</p></div>
+  <div class="card"><h3>Outdoor kitchens</h3><p>BBQ islands and kitchens.</p></div>
+  <div class="card"><h3>Patio covers</h3><p>Custom patio covers for shade and evenings outside.</p></div>
+  <div class="card"><h3>Fire pits and lounges</h3><p>Fire pits and lounge areas.</p></div>
+  <div class="card"><h3>Hardscape and landscape</h3><p>Hardscapes and landscaping to tie it together.</p></div>
+ </div>
+ <p style="margin-top:18px;font-size:13px;opacity:.7">Serving Austin and Dallas, Texas. No prices are published on the current site, so none appear here.</p>
+</section>
+
+<section class="blk">
+ <div class="eye">How enquiring could feel</div>
+ <h2>From a lit-up yard to a phone call.</h2>
+ <div class="steps">
+  <div>Scroll the plan and watch each zone come alive.</div>
+  <div>See everything Darnell Pools builds in one place.</div>
+  <div>Call Bill and Lexi, one tap on mobile.</div>
+  <div>Walk the yard together.</div>
+ </div>
+</section>
+
+<div class="pitch">
+ <div class="eye">Concept by Kerblabs</div>
+ <h2 class="serif">Let people see the evening before they own it.</h2>
+ <ul>
+  <li>A cinematic scroll hero that lights up the whole backyard.</li>
+  <li>Your services and the father-daughter story front and centre.</li>
+  <li>A call button within thumb reach on every screen.</li>
+  <li>Agent-ready: AI assistants can read what you build and where.</li>
+ </ul>
+</div>
+
+<section class="blk faq" id="faq">
+ <div class="eye">FAQ</div>
+ <h2>Quick answers</h2>
+ <details><summary>What does Darnell Pools build?</summary><p>Custom pools, pool remodeling and restoration, outdoor living and landscapes, BBQ islands and kitchens, custom patio covers, fire pits and lounge areas, and hardscapes.</p></details>
+ <details><summary>Who runs Darnell Pools?</summary><p>Bill Darnell and his daughter Lexi Darnell.</p></details>
+ <details><summary>Where does Darnell Pools work?</summary><p>Austin and Dallas, Texas.</p></details>
+ <details><summary>How do I get in touch?</summary><p>Call (512) 592-9030.</p></details>
+</section>
+
+<div class="ar" id="agent-ready"><div><b>Agent-Ready included.</b> llms.txt, JSON-LD and machine-readable services so AI assistants can answer "custom pool and outdoor living builder in Austin" with your details. Illustrative concept, not yet live for this business.</div></div>
+
+<footer>Concept site by Kerblabs for Darnell Pools. Not affiliated or approved. Business details from darnellpools.com.</footer>
+<div class="sticky"><a class="btn" href="tel:+15125929030">Call Darnell Pools</a></div>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var NS='http://www.w3.org/2000/svg';
+var track=$('track');
+// patio string lights
+var bulbs=$('bulbs'),bl=[];
+for(var i=0;i<12;i++){var c=document.createElementNS(NS,'circle');c.setAttribute('cx',130+i*25);c.setAttribute('cy',186+Math.sin(i*.9)*4);c.setAttribute('r',4);c.setAttribute('opacity',.15);bulbs.appendChild(c);bl.push(c)}
+for(var j=0;j<12;j++){var d=document.createElementNS(NS,'circle');d.setAttribute('cx',130+j*25);d.setAttribute('cy',356-Math.sin(j*.9)*4);d.setAttribute('r',4);d.setAttribute('opacity',.15);bulbs.appendChild(d);bl.push(d)}
+// path lights
+var pl=$('pathLights'),pp=[[560,590],[610,607],[670,614],[740,614],[810,606],[830,240],[852,300],[866,370],[868,440],[860,510]],pc=[];
+pp.forEach(function(p){var c=document.createElementNS(NS,'circle');c.setAttribute('cx',p[0]);c.setAttribute('cy',p[1]);c.setAttribute('r',5);c.setAttribute('opacity',.12);pl.appendChild(c);pc.push(c)});
+var Z=[['The pool','Custom pool construction, and remodeling or restoring an existing pool.'],['Patio cover','Custom patio covers for shade and evenings outside.'],['Outdoor kitchen','BBQ islands and kitchens.'],['Fire pit and lounge','Fire pits and lounge areas.'],['Hardscape and landscape','Hardscapes and landscaping tie the yard together.']];
+var cuts=[.2,.4,.6,.8,1.01],dots=$('dots').children,last=-1;
+function rg(t,a,b){return Math.min(1,Math.max(0,(t-a)/(b-a)))}
+function draw(){
+ var r=track.getBoundingClientRect(),max=track.offsetHeight-innerHeight;
+ var t=Math.min(1,Math.max(0,-r.top/max));
+ var p=rg(t,0,.16);
+ $('poolFill').style.opacity=p;$('caust').style.opacity=p*.7;
+ $('turb').setAttribute('baseFrequency',(.02+Math.sin(t*40)*.004)+' '+(.03+Math.cos(t*33)*.004));
+ var c=rg(t,.2,.34);
+ bl.forEach(function(b,k){b.setAttribute('opacity',.15+.85*Math.min(1,Math.max(0,c*bl.length-k)/1))});
+ $('coverR').setAttribute('stroke',c>0?'#ffd27a':'#244b57');
+ var k=rg(t,.4,.54);
+ $('bbqGlow').style.opacity=k;
+ ['burner1','burner2','burner3'].forEach(function(id,n){$(id).setAttribute('fill',k>(n+1)/4?'#ffb347':'#244b57')});
+ var f=rg(t,.6,.74),fl=1+Math.sin(t*160)*.12;
+ $('fireGlow').style.opacity=f*(.8+Math.sin(t*220)*.15);
+ $('flame').style.opacity=f;$('flame').setAttribute('r',12*fl);
+ $('lounge').style.opacity=.3+.7*f;
+ var h=rg(t,.8,.98);
+ pc.forEach(function(q,n){q.setAttribute('opacity',.12+.88*Math.min(1,Math.max(0,h*pc.length-n)))});
+ var i=0;while(t>=cuts[i])i++;
+ if(i!==last){last=i;$('lk').textContent='Zone '+(i+1)+' of 5';$('lv').textContent=Z[i][0];$('ld').textContent=Z[i][1];for(var m=0;m<5;m++)dots[m].className=m<=i?'on':''}
+}
+addEventListener('scroll',draw,{passive:true});addEventListener('resize',draw);draw();
+})();
+</script>
+</body>
+</html>

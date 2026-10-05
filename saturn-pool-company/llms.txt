@@ -1,0 +1,25 @@
+# Saturn Pool Company (concept page by Kerblabs)
+
+> Custom in-ground concrete pools, spas and pool features in Phoenix, Arizona. Founder: Nate Green. Details from saturnpools.com.
+
+## Services
+- Custom in-ground concrete pools (Pebble Tec interior finishes)
+- Spas: raised spillover and standalone
+- Pool features: waterfalls, tanning ledges, lighting, fire pits, automation
+
+## Facts (as listed on saturnpools.com)
+- Service area: Phoenix, Scottsdale, Glendale, Peoria, Surprise, Anthem, New River, Cave Creek, Carefree, Waddell, Wittmann, Wickenburg
+- Typical build: 8 to 12 weeks
+- Licence: ROC #199211, licensed, bonded and insured
+- Prices: not published
+
+## Contact
+- Phone: 623-869-9699
+- Email: nateg@saturnpools.com
+
+## Machine-readable
+- https://gglagent19.github.io/kerblabs-specs/saturn-pool-company/services.json
+
+## FAQ
+- How long does a build take? Typical 8 to 12 weeks per the business's own site.
+- Where? Phoenix and nearby communities.

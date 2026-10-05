@@ -1,0 +1,12 @@
+{
+  "business": "Saturn Pool Company",
+  "note": "Concept file by Kerblabs. Facts from saturnpools.com. Prices not published.",
+  "locations": ["Phoenix", "Scottsdale", "Glendale", "Peoria", "Surprise", "Anthem", "New River", "Cave Creek", "Carefree", "Waddell", "Wittmann", "Wickenburg"],
+  "services": [
+    {"name": "Custom in-ground concrete pools", "price": null, "pricing": "quote on request", "typical_build_weeks": "8-12"},
+    {"name": "Spas (raised spillover and standalone)", "price": null, "pricing": "quote on request"},
+    {"name": "Pool features (waterfalls, tanning ledges, lighting, fire pits, automation)", "price": null, "pricing": "quote on request"}
+  ],
+  "licence": "ROC #199211",
+  "booking": {"method": "phone or email", "phone": "623-869-9699", "email": "nateg@saturnpools.com", "needs": ["location", "pool type"]}
+}
