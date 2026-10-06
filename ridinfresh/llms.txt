@@ -1,0 +1,26 @@
+# RidinFresh (concept by Kerblabs)
+
+> Auto appearance and protection shop in Norcross, GA: window tint, ceramic coating, paint protection film, headliner and leather repair. Facts from ridinfresh.com. This is a free concept, not their official site.
+
+- Address: 6689 Peachtree Industrial Blvd, Ste L, Norcross, GA 30092
+- Phone: (678) 525-2075
+- Hours: Mon-Fri 8:00am-6:30pm, Sat-Sun 10:00am-4:00pm
+- Email: not published on source page
+
+## Services
+- Window tinting (lifetime manufacturer warranty on window film, per their site)
+- Ceramic coatings (cars, trucks, marine, RV, motorcycles)
+- Windshield and paint protection film
+- Headliner repair (10 year warranty, per their site)
+- Leather seat repair
+- Professional training courses
+
+## FAQ
+- Prices? Not published in the source pages.
+- Years in business? Their site states conflicting figures, so none is given here.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Call (678) 525-2075 to book.
