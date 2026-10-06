@@ -1,0 +1,16 @@
+# Traditions Landscape Group (concept by Kerblabs)
+> Husband-and-wife patio and outdoor living design-build team in Westerville, Ohio, serving New Albany, Gahanna, Powell and Central Ohio. Facts from traditionslandscape.com.
+
+- Address: 8075 Bevelhymer Road, Westerville, OH 43081
+- Phone: (614) 588-5928
+- Email: john@traditionslandscape.com
+- Services: paver patios, outdoor kitchens and grill islands, fire pits and fireplaces, pavilions and pergolas, landscape design and installation, drainage, lighting, retaining walls, water features
+- Prices: not published
+- Machine-readable: [services.json](services.json)
+
+## FAQ
+- Where do they work? New Albany, Westerville, Gahanna, Powell and Central Ohio.
+- How to contact? Call (614) 588-5928 or email john@traditionslandscape.com.
+
+## Actions
+- Request a consultation by phone or email.

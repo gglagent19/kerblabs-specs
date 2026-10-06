@@ -1,0 +1,10 @@
+{
+  "business": "Click Arts",
+  "note": "Concept file by Kerblabs. Facts from the public Instagram profile @clickarts and a Vimeo page. Prices not published.",
+  "locations": ["Punjab", "Chandigarh", "Goa"],
+  "services": [
+    {"name": "Destination wedding photography", "price": null, "pricing": "quote on request"}
+  ],
+  "booking": {"method": "Instagram message", "url": "https://www.instagram.com/clickarts/", "needs": ["wedding date", "destination"]},
+  "social": {"instagram": "https://www.instagram.com/clickarts/", "vimeo": "https://vimeo.com/user95929330"}
+}

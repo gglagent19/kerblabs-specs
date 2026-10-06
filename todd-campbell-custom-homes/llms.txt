@@ -1,0 +1,15 @@
+# Todd Campbell Custom Homes (concept by Kerblabs)
+> Custom and move-in ready home builder in Boise, Idaho, serving the Treasure Valley. Facts from toddcampbellconstruction.com.
+
+- Address: 13864 W Meadowdale St, Boise, ID 83713
+- Phone: 208-941-8607
+- Services: custom home designs, move-in ready homes, home construction in communities, customization of finishes, materials and layout
+- Prices: not published
+- Machine-readable: [services.json](services.json)
+
+## FAQ
+- Where do they build? Boise and the Treasure Valley.
+- How to contact? Call 208-941-8607.
+
+## Actions
+- Request a consultation by phone.

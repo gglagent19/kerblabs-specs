@@ -1,0 +1,20 @@
+# Hitesh Kashyap Photography (concept site by Kerblabs)
+
+> Wedding photography and films in Jalandhar. Concept page, not the studio's official site.
+
+## Facts
+- Based in Jalandhar (per Instagram profile @hitesh_kashyap_photography)
+- Services: wedding photography, wedding films
+- Prices: not published, quote on request
+- Enquire: +91 85568 68651 (Hitesh) or +91 78885 60064 (Ritik), both listed in the Instagram bio
+- Portfolio: https://www.behance.net/hiteshkashyap3
+
+## Machine-readable
+- [services.json](services.json)
+
+## FAQ
+- Where are they based? Jalandhar.
+- How do I book? Call or message the numbers in the Instagram bio.
+
+## Actions
+- Enquire: call or WhatsApp with the wedding date and venue.

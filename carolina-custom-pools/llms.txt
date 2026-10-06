@@ -1,0 +1,15 @@
+# Carolina Custom Pools and Landscape, Inc. (concept by Kerblabs)
+> Custom pool and landscape builder in Raleigh, North Carolina, 40+ years listed. Facts from ccpandl.com.
+
+- Service area: Raleigh, Cary, Chapel Hill, Durham, Wake Forest, Charlotte, Lake Norman, Asheville NC; Lake Wylie and Fort Mill SC
+- Phone: (919) 274-3738
+- Services: custom pool design and construction, landscape and hardscape design, outdoor living spaces, lighting design, retaining walls, fireplaces, water features, outdoor kitchens
+- Prices: not published
+- Machine-readable: [services.json](services.json)
+
+## FAQ
+- Where do they work? Raleigh and surrounding NC areas, Charlotte, Asheville, plus Lake Wylie and Fort Mill SC.
+- How to contact? Call (919) 274-3738 or use the appointment form on ccpandl.com.
+
+## Actions
+- Request an appointment via the form on ccpandl.com or by phone.

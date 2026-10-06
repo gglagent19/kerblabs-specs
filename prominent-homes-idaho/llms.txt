@@ -1,0 +1,16 @@
+# Prominent Homes (concept by Kerblabs)
+> Design-build custom home builder in Nampa, Idaho serving the Treasure Valley, 20+ years in Idaho, Parade Home awards. Facts from prominenthomesidaho.com.
+
+- Address: 915 12th Ave S, Nampa, ID 83651
+- Phone: (208) 871-9035
+- Services: custom and luxury custom homes, design-build, new home construction, lot selection guidance, build planning and construction management
+- License: RCE-12592
+- Prices: not published
+- Machine-readable: [services.json](services.json)
+
+## FAQ
+- Where do they build? Boise, Meridian, Eagle, Star, Nampa, Caldwell and the wider Treasure Valley.
+- How to contact? Call (208) 871-9035 or use the site contact form.
+
+## Actions
+- Request a consultation by phone or the site form.

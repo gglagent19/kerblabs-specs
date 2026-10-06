@@ -1,0 +1,15 @@
+# Arnett Custom Homes (concept by Kerblabs)
+> Design-build custom home builder in Charleston, SC for coastal and historic Lowcountry homes. Facts from arnettcustomhomes.com.
+
+- Address: 1 Cool Blow Street Suite 322, Charleston, SC 29403
+- Phone: (843) 271-8668
+- Services: custom home building, design-build, architect collaboration, coastal home construction, historic restoration
+- Prices: not published
+- Machine-readable: [services.json](services.json)
+
+## FAQ
+- Where do they build? Charleston and the surrounding sea islands.
+- How to contact? Call (843) 271-8668 or use the site contact form.
+
+## Actions
+- Request a consultation by phone or the site form.

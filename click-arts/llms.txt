@@ -1,0 +1,20 @@
+# Click Arts (concept site by Kerblabs)
+
+> Destination wedding photography in Punjab, Chandigarh and Goa. Concept page, not the studio's official site.
+
+## Facts
+- Regions: Punjab, Chandigarh, Goa (per public profile @clickarts)
+- Services: destination wedding photography
+- Prices: not published, quote on request
+- Enquire: message @clickarts on Instagram with the wedding date and destination
+- Films: https://vimeo.com/user95929330
+
+## Machine-readable
+- [services.json](services.json)
+
+## FAQ
+- Where do they work? Punjab, Chandigarh and Goa.
+- How do I book? Message the studio on Instagram with your date and destination.
+
+## Actions
+- Enquire: message with the wedding date and destination.

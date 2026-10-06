@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SG Photography &amp; Films | Luxury Cinematic Wedding Films, India (concept)</title>
+<meta name="description" content="Concept site for SG Photography &amp; Films (@sgphotography18): luxury cinematic wedding films, candid photography and pre-wedding films. Message on WhatsApp to check your date.">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/sg-photography-films/">
+<meta property="og:title" content="SG Photography &amp; Films | concept site by Kerblabs">
+<meta property="og:description" content="Concept for a cinematic wedding filmmaker: a flat log frame is colour graded as you scroll, with a live waveform scope.">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/sg-photography-films/">
+<meta name="twitter:card" content="summary">
+<meta name="robots" content="noindex,follow">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"ProfessionalService","@id":"https://gglagent19.github.io/kerblabs-specs/sg-photography-films/#org","name":"SG Photography & Films","description":"Luxury cinematic wedding films, candid photography and pre-wedding films in India.","areaServed":"India","sameAs":["https://www.instagram.com/sgphotography18/","https://linktr.ee/sgphotographyfilms","https://www.youtube.com/@sgphotographyfilms3542"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Luxury cinematic wedding films"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Candid wedding photography"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Pre-wedding films"}}]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What does SG Photography & Films shoot?","acceptedAnswer":{"@type":"Answer","text":"Luxury cinematic wedding films, candid photography and pre-wedding films, per the public Instagram profile."}},
+{"@type":"Question","name":"How do I book?","acceptedAnswer":{"@type":"Answer","text":"Message the studio on WhatsApp or Instagram @sgphotography18 with your wedding date."}},
+{"@type":"Question","name":"What do they charge?","acceptedAnswer":{"@type":"Answer","text":"Prices are not published. Quotes are given on request."}}]}
+]}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{--bg:#0f0e0d;--bg2:#1b1917;--ink:#f3ece1;--amb:#f0a24a;--tea:#3fa7a0;--mut:#a39a8c}
+body{background:var(--bg);color:var(--ink);font-family:"Helvetica Neue",Arial,sans-serif;line-height:1.55;overflow-x:hidden}
+a{color:inherit}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 16px;min-height:64px;background:rgba(15,14,13,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(240,162,74,.28)}
+nav b{font-family:Georgia,serif;font-weight:400;font-size:16px;letter-spacing:.1em;text-transform:uppercase;line-height:1.15;color:var(--amb)}
+nav .r{display:flex;gap:12px;align-items:center;font-size:13px;color:var(--mut)}
+.btn{display:inline-block;text-decoration:none;background:var(--amb);color:#201205;padding:11px 20px;border-radius:99px;font-size:14px;font-weight:700;white-space:nowrap}
+.btn.alt{background:transparent;color:var(--amb);border:1.5px solid var(--amb)}
+.track{height:520vh;position:relative}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:radial-gradient(ellipse at 70% 45%,#241f1a,var(--bg) 72%)}
+.grid{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.25fr);gap:24px;align-items:center;padding:96px 28px 40px;max-width:1280px;margin:0 auto}
+.copy .k{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--amb);font-weight:700}
+.copy h1{font-size:clamp(34px,5vw,66px);line-height:1.03;margin-top:10px}
+.copy h1 em{color:var(--amb)}
+.copy p{margin-top:12px;max-width:420px;font-size:clamp(14px,1.4vw,18px);color:#d6cdbf}
+.book-btns{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px}
+.right{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0}
+.mon{width:100%;border:1px solid rgba(240,162,74,.35);border-radius:10px;overflow:hidden;background:#000}
+.mon .frame{position:relative;width:100%;aspect-ratio:16/8.2;overflow:hidden}
+.mon .frame svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+#scene{will-change:filter}
+.mon .scope{width:100%;height:auto;display:block;background:#0a0a0a;border-top:1px solid rgba(240,162,74,.3)}
+.hud{margin-top:10px;display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap;font:12px/1.2 "Courier New",monospace;letter-spacing:.08em;text-transform:uppercase;min-height:16px}
+.hud b{color:var(--amb)}
+.note{margin-top:8px;font-size:10.5px;color:var(--mut);text-align:center}
+section.b{padding:84px 22px;max-width:1100px;margin:0 auto}
+section.b h2{font-size:clamp(28px,4.2vw,52px);line-height:1.06;max-width:20ch}
+section.b .k{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--amb);font-weight:700;margin-bottom:10px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:30px}
+.card{border:1px solid rgba(240,162,74,.3);padding:24px;border-radius:12px;background:var(--bg2)}
+.card h3{font-size:22px;color:var(--amb)}
+.card p{margin-top:8px;color:#d6cdbf;font-size:15px}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:28px}
+.steps div{border-top:2px solid var(--amb);padding-top:12px;color:#d6cdbf}
+.steps div::before{counter-increment:s;content:"0" counter(s);display:block;font-family:Georgia,serif;font-size:28px;color:var(--amb)}
+.ar{background:var(--bg2);border:1px dashed rgba(240,162,74,.5);border-radius:12px;padding:24px;margin-top:26px;font-size:14.5px;color:#d6cdbf}
+.ar code{color:var(--amb);font-weight:700}
+details{border-bottom:1px solid rgba(240,162,74,.28);padding:14px 0}
+summary{cursor:pointer;font-family:Georgia,serif;font-size:18px}
+details p{margin-top:8px;color:#d6cdbf}
+.cta{text-align:center;padding:90px 22px 60px;background:var(--amb);color:#201205}
+.cta h2{font-size:clamp(32px,6vw,76px);max-width:14ch;margin:0 auto}
+.cta p{margin:14px auto 22px;color:#5a3708;max-width:44ch}
+.cta .btn{background:#0f0e0d;color:var(--amb)}
+footer{padding:26px 22px 90px;text-align:center;font-size:12px;color:var(--mut)}
+.sticky{display:none}
+@media(max-width:800px){
+ .track{height:460vh}
+ nav .r span{display:none}
+ .grid{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);gap:10px;padding:104px 18px 76px;align-items:start}
+ .copy p{display:none}
+ .copy h1{font-size:clamp(26px,8vw,38px)}
+ .book-btns{display:none}
+ .sticky{display:block;position:fixed;left:12px;right:12px;bottom:12px;z-index:40;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.track{height:auto !important}.stage{position:relative;height:auto;min-height:100vh}}
+</style>
+</head>
+<body>
+<nav>
+ <b>SG Photography &amp; Films</b>
+ <div class="r"><span>Luxury cinematic wedding films</span><a class="btn" href="https://wa.me/message/TJNPSWI3HTGQN1" rel="noopener">WhatsApp</a></div>
+</nav>
+
+<div class="track" id="track">
+ <div class="stage">
+  <div class="grid">
+   <div class="copy">
+    <div class="k">Luxury cinematic wedding films</div>
+    <h1>Every film is <em>graded</em> before it is shown.</h1>
+    <p>Scroll and a flat log frame is pulled into colour: contrast, saturation, warmth. Watch the waveform open up. That is the craft behind a cinematic wedding film.</p>
+    <div class="book-btns"><a class="btn" href="https://wa.me/message/TJNPSWI3HTGQN1" rel="noopener">WhatsApp for your date</a><a class="btn alt" href="https://www.instagram.com/sgphotography18/" rel="noopener">Instagram</a></div>
+   </div>
+   <div class="right">
+    <div class="mon">
+     <div class="frame">
+      <svg id="scene" viewBox="0 0 640 328" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustrative dusk wedding frame being colour graded">
+       <defs>
+        <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4b6fa0"/><stop offset=".55" stop-color="#e58a5a"/><stop offset="1" stop-color="#f6c36a"/></linearGradient>
+        <radialGradient id="sunG"><stop offset="0" stop-color="#fff3c9"/><stop offset="1" stop-color="#fff3c9" stop-opacity="0"/></radialGradient>
+       </defs>
+       <rect width="640" height="328" fill="url(#skyG)"/>
+       <circle cx="430" cy="200" r="120" fill="url(#sunG)"/>
+       <circle cx="430" cy="200" r="26" fill="#fff0bd"/>
+       <path d="M0 238 Q120 196 250 232 T520 222 T640 236 V328 H0Z" fill="#3a3a44"/>
+       <path d="M0 270 Q160 244 320 268 T640 262 V328 H0Z" fill="#1e1e26"/>
+       <g id="lights"></g>
+       <g fill="#0d0d12">
+        <circle cx="300" cy="206" r="9"/><path d="M290 216 h20 l6 52 h-32z"/>
+        <circle cx="330" cy="208" r="8.5"/><path d="M320 217 h19 l9 51 h-36z"/>
+        <path d="M312 220 q8 6 14 0" stroke="#0d0d12" stroke-width="3" fill="none"/>
+       </g>
+      </svg>
+     </div>
+     <svg class="scope" id="scope" viewBox="0 0 640 150" preserveAspectRatio="none" role="img" aria-label="Illustrative waveform scope opening up as the grade is applied">
+      <g stroke="#2b2b2b" stroke-width="1"><line x1="0" y1="12" x2="640" y2="12"/><line x1="0" y1="50" x2="640" y2="50"/><line x1="0" y1="88" x2="640" y2="88"/><line x1="0" y1="126" x2="640" y2="126"/></g>
+      <polyline id="wb" fill="none" stroke="#5b8cff" stroke-width="1.6" opacity=".85"/>
+      <polyline id="wg" fill="none" stroke="#5fd08a" stroke-width="1.6" opacity=".85"/>
+      <polyline id="wr" fill="none" stroke="#ff6a4d" stroke-width="1.6" opacity=".85"/>
+     </svg>
+    </div>
+    <div class="hud"><span id="nm">Log, ungraded</span><b id="ct">Step 1 of 5</b></div>
+    <div class="note">Illustrative frame and scope drawn for this concept, not SG Photography &amp; Films' footage</div>
+   </div>
+  </div>
+ </div>
+</div>
+
+<section class="b" id="work">
+ <div class="k">What they do</div>
+ <h2>Cinematic films and candid photography for weddings.</h2>
+ <div class="cards">
+  <div class="card"><h3>Luxury wedding films</h3><p>Their Instagram bio describes a luxury cinematic wedding film maker.</p></div>
+  <div class="card"><h3>Candid photography</h3><p>Candid photography is listed alongside the films on the same profile.</p></div>
+  <div class="card"><h3>Pre-wedding films</h3><p>Pre-wedding film making is also listed. Their motto reads Explore, Create, Inspire.</p></div>
+ </div>
+ <p style="margin-top:20px;color:#a39a8c;font-size:13px">Their public links are a Linktree, Instagram and YouTube. A single cinematic home for all of it is the gap this concept fills.</p>
+</section>
+
+<section class="b" id="how">
+ <div class="k">How it works</div>
+ <h2>Three steps from first message to booked date.</h2>
+ <div class="steps">
+  <div>Message on WhatsApp with your wedding date and city.</div>
+  <div>Share what you want covered: the film, candid photography, a pre-wedding shoot.</div>
+  <div>Receive a quote and lock the date.</div>
+ </div>
+ <p style="margin-top:20px;color:#a39a8c;font-size:13px">Concept flow for this site. The studio confirms the real process, prices and availability.</p>
+</section>
+
+<section class="b" id="ai">
+ <div class="k">Agent-Ready included</div>
+ <h2>AI assistants can read this studio.</h2>
+ <div class="ar">This concept ships <code>llms.txt</code>, <code>services.json</code>, <code>robots.txt</code>, <code>sitemap.xml</code> and schema, so assistants can answer &ldquo;who makes luxury cinematic wedding films&rdquo; with the studio's real name, services and how to enquire. Prices stay empty until the studio publishes them.</div>
+</section>
+
+<section class="b" id="faq">
+ <div class="k">FAQ</div>
+ <h2>Quick answers.</h2>
+ <details><summary>What do they shoot?</summary><p>Luxury cinematic wedding films, candid photography and pre-wedding films, per the public Instagram profile.</p></details>
+ <details><summary>How do I book?</summary><p>Message the studio on WhatsApp or Instagram @sgphotography18 with your wedding date.</p></details>
+ <details><summary>What do they charge?</summary><p>Prices are not published. Quotes are given on request.</p></details>
+</section>
+
+<div class="cta">
+ <h2>Is your date still open?</h2>
+ <p>Send the date and the city. The rest is a conversation.</p>
+ <a class="btn" href="https://wa.me/message/TJNPSWI3HTGQN1" rel="noopener">Message on WhatsApp</a>
+</div>
+<footer>Concept site by Kerblabs for SG Photography &amp; Films. Not affiliated. Illustrations are placeholders, not the studio's footage.</footer>
+<a class="btn sticky" href="https://wa.me/message/TJNPSWI3HTGQN1" rel="noopener">WhatsApp SG Photography &amp; Films</a>
+
+<script>
+(function(){
+ var reduceMQ=matchMedia('(prefers-reduced-motion: reduce)');
+ var track=document.getElementById('track'),scene=document.getElementById('scene');
+ var nm=document.getElementById('nm'),ct=document.getElementById('ct');
+ var wr=document.getElementById('wr'),wg=document.getElementById('wg'),wb=document.getElementById('wb');
+ var lights=document.getElementById('lights');
+ var NS='http://www.w3.org/2000/svg';
+ var N=64,base=[],i;
+ /* deterministic luma profile across the frame: dark hills low, sky high, sun peak */
+ for(i=0;i<N;i++){var x=i/(N-1);base.push(.5+.26*Math.sin(x*6.1)+.2*Math.exp(-Math.pow((x-.67)*7,2))-.14*Math.cos(x*13))}
+ for(i=0;i<22;i++){var c=document.createElementNS(NS,'circle');c.setAttribute('cx',20+i*29);c.setAttribute('cy',(236+14*Math.sin(i*.8)).toFixed(1));c.setAttribute('r',2.6);c.setAttribute('fill','#ffd98a');lights.appendChild(c)}
+ var STEPS=['Log, ungraded','Contrast curve','Saturation up','Warm grade','Final grade'];
+ function clamp(x){return Math.max(0,Math.min(1,x))}
+ function line(el,range,off,sep){
+  var pts=[];
+  for(var k=0;k<N;k++){
+   var v=.5+(base[k]-.5)*range+off;
+   v=Math.max(.02,Math.min(.98,v+(sep*Math.sin(k*.9))*0.02));
+   pts.push((k/(N-1)*640).toFixed(1)+','+(150-v*138-6).toFixed(1));
+  }
+  el.setAttribute('points',pts.join(' '));
+ }
+ function update(){
+  var t;
+  if(reduceMQ.matches){t=1}else{var r=track.getBoundingClientRect(),max=track.offsetHeight-innerHeight;t=clamp(-r.top/max)}
+  var e=t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+  var sat=.12+1.0*clamp(e*1.6-.3),con=.62+.62*clamp(e*1.5),bri=.95+.08*e,sep=Math.sin(Math.PI*e);
+  var warm=clamp((e-.55)/.45);
+  scene.style.filter='saturate('+sat.toFixed(2)+') contrast('+con.toFixed(2)+') brightness('+bri.toFixed(2)+') sepia('+(warm*.18).toFixed(2)+')';
+  var range=.3+.7*clamp(e*1.4);
+  line(wr,range,.05*warm,1);line(wg,range,0,1);line(wb,range,-.05*warm,1);
+  var s=Math.min(4,Math.floor(t*5));
+  nm.textContent=STEPS[s];ct.textContent='Step '+(s+1)+' of 5';
+ }
+ addEventListener('scroll',update,{passive:true});addEventListener('resize',update);
+ if(reduceMQ.addEventListener)reduceMQ.addEventListener('change',update);
+ update();
+})();
+</script>
+</body>
+</html>

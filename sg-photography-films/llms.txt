@@ -1,0 +1,19 @@
+# SG Photography & Films (concept site by Kerblabs)
+
+> Luxury cinematic wedding films, candid photography and pre-wedding films in India. Concept page, not the studio's official site.
+
+## Facts
+- Services: luxury cinematic wedding films, candid photography, pre-wedding films (per public profile @sgphotography18)
+- Prices: not published, quote on request
+- Enquire: WhatsApp https://wa.me/message/TJNPSWI3HTGQN1 or Instagram @sgphotography18, with the wedding date and city
+- Links: https://linktr.ee/sgphotographyfilms
+
+## Machine-readable
+- [services.json](services.json)
+
+## FAQ
+- What do they shoot? Luxury cinematic wedding films, candid photography and pre-wedding films.
+- How do I book? Message the studio on WhatsApp with your date and city.
+
+## Actions
+- Enquire: message with the wedding date and city.

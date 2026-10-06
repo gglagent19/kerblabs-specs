@@ -1,0 +1,12 @@
+{
+  "business": "SG Photography & Films",
+  "note": "Concept file by Kerblabs. Facts from the public Instagram profile @sgphotography18 and linktr.ee/sgphotographyfilms. Prices not published. City not stated publicly.",
+  "locations": ["India"],
+  "services": [
+    {"name": "Luxury cinematic wedding films", "price": null, "pricing": "quote on request"},
+    {"name": "Candid wedding photography", "price": null, "pricing": "quote on request"},
+    {"name": "Pre-wedding films", "price": null, "pricing": "quote on request"}
+  ],
+  "booking": {"method": "WhatsApp message", "url": "https://wa.me/message/TJNPSWI3HTGQN1", "needs": ["wedding date", "city"]},
+  "social": {"instagram": "https://www.instagram.com/sgphotography18/", "linktree": "https://linktr.ee/sgphotographyfilms", "youtube": "https://www.youtube.com/@sgphotographyfilms3542"}
+}

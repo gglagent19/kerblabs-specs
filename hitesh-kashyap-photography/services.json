@@ -1,0 +1,11 @@
+{
+  "business": "Hitesh Kashyap Photography",
+  "note": "Concept file by Kerblabs. Facts from the public Instagram profile @hitesh_kashyap_photography. Prices not published.",
+  "locations": ["Jalandhar"],
+  "services": [
+    {"name": "Wedding photography", "price": null, "pricing": "quote on request"},
+    {"name": "Wedding films", "price": null, "pricing": "quote on request"}
+  ],
+  "booking": {"method": "Phone or WhatsApp", "phones": ["+91 85568 68651", "+91 78885 60064"], "url": "https://wa.me/918556868651", "needs": ["wedding date", "venue"]},
+  "social": {"instagram": "https://www.instagram.com/hitesh_kashyap_photography/", "behance": "https://www.behance.net/hiteshkashyap3"}
+}

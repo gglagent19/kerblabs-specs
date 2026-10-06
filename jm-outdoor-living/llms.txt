@@ -1,0 +1,16 @@
+# JM Outdoor Living (concept by Kerblabs)
+> Design + build outdoor living company in The Woodlands, Texas, established 2003. Facts from jmoutdoorliving.com.
+
+- Service area: The Woodlands, Magnolia, Montgomery, Conroe, Spring TX
+- Phone: (832) 586-6224
+- Email: jeremy@jmoutdoorliving.com
+- Services: master planned outdoor living, patio covers and pergolas, custom patios, outdoor kitchens, landscape design, pool remodels and new pools, hardscape and masonry, fireplaces and fire pits, water features
+- Prices: not published
+- Machine-readable: [services.json](services.json)
+
+## FAQ
+- Where do they work? The Woodlands, Magnolia, Montgomery, Conroe and Spring.
+- How to contact? Call (832) 586-6224 or email jeremy@jmoutdoorliving.com.
+
+## Actions
+- Request a consultation by phone or email.
