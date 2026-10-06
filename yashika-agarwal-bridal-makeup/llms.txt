@@ -1,0 +1,14 @@
+# Yashika Agarwal Bridal Makeup
+
+> Soft-glam bridal makeup artist serving Chandigarh, Zirakpur and Panchkula, India. Concept site by Kerblabs; details below are limited to what the business publishes.
+
+- Instagram: https://www.instagram.com/yashikamakeup
+- WhatsApp: https://wa.me/919988123128 (from Instagram bio)
+- Machine-readable: services.json
+
+## Actions
+- Book by WhatsApp message or an Instagram message.
+
+## FAQ
+- Where? Chandigarh, Zirakpur and Panchkula (street address not published here).
+- How to book? WhatsApp wa.me/919988123128 or message @yashikamakeup on Instagram.

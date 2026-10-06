@@ -1,0 +1,14 @@
+# Mehak Bindra Makeup Studio
+
+> Bridal makeup and hair artist and educator in Ludhiana, Punjab, India. Concept site by Kerblabs; details below are limited to what the business publishes.
+
+- Instagram: https://www.instagram.com/mehakmakeupartist
+- Phone (from Instagram bio): +91 9660330063
+- Machine-readable: services.json
+
+## Actions
+- Book a trial by phone or an Instagram message.
+
+## FAQ
+- Where? Ludhiana, Punjab (street address not published here).
+- How to book? Call 9660330063 or message @mehakmakeupartist on Instagram.

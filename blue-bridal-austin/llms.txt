@@ -1,0 +1,14 @@
+# Blue Bridal Boutique of Austin
+
+> Family owned bridal boutique in Austin, TX. Concept site by Kerblabs; details below are limited to what the business publishes.
+
+- Instagram: https://www.instagram.com/bluebridalaustin
+- Link in bio: https://linktr.ee/bluebridalaustin
+- Machine-readable: services.json
+
+## Actions
+- Book a visit via the link-in-bio page or an Instagram message.
+
+## FAQ
+- Where? Austin, Texas (street address not published here).
+- How to get in touch? Instagram message or the link-in-bio page.

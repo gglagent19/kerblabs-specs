@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mehak Bindra Makeup Studio | Bridal makeup and hair, Ludhiana (concept)</title>
+<meta name="description" content="Concept site for Mehak Bindra Makeup Studio, a bridal makeup and hair artist and educator in Ludhiana, with a scroll-twisted lipstick hero.">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/mehak-bindra-makeup/">
+<meta property="og:title" content="Mehak Bindra Makeup Studio | concept site by Kerblabs">
+<meta property="og:description" content="Concept for a Ludhiana bridal makeup artist: a lipstick that twists up and swatches five shades as you scroll.">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/mehak-bindra-makeup/">
+<meta name="twitter:card" content="summary">
+<meta name="robots" content="noindex,follow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#1a0f14;color:#f6e9e4;font-family:"Helvetica Neue",Arial,sans-serif;line-height:1.55}
+a{color:inherit}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;min-height:64px;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 22px;background:rgba(26,15,20,.92);backdrop-filter:blur(8px);border-bottom:1px solid #3a2530}
+nav b{font-family:Georgia,serif;font-size:17px;font-weight:400;letter-spacing:.03em;line-height:1.2}
+nav .r{display:flex;gap:16px;align-items:center;font-size:13px}
+.btn{display:inline-block;text-decoration:none;background:#e2a99a;color:#1a0f14;padding:11px 20px;border-radius:99px;font-size:14px;font-weight:700}
+.btn.alt{background:transparent;color:#e2a99a;border:1px solid #e2a99a}
+.track{height:300vh;position:relative}
+.stage{position:sticky;top:0;height:100vh;height:100svh;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr);gap:30px;align-items:center;padding:96px 24px 24px;max-width:1200px;margin:0 auto}
+.copy h1{font-size:clamp(34px,5.4vw,70px);line-height:1.04}
+.copy h1 em{color:#e2a99a;font-style:italic}
+.copy p{margin-top:14px;max-width:440px;opacity:.78;font-size:clamp(14px,1.5vw,18px)}
+.book{margin-top:20px;display:flex;flex-wrap:wrap;gap:10px}
+.read{margin-top:18px;border-left:2px solid #e2a99a;padding-left:12px}
+.read .k{font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.6}
+.read .v{font-family:Georgia,serif;font-size:clamp(20px,2.6vw,32px);color:#e2a99a}
+.fig{position:relative;height:min(72vh,580px)}
+.fig svg{width:100%;height:100%;display:block}
+.note{position:absolute;bottom:0;left:0;right:0;text-align:center;font-size:10.5px;opacity:.55}
+section.blk{padding:84px 24px;max-width:1100px;margin:0 auto}
+.eye{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#e2a99a;margin-bottom:12px}
+h2{font-size:clamp(26px,4vw,44px);line-height:1.1;margin-bottom:16px;max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:26px}
+.card{background:#2a1820;border:1px solid #3a2530;border-radius:16px;padding:22px}
+.card h3{font-size:20px;margin-bottom:6px}
+.card p{font-size:14px;opacity:.75}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:24px;counter-reset:s}
+.steps div{border-top:2px solid #e2a99a;padding-top:12px;font-size:14px;counter-increment:s}
+.steps div::before{content:"0" counter(s);display:block;font-family:Georgia,serif;font-size:26px;color:#e2a99a}
+.pitch{background:#f6e9e4;color:#1a0f14;border-radius:22px;padding:36px;margin:0 24px}
+.pitch .eye{color:#8e2347}
+.pitch ul{margin:12px 0 0 18px}
+.faq details{border-bottom:1px solid #3a2530;padding:14px 0}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{margin-top:8px;opacity:.78;max-width:680px}
+.ar{margin:0 auto;max-width:1100px;padding:20px 24px 70px}
+.ar div{border:1px dashed #e2a99a;border-radius:14px;padding:20px;font-size:14px}
+footer{padding:46px 24px 90px;text-align:center;font-size:12px;opacity:.6;border-top:1px solid #3a2530}
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none}
+.sticky .btn{display:block;text-align:center;padding:14px}
+@media(max-width:760px){
+.stage{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);align-items:start;gap:10px;padding:104px 18px 80px}
+.fig{height:100%}.copy p{display:none}.book{display:none}.read{margin-top:8px}
+nav .r a.t{display:none}.sticky{display:block}
+}
+@media(prefers-reduced-motion:reduce){.track{height:auto}.stage{position:static;height:auto;min-height:100vh}.fig{height:70vh}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"BeautySalon","name":"Mehak Bindra Makeup Studio","description":"Bridal makeup and hair artist and educator in Ludhiana, India.","address":{"@type":"PostalAddress","addressLocality":"Ludhiana","addressRegion":"Punjab","addressCountry":"IN"},"telephone":"+91 9660330063","sameAs":["https://www.instagram.com/mehakmakeupartist"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where is Mehak Bindra Makeup Studio?","acceptedAnswer":{"@type":"Answer","text":"Ludhiana, Punjab. The street address is not published on this concept page."}},{"@type":"Question","name":"How do I book?","acceptedAnswer":{"@type":"Answer","text":"Call 9660330063 (listed on the Instagram profile) or message @mehakmakeupartist on Instagram."}}]}]}
+</script>
+</head>
+<body>
+<nav><b>Mehak Bindra<br>Makeup Studio</b><div class="r"><a class="t" href="#faq">FAQ</a><a class="t" href="#how">The idea</a><a class="btn" href="tel:+919660330063">Book a trial</a></div></nav>
+
+<div class="track" id="track">
+ <div class="stage">
+  <div class="copy">
+   <h1>Your shade. <em>Your day.</em></h1>
+   <p>Bridal makeup and hair, and an educator, in Ludhiana. A home on the web that feels as finished as the look.</p>
+   <div class="book"><a class="btn" href="tel:+919660330063">Book a trial</a><a class="btn alt" href="https://www.instagram.com/mehakmakeupartist">@mehakmakeupartist</a></div>
+   <div class="read"><div class="k" id="k">Shade 0 of 5</div><div class="v" id="v">Twist up</div></div>
+  </div>
+  <div class="fig">
+   <svg viewBox="0 0 400 520" preserveAspectRatio="xMidYMid meet" aria-label="Lipstick twisting up and swatching five shades (illustrative)">
+    <rect x="30" y="30" width="340" height="170" rx="14" fill="#f6e9e4" opacity=".92"/>
+    <g id="swatches"></g>
+    <g id="bullet" transform="translate(200 392)">
+     <path id="bp" d="M-32 60 V-30 L32 -62 V60 Z" fill="#d9a193"/>
+    </g>
+    <rect x="156" y="330" width="88" height="40" rx="3" fill="#4a3039"/>
+    <rect x="148" y="368" width="104" height="132" rx="8" fill="#c99a6b"/>
+    <rect x="148" y="368" width="104" height="10" fill="#e7c79c"/>
+    <rect x="160" y="378" width="10" height="112" fill="#fff" opacity=".18"/>
+   </svg>
+   <div class="note">Illustrative graphic. Shades are examples, not a product list.</div>
+  </div>
+ </div>
+</div>
+
+<section class="blk" id="how">
+ <div class="eye">The idea</div>
+ <h2>A first impression that fits the artist.</h2>
+ <p style="max-width:640px;opacity:.78">Mehak Bindra is a bridal makeup and hair artist and educator in Ludhiana, active on Instagram with a 16K following, and today bookings run through the phone number in the bio. This concept shows how the same studio could greet a bride on the web: polished, confident, and one tap from booking a trial.</p>
+ <div class="grid">
+  <div class="card"><h3>Booking first</h3><p>A call button in the nav, the hero and a sticky mobile bar.</p></div>
+  <div class="card"><h3>Instagram, connected</h3><p>The feed is the portfolio. The site points straight to it.</p></div>
+  <div class="card"><h3>Your looks, your words</h3><p>Packages, academy details and prices placed in once the studio shares them. Nothing invented here.</p></div>
+ </div>
+ <div class="steps"><div>Land on the twisting lipstick</div><div>Browse looks and the academy</div><div>Book a trial in a tap</div></div>
+</section>
+
+<div class="pitch"><div class="eye">Concept by Kerblabs</div><h2 style="max-width:640px">Built for Mehak Bindra Makeup Studio as a free concept.</h2>
+<ul><li>Everything on this page is a placeholder until the studio confirms its address, packages, academy details and booking method.</li><li>Includes machine-readable files so AI assistants can read the business.</li></ul></div>
+
+<section class="blk faq" id="faq">
+ <div class="eye">FAQ</div><h2>Quick answers</h2>
+ <details><summary>Where is Mehak Bindra Makeup Studio?</summary><p>Ludhiana, Punjab. The street address is not published on this concept page.</p></details>
+ <details><summary>How do I book?</summary><p>Call 9660330063 (listed on the Instagram profile) or message @mehakmakeupartist on Instagram.</p></details>
+</section>
+
+<div class="ar"><div><b>Agent-Ready included.</b> llms.txt, services.json, schema and crawler access so AI assistants can read the business and point brides to booking.</div></div>
+<footer>Concept site by Kerblabs for Mehak Bindra Makeup Studio. Not affiliated or endorsed. <!-- /agent-ready-section --></footer>
+<div class="sticky"><a class="btn" href="tel:+919660330063">Book a trial</a></div>
+
+<script>
+(function(){
+var N=5,ns="http://www.w3.org/2000/svg",sg=document.getElementById("swatches");
+var cols=["#d9a193","#e0735f","#c0242f","#8e2347","#5a1530"];
+var names=["Nude rose","Soft coral","Classic red","Berry","Deep wine"];
+var segs=[];
+function el(t,a,p){var e=document.createElementNS(ns,t);for(var k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e;}
+for(var i=0;i<N;i++){var y=56+i*29;
+ var l=el("line",{x1:60,y1:y,x2:340,y2:y,stroke:cols[i],"stroke-width":20,"stroke-linecap":"round"},sg);
+ l.style.strokeDasharray=280;l.style.strokeDashoffset=280;segs.push(l);}
+var bullet=document.getElementById("bullet"),bp=document.getElementById("bp");
+var k=document.getElementById("k"),v=document.getElementById("v"),track=document.getElementById("track");
+var reduce=matchMedia("(prefers-reduced-motion: reduce)");
+function draw(t){
+ var up=Math.min(1,t/0.12);
+ bullet.setAttribute("transform","translate(200 "+(392-100*up).toFixed(1)+")");
+ var p=Math.min(1,Math.max(0,(t-.12)/.8))*N;
+ var cur=Math.min(N-1,Math.floor(p));
+ segs.forEach(function(s,i){var f=Math.min(1,Math.max(0,p-i));s.style.strokeDashoffset=280*(1-f);});
+ bp.setAttribute("fill",cols[cur]);
+ var shown=Math.min(N,Math.ceil(p-0.0001));
+ k.textContent="Shade "+Math.max(0,shown)+" of "+N;
+ v.textContent=t<.12?"Twist up":names[cur];
+}
+function onScroll(){
+ if(reduce.matches){draw(1);return;}
+ var r=track.getBoundingClientRect(),max=track.offsetHeight-innerHeight;
+ draw(Math.min(1,Math.max(0,-r.top/max)));
+}
+addEventListener("scroll",onScroll,{passive:true});addEventListener("resize",onScroll);
+if(reduce.addEventListener)reduce.addEventListener("change",onScroll);
+onScroll();
+})();
+</script>
+</body>
+</html>
