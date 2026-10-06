@@ -1,0 +1,11 @@
+{
+  "business": "Alphagraphy Productions",
+  "note": "Concept file by Kerblabs. Facts from the public Instagram profile @alphagraphy_productions. Prices not published.",
+  "locations": ["Goa", "Worldwide"],
+  "services": [
+    {"name": "Wedding films", "price": null, "pricing": "quote on request"},
+    {"name": "Destination wedding photography", "price": null, "pricing": "quote on request"}
+  ],
+  "booking": {"method": "Instagram DM ('BOOK' for 2026) or bio booking link", "url": "https://bit.ly/3sOYN1y", "needs": ["wedding date", "venue"]},
+  "social": {"instagram": "https://www.instagram.com/alphagraphy_productions/"}
+}

@@ -1,0 +1,19 @@
+# Bhaavya Kapur Makeup Studio & Academy (concept site by Kerblabs)
+
+> Bridal makeup, unisex salon and makeup academy in Lucknow, Kanpur and Jhansi (Uttar Pradesh). Concept page, not the studio's official site.
+
+## Facts
+- Cities: Lucknow, Kanpur, Jhansi (per public Instagram profile)
+- Services: bridal makeup, unisex salon, makeup academy
+- Prices: not published, quote on request
+- Enquire: WhatsApp https://wa.me/918808110110, Instagram https://www.instagram.com/bkmakeupstudioandacademy/
+
+## Machine-readable
+- [services.json](services.json)
+
+## FAQ
+- Where are they based? Lucknow, Kanpur and Jhansi.
+- How do I book? Message them on WhatsApp.
+
+## Actions
+- Enquire: send a WhatsApp message with the date, city and look.

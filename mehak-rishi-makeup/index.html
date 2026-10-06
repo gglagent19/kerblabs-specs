@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mehak Rishi Makeup | Bridal makeup artist, Chandigarh (concept)</title>
+<meta name="description" content="Concept site for Mehak Rishi Makeup, a bridal makeup artist in Chandigarh, with a scroll-unrolled brush roll hero that lights up each listed service.">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/mehak-rishi-makeup/">
+<meta property="og:title" content="Mehak Rishi Makeup | concept site by Kerblabs">
+<meta property="og:description" content="Concept for a Chandigarh bridal makeup artist: a brush roll unrolls as you scroll and her services light up.">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/mehak-rishi-makeup/">
+<meta name="twitter:card" content="summary">
+<meta name="robots" content="noindex,follow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#24120f;color:#f6e7d2;font-family:"Helvetica Neue",Arial,sans-serif;line-height:1.55}
+a{color:inherit}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;min-height:64px;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 22px;background:rgba(36,18,15,.94);backdrop-filter:blur(8px);border-bottom:1px solid #4a2a22}
+nav b{font-family:Georgia,serif;font-size:17px;font-weight:400;letter-spacing:.03em;line-height:1.2}
+nav .r{display:flex;gap:16px;align-items:center;font-size:13px}
+.btn{display:inline-block;text-decoration:none;background:#f1d9a8;color:#2a150f;padding:11px 20px;border-radius:99px;font-size:14px;font-weight:700}
+.btn.alt{background:transparent;color:#f1d9a8;border:1px solid #f1d9a8}
+.track{height:340vh;position:relative}
+.stage{position:sticky;top:0;height:100vh;height:100svh;display:grid;grid-template-columns:minmax(0,4fr) minmax(0,5fr);gap:30px;align-items:center;padding:96px 24px 24px;max-width:1240px;margin:0 auto}
+.copy h1{font-size:clamp(34px,5.4vw,70px);line-height:1.04}
+.copy h1 em{color:#e58a8a;font-style:italic}
+.copy p{margin-top:14px;max-width:440px;opacity:.8;font-size:clamp(14px,1.5vw,18px)}
+.book{margin-top:20px;display:flex;flex-wrap:wrap;gap:10px}
+.read{margin-top:18px;border-left:2px solid #e58a8a;padding-left:12px}
+.read .k{font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.65}
+.read .v{font-family:Georgia,serif;font-size:clamp(20px,2.6vw,32px);color:#f1d9a8}
+.fig{position:relative;height:min(60vh,460px)}
+.fig svg{width:100%;height:100%;display:block}
+.note{position:absolute;bottom:0;left:0;right:0;text-align:center;font-size:10.5px;opacity:.55}
+section.blk{padding:84px 24px;max-width:1100px;margin:0 auto}
+.eye{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#f1d9a8;margin-bottom:12px}
+h2{font-size:clamp(26px,4vw,44px);line-height:1.1;margin-bottom:16px;max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:26px}
+.card{background:#331a15;border:1px solid #4a2a22;border-radius:16px;padding:22px}
+.card h3{font-size:20px;margin-bottom:6px}
+.card p{font-size:14px;opacity:.78}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:24px}
+.facts div{border-top:2px solid #e58a8a;padding-top:10px;font-size:13px;opacity:.9}
+.facts b{display:block;font-family:Georgia,serif;font-size:28px;font-weight:400;color:#f1d9a8}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:24px;counter-reset:s}
+.steps div{border-top:2px solid #e58a8a;padding-top:12px;font-size:14px;counter-increment:s}
+.steps div::before{content:"0" counter(s);display:block;font-family:Georgia,serif;font-size:26px;color:#f1d9a8}
+.pitch{background:#f6e7d2;color:#2a150f;border-radius:22px;padding:36px;margin:0 24px}
+.pitch .eye{color:#8a3a3a}
+.pitch ul{margin:12px 0 0 18px}
+.faq details{border-bottom:1px solid #4a2a22;padding:14px 0}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{margin-top:8px;opacity:.8;max-width:680px}
+.ar{margin:0 auto;max-width:1100px;padding:20px 24px 70px}
+.ar div{border:1px dashed #f1d9a8;border-radius:14px;padding:20px;font-size:14px}
+footer{padding:46px 24px 90px;text-align:center;font-size:12px;opacity:.6;border-top:1px solid #4a2a22}
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none}
+.sticky .btn{display:block;text-align:center;padding:14px}
+@media(max-width:760px){
+.stage{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);align-items:start;gap:10px;padding:104px 18px 80px}
+.fig{height:100%;min-height:0}.copy p{display:none}.book{display:none}.read{margin-top:8px}
+nav .r a.t{display:none}.sticky{display:block}
+}
+@media(prefers-reduced-motion:reduce){.track{height:auto}.stage{position:static;height:auto;min-height:100vh}.fig{height:50vh}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"BeautySalon","name":"Mehak Rishi Makeup","alternateName":"Manmohini by Mehak Rishi","description":"Bridal and party makeup artist based in Sector 22, Chandigarh, also listed for Ludhiana, Phillaur and Jalandhar.","address":{"@type":"PostalAddress","streetAddress":"Sector 22","addressLocality":"Chandigarh","addressCountry":"IN"},"sameAs":["https://www.wedmegood.com/profile/Mehak-Rishi-Makeup-769442"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where is Mehak Rishi Makeup based?","acceptedAnswer":{"@type":"Answer","text":"Sector 22, Chandigarh, with Ludhiana, Phillaur and Jalandhar also listed on WedMeGood."}},{"@type":"Question","name":"How do I book?","acceptedAnswer":{"@type":"Answer","text":"Send a message through the WedMeGood profile at wedmegood.com/profile/Mehak-Rishi-Makeup-769442. A direct phone or WhatsApp number is not published on this concept page."}}]}]}
+</script>
+</head>
+<body>
+<nav><b>Mehak Rishi<br>Makeup</b><div class="r"><a class="t" href="#faq">FAQ</a><a class="t" href="#how">The idea</a><a class="btn" href="https://www.wedmegood.com/profile/Mehak-Rishi-Makeup-769442">Book a trial</a></div></nav>
+
+<div class="track" id="track">
+ <div class="stage">
+  <div class="copy">
+   <h1>Every tool, <em>for your day.</em></h1>
+   <p>Bridal and party makeup from Sector 22, Chandigarh. A home on the web that unrolls the kit the way a trial does: one service at a time.</p>
+   <div class="book"><a class="btn" href="https://www.wedmegood.com/profile/Mehak-Rishi-Makeup-769442">Book a trial</a><a class="btn alt" href="#how">See the idea</a></div>
+   <div class="read"><div class="k" id="k">Service 0 of 8</div><div class="v" id="v">Rolled up</div></div>
+  </div>
+  <div class="fig">
+   <svg viewBox="0 0 560 300" preserveAspectRatio="xMidYMid meet" aria-label="A makeup brush roll unrolling to show eight brushes, one per listed service (illustrative)">
+    <defs>
+     <clipPath id="unrollClip"><rect id="clipR" x="30" y="20" width="0" height="260"/></clipPath>
+     <linearGradient id="cyl" x1="0" x2="1"><stop offset="0" stop-color="#6b3a26"/><stop offset=".45" stop-color="#d49a6a"/><stop offset="1" stop-color="#5a2e1e"/></linearGradient>
+    </defs>
+    <g clip-path="url(#unrollClip)">
+     <rect x="30" y="40" width="500" height="220" rx="10" fill="#b8754a"/>
+     <rect x="30" y="40" width="500" height="220" rx="10" fill="none" stroke="#f1d9a8" stroke-width="1.4" stroke-dasharray="5 5" transform="translate(0,0) scale(1)" opacity=".5"/>
+     <rect x="30" y="150" width="500" height="110" fill="#8e5232"/>
+     <g id="pockets"></g>
+    </g>
+    <rect id="roll" x="30" y="30" width="0" height="240" rx="8" fill="url(#cyl)"/>
+    <rect id="strap" x="0" y="130" width="0" height="26" fill="#e58a8a"/>
+   </svg>
+   <div class="note">Illustrative kit. Brushes stand for the services listed on WedMeGood, not her actual tools.</div>
+  </div>
+ </div>
+</div>
+
+<section class="blk" id="how">
+ <div class="eye">The idea</div>
+ <h2>A first impression that matches the work.</h2>
+ <p style="max-width:640px;opacity:.8">Mehak Rishi Makeup (formerly Manmohini by Mehak Rishi) is a bridal makeup artist in Sector 22, Chandigarh, who also lists Ludhiana, Phillaur and Jalandhar. Her WedMeGood profile carries strong proof, but it lives on someone else's platform. This concept shows how the same brand could greet a bride on a page of her own: confident, easy to scan, and one tap from booking a trial.</p>
+ <div class="facts">
+  <div><b>4.9</b>rating on WedMeGood</div>
+  <div><b>51</b>reviews listed</div>
+  <div><b>247</b>photos in 31 albums</div>
+  <div><b>2019</b>practising since</div>
+ </div>
+ <div class="grid">
+  <div class="card"><h3>Services, laid out</h3><p>Bridal, engagement, party, hair styling, draping, false lashes, extensions and airbrush, as listed on her profile.</p></div>
+  <div class="card"><h3>Trial first</h3><p>The profile lists a paid trial, adjusted if booked, and a 50% advance. The site makes that clear before anyone has to ask.</p></div>
+  <div class="card"><h3>Your portfolio, your page</h3><p>Her 31 albums become a gallery she owns, with her own photos placed in once she shares them. Nothing invented here.</p></div>
+ </div>
+ <div class="steps"><div>Land on a kit that unrolls as you scroll</div><div>Browse looks, services and listed rates</div><div>Request a trial in a tap</div></div>
+</section>
+
+<section class="blk" style="padding-top:0">
+ <div class="eye">As listed on WedMeGood</div>
+ <h2>Rates she already publishes.</h2>
+ <div class="grid">
+  <div class="card"><h3>Bridal</h3><p>&#8377;25,000 per function</p></div>
+  <div class="card"><h3>Engagement</h3><p>&#8377;15,000</p></div>
+  <div class="card"><h3>Party</h3><p>&#8377;5,500 per person</p></div>
+  <div class="card"><h3>Outstation</h3><p>&#8377;30,000 per function</p></div>
+ </div>
+ <p style="margin-top:14px;font-size:12px;opacity:.6">Copied from her WedMeGood profile on 2026-10-06; she confirms current rates.</p>
+</section>
+
+<div class="pitch"><div class="eye">Concept by Kerblabs</div><h2 style="max-width:640px">Built for Mehak Rishi Makeup as a free concept.</h2>
+<ul><li>Facts on this page come from her public WedMeGood profile. Packages, travel details and booking method are hers to confirm.</li><li>Includes machine-readable files so AI assistants can read the business.</li></ul></div>
+
+<section class="blk faq" id="faq">
+ <div class="eye">FAQ</div><h2>Quick answers</h2>
+ <details><summary>Where is Mehak Rishi Makeup based?</summary><p>Sector 22, Chandigarh, with Ludhiana, Phillaur and Jalandhar also listed on WedMeGood.</p></details>
+ <details><summary>How do I book?</summary><p>Send a message through the WedMeGood profile at wedmegood.com/profile/Mehak-Rishi-Makeup-769442. A direct phone or WhatsApp number is not published on this concept page.</p></details>
+ <details><summary>Is there a trial?</summary><p>Her profile lists a paid trial that is adjusted if you book, and a 50% advance to confirm.</p></details>
+</section>
+
+<div class="ar"><div><b>Agent-Ready included.</b> llms.txt, services.json, schema and crawler access so AI assistants can read the business and point brides to booking.</div></div>
+<footer>Concept site by Kerblabs for Mehak Rishi Makeup. Not affiliated or endorsed. <!-- /agent-ready-section --></footer>
+<div class="sticky"><a class="btn" href="https://www.wedmegood.com/profile/Mehak-Rishi-Makeup-769442">Book a trial</a></div>
+
+<script>
+(function(){
+var NS="http://www.w3.org/2000/svg";
+var $=function(i){return document.getElementById(i);};
+var track=$("track"),k=$("k"),v=$("v"),clipR=$("clipR"),roll=$("roll"),strap=$("strap"),pockets=$("pockets");
+var names=["Bridal makeup","Engagement","Party makeup","Hair styling","Draping","False lashes","Extensions","Airbrush"];
+var X0=30,W=500,N=8,step=W/N,items=[];
+function el(n,a,p){var e=document.createElementNS(NS,n);for(var s in a)e.setAttribute(s,a[s]);p.appendChild(e);return e;}
+for(var i=0;i<N;i++){
+ var cx=X0+step*i+step/2,g=el("g",{},pockets);
+ var h=el("g",{opacity:".35"},g);
+ el("rect",{x:cx-3,y:62,width:6,height:92,rx:3,fill:"#2a150f"},h);
+ el("path",{d:"M"+(cx-7)+" 62 Q"+cx+" "+(20+(i%3)*6)+" "+(cx+7)+" 62Z",fill:"#f1d9a8"},h);
+ el("rect",{x:cx-5,y:62,width:10,height:10,fill:"#c9c2b8"},h);
+ el("rect",{x:X0+step*i+5,y:140,width:step-10,height:105,rx:6,fill:"#6f3d25",stroke:"#f1d9a8","stroke-opacity":".35"},g);
+ el("path",{d:"M"+(X0+step*i+5)+" 140 H"+(X0+step*i+step-5),stroke:"#f1d9a8","stroke-width":2,fill:"none"},g);
+ items.push(h);
+}
+var reduce=matchMedia("(prefers-reduced-motion: reduce)");
+function r(t,a,b){return Math.min(1,Math.max(0,(t-a)/(b-a)));}
+function draw(t){
+ var u=r(t,.04,.86),w=W*u,n=0;
+ clipR.setAttribute("width",w.toFixed(1));
+ var rad=Math.max(0,34*(1-u));
+ roll.setAttribute("x",(X0+w-rad).toFixed(1));roll.setAttribute("width",(rad*1.0).toFixed(1));
+ roll.setAttribute("opacity",u<.995?1:0);
+ for(var i=0;i<N;i++){
+  var edge=X0+step*i+step/2,on=w>edge-4+rad*0?(w>edge+6):false;
+  items[i].setAttribute("opacity",on?"1":".35");
+  if(on)n=i+1;
+ }
+ var done=t>.9;
+ k.textContent="Service "+(done?N:n)+" of "+N;
+ v.textContent=done?"Kit complete":n===0?"Rolled up":names[n-1];
+}
+function onScroll(){
+ if(reduce.matches){draw(1);return;}
+ var rc=track.getBoundingClientRect(),max=track.offsetHeight-innerHeight;
+ draw(Math.min(1,Math.max(0,-rc.top/max)));
+}
+addEventListener("scroll",onScroll,{passive:true});addEventListener("resize",onScroll);
+if(reduce.addEventListener)reduce.addEventListener("change",onScroll);
+onScroll();
+})();
+</script>
+</body>
+</html>

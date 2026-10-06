@@ -1,0 +1,12 @@
+{
+  "business": "Bhaavya Kapur Makeup Studio & Academy",
+  "note": "Concept file by Kerblabs. Facts from the public Instagram profile @bkmakeupstudioandacademy. Prices not published.",
+  "locations": ["Lucknow", "Kanpur", "Jhansi"],
+  "services": [
+    {"name": "Bridal makeup", "price": null, "pricing": "quote on request"},
+    {"name": "Unisex salon", "price": null, "pricing": "quote on request"},
+    {"name": "Makeup academy", "price": null, "pricing": "enquire"}
+  ],
+  "booking": {"method": "WhatsApp message", "url": "https://wa.me/918808110110", "needs": ["date", "city", "look"]},
+  "social": {"instagram": "https://www.instagram.com/bkmakeupstudioandacademy/"}
+}

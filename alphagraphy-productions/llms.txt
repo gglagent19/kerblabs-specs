@@ -1,0 +1,19 @@
+# Alphagraphy Productions (concept site by Kerblabs)
+
+> Contemporary wedding films from Goa, travelling worldwide, 13+ years and 500+ stories told. Concept page, not the studio's official site.
+
+## Facts
+- Based in Goa, available worldwide (per Instagram bio)
+- Services: wedding films, destination wedding photography
+- Prices: not published, quote on request
+- Enquire: Instagram https://www.instagram.com/alphagraphy_productions/ (bio says DM "BOOK" for 2026), booking link https://bit.ly/3sOYN1y
+
+## Machine-readable
+- [services.json](services.json)
+
+## FAQ
+- Where are they based? Goa, and worldwide.
+- How do I book? DM "BOOK" on Instagram.
+
+## Actions
+- Enquire: send an Instagram message with the wedding date and venue.
