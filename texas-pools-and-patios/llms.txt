@@ -1,0 +1,25 @@
+# Texas Pools & Patios (concept site by Kerblabs)
+
+> Third-generation, family-owned custom pool builder. Offices in Cedar Park (Austin area), San Antonio and Marble Falls, TX. Started 2006; lists 5,700+ projects.
+
+## Services
+- Custom inground pools and spas
+- Pool remodeling
+- Outdoor kitchens and living spaces
+- Fire features and patio covers
+- Landscaping
+
+## Contact (from texaspoolsandpatios.com)
+- Austin: 601 South Bell Blvd., Cedar Park, TX 78613, 512-817-0620
+- San Antonio: 16264 San Pedro, San Antonio, TX 78232, 210-418-1318
+- Marble Falls: 114 Hwy 281, Marble Falls, TX 78654 (by appointment only)
+- Instagram: @texaspoolsandpatios
+- Prices: not published
+
+## Machine-readable
+- [services.json](services.json)
+- [sitemap.xml](sitemap.xml)
+
+## FAQ
+- Where are the offices? Cedar Park, San Antonio, Marble Falls (appointment only).
+- What do they build? Pools, spas, remodels, outdoor kitchens, fire features, patio covers, landscaping.

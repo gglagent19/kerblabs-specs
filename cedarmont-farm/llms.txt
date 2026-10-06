@@ -1,0 +1,25 @@
+# Cedarmont Farm (concept by Kerblabs)
+
+> 40-acre private estate wedding venue in Franklin, Tennessee, 20 minutes from Nashville. Facts from cedarmontfarm.com. This is a free concept, not their official site.
+
+- Phone: 615-682-1815
+- Instagram: @cedarmontfarm
+- Showings: by appointment
+
+## Offerings
+- All-inclusive wedding packages
+- Ceremony and reception venues, indoor and outdoor
+- Day-of coordination, design guidance and personalization
+- Film and photo location services
+
+## Spaces
+- Event barn, historic 1815 home, bridal house, pond, pool and flagstone deck
+
+## FAQ
+- Prices? Listed on their weddings page, not reproduced here.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Call 615-682-1815 to book a showing.

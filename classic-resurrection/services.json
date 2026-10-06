@@ -1,0 +1,13 @@
+{
+ "business": "Classic Resurrection",
+ "location": {"city": "Grove City", "region": "OH", "country": "US"},
+ "official_site": "https://www.classicresurrection.com",
+ "instagram": "https://www.instagram.com/classic_resurrection/",
+ "services": [
+  {"name": "Auto restoration", "vehicles": ["classics", "resto-mods", "muscle cars", "street rods", "pro-touring cars"], "price": null},
+  {"name": "Custom service work", "price": null},
+  {"name": "Hand-crafted parts fabrication", "price": null}
+ ],
+ "booking": {"method": "contact form on official site or Instagram DM", "url": "https://www.classicresurrection.com"},
+ "note": "Concept by Kerblabs. Prices not published, so null."
+}

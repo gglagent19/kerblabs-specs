@@ -1,0 +1,22 @@
+# HollyOaks on the Marsh (concept by Kerblabs)
+
+> Private country estate venue on 18 acres in Savannah, Georgia, established 1941. Facts from hollyoaksotm.com. This is a free concept, not their official site.
+
+- Instagram: @hollyoaks_otm
+- Events per year: 8
+- Visits and tours: by appointment only
+
+## Spaces
+- 1941 Manor Home
+- Heirloom Gardens
+- 1927 Guest Cottage
+- Sailcloth tent option
+
+## FAQ
+- Prices? Not disclosed on their site.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Message @hollyoaks_otm on Instagram or use the contact form on hollyoaksotm.com to request a tour.

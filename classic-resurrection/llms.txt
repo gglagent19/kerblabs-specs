@@ -1,0 +1,19 @@
+# Classic Resurrection (concept by Kerblabs)
+
+> Auto restoration and service center in Grove City, Ohio. This is a free concept site, not the official site. Official: https://www.classicresurrection.com
+
+## About
+- Restoration and service for classics, resto-mods, muscle cars, street rods and pro-touring cars
+- Hand-crafted parts where none are available; custom details for hot rods
+- Instagram: https://www.instagram.com/classic_resurrection/
+
+## FAQ
+- Where? Grove City, Ohio.
+- Prices? Not published; quoted per project.
+- Contact? Contact form on classicresurrection.com, or Instagram.
+
+## Machine-readable
+- [services.json](services.json)
+
+## Actions
+- Enquire: https://www.classicresurrection.com

@@ -1,0 +1,28 @@
+# Softtouch Dental and Implant Center (concept by Kerblabs)
+
+> Prosthodontics and implant practice of Dr. Salman Lakhani in Plano, Texas. Facts from softtouchdentist.net. This is a free concept, not their official site.
+
+- Address: 2865 McDermott Road, Suite 220, Plano, TX 75025
+- Phone: (214) 644-0010
+- Email: Dr.Lakhani@softtouchdentist.net
+- Doctor: Dr. Salman Lakhani, prosthodontist and implant specialist (25+ years per their site)
+- Serves: Plano, Frisco, Allen, McKinney, Prosper, Melissa, Celina
+
+## Services
+- Dental implants including All-On-4
+- Full mouth reconstruction
+- Porcelain veneers
+- Crowns and bridges
+- Dentures and partial dentures
+- Invisalign and clear aligners
+- Zoom whitening
+- Extractions, exams and cleanings, periodontal maintenance
+
+## FAQ
+- Prices? Not published on the source pages.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Call (214) 644-0010 or email Dr.Lakhani@softtouchdentist.net to book a consultation.
