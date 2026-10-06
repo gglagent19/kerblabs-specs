@@ -1,0 +1,19 @@
+# Brickell Interiors (concept by Kerblabs)
+
+> Interior design studio in Miami, Florida. This is a free concept, not their official site. The room shown is an illustrative drawing.
+
+- Location: Miami, FL
+- Linktree: https://linktr.ee/brickellinteriors
+- Instagram: @brickell_interiors
+
+## Services
+- Interior design
+
+## FAQ
+- Prices? Not published in the source pages.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Message @brickell_interiors on Instagram or use their Linktree to start a project.

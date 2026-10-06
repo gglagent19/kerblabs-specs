@@ -1,0 +1,24 @@
+# Muscle Car Concepts and Restoration (concept by Kerblabs)
+
+> Muscle and classic car restoration and custom builds in Lincoln, Nebraska. Facts from musclecarconcepts.com. This is a free concept, not their official site.
+
+- Location: 1821 Cornhusker Hwy, Lincoln, NE 68521
+- Hours: Monday to Friday, 8 AM to 5 PM
+- Contact: form on musclecarconcepts.com; Instagram and YouTube @muscle_car_concepts. No phone published.
+
+## Services
+- Custom paint
+- Frame off restoration
+- Engine upgrades
+- Custom upholstery
+- Suspension and handling
+- Custom fabrication
+
+## FAQ
+- Prices? Not published; ask for a quote.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Send a quote request through musclecarconcepts.com.

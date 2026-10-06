@@ -1,0 +1,28 @@
+# Solitude Homes (concept by Kerblabs)
+
+> Custom home builder in Boise, Idaho serving the Treasure Valley. Facts from solitudehomes.com. This is a free concept, not their official site.
+
+- Location: 9601 W State St. #110, Boise, ID 83714
+- Phone: 208-724-0555
+- President: Cody Weight (over 20 years building, per their site)
+- Credentials (as listed on their site): 30+ Parade of Homes awards
+- Service area: Boise, Eagle, Meridian, Star and surrounding Treasure Valley cities
+
+## Services
+- Custom home building
+- Available and move-in ready homes
+- Floor plan design and customization
+- Building on private lots
+
+## Communities (as listed on their site)
+- Millstone Farm, Tamarack Resort, Terra View, Valnova
+
+## FAQ
+- Where? Boise, Eagle, Meridian, Star and the Treasure Valley, Idaho.
+- Prices? Not published in the source pages.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Call 208-724-0555 to start a conversation about your home.

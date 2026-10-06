@@ -1,0 +1,24 @@
+# Harvest Barn Inn (concept by Kerblabs)
+
+> Guesthouse in a converted 19th century farmhouse in Bellows Falls, Vermont. Facts from harvestbarninn.com. This is a free concept, not their official site.
+
+- Location: 16 Webb Terrace, Bellows Falls, VT 05101
+- Phone: (916) 276-9421
+- Email: harvestbarninn@gmail.com
+- Views of the Connecticut River (per their site)
+- TripAdvisor: 5/5 average, as displayed on their site
+
+## Offer
+- Modern, comfortable rooms
+- Kitchen and community space
+- Breakfast (shown on their site)
+
+## FAQ
+- Prices? Not published in the source pages.
+- Booking? Book now link on harvestbarninn.com.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Book via the Book now link on harvestbarninn.com, or call (916) 276-9421.

@@ -1,0 +1,27 @@
+# Dallas Periodontics and Dental Implants (concept by Kerblabs)
+
+> Periodontics and dental implant practice in Dallas, Texas. Facts from periodallas.com. This is a free concept, not their official site.
+
+- Location: 7557 Rambler Rd #918, Dallas, TX 75231
+- New patients: (214) 390-9829
+- Hours: Mon-Thu 8am-4pm, Fri 8am-12pm, closed Sat-Sun
+- Doctors: Dr. Laura N. Rabe (founder), Dr. Yaritza Vazquez, both board-certified periodontists per their site
+- Recognition (per their site): Best D award 2022, 2023, 2024
+
+## Services
+- Dental implants, including full arch and immediate
+- Periodontal and gum disease treatment
+- Scaling and root planing
+- Bone grafting
+- Gum recession treatment
+- Esthetic treatments
+- Sedation and anesthesia
+
+## FAQ
+- Prices? Not published in the source pages.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Call (214) 390-9829 or use online scheduling at periodallas.com.

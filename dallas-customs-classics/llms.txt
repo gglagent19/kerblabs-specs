@@ -1,0 +1,17 @@
+# Dallas Customs & Classics (concept by Kerblabs)
+
+> Classic car restoration and customs in Dallas, Texas. Facts from dallascustoms.com (a coming-soon page) and their Instagram handle. This is a free concept, not their official site.
+
+- Tagline (their site): the artistry of classic car restoration reimagined
+- Instagram: @dallascustomsclassics
+- Address, phone, hours, prices: not published yet
+
+## Services
+- Classic car restoration
+- Custom builds
+
+## Machine-readable
+- services.json
+
+## Actions
+- Message them on Instagram @dallascustomsclassics.
