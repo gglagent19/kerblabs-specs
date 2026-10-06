@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Platinum Motorcars | Exotic Car Rental, Dallas TX (concept)</title>
+<meta name="description" content="Concept site for Platinum Motorcars: exotic and luxury car rental on Cedar Springs Rd, Dallas, for weddings, shoots, events, prom and nightlife. A red carpet unrolls as you scroll.">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/platinum-motorcars/">
+<meta property="og:title" content="Platinum Motorcars | concept site by Kerblabs">
+<meta property="og:description" content="Concept for a Dallas exotic rental: a red carpet unrolls past six occasions, each lit by its own spotlight.">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/platinum-motorcars/">
+<meta name="twitter:card" content="summary">
+<meta name="robots" content="noindex,follow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#0e0b0c;color:#f3ebe0;font-family:"Helvetica Neue",Arial,sans-serif;line-height:1.55}
+a{color:inherit}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.01em}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 16px;background:rgba(14,11,12,.93);backdrop-filter:blur(8px);border-bottom:1px solid #2e2427}
+nav b{font-family:Georgia,serif;font-size:19px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:#d8b46b}
+nav .r{display:flex;gap:14px;align-items:center;font-size:13px}
+.btn{display:inline-block;text-decoration:none;background:#d8b46b;color:#150f10;padding:11px 20px;border-radius:6px;font-size:14px;font-weight:700;white-space:nowrap}
+.btn.alt{background:transparent;color:#f3ebe0;border:2px solid #d8b46b}
+.track{height:600vh;position:relative}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:radial-gradient(ellipse at 70% 40%,#241519 0,#0e0b0c 70%)}
+.stage svg{position:absolute;right:0;bottom:0;width:58%;height:100%}
+.hud{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);grid-template-rows:1fr auto;padding:96px 24px 22px;max-width:1280px;margin:0 auto;pointer-events:none}
+.copy{grid-column:1;pointer-events:auto;align-self:start}
+.hud h1{font-size:clamp(34px,5vw,72px);line-height:1.02}
+.hud h1 em{color:#d8b46b}
+.hud p{margin-top:12px;max-width:430px;font-size:clamp(14px,1.5vw,18px);opacity:.88}
+.book{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px}
+.leg{grid-column:1;grid-row:2;align-self:end;background:#f3ebe0;color:#150f10;padding:16px 20px;border-radius:10px;max-width:390px;pointer-events:auto}
+.leg .k{font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.7}
+.leg .v{font-family:Georgia,serif;font-size:clamp(24px,3vw,34px);line-height:1.08;margin:4px 0}
+.leg .d{font-size:13px;opacity:.85}
+.bar{height:4px;border-radius:2px;background:rgba(21,15,16,.2);margin-top:12px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:#9b1c2a}
+.note{position:absolute;right:24px;bottom:10px;font-size:10.5px;background:#2e2427;color:#f3ebe0;padding:3px 10px;border-radius:6px}
+section.blk{padding:80px 22px;max-width:1100px;margin:0 auto}
+.eye{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#d8b46b;margin-bottom:12px;font-weight:700}
+h2{font-size:clamp(28px,4.2vw,48px);line-height:1.06;margin-bottom:16px;max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:24px}
+.card{background:#1a1315;border:1px solid #2e2427;border-radius:10px;padding:20px}
+.card h3{font-size:20px;margin-bottom:6px;color:#d8b46b}
+.card p{font-size:14px;opacity:.82}
+.fleet{margin-top:22px;columns:2 220px;column-gap:28px;border-top:2px solid #d8b46b;padding-top:10px}
+.fleet div{break-inside:avoid;padding:8px 0;border-bottom:1px solid #2e2427;font-size:15px}
+.fleet b{display:block;font-family:Georgia,serif;font-weight:400;color:#d8b46b;font-size:17px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:24px;counter-reset:s}
+.steps div{border-top:3px solid #d8b46b;padding-top:12px;font-size:14px;counter-increment:s}
+.steps div::before{content:"0" counter(s);display:block;font-family:Georgia,serif;font-size:28px;color:#d8b46b}
+.cal{margin-top:24px;border:2px dashed #d8b46b;border-radius:12px;padding:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;background:#1a1315}
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:12px;text-align:center}
+.slots span{padding:8px 0;border-radius:6px;background:#2e2427}
+.slots span.o{background:#9b1c2a;color:#fff;font-weight:700}
+.slots span.x{opacity:.35;text-decoration:line-through}
+.pitch{background:#f3ebe0;color:#150f10;border-radius:14px;padding:32px 26px;margin:0 16px}
+.pitch .eye{color:#9b1c2a}
+.pitch ul{margin:12px 0 0 18px}
+.faq details{border-bottom:1px solid #2e2427;padding:14px 0}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{margin-top:8px;opacity:.85;max-width:680px}
+.ar{margin:0 auto;max-width:1100px;padding:20px 22px 70px}
+.ar div{border:2px dashed #d8b46b;border-radius:10px;padding:20px;font-size:14px}
+footer{padding:44px 22px 96px;text-align:center;font-size:12px;opacity:.65;border-top:1px solid #2e2427}
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none;gap:8px}
+.sticky .btn{flex:1;text-align:center;padding:14px}
+.sticky .btn.alt{background:#0e0b0c}
+@media(max-width:760px){
+.track{height:540vh}
+.stage svg{width:100%;height:50%;bottom:128px}
+.hud{grid-template-columns:1fr;padding:104px 16px 14px}
+.copy{background:rgba(14,11,12,.88);border-radius:10px;padding:12px 14px}
+.hud p,.book{display:none}
+.hud h1{font-size:28px}
+.leg{max-width:none;padding:12px 16px;margin-bottom:62px}
+.note{display:none}
+nav b{font-size:14px;letter-spacing:.1em}
+nav .r a.t{display:none}
+nav .btn{padding:9px 14px;font-size:12px}
+.sticky{display:flex}
+}
+@media(prefers-reduced-motion:reduce){.track{height:auto}.stage{position:relative;height:auto;min-height:100svh}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"AutoRental","name":"Platinum Motorcars","url":"https://platinummotorcars.com/","telephone":"+1 469 805 7929","openingHours":"Mo-Su 00:00-24:00","address":{"@type":"PostalAddress","streetAddress":"2323 Cedar Springs Rd","addressLocality":"Dallas","addressRegion":"TX","postalCode":"75201","addressCountry":"US"},"description":"Exotic and luxury car rental in Dallas for weddings, photo and video shoots, events, prom and homecoming, brand marketing and nightlife."},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does Platinum Motorcars rent?","acceptedAnswer":{"@type":"Answer","text":"Cars listed on its site include the Lamborghini Gallardo Spyder, Huracan 610, Huracan EVO Spyder, Temerario and Urus, McLaren 570 GT, 570S Spider and GT, Rolls Royce Cullinan and Wraith, Nissan GT-R, C8 Corvette, Dodge Challenger Hellcat, BMW M3 and Acura NSX."}},{"@type":"Question","name":"What occasions do they cover?","acceptedAnswer":{"@type":"Answer","text":"Per the site: wedding rentals, photo and video shoots, events, prom and homecoming, brand marketing and nightlife experiences."}},{"@type":"Question","name":"How long are the rentals?","acceptedAnswer":{"@type":"Answer","text":"The site lists rental durations of 6 hours, 12 hours, 24 hours or 24+ hours."}},{"@type":"Question","name":"Where are they and when are they open?","acceptedAnswer":{"@type":"Answer","text":"2323 Cedar Springs Rd, Dallas, TX 75201. The site says open 24/7."}},{"@type":"Question","name":"How do I book?","acceptedAnswer":{"@type":"Answer","text":"Use the online form on platinummotorcars.com or call or text 469-805-7929."}}]}]}
+</script>
+</head>
+<body>
+<nav><b>Platinum Motorcars</b><div class="r"><a class="t" href="#fleet">Fleet</a><a class="t" href="#book">Booking</a><a class="t" href="#faq">FAQ</a><a class="btn" href="tel:+14698057929">Call 469-805-7929</a></div></nav>
+
+<div class="track" id="track">
+ <div class="stage">
+  <svg id="art" viewBox="0 0 600 600" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+   <defs>
+    <clipPath id="cclip"><rect id="crect" x="0" y="600" width="600" height="0"/></clipPath>
+    <linearGradient id="cg" x1="0" x2="1"><stop offset="0" stop-color="#7a1220"/><stop offset=".5" stop-color="#a81f30"/><stop offset="1" stop-color="#7a1220"/></linearGradient>
+   </defs>
+   <polygon points="150,600 450,600 330,60 270,60" fill="#1a1315"/>
+   <g clip-path="url(#cclip)">
+    <polygon points="150,600 450,600 330,60 270,60" fill="url(#cg)"/>
+    <polyline id="gl" points="" fill="none" stroke="#d8b46b" stroke-width="3"/>
+    <polyline id="gr" points="" fill="none" stroke="#d8b46b" stroke-width="3"/>
+   </g>
+   <g id="lights"></g>
+   <g id="posts"></g>
+   <ellipse id="roll" cx="300" cy="600" rx="150" ry="10" fill="#5a0d18" stroke="#d8b46b" stroke-width="2"/>
+  </svg>
+  <div class="hud">
+   <div class="copy">
+    <h1>Arrive like <em>it's planned.</em></h1>
+    <p>Exotic and luxury rentals on Cedar Springs Rd, Dallas, for the nights and days that matter: weddings, shoots, events, prom, nightlife.</p>
+    <div class="book"><a class="btn" href="tel:+14698057929">Call 469-805-7929</a><a class="btn alt" href="https://platinummotorcars.com/" rel="noopener">Booking form</a></div>
+   </div>
+   <div class="leg"><div class="k" id="lk">Occasion 0 of 6</div><div class="v" id="lv">Roll out the carpet</div><div class="d" id="ld">Scroll to unroll it past six occasions they rent for.</div><div class="bar"><i id="bar"></i></div></div>
+  </div>
+  <div class="note">Illustrative carpet. Occasions and fleet are as listed at platinummotorcars.com.</div>
+ </div>
+</div>
+
+<section class="blk" id="fleet">
+ <div class="eye">Fleet (from platinummotorcars.com)</div>
+ <h2>The cars on the page.</h2>
+ <div class="fleet">
+  <div><b>Lamborghini</b>Gallardo Spyder, Huracan 610, Huracan EVO Spyder, Temerario, Urus</div>
+  <div><b>McLaren</b>570 GT, 570S Spider, GT</div>
+  <div><b>Rolls Royce</b>Cullinan, Wraith</div>
+  <div><b>Nissan</b>GT-R</div>
+  <div><b>Chevrolet</b>C8 Corvette</div>
+  <div><b>Dodge</b>Challenger Hellcat</div>
+  <div><b>BMW</b>M3</div>
+  <div><b>Acura</b>NSX</div>
+ </div>
+ <div class="grid">
+  <div class="card"><h3>Durations</h3><p>6 hours, 12 hours, 24 hours or 24+ hours, per the site.</p></div>
+  <div class="card"><h3>Open</h3><p>The site says open 24/7.</p></div>
+  <div class="card"><h3>Find us</h3><p>2323 Cedar Springs Rd, Dallas, TX 75201.</p></div>
+  <div class="card"><h3>Book</h3><p>Online form, or call or text 469-805-7929.</p></div>
+ </div>
+ <p style="margin-top:18px;font-size:13px;opacity:.7">Prices, deposit and minimum age are not published on the current page, so none are shown here. Fleet as currently listed and subject to change.</p>
+</section>
+
+<section class="blk" id="book">
+ <div class="eye">Booking today vs. booking next</div>
+ <h2>Form or text today. A live calendar next.</h2>
+ <p style="max-width:680px">A bride, a photographer or a promoter planning a date can only ask. A calendar slot lets them see the Huracan is free on the 14th before they message at midnight.</p>
+ <div class="cal">
+  <div>
+   <div class="eye" style="margin-bottom:6px">Concept: availability widget</div>
+   <p style="font-size:14px">A slot for an embedded rental calendar. Embeddable options exist (FareHarbor is confirmed; Booqable states website integration with live availability; RentWorks is not verified). The platform is chosen with the owner, not assumed here.</p>
+   <p style="margin-top:12px"><a class="btn" href="tel:+14698057929">Call to book</a></p>
+  </div>
+  <div>
+   <div class="slots" aria-label="Illustrative slots, not real availability"><span class="x">Fri</span><span class="o">Sat</span><span class="o">Sun</span><span>Mon</span><span class="x">Tue</span><span>Wed</span><span>Thu</span><span>Fri</span></div>
+   <p style="margin-top:8px;font-size:11px;opacity:.6">Visual placeholder, not real availability.</p>
+  </div>
+ </div>
+</section>
+
+<section class="blk">
+ <div class="eye">How enquiring could feel</div>
+ <h2>From a scroll to a booked date.</h2>
+ <div class="steps">
+  <div>Watch the carpet pass six occasions, one spotlight each.</div>
+  <div>See the fleet, durations and address on one screen.</div>
+  <div>Tap to call or text, always one tap away on mobile.</div>
+  <div>Confirm the car, the occasion and the hours.</div>
+ </div>
+</section>
+
+<div class="pitch">
+ <div class="eye">Concept by Kerblabs</div>
+ <h2>Sell the occasion, not the spec sheet.</h2>
+ <ul>
+  <li>A cinematic scroll hero built around the six occasions you already rent for.</li>
+  <li>Fleet, durations and the Cedar Springs address answered before the first message.</li>
+  <li>A slot for live availability so dates can be held at any hour.</li>
+  <li>Agent-ready: AI assistants can read your cars, occasions and how to book.</li>
+ </ul>
+</div>
+
+<section class="blk faq" id="faq">
+ <div class="eye">FAQ</div>
+ <h2>Quick answers</h2>
+ <details><summary>What does Platinum Motorcars rent?</summary><p>Cars listed on its site include the Lamborghini Gallardo Spyder, Huracan 610, Huracan EVO Spyder, Temerario and Urus, McLaren 570 GT, 570S Spider and GT, Rolls Royce Cullinan and Wraith, Nissan GT-R, C8 Corvette, Dodge Challenger Hellcat, BMW M3 and Acura NSX.</p></details>
+ <details><summary>What occasions do they cover?</summary><p>Per the site: wedding rentals, photo and video shoots, events, prom and homecoming, brand marketing and nightlife experiences.</p></details>
+ <details><summary>How long are the rentals?</summary><p>The site lists rental durations of 6 hours, 12 hours, 24 hours or 24+ hours.</p></details>
+ <details><summary>Where are they and when are they open?</summary><p>2323 Cedar Springs Rd, Dallas, TX 75201. The site says open 24/7.</p></details>
+ <details><summary>How do I book?</summary><p>Use the online form on platinummotorcars.com or call or text 469-805-7929.</p></details>
+</section>
+
+<div class="ar" id="agent-ready"><div><b>Agent-Ready included.</b> JSON-LD, FAQ and machine-readable cars, occasions and booking so AI assistants can answer "exotic car rental in Dallas" with your details. Illustrative concept, not yet live for this business.</div></div>
+
+<footer>Concept site by Kerblabs for Platinum Motorcars. Not affiliated or approved. Business details from platinummotorcars.com.</footer>
+<div class="sticky"><a class="btn" href="tel:+14698057929">Call</a><a class="btn alt" href="https://platinummotorcars.com/" rel="noopener">Booking form</a></div>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var track=$('track'),bar=$('bar'),NS='http://www.w3.org/2000/svg';
+var occ=[['Weddings','Wedding rentals, listed on the site.'],['Photo & video shoots','Cars for the shot, listed on the site.'],['Events','Event rentals, listed on the site.'],['Prom & homecoming','Prom and homecoming, listed on the site.'],['Brand marketing','Brand marketing work, listed on the site.'],['Nightlife','Nightlife experiences, listed on the site.']];
+var ys=[525,440,355,270,185,105];
+function lx(y){return 150+120*(600-y)/540}
+function rx(y){return 450-120*(600-y)/540}
+function mk(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);(p||$('art')).appendChild(e);return e}
+var lights=[],labels=[],posts=[];
+var pg=$('posts'),lg=$('lights');
+ys.forEach(function(y,i){
+ var f=(600-y)/540,s=1-.45*f;
+ lights.push(mk('ellipse',{cx:300,cy:y,rx:130*s,ry:26*s,fill:'#d8b46b',opacity:0},lg));
+ var l=mk('circle',{cx:lx(y)-16*s,cy:y,r:6*s,fill:'#d8b46b'},pg),r=mk('circle',{cx:rx(y)+16*s,cy:y,r:6*s,fill:'#d8b46b'},pg);
+ posts.push([l,r]);
+ var t=mk('text',{x:300,y:y+6*s,'text-anchor':'middle','font-family':'Georgia,serif','font-size':22*s,fill:'#f3ebe0',opacity:.35},pg);
+ t.textContent='0'+(i+1);labels.push(t);
+});
+for(var i=0;i<ys.length-1;i++){
+ var a=ys[i],b=ys[i+1],sa=1-.45*(600-a)/540,sb=1-.45*(600-b)/540;
+ mk('path',{d:'M'+(lx(a)-16*sa)+' '+a+' Q'+(lx((a+b)/2)-24)+' '+((a+b)/2+12)+' '+(lx(b)-16*sb)+' '+b,fill:'none',stroke:'#9b1c2a','stroke-width':2.4,opacity:.9},pg);
+ mk('path',{d:'M'+(rx(a)+16*sa)+' '+a+' Q'+(rx((a+b)/2)+24)+' '+((a+b)/2+12)+' '+(rx(b)+16*sb)+' '+b,fill:'none',stroke:'#9b1c2a','stroke-width':2.4,opacity:.9},pg);
+}
+var crect=$('crect'),roll=$('roll'),gl=$('gl'),gr=$('gr');
+gl.setAttribute('points','150,600 270,60');gr.setAttribute('points','450,600 330,60');
+function rg(t,a,b){return Math.min(1,Math.max(0,(t-a)/(b-a)))}
+var last=-2;
+function draw(){
+ var r=track.getBoundingClientRect(),max=Math.max(1,track.offsetHeight-innerHeight);
+ var t=reduce?1:Math.min(1,Math.max(0,-r.top/max));
+ var hy=600-t*540;
+ crect.setAttribute('y',hy);crect.setAttribute('height',600-hy);
+ var f=(600-hy)/540;
+ roll.setAttribute('cy',hy);roll.setAttribute('rx',(rx(hy)-lx(hy))/2);roll.setAttribute('ry',10*(1-.45*f));
+ roll.setAttribute('opacity',t>=1?0:1);
+ var act=-1;
+ ys.forEach(function(y,i){
+  var lit=hy<=y+6;
+  if(lit)act=i;
+  lights[i].setAttribute('opacity',lit?.18:0);
+  labels[i].setAttribute('opacity',lit?1:.3);
+ });
+ ys.forEach(function(y,i){lights[i].setAttribute('opacity',i===act?.45:(i<act?.14:0))});
+ bar.style.width=(t*100)+'%';
+ $('lk').textContent='Occasion '+(act+1)+' of 6';
+ if(act!==last){last=act;
+  if(act<0){$('lv').textContent='Roll out the carpet';$('ld').textContent='Scroll to unroll it past six occasions they rent for.'}
+  else{$('lv').textContent=occ[act][0];$('ld').textContent=occ[act][1]}
+ }
+}
+addEventListener('scroll',draw,{passive:true});addEventListener('resize',draw);draw();
+})();
+</script>
+</body>
+</html>

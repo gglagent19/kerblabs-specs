@@ -1,0 +1,10 @@
+{
+  "business": "The Candid Stories Photography",
+  "note": "Concept file by Kerblabs. Facts from the public Instagram profile @thecandidstoriesphotography. Prices not published.",
+  "locations": ["Delhi", "Worldwide (travels)"],
+  "services": [
+    {"name": "Luxury wedding photography", "price": null, "pricing": "quote on request"}
+  ],
+  "booking": {"method": "Instagram DM", "url": "https://www.instagram.com/thecandidstoriesphotography/", "needs": ["wedding date", "city"]},
+  "social": {"instagram": "https://www.instagram.com/thecandidstoriesphotography/"}
+}

@@ -1,0 +1,9 @@
+{"business":"Black Label Exotics","location":"1845 Woodall Rodgers Fwy, Dallas, TX 75201","phone":"+1-469-200-0286","hours":"Daily 08:00-20:00","booking":"https://blacklabelexotics.com/booking","source":"blacklabelexotics.com, as listed","services":[
+{"name":"Lamborghini Huracan rental","price":1690,"unit":"day","currency":"USD"},
+{"name":"Lamborghini Urus rental","price":1690,"unit":"day","currency":"USD"},
+{"name":"Rolls-Royce Ghost rental","price":1490,"unit":"day","currency":"USD"},
+{"name":"Rolls-Royce Wraith rental","price":1490,"unit":"day","currency":"USD"},
+{"name":"Bentley Bentayga rental","price":990,"unit":"day","currency":"USD"},
+{"name":"Mercedes G-Wagon rental","price":990,"unit":"day","currency":"USD"},
+{"name":"Maybach Sprinter van with chauffeur","price":350,"unit":"hour","currency":"USD"},
+{"name":"DFW-wide pickup and delivery","price":0,"unit":"listed as free","currency":"USD"}]}

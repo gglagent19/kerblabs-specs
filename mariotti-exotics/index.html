@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mariotti Exotics | Exotic Car Rental Delivered in Miami (concept)</title>
+<meta name="description" content="Concept site for Mariotti Exotics: exotic and luxury car rental in Miami with airport and hotel delivery. A delivery pin travels the route as you scroll.">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/mariotti-exotics/">
+<meta property="og:title" content="Mariotti Exotics | concept site by Kerblabs">
+<meta property="og:description" content="Concept for a Miami exotic rental: a delivery pin travels garage to airport, hotel and villa, with a car at every stop.">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/mariotti-exotics/">
+<meta name="twitter:card" content="summary">
+<meta name="robots" content="noindex,follow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#eaf3f1;color:#0c1f2c;font-family:"Avenir Next",Futura,"Trebuchet MS",Arial,sans-serif;line-height:1.55}
+a{color:inherit}
+h1,h2,h3{font-family:"Avenir Next Condensed","Arial Narrow",Futura,Arial,sans-serif;font-weight:800;letter-spacing:.01em;text-transform:uppercase}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 16px;background:rgba(234,243,241,.94);backdrop-filter:blur(8px);border-bottom:1px solid #c5dad5}
+nav b{font-family:"Avenir Next Condensed","Arial Narrow",Arial,sans-serif;font-size:19px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+nav .r{display:flex;gap:14px;align-items:center;font-size:13px}
+.btn{display:inline-block;text-decoration:none;background:#ff3d7f;color:#fff;padding:11px 20px;border-radius:999px;font-size:14px;font-weight:700;white-space:nowrap}
+.btn.alt{background:transparent;color:#0c1f2c;border:2px solid #0c1f2c}
+.track{height:640vh;position:relative}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#eaf3f1}
+.stage svg{position:absolute;right:0;bottom:0;width:62%;height:100%}
+.hud{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);grid-template-rows:1fr auto;padding:96px 24px 22px;max-width:1280px;margin:0 auto;pointer-events:none}
+.copy{grid-column:1;pointer-events:auto;align-self:start}
+.hud h1{font-size:clamp(36px,5.2vw,76px);line-height:.98}
+.hud p{margin-top:12px;max-width:440px;font-size:clamp(14px,1.5vw,18px)}
+.book{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px}
+.leg{grid-column:1;grid-row:2;align-self:end;background:#0c1f2c;color:#eaf3f1;padding:16px 20px;border-radius:14px;max-width:400px}
+.leg .k{font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.75}
+.leg .v{font-family:"Avenir Next Condensed","Arial Narrow",Arial,sans-serif;font-weight:800;font-size:clamp(24px,3vw,34px);line-height:1.05;margin:4px 0;text-transform:uppercase}
+.leg .d{font-size:13px;opacity:.9}
+.bar{height:4px;border-radius:2px;background:rgba(234,243,241,.25);margin-top:12px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:#ff3d7f}
+.note{position:absolute;right:24px;bottom:10px;font-size:10.5px;background:#0c1f2c;color:#eaf3f1;padding:3px 10px;border-radius:6px}
+section.blk{padding:80px 22px;max-width:1100px;margin:0 auto}
+.eye{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#d81b60;margin-bottom:12px;font-weight:700}
+h2{font-size:clamp(28px,4.4vw,50px);line-height:1.02;margin-bottom:16px;max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:24px}
+.card{background:#fff;border:1px solid #c5dad5;border-radius:14px;padding:20px}
+.card h3{font-size:20px;margin-bottom:6px}
+.card p{font-size:14px;opacity:.82}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:24px;counter-reset:s}
+.steps div{border-top:3px solid #0c1f2c;padding-top:12px;font-size:14px;counter-increment:s}
+.steps div::before{content:"0" counter(s);display:block;font-family:"Avenir Next Condensed","Arial Narrow",Arial,sans-serif;font-weight:800;font-size:28px;color:#ff3d7f}
+.slot{margin-top:24px;border:2px dashed #0c1f2c;border-radius:14px;padding:22px;background:#fff}
+.slot iframe{width:100%;min-height:360px;border:0;display:none}
+.pitch{background:#0c1f2c;color:#eaf3f1;border-radius:16px;padding:32px 26px;margin:0 16px}
+.pitch ul{margin:12px 0 0 18px}
+.faq details{border-bottom:1px solid #c5dad5;padding:14px 0}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{margin-top:8px;opacity:.85;max-width:680px}
+.ar{margin:0 auto;max-width:1100px;padding:20px 22px 70px}
+.ar div{border:2px dashed #0c1f2c;border-radius:12px;padding:20px;font-size:14px}
+footer{padding:44px 22px 96px;text-align:center;font-size:12px;opacity:.7;border-top:1px solid #c5dad5}
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none;gap:8px}
+.sticky .btn{flex:1;text-align:center;padding:14px}
+.sticky .btn.alt{background:#eaf3f1}
+@media(max-width:760px){
+.track{height:560vh}
+.stage svg{width:100%;height:min(46%,calc(100svh - 400px));bottom:204px}
+.hud{grid-template-columns:1fr;padding:104px 16px 14px}
+.copy{background:rgba(234,243,241,.92);border-radius:12px;padding:12px 14px}
+.hud p,.book{display:none}
+.hud h1{font-size:30px}
+.leg{max-width:none;padding:12px 16px;margin-bottom:62px}
+.note{display:none}
+nav b{font-size:15px}
+nav .r a.t{display:none}
+nav .btn{padding:9px 14px;font-size:12px}
+.sticky{display:flex}
+}
+@media(prefers-reduced-motion:reduce){.track{height:auto}.stage{position:relative;height:auto;min-height:100svh}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"AutoRental","name":"Mariotti Exotics","url":"https://mariottiexotics.com/","telephone":"+1 866 989 6688","areaServed":"Miami and greater South Florida","description":"Exotic and luxury car rental in Miami with door-to-door delivery and pickup, including airport and hotel delivery, plus chauffeur services."},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does Mariotti Exotics rent?","acceptedAnswer":{"@type":"Answer","text":"Per its site, the fleet includes Mercedes, Lamborghini, Rolls-Royce, McLaren and Ferrari vehicles."}},{"@type":"Question","name":"Do they deliver?","acceptedAnswer":{"@type":"Answer","text":"The site lists door-to-door delivery and pickup across Miami and greater South Florida, including airport and hotel delivery."}},{"@type":"Question","name":"Is there a discount?","acceptedAnswer":{"@type":"Answer","text":"The site currently promotes 10 percent off bookings of 3 or more days."}},{"@type":"Question","name":"Do they offer chauffeurs?","acceptedAnswer":{"@type":"Answer","text":"Yes, the site lists professional chauffeur services in a Mercedes-Benz Sprinter, Rolls-Royce and Maybach."}},{"@type":"Question","name":"How do I book?","acceptedAnswer":{"@type":"Answer","text":"Use the booking system on mariottiexotics.com or call (866) 989-6688. Support is listed as 24/7."}}]}]}
+</script>
+</head>
+<body>
+<nav><b>Mariotti Exotics</b><div class="r"><a class="t" href="#fleet">Fleet</a><a class="t" href="#book">Booking</a><a class="t" href="#faq">FAQ</a><a class="btn" href="tel:+18669896688">Call (866) 989-6688</a></div></nav>
+
+<div class="track" id="track">
+ <div class="stage">
+  <svg viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+   <rect x="8" y="8" width="584" height="584" rx="22" fill="#d5e9e5" stroke="#0c1f2c" stroke-width="4"/>
+   <path d="M8 470 C120 430 190 520 300 480 S 480 420 592 470 L592 592 L8 592Z" fill="#a9d3e0" opacity=".7"/>
+   <g stroke="#bcd5cf" stroke-width="2" fill="none">
+    <path d="M40 120H560M40 230H560M40 340H560M120 30V440M250 30V440M380 30V440M500 30V440"/>
+   </g>
+   <path id="r0" d="M90 400 C90 330 160 330 170 270 S 140 190 200 160" fill="none" stroke="#9fc0ba" stroke-width="12" stroke-linecap="round"/>
+   <path id="r1" d="M200 160 C260 130 300 150 330 190 S 400 230 430 200" fill="none" stroke="#9fc0ba" stroke-width="12" stroke-linecap="round"/>
+   <path id="r2" d="M430 200 C470 240 480 300 440 340 S 400 380 470 400" fill="none" stroke="#9fc0ba" stroke-width="12" stroke-linecap="round"/>
+   <g fill="none" stroke="#ff3d7f" stroke-width="6" stroke-linecap="round" stroke-dasharray="1 0">
+    <path id="d0" d="M90 400 C90 330 160 330 170 270 S 140 190 200 160"/>
+    <path id="d1" d="M200 160 C260 130 300 150 330 190 S 400 230 430 200"/>
+    <path id="d2" d="M430 200 C470 240 480 300 440 340 S 400 380 470 400"/>
+   </g>
+   <g id="stops"></g>
+   <g id="pin"><circle r="20" fill="#ff3d7f" opacity=".25"/><path d="M0 -34 C-14 -34 -22 -24 -22 -14 C-22 0 0 16 0 16 C0 16 22 0 22 -14 C22 -24 14 -34 0 -34Z" fill="#ff3d7f" stroke="#0c1f2c" stroke-width="3"/><circle cy="-15" r="7" fill="#fff"/></g>
+  </svg>
+  <div class="hud">
+   <div class="copy">
+    <h1>Your exotic,<br>delivered. Door to door.</h1>
+    <p>Exotic and luxury rentals in Miami, delivered to the airport, your hotel or your villa. Scroll to ride the route.</p>
+    <div class="book"><a class="btn" href="tel:+18669896688">Call (866) 989-6688</a><a class="btn alt" href="#book">Booking</a></div>
+   </div>
+   <div class="leg"><div class="k" id="lk">Stop 0 of 3</div><div class="v" id="lv">Leaving the garage</div><div class="d" id="ld">Scroll to send the pin to the airport, hotel and villa.</div><div class="bar"><i id="bar"></i></div></div>
+  </div>
+  <div class="note">Illustrative map, not real streets. Delivery area and brands as listed at mariottiexotics.com.</div>
+ </div>
+</div>
+
+<section class="blk" id="fleet">
+ <div class="eye">What the site lists</div>
+ <h2>Five marques. Delivered where you land.</h2>
+ <div class="grid">
+  <div class="card"><h3>Fleet</h3><p>Mercedes, Lamborghini, Rolls-Royce, McLaren and Ferrari, per the site. Newest high-performance models.</p></div>
+  <div class="card"><h3>Delivery</h3><p>Door-to-door delivery and pickup across Miami and greater South Florida, including airport and hotel.</p></div>
+  <div class="card"><h3>Guaranteed specs</h3><p>The exact color, trim and performance you reserve is the car you get.</p></div>
+  <div class="card"><h3>Chauffeur</h3><p>Professional chauffeur service in a Mercedes-Benz Sprinter, Rolls-Royce or Maybach.</p></div>
+  <div class="card"><h3>Offer</h3><p>10% off bookings of 3 or more days (current promotion on the site).</p></div>
+  <div class="card"><h3>Support</h3><p>24/7 customer support. Discreet booking with secure payment.</p></div>
+ </div>
+ <p style="margin-top:18px;font-size:13px;opacity:.7">No prices, models or deposit terms are shown here because they were not confirmed. Details as currently published and subject to change.</p>
+</section>
+
+<section class="blk" id="book">
+ <div class="eye">Booking</div>
+ <h2>Their existing booking system, in the scroll.</h2>
+ <p style="max-width:680px">Mariotti already runs a GoHighLevel (LeadConnector) booking flow. In the live version it sits right here, so a guest goes from the route straight into their own checkout.</p>
+ <div class="slot" id="slot">
+  <iframe id="ghl" title="Mariotti Exotics booking" loading="lazy"></iframe>
+  <div id="slotfb">
+   <div class="eye" style="margin-bottom:6px">Embed slot (GoHighLevel)</div>
+   <p style="font-size:14px">The widget URL is not public from here, so this concept does not fake one. At build time the owner's existing GoHighLevel form or calendar URL goes into the iframe above, unchanged.</p>
+   <p style="margin-top:12px;display:flex;flex-wrap:wrap;gap:10px"><a class="btn" href="https://mariottiexotics.com/" rel="noopener">Book on mariottiexotics.com</a><a class="btn alt" href="tel:+18669896688">Call (866) 989-6688</a></p>
+  </div>
+ </div>
+</section>
+
+<section class="blk">
+ <div class="eye">How enquiring could feel</div>
+ <h2>From a scroll to a car at the curb.</h2>
+ <div class="steps">
+  <div>Watch the route: garage, airport, hotel, villa.</div>
+  <div>See which marques they deliver and how.</div>
+  <div>Book inside their own system, no new tool.</div>
+  <div>Call 24/7 if you would rather talk.</div>
+ </div>
+</section>
+
+<div class="pitch">
+ <div class="eye" style="color:#ff8fb3">Concept by Kerblabs</div>
+ <h2 style="color:#eaf3f1">Make delivery the show.</h2>
+ <ul>
+  <li>A cinematic scroll hero that explains the delivery promise in ten seconds.</li>
+  <li>Your current GoHighLevel booking, embedded as is.</li>
+  <li>Fleet, delivery and chauffeur options answered before the first call.</li>
+  <li>Agent-ready: AI assistants can read your fleet, delivery area and how to book.</li>
+ </ul>
+</div>
+
+<section class="blk faq" id="faq">
+ <div class="eye">FAQ</div>
+ <h2>Quick answers</h2>
+ <details><summary>What does Mariotti Exotics rent?</summary><p>Per its site, the fleet includes Mercedes, Lamborghini, Rolls-Royce, McLaren and Ferrari vehicles.</p></details>
+ <details><summary>Do they deliver?</summary><p>The site lists door-to-door delivery and pickup across Miami and greater South Florida, including airport and hotel delivery.</p></details>
+ <details><summary>Is there a discount?</summary><p>The site currently promotes 10 percent off bookings of 3 or more days.</p></details>
+ <details><summary>Do they offer chauffeurs?</summary><p>Yes, the site lists professional chauffeur services in a Mercedes-Benz Sprinter, Rolls-Royce and Maybach.</p></details>
+ <details><summary>How do I book?</summary><p>Use the booking system on mariottiexotics.com or call (866) 989-6688. Support is listed as 24/7.</p></details>
+</section>
+
+<div class="ar" id="agent-ready"><div><b>Agent-Ready included.</b> JSON-LD, FAQ and machine-readable services so AI assistants can answer "exotic car rental in Miami" with your details. Illustrative concept, not yet live for this business.</div></div>
+
+<footer>Concept site by Kerblabs for Mariotti Exotics. Not affiliated or approved. Business details from mariottiexotics.com.</footer>
+<div class="sticky"><a class="btn" href="tel:+18669896688">Call</a><a class="btn alt" href="#book">Booking</a></div>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var track=$('track'),bar=$('bar'),pin=$('pin'),NS='http://www.w3.org/2000/svg';
+var stopsG=$('stops');
+var segs=[$('d0'),$('d1'),$('d2')],base=[$('r0'),$('r1'),$('r2')];
+var lens=segs.map(function(s){return s.getTotalLength()}),tot=lens[0]+lens[1]+lens[2];
+segs.forEach(function(s,i){s.style.strokeDasharray=lens[i];s.style.strokeDashoffset=lens[i]});
+var stops=[
+ {n:'Garage',car:null,x:90,y:400,msg:'The fleet leaves the garage.'},
+ {n:'Airport',car:'Lamborghini',x:200,y:160,msg:'Delivered at the airport.'},
+ {n:'Hotel',car:'Rolls-Royce',x:430,y:200,msg:'Delivered at your hotel.'},
+ {n:'Villa',car:'Ferrari',x:470,y:400,msg:'Delivered at the villa.'}
+];
+var els=stops.map(function(s,i){
+ var g=document.createElementNS(NS,'g');
+ g.setAttribute('transform','translate('+s.x+' '+s.y+')');
+ var c=document.createElementNS(NS,'circle');c.setAttribute('r',11);c.setAttribute('fill','#fff');c.setAttribute('stroke','#0c1f2c');c.setAttribute('stroke-width',4);
+ var t=document.createElementNS(NS,'text');t.setAttribute('y',i===3?36:-20);t.setAttribute('text-anchor','middle');t.setAttribute('font-size','17');t.setAttribute('font-weight','800');t.setAttribute('fill','#0c1f2c');t.textContent=s.n.toUpperCase();
+ g.appendChild(c);g.appendChild(t);
+ var car=null;
+ if(s.car){
+  car=document.createElementNS(NS,'g');car.setAttribute('opacity',0);
+  var ty=i===3?-70:28;
+  car.setAttribute('transform','translate(0 '+ty+')');
+  car.innerHTML='<rect x="-62" y="-4" width="124" height="46" rx="12" fill="#0c1f2c"/><path d="M-44 28 L-36 12 Q-30 4 -16 4 L16 4 Q30 4 38 14 L46 28Z" fill="#ff3d7f"/><circle cx="-28" cy="30" r="7" fill="#eaf3f1" stroke="#0c1f2c" stroke-width="3"/><circle cx="28" cy="30" r="7" fill="#eaf3f1" stroke="#0c1f2c" stroke-width="3"/><text y="-12" text-anchor="middle" font-size="14" font-weight="800" fill="#0c1f2c">'+s.car.toUpperCase()+'</text>';
+  g.appendChild(car);
+ }
+ stopsG.appendChild(g);return{c:c,car:car};
+});
+function rg(t,a,b){return Math.min(1,Math.max(0,(t-a)/(b-a)))}
+var last=-2;
+function draw(){
+ var r=track.getBoundingClientRect(),max=Math.max(1,track.offsetHeight-innerHeight);
+ var t=reduce?1:Math.min(1,Math.max(0,-r.top/max));
+ var d=t*tot,seg=0,acc=0;
+ for(var i=0;i<3;i++){
+  var f=Math.min(1,Math.max(0,(d-acc)/lens[i]));
+  segs[i].style.strokeDashoffset=lens[i]*(1-f);
+  if(d>=acc&&d<=acc+lens[i]+0.001)seg=i;
+  acc+=lens[i];
+ }
+ if(d>=tot)seg=2;
+ var off=d;for(var k=0;k<seg;k++)off-=lens[k];
+ off=Math.min(lens[seg],Math.max(0,off));
+ var p=segs[seg].getPointAtLength(off);
+ pin.setAttribute('transform','translate('+p.x+' '+p.y+')');
+ var reached=0,a2=0;
+ for(var j=0;j<3;j++){a2+=lens[j];if(d>=a2-0.5)reached=j+1}
+ els.forEach(function(e,i){
+  var on=i<=reached;
+  e.c.setAttribute('fill',on?'#ff3d7f':'#fff');
+  if(e.car)e.car.setAttribute('opacity',on?1:0);
+ });
+ bar.style.width=(t*100)+'%';
+ $('lk').textContent='Stop '+reached+' of 3';
+ var key=(t<=0?-1:reached)+(t>=1?10:0);
+ if(key!==last){last=key;
+  if(t<=0){$('lv').textContent='Leaving the garage';$('ld').textContent='Scroll to send the pin to the airport, hotel and villa.'}
+  else if(reached===0){$('lv').textContent='On the road';$('ld').textContent='Heading to the first drop-off.'}
+  else{var s=stops[reached];$('lv').textContent=s.n+': '+s.car;$('ld').textContent=s.msg+' Illustrative pairing; the site lists Mercedes, Lamborghini, Rolls-Royce, McLaren and Ferrari.'}
+ }
+}
+addEventListener('scroll',draw,{passive:true});addEventListener('resize',draw);draw();
+})();
+</script>
+</body>
+</html>

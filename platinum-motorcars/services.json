@@ -1,0 +1,25 @@
+{
+  "business": "Platinum Motorcars",
+  "note": "Concept file by Kerblabs. Facts as listed on platinummotorcars.com. Prices are not published, so they are null.",
+  "locations": ["Dallas"],
+  "services": [
+    {"name": "Exotic and luxury car rental, 6 hours", "price": null, "currency": "USD"},
+    {"name": "Exotic and luxury car rental, 12 hours", "price": null, "currency": "USD"},
+    {"name": "Exotic and luxury car rental, 24 hours", "price": null, "currency": "USD"},
+    {"name": "Exotic and luxury car rental, 24+ hours", "price": null, "currency": "USD"}
+  ],
+  "occasions": ["Wedding rentals", "Photo and video shoots", "Events", "Prom and homecoming", "Brand marketing", "Nightlife experiences"],
+  "fleet": {
+    "Lamborghini": ["Gallardo Spyder", "Huracan 610", "Huracan EVO Spyder", "Temerario", "Urus"],
+    "McLaren": ["570 GT", "570S Spider", "GT"],
+    "Rolls Royce": ["Cullinan", "Wraith"],
+    "Nissan": ["GT-R"],
+    "Chevrolet": ["C8 Corvette"],
+    "Dodge": ["Challenger Hellcat"],
+    "BMW": ["M3"],
+    "Acura": ["NSX"]
+  },
+  "address": "2323 Cedar Springs Rd, Dallas, TX 75201",
+  "hours": "Open 24/7 per the site",
+  "booking": {"method": "online form, phone or text", "phone": "469-805-7929", "needs": ["vehicle", "occasion", "date", "hours"], "live_availability": false}
+}

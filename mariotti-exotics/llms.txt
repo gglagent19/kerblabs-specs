@@ -1,0 +1,19 @@
+# Mariotti Exotics (concept by Kerblabs)
+
+> Exotic and luxury car rental in Miami with door-to-door delivery and pickup. Concept page; facts from mariottiexotics.com.
+
+## Facts
+- Location: Miami and greater South Florida
+- Phone: (866) 989-6688
+- Fleet brands listed: Mercedes, Lamborghini, Rolls-Royce, McLaren, Ferrari
+- Delivery: door-to-door delivery and pickup, including airport and hotel
+- Chauffeur: Mercedes-Benz Sprinter, Rolls-Royce, Maybach
+- Promotion: 10% off bookings of 3+ days (as listed)
+- Support: 24/7
+
+## Actions
+- Book: https://mariottiexotics.com/
+- Call: +1 866 989 6688
+
+## Machine-readable
+- [services.json](services.json)

@@ -1,0 +1,19 @@
+# The Candid Stories Photography (concept site by Kerblabs)
+
+> Luxury wedding photography from Delhi, travelling worldwide. Concept page, not the studio's official site.
+
+## Facts
+- Based in Delhi, travels worldwide (per Instagram profile)
+- Service: luxury wedding photography
+- Prices: not published, quote on request
+- Enquire: Instagram DM https://www.instagram.com/thecandidstoriesphotography/ with date and city
+
+## Machine-readable
+- [services.json](services.json)
+
+## FAQ
+- Where are they based? Delhi, and they travel worldwide.
+- How do I ask about a date? Message the Instagram account with date and city.
+
+## Actions
+- Enquire: send an Instagram DM with wedding date and city.

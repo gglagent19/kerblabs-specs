@@ -1,0 +1,16 @@
+{
+  "business": "Mariotti Exotics",
+  "type": "AutoRental",
+  "area": "Miami and greater South Florida",
+  "telephone": "+1 866 989 6688",
+  "website": "https://mariottiexotics.com/",
+  "source": "mariottiexotics.com (concept; not approved by the business)",
+  "services": [
+    {"name": "Exotic and luxury car rental", "marques": ["Mercedes", "Lamborghini", "Rolls-Royce", "McLaren", "Ferrari"], "price": null},
+    {"name": "Door-to-door delivery and pickup, including airport and hotel", "price": null},
+    {"name": "Chauffeur service (Mercedes-Benz Sprinter, Rolls-Royce, Maybach)", "price": null}
+  ],
+  "promotion": "10% off bookings of 3 or more days (as listed)",
+  "booking": {"method": "website booking system or phone", "url": "https://mariottiexotics.com/"},
+  "support": "24/7"
+}

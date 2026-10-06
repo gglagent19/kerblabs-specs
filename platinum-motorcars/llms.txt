@@ -1,0 +1,14 @@
+# Platinum Motorcars (concept by Kerblabs)
+
+> Concept site, not the business's official site. Facts from platinummotorcars.com.
+
+Platinum Motorcars is an exotic and luxury car rental at 2323 Cedar Springs Rd, Dallas, TX 75201, open 24/7 per its site. It rents for weddings, photo and video shoots, events, prom and homecoming, brand marketing and nightlife. Durations listed: 6, 12, 24 or 24+ hours. Prices are not published.
+
+## Machine-readable
+- [services.json](services.json)
+
+## FAQ
+- How do I book? Use the online form on platinummotorcars.com or call or text 469-805-7929.
+
+## Actions
+- Request a rental: call or text 469-805-7929 with car, occasion, date and hours.
