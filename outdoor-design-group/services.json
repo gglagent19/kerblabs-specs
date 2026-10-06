@@ -1,0 +1,18 @@
+{
+ "business": "Outdoor Design Group",
+ "type": "LandscapingBusiness",
+ "concept": true,
+ "address": "5690 Webster Street, Arvada, CO 80002",
+ "phone": "+1-303-993-4811",
+ "email": null,
+ "hours": {"mon-fri": "08:00-17:00", "sat": "by appointment", "sun": "closed"},
+ "founded": 2004,
+ "services": [
+  {"name": "Land development", "price": null},
+  {"name": "Site renovations", "price": null},
+  {"name": "Resort planning", "price": null},
+  {"name": "Fine residential gardens", "price": null}
+ ],
+ "booking": "Call 303.993.4811",
+ "source": "odgdesign.com"
+}

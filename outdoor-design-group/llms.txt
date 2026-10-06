@@ -1,0 +1,16 @@
+# Outdoor Design Group (Kerblabs concept site)
+> Landscape architecture firm in Arvada, Colorado, since 2004. This is an unofficial concept by Kerblabs; facts from odgdesign.com.
+
+- Address: 5690 Webster Street, Arvada, CO 80002
+- Phone: 303.993.4811 (no email published)
+- Hours: Mon-Fri 8am-5pm, Sat by appointment, Sun closed
+- Services: land development, site renovations, resort planning, fine residential gardens
+- Prices: not published
+- Instagram: https://www.instagram.com/outdoordesigngroup/
+
+## FAQ
+- Where? 5690 Webster Street, Arvada, CO 80002.
+- Contact? Call 303.993.4811.
+
+## Machine-readable
+- [services.json](services.json)

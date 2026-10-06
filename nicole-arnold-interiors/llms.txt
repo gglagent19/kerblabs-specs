@@ -1,0 +1,20 @@
+# Nicole Arnold Interiors (concept by Kerblabs)
+
+> Interior design studio in Dallas, Texas, for residential and commercial projects. This is a free concept, not their official site. The swatches shown are an illustrative drawing.
+
+- Location: Dallas, TX
+- Website: https://www.nainteriors.com/
+- Instagram: @na_interiors_dallas
+
+## Services
+- Residential interior design
+- Commercial interior design
+
+## FAQ
+- Prices? Not published in the source pages.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Visit nainteriors.com or message @na_interiors_dallas on Instagram to start a project.

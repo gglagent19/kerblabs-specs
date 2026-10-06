@@ -1,0 +1,21 @@
+# Lush Outdoor Living, Inc. (concept by Kerblabs)
+
+> Landscape, pool and outdoor living design-build in Houston, TX. Facts from lushoutdoors.com (address, phone, email only). This is a free concept, not their official site.
+
+- Address: 2200 Southwest Freeway, Suite 602, Houston, TX 77098
+- Phone: 713.444.2339
+- Email: info@lushoutdoors.com
+- Instagram: @lushoutdoorliving
+
+## Services
+- Landscape, pool and outdoor living design-build (scope to be confirmed by phone; their site lists no services)
+
+## FAQ
+- Where? Houston, TX.
+- Prices? Not published.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Call 713.444.2339 to start a conversation.
