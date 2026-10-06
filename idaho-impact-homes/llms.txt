@@ -1,0 +1,30 @@
+# Idaho Impact Homes (concept by Kerblabs)
+
+> Custom home builder in Boise, Idaho serving the Treasure Valley. Facts from idahoimpacthomes.com. This is a free concept, not their official site.
+
+- Location: 5418 N Eagle Rd., #180, Boise, ID 83713
+- Phone: (208) 369-0446
+- Credentials (as listed on their site): General Contractor License #RCE-51122; 6-time Parade of Homes winner
+- Service area: Boise, Caldwell, Emmett, Kuna, Meridian, Nampa, New Plymouth, Star, Weiser
+
+## Services
+- Custom home construction on the owner's land
+- Kitchen remodeling
+- Bathroom remodeling
+- Home additions
+
+## Process (as listed on their site)
+- Consultation, design, construction, warranty
+
+## Floor plans (as listed on their site)
+- The Tamarack, The Sage, The Sierra, The Hemlock, The Aspen, The Owyhee, The Cascade, The Bruneau
+
+## FAQ
+- Where? The Treasure Valley, Idaho.
+- Prices? Not published in the source pages.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Call (208) 369-0446 to start a conversation about your project.

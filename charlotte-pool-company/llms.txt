@@ -1,0 +1,20 @@
+# Charlotte Pool Company (concept by Kerblabs)
+
+> Custom inground pool and spa builder in the Charlotte, North Carolina area. This is a free concept site; facts come from charlottepoolco.com.
+
+## Facts
+- Phone: (980) 432-8555
+- Instagram: @CharlottePoolCompany
+- Services: custom inground pools, custom spas, free consultation
+- Credentials shown on their site: Genesis CBP logo, BBB Accredited Business seal
+- Street address, hours and prices: not published
+
+## FAQ
+- What do they build? Custom inground pools and spas.
+- How do I start? Request a free consultation or call (980) 432-8555.
+
+## Machine-readable
+- [services.json](services.json)
+
+## Actions
+- Call: tel:+19804328555
