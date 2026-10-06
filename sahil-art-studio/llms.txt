@@ -1,0 +1,19 @@
+# Sahil Art Studio (concept site by Kerblabs)
+
+> Luxury wedding, newborn and maternity photography from Amritsar and Gurdaspur. Concept page, not the studio's official site.
+
+## Facts
+- Based in Amritsar / Gurdaspur (per public profiles)
+- Services: luxury wedding, newborn, maternity photography
+- Prices: not published, quote on request
+- Enquire: Instagram DM https://www.instagram.com/sahilartstudio/ (bio: DM for bookings)
+
+## Machine-readable
+- [services.json](services.json)
+
+## FAQ
+- Where are they based? Amritsar and Gurdaspur.
+- How do I book? Message the Instagram account.
+
+## Actions
+- Enquire: send an Instagram DM with the session type and date.

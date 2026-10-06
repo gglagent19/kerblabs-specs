@@ -1,0 +1,14 @@
+# Aangan Cafe
+
+> Independent cafe with live music and workshops in Civil Lines, Jalandhar, Punjab, India. Concept site by Kerblabs; details below are limited to what the business publishes.
+
+- Instagram: https://www.instagram.com/aangancafe.jalandhar
+- Machine-readable: services.json
+
+## Actions
+- Get in touch by Instagram message.
+
+## FAQ
+- Where? Civil Lines, Jalandhar, Punjab (full street address not published here).
+- What is on? Live music and workshops, per the Instagram profile.
+- How to get in touch? Message @aangancafe.jalandhar on Instagram.

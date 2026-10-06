@@ -1,0 +1,19 @@
+# Paperclip Studios (concept site by Kerblabs)
+
+> Wedding photography house in Coimbatore with 10+ years of experience. Concept page, not the studio's official site.
+
+## Facts
+- Based in Coimbatore (per public profiles)
+- Services: wedding photography
+- Prices: not published, quote on request
+- Enquire: WhatsApp link in the Instagram bio https://wa.me/message/Y6JWMPSKQSFXC1, Instagram https://www.instagram.com/paperclipweddings/
+
+## Machine-readable
+- [services.json](services.json)
+
+## FAQ
+- Where are they based? Coimbatore.
+- How do I book? Message them on WhatsApp.
+
+## Actions
+- Enquire: send a WhatsApp message with the wedding date and venue.

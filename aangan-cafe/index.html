@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aangan Cafe | Live music and workshops, Civil Lines, Jalandhar (concept)</title>
+<meta name="description" content="Concept site for Aangan Cafe, an independent cafe with live music and workshops in Civil Lines, Jalandhar, with a scroll-poured cup hero.">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/aangan-cafe/">
+<meta property="og:title" content="Aangan Cafe | concept site by Kerblabs">
+<meta property="og:description" content="Concept for a Jalandhar cafe: a cup that fills as you scroll.">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/aangan-cafe/">
+<meta name="twitter:card" content="summary">
+<meta name="robots" content="noindex,follow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#1c1209;color:#f4e7d3;font-family:"Helvetica Neue",Arial,sans-serif;line-height:1.55}
+a{color:inherit}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;min-height:64px;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 22px;background:rgba(28,18,9,.93);backdrop-filter:blur(8px);border-bottom:1px solid #3a2a18}
+nav b{font-family:Georgia,serif;font-size:18px;font-weight:400;letter-spacing:.03em;line-height:1.2}
+nav .r{display:flex;gap:16px;align-items:center;font-size:13px}
+.btn{display:inline-block;text-decoration:none;background:#e8a33d;color:#1c1209;padding:11px 20px;border-radius:99px;font-size:14px;font-weight:700}
+.btn.alt{background:transparent;color:#e8a33d;border:1px solid #e8a33d}
+.track{height:300vh;position:relative}
+.stage{position:sticky;top:0;height:100vh;height:100svh;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr);gap:30px;align-items:center;padding:96px 24px 24px;max-width:1200px;margin:0 auto}
+.copy h1{font-size:clamp(36px,5.6vw,72px);line-height:1.04}
+.copy h1 em{color:#e8a33d;font-style:italic}
+.copy p{margin-top:14px;max-width:440px;opacity:.78;font-size:clamp(14px,1.5vw,18px)}
+.book{margin-top:20px;display:flex;flex-wrap:wrap;gap:10px}
+.read{margin-top:18px;border-left:2px solid #c4572d;padding-left:12px}
+.read .k{font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.6}
+.read .v{font-family:Georgia,serif;font-size:clamp(20px,2.6vw,32px);color:#e8a33d}
+.fig{position:relative;height:min(72vh,580px)}
+.fig svg{width:100%;height:100%;display:block}
+.note{position:absolute;bottom:0;left:0;right:0;text-align:center;font-size:10.5px;opacity:.55}
+section.blk{padding:84px 24px;max-width:1100px;margin:0 auto}
+.eye{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#e8a33d;margin-bottom:12px}
+h2{font-size:clamp(26px,4vw,44px);line-height:1.1;margin-bottom:16px;max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:26px}
+.card{background:#2b1d10;border:1px solid #3a2a18;border-radius:16px;padding:22px}
+.card h3{font-size:20px;margin-bottom:6px}
+.card p{font-size:14px;opacity:.75}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:24px;counter-reset:s}
+.steps div{border-top:2px solid #c4572d;padding-top:12px;font-size:14px;counter-increment:s}
+.steps div::before{content:"0" counter(s);display:block;font-family:Georgia,serif;font-size:26px;color:#e8a33d}
+.pitch{background:#f4e7d3;color:#1c1209;border-radius:22px;padding:36px;margin:0 24px}
+.pitch .eye{color:#a8431f}
+.pitch ul{margin:12px 0 0 18px}
+.faq details{border-bottom:1px solid #3a2a18;padding:14px 0}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{margin-top:8px;opacity:.78;max-width:680px}
+.ar{margin:0 auto;max-width:1100px;padding:20px 24px 70px}
+.ar div{border:1px dashed #e8a33d;border-radius:14px;padding:20px;font-size:14px}
+footer{padding:46px 24px 90px;text-align:center;font-size:12px;opacity:.6;border-top:1px solid #3a2a18}
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none}
+.sticky .btn{display:block;text-align:center;padding:14px}
+@media(max-width:760px){
+.stage{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);align-items:start;gap:10px;padding:104px 18px 80px}
+.fig{height:100%}.copy p{display:none}.book{display:none}.read{margin-top:8px}
+nav .r a.t{display:none}.sticky{display:block}
+}
+@media(prefers-reduced-motion:reduce){.track{height:auto}.stage{position:static;height:auto;min-height:100vh}.fig{height:70vh}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"CafeOrCoffeeShop","name":"Aangan Cafe","description":"Independent cafe with live music and workshops in Civil Lines, Jalandhar, India.","address":{"@type":"PostalAddress","streetAddress":"Civil Lines","addressLocality":"Jalandhar","addressRegion":"Punjab","addressCountry":"IN"},"sameAs":["https://www.instagram.com/aangancafe.jalandhar"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where is Aangan Cafe?","acceptedAnswer":{"@type":"Answer","text":"Civil Lines, Jalandhar, Punjab. The full street address is not published on this concept page."}},{"@type":"Question","name":"What does Aangan Cafe host?","acceptedAnswer":{"@type":"Answer","text":"Live music and workshops, according to its Instagram profile."}},{"@type":"Question","name":"How do I get in touch?","acceptedAnswer":{"@type":"Answer","text":"Message @aangancafe.jalandhar on Instagram."}}]}]}
+</script>
+</head>
+<body>
+<nav><b>Aangan Cafe<br>Jalandhar</b><div class="r"><a class="t" href="#faq">FAQ</a><a class="t" href="#how">The idea</a><a class="btn" href="https://www.instagram.com/aangancafe.jalandhar">Say hello on Instagram</a></div></nav>
+
+<div class="track" id="track">
+ <div class="stage">
+  <div class="copy">
+   <h1>Come in. <em>Stay a while.</em></h1>
+   <p>An independent cafe in Civil Lines, Jalandhar, with live music and workshops. A home on the web as warm as the courtyard.</p>
+   <div class="book"><a class="btn" href="https://www.instagram.com/aangancafe.jalandhar">@aangancafe.jalandhar</a></div>
+   <div class="read"><div class="k" id="k">Cup 0%</div><div class="v" id="v">Kettle lifts</div></div>
+  </div>
+  <div class="fig">
+   <svg viewBox="0 0 400 520" preserveAspectRatio="xMidYMid meet" aria-label="A kettle pouring into a cup as you scroll (illustrative)">
+    <defs><clipPath id="cupclip"><path d="M150 330 H250 L238 470 Q200 492 162 470 Z"/></clipPath></defs>
+    <ellipse cx="200" cy="498" rx="96" ry="9" fill="#000" opacity=".35"/>
+    <g id="steam" opacity="0" fill="none" stroke="#f4e7d3" stroke-width="3" stroke-linecap="round">
+     <path d="M178 316 q-12 -28 0 -52 q12 -24 0 -50" opacity=".6"/>
+     <path d="M204 312 q-12 -32 0 -58 q12 -28 0 -58" opacity=".5"/>
+     <path d="M228 316 q-12 -26 0 -48 q12 -22 0 -46" opacity=".6"/>
+    </g>
+    <g clip-path="url(#cupclip)">
+     <path d="M150 330 H250 L238 470 Q200 492 162 470 Z" fill="#2b1d10"/>
+     <rect id="liq" x="140" y="470" width="120" height="150" fill="#c4572d"/>
+     <rect id="froth" x="140" y="470" width="120" height="8" fill="#e8a33d" opacity=".9"/>
+    </g>
+    <path d="M150 330 H250 L238 470 Q200 492 162 470 Z" fill="none" stroke="#e8a33d" stroke-width="4" stroke-linejoin="round"/>
+    <path id="stream" d="M0 0" fill="none" stroke="#c4572d" stroke-width="7" stroke-linecap="round" opacity="0"/>
+    <g id="kettle" transform="translate(110 140)">
+     <path d="M-50 -34 Q-50 -54 0 -54 Q50 -54 50 -34 V40 Q50 56 0 56 Q-50 56 -50 40 Z" fill="#e8a33d"/>
+     <path d="M42 -6 L82 -30 L86 -22 L50 14 Z" fill="#e8a33d"/>
+     <path d="M-50 -20 Q-96 -20 -96 10 Q-96 40 -50 36" fill="none" stroke="#f4e7d3" stroke-width="7" stroke-linecap="round"/>
+     <rect x="-12" y="-64" width="24" height="12" rx="5" fill="#c4572d"/>
+     <rect x="-34" y="-26" width="10" height="64" fill="#fff" opacity=".2"/>
+    </g>
+   </svg>
+   <div class="note">Illustrative graphic. Not a menu.</div>
+  </div>
+ </div>
+</div>
+
+<section class="blk" id="how">
+ <div class="eye">The idea</div>
+ <h2>A first impression that fits the room.</h2>
+ <p style="max-width:640px;opacity:.78">Aangan Cafe is an independent cafe in Civil Lines, Jalandhar, known on Instagram for live music and workshops (about 6.5K followers). Today its only home online is the Instagram profile. This concept shows how the same cafe could greet a new guest on the web: warm, easy to find, and one tap from saying hello.</p>
+ <div class="grid">
+  <div class="card"><h3>Live music, front and centre</h3><p>A place to show what is on and when, once the cafe shares its schedule.</p></div>
+  <div class="card"><h3>Workshops</h3><p>Each workshop gets a page guests can open, share and ask about.</p></div>
+  <div class="card"><h3>Instagram, connected</h3><p>The feed stays the heartbeat. The site points straight to it.</p></div>
+ </div>
+ <div class="steps"><div>Land on the cup filling up</div><div>See live music and workshops</div><div>Message the cafe in a tap</div></div>
+</section>
+
+<div class="pitch"><div class="eye">Concept by Kerblabs</div><h2 style="max-width:640px">Built for Aangan Cafe as a free concept.</h2>
+<ul><li>Everything on this page is a placeholder until the cafe confirms its address, hours, menu and event details.</li><li>Includes machine-readable files so AI assistants can read the business.</li></ul></div>
+
+<section class="blk faq" id="faq">
+ <div class="eye">FAQ</div><h2>Quick answers</h2>
+ <details><summary>Where is Aangan Cafe?</summary><p>Civil Lines, Jalandhar, Punjab. The full street address is not published on this concept page.</p></details>
+ <details><summary>What does Aangan Cafe host?</summary><p>Live music and workshops, according to its Instagram profile.</p></details>
+ <details><summary>How do I get in touch?</summary><p>Message @aangancafe.jalandhar on Instagram.</p></details>
+</section>
+
+<div class="ar"><div><b>Agent-Ready included.</b> llms.txt, services.json, schema and crawler access so AI assistants can read the business and point guests to the right place.</div></div>
+<footer>Concept site by Kerblabs for Aangan Cafe. Not affiliated or endorsed. <!-- /agent-ready-section --></footer>
+<div class="sticky"><a class="btn" href="https://www.instagram.com/aangancafe.jalandhar">Say hello on Instagram</a></div>
+
+<script>
+(function(){
+var kettle=document.getElementById("kettle"),stream=document.getElementById("stream"),liq=document.getElementById("liq"),froth=document.getElementById("froth"),steam=document.getElementById("steam");
+var k=document.getElementById("k"),v=document.getElementById("v"),track=document.getElementById("track");
+var reduce=matchMedia("(prefers-reduced-motion: reduce)");
+var CX=110,CY=140,TX=84,TY=-26,BOT=472,H=140;
+function ease(x){return x<0?0:x>1?1:x*x*(3-2*x);}
+function draw(t){
+ var tilt=ease(t/0.15)*(1-ease((t-0.86)/0.12));
+ var a=tilt*30,r=a*Math.PI/180;
+ kettle.setAttribute("transform","translate("+(CX+tilt*20)+" "+(CY+tilt*14)+") rotate("+a.toFixed(1)+")");
+ var f=ease((t-0.15)/0.7);
+ var surf=BOT-H*f;
+ liq.setAttribute("y",surf.toFixed(1));froth.setAttribute("y",surf.toFixed(1));
+ var tx=CX+tilt*20+TX*Math.cos(r)-TY*Math.sin(r),ty=CY+tilt*14+TX*Math.sin(r)+TY*Math.cos(r);
+ var pouring=t>0.13&&t<0.88;
+ stream.setAttribute("d","M"+tx.toFixed(1)+" "+ty.toFixed(1)+" Q"+(tx+10).toFixed(1)+" "+((ty+surf)/2).toFixed(1)+" 200 "+surf.toFixed(1));
+ stream.setAttribute("opacity",pouring?1:0);
+ steam.setAttribute("opacity",(ease((t-0.8)/0.18)*0.9).toFixed(2));
+ var pct=Math.round(f*100);
+ k.textContent="Cup "+pct+"%";
+ v.textContent=t<0.15?"Kettle lifts":t<0.85?"Pouring":"Poured. Come in.";
+}
+function onScroll(){
+ if(reduce.matches){draw(1);return;}
+ var r=track.getBoundingClientRect(),max=track.offsetHeight-innerHeight;
+ draw(Math.min(1,Math.max(0,-r.top/max)));
+}
+addEventListener("scroll",onScroll,{passive:true});addEventListener("resize",onScroll);
+if(reduce.addEventListener)reduce.addEventListener("change",onScroll);
+onScroll();
+})();
+</script>
+</body>
+</html>

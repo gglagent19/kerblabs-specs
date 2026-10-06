@@ -1,0 +1,12 @@
+{
+  "business": "Sahil Art Studio",
+  "note": "Concept file by Kerblabs. Facts from the public Instagram profile @sahilartstudio. Prices not published.",
+  "locations": ["Amritsar", "Gurdaspur"],
+  "services": [
+    {"name": "Luxury wedding photography", "price": null, "pricing": "quote on request"},
+    {"name": "Newborn photography", "price": null, "pricing": "quote on request"},
+    {"name": "Maternity photography", "price": null, "pricing": "quote on request"}
+  ],
+  "booking": {"method": "Instagram DM", "url": "https://www.instagram.com/sahilartstudio/", "needs": ["session type", "date or due date"]},
+  "social": {"instagram": "https://www.instagram.com/sahilartstudio/"}
+}

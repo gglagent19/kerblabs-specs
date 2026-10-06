@@ -1,0 +1,10 @@
+{
+  "business": "Paperclip Studios",
+  "note": "Concept file by Kerblabs. Facts from the public Instagram profile @paperclipweddings. Prices not published.",
+  "locations": ["Coimbatore"],
+  "services": [
+    {"name": "Wedding photography", "price": null, "pricing": "quote on request"}
+  ],
+  "booking": {"method": "WhatsApp message", "url": "https://wa.me/message/Y6JWMPSKQSFXC1", "needs": ["wedding date", "venue"]},
+  "social": {"instagram": "https://www.instagram.com/paperclipweddings/"}
+}

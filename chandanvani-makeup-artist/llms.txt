@@ -1,0 +1,15 @@
+# Chandanvani Makeup Artist
+
+> Bridal makeup artist based in Jalandhar, India. Concept site by Kerblabs; details below are limited to what the business publishes.
+
+- Instagram: https://www.instagram.com/makeupbychandanvani
+- WhatsApp: https://wa.me/918284827638 (number from Instagram bio)
+- Phone: +91 8284827638
+- Machine-readable: services.json
+
+## Actions
+- Book by WhatsApp message or an Instagram message.
+
+## FAQ
+- Where? Jalandhar (street address not published here).
+- How to book? WhatsApp wa.me/918284827638 or message @makeupbychandanvani on Instagram.
