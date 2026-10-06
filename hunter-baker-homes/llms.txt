@@ -1,0 +1,28 @@
+# Hunter Baker Homes and Renovations (concept by Kerblabs)
+
+> Design-build custom home and remodeling company in Charleston, SC serving the Lowcountry. Facts from hunterbakerhomes.com. This is a free concept, not their official site.
+
+- Location: Charleston, SC (street address not published on the source page)
+- Phone: (843) 814-3034
+- Email: hunter@hunterbakerhomes.com
+- Owner: Hunter Baker
+- In business: 10 years (per their site)
+
+## Services
+- Custom home new construction
+- Full home remodeling
+- Additions and renovations
+- Custom docks (through Baker Marine Contracting)
+
+## Credentials (as listed on their site)
+- BBB accreditation, RESNET HERS certification, CHBA membership, SCDET logo certification, licensed and insured
+
+## FAQ
+- Where? Charleston area and the Lowcountry.
+- Prices? Not published in the source pages.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Call (843) 814-3034 or email hunter@hunterbakerhomes.com to start a conversation.

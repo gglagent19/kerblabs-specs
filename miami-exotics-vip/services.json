@@ -1,0 +1,15 @@
+{
+  "business": "Miami Exotics VIP",
+  "note": "Concept file by Kerblabs. Facts as listed on miamiexoticsvip.com. Per-car prices are not listed, only a range.",
+  "locations": ["Miami", "within 30 miles of downtown Miami"],
+  "services": [
+    {"name": "Daily and weekly exotic and luxury rentals (33 vehicles)", "price_from": 400, "price_to": 1500, "currency": "USD", "pricing": "per day, varies by vehicle"},
+    {"name": "Delivery within 30 miles of downtown Miami", "price": 0, "currency": "USD", "pricing": "complimentary; custom quote beyond"},
+    {"name": "VIP concierge, special occasions, chauffeur availability", "price": null}
+  ],
+  "fleet": ["Ferrari 296 GTS Spider", "Lamborghini Huracan Evo Spyder", "McLaren GT", "Lamborghini Urus", "Rolls-Royce Cullinan", "Mercedes G63 Brabus", "Mercedes GLS Maybach", "Tesla Cybertruck", "Corvette C8", "Corvette C8 Z06", "BMW M4 Convertible", "Porsche 911S", "Porsche GT3 RS", "BMW M3/M4 Competition", "Mercedes S580", "Cadillac Escalade and ESV"],
+  "terms": {"insurance": "included, per site", "fuel": "fuel briefing", "age_deposit_mileage": "not listed on the page"},
+  "address": "1424 NE Miami Pl, Miami, FL 33132",
+  "hours": "24/7, holidays included",
+  "booking": {"method": "phone or booking form", "phone": "786-448-4309", "needs": ["vehicle", "dates", "delivery or pickup"], "live_availability": false}
+}

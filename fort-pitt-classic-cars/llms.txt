@@ -1,0 +1,30 @@
+# Fort Pitt Classic Cars (concept by Kerblabs)
+
+> One-stop classic car shop in Pittsburgh, PA. Facts from fortpittclassiccars.com. This is a free concept, not their official site.
+
+- Location: Pittsburgh, PA (street address not published on the source page)
+- Website: https://fortpittclassiccars.com
+- Instagram: https://www.instagram.com/fortpittclassiccars/
+
+## Services
+- Classic car restoration
+- Classic car sales
+- Service, maintenance and upgrades
+- Storage
+- Detailing
+- Speed shop performance modifications
+- Appraisals and acquisition assistance
+
+## Hours (as listed on their site)
+- Sales: Mon-Fri 8am-5pm, Sat by appointment
+- Service: Tue-Fri 8am-4pm
+- Consultation: Mon-Fri 9am-4pm, weekends by appointment
+
+## FAQ
+- Prices? Not published in the source pages.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Reach them through https://fortpittclassiccars.com to book a consultation.

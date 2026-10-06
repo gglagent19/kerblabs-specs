@@ -1,0 +1,14 @@
+# Miami Exotics VIP (concept by Kerblabs)
+
+> Concept site, not the business's official site. Facts from miamiexoticsvip.com.
+
+Miami Exotics VIP is an exotic and luxury car rental at 1424 NE Miami Pl, Miami, FL 33132, open 24/7. 33 vehicles listed; daily rates $400 to $1,500 by car. Complimentary delivery within 30 miles of downtown Miami.
+
+## Machine-readable
+- [services.json](services.json)
+
+## FAQ
+- How do I book? Call 786-448-4309 or use the booking form on miamiexoticsvip.com.
+
+## Actions
+- Request a rental: call 786-448-4309 with car, dates and delivery location.
