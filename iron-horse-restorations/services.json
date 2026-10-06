@@ -1,0 +1,19 @@
+{
+  "business": "Iron Horse Restorations",
+  "note": "Unofficial concept data compiled by Kerblabs from ironhorserestorations.com. Prices are not published; contact the shop.",
+  "address": {"street": "1160 McKenzie Rd", "city": "Cantonment", "region": "FL", "postalCode": "32533", "country": "US"},
+  "phone": "+1-850-968-6161",
+  "founded": 2004,
+  "hours": {"monday-friday": "09:00-17:00", "saturday": "closed", "sunday": "closed"},
+  "booking": {"method": "phone", "phone": "+1-850-968-6161", "online": "not published"},
+  "services": [
+    {"name": "Full Restoration", "price": "not published"},
+    {"name": "Paint and Bodywork", "price": "not published"},
+    {"name": "Auto Body Repair", "price": "not published"},
+    {"name": "Custom Upholstery", "price": "not published"},
+    {"name": "Engine Rebuild and Performance Work", "price": "not published"},
+    {"name": "Custom Exhaust Systems", "price": "not published"},
+    {"name": "Auto Glass Replacement", "price": "not published"}
+  ],
+  "links": {"official": "https://ironhorserestorations.com", "facebook": "https://www.facebook.com/Roddog81/", "instagram": "https://www.instagram.com/ironhorserestorations/"}
+}

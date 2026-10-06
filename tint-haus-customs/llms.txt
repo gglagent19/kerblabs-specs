@@ -1,0 +1,28 @@
+# Tint Haus Customs (unofficial concept page by Kerblabs)
+
+> Vehicle protection shop in Davie, Florida: window tint, paint protection film, ceramic coating and vinyl wraps. Tagline on the shop's site: "#1 Vehicle Protection in South Florida".
+
+Source of facts: tinthauscustoms.com and public listings. This is a design concept, not the shop's official site.
+
+## Services
+- Window tint (XPEL ceramic)
+- Paint protection film (XPEL), XPEL certified installers
+- Ceramic coating (FUSION PLUS)
+- Vinyl wrap and graphics (3M 2080, PRIME films)
+- Residential and commercial window tint, architectural vinyl wrap
+- Paint correction, hand car wash
+
+## Contact
+- Address: 5150 SW 48th Way #608, Davie, FL 33314
+- Phone: (954) 805-5291
+- Hours: Mon-Fri 9 AM-6 PM; Saturdays by appointment
+- Official site: https://tinthauscustoms.com
+- Facebook: https://www.facebook.com/tinthauscustoms
+- YouTube: https://www.youtube.com/@TintHausCustoms
+- Principal (per Kerblabs research): Benton Launerts
+
+## Reputation
+- Site states over 300 five-star Google reviews.
+
+## Machine-readable
+- /services.json

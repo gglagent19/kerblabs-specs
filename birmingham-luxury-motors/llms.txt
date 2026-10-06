@@ -1,0 +1,24 @@
+# Birmingham Luxury Motors (concept site by Kerblabs)
+
+> Concept site for Birmingham Luxury Motors, a pre-owned luxury dealer in Birmingham, Alabama. Facts are taken from birminghamluxurymotors.com. Not affiliated with the dealership.
+
+## Facts
+- Address: 190 Vulcan Road, Birmingham, AL 35209
+- Phone: 205-206-9494
+- Opened: 2015
+- Sales hours: Mon-Fri 9:30 AM-7:00 PM, Sat 9:00 AM-5:00 PM, Sun 12:00 PM-4:00 PM
+- Service hours: Mon-Fri 8:00 AM-5:00 PM, closed Sat-Sun
+- Services: pre-owned sales, financing and credit approval, trade-in valuations, Kelley Blue Book instant cash offers, consignment, shipping, service department with warranty options, 3-day exchange policy
+- Prices: not published in this concept
+
+## FAQ
+- Where are they? 190 Vulcan Road, Birmingham, AL 35209.
+- Can I sell my car? Their site lists trade-in valuations, KBB instant cash offers and consignment.
+- How do I reach them? Call 205-206-9494.
+
+## Actions
+- Call: tel:+12052069494
+- Their current site: https://www.birminghamluxurymotors.com
+
+## Machine-readable
+- [services.json](services.json)

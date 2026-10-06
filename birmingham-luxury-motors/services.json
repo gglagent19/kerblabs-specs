@@ -1,0 +1,23 @@
+{
+  "business": "Birmingham Luxury Motors",
+  "type": "AutoDealer",
+  "source": "birminghamluxurymotors.com (concept site by Kerblabs, not affiliated)",
+  "address": "190 Vulcan Road, Birmingham, AL 35209",
+  "phone": "+1-205-206-9494",
+  "opened": 2015,
+  "hours": {
+    "sales": {"mon-fri": "09:30-19:00", "sat": "09:00-17:00", "sun": "12:00-16:00"},
+    "service": {"mon-fri": "08:00-17:00", "sat-sun": "closed"}
+  },
+  "services": [
+    {"name": "Pre-owned vehicle sales", "price": null},
+    {"name": "Financing and credit approval", "price": null},
+    {"name": "Trade-in valuations", "price": null},
+    {"name": "Kelley Blue Book instant cash offer", "price": null},
+    {"name": "Vehicle consignment", "price": null},
+    {"name": "Vehicle shipping", "price": null},
+    {"name": "Service department with warranty options", "price": null},
+    {"name": "3-day exchange policy", "price": null}
+  ],
+  "booking": {"method": "phone", "phone": "+1-205-206-9494", "url": null}
+}

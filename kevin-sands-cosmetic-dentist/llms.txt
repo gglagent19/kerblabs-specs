@@ -1,0 +1,26 @@
+# Kevin B. Sands, DDS Cosmetic Dentistry (Beverly Hills)
+
+> Concept site by Kerblabs. Facts from beverlyhillscosmeticdentist.com only.
+
+## Contact
+- Address: 414 North Camden Drive, Suite 940, Beverly Hills, CA 90210
+- Phone: 310-273-0111
+- Hours: not published
+- The practice's site also references Dubai.
+
+## Services (as listed on the practice site)
+Porcelain veneers; dental implants; smile makeovers; Zoom! teeth whitening; porcelain crowns; cosmetic bonding; tooth-colored fillings; full mouth restorations; gum lift/gum contouring; Invisalign; orthodontics; implant dentures; periodontal gum care; sedation dentistry.
+
+## Prices
+Not published. Treatment plans and fees are discussed with Dr. Sands.
+
+## FAQ
+- Where? 414 North Camden Drive, Suite 940, Beverly Hills.
+- How to book? Call 310-273-0111.
+
+## Machine-readable
+- services.json
+- sitemap.xml
+
+## Actions
+- Call: tel:+13102730111

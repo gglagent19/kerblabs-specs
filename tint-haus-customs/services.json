@@ -1,0 +1,20 @@
+{
+  "business": "Tint Haus Customs",
+  "note": "Unofficial concept data compiled by Kerblabs from tinthauscustoms.com. Prices are not published; contact the shop.",
+  "address": {"street": "5150 SW 48th Way #608", "city": "Davie", "region": "FL", "postalCode": "33314", "country": "US"},
+  "phone": "+1-954-805-5291",
+  "hours": {"monday-friday": "09:00-18:00", "saturday": "by appointment", "sunday": "closed (not listed)"},
+  "booking": {"method": "phone", "phone": "+1-954-805-5291", "online": "not published"},
+  "services": [
+    {"name": "Window Tint", "brand": "XPEL Ceramic", "price": "not published"},
+    {"name": "Paint Protection Film", "brand": "XPEL", "price": "not published"},
+    {"name": "Ceramic Coating", "brand": "FUSION PLUS", "price": "not published"},
+    {"name": "Vinyl Wrap and Graphics", "brand": "3M 2080, PRIME", "price": "not published"},
+    {"name": "Residential and Commercial Window Tint", "price": "not published"},
+    {"name": "Architectural Vinyl Wrap", "price": "not published"},
+    {"name": "Paint Correction", "price": "not published"},
+    {"name": "Hand Car Wash", "price": "not published"}
+  ],
+  "reviews": {"claim": "Over 300 five-star Google reviews (per shop website)"},
+  "links": {"official": "https://tinthauscustoms.com", "facebook": "https://www.facebook.com/tinthauscustoms", "youtube": "https://www.youtube.com/@TintHausCustoms"}
+}

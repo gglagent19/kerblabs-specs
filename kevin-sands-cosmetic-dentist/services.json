@@ -1,0 +1,24 @@
+{
+ "business": "Kevin B. Sands, DDS Cosmetic Dentistry",
+ "source": "beverlyhillscosmeticdentist.com",
+ "address": "414 North Camden Drive, Suite 940, Beverly Hills, CA 90210",
+ "phone": "+1-310-273-0111",
+ "hours": null,
+ "booking": {"method": "phone", "value": "tel:+13102730111"},
+ "services": [
+  {"name": "Porcelain veneers", "price": null},
+  {"name": "Dental implants", "price": null},
+  {"name": "Smile makeovers", "price": null},
+  {"name": "Zoom! teeth whitening", "price": null},
+  {"name": "Porcelain crowns", "price": null},
+  {"name": "Cosmetic bonding", "price": null},
+  {"name": "Tooth-colored fillings", "price": null},
+  {"name": "Full mouth restorations", "price": null},
+  {"name": "Gum lift / gum contouring", "price": null},
+  {"name": "Invisalign", "price": null},
+  {"name": "Orthodontics", "price": null},
+  {"name": "Implant dentures", "price": null},
+  {"name": "Periodontal gum care", "price": null},
+  {"name": "Sedation dentistry", "price": null}
+ ]
+}

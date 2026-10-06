@@ -1,0 +1,25 @@
+# Sea Island Builders (concept site by Kerblabs)
+
+> Concept site for Sea Island Builders, a custom home builder on Sullivan's Island, South Carolina, serving the Charleston area. Facts are taken from seaislandbuilders.com. Not affiliated with the company.
+
+## Facts
+- Address: 2113 Middle Street, Sullivan's Island, South Carolina
+- Phone: 843.883.7430
+- Established: 2004
+- Tagline: Experience Unrivaled
+- Services: land acquisition and consulting, land planning, design services, construction management, custom home building, major renovation projects, design-build project delivery
+- Areas: Awendaw, Charleston, Folly Beach, Isle of Palms, James Island, Mt. Pleasant, Kiawah Island, Sullivan's Island, West Ashley
+- Credentials (per their site): four licensed residential homebuilders, a licensed realtor, architect on staff, GuildQuality member and Guildmaster Award winner, Charleston Home Builders Association and Home Builders Association of SC member, LEED Green Associate, EPA Lead Certified
+- Prices: not published
+
+## FAQ
+- Where are they? 2113 Middle Street, Sullivan's Island, South Carolina.
+- Do they design and build? Their site lists design services and design-build delivery.
+- How do I reach them? Call 843.883.7430.
+
+## Actions
+- Call: tel:+18438837430
+- Their current site: https://seaislandbuilders.com
+
+## Machine-readable
+- [services.json](services.json)

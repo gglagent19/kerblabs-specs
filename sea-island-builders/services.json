@@ -1,0 +1,19 @@
+{
+  "business": "Sea Island Builders",
+  "type": "HomeAndConstructionBusiness",
+  "source": "seaislandbuilders.com (concept site by Kerblabs, not affiliated)",
+  "address": "2113 Middle Street, Sullivan's Island, South Carolina",
+  "phone": "+1-843-883-7430",
+  "established": 2004,
+  "areas_served": ["Awendaw", "Charleston", "Folly Beach", "Isle of Palms", "James Island", "Mt. Pleasant", "Kiawah Island", "Sullivan's Island", "West Ashley"],
+  "services": [
+    {"name": "Land acquisition and consulting", "price": null},
+    {"name": "Land planning", "price": null},
+    {"name": "Design services", "price": null},
+    {"name": "Construction management", "price": null},
+    {"name": "Custom home building", "price": null},
+    {"name": "Major renovation projects", "price": null},
+    {"name": "Design-build project delivery", "price": null}
+  ],
+  "booking": {"method": "phone", "phone": "+1-843-883-7430", "url": null}
+}
