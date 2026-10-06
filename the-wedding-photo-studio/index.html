@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Wedding Photo Studio | Luxury Wedding Photography and Films, Ludhiana (concept)</title>
+<meta name="description" content="Concept site for The Wedding Photo Studio (@theweddingphotostudio): luxury wedding photography and films from Ludhiana. Message on Instagram or call to check your date.">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/the-wedding-photo-studio/">
+<meta property="og:title" content="The Wedding Photo Studio | concept site by Kerblabs">
+<meta property="og:description" content="Concept for a Ludhiana wedding studio: a wedding album that opens page by page as you scroll.">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/the-wedding-photo-studio/">
+<meta name="twitter:card" content="summary">
+<meta name="robots" content="noindex,follow">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"ProfessionalService","@id":"https://gglagent19.github.io/kerblabs-specs/the-wedding-photo-studio/#org","name":"The Wedding Photo Studio","description":"Luxury wedding photography and films.","telephone":"+91 7710502100","areaServed":["Ludhiana"],"sameAs":["https://www.instagram.com/theweddingphotostudio/"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Luxury wedding photography"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Wedding films"}}]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Where is The Wedding Photo Studio based?","acceptedAnswer":{"@type":"Answer","text":"Ludhiana, as listed on their Instagram profile."}},
+{"@type":"Question","name":"How do I ask about a date?","acceptedAnswer":{"@type":"Answer","text":"Send an Instagram message to @theweddingphotostudio or call +91 7710502100, the number in their profile. Prices are not published, so quotes are given on request."}},
+{"@type":"Question","name":"Do they shoot films as well as photographs?","acceptedAnswer":{"@type":"Answer","text":"Their profile describes luxury wedding photography and films."}}]}
+]}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{--paper:#f4ecdc;--ink:#1b1a17;--green:#1f3a2f;--green2:#2c5242;--gold:#b8893a;--blush:#e9cdbb;--mut:#6b6558}
+body{background:var(--paper);color:var(--ink);font-family:"Helvetica Neue",Arial,sans-serif;line-height:1.55;overflow-x:hidden}
+a{color:inherit}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 16px;min-height:64px;background:rgba(244,236,220,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(31,58,47,.18)}
+nav b{font-family:Georgia,serif;font-weight:400;font-size:16px;letter-spacing:.06em;text-transform:uppercase;line-height:1.15;color:var(--green)}
+nav .r{display:flex;gap:12px;align-items:center;font-size:13px;color:var(--mut)}
+.btn{display:inline-block;text-decoration:none;background:var(--green);color:#f6ecd2;padding:11px 20px;border-radius:99px;font-size:14px;font-weight:700;white-space:nowrap}
+.btn.alt{background:transparent;color:var(--green);border:1.5px solid var(--green)}
+.track{height:520vh;position:relative}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:radial-gradient(70% 60% at 62% 55%,#fbf6ea,var(--paper) 78%)}
+.grid{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.2fr);gap:24px;align-items:center;padding:96px 28px 40px;max-width:1280px;margin:0 auto}
+.copy .k{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.copy h1{font-size:clamp(34px,5vw,70px);line-height:1.03;margin-top:10px;color:var(--green)}
+.copy h1 em{color:var(--gold)}
+.copy p{margin-top:12px;max-width:430px;font-size:clamp(14px,1.4vw,18px);color:#3d3a32}
+.book-btns{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px}
+.right{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0}
+.persp{perspective:1900px;width:100%;display:flex;justify-content:center}
+.book{position:relative;width:min(100%,calc(62vh*1.5));aspect-ratio:3/2;transform-style:preserve-3d;transition:none;filter:drop-shadow(0 26px 30px rgba(31,28,20,.28))}
+.base{position:absolute;left:50%;top:0;width:50%;height:100%;border-radius:0 6px 6px 0;overflow:hidden;background:var(--paper)}
+.leaf{position:absolute;left:50%;top:0;width:50%;height:100%;transform-origin:left center;transform-style:preserve-3d}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden}
+.face.front{border-radius:0 6px 6px 0}
+.face.back{transform:rotateY(180deg);border-radius:6px 0 0 6px}
+.face svg{width:100%;height:100%;display:block}
+.hud{margin-top:14px;display:flex;gap:14px;align-items:center;justify-content:center;font:12px/1 "Courier New",monospace;letter-spacing:.08em;color:var(--green);text-transform:uppercase;min-height:16px}
+.hud b{color:var(--gold)}
+.note{margin-top:8px;font-size:10.5px;color:var(--mut);text-align:center}
+section.b{padding:84px 22px;max-width:1100px;margin:0 auto}
+section.b h2{font-size:clamp(28px,4.2vw,52px);line-height:1.06;max-width:20ch;color:var(--green)}
+section.b .k{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:30px}
+.card{border:1px solid rgba(31,58,47,.22);padding:24px;border-radius:12px;background:#fbf6ea}
+.card h3{font-size:22px;color:var(--green)}
+.card p{margin-top:8px;color:#4a463c;font-size:15px}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:28px}
+.steps div{border-top:2px solid var(--gold);padding-top:12px;color:#4a463c}
+.steps div::before{counter-increment:s;content:"0" counter(s);display:block;font-family:Georgia,serif;font-size:28px;color:var(--gold)}
+.ar{background:#fbf6ea;border:1px dashed rgba(31,58,47,.4);border-radius:12px;padding:24px;margin-top:26px;font-size:14.5px;color:#3d3a32}
+.ar code{color:var(--green);font-weight:700}
+details{border-bottom:1px solid rgba(31,58,47,.2);padding:14px 0}
+summary{cursor:pointer;font-family:Georgia,serif;font-size:18px;color:var(--green)}
+details p{margin-top:8px;color:#4a463c}
+.cta{text-align:center;padding:90px 22px 60px;border-top:1px solid rgba(31,58,47,.2);background:var(--green);color:#f6ecd2}
+.cta h2{font-size:clamp(32px,6vw,76px);max-width:14ch;margin:0 auto}
+.cta p{margin:14px auto 22px;color:#cdd8c8;max-width:44ch}
+.cta .btn{background:var(--gold);color:#1b140a}
+.cta .btn.alt{background:transparent;color:#f6ecd2;border-color:#f6ecd2}
+footer{padding:26px 22px 90px;text-align:center;font-size:12px;color:var(--mut)}
+.sticky{display:none}
+@media(max-width:800px){
+ .track{height:460vh}
+ nav .r span{display:none}
+ .grid{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);gap:10px;padding:104px 18px 20px;align-items:start}
+ .copy p{display:none}
+ .copy h1{font-size:clamp(28px,8.5vw,40px)}
+ .book-btns{display:none}
+ .book{width:min(100%,calc(40vh*1.5))}
+ .sticky{display:block;position:fixed;left:12px;right:12px;bottom:12px;z-index:40;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.track{height:auto}.stage{position:relative;height:auto;min-height:100vh}}
+</style>
+</head>
+<body>
+<nav>
+ <b>The Wedding Photo<br>Studio</b>
+ <div class="r"><span>Ludhiana</span><a class="btn" href="https://www.instagram.com/theweddingphotostudio/" rel="noopener">Message on Instagram</a></div>
+</nav>
+
+<div class="track" id="track">
+ <div class="stage">
+  <div class="grid">
+   <div class="copy">
+    <div class="k">Luxury wedding photography and films</div>
+    <h1>Your wedding, bound in <em>pages</em>.</h1>
+    <p>Ludhiana. Scroll and turn the album, chapter by chapter.</p>
+    <div class="book-btns"><a class="btn" href="https://www.instagram.com/theweddingphotostudio/" rel="noopener">Ask about your date</a><a class="btn alt" href="tel:+917710502100">Call +91 77105 02100</a></div>
+   </div>
+   <div class="right">
+    <div class="persp"><div class="book" id="book"></div></div>
+    <div class="hud"><span id="ch">Cover</span><b id="pg">Page 0 / 10</b></div>
+    <div class="note">Illustrative album pages drawn for this concept, not The Wedding Photo Studio's photographs</div>
+   </div>
+  </div>
+ </div>
+</div>
+
+<section class="b" id="work">
+ <div class="k">What they do</div>
+ <h2>Photographs and films, from Ludhiana.</h2>
+ <div class="cards">
+  <div class="card"><h3>Luxury wedding photography</h3><p>Their profile describes luxury wedding photography, based in Ludhiana.</p></div>
+  <div class="card"><h3>Wedding films</h3><p>The same profile lists wedding films alongside the photographs.</p></div>
+  <div class="card"><h3>Quote on request</h3><p>No public price list. Send your date and ask, or call the number in their profile.</p></div>
+ </div>
+</section>
+
+<section class="b" id="how">
+ <div class="k">How it works</div>
+ <h2>Three steps from first message to booked date.</h2>
+ <div class="steps">
+  <div>Message on Instagram, or call, with your date.</div>
+  <div>Share the events you want covered and the feel you like.</div>
+  <div>Receive a quote and lock the date.</div>
+ </div>
+ <p style="margin-top:20px;color:#6b6558;font-size:13px">Concept flow for this site. The studio confirms the real process and any availability.</p>
+</section>
+
+<section class="b" id="ai">
+ <div class="k">Agent-Ready included</div>
+ <h2>AI assistants can read this studio.</h2>
+ <div class="ar">This concept ships <code>llms.txt</code>, <code>services.json</code>, <code>robots.txt</code>, <code>sitemap.xml</code> and schema, so assistants can answer "who shoots luxury weddings in Ludhiana" with the studio's real name, services and how to enquire. Prices stay empty until the studio publishes them.</div>
+</section>
+
+<section class="b" id="faq">
+ <div class="k">FAQ</div>
+ <h2>Quick answers.</h2>
+ <details><summary>Where are they based?</summary><p>Ludhiana, as listed on their Instagram profile.</p></details>
+ <details><summary>How do I ask about a date?</summary><p>Send an Instagram message to @theweddingphotostudio or call the number in their profile.</p></details>
+ <details><summary>Do they shoot films too?</summary><p>Their profile describes luxury wedding photography and films.</p></details>
+ <details><summary>What do they charge?</summary><p>Prices are not published. Quotes are given on request.</p></details>
+</section>
+
+<div class="cta">
+ <h2>Is your date still open?</h2>
+ <p>Send the date. The rest is a conversation.</p>
+ <a class="btn" href="https://www.instagram.com/theweddingphotostudio/" rel="noopener">Message @theweddingphotostudio</a>
+ <a class="btn alt" href="tel:+917710502100">Call +91 77105 02100</a>
+</div>
+<footer>Concept site by Kerblabs for The Wedding Photo Studio. Not affiliated. Illustrations are placeholders, not the studio's photographs.</footer>
+<a class="btn sticky" href="https://www.instagram.com/theweddingphotostudio/" rel="noopener">Message on Instagram</a>
+
+<script>
+(function(){
+ var reduceMQ=matchMedia('(prefers-reduced-motion: reduce)');
+ var track=document.getElementById('track'),book=document.getElementById('book'),chEl=document.getElementById('ch'),pgEl=document.getElementById('pg');
+ // chapters: leaf0 back=1, leaf1 front=2 back=3, leaf2 front=4 back=5, base=6 (illustrative chapter names)
+ var NAMES=['Cover','Pre-wedding','Haldi and mehendi','Sangeet','The wedding day','Vidaai','Films'];
+ function motif(k){
+  switch(k){
+   case 1:return '<path d="M80 270 V150 Q80 70 150 70 Q220 70 220 150 V270Z" fill="none" stroke="#b8893a" stroke-width="5"/><circle cx="150" cy="140" r="26" fill="#e9b96a"/><path d="M40 270 H260" stroke="#1f3a2f" stroke-width="4"/>';
+   case 2:return '<path d="M80 200 Q150 290 220 200Z" fill="#b8893a"/><ellipse cx="150" cy="200" rx="70" ry="12" fill="#e9b13a"/><g fill="#f0a82b"><circle cx="120" cy="170" r="14"/><circle cx="150" cy="158" r="16"/><circle cx="182" cy="172" r="14"/><circle cx="136" cy="148" r="10"/><circle cx="168" cy="146" r="10"/></g>';
+   case 3:return '<path d="M30 90 Q150 150 270 90" fill="none" stroke="#1f3a2f" stroke-width="3"/><g fill="#f0c36a"><circle cx="60" cy="108" r="9"/><circle cx="105" cy="126" r="9"/><circle cx="150" cy="132" r="9"/><circle cx="195" cy="126" r="9"/><circle cx="240" cy="108" r="9"/></g><ellipse cx="150" cy="230" rx="52" ry="30" fill="#8a4b2a"/><path d="M98 230 H202" stroke="#e9cdbb" stroke-width="3"/>';
+   case 4:return '<path d="M70 280 V130 M230 280 V130" stroke="#1f3a2f" stroke-width="8"/><path d="M50 130 H250 L230 92 H70Z" fill="#b8893a"/><path d="M150 280 q-26 -34 0 -70 q26 36 0 70Z" fill="#e0662b"/><path d="M150 280 q-12 -18 0 -34 q12 18 0 34Z" fill="#f6c453"/>';
+   case 5:return '<path d="M30 290 L130 190 H170 L270 290Z" fill="#cdbfa3"/><path d="M150 190 V100" stroke="#1f3a2f" stroke-width="3"/><g fill="#d9553d"><circle cx="110" cy="240" r="6"/><circle cx="150" cy="262" r="6"/><circle cx="190" cy="236" r="6"/><circle cx="134" cy="216" r="5"/><circle cx="168" cy="222" r="5"/></g><circle cx="150" cy="90" r="22" fill="#e9b96a"/>';
+   case 6:return '<rect x="50" y="90" width="200" height="150" rx="8" fill="#1f3a2f"/><path d="M130 130 L130 200 L192 165Z" fill="#f6ecd2"/><g fill="#f6ecd2"><rect x="58" y="98" width="8" height="8"/><rect x="58" y="118" width="8" height="8"/><rect x="58" y="138" width="8" height="8"/><rect x="58" y="158" width="8" height="8"/><rect x="58" y="178" width="8" height="8"/><rect x="58" y="198" width="8" height="8"/><rect x="58" y="218" width="8" height="8"/></g>';
+  }
+  return '';
+ }
+ function page(k,left){
+  var num=('0'+k).slice(-2);
+  return '<svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice"><rect width="300" height="400" fill="#f4ecdc"/><rect x="'+(left?20:24)+'" y="24" width="256" height="300" fill="#efe2c8" stroke="#1f3a2f" stroke-opacity=".25"/>'+motif(k)+'<text x="'+(left?24:36)+'" y="362" font-family="Georgia,serif" font-size="22" fill="#1f3a2f">'+NAMES[k]+'</text><text x="'+(left?24:36)+'" y="384" font-family="Courier New,monospace" font-size="11" letter-spacing="2" fill="#b8893a">'+num+' / 06 (CONCEPT)</text></svg>';
+ }
+ function cover(){
+  return '<svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice"><rect width="300" height="400" fill="#1f3a2f"/><rect x="18" y="18" width="264" height="364" fill="none" stroke="#b8893a" stroke-width="2"/><rect x="26" y="26" width="248" height="348" fill="none" stroke="#b8893a" stroke-opacity=".5"/><text x="150" y="150" text-anchor="middle" font-family="Georgia,serif" font-size="30" fill="#e6c27a">The Wedding</text><text x="150" y="188" text-anchor="middle" font-family="Georgia,serif" font-size="30" fill="#e6c27a">Photo Studio</text><path d="M110 218 H190" stroke="#b8893a" stroke-width="2"/><text x="150" y="250" text-anchor="middle" font-family="Courier New,monospace" font-size="13" letter-spacing="4" fill="#cdd8c8">LUDHIANA</text></svg>';
+ }
+ function endpage(){
+  return '<svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice"><rect width="300" height="400" fill="#f4ecdc"/><rect x="24" y="24" width="256" height="300" fill="#efe2c8" stroke="#1f3a2f" stroke-opacity=".25"/>'+motif(6)+'<text x="36" y="362" font-family="Georgia,serif" font-size="22" fill="#1f3a2f">'+NAMES[6]+'</text><text x="36" y="384" font-family="Courier New,monospace" font-size="11" letter-spacing="2" fill="#b8893a">06 / 06 (CONCEPT)</text></svg>';
+ }
+ var faces=[[cover(),page(1,true)],[page(2,false),page(3,true)],[page(4,false),page(5,true)]];
+ var html='<div class="base">'+endpage()+'</div>';
+ for(var i=0;i<3;i++){html+='<div class="leaf" id="lf'+i+'"><div class="face front">'+faces[i][0]+'</div><div class="face back">'+faces[i][1]+'</div></div>'}
+ book.innerHTML=html;
+ var leaves=[0,1,2].map(function(i){return document.getElementById('lf'+i)});
+ function clamp(x){return Math.max(0,Math.min(1,x))}
+ function ease(x){return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2}
+ function update(){
+  var t;
+  if(reduceMQ.matches){t=1}else{var r=track.getBoundingClientRect(),max=track.offsetHeight-innerHeight;t=clamp(-r.top/max)}
+  var ps=[];
+  for(var i=0;i<3;i++){
+   var p=ease(clamp((t-(.05+i*.24))/.22));ps.push(p);
+   leaves[i].style.transform='rotateY('+(-180*p).toFixed(1)+'deg)';
+   leaves[i].style.zIndex=p>.5?(i+1):(10-i);
+  }
+  book.style.transform='translateX('+(-25*(1-ps[0])).toFixed(2)+'%)';
+  var pages=0;for(var j=0;j<3;j++){pages+=ps[j]>.5?2:0}
+  var ci=0;if(ps[0]>.5)ci=1;if(ps[1]>.5)ci=3;if(ps[2]>.5)ci=5;if(t>.93)ci=6;
+  var showIdx=ps[2]>.5?5:ps[1]>.5?3:ps[0]>.5?1:0;
+  chEl.textContent=t>.93?NAMES[6]:NAMES[showIdx];
+  pgEl.textContent='Page '+(t>.93?10:pages)+' / 10';
+ }
+ addEventListener('scroll',update,{passive:true});addEventListener('resize',update);
+ if(reduceMQ.addEventListener)reduceMQ.addEventListener('change',update);
+ update();
+})();
+</script>
+</body>
+</html>

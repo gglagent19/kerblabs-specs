@@ -1,0 +1,14 @@
+# Peace Love Med
+
+> Med spa in Miami, FL, operating since 2017. Concept site by Kerblabs; details below are limited to what the business publishes.
+
+- Instagram: https://www.instagram.com/peacelovemedmiami
+- Booking: https://peacelovemedspa.square.site
+- Machine-readable: services.json
+
+## Actions
+- Book an appointment via the booking page above.
+
+## FAQ
+- Where? Miami, Florida (street address not published here).
+- How to book? Booking page or Instagram message.

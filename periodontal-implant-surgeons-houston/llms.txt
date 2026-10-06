@@ -1,0 +1,20 @@
+# Periodontal and Implant Surgeons of Houston (concept by Kerblabs)
+
+> Periodontics and dental implant practice in Houston, Texas. This is a free concept, not their official site. The chart and readings shown are an illustrative drawing, not clinical data.
+
+- Location: Houston, TX (street address not published in the source pages)
+- Linktree: https://linktr.ee/dentalimplantsathouston
+- Instagram: @periodontalimplantshouston
+
+## Services
+- Periodontics
+- Dental implants
+
+## FAQ
+- Prices? Not published in the source pages.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Message @periodontalimplantshouston on Instagram or use their Linktree to ask about a consultation.

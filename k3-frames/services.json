@@ -1,0 +1,11 @@
+{
+  "business": "K3 Frames (Wedding Shades and Stories)",
+  "note": "Concept file by Kerblabs. Facts from the public Instagram profile @weddingshadesandstories. Prices not published.",
+  "locations": ["Jalandhar"],
+  "services": [
+    {"name": "Wedding photography", "price": null, "pricing": "quote on request"},
+    {"name": "Wedding films", "price": null, "pricing": "quote on request"}
+  ],
+  "booking": {"method": "Instagram DM", "url": "https://www.instagram.com/weddingshadesandstories/", "needs": ["wedding date"]},
+  "social": {"instagram": "https://www.instagram.com/weddingshadesandstories/"}
+}

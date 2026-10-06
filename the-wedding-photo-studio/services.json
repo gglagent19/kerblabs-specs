@@ -1,0 +1,11 @@
+{
+  "business": "The Wedding Photo Studio",
+  "note": "Concept file by Kerblabs. Facts from the public Instagram profile @theweddingphotostudio. Prices not published.",
+  "locations": ["Ludhiana"],
+  "services": [
+    {"name": "Luxury wedding photography", "price": null, "pricing": "quote on request"},
+    {"name": "Wedding films", "price": null, "pricing": "quote on request"}
+  ],
+  "booking": {"method": "Instagram DM or phone", "url": "https://www.instagram.com/theweddingphotostudio/", "phone": "+91 7710502100", "needs": ["wedding date"]},
+  "social": {"instagram": "https://www.instagram.com/theweddingphotostudio/"}
+}

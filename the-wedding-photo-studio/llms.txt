@@ -1,0 +1,19 @@
+# The Wedding Photo Studio (concept site by Kerblabs)
+
+> Luxury wedding photography and films from Ludhiana. Concept page, not the studio's official site.
+
+## Facts
+- Based in Ludhiana (per Instagram profile)
+- Services: luxury wedding photography, wedding films
+- Prices: not published, quote on request
+- Enquire: Instagram DM https://www.instagram.com/theweddingphotostudio/ or phone +91 7710502100 (listed in their profile)
+
+## Machine-readable
+- [services.json](services.json)
+
+## FAQ
+- Where are they based? Ludhiana.
+- How do I ask about a date? Message the Instagram account or call the profile number.
+
+## Actions
+- Enquire: send an Instagram DM with the wedding date.

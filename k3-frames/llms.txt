@@ -1,0 +1,19 @@
+# K3 Frames, Wedding Shades and Stories (concept site by Kerblabs)
+
+> Wedding photography and films from Jalandhar. Concept page, not the studio's official site.
+
+## Facts
+- Based in Jalandhar (per Instagram profile)
+- Services: wedding photography, wedding films
+- Prices: not published, quote on request
+- Enquire: Instagram DM https://www.instagram.com/weddingshadesandstories/ with your date
+
+## Machine-readable
+- [services.json](services.json)
+
+## FAQ
+- Where are they based? Jalandhar.
+- How do I ask about a date? Message the Instagram account with your date.
+
+## Actions
+- Enquire: send an Instagram DM with the wedding date.

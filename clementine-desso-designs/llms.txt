@@ -1,0 +1,18 @@
+# Desso Designs, Clementine (concept by Kerblabs)
+
+> Interior designer in Miami, Florida, working in person and remotely. This is a free concept, not her official site. The wall shown is an illustrative drawing.
+
+- Location: Miami, FL (and remote)
+- Instagram: @dessodesigns
+
+## Services
+- Interior design, Miami and remote
+
+## FAQ
+- Prices? Not published in the source pages.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Message @dessodesigns on Instagram to start a project.
