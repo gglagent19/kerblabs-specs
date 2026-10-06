@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Inn at Burklyn | East Burke, Vermont (concept)</title>
+<meta name="description" content="Concept site for The Inn at Burklyn, a 14-room 1904 mansion inn on Darling Hill Road in East Burke, Vermont. Built by Kerblabs as a free spec.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/inn-at-burklyn/">
+<meta property="og:title" content="The Inn at Burklyn | Concept site by Kerblabs">
+<meta property="og:description" content="Scroll and the 14 windows of the 1904 mansion light up one by one. Free concept.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/inn-at-burklyn/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"BedAndBreakfast","@id":"https://gglagent19.github.io/kerblabs-specs/inn-at-burklyn/#biz","name":"The Inn at Burklyn","url":"https://theinnatburklyn.com/","telephone":"+1-802-626-1111","numberOfRooms":14,"address":{"@type":"PostalAddress","streetAddress":"2864 Darling Hill Road","addressLocality":"East Burke","addressRegion":"VT","postalCode":"05832","addressCountry":"US"},"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Private en-suite bathrooms","value":true},{"@type":"LocationFeatureSpecification","name":"Gourmet onsite breakfast","value":true},{"@type":"LocationFeatureSpecification","name":"Original fireplaces","value":true},{"@type":"LocationFeatureSpecification","name":"Wrap-around porch","value":true},{"@type":"LocationFeatureSpecification","name":"86-acre grounds","value":true},{"@type":"LocationFeatureSpecification","name":"Seasonal bar (Darlings)","value":true}]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Where is The Inn at Burklyn?","acceptedAnswer":{"@type":"Answer","text":"2864 Darling Hill Road, East Burke, Vermont 05832."}},
+{"@type":"Question","name":"How many rooms does the inn have?","acceptedAnswer":{"@type":"Answer","text":"14 guest rooms, each with a private en-suite bathroom, in a neoclassical mansion built in 1904 as Elmer Darling's private residence."}},
+{"@type":"Question","name":"How do I contact the inn?","acceptedAnswer":{"@type":"Answer","text":"Call 802-626-1111."}},
+{"@type":"Question","name":"Are rates published?","acceptedAnswer":{"@type":"Answer","text":"Not on the pages this concept draws from. Check availability and rates on the inn's own booking calendar."}}
+]}]}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--night:#10201b;--night2:#17302a;--gold:#f0c46a;--cream:#f4ecdc;--mut:#a9b8ae;--brick:#b5532f}
+html{scroll-behavior:smooth}
+body{background:var(--night);color:var(--cream);font-family:Georgia,'Times New Roman',serif;line-height:1.55;-webkit-text-size-adjust:100%}
+a{color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;height:60px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 16px;background:rgba(16,32,27,.95);border-bottom:1px solid #2a443b;font-family:Arial,Helvetica,sans-serif}
+.brand{font-weight:800;letter-spacing:.04em;font-size:14px;text-transform:uppercase;line-height:1.1}
+.navr{display:flex;gap:14px;align-items:center;font-size:13px}
+.navr a.l{text-decoration:none;display:none}
+.btn{display:inline-block;background:var(--cream);color:var(--night);padding:10px 16px;border-radius:3px;text-decoration:none;font:700 13px Arial,sans-serif;letter-spacing:.04em;white-space:nowrap}
+.btn.alt{background:var(--gold)}
+.hero{height:360vh;position:relative}
+.pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;padding-top:96px;display:flex;flex-direction:column}
+.copy{padding:0 18px;max-width:900px}
+.eyebrow{font:700 11px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+h1{font-size:clamp(32px,8.5vw,80px);line-height:1;margin:10px 0 8px;letter-spacing:-.02em}
+.sub{font-size:clamp(14px,3.6vw,18px);color:var(--mut);max-width:560px}
+.stage{flex:1;min-height:0;display:flex;justify-content:center;align-items:flex-end;padding:6px 8px 0}
+.stage svg{width:100%;height:100%;max-width:760px}
+.call{margin:6px 18px 0;max-width:620px;min-height:96px;border-left:4px solid var(--gold);padding:4px 0 4px 14px}
+.call b{display:block;font:800 clamp(20px,5.6vw,32px)/1.1 Georgia,serif}
+.call span{display:block;margin-top:5px;font-size:clamp(13px,3.5vw,16px);color:var(--mut)}
+.count{margin:6px 18px max(14px,env(safe-area-inset-bottom));font:700 12px 'Courier New',monospace;letter-spacing:.12em;color:var(--gold)}
+.w{fill:#1a2c27;stroke:#06100c;stroke-width:1.5;transition:fill .35s}
+.w.on{fill:var(--gold);filter:drop-shadow(0 0 5px rgba(240,196,106,.7))}
+section{padding:72px 18px;max-width:1040px;margin:0 auto}
+h2{font-size:clamp(28px,7vw,46px);line-height:1.05;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:22px}
+.card{background:var(--night2);border:1px solid #2a443b;padding:20px;border-radius:4px}
+.card h3{font-size:20px;margin-bottom:6px;color:var(--gold)}
+.card p{color:var(--mut);font-size:16px}
+.band{background:var(--night2);max-width:none}
+.band .in{max-width:1040px;margin:0 auto}
+.band p{max-width:640px;color:var(--mut)}
+.faq details{border-bottom:1px solid #2a443b;padding:14px 0}
+.faq summary{font-weight:700;cursor:pointer}
+.faq p{margin-top:8px;color:var(--mut)}
+.ctaRow{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.ph{margin-top:18px;border:2px dashed #3d5a50;padding:18px;color:var(--mut);font-size:15px;border-radius:4px}
+footer{padding:32px 18px 90px;text-align:center;font:13px/1.6 Arial,sans-serif;color:var(--mut);border-top:1px solid #2a443b}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:8px;padding:10px 12px max(10px,env(safe-area-inset-bottom));background:rgba(16,32,27,.96);border-top:1px solid #2a443b}
+.sticky .btn{flex:1;text-align:center}
+@media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr)}.navr a.l{display:inline}.sticky{display:none}footer{padding-bottom:40px}.pin{padding-top:104px}.copy,.call,.count{margin-left:48px}nav{padding:0 40px}.brand{font-size:15px}}
+@media(prefers-reduced-motion:reduce){.hero{height:auto}.pin{position:static;height:auto;padding-bottom:20px}.stage{height:60vh}}
+</style>
+</head>
+<body>
+<nav>
+ <span class="brand">The Inn at<br>Burklyn</span>
+ <div class="navr"><a class="l" href="#stay">The inn</a><a class="l" href="#faq">FAQ</a><a class="l" href="#agent-ready">Agent-ready</a><a class="btn alt" href="tel:+18026261111">Call 802-626-1111</a></div>
+</nav>
+
+<div class="hero" id="hero">
+ <div class="pin">
+  <div class="copy">
+   <div class="eyebrow">East Burke &middot; Vermont</div>
+   <h1>Fourteen rooms. One lit window at a time.</h1>
+   <p class="sub">A 1904 mansion on Darling Hill. Scroll to light it.</p>
+  </div>
+  <div class="stage">
+   <svg id="mansion" viewBox="0 0 400 250" preserveAspectRatio="xMidYMax meet" role="img" aria-label="Illustrative drawing of a neoclassical mansion with fourteen windows">
+    <rect x="0" y="228" width="400" height="22" fill="#0b1612"/>
+    <rect x="40" y="96" width="320" height="132" fill="#223a33" stroke="#06100c" stroke-width="2"/>
+    <polygon points="150,96 200,56 250,96" fill="#2b4a41" stroke="#06100c" stroke-width="2"/>
+    <polygon points="30,96 40,84 360,84 370,96" fill="#2b4a41" stroke="#06100c" stroke-width="2"/>
+    <rect x="152" y="96" width="96" height="132" fill="#28453c"/>
+    <g fill="#d9cfb8"><rect x="156" y="98" width="7" height="130"/><rect x="178" y="98" width="7" height="130"/><rect x="215" y="98" width="7" height="130"/><rect x="237" y="98" width="7" height="130"/></g>
+    <rect x="30" y="204" width="340" height="6" fill="#d9cfb8" opacity=".55"/>
+    <g id="wins"></g>
+    <rect x="190" y="184" width="20" height="44" fill="#0a1411" stroke="#d9cfb8" stroke-width="1.5"/>
+    <g id="stars" fill="#f4ecdc" opacity=".55"><circle cx="30" cy="30" r="1"/><circle cx="90" cy="14" r="1.2"/><circle cx="330" cy="26" r="1"/><circle cx="372" cy="50" r="1.2"/><circle cx="60" cy="62" r="1"/><circle cx="310" cy="64" r="1"/></g>
+   </svg>
+  </div>
+  <div class="call" id="call"><b id="cT">1904</b><span id="cS">Built as Elmer Darling's private residence, per the inn's own site.</span></div>
+  <div class="count" id="count">ROOMS LIT 00 / 14</div>
+ </div>
+</div>
+
+<section id="stay">
+ <h2>The inn</h2>
+ <p>What the inn lists on its own site.</p>
+ <div class="grid">
+  <div class="card"><h3>14 guest rooms</h3><p>Private en-suite bathrooms, oversized windows with pastoral views, and original fireplaces.</p></div>
+  <div class="card"><h3>Gourmet breakfast</h3><p>Onsite gourmet breakfast, served in the mansion.</p></div>
+  <div class="card"><h3>86 acres</h3><p>A wrap-around porch, estate grounds and a seasonal bar called Darlings.</p></div>
+ </div>
+</section>
+
+<section class="band"><div class="in">
+ <h2>Family-run, on Darling Hill</h2>
+ <p>Run by Jim and Marci, with their son Michael mentioned in guest reviews. Bike, hike and orchard country around Burke Mountain is part of the stay. Rates and availability live on the inn's own booking calendar.</p>
+ <div class="ctaRow"><a class="btn alt" href="tel:+18026261111">Call 802-626-1111</a><a class="btn" href="https://theinnatburklyn.com/">Visit theinnatburklyn.com</a></div>
+</div></section>
+
+<section id="book">
+ <h2>Plan a stay</h2>
+ <p>2864 Darling Hill Road, East Burke, VT 05832.</p>
+ <div class="ph">Booking calendar embed goes here (concept placeholder, not connected).</div>
+</section>
+
+<section id="agent-ready" style="padding-top:0">
+ <h2>Agent-Ready included</h2>
+ <p>This concept ships with llms.txt, robots.txt, schema markup and a machine-readable services file, so AI assistants can read what the inn is, where it is and how to reach it. See <a href="llms.txt">llms.txt</a> and <a href="services.json">services.json</a>.</p>
+</section>
+
+<section id="faq" class="faq" style="padding-top:0">
+ <h2>FAQ</h2>
+ <details><summary>Where is it?</summary><p>2864 Darling Hill Road, East Burke, Vermont 05832.</p></details>
+ <details><summary>How many rooms?</summary><p>14 guest rooms, each with a private en-suite bathroom, in a neoclassical mansion built in 1904 as Elmer Darling's private residence.</p></details>
+ <details><summary>How do I contact them?</summary><p>Call 802-626-1111.</p></details>
+ <details><summary>Are rates published?</summary><p>Not on the pages this concept draws from. Check availability and rates on the inn's own booking calendar.</p></details>
+</section>
+
+<footer>Concept by Kerblabs. Not affiliated with or endorsed by The Inn at Burklyn. All facts from theinnatburklyn.com; the drawing is illustrative and the lit-room order is decorative.</footer>
+<div class="sticky"><a class="btn alt" href="tel:+18026261111">Call</a><a class="btn" href="https://theinnatburklyn.com/">Website</a></div>
+
+<script>
+(function(){
+var hero=document.getElementById('hero'),g=document.getElementById('wins'),count=document.getElementById('count'),
+cT=document.getElementById('cT'),cS=document.getElementById('cS');
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+var NS='http://www.w3.org/2000/svg',wins=[];
+function add(x,y,w,h){var r=document.createElementNS(NS,'rect');r.setAttribute('x',x);r.setAttribute('y',y);r.setAttribute('width',w);r.setAttribute('height',h);r.setAttribute('class','w');g.appendChild(r);wins.push(r)}
+// upper floor: 7 windows
+[52,92,132,190,256,296,336].forEach(function(x,i){add(i>=3&&i<=3?190:x,106,i===3?20:18,28)});
+// ground floor: 3 left, 3 right
+[52,92,132].forEach(function(x){add(x,158,18,36)});
+[250,290,330].forEach(function(x){add(x,158,18,36)});
+// attic dormer
+add(190,68,20,18);
+// fix upper positions: 3 left, 1 centre, 3 right
+var up=[52,92,132,190,248,288,328];
+for(var i=0;i<7;i++){wins[i].setAttribute('x',up[i])}
+var order=[6,0,10,3,13,8,2,11,5,12,1,9,7,4];
+var steps=[
+["1904","Built as Elmer Darling's private residence, per the inn's own site."],
+["14 guest rooms","Private en-suite bathrooms and oversized windows with pastoral views."],
+["Original fireplaces","Plus a gourmet onsite breakfast and a wrap-around porch."],
+["86 acres, one bar","Estate grounds on Darling Hill and the seasonal bar, Darlings."]];
+function pad(n){return n<10?'0'+n:''+n}
+function upd(){
+ var r=hero.getBoundingClientRect(),max=hero.offsetHeight-innerHeight;
+ var t=reduce?1:Math.min(1,Math.max(0,-r.top/max));
+ var n=Math.round(t*14),k;
+ for(k=0;k<14;k++){wins[order[k]].setAttribute('class',k<n?'w on':'w')}
+ count.textContent='ROOMS LIT '+pad(n)+' / 14';
+ var i=Math.min(3,Math.floor(t*4));
+ cT.textContent=steps[i][0];cS.textContent=steps[i][1];
+}
+addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+})();
+</script>
+</body>
+</html>

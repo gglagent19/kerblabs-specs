@@ -1,0 +1,25 @@
+# The Inn at Burklyn (concept by Kerblabs)
+
+> 14-room family-run inn in a 1904 neoclassical mansion on Darling Hill Road, East Burke, Vermont. Facts from theinnatburklyn.com. This is a free concept, not their official site.
+
+- Address: 2864 Darling Hill Road, East Burke, VT 05832
+- Phone: 802-626-1111
+- Built: 1904, as Elmer Darling's private residence
+- Rooms: 14, each with private en-suite bathroom
+
+## Amenities
+- Gourmet onsite breakfast
+- Original fireplaces
+- Wrap-around porch
+- 86-acre grounds
+- Darlings seasonal bar
+
+## FAQ
+- Where? East Burke, Vermont.
+- Rates? Not published in the source pages; use the inn's own booking calendar.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Call 802-626-1111 or check availability at https://theinnatburklyn.com/
