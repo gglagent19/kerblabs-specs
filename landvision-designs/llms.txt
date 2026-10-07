@@ -1,0 +1,18 @@
+# Landvision Designs (concept by Kerblabs)
+> Landscape design, masonry and outdoor-living builder in Raleigh, NC, 30+ years. Facts from landvisiondesigns.com.
+
+- Address: 10809 Honeycutt Road, Raleigh, NC 27614
+- Phone: (919) 847-2578 (Mon-Fri, 8:30 AM-5 PM)
+- Owners listed: Tracy and Crystal Sides
+- Licences listed: NC general contractor, landscape contractor, landscape architect
+- Service area: Raleigh, Cary, Durham, Chapel Hill, Wake Forest, Apex and surrounding areas
+- Services: landscape design and installation, masonry, patios and walkways, decks, custom pools and spas, outdoor kitchens, fireplaces and fire pits, retaining walls and terraces, screened porches and sunrooms, landscape lighting, water features and koi ponds, pergolas and shade structures
+- Prices: not published
+- Machine-readable: [services.json](services.json)
+
+## FAQ
+- Where do they work? Raleigh and the Triangle area.
+- How to contact? Phone (919) 847-2578 or https://www.landvisiondesigns.com/contact/
+
+## Actions
+- Call or submit the contact form on landvisiondesigns.com.

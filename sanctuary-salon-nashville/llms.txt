@@ -1,0 +1,16 @@
+# Sanctuary Salon (concept by Kerblabs)
+> Luxury hair salon in Nashville specialising in color and extensions. Facts from sanctuarysalonnashville.com.
+
+- Address: 2712 Clifton Avenue, Nashville, TN 37209 (entry by access code)
+- Phone: 615-801-3387
+- Services: balayage, hair extensions, invisible bead extensions (IBE), lived-in color, Nashville Hair signature treatments, luxury hair treatments
+- Booking: online via Boulevard, or phone
+- Hours, prices, years in business: not published
+- Machine-readable: [services.json](services.json)
+
+## FAQ
+- Where is it? Clifton Avenue, Nashville.
+- How to book? Online on sanctuarysalonnashville.com or call 615-801-3387.
+
+## Actions
+- Book online via the salon's Boulevard page or call.

@@ -1,0 +1,16 @@
+# Cascade Custom Pools (concept by Kerblabs)
+> Family-run custom gunite pool builder serving Austin and the Texas Hill Country, 40+ years (founded 1982). Facts from cascadecustompools.com.
+
+- Service area: Austin, Dripping Springs, Lakeway, Bee Cave, Spicewood, West Lake Hills, Fredericksburg, Rollingwood, Volente, Steiner Ranch and surrounding Hill Country communities
+- Owners listed: Hank Thompson (founder), Theresa Thompson, T.J. Thompson
+- Phone / email / address: not published
+- Services: custom gunite pool design and construction, 3D pool design, excavation, engineering, tile, coping and decking, spas, water features, outdoor living design (patios, stone decks, pergolas, cabanas, outdoor kitchens, fire features, lighting)
+- Prices: not published (financing mentioned, no details)
+- Machine-readable: [services.json](services.json)
+
+## FAQ
+- Where do they work? Austin and surrounding Texas Hill Country communities.
+- How to contact? Contact form at https://www.cascadecustompools.com/contact-us/
+
+## Actions
+- Submit a project enquiry via the contact form on cascadecustompools.com.
