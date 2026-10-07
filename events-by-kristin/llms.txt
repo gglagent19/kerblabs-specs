@@ -1,0 +1,13 @@
+# Events by Kristin (concept site by Kerblabs)
+
+> Wedding planning, day-of coordination and other social events across the San Francisco Bay Area, Napa and Sonoma, Northern California. Concept page, not their official site. Official site: https://www.eventsbykristin.com
+
+## Contact
+- Contact via their site: https://www.eventsbykristin.com
+- Prices were not seen on their homepage.
+
+## Machine-readable
+- [services.json](services.json)
+
+## FAQ
+- Are prices published? No prices were seen on their homepage.

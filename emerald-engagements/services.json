@@ -1,0 +1,17 @@
+{
+ "business": "Emerald Engagements",
+ "location": "Seattle, Washington",
+ "serves": ["Washington State", "Upstate New York", "Hawaii"],
+ "established": 2020,
+ "contact": {"email": "carly@emeraldengagements.com", "phone": "(425) 490-5528", "instagram": "@emeraldengagements"},
+ "services": [
+  {"name": "Venue recommendations", "price": null},
+  {"name": "Vendor connections", "price": null},
+  {"name": "Timeline management", "price": null},
+  {"name": "Design conceptualization", "price": null},
+  {"name": "Unlimited email communication", "price": null},
+  {"name": "On-the-day coordination", "price": null}
+ ],
+ "booking": null,
+ "note": "Concept by Kerblabs. Prices not published on their site."
+}

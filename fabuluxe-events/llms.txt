@@ -1,0 +1,15 @@
+# Fabuluxe Events (concept site by Kerblabs)
+
+> Full-service wedding planning and design for South Florida and destination weddings, led by Jennifer Hardiman. Concept page, not their official site. Official site: https://www.fabuluxeevents.com
+
+## Contact
+- Contact form: https://www.fabuluxeevents.com/contact
+- Email: jennifer@fabuluxeevents.com (published on their site)
+- Phone: 561-254-2041 (published on their site)
+- Prices were not seen on their homepage.
+
+## Machine-readable
+- [services.json](services.json)
+
+## FAQ
+- Are prices published? No prices were seen on their homepage.

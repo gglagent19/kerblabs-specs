@@ -1,0 +1,14 @@
+# Haley Kelly Events (concept site by Kerblabs)
+
+> Full-service event planning with a focus on custom weddings and special events, based in Charleston, South Carolina. Concept page, not their official site. Official site: https://haleykellyevents.com
+
+## Contact
+- Email: haley@haleykellyevents.com (published on their site)
+- Phone: 864.940.7401 (published on their site)
+- Prices were not seen on their homepage.
+
+## Machine-readable
+- [services.json](services.json)
+
+## FAQ
+- Are prices published? No prices were seen on their homepage.

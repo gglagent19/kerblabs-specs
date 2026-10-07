@@ -1,0 +1,15 @@
+# Christina Baxter Weddings + Events (concept site by Kerblabs)
+
+> Luxury wedding planning, design and production for destination weddings, based in Charleston, SC and Washington, DC. Concept page, not their official site. Official site: https://christinabaxterweddings.com
+
+## Contact
+- Contact page: https://christinabaxterweddings.com/contact
+- Email: Inquiries@christinabaxterweddings.com (published on their site)
+- Phone: 843.749.2807 (published on their site)
+- Prices were not seen on their homepage.
+
+## Machine-readable
+- [services.json](services.json)
+
+## FAQ
+- Are prices published? No prices were seen on their homepage.

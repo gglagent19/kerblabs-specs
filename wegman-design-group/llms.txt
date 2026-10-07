@@ -1,0 +1,16 @@
+# Wegman Design Group (concept site by Kerblabs)
+
+> Interior design for retail, hospitality, life care and commercial markets, based in Naples, Florida. Concept page, not their official site. The residential room shown is an illustrative concept. Official site: https://wegmandesigngroup.com
+
+## Contact
+- Contact page: https://wegmandesigngroup.com/contact/
+- Email: info@wegmandesigngroup.com (published on their site)
+- Phone: 239.596.8551 (published on their site)
+- Address: 2385 Trade Center Way, Naples, FL 34109 (published on their site)
+- Prices were not seen on their homepage.
+
+## Machine-readable
+- [services.json](services.json)
+
+## FAQ
+- Are prices published? No prices were seen on their homepage.

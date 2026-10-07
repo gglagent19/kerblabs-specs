@@ -1,0 +1,13 @@
+# Carolina Love Events (concept site by Kerblabs)
+
+> Boutique wedding planning and event management in Asheville and Western North Carolina, including elopements and venue management for Homewood. Concept page, not their official site. Official site: https://www.carolinaloveevents.com
+
+## Contact
+- Inquiry form: https://www.carolinaloveevents.com/inquire
+- Prices were not seen on their homepage.
+
+## Machine-readable
+- [services.json](services.json)
+
+## FAQ
+- Are prices published? No prices were seen on their homepage.

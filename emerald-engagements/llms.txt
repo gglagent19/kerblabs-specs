@@ -1,0 +1,23 @@
+# Emerald Engagements (concept by Kerblabs, not affiliated)
+
+> Custom wedding planning and coordination, Seattle, Washington. Established 2020. Serves Washington State, Upstate New York and Hawaii (per emeraldengagements.com).
+
+## Services
+- Venue recommendations
+- Vendor connections
+- Timeline management
+- Design conceptualization
+- Unlimited email communication
+- On-the-day coordination
+
+## Contact
+- Email: carly@emeraldengagements.com
+- Phone: (425) 490-5528
+- Instagram: @emeraldengagements
+- Site: https://emeraldengagements.com
+
+## FAQ
+- Prices published? No prices were seen on their homepage.
+
+## Machine-readable
+- services.json

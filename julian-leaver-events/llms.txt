@@ -1,0 +1,15 @@
+# Julian Leaver Events (concept site by Kerblabs)
+
+> Luxury destination wedding planning and design, based in Dallas, Texas. Concept page, not their official site. Official site: https://julianleaver.com
+
+## Contact
+- Contact page: https://julianleaver.com/contact
+- Email: julian@julianleaver.com (published on their site)
+- Phone: 214.908.7439 (published on their site)
+- Prices were not seen on their homepage.
+
+## Machine-readable
+- [services.json](services.json)
+
+## FAQ
+- Are prices published? No prices were seen on their homepage.

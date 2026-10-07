@@ -1,0 +1,13 @@
+# Fete Nashville (concept site by Kerblabs)
+
+> Luxury wedding planning in Nashville, Tennessee, founded by Sara Fried. Concept page, not their official site. Official site: https://fetenashville.com
+
+## Contact
+- Email: sara@fetenashville.com (published on their own site)
+- Prices are not stated in this concept.
+
+## Machine-readable
+- [services.json](services.json)
+
+## FAQ
+- Are prices published? Not confirmed.
