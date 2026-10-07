@@ -1,0 +1,26 @@
+# Stone Aspen Signature Builders (concept by Kerblabs)
+
+> Owner-led custom home and detached living builder in Castle Rock, Colorado, serving Douglas County and South Denver. Facts from stoneaspen.com. This is a free concept, not their official site.
+
+- Mailing address: Stone Aspen, LLC, PO Box 1626, Castle Rock, CO 80104
+- Phone / text: 303-656-0972 (Brian Putnam, Owner/Builder, as listed on their contact page)
+- Contact form: https://www.stoneaspen.com/contact
+- Email: none published
+
+## Services
+- Custom homes
+- Accessory dwelling units (ADUs)
+- Detached living spaces: guest houses, home offices, studios, gyms, golf simulator rooms, workshops, hobby spaces, pool houses
+
+## Service area
+Castle Rock, Parker, Franktown, Sedalia, Littleton, Greenwood Village, Cherry Hills Village, Elizabeth, Monument (Douglas County and South Denver)
+
+## FAQ
+- Where? Douglas County and South Denver, CO.
+- Prices? Not published in the source pages. Their site offers a design questionnaire (custom homes) and an ADU project questionnaire.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Request a consultation at https://www.stoneaspen.com/contact, or call or text 303-656-0972.

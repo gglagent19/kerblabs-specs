@@ -1,0 +1,29 @@
+# Exotic World Motor Cars (concept by Kerblabs)
+
+> Luxury and exotic dealer and consignment store in Addison, Texas (Dallas area). Facts from exoticworldmotorcars.com. This is a free concept, not their official site.
+
+- Address: 4570 Westgrove Drive, Addison, TX 75001
+- Phone: 214-422-6539
+- Hours: Monday to Saturday 10:30 AM to 4:00 PM; closed Sunday
+- Contact form: https://exoticworldmotorcars.com/sendcomments
+- Email: none published
+
+## Services
+- Buy luxury and exotic vehicles
+- Sell and trade luxury and exotic vehicles
+- Consignment (their site: DFW's number one consignment store for luxury and exotic vehicles)
+
+## Marques listed on their site
+Lamborghini, Ferrari, McLaren, Porsche, Maserati, Mercedes-Benz, Bentley
+
+## FAQ
+- Where? 4570 Westgrove Drive, Addison, TX 75001.
+- Hours? Mon-Sat 10:30 AM to 4:00 PM, closed Sunday.
+- Consignment? Yes, per their site; they also buy, sell and trade.
+- Prices? Per-vehicle prices are on their live inventory pages, not in this concept.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Ask about a car at https://exoticworldmotorcars.com/sendcomments, or call 214-422-6539.
