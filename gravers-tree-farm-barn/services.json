@@ -1,0 +1,13 @@
+{
+ "business": "The Barn at Graver's Tree Farm",
+ "location": "841 Dairy Road, Tamaqua, PA 18252",
+ "contact": {"email": "graverestate@gmail.com", "phone": "(570) 386-8932"},
+ "services": [
+  {"name": "Wedding venue: 1850s stone-walled barn, two floors", "price_from_usd": null},
+  {"name": "Ceremony site: Apple Orchard Courtyard", "price_from_usd": null},
+  {"name": "Ceremony site: Fern Creek", "price_from_usd": null},
+  {"name": "Ceremony site: Waterfall Garden", "price_from_usd": null}
+ ],
+ "booking": {"type": "form", "note": "Wedding Request form and Book A Tour on graverestate.com"},
+ "note": "Concept by Kerblabs. Prices are not published by the venue."
+}

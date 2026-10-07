@@ -1,0 +1,19 @@
+# The Barn at Graver's Tree Farm (concept by Kerblabs, not affiliated)
+
+> Barn wedding venue in Tamaqua, Pennsylvania: an 1850s barn with original stone walls and rough-cut timbers (per graverestate.com).
+
+## Venue (as listed on their site)
+- Three ceremony sites: Apple Orchard Courtyard, Fern Creek, Waterfall Garden
+- Two-floor barn interior with upper and lower event spaces
+- Bridal Suite and Groom's Lounge
+- Grounds: spring-fed pond, fountains, brooks
+- Pricing: not published, contact them
+
+## Contact
+- Address: 841 Dairy Road, Tamaqua, PA 18252
+- Phone: (570) 386-8932
+- Email: graverestate@gmail.com
+- Site: https://graverestate.com (Wedding Request form, Book A Tour)
+
+## Machine-readable
+- services.json
