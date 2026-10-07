@@ -1,0 +1,17 @@
+# Velocity Motorcars (concept by Kerblabs)
+
+> Independent exotic and luxury used car dealer at 720 Airpark Center Drive, Nashville, TN 37217. Facts from velocitymc.com. This page is a free concept, not affiliated with the business.
+
+## Facts
+- Phone: 615-540-1675
+- Hours: weekdays 10 AM to 6 PM; site says weekends available anytime
+- Services: exotic and luxury used car sales, consignment, service department, XPEL paint protection film, detailing, financing, appraisals and trade-ins
+- Marques listed: BMW, Porsche, Lamborghini, Ferrari, Bentley, Maserati, Audi, Chevrolet, Ford, Lexus, Aston Martin
+- Serves Nashville, Franklin, Brentwood, Knoxville, Memphis, Atlanta, Louisville
+
+## FAQ
+- Where? 720 Airpark Center Drive, Nashville, TN 37217.
+- Contact? Call 615-540-1675 or use the contact form at velocitymc.com.
+
+## Machine-readable
+- [services.json](services.json)

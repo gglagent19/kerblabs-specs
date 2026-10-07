@@ -1,0 +1,18 @@
+# Pools By Elio (concept by Kerblabs)
+
+> Concept site for Pools By Elio, a family-run custom pool builder at 412 Ezell Pike, Nashville, TN 37217. Facts from poolsbyelio.net. Not affiliated with or endorsed by the business.
+
+## Facts
+- Founders: Jonathan Elio Rodriguez and David Elio Rodriguez
+- Phone: (615) 568-3154
+- Email: eliocustompools@live.com
+- Everything done in-house; licensed, insured and bonded
+- 25+ years, 100+ pools built (their site)
+- Services: pools and spas, water features, water parks, fountains, backyard concepts (pool houses, pool bars, fire pits)
+- Hours: Saturday by appointment; closed Sunday
+
+## Machine-readable
+- [services.json](services.json)
+
+## FAQ
+- Cost: their site says pools start at $140,000+.

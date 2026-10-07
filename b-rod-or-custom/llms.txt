@@ -1,0 +1,16 @@
+# B-Rod or Custom (concept by Kerblabs)
+
+> Concept site for B-Rod or Custom, a Corvette restoration shop in Knoxville, TN. Facts from b-rodorcustom.com. Not affiliated with or endorsed by the business.
+
+## Facts
+- Owner: Larry Burchett
+- Focus: 1963 to 1967 Corvettes, nearly 40 years
+- GM licensed C2 body dealer
+- SEMA member since 2004
+- Contact: contact form on b-rodorcustom.com (no email published)
+
+## Machine-readable
+- [services.json](services.json)
+
+## FAQ
+- Prices: not published.

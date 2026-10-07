@@ -1,0 +1,17 @@
+{
+ "business": "Velocity Motorcars",
+ "url": "https://velocitymc.com",
+ "address": "720 Airpark Center Drive, Nashville, TN 37217",
+ "phone": "+1-615-540-1675",
+ "hours": "Weekdays 10:00-18:00; weekends available (per their site)",
+ "booking": {"method": "contact form or phone", "url": "https://velocitymc.com"},
+ "services": [
+  {"name": "Exotic and luxury used car sales", "price": null},
+  {"name": "Consignment", "price": null},
+  {"name": "Service department", "price": null},
+  {"name": "XPEL paint protection film", "price": null},
+  {"name": "Detailing", "price": null},
+  {"name": "Financing, appraisals and trade-ins", "price": null}
+ ],
+ "note": "Concept by Kerblabs. Prices are null because the business does not publish them."
+}

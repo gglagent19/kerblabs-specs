@@ -1,0 +1,15 @@
+# Camaro Concepts (concept by Kerblabs)
+
+> Concept site for Camaro Concepts, a Houston restoration, fabrication and parts shop at 2236 Blalock, Houston, TX 77080. Facts from camaroconcepts.com. Not affiliated with or endorsed by the business.
+
+## Facts
+- Phone: (713) 365-9000
+- Established 1989
+- Services: frame-up restorations, fabrication and sheetmetal work, parts sales (OEM, reproduction, used, hard-to-find), repairs for classic Chevrolet, Buick, Pontiac, Oldsmobile and Cadillac vehicles
+- Contact: form on camaroconcepts.com (name, email, message)
+
+## Machine-readable
+- [services.json](services.json)
+
+## FAQ
+- Prices: not published on their site.
