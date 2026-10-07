@@ -1,0 +1,23 @@
+{
+  "business": "Legacy Pools Nashville",
+  "website": "https://legacypoolsnashville.com",
+  "location": "Nashville, TN",
+  "phone": "+1-615-235-6635",
+  "email": null,
+  "contact_form": "https://legacypoolsnashville.com/contact-us/",
+  "hours": "Mon-Sat 08:00-18:00, closed Sunday",
+  "services": [
+    {"name": "New Pool Construction", "price": null},
+    {"name": "3D Pool Design", "price": null},
+    {"name": "Pool Remodeling", "price": null},
+    {"name": "Custom Spa", "price": null},
+    {"name": "Outdoor Living", "price": null},
+    {"name": "Custom Pavers", "price": null},
+    {"name": "Pool Landscaping", "price": null},
+    {"name": "Commercial Pools", "price": null},
+    {"name": "Gunite Pools", "price": null},
+    {"name": "Outdoor Kitchen and Patio", "price": null}
+  ],
+  "source": "legacypoolsnashville.com, fetched 2026-10-07",
+  "note": "Concept by Kerblabs, not affiliated. Prices are not published."
+}

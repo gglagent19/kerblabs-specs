@@ -1,0 +1,21 @@
+# Legacy Pools Nashville (concept by Kerblabs, not affiliated)
+
+> Locally owned family pool contractor in Nashville, Tennessee. Facts from legacypoolsnashville.com.
+
+## Services
+- New pool construction, 3D pool design, pool remodeling, custom spa, outdoor living, custom pavers, pool landscaping, commercial pools, gunite pools, outdoor kitchen and patio
+
+## Contact
+- Phone: (615) 235-6635
+- Form: https://legacypoolsnashville.com/contact-us/ (name, phone, email, project address)
+- Email: not published
+- Hours: Monday to Saturday 8 AM to 6 PM, closed Sunday
+- Prices: not published
+
+## Machine-readable
+- [services.json](services.json)
+- [sitemap.xml](sitemap.xml)
+
+## FAQ
+- Where? Nashville, Tennessee (street address not published on the homepage).
+- How to book? Call or use the contact form.

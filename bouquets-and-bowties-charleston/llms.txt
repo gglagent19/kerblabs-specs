@@ -1,0 +1,20 @@
+# Bouquets and Bowties Charleston (concept site by Kerblabs)
+
+> Wedding planning and event design for personalized, Southern-style weddings in Charleston, SC. Concept page, not their official site. Official site: https://bouquetsandbowtiescharleston.com
+
+## Services
+- Free wedding planning consultation
+- Event design and planning
+- Vendor coordination and recommendations
+- Day-of coordination, setup and teardown
+
+## Contact
+- Email: chauncey@bouquetsandbowtiescharleston.com (published on their contact page)
+- Contact form: https://bouquetsandbowtiescharleston.com/contact
+- Booking: now booking 2027 and 2028 weddings. Prices are not published.
+
+## Machine-readable
+- [services.json](services.json)
+
+## FAQ
+- Are prices published? No. The initial consultation is listed as free.

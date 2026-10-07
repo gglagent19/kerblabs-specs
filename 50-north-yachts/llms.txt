@@ -1,0 +1,14 @@
+# 50 North Yachts (concept site by Kerblabs)
+
+> Yacht brokerage and dealer in San Diego, California. Concept page, not their official site. Official site: https://www.50northyachts.com
+
+## Contact
+- Email: mgibbons@50northyachts.com (listed on their own site per our research)
+- Website: https://www.50northyachts.com
+- Prices and listings: see their site; none are stated here.
+
+## Machine-readable
+- [services.json](services.json)
+
+## FAQ
+- Are prices published here? No.

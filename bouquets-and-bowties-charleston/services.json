@@ -1,0 +1,13 @@
+{
+ "business": "Bouquets and Bowties Charleston",
+ "url": "https://bouquetsandbowtiescharleston.com",
+ "location": "Charleston, SC",
+ "contact": {"email": "chauncey@bouquetsandbowtiescharleston.com", "form": "https://bouquetsandbowtiescharleston.com/contact"},
+ "booking": "Now booking 2027 and 2028 weddings",
+ "services": [
+  {"name": "Wedding planning consultation", "price": null, "note": "listed as free"},
+  {"name": "Event design and planning", "price": null},
+  {"name": "Vendor coordination and recommendations", "price": null},
+  {"name": "Day-of coordination, setup and teardown", "price": null}
+ ]
+}

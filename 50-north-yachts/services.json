@@ -1,0 +1,9 @@
+{
+ "business": "50 North Yachts",
+ "url": "https://www.50northyachts.com",
+ "location": "San Diego, CA",
+ "contact": {"email": "mgibbons@50northyachts.com"},
+ "services": [
+  {"name": "Yacht brokerage and dealer", "price": null}
+ ]
+}
