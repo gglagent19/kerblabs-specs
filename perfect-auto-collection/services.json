@@ -1,0 +1,17 @@
+{
+ "business": "Perfect Auto Collection",
+ "url": "https://www.perfectautocollection.com",
+ "address": "895 E. Tallmadge Ave, Akron, OH 44310",
+ "phone": "+1-330-921-0895",
+ "hours": "Mon-Fri 10:00-19:00; Sat-Sun 10:00-17:00 (per their site)",
+ "booking": {"method": "contact form or phone", "url": "https://www.perfectautocollection.com/contact-us/"},
+ "services": [
+  {"name": "Luxury and exotic vehicle sales", "price": null},
+  {"name": "Car buying and trade-ins", "price": null},
+  {"name": "Financing (online credit approval)", "price": null},
+  {"name": "Nationwide shipping, enclosed or open transport", "price": null},
+  {"name": "Detailing", "price": null},
+  {"name": "Vehicle storage", "price": null}
+ ],
+ "note": "Concept by Kerblabs. Prices are null because the business does not publish them."
+}

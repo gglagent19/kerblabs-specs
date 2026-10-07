@@ -1,0 +1,16 @@
+# Perfect Auto Collection (concept by Kerblabs)
+
+> Luxury and exotic car dealer at 895 E. Tallmadge Ave, Akron, OH 44310. Facts from perfectautocollection.com. This page is a free concept, not affiliated with the business.
+
+## Facts
+- Phone: 330-921-0895
+- Hours: Mon-Fri 10 AM to 7 PM; Sat-Sun 10 AM to 5 PM
+- Services: luxury and exotic sales, car buying and trade-ins, financing, nationwide shipping (enclosed or open), detailing, vehicle storage, video consultations
+- Showroom: 35,000 sq ft climate-controlled indoor space (per their site)
+
+## FAQ
+- Where? 895 E. Tallmadge Ave, Akron, OH 44310.
+- Contact? Call 330-921-0895 or use the contact form at perfectautocollection.com/contact-us/.
+
+## Machine-readable
+- [services.json](services.json)
