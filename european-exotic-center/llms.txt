@@ -1,0 +1,22 @@
+# European Exotic Center (concept by Kerblabs)
+
+> Exotic and luxury European car dealership in Tampa, FL and San Clemente, CA. Addresses, hours and marques from public listings. This is a free concept, not their official site.
+
+- Website: https://www.europeanexoticcenter.com
+- Tampa: 7817 N Dale Mabry Hwy, Tampa, FL 33614. Sales and service Mon-Fri 9:00am-6:00pm, closed Sat-Sun.
+- San Clemente: Ste 464, Outlets at San Clemente, 101 W Avenida Vista Hermosa, San Clemente, CA 92672. Mon-Fri 9am-6pm, Sat-Sun 10am-4pm.
+- Marques: Ferrari, Lamborghini, Porsche, McLaren, Bentley, Aston Martin, Rolls-Royce and more
+- Phone: not reproduced here; see the official site
+
+## Services
+- Exotic car sales
+- Service
+
+## FAQ
+- Prices? Not published in this concept.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Visit https://www.europeanexoticcenter.com for inventory and contact details.

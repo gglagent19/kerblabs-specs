@@ -1,0 +1,28 @@
+# JBA MOTORS (concept by Kerblabs)
+
+> Pre-owned, late model dealer in Mesa, AZ. Facts from jbamotors.com. This is a free concept, not their official site.
+
+- Address: 245 S Mulberry, Mesa, AZ 85202
+- Phone: 480-599-6830
+- Website: https://www.jbamotors.com
+- Hours: Mon-Fri 9:30 AM-6:00 PM, Sat 11:00 AM-2:00 PM, Sun closed
+- Tagline: Luxury, Performance
+
+## Marques
+BMW, Maserati, Tesla, Land Rover, Volvo, Porsche, GMC, Genesis, Ford, Infiniti, Mercedes-Benz
+
+## Services
+- Pre-owned vehicle sales
+- Financing and auto loans
+- Trade-in evaluation
+- Vehicle warranty information
+- Vehicle finder service
+
+## FAQ
+- Prices? Not published in the source pages.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Call 480-599-6830 or visit jbamotors.com.

@@ -1,0 +1,36 @@
+# Park Place LTD (concept by Kerblabs)
+
+> Independently owned dealership founded in 1987 in Bellevue, WA, with a Boise, ID location. Facts from parkplaceltd.com. This is a free concept, not their official site.
+
+- Bellevue: 1880 136th Pl NE, Bellevue, WA 98005, 425-562-1000
+- Boise: 10990 W Fairview Ave, Boise, ID, 208-996-8166
+- Website: https://www.parkplaceltd.com
+- Founded: 1987
+- Facilities: over 40,000 sq ft of indoor showrooms, 15-bay service center
+
+## Marques
+- Aston Martin (exclusive regional dealer)
+- Lotus (exclusive regional dealer)
+- Porsche (pre-owned)
+- Karma (new models)
+- Various exotic, luxury and collectible automobiles
+
+## Services
+- New and used vehicle sales
+- Vehicle consignment
+- Auto financing
+- Paint protection
+- Extended warranties
+- Worldwide shipping
+- European auto service and repair
+- Auto salon with hand car wash
+- Event space rental
+
+## FAQ
+- Prices? Not published in the source pages.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Call Bellevue 425-562-1000 or Boise 208-996-8166, or visit parkplaceltd.com.

@@ -1,0 +1,23 @@
+# Barr Estate Winery (concept by Kerblabs)
+
+> Estate winery and olive oil on Union Road in the Geneseo District of Paso Robles, California. Facts from barrestatewines.com. This is a free concept, not their official site.
+
+- Address: 6950 Union Road, east side of Paso Robles, Geneseo District, CA
+- Website: https://www.barrestatewines.com
+- Hours: Fri to Sun, 11 to 4; last tasting 3:15 pm
+- Tasting fee listed: $20 (confirm with winery)
+
+## Wines
+- Aglianico, Albarino, Cabernet Sauvignon, Malbec, Mourvedre, Petit Verdot, Petite Sirah, Primitivo, Tannat
+- 100% extra virgin olive oil
+
+## FAQ
+- Where? 6950 Union Road, Paso Robles.
+- When? Friday to Sunday, 11 to 4.
+- Prices? Only the $20 tasting fee was seen; bottle prices not captured.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Visit https://www.barrestatewines.com for current details.

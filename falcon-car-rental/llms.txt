@@ -1,0 +1,35 @@
+# Falcon Exotic Car Rental (concept by Kerblabs)
+
+> Exotic and luxury car rental in Beverly Hills, CA. Facts from falconcarrental.com. This is a free concept, not their official site.
+
+- Legal name shown on site: Falcon Beverly Hills LLC
+- Address: 499 N Canon Dr, Beverly Hills, CA 90210
+- Hours: Mon-Fri 8 AM to 8 PM, Sat-Sun 8 AM to 6 PM
+- Website: https://www.falconcarrental.com
+- Phone: not found on the pages this concept draws from
+
+## Vehicle categories
+- Supercar
+- Convertible
+- SUV
+- Coupe and sports
+- Sedan
+- Ultra-luxury
+- EV
+
+## Services
+- Airport and hotel delivery
+- Pick-up and drop-off
+- One-way rentals
+- Chauffeur services
+- Multi-day discounts: 15 percent for 7 to 27 days, 30 percent for 28 days or more
+- Cryptocurrency payments accepted
+
+## Areas served
+Orange County, Newport Beach, Santa Barbara, Palm Springs, San Diego, Las Vegas, Phoenix, airports across California.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Visit https://www.falconcarrental.com to check rates and reserve.

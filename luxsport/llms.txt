@@ -1,0 +1,27 @@
+# LuxSport Motor Group, LLC (concept by Kerblabs)
+
+> Luxury and exotic car dealer in Woodbury, NY. Facts from luxsport.com. This is a free concept, not their official site.
+
+- Address: 300 Crossways Park Dr, Woodbury, NY 11797
+- Phone: 516-921-7800
+- Website: https://www.luxsport.com
+- Hours: Mon to Fri 10AM to 6PM, Sat 10AM to 5PM, closed Sunday
+- Showroom: by appointment only
+- Marques featured on their site: Porsche, Land Rover, Chevrolet, Audi, Lexus
+
+## Services
+- Luxury and exotic vehicle sales
+- Consignment
+- Storage
+- Transportation
+- Financing and leasing
+
+## FAQ
+- Where? Woodbury, NY.
+- Prices? Not published in the source pages.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Call 516-921-7800 or visit www.luxsport.com to arrange an appointment.

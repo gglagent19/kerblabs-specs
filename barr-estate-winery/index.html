@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Barr Estate Winery | Paso Robles, Geneseo District (concept)</title>
+<meta name="description" content="Concept site for Barr Estate Winery, estate wines and olive oil on Union Road in the Geneseo District of Paso Robles, CA. Built by Kerblabs as a free spec.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/barr-estate-winery/">
+<meta property="og:title" content="Barr Estate Winery | Concept site by Kerblabs">
+<meta property="og:description" content="Scroll down the barrel cellar corridor until the glass fills. Free concept.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/barr-estate-winery/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Winery","@id":"https://gglagent19.github.io/kerblabs-specs/barr-estate-winery/#biz","name":"Barr Estate Winery","url":"https://www.barrestatewines.com","address":{"@type":"PostalAddress","streetAddress":"6950 Union Road","addressLocality":"Paso Robles","addressRegion":"CA","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday","Sunday"],"opens":"11:00","closes":"16:00"}],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Product","name":"Estate wines: Aglianico, Albarino, Cabernet Sauvignon, Malbec, Mourvedre, Petit Verdot, Petite Sirah, Primitivo, Tannat"}},{"@type":"Offer","itemOffered":{"@type":"Product","name":"100% extra virgin olive oil"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Wine tasting"}}]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Where is Barr Estate Winery?","acceptedAnswer":{"@type":"Answer","text":"6950 Union Road, on the east side of Paso Robles in the Geneseo District, California."}},
+{"@type":"Question","name":"What are the tasting hours?","acceptedAnswer":{"@type":"Answer","text":"Friday to Sunday, 11 to 4, with the last tasting at 3:15 pm, per their site."}},
+{"@type":"Question","name":"What does a tasting cost?","acceptedAnswer":{"@type":"Answer","text":"Their site lists a $20 tasting fee. Check barrestatewines.com for current details."}},
+{"@type":"Question","name":"Which wines do they make?","acceptedAnswer":{"@type":"Answer","text":"Handcrafted, food friendly, limited production wines grown on the estate: Aglianico, Albarino, Cabernet Sauvignon, Malbec, Mourvedre, Petit Verdot, Petite Sirah, Primitivo and Tannat. They also list 100% extra virgin olive oil."}}
+]}]}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#160a0e;--bg2:#22111a;--cream:#f3e7d3;--wine:#8a2442;--gold:#d9a441;--oak:#b9824a;--mut:#cdb9a6}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--cream);font-family:Georgia,'Times New Roman',serif;line-height:1.55;-webkit-text-size-adjust:100%}
+a{color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 16px;background:rgba(22,10,14,.94);border-bottom:1px solid #3a1f29;font-family:Arial,Helvetica,sans-serif}
+.brand{font-weight:800;letter-spacing:.08em;font-size:14px;text-transform:uppercase;line-height:1.15}
+.navr{display:flex;gap:14px;align-items:center;font-size:13px}
+.navr a.l{text-decoration:none;display:none}
+.btn{display:inline-block;background:var(--wine);color:var(--cream);padding:10px 16px;border-radius:3px;text-decoration:none;font:700 13px Arial,sans-serif;letter-spacing:.04em}
+.btn.alt{background:var(--gold);color:#1a0b10}
+.hero{height:360vh;position:relative}
+.pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;padding-top:104px;display:flex;flex-direction:column}
+#cv{position:absolute;left:0;top:0;width:100%;height:100%;z-index:0;display:block}
+.copy,.call,.chips,.ill{position:relative;z-index:2}
+.copy{padding:0 18px;max-width:900px}
+.eyebrow{font:700 11px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+h1{font-size:clamp(34px,9vw,80px);line-height:1;margin:10px 0 10px;letter-spacing:-.02em;text-shadow:0 2px 12px #000}
+.sub{font-size:clamp(15px,3.8vw,19px);color:var(--mut);max-width:560px;text-shadow:0 1px 8px #000}
+.call{margin:auto 18px 0;max-width:620px;min-height:96px;border-left:5px solid var(--gold);padding:6px 0 6px 14px;background:rgba(22,10,14,.62)}
+.call b{display:block;font:800 clamp(20px,5.5vw,32px)/1.1 Georgia,serif}
+.call span{display:block;margin-top:6px;font-size:clamp(14px,3.6vw,17px);color:var(--mut)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 18px 4px;max-width:720px}
+.chips i{font:700 11px Arial,sans-serif;letter-spacing:.06em;font-style:normal;padding:5px 9px;border-radius:14px;border:1px solid #5a3a45;color:#8d7a78;background:rgba(22,10,14,.6);transition:all .35s}
+.chips i.on{border-color:var(--gold);color:#1a0b10;background:var(--gold);box-shadow:0 0 12px rgba(217,164,65,.55)}
+.ill{margin:0 18px max(14px,env(safe-area-inset-bottom));font:11px Arial,sans-serif;color:#9d8a86;letter-spacing:.05em}
+section{padding:72px 18px;max-width:1040px;margin:0 auto}
+h2{font-size:clamp(28px,7vw,48px);line-height:1.05;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:22px}
+.card{background:var(--bg2);border:1px solid #3a1f29;padding:20px;border-radius:4px}
+.card h3{font-size:20px;margin-bottom:6px;color:var(--gold)}
+.card p{color:var(--mut);font-size:16px}
+.band{background:var(--wine);color:var(--cream);max-width:none}
+.band .in{max-width:1040px;margin:0 auto}
+.band p{max-width:640px}
+.faq details{border-bottom:1px solid #3a1f29;padding:14px 0}
+.faq summary{font-weight:700;cursor:pointer}
+.faq p{margin-top:8px;color:var(--mut)}
+.ctaRow{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+footer{padding:32px 18px 90px;text-align:center;font:13px/1.6 Arial,sans-serif;color:var(--mut);border-top:1px solid #3a1f29}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:8px;padding:10px 12px max(10px,env(safe-area-inset-bottom));background:rgba(22,10,14,.96);border-top:1px solid #3a1f29}
+.sticky .btn{flex:1;text-align:center}
+@media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr)}.navr a.l{display:inline}.sticky{display:none}footer{padding-bottom:40px}.pin{padding-top:112px}.copy,.call,.chips,.ill{margin-left:48px}.call{margin-right:auto}nav{padding:8px 40px}}
+@media(prefers-reduced-motion:reduce){.hero{height:auto}.pin{position:static;height:auto;min-height:100svh}}
+</style>
+</head>
+<body>
+<nav>
+ <span class="brand">Barr Estate Winery</span>
+ <div class="navr"><a class="l" href="#wines">Wines</a><a class="l" href="#visit">Visit</a><a class="l" href="#faq">FAQ</a><a class="l" href="#agent-ready">Agent-ready</a><a class="btn alt" href="https://www.barrestatewines.com">barrestatewines.com</a></div>
+</nav>
+
+<div class="hero" id="hero">
+ <div class="pin">
+  <canvas id="cv" aria-hidden="true"></canvas>
+  <div class="copy">
+   <div class="eyebrow">Geneseo District &middot; Paso Robles</div>
+   <h1>Walk the cellar. Fill the glass.</h1>
+   <p class="sub">Scroll down the barrel corridor until the glass is full.</p>
+  </div>
+  <div class="call" id="call"><b id="cT">Union Road, Paso Robles</b><span id="cS">6950 Union Road, east side of Paso Robles in the Geneseo District.</span></div>
+  <div class="chips" id="chips"><i>Aglianico</i><i>Albarino</i><i>Cabernet Sauvignon</i><i>Malbec</i><i>Mourvedre</i><i>Petit Verdot</i><i>Petite Sirah</i><i>Primitivo</i><i>Tannat</i><i>Olive oil</i></div>
+  <div class="ill">Illustrative cellar graphic, not their actual cellar.</div>
+ </div>
+</div>
+
+<section id="wines">
+ <h2>Grown on the estate</h2>
+ <p>Handcrafted, food friendly, limited production wines, as their site describes them.</p>
+ <div class="grid">
+  <div class="card"><h3>Nine wines</h3><p>Aglianico, Albarino, Cabernet Sauvignon, Malbec, Mourvedre, Petit Verdot, Petite Sirah, Primitivo and Tannat.</p></div>
+  <div class="card"><h3>Olive oil</h3><p>100% extra virgin olive oil, also listed on their site.</p></div>
+  <div class="card"><h3>Club and events</h3><p>A wine club and events appear in their site menu. See barrestatewines.com for details.</p></div>
+ </div>
+</section>
+
+<section class="band" id="visit"><div class="in">
+ <h2>Come taste</h2>
+ <p>6950 Union Road, on the east side of Paso Robles in the Geneseo District. Open Friday to Sunday, 11 to 4, last tasting at 3:15 pm. Their site lists a $20 tasting fee; confirm current details with them.</p>
+ <div class="ctaRow"><a class="btn alt" href="https://www.barrestatewines.com">Visit barrestatewines.com</a></div>
+</div></section>
+
+<section id="agent-ready">
+ <h2>Agent-Ready included</h2>
+ <p>This concept ships with llms.txt, robots.txt, schema markup and a machine-readable services file, so AI assistants can read what Barr Estate Winery pours, where it is and when it is open. See <a href="llms.txt">llms.txt</a> and <a href="services.json">services.json</a>.</p>
+</section>
+
+<section id="faq" class="faq" style="padding-top:0">
+ <h2>FAQ</h2>
+ <details><summary>Where are they?</summary><p>6950 Union Road, east side of Paso Robles, in the Geneseo District, California.</p></details>
+ <details><summary>When can I taste?</summary><p>Friday to Sunday, 11 to 4, last tasting at 3:15 pm, per their site.</p></details>
+ <details><summary>What does a tasting cost?</summary><p>Their site lists $20. Check barrestatewines.com for current details.</p></details>
+ <details><summary>Which wines?</summary><p>Aglianico, Albarino, Cabernet Sauvignon, Malbec, Mourvedre, Petit Verdot, Petite Sirah and Tannat, plus Primitivo and olive oil.</p></details>
+</section>
+
+<footer>Concept by Kerblabs. Not affiliated with or endorsed by Barr Estate Winery. Facts from barrestatewines.com; visuals are illustrative.</footer>
+<div class="sticky"><a class="btn alt" href="https://www.barrestatewines.com">barrestatewines.com</a></div>
+
+<script>
+(function(){
+var hero=document.getElementById('hero'),cv=document.getElementById('cv'),ctx=cv.getContext('2d'),
+cT=document.getElementById('cT'),cS=document.getElementById('cS'),chips=document.querySelectorAll('#chips i');
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+var steps=[
+["Union Road, Paso Robles","6950 Union Road, east side of Paso Robles in the Geneseo District."],
+["Grown on the estate","Handcrafted, food friendly, limited production wines."],
+["Open Friday to Sunday","11 to 4, last tasting at 3:15 pm. Their site lists a $20 tasting fee."],
+["Wines and olive oil","Nine estate wines and 100% extra virgin olive oil, per their site."]];
+var W=0,H=0,dpr=1,N=16,MAXC=11;
+function size(){dpr=Math.min(2,window.devicePixelRatio||1);W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
+function barrel(x,y,r,a){
+ ctx.globalAlpha=a;
+ ctx.fillStyle='#6b3f1f';ctx.beginPath();ctx.arc(x,y,r,0,7);ctx.fill();
+ ctx.strokeStyle='#2a140a';ctx.lineWidth=Math.max(1,r*.08);ctx.stroke();
+ ctx.strokeStyle='#c99a5b';ctx.lineWidth=Math.max(1,r*.07);
+ ctx.beginPath();ctx.arc(x,y,r*.86,0,7);ctx.stroke();
+ ctx.beginPath();ctx.arc(x,y,r*.7,0,7);ctx.strokeStyle='#8f5a2c';ctx.stroke();
+ ctx.fillStyle='#3a1d0d';ctx.beginPath();ctx.arc(x,y+r*.15,r*.09,0,7);ctx.fill();
+ ctx.globalAlpha=1;
+}
+function draw(t){
+ var cx=W/2,cy=H*.46,f=Math.min(H*.62,W*.9),c=t*MAXC;
+ ctx.clearRect(0,0,W,H);
+ var g=ctx.createLinearGradient(0,0,0,H);g.addColorStop(0,'#0e0508');g.addColorStop(.46,'#2a1218');g.addColorStop(1,'#120709');
+ ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+ // floor and ceiling edge lines converge on vanishing point
+ ctx.strokeStyle='#3d2229';ctx.lineWidth=1;
+ for(var k=-2;k<=2;k++){ctx.beginPath();ctx.moveTo(cx+k*W*.55,H);ctx.lineTo(cx,cy);ctx.stroke();}
+ // floor slab lines scroll with camera
+ for(var j=0;j<24;j++){var dd=j+1-(c%1);var py=cy+f*1.0/dd;if(py>H||dd<.3)continue;ctx.globalAlpha=.5;ctx.beginPath();ctx.moveTo(0,py);ctx.lineTo(W,py);ctx.stroke();}
+ ctx.globalAlpha=1;
+ // barrels far to near
+ for(var i=N;i>=Math.floor(c);i--){
+  var d=i-c+1;if(d<.35)continue;
+  var a=Math.min(1,Math.max(0,1.25-d/N*1.1)); if(d<.7)a*=(d-.35)/.35;
+  var r=f*.5/d, X=f*1.3/d;
+  var ys=[cy+f*.5/d,cy-f*.5/d];
+  for(var s=-1;s<=1;s+=2){for(var q=0;q<2;q++){
+   var x=cx+s*X; if(x+r<0||x-r>W)continue;
+   barrel(x,ys[q],r,a);
+  }}
+ }
+ // glass at the corridor end
+ var ft=Math.max(0,Math.min(1,(t-.55)/.4));
+ var gs=Math.min(W,H)*(.10+.16*Math.min(1,t/.9)),gx=cx,gy=cy+gs*.15;
+ var gw=gs*.55,gh=gs;
+ ctx.globalAlpha=Math.min(1,t*3);
+ var lvl=gh*.8*ft;
+ if(lvl>0){var wg=ctx.createLinearGradient(0,gy+gh*.4-lvl,0,gy+gh*.4);wg.addColorStop(0,'#a82d52');wg.addColorStop(1,'#5a1028');
+  ctx.fillStyle=wg;ctx.beginPath();ctx.moveTo(gx-gw*.5*(1-.15*(1-lvl/(gh*.8))),gy+gh*.4-lvl);ctx.lineTo(gx+gw*.5*(1-.15*(1-lvl/(gh*.8))),gy+gh*.4-lvl);ctx.lineTo(gx+gw*.32,gy+gh*.4);ctx.lineTo(gx-gw*.32,gy+gh*.4);ctx.closePath();ctx.fill();}
+ ctx.strokeStyle='rgba(243,231,211,.8)';ctx.lineWidth=Math.max(1.5,gs*.02);
+ ctx.beginPath();ctx.moveTo(gx-gw*.5,gy-gh*.4);ctx.lineTo(gx-gw*.32,gy+gh*.4);ctx.lineTo(gx+gw*.32,gy+gh*.4);ctx.lineTo(gx+gw*.5,gy-gh*.4);ctx.stroke();
+ ctx.beginPath();ctx.moveTo(gx,gy+gh*.4);ctx.lineTo(gx,gy+gh*.62);ctx.moveTo(gx-gw*.3,gy+gh*.62);ctx.lineTo(gx+gw*.3,gy+gh*.62);ctx.stroke();
+ ctx.globalAlpha=1;
+}
+function upd(){
+ var r=hero.getBoundingClientRect(),max=hero.offsetHeight-innerHeight;
+ var t=reduce?1:(max>0?Math.min(1,Math.max(0,-r.top/max)):1);
+ draw(t);
+ var i=Math.min(3,Math.floor(t*4));if(t>=1)i=3;
+ cT.textContent=steps[i][0];cS.textContent=steps[i][1];
+ var ft=Math.max(0,Math.min(1,(t-.55)/.4));
+ for(var k=0;k<chips.length;k++)chips[k].className=(ft*chips.length>k+.01)?'on':'';
+}
+function rs(){size();upd()}
+addEventListener('scroll',upd,{passive:true});addEventListener('resize',rs);rs();
+})();
+</script>
+</body>
+</html>
