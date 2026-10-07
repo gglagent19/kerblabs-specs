@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gglagent19.github.io/kerblabs-specs/montana-fly-fishing-lodge/sitemap.xml

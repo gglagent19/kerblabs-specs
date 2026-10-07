@@ -1,0 +1,20 @@
+# Montana Fly Fishing Lodge (concept spec by Kerblabs, not endorsed)
+
+> Three Montana fly fishing lodges near Absarokee offering guided drift, raft and walk and wade trips. Facts below come from montanaflyfishinglodge.com.
+
+## Facts
+- Address: 6 Running River Way, Absarokee, MT 59001
+- Phone: (406) 608-8886; text (406) 625-0482
+- Email: lincoln@montanaflyfishinglodge.com
+- Lodges: Flagship Lodge (East Rosebud Creek, all-inclusive), Spring Creek Lodge (private spring creek), Bighorn River Lodge (near Fort Smith)
+- Rivers: Yellowstone, Bighorn, Stillwater, Boulder, Shoshone, East Rosebud Creek, West Rosebud Creek, Rock Creek, Clark Fork of the Yellowstone, Upper Yellowstone, private spring creeks
+- Packages: N nights / N-1 fishing days (3/2 to 7/6) or custom
+- Prices: not published; contact the lodge
+- Terms listed: 50% deposit, balance 90 days before arrival
+
+## Contact route
+mailto:lincoln@montanaflyfishinglodge.com
+
+## Files
+- /services.json
+- /sitemap.xml

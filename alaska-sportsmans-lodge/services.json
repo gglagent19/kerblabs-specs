@@ -1,0 +1,23 @@
+{
+ "business":"Alaska Sportsman's Lodge",
+ "source":"https://www.fishasl.com/kvichak/asl-package-pricing/",
+ "location":"Western Alaska, Kvichak River near Lake Iliamna",
+ "contact":{"name":"Brian Kraft","email":"brian@fishasl.com","phone_anchorage_office":"+1-888-826-7376","phone_cell":"+1-907-227-8719"},
+ "currency":"USD",
+ "price_unit":"per person",
+ "services":[
+  {"name":"Deluxe Riverside Cabin package","description":"Two-bedroom cabins with river views and private bathrooms.","prices":{"3_nights":8975,"4_nights":11475,"5_nights":14275,"7_nights":19275}},
+  {"name":"Iliamna Cabin Suite package","description":"Four-guest capacity, two bedrooms, loft, dual bathrooms.","prices":{"3_nights":9975,"4_nights":12475,"5_nights":14975,"7_nights":19975}}
+ ],
+ "species_seasons":[
+  {"species":"Rainbow Trout","season":"June 8 to Oct 1","note":"24-26 in average"},
+  {"species":"King Salmon","season":"June 10 to July 31","note":"25-30 lbs"},
+  {"species":"Sockeye Salmon","season":"June 28 to July 20","note":null},
+  {"species":"Chum Salmon","season":"July 15 to Aug 20","note":"12 lbs average"},
+  {"species":"Silver Salmon","season":"July 28 to Sept 25","note":null},
+  {"species":"Fall Rainbow","season":"Aug 20 to Oct 5","note":"trophy sizes"}
+ ],
+ "included":["Private charter flight Anchorage to lodge","Float-plane excursions","Guides (1 per 2 anglers)","Cabins","Fishing gear","Permits","Wi-Fi","Meals","Beverages","Fish processing and shipping home"],
+ "excluded":["ADF&G fishing licenses","Personal alcohol","Massage therapy","Gratuities (10-20% suggested)"],
+ "booking":"mailto:brian@fishasl.com"
+}

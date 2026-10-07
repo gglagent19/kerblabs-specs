@@ -1,0 +1,19 @@
+# Thoughtfully Curated Events (concept by Kerblabs, not affiliated)
+
+> Wedding planning and design in Colorado, based in Denver (per thoughtfullycuratedevents.com).
+
+## Services (starting prices as listed on their services page)
+- Full-Service Wedding Planning and Design: from $10,000
+- Partial Planning and Design: from $7,500
+- 90-Day Coordination: from $3,500
+- Destination Elopements and Social Events: from $2,000
+
+## Contact
+- Email: thoughtfullycuratedevents@gmail.com
+- Phone: 720.443.1726
+- Instagram: @thoughtfullycuratedevents
+- Hours: Tue-Thu 10am-4pm, weekends by appointment, closed Mondays
+- Site: https://thoughtfullycuratedevents.com
+
+## Machine-readable
+- services.json

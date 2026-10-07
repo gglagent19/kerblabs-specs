@@ -1,0 +1,15 @@
+{
+ "business": "Thoughtfully Curated Events",
+ "location": "Denver, Colorado",
+ "serves": ["Colorado"],
+ "contact": {"email": "thoughtfullycuratedevents@gmail.com", "phone": "720.443.1726", "instagram": "@thoughtfullycuratedevents"},
+ "hours": "Tue-Thu 10am-4pm, weekends by appointment, closed Mondays",
+ "services": [
+  {"name": "Full-Service Wedding Planning and Design", "price_from_usd": 10000},
+  {"name": "Partial Planning and Design", "price_from_usd": 7500},
+  {"name": "90-Day Coordination", "price_from_usd": 3500},
+  {"name": "Destination Elopements and Social Events", "price_from_usd": 2000}
+ ],
+ "booking": null,
+ "note": "Concept by Kerblabs. Starting prices as listed on their own services page."
+}

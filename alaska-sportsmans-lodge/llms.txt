@@ -1,0 +1,16 @@
+# Alaska Sportsman's Lodge (concept site by Kerblabs)
+
+> Fishing lodge in Western Alaska on the Kvichak River near Lake Iliamna. Unofficial concept page. Official site: https://www.fishasl.com/
+
+## Facts (from fishasl.com)
+- Contact: Brian Kraft, brian@fishasl.com, Anchorage office (888) 826-7376, cell (907) 227-8719
+- 2027 packages per person: Deluxe Riverside Cabin 3/4/5/7 nights $8,975 / $11,475 / $14,275 / $19,275; Iliamna Cabin Suite $9,975 / $12,475 / $14,975 / $19,975
+- Species and seasons: Rainbow Trout Jun 8 to Oct 1; King Salmon Jun 10 to Jul 31; Sockeye Jun 28 to Jul 20; Chum Jul 15 to Aug 20; Silver Jul 28 to Sep 25; Fall Rainbow Aug 20 to Oct 5
+- Included: private charter flight Anchorage to lodge, float-plane excursions, guides (1 per 2 anglers), cabins, gear, permits, Wi-Fi, meals, beverages, fish processing and shipping
+- Not included: ADF&G licenses, personal alcohol, massage, gratuities (10 to 20 percent suggested)
+
+## Booking route
+Email brian@fishasl.com. Confirm current rates with the lodge.
+
+## Data
+- services.json

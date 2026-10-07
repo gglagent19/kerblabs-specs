@@ -1,0 +1,19 @@
+{
+  "business": "Montana Fly Fishing Lodge",
+  "source": "montanaflyfishinglodge.com",
+  "contact": {"email": "lincoln@montanaflyfishinglodge.com", "phone": "+1-406-608-8886", "text": "+1-406-625-0482", "address": "6 Running River Way, Absarokee, MT 59001"},
+  "currency": null,
+  "services": [
+    {"name": "Flagship Lodge stay (East Rosebud Creek, all-inclusive)", "price": null},
+    {"name": "Spring Creek Lodge stay (private spring creek)", "price": null},
+    {"name": "Bighorn River Lodge stay (near Fort Smith)", "price": null},
+    {"name": "Drift boat trip", "price": null},
+    {"name": "Raft trip", "price": null},
+    {"name": "Walk and wade trip", "price": null},
+    {"name": "Guided day trip", "price": null},
+    {"name": "Package N nights / N-1 days (3/2, 4/3, 5/4, 6/5, 7/6, custom)", "price": null}
+  ],
+  "rivers": ["Yellowstone River","Bighorn River","Stillwater River","Boulder River","Shoshone River","East Rosebud Creek","West Rosebud Creek","Rock Creek","Clark Fork of the Yellowstone","Upper Yellowstone","Private spring creeks"],
+  "terms": {"deposit": "50% at booking", "balance": "due 90 days before arrival"},
+  "booking_route": "mailto:lincoln@montanaflyfishinglodge.com"
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Noble Wine Tours | Private luxury wine tours in Napa, Sonoma and Willamette (concept)</title>
+<meta name="description" content="Concept site by Kerblabs for Noble Wine Tours: customized private wine tours in Napa Valley, Sonoma Valley and Willamette Valley.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/noble-wine-tours/">
+<meta property="og:title" content="Noble Wine Tours (concept)">
+<meta property="og:description" content="Private, customized luxury wine tours in Napa, Sonoma and Willamette.">
+<style>
+:root{--ink:#14090c;--wine:#6d1a2c;--wine2:#9b2742;--cream:#f4ead9;--brass:#c9a35b;--mute:#b9a99a}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--cream);font-family:Georgia,'Times New Roman',serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 20px;background:rgba(20,9,12,.88);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,163,91,.25)}
+.brand{font-size:17px;letter-spacing:.14em;text-transform:uppercase;line-height:1.2}
+.brand small{display:block;font-size:10px;letter-spacing:.3em;color:var(--brass)}
+.nav-cta{background:var(--brass);color:var(--ink);text-decoration:none;padding:10px 16px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.hero{height:340vh;position:relative}
+.stage{position:sticky;top:0;height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:24px;padding:104px 6vw 40px;overflow:hidden}
+.copy .eyebrow{color:var(--brass);letter-spacing:.3em;text-transform:uppercase;font-size:12px;margin-bottom:16px}
+h1{font-size:clamp(38px,6vw,84px);line-height:1.02;font-weight:400}
+h1 em{color:var(--wine2);font-style:italic}
+.copy p.lead{margin-top:18px;max-width:34ch;color:var(--mute);font-size:18px}
+.btns{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 22px;text-decoration:none;font-size:13px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--brass)}
+.btn.fill{background:var(--brass);color:var(--ink)}
+.glassbox{position:relative;height:100%;max-height:640px;display:flex;align-items:center;justify-content:center}
+svg#glass{height:100%;max-height:560px;width:auto;max-width:100%;overflow:visible}
+.read{position:absolute;left:50%;bottom:0;transform:translateX(-50%);text-align:center;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--brass);white-space:nowrap}
+.read b{display:block;font-size:22px;letter-spacing:.06em;color:var(--cream);font-weight:400;text-transform:none;margin-top:2px}
+.notes{position:absolute;right:0;top:12%;display:grid;gap:14px}
+.note{border-left:2px solid rgba(201,163,91,.25);padding-left:12px;font-size:14px;color:var(--mute);opacity:.35;transition:.4s}
+.note.on{opacity:1;color:var(--cream);border-color:var(--brass)}
+.note small{display:block;color:var(--brass);letter-spacing:.2em;text-transform:uppercase;font-size:10px}
+.sec{padding:90px 6vw;max-width:1200px;margin:0 auto}
+.sec h2{font-size:clamp(28px,4vw,48px);font-weight:400;margin-bottom:12px}
+.sec .k{color:var(--brass);letter-spacing:.28em;text-transform:uppercase;font-size:12px;margin-bottom:10px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:30px}
+.card{border:1px solid rgba(201,163,91,.3);padding:26px;background:linear-gradient(160deg,rgba(109,26,44,.35),rgba(20,9,12,0))}
+.card h3{font-weight:400;font-size:24px;margin-bottom:8px}
+.card p{color:var(--mute);font-size:15px}
+.band{background:var(--wine);padding:70px 6vw;text-align:center}
+.band p{max-width:46ch;margin:0 auto;font-size:clamp(20px,2.6vw,30px);font-style:italic}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+.contact a.big{display:block;font-size:22px;margin:6px 0;color:var(--brass)}
+.slot{border:1px dashed var(--brass);padding:22px;color:var(--mute);font-size:14px}
+footer{padding:30px 6vw 90px;color:var(--mute);font-size:12px;text-align:center;border-top:1px solid rgba(201,163,91,.2)}
+.sticky{display:none}
+@media(max-width:760px){
+ .stage{grid-template-columns:1fr;grid-template-rows:auto 1fr;padding:104px 20px 24px;gap:8px;align-content:start}
+ .copy p.lead{font-size:15px;margin-top:10px}
+ .btns{display:none}
+ h1{font-size:34px}
+ .glassbox{min-height:0}
+ svg#glass{max-height:100%}
+ .notes{position:static;display:none}
+ .grid3,.contact{grid-template-columns:1fr}
+ .sec{padding:60px 20px}
+ .sticky{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20}
+ .sticky a{flex:1;text-align:center;padding:14px;background:var(--brass);color:var(--ink);text-decoration:none;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+ .sticky a+a{background:var(--ink);color:var(--brass);border-top:1px solid var(--brass)}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.note{transition:none}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"TravelAgency","@id":"https://gglagent19.github.io/kerblabs-specs/noble-wine-tours/#biz","name":"Noble Wine Tours","description":"Private, customized luxury wine tours in Napa Valley, Sonoma Valley and Willamette Valley.","email":"austin@noblewt.com","telephone":["+1-707-628-4170","+1-503-583-0401"],"areaServed":["Napa Valley","Sonoma Valley","Willamette Valley"],"url":"https://gglagent19.github.io/kerblabs-specs/noble-wine-tours/"},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Which regions do the tours cover?","acceptedAnswer":{"@type":"Answer","text":"Napa Valley, Sonoma Valley and Oregon's Willamette Valley."}},
+{"@type":"Question","name":"Are the tours private or shared?","acceptedAnswer":{"@type":"Answer","text":"Private and customized. Each day is planned around your group and your tastes, not a shared bus."}},
+{"@type":"Question","name":"How do I book?","acceptedAnswer":{"@type":"Answer","text":"Send an inquiry by form, email (austin@noblewt.com) or phone. Share who is coming and what you enjoy, and the day is curated for you."}},
+{"@type":"Question","name":"What do tours cost?","acceptedAnswer":{"@type":"Answer","text":"Prices, durations and group sizes are discussed per tour."}}
+]}]}
+</script>
+</head>
+<body>
+<nav>
+ <div class="brand">Noble Wine Tours<small>Napa · Sonoma · Willamette</small></div>
+ <a class="nav-cta" href="#contact">Inquire</a>
+</nav>
+
+<header class="hero" id="hero">
+ <div class="stage">
+  <div class="copy">
+   <div class="eyebrow">Private wine tours</div>
+   <h1>Your day, <em>poured</em> to taste.</h1>
+   <p class="lead">Customized, luxury private wine tours in Napa Valley, Sonoma Valley and Willamette Valley, planned by Austin and Katie.</p>
+   <div class="btns"><a class="btn fill" href="#contact">Plan your tour</a><a class="btn" href="tel:+17076284170">Call (707) 628-4170</a></div>
+  </div>
+  <div class="glassbox">
+   <svg id="glass" viewBox="0 0 200 320" aria-label="A wine glass fills and swirls as you scroll (illustrative)">
+    <defs>
+     <clipPath id="bowl"><path d="M44 18 H156 C160 80 156 128 130 150 C116 160 108 166 106 176 V240 H100 V240 H94 V176 C92 166 84 160 70 150 C44 128 40 80 44 18 Z"/></clipPath>
+     <linearGradient id="wineGrad" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#a02a47"/><stop offset="1" stop-color="#4a0e1d"/></linearGradient>
+    </defs>
+    <g clip-path="url(#bowl)">
+     <g id="liquid"><path id="surf" d="" fill="url(#wineGrad)"/></g>
+     <path d="M52 30 C50 80 56 118 74 140" stroke="rgba(255,255,255,.28)" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </g>
+    <path d="M44 18 H156 C160 80 156 128 130 150 C116 160 108 166 106 176 V240 H100 V240 H94 V176 C92 166 84 160 70 150 C44 128 40 80 44 18 Z" fill="none" stroke="#f4ead9" stroke-opacity=".7" stroke-width="2"/>
+    <path d="M100 240 V286 M62 296 Q100 280 138 296 Q100 308 62 296 Z" fill="none" stroke="#f4ead9" stroke-opacity=".7" stroke-width="2"/>
+    <ellipse cx="100" cy="300" rx="42" ry="9" fill="none" stroke="#c9a35b" stroke-opacity=".5"/>
+   </svg>
+   <div class="notes" id="notes">
+    <div class="note" data-at=".38"><small>Valley 1</small>Napa Valley</div>
+    <div class="note" data-at=".62"><small>Valley 2</small>Sonoma Valley</div>
+    <div class="note" data-at=".86"><small>Valley 3</small>Willamette Valley</div>
+   </div>
+   <div class="read" id="read">Pouring<b id="stage">Filling the glass</b></div>
+  </div>
+ </div>
+</header>
+
+<div class="band"><p>Tours are curated from Austin and Katie's knowledge and relationships, so the day fits your group rather than a script.</p></div>
+
+<section class="sec" id="regions">
+ <div class="k">Three valleys</div>
+ <h2>Where we take you</h2>
+ <div class="grid3">
+  <div class="card"><h3>Napa Valley</h3><p>Private, customized tours of Napa Valley, planned around your tastes and your group.</p></div>
+  <div class="card"><h3>Sonoma Valley</h3><p>A different pace in Sonoma Valley, with each stop chosen for you rather than picked from a list.</p></div>
+  <div class="card"><h3>Willamette Valley</h3><p>Oregon's Willamette Valley, with the same private, tailored approach.</p></div>
+ </div>
+</section>
+
+<section class="sec" id="how">
+ <div class="k">How it works</div>
+ <h2>Private, never a shared bus</h2>
+ <div class="grid3">
+  <div class="card"><h3>1. Tell us</h3><p>Send an inquiry through the form or call. Share who is coming and what you enjoy.</p></div>
+  <div class="card"><h3>2. We curate</h3><p>Austin and Katie shape the day from their knowledge and relationships in each valley.</p></div>
+  <div class="card"><h3>3. You enjoy</h3><p>Show up and taste. The details are handled.</p></div>
+ </div>
+</section>
+
+<section class="sec" id="faq">
+ <h2>Questions</h2>
+ <div class="card"><h3>Which regions do the tours cover?</h3><p>Napa Valley, Sonoma Valley and Oregon's Willamette Valley.</p></div>
+ <div class="card"><h3>Are the tours private or shared?</h3><p>Private and customized. Each day is planned around your group and your tastes, not a shared bus.</p></div>
+ <div class="card"><h3>How do I book?</h3><p>Send an inquiry by form, email or phone. Share who is coming and what you enjoy, and the day is curated for you.</p></div>
+ <div class="card"><h3>What do tours cost?</h3><p>Prices, durations and group sizes are discussed per tour.</p></div>
+</section>
+<section class="sec" id="contact">
+ <div class="contact">
+  <div>
+   <div class="k">Inquire</div>
+   <h2>Plan your private tour</h2>
+   <p style="color:var(--mute)">Prices, durations and group sizes are discussed per tour.</p>
+   <p style="margin-top:18px"><a class="big" href="mailto:austin@noblewt.com">austin@noblewt.com</a>
+   <a class="big" href="tel:+17076284170">(707) 628-4170</a>
+   <a class="big" href="tel:+15035830401">(503) 583-0401</a></p>
+  </div>
+  <div class="slot">Booking or inquiry form goes here (placeholder for the owner's own form or booking tool). Concept: no fake widget.</div>
+ </div>
+</section>
+
+<footer>Concept by Kerblabs for Noble Wine Tours. Not affiliated or endorsed. The glass animation is illustrative. Details from noblewt.com.</footer>
+<div class="sticky"><a href="tel:+17076284170">Call</a><a href="#contact">Inquire</a></div>
+
+<script>
+(function(){
+ var hero=document.getElementById('hero'),surf=document.getElementById('surf'),liquid=document.getElementById('liquid'),
+ notes=[].slice.call(document.querySelectorAll('.note')),stage=document.getElementById('stage');
+ var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ function clamp(x){return x<0?0:x>1?1:x}
+ function draw(p,swirlT){
+  // level: y from 170 (empty) up to 70 (full)
+  var fill=clamp(p/.4), y=176-fill*100;
+  var amp=fill>0?2+ (p>.4?7*Math.sin(clamp((p-.4)/.2)*Math.PI):0)+(p>.4?3:0):0;
+  var ph=swirlT, d='M20 '+y;
+  for(var x=20;x<=180;x+=8){d+=' L'+x+' '+(y+amp*Math.sin(x/16+ph))}
+  d+=' L180 260 L20 260 Z';
+  surf.setAttribute('d',d);
+  var tilt=p>.4?Math.sin(swirlT)*5*clamp((p-.4)/.2):0;
+  liquid.setAttribute('transform','rotate('+tilt+' 100 150)');
+  stage.textContent=p<.4?'Filling the glass':p<.95?'Swirl and taste':'Cheers';
+ }
+ function update(){
+  var r=hero.getBoundingClientRect(),p=reduce?1:clamp(-r.top/(hero.offsetHeight-innerHeight));
+  draw(p,p*26);
+  notes.forEach(function(n){n.classList.toggle('on',p>=parseFloat(n.dataset.at))});
+ }
+ addEventListener('scroll',update,{passive:true});addEventListener('resize',update);update();
+})();
+</script>
+</body>
+</html>
