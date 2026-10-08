@@ -1,0 +1,15 @@
+# Formula Imports (concept by Kerblabs)
+
+> Pre-owned imported luxury vehicle dealer in Charlotte NC and Greenville SC. Facts from formulaimports.com.
+
+- Charlotte: 7511 East Independence Boulevard, Charlotte, NC 28227, (980) 202-5890, Mon-Fri 9am-7pm, Sat 10am-5pm
+- Greenville: 2750 Laurens Road, Greenville, SC 29607, (864) 565-7380, Mon-Fri 9am-6pm, Sat 10am-5pm
+- Services: pre-owned imported luxury sales, consignment, trade-ins, online financing pre-qualification, vehicle shipping, service department, appointment scheduling
+- Service marques listed: Audi, BMW, Mercedes-Benz, Porsche, Ferrari, Lexus, Maserati, Lamborghini, Volkswagen
+- Contact: form at formulaimports.com/contact-formula-one-imports-in-charlotte-nc
+
+## Actions
+- Contact: call a showroom or use the site contact form
+- Machine-readable services: services.json
+
+This is an unaffiliated concept page. Visuals are illustrative.

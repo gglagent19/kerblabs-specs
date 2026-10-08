@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Up The Keys Tours | Key West and Marathon (concept)</title>
+<meta name="description" content="Concept site for Up The Keys Tours, Key West FL. The Overseas Highway counts down mile markers as you scroll. Built by Kerblabs as a free spec.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/up-the-keys-tours/">
+<meta property="og:title" content="Up The Keys Tours | Concept site by Kerblabs">
+<meta property="og:description" content="Mile markers count down from Marathon to Key West as you scroll. Free concept.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/up-the-keys-tours/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"TouristAttraction","@id":"https://gglagent19.github.io/kerblabs-specs/up-the-keys-tours/#biz","name":"Up The Keys Tours","url":"https://upthekeys.com/","telephone":"+1-305-587-5575","email":"upthekeystour@gmail.com","address":{"@type":"PostalAddress","streetAddress":"6810 Front St","addressLocality":"Key West","addressRegion":"FL","postalCode":"33040","addressCountry":"US"}},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Where do Up The Keys Tours run?","acceptedAnswer":{"@type":"Answer","text":"Key West and the Florida Keys, including day tours between Marathon and Key West, per their site."}},
+{"@type":"Question","name":"How do I book?","acceptedAnswer":{"@type":"Answer","text":"Online through FareHarbor, or by phone at 305-587-5575."}},
+{"@type":"Question","name":"What does the 4 hour Nature Tour cost?","acceptedAnswer":{"@type":"Answer","text":"Listed at $119 for adults and $35 for children, starting in Key West."}}
+]}]}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#14191c;--bg2:#1e262a;--ink:#f6f1e4;--mut:#aeb9b9;--grn:#17a05b;--sun:#f6c344;--sea:#36b9c4;--line:#2f3b40}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.55;-webkit-text-size-adjust:100%}
+a{color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;height:64px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 16px;background:rgba(20,25,28,.96);border-bottom:1px solid var(--line);font-family:Arial,Helvetica,sans-serif}
+.brand{font-weight:800;letter-spacing:.05em;font-size:13px;line-height:1.1;text-transform:uppercase;max-width:110px}
+.navr{display:flex;gap:14px;align-items:center;font-size:13px}
+.navr a.l{text-decoration:none;display:none}
+.btn{display:inline-block;background:var(--sun);color:#241b00;padding:10px 16px;border-radius:2px;text-decoration:none;font:700 13px Arial,sans-serif;letter-spacing:.05em}
+.btn.alt{background:var(--ink);color:#14191c}
+.hero{height:440vh;position:relative}
+.pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;padding-top:104px;display:flex;flex-direction:column}
+.copy{padding:0 18px;max-width:900px}
+.eyebrow{font:700 11px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--sun)}
+h1{font-size:clamp(32px,8.5vw,76px);line-height:1;margin:8px 0;letter-spacing:-.02em}
+.sub{font-size:clamp(14px,3.6vw,18px);color:var(--mut);max-width:560px}
+.stage{flex:1;min-height:0;display:flex;flex-direction:column;margin-top:6px}
+.stage svg{flex:1;min-height:0;width:100%;display:block}
+.cap{font:11px Arial,sans-serif;color:var(--mut);padding:0 18px;letter-spacing:.04em}
+.call{margin:4px 18px 0;max-width:620px;min-height:72px;border-left:5px solid var(--grn);padding:4px 0 4px 14px}
+.call b{display:block;font:800 clamp(20px,5.4vw,30px)/1.1 Georgia,serif}
+.call span{display:block;margin-top:4px;font-size:clamp(13px,3.4vw,16px);color:var(--mut)}
+.dots{display:flex;gap:6px;margin:8px 18px max(14px,env(safe-area-inset-bottom))}
+.dots i{width:24px;height:4px;background:var(--line);display:block;border-radius:2px}
+.dots i.on{background:var(--grn)}
+section{padding:72px 18px;max-width:1040px;margin:0 auto}
+h2{font-size:clamp(28px,7vw,48px);line-height:1.05;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:22px}
+.card{background:var(--bg2);border:1px solid var(--line);padding:20px;border-radius:3px}
+.card h3{font-size:20px;margin-bottom:6px;color:var(--sea)}
+.card p{color:var(--mut);font-size:16px}
+.band{background:var(--bg2);max-width:none}
+.band .in{max-width:1040px;margin:0 auto}
+.band p{max-width:640px;color:var(--mut)}
+.note{margin-top:16px;border-left:4px solid var(--sun);padding:8px 14px;background:var(--bg2);color:var(--mut)}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{font-weight:700;cursor:pointer}
+.faq p{margin-top:8px;color:var(--mut)}
+.ctaRow{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+footer{padding:32px 18px 90px;text-align:center;font:13px/1.6 Arial,sans-serif;color:var(--mut);border-top:1px solid var(--line)}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:8px;padding:10px 12px max(10px,env(safe-area-inset-bottom));background:rgba(20,25,28,.97);border-top:1px solid var(--line)}
+.sticky .btn{flex:1;text-align:center}
+@media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr)}.navr a.l{display:inline}.sticky{display:none}footer{padding-bottom:40px}.pin{padding-top:112px}.copy,.call,.dots,.cap{margin-left:48px}.brand{max-width:none}nav{padding:0 40px}}
+@media(prefers-reduced-motion:reduce){.hero{height:auto}.pin{position:static;height:auto;padding-bottom:20px}.stage svg{height:60vh;flex:none}}
+</style>
+</head>
+<body>
+<nav>
+ <span class="brand">Up The Keys Tours</span>
+ <div class="navr"><a class="l" href="#tours">Tours</a><a class="l" href="#faq">FAQ</a><a class="l" href="#agent-ready">Agent-ready</a><a class="btn alt" href="tel:+13055875575">Call 305-587-5575</a></div>
+</nav>
+
+<div class="hero" id="hero">
+ <div class="pin">
+  <div class="copy">
+   <div class="eyebrow">Key West &middot; Marathon &middot; Florida Keys</div>
+   <h1>Drive the Keys, one mile marker at a time.</h1>
+   <p class="sub">Scroll and the Overseas Highway counts down from Marathon to Key West, mile zero.</p>
+  </div>
+  <div class="stage">
+   <svg id="rd" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Illustrative road scene: a green mile marker sign counts down from 50 to 0 while the road rolls toward the viewer">
+    <defs>
+     <linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f3a5a"/><stop offset="1" stop-color="#f09a5a"/></linearGradient>
+    </defs>
+    <rect x="0" y="0" width="400" height="110" fill="url(#sk)"/>
+    <circle cx="290" cy="104" r="16" fill="#f6c344"/>
+    <rect x="0" y="110" width="400" height="190" fill="#0c4a55"/>
+    <polygon points="190,110 210,110 360,280 40,280" fill="#2a3035"/>
+    <line x1="190" y1="110" x2="40" y2="280" stroke="#f6f1e4" stroke-width="1.4"/>
+    <line x1="210" y1="110" x2="360" y2="280" stroke="#f6f1e4" stroke-width="1.4"/>
+    <g id="dash" fill="#f6c344"></g>
+    <g id="post"></g>
+    <g>
+     <rect x="120" y="12" width="160" height="80" rx="7" fill="#0f7a45" stroke="#f6f1e4" stroke-width="3"/>
+     <rect x="127" y="19" width="146" height="66" rx="4" fill="none" stroke="#f6f1e4" stroke-width="1"/>
+     <text x="200" y="36" text-anchor="middle" fill="#f6f1e4" font-family="Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="3">MILE MARKER</text>
+     <text id="mm" x="200" y="74" text-anchor="middle" fill="#f6f1e4" font-family="Arial,sans-serif" font-size="40" font-weight="800">50</text>
+    </g>
+    <line x1="380" y1="289" x2="20" y2="289" stroke="#3a484d" stroke-width="3" stroke-linecap="round"/>
+    <line id="prog" x1="380" y1="289" x2="380" y2="289" stroke="#17a05b" stroke-width="3" stroke-linecap="round"/>
+    <circle id="van" cx="380" cy="289" r="4.5" fill="#f6c344"/>
+    <text x="380" y="283" text-anchor="end" fill="#aeb9b9" font-family="Arial,sans-serif" font-size="8" letter-spacing="1">MARATHON</text>
+    <text x="20" y="283" fill="#aeb9b9" font-family="Arial,sans-serif" font-size="8" letter-spacing="1">KEY WEST</text>
+   </svg>
+   <div class="cap">Illustrative scene, generated in the browser. Mile numbers are approximate; Key West is mile 0. Prices are those listed on their site.</div>
+  </div>
+  <div class="call"><b id="cT">Marathon, around mile 50</b><span id="cS">Day tours run between Marathon and Key West.</span></div>
+  <div class="dots" id="dots"><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
+ </div>
+</div>
+
+<section id="tours">
+ <h2>Tours from Marathon to Key West</h2>
+ <p>Up The Keys Tours is a family-run outfit at 6810 Front St, Key West. Their site lists day trips up the Keys, Key West walking tours and an evening tiki bar crawl, with free pick-up and drop-off at Key West stays and vacation rentals. Booking runs through FareHarbor, or by phone.</p>
+ <div class="grid">
+  <div class="card"><h3>Day tours</h3><p>The 4 hour Nature Tour from Key West, adults $119, children $35. Aquarium Encounters and Dolphin Research Center day tours, adults $159, children $35. Marathon to Key West private day tour, $549 for up to 6.</p></div>
+  <div class="card"><h3>On foot</h3><p>Welcome to Key West and Haunted History walking tours, $275 for up to 6 people, $35 for each additional guest. Groups of 12 or more call 305-928-8961.</p></div>
+  <div class="card"><h3>After dark</h3><p>The Florida Keys Tiki Bar Crawl visits three tiki bars, $350 for up to 4 people, adults only.</p></div>
+ </div>
+ <div class="note">The mile numbers on the hero are an illustrative count between Marathon and Key West. Tour prices are the ones listed on their site; check it for current rates.</div>
+</section>
+
+<section class="band"><div class="in">
+ <h2>A first impression as smooth as the highway</h2>
+ <p>Visitors pick a Keys tour in seconds, on a phone, usually in the car. This concept turns the drive itself into the first screen, so the page feels like the trip, using only what the business already publishes.</p>
+ <div class="ctaRow"><a class="btn" href="tel:+13055875575">Call 305-587-5575</a><a class="btn alt" href="mailto:upthekeystour@gmail.com">Email upthekeystour@gmail.com</a><a class="btn alt" href="https://upthekeys.com/">Their current site</a></div>
+</div></section>
+
+<section id="agent-ready">
+ <h2>Agent-Ready included</h2>
+ <p>This concept ships with llms.txt, robots.txt, schema markup and a machine-readable tours file, so AI assistants can read what is offered, for how much and how to book. See <a href="llms.txt">llms.txt</a> and <a href="services.json">services.json</a>.</p>
+</section>
+
+<section id="faq" class="faq" style="padding-top:0">
+ <h2>FAQ</h2>
+ <details><summary>Where do the tours run?</summary><p>Key West and the Florida Keys, including day tours between Marathon and Key West, per their site.</p></details>
+ <details><summary>How do I book?</summary><p>Online through FareHarbor, or by phone at 305-587-5575.</p></details>
+ <details><summary>What does the 4 hour Nature Tour cost?</summary><p>Listed at $119 for adults and $35 for children, starting in Key West.</p></details>
+</section>
+
+<footer>Concept by Kerblabs. Not affiliated with or endorsed by Up The Keys Tours. Facts from upthekeys.com; visuals are illustrative.</footer>
+<div class="sticky"><a class="btn" href="tel:+13055875575">Call</a><a class="btn alt" href="mailto:upthekeystour@gmail.com">Email</a></div>
+
+<script>
+(function(){
+var hero=document.getElementById('hero');
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function seg(t,a,b){return Math.min(1,Math.max(0,(t-a)/(b-a)))}
+function ease(u){return 1-Math.pow(1-u,3)}
+function $(i){return document.getElementById(i)}
+var NS='http://www.w3.org/2000/svg';
+function mk(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e}
+var D=[],P=[],i;
+for(i=0;i<10;i++)D.push(mk('rect',{},$('dash')));
+for(i=0;i<4;i++)P.push(mk('rect',{fill:'#0f7a45',stroke:'#f6f1e4'},$('post')));
+var steps=[
+["Marathon, around mile 50","Day tours run between Marathon and Key West."],
+["Aquarium and dolphin day tours","Adults $159, children $35, as listed."],
+["The 4 hour Nature Tour","Starts in Key West: adults $119, children $35."],
+["Key West on foot","Welcome and Haunted History walks, $275 for up to 6."],
+["After dark","Tiki Bar Crawl, $350 for up to 4, adults only."],
+["Key West, mile 0. Book your seat","Online via FareHarbor, or call 305-587-5575."]];
+var cT=$('cT'),cS=$('cS'),dots=document.querySelectorAll('#dots i'),mm=$('mm'),prog=$('prog'),van=$('van');
+function upd(){
+ var t=1;
+ if(!reduce){var r=hero.getBoundingClientRect(),max=hero.offsetHeight-innerHeight;t=Math.min(1,Math.max(0,max>0?-r.top/max:1))}
+ var k,f,s,y,w,h,j;
+ for(j=0;j<10;j++){
+  f=((j/10+t*6)%1);s=f*f;y=110+170*s;w=0.6+4*s;h=2+16*s;
+  D[j].setAttribute('x',(200-w/2).toFixed(1));D[j].setAttribute('y',y.toFixed(1));D[j].setAttribute('width',w.toFixed(1));D[j].setAttribute('height',h.toFixed(1));
+  D[j].setAttribute('opacity',Math.min(1,f*5).toFixed(2));
+ }
+ for(j=0;j<4;j++){
+  f=((j/4+t*3)%1);s=f*f;y=110+170*s;w=2+8*s;h=6+34*s;
+  P[j].setAttribute('x',(200+10+150*s+6+16*s).toFixed(1));P[j].setAttribute('y',(y-h).toFixed(1));P[j].setAttribute('width',w.toFixed(1));P[j].setAttribute('height',h.toFixed(1));
+  P[j].setAttribute('stroke-width',(0.3+s).toFixed(2));P[j].setAttribute('opacity',Math.min(1,f*5).toFixed(2));
+ }
+ k=ease(seg(t,.08,.8));
+ mm.textContent=Math.round(50*(1-k));
+ var vx=380-360*k;
+ prog.setAttribute('x2',vx.toFixed(1));van.setAttribute('cx',vx.toFixed(1));
+ var q=t<.06?0:t<.22?1:t<.42?2:t<.62?3:t<.82?4:5;
+ cT.textContent=steps[q][0];cS.textContent=steps[q][1];
+ for(var m=0;m<6;m++)dots[m].className=m<=q?'on':'';
+}
+addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+})();
+</script>
+</body>
+</html>

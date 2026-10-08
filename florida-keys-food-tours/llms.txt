@@ -1,0 +1,26 @@
+# Florida Keys Food Tours (concept by Kerblabs)
+
+> Food tours, a cooking class and sunset cruise in Islamorada and Key Largo, Florida. This is an unaffiliated concept page; facts come from flkeysfoodtour.com.
+
+- Phone: (305) 394-1028
+- Email: flkeysfoodtour@gmail.com
+- Booking: most tours via FareHarbor; Key Largo Food Tour by phone
+- Hours: not published
+
+## Tours (from-prices, per their site)
+- The Original Islamorada Food Tour: $119, 4 hours, up to 12, all ages
+- Florida Keys Fish Cooking Class: $99, 1.5 hours, up to 20, all ages
+- Islamorada Golf Cart Food Tour: $179, 4 hours, up to 10, all ages
+- Islamorada Golf Cart Evening Sunset Food Tour: $199, 3 hours, up to 10, 21+
+- Islamorada Local's Happy Hour Tour: $99, 2 hours, up to 8, 21+
+- Islamorada Sunset Happy Hour Tour: $129, 3 hours, up to 8
+- Holiday Shopping Luxury Golf Cart Food Tour: $149, 3 hours, up to 10
+- Islamorada Sunset Boat Cruise Food Tour: $1,400, 3 hours, up to 6
+- Key Largo Food Tour: $109, 4 hours, up to 12, phone booking
+
+## FAQ
+- Where? Islamorada and Key Largo, Florida.
+- How to book? FareHarbor online, or call (305) 394-1028 for Key Largo.
+
+## Machine-readable
+- [services.json](services.json)

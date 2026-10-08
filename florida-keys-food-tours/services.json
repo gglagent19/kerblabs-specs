@@ -1,0 +1,21 @@
+{
+  "business": "Florida Keys Food Tours",
+  "url": "https://www.flkeysfoodtour.com/",
+  "areas": ["Islamorada, FL", "Key Largo, FL"],
+  "phone": "+1-305-394-1028",
+  "email": "flkeysfoodtour@gmail.com",
+  "source": "flkeysfoodtour.com, concept by Kerblabs, unaffiliated",
+  "booking": "FareHarbor online for most tours; Key Largo Food Tour by phone",
+  "services": [
+    {"name": "The Original Islamorada Food Tour", "price_from_usd": 119, "duration": "4 hours", "max_group": 12},
+    {"name": "Florida Keys Fish Cooking Class", "price_from_usd": 99, "duration": "1.5 hours", "max_group": 20},
+    {"name": "Islamorada Sunset Boat Cruise Food Tour", "price_from_usd": 1400, "duration": "3 hours", "max_group": 6},
+    {"name": "Islamorada Golf Cart Evening Sunset Food Tour", "price_from_usd": 199, "duration": "3 hours", "max_group": 10},
+    {"name": "Islamorada Golf Cart Food Tour", "price_from_usd": 179, "duration": "4 hours", "max_group": 10},
+    {"name": "Islamorada Local's Happy Hour Tour", "price_from_usd": 99, "duration": "2 hours", "max_group": 8},
+    {"name": "Holiday Shopping Luxury Golf Cart Food Tour", "price_from_usd": 149, "duration": "3 hours", "max_group": 10},
+    {"name": "Islamorada Sunset Happy Hour Tour", "price_from_usd": 129, "duration": "3 hours", "max_group": 8},
+    {"name": "Key Largo Food Tour", "price_from_usd": 109, "duration": "4 hours", "max_group": 12}
+  ],
+  "hours": null
+}

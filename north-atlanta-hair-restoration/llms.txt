@@ -1,0 +1,24 @@
+# North Atlanta Hair Restoration (concept by Kerblabs)
+
+> Hair restoration clinic in Alpharetta, GA. Facts below are from nahairrestoration.com. This page is a free concept, not the clinic's own site.
+
+- Address: 55 Roswell Street, Suite 120, Alpharetta, GA 30009
+- Phone: (678) 845-7521
+- Practice: "13+ Years Focused In Hair Restoration" (their wording)
+- Physicians listed: Daniel A. Danyo, MD, MBA; Dr. Goldstein; Polina Rubin, PA-C
+
+## Procedures
+- Shave-Less (No Shave) FUE
+- Shaved FUE
+- Long Hair FUE (men and women)
+- Beard and Body Hair Transplant
+- PRP Injection Therapy
+- Scar Revisions
+- Financing: CareCredit link on their site
+
+## FAQ
+- Where? 55 Roswell Street, Suite 120, Alpharetta.
+- Prices? Not published here; resources on cost and financing are on their site.
+
+## Machine-readable
+- services.json

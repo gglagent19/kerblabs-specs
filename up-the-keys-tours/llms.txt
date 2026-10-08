@@ -1,0 +1,25 @@
+# Up The Keys Tours (concept by Kerblabs)
+
+> Day tours, Key West walking tours and a tiki bar crawl in Key West and the Florida Keys. This is an unaffiliated concept page; facts come from upthekeys.com.
+
+- Address: 6810 Front St, Key West, FL 33040
+- Phone: 305-587-5575 (groups of 12 or more on walking tours: 305-928-8961)
+- Email: upthekeystour@gmail.com
+- Booking: FareHarbor online, or by phone
+- Hours: not published
+
+## Tours (prices per their site)
+- 4HR Up the Keys Nature Tour: adults $119, children $35, 4 hours, starts in Key West
+- Aquarium Encounters Day Tour: adults $159, children $35
+- Dolphin Research Center Day Tour: adults $159, children $35
+- Marathon to Key West Private Day Tour: $549 for up to 6, plus $35 per additional guest
+- Welcome to Key West Walking Tour: $275 for up to 6, plus $35 per additional guest
+- Haunted History Walking Tour: $275 for up to 6, plus $35 per additional guest
+- Florida Keys Tiki Bar Crawl: $350 for up to 4, plus $35 per additional guest, adults only
+
+## FAQ
+- Where? Key West and the Florida Keys, including Marathon to Key West.
+- How to book? FareHarbor online, or call 305-587-5575.
+
+## Machine-readable
+- [services.json](services.json)
