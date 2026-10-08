@@ -1,0 +1,26 @@
+# Kay Contemporary Art (concept by Kerblabs)
+
+> Contemporary art gallery at 600 Canyon Road, Santa Fe, NM 87501, representing local and nationally recognized artists. Facts from kaycontemporaryart.com. This is a free concept, not their official site.
+
+- Phone: 505.365.3992
+- Contact form: https://www.kaycontemporaryart.com/contact (name, email, optional phone, subject, message)
+- Hours: the source site lists two different schedules; confirm by phone
+
+## Media shown (per their site)
+- Oil
+- Acrylic
+- Watercolor
+- Bronze
+- Mixed media
+- Works on paper
+
+## FAQ
+- Where? 600 Canyon Road, Santa Fe.
+- Prices? Not published in the source pages.
+- Artists and exhibitions? See kaycontemporaryart.com.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Call 505.365.3992 or submit the contact form to enquire about work.

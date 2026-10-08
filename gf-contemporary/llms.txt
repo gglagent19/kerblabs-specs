@@ -1,0 +1,17 @@
+# GF Contemporary (concept by Kerblabs)
+
+> Concept site, not the official one. Official site: https://www.gfcontemporary.com
+
+- Type: contemporary art gallery
+- Address: 707 Canyon Road, Santa Fe, NM 87501
+- Phone: 505-983-3707
+- Hours (per their contact page): Mon-Sat 10 am-5 pm, Sun 12 pm-5 pm
+- Contact form: https://www.gfcontemporary.com/contact (name, email, optional phone, subject, message)
+
+## Machine-readable
+- services.json
+
+## FAQ
+- Where is it? 707 Canyon Road, Santa Fe.
+- When is it open? Mon-Sat 10-5, Sun 12-5.
+- How to reach them? Call 505-983-3707 or use the contact form.

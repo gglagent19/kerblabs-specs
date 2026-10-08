@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GF Contemporary | Canyon Road, Santa Fe (concept)</title>
+<meta name="description" content="Concept site for GF Contemporary, a gallery at 707 Canyon Road, Santa Fe. Track lights swing onto the wall as you scroll. Built by Kerblabs as a free spec.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/gf-contemporary/">
+<meta property="og:title" content="GF Contemporary | Concept site by Kerblabs">
+<meta property="og:description" content="Track lights swing onto a dark gallery wall, one work at a time. Free concept.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/gf-contemporary/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"ArtGallery","@id":"https://gglagent19.github.io/kerblabs-specs/gf-contemporary/#biz","name":"GF Contemporary","url":"https://www.gfcontemporary.com","telephone":"+1-505-983-3707","email":"art@gfcontemporary.com","address":{"@type":"PostalAddress","streetAddress":"707 Canyon Road","addressLocality":"Santa Fe","addressRegion":"NM","postalCode":"87501","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"10:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"12:00","closes":"17:00"}]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Where is GF Contemporary?","acceptedAnswer":{"@type":"Answer","text":"707 Canyon Road, Santa Fe, NM 87501."}},
+{"@type":"Question","name":"When is the gallery open?","acceptedAnswer":{"@type":"Answer","text":"Per their contact page: Monday to Saturday 10 am to 5 pm, Sunday 12 pm to 5 pm."}},
+{"@type":"Question","name":"How do I get in touch?","acceptedAnswer":{"@type":"Answer","text":"Call 505-983-3707 or use the contact form at https://www.gfcontemporary.com/contact (name, email, optional phone, subject, message)."}}
+]}]}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--wall:#1b1822;--wall2:#27232f;--bone:#efe7d8;--mut:#a9a0b0;--brass:#e9b95a;--terra:#d2603a;--line:#3a3544}
+html{scroll-behavior:smooth}
+body{background:var(--wall);color:var(--bone);font-family:Georgia,'Times New Roman',serif;line-height:1.55;-webkit-text-size-adjust:100%}
+a{color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;height:64px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 16px;background:rgba(27,24,34,.95);border-bottom:1px solid var(--line);font-family:Arial,Helvetica,sans-serif}
+.brand{font-weight:800;letter-spacing:.06em;font-size:14px;line-height:1.1;text-transform:uppercase;max-width:150px}
+.navr{display:flex;gap:14px;align-items:center;font-size:13px}
+.navr a.l{text-decoration:none;display:none}
+.btn{display:inline-block;background:var(--bone);color:var(--wall);padding:10px 16px;border-radius:2px;text-decoration:none;font:700 13px Arial,sans-serif;letter-spacing:.05em}
+.btn.alt{background:var(--brass);color:var(--wall)}
+.hero{height:400vh;position:relative}
+.pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;padding-top:108px;display:flex;flex-direction:column}
+.copy{padding:0 18px;max-width:900px}
+.eyebrow{font:700 11px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--brass)}
+h1{font-size:clamp(32px,8.5vw,76px);line-height:1;margin:8px 0;letter-spacing:-.02em}
+.sub{font-size:clamp(14px,3.6vw,18px);color:var(--mut);max-width:560px}
+.stage{flex:1;min-height:0;display:flex;flex-direction:column;margin-top:6px}
+.stage svg{flex:1;min-height:0;width:100%;display:block}
+.cap{font:11px Arial,sans-serif;color:var(--mut);padding:0 18px;letter-spacing:.04em}
+.call{margin:4px 18px 0;max-width:620px;min-height:72px;border-left:5px solid var(--brass);padding:4px 0 4px 14px}
+.call b{display:block;font:800 clamp(20px,5.4vw,30px)/1.1 Georgia,serif}
+.call span{display:block;margin-top:4px;font-size:clamp(13px,3.4vw,16px);color:var(--mut)}
+.dots{display:flex;gap:6px;margin:8px 18px max(14px,env(safe-area-inset-bottom))}
+.dots i{width:24px;height:4px;background:var(--line);display:block;border-radius:2px}
+.dots i.on{background:var(--brass)}
+section{padding:72px 18px;max-width:1040px;margin:0 auto}
+h2{font-size:clamp(28px,7vw,48px);line-height:1.05;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:22px}
+.card{background:var(--wall2);border:1px solid var(--line);padding:20px;border-radius:3px}
+.card h3{font-size:20px;margin-bottom:6px;color:var(--brass)}
+.card p{color:var(--mut);font-size:16px}
+.band{background:var(--bone);color:var(--wall);max-width:none}
+.band .in{max-width:1040px;margin:0 auto}
+.band p{max-width:640px}
+.note{margin-top:16px;border-left:4px solid var(--terra);padding:8px 14px;background:var(--wall2);color:var(--mut)}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{font-weight:700;cursor:pointer}
+.faq p{margin-top:8px;color:var(--mut)}
+.ctaRow{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+footer{padding:32px 18px 90px;text-align:center;font:13px/1.6 Arial,sans-serif;color:var(--mut);border-top:1px solid var(--line)}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:8px;padding:10px 12px max(10px,env(safe-area-inset-bottom));background:rgba(27,24,34,.96);border-top:1px solid var(--line)}
+.sticky .btn{flex:1;text-align:center}
+@media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr)}.navr a.l{display:inline}.sticky{display:none}footer{padding-bottom:40px}.pin{padding-top:112px}.copy,.call,.dots,.cap{margin-left:48px}.brand{max-width:none}nav{padding:0 40px}}
+@media(prefers-reduced-motion:reduce){.hero{height:auto}.pin{position:static;height:auto;padding-bottom:20px}.stage svg{height:60vh;flex:none}}
+</style>
+</head>
+<body>
+<nav>
+ <span class="brand">GF Contemporary</span>
+ <div class="navr"><a class="l" href="#visit">Visit</a><a class="l" href="#faq">FAQ</a><a class="l" href="#agent-ready">Agent-ready</a><a class="btn alt" href="tel:+15059833707">Call 505-983-3707</a></div>
+</nav>
+
+<div class="hero" id="hero">
+ <div class="pin">
+  <div class="copy">
+   <div class="eyebrow">707 Canyon Road &middot; Santa Fe</div>
+   <h1>Lit one work at a time.</h1>
+   <p class="sub">The room starts dark. Scroll and the track lights swing onto the wall, one by one.</p>
+  </div>
+  <div class="stage">
+   <svg id="room" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Illustrative dark gallery wall: five track lights swing round and each lights one framed work">
+    <defs>
+     <radialGradient id="pool" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#f6d58c" stop-opacity=".55"/><stop offset="1" stop-color="#f6d58c" stop-opacity="0"/></radialGradient>
+     <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6d58c" stop-opacity=".55"/><stop offset="1" stop-color="#f6d58c" stop-opacity=".06"/></linearGradient>
+    </defs>
+    <rect x="4" y="4" width="392" height="392" rx="8" fill="#14111a"/>
+    <rect x="4" y="340" width="392" height="56" fill="#0e0c12"/>
+    <rect x="20" y="22" width="360" height="6" rx="3" fill="#4a4456"/>
+    <g id="room-g"></g>
+   </svg>
+   <div class="cap">Illustrative visual, generated in the browser. These are not works from the gallery.</div>
+  </div>
+  <div class="call"><b id="cT">Lights down</b><span id="cS">An empty wall and a track on the ceiling.</span></div>
+  <div class="dots" id="dots"><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
+ </div>
+</div>
+
+<section id="visit">
+ <h2>Visit GF Contemporary</h2>
+ <p>707 Canyon Road, Santa Fe, NM 87501. Per their contact page the gallery is open Monday to Saturday 10 am to 5 pm and Sunday 12 pm to 5 pm.</p>
+ <div class="grid">
+  <div class="card"><h3>Find it</h3><p>707 Canyon Road, Santa Fe.</p></div>
+  <div class="card"><h3>Hours</h3><p>Mon to Sat 10 to 5. Sun 12 to 5.</p></div>
+  <div class="card"><h3>Reach out</h3><p>Call 505-983-3707 or send the form on their site.</p></div>
+ </div>
+ <div class="note">Their site has Artists and Exhibitions pages. This concept names no artist, exhibition or work, so every picture here is illustrative.</div>
+</section>
+
+<section class="band"><div class="in">
+ <h2>A first look worth the walk</h2>
+ <p>Canyon Road visitors decide in seconds. A gallery site can do what good lighting does: choose where the eye goes first and let the work carry it. This concept shows that idea in the browser, with no stock photos and no invented claims.</p>
+ <div class="ctaRow"><a class="btn alt" style="background:#1b1822;color:#efe7d8" href="tel:+15059833707">Call 505-983-3707</a><a class="btn" style="background:#d2603a;color:#fff" href="https://www.gfcontemporary.com/contact">Contact form</a></div>
+</div></section>
+
+<section id="agent-ready">
+ <h2>Agent-Ready included</h2>
+ <p>This concept ships with llms.txt, robots.txt, schema markup and a machine-readable services file, so AI assistants can read where the gallery is, when it is open and how to reach it. See <a href="llms.txt">llms.txt</a> and <a href="services.json">services.json</a>.</p>
+</section>
+
+<section id="faq" class="faq" style="padding-top:0">
+ <h2>FAQ</h2>
+ <details><summary>Where is the gallery?</summary><p>707 Canyon Road, Santa Fe, NM 87501.</p></details>
+ <details><summary>When is it open?</summary><p>Monday to Saturday 10 am to 5 pm, Sunday 12 pm to 5 pm, per their contact page.</p></details>
+ <details><summary>How do I get in touch?</summary><p>Call 505-983-3707 or use the contact form at gfcontemporary.com/contact.</p></details>
+</section>
+
+<footer>Concept by Kerblabs. Not affiliated with or endorsed by GF Contemporary. Facts from gfcontemporary.com; visuals are illustrative.</footer>
+<div class="sticky"><a class="btn alt" href="tel:+15059833707">Call</a><a class="btn" href="https://www.gfcontemporary.com/contact">Contact form</a></div>
+
+<script>
+(function(){
+var NS='http://www.w3.org/2000/svg';
+var hero=document.getElementById('hero');
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e}
+var G=document.getElementById('room-g');
+var PY=28,CY=200;
+var defs=[
+ {cx:55,w:62,h:86,k:0},
+ {cx:128,w:58,h:58,k:1},
+ {cx:200,w:70,h:104,k:2},
+ {cx:272,w:62,h:78,k:3},
+ {cx:345,w:58,h:92,k:4}
+];
+var lamps=defs.map(function(d,i){
+ var top=CY-d.h/2;
+ /* light pool on wall */
+ var pool=el('ellipse',{cx:d.cx,cy:CY,rx:d.w*.95,ry:d.h*.8,fill:'url(#pool)',opacity:0},G);
+ /* artwork */
+ var art=el('g',{opacity:.12},G);
+ var x=d.cx-d.w/2;
+ el('rect',{x:x,y:top,width:d.w,height:d.h,fill:'#efe7d8'},art);
+ var ix=x+6,iy=top+6,iw=d.w-12,ih=d.h-12;
+ if(d.k===0){el('rect',{x:ix,y:iy,width:iw,height:ih,fill:'#2f6f78'},art);el('circle',{cx:ix+iw*.5,cy:iy+ih*.38,r:iw*.3,fill:'#f0c75e'},art);el('rect',{x:ix,y:iy+ih*.7,width:iw,height:ih*.3,fill:'#1c3d44'},art)}
+ else if(d.k===1){el('rect',{x:ix,y:iy,width:iw,height:ih,fill:'#d2603a'},art);el('rect',{x:ix+iw*.2,y:iy+ih*.2,width:iw*.6,height:ih*.6,fill:'#27232f'},art)}
+ else if(d.k===2){el('rect',{x:ix,y:iy,width:iw,height:ih,fill:'#e8d9b8'},art);el('path',{d:'M'+ix+' '+(iy+ih)+' L'+(ix+iw*.5)+' '+iy+' L'+(ix+iw)+' '+(iy+ih)+'Z',fill:'#b5472b'},art);el('circle',{cx:ix+iw*.5,cy:iy+ih*.62,r:iw*.14,fill:'#1b1822'},art)}
+ else if(d.k===3){el('rect',{x:ix,y:iy,width:iw,height:ih,fill:'#3a4a7a'},art);for(var s=0;s<4;s++)el('rect',{x:ix,y:iy+ih*(.1+s*.22),width:iw*(.4+s*.15),height:ih*.1,fill:s%2?'#f0c75e':'#efe7d8'},art)}
+ else{el('rect',{x:ix,y:iy,width:iw,height:ih,fill:'#9a3b4a'},art);el('circle',{cx:ix+iw*.35,cy:iy+ih*.3,r:iw*.22,fill:'#f2a65a'},art);el('circle',{cx:ix+iw*.62,cy:iy+ih*.66,r:iw*.26,fill:'#27232f'},art)}
+ /* lamp: group pivoting at track */
+ var lg=el('g',{},G);
+ var dx=d.cx-d.cx,L=CY-PY; /* aimed straight down at frame, lamp x offset below */
+ var bw=d.w*.62;
+ var beam=el('polygon',{points:'0,0 '+(-bw)+','+L+' '+bw+','+L,fill:'url(#beam)',opacity:0},lg);
+ el('rect',{x:-5,y:-2,width:10,height:6,fill:'#6a6478'},lg);
+ var can=el('rect',{x:-6,y:4,width:12,height:16,rx:3,fill:'#8b8498'},lg);
+ var lens=el('circle',{cx:0,cy:21,r:4,fill:'#4a4456'},lg);
+ /* lamp mounts at a track slot offset from its frame, so it must swing in */
+ var slot=d.cx+(i%2?-34:34);
+ /* wall label */
+ var lab=el('g',{opacity:0},G);
+ el('rect',{x:d.cx-22,y:CY+d.h/2+10,width:44,height:14,fill:'#efe7d8'},lab);
+ el('rect',{x:d.cx-16,y:CY+d.h/2+15,width:32,height:2,fill:'#1b1822'},lab);
+ el('rect',{x:d.cx-12,y:CY+d.h/2+19,width:24,height:1.5,fill:'#8b8498'},lab);
+ return {d:d,pool:pool,art:art,lg:lg,beam:beam,lens:lens,lab:lab,slot:slot,L:L};
+});
+var steps=[
+["Lights down","An empty wall and a track on the ceiling."],
+["707 Canyon Road","The gallery sits on Canyon Road, Santa Fe."],
+["Open six days","Monday to Saturday, 10 am to 5 pm, per their contact page."],
+["Sunday too","Sundays 12 pm to 5 pm, per their contact page."],
+["Artists and exhibitions","Their site has both pages. This concept names none."],
+["Say hello","Call 505-983-3707 or use the form on their site."]];
+var cT=document.getElementById('cT'),cS=document.getElementById('cS'),dots=document.querySelectorAll('#dots i');
+function seg(t,a,b){return Math.min(1,Math.max(0,(t-a)/(b-a)))}
+function upd(){
+ var t=1;
+ if(!reduce){var r=hero.getBoundingClientRect(),max=hero.offsetHeight-innerHeight;t=Math.min(1,Math.max(0,max>0?-r.top/max:1))}
+ lamps.forEach(function(m,i){
+  var a=.08+i*.15,u=seg(t,a,a+.12),e=1-Math.pow(1-u,3);
+  var d=m.d;
+  /* lamp slides from its slot to above the frame while aiming, then beam fades in */
+  var px=m.slot+(d.cx-m.slot)*e;
+  var tx=d.cx-px;
+  var th=-Math.atan2(tx,m.L)*180/Math.PI;
+  /* start by pointing away from the wall */
+  var off=(i%2?-1:1)*38*(1-e);
+  m.lg.setAttribute('transform','translate('+px.toFixed(1)+' '+PY+') rotate('+(th+off).toFixed(1)+')');
+  var on=seg(t,a+.06,a+.14);
+  /* adjust beam length so it reaches the frame centre */
+  var len=Math.sqrt(tx*tx+m.L*m.L),bw=d.w*.62;
+  m.beam.setAttribute('points','0,0 '+(-bw)+','+len.toFixed(1)+' '+bw+','+len.toFixed(1));
+  m.beam.setAttribute('opacity',on.toFixed(2));
+  m.pool.setAttribute('opacity',on.toFixed(2));
+  m.art.setAttribute('opacity',(.12+.88*on).toFixed(2));
+  m.lens.setAttribute('fill',on>.3?'#f6d58c':'#4a4456');
+  m.lab.setAttribute('opacity',seg(t,a+.1,a+.15).toFixed(2));
+ });
+ var k=t<.08?0:Math.min(5,1+Math.floor((t-.08)/.15));
+ cT.textContent=steps[k][0];cS.textContent=steps[k][1];
+ for(var j=0;j<6;j++)dots[j].className=j<=k?'on':'';
+}
+addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kay Contemporary Art | Canyon Road, Santa Fe (concept)</title>
+<meta name="description" content="Concept site for Kay Contemporary Art, a gallery at 600 Canyon Road, Santa Fe. A wall that hangs itself as you scroll. Built by Kerblabs as a free spec.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/kay-contemporary-art/">
+<meta property="og:title" content="Kay Contemporary Art | Concept site by Kerblabs">
+<meta property="og:description" content="A gallery wall that hangs itself on a laser level line as you scroll. Free concept.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/kay-contemporary-art/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"ArtGallery","@id":"https://gglagent19.github.io/kerblabs-specs/kay-contemporary-art/#biz","name":"Kay Contemporary Art","url":"https://www.kaycontemporaryart.com","telephone":"+1-505-365-3992","email":"info@kaycontemporaryart.com","address":{"@type":"PostalAddress","streetAddress":"600 Canyon Road","addressLocality":"Santa Fe","addressRegion":"NM","postalCode":"87501","addressCountry":"US"},"sameAs":["https://www.instagram.com/kaycontemporaryart"],"knowsAbout":["Oil","Acrylic","Watercolor","Bronze","Mixed media","Works on paper"]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Where is Kay Contemporary Art?","acceptedAnswer":{"@type":"Answer","text":"600 Canyon Road, Santa Fe, NM 87501."}},
+{"@type":"Question","name":"What media does the gallery show?","acceptedAnswer":{"@type":"Answer","text":"Per their site: oil, acrylic, watercolor, bronze, mixed media and works of paper, by local and nationally recognized artists."}},
+{"@type":"Question","name":"How do I get in touch?","acceptedAnswer":{"@type":"Answer","text":"Call 505.365.3992 or use the contact form at https://www.kaycontemporaryart.com/contact (name, email, optional phone, subject, message)."}}
+]}]}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--plaster:#efe4d1;--plaster2:#e2d3ba;--ink:#2a211c;--mut:#6a5b4e;--clay:#b5532f;--turq:#2f8f8a;--sand:#d8c3a0;--line:#e0342b}
+html{scroll-behavior:smooth}
+body{background:var(--plaster);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.55;-webkit-text-size-adjust:100%}
+a{color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;height:64px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 16px;background:rgba(239,228,209,.95);border-bottom:1px solid #cdbb9b;font-family:Arial,Helvetica,sans-serif}
+.brand{font-weight:800;letter-spacing:.05em;font-size:14px;line-height:1.1;text-transform:uppercase;max-width:140px}
+.navr{display:flex;gap:14px;align-items:center;font-size:13px}
+.navr a.l{text-decoration:none;display:none}
+.btn{display:inline-block;background:var(--ink);color:var(--plaster);padding:10px 16px;border-radius:2px;text-decoration:none;font:700 13px Arial,sans-serif;letter-spacing:.05em}
+.btn.alt{background:var(--clay);color:#fff}
+.hero{height:420vh;position:relative}
+.pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;padding-top:108px;display:flex;flex-direction:column}
+.copy{padding:0 18px;max-width:900px}
+.eyebrow{font:700 11px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
+h1{font-size:clamp(32px,8.5vw,76px);line-height:1;margin:8px 0;letter-spacing:-.02em}
+.sub{font-size:clamp(14px,3.6vw,18px);color:var(--mut);max-width:560px}
+.stage{flex:1;min-height:0;display:flex;flex-direction:column;margin-top:6px}
+.stage svg{flex:1;min-height:0;width:100%;display:block}
+.cap{font:11px Arial,sans-serif;color:var(--mut);padding:0 18px;letter-spacing:.04em}
+.call{margin:4px 18px 0;max-width:620px;min-height:72px;border-left:5px solid var(--clay);padding:4px 0 4px 14px}
+.call b{display:block;font:800 clamp(20px,5.4vw,30px)/1.1 Georgia,serif}
+.call span{display:block;margin-top:4px;font-size:clamp(13px,3.4vw,16px);color:var(--mut)}
+.dots{display:flex;gap:6px;margin:8px 18px max(14px,env(safe-area-inset-bottom))}
+.dots i{width:24px;height:4px;background:#cdbb9b;display:block;border-radius:2px}
+.dots i.on{background:var(--clay)}
+section{padding:72px 18px;max-width:1040px;margin:0 auto}
+h2{font-size:clamp(28px,7vw,48px);line-height:1.05;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:22px}
+.card{background:#f8f1e2;border:1px solid #cdbb9b;padding:20px;border-radius:3px}
+.card h3{font-size:20px;margin-bottom:6px}
+.card p{color:var(--mut);font-size:16px}
+.band{background:var(--ink);color:var(--plaster);max-width:none}
+.band .in{max-width:1040px;margin:0 auto}
+.band p{max-width:640px;opacity:.92}
+.note{margin-top:16px;border-left:4px solid var(--turq);padding:8px 14px;background:#f8f1e2;color:var(--mut)}
+.faq details{border-bottom:1px solid #cdbb9b;padding:14px 0}
+.faq summary{font-weight:700;cursor:pointer}
+.faq p{margin-top:8px;color:var(--mut)}
+.ctaRow{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+footer{padding:32px 18px 90px;text-align:center;font:13px/1.6 Arial,sans-serif;color:var(--mut);border-top:1px solid #cdbb9b}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:8px;padding:10px 12px max(10px,env(safe-area-inset-bottom));background:rgba(239,228,209,.96);border-top:1px solid #cdbb9b}
+.sticky .btn{flex:1;text-align:center}
+@media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr)}.navr a.l{display:inline}.sticky{display:none}footer{padding-bottom:40px}.pin{padding-top:112px}.copy,.call,.dots,.cap{margin-left:48px}.brand{max-width:none}nav{padding:0 40px}}
+@media(prefers-reduced-motion:reduce){.hero{height:auto}.pin{position:static;height:auto;padding-bottom:20px}.stage svg{height:60vh;flex:none}}
+</style>
+</head>
+<body>
+<nav>
+ <span class="brand">Kay Contemporary Art</span>
+ <div class="navr"><a class="l" href="#work">The gallery</a><a class="l" href="#faq">FAQ</a><a class="l" href="#agent-ready">Agent-ready</a><a class="btn alt" href="tel:+15053653992">Call 505.365.3992</a></div>
+</nav>
+
+<div class="hero" id="hero">
+ <div class="pin">
+  <div class="copy">
+   <div class="eyebrow">600 Canyon Road &middot; Santa Fe</div>
+   <h1>Hung level. Hung to be seen.</h1>
+   <p class="sub">A laser line finds the height. Scroll and the wall hangs itself, one medium at a time.</p>
+  </div>
+  <div class="stage">
+   <svg id="wall" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Illustrative gallery wall: a red laser level line, then six works hang on it, each with a wall label naming its medium">
+    <defs>
+     <linearGradient id="wg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4ead8"/><stop offset="1" stop-color="#e5d6bb"/></linearGradient>
+     <filter id="sh" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#2a211c" flood-opacity=".28"/></filter>
+    </defs>
+    <rect x="4" y="4" width="392" height="392" rx="8" fill="url(#wg)"/>
+    <rect x="4" y="352" width="392" height="44" fill="#cdbb9b"/>
+    <g id="lines"></g><g id="works"></g>
+   </svg>
+   <div class="cap">Illustrative visual, generated in the browser. These are not works from the gallery.</div>
+  </div>
+  <div class="call"><b id="cT">Find the line</b><span id="cS">A laser level marks the centre height for the whole row.</span></div>
+  <div class="dots" id="dots"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+ </div>
+</div>
+
+<section id="work">
+ <h2>The gallery</h2>
+ <p>Kay Contemporary Art sits at 600 Canyon Road, Santa Fe. Per their site they represent local and nationally recognized artists, showing the media below.</p>
+ <div class="grid">
+  <div class="card"><h3>Oil</h3><p>Listed on their site.</p></div>
+  <div class="card"><h3>Acrylic</h3><p>Listed on their site.</p></div>
+  <div class="card"><h3>Watercolor</h3><p>Listed on their site.</p></div>
+  <div class="card"><h3>Bronze</h3><p>Listed on their site.</p></div>
+  <div class="card"><h3>Mixed media</h3><p>Listed on their site.</p></div>
+  <div class="card"><h3>Works on paper</h3><p>Listed on their site.</p></div>
+ </div>
+ <div class="note">Artist names and current exhibitions are on kaycontemporaryart.com. This concept does not name any artist or work. Their two footers list different opening hours, so check the site or call before visiting.</div>
+</section>
+
+<section class="band"><div class="in">
+ <h2>A first look worth the walk</h2>
+ <p>Canyon Road visitors decide in seconds. A gallery site can do what the wall does: set the height, hang the work and let it breathe. This concept shows that idea in the browser, with no stock photos and no invented claims.</p>
+ <div class="ctaRow"><a class="btn alt" href="tel:+15053653992">Call 505.365.3992</a><a class="btn" style="background:#efe4d1;color:#2a211c" href="https://www.kaycontemporaryart.com/contact">Contact form</a></div>
+</div></section>
+
+<section id="visit">
+ <h2>Visit or get in touch</h2>
+ <p>600 Canyon Road, Santa Fe, NM 87501. Call 505.365.3992, or use the form on their site: name, email, optional phone, subject and message.</p>
+ <div class="ctaRow"><a class="btn" href="https://www.kaycontemporaryart.com/contact">Open the contact form</a><a class="btn alt" href="tel:+15053653992">Call</a></div>
+</section>
+
+<section id="agent-ready" style="padding-top:0">
+ <h2>Agent-Ready included</h2>
+ <p>This concept ships with llms.txt, robots.txt, schema markup and a machine-readable services file, so AI assistants can read where the gallery is, what it shows and how to reach it. See <a href="llms.txt">llms.txt</a> and <a href="services.json">services.json</a>.</p>
+</section>
+
+<section id="faq" class="faq" style="padding-top:0">
+ <h2>FAQ</h2>
+ <details><summary>Where is the gallery?</summary><p>600 Canyon Road, Santa Fe, NM 87501.</p></details>
+ <details><summary>What media do they show?</summary><p>Oil, acrylic, watercolor, bronze, mixed media and works of paper, per their site.</p></details>
+ <details><summary>How do I get in touch?</summary><p>Call 505.365.3992 or use the contact form at kaycontemporaryart.com/contact.</p></details>
+</section>
+
+<footer>Concept by Kerblabs. Not affiliated with or endorsed by Kay Contemporary Art. All facts from kaycontemporaryart.com; visuals are illustrative.</footer>
+<div class="sticky"><a class="btn alt" href="tel:+15053653992">Call</a><a class="btn" href="https://www.kaycontemporaryart.com/contact">Contact form</a></div>
+
+<script>
+(function(){
+var NS='http://www.w3.org/2000/svg';
+var hero=document.getElementById('hero');
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e}
+var gL=document.getElementById('lines'),gW=document.getElementById('works');
+var Y1=120,Y2=265;
+var lines=[Y1,Y2].map(function(y){
+ var l=el('line',{x1:14,y1:y,x2:386,y2:y,stroke:'#e0342b','stroke-width':1.4,'stroke-dasharray':'372','stroke-dashoffset':372,opacity:.9},gL);
+ var dot=el('circle',{cx:14,cy:y,r:3,fill:'#e0342b'},gL);
+ return {l:l,d:dot,y:y};
+});
+/* works: type, centre x, line index, w, h, label */
+var defs=[
+ {k:'oil',cx:75,li:0,w:84,h:104,lab:'Oil'},
+ {k:'acrylic',cx:200,li:0,w:104,h:76,lab:'Acrylic'},
+ {k:'water',cx:325,li:0,w:80,h:100,lab:'Watercolor'},
+ {k:'mixed',cx:75,li:1,w:84,h:84,lab:'Mixed media'},
+ {k:'bronze',cx:200,li:1,w:0,h:0,lab:'Bronze'},
+ {k:'paper',cx:325,li:1,w:78,h:104,lab:'Works on paper'}
+];
+var works=defs.map(function(d,i){
+ var y=lines[d.li].y,g=el('g',{opacity:0},gW),lab=el('g',{opacity:0},gW);
+ if(d.k==='bronze'){
+  /* plinth stands on the floor, figure on top */
+  el('rect',{x:d.cx-26,y:300,width:52,height:52,fill:'#f8f1e2',stroke:'#cdbb9b','stroke-width':1.5,filter:'url(#sh)'},g);
+  el('path',{d:'M'+(d.cx-12)+' 300 Q'+(d.cx-16)+' 268 '+d.cx+' 252 Q'+(d.cx+16)+' 270 '+(d.cx+12)+' 300Z',fill:'#7a5a2c'},g);
+  el('circle',{cx:d.cx,cy:246,r:9,fill:'#8c6a36'},g);
+  d.top=246;d.bot=352;
+ }else{
+  var x=d.cx-d.w/2,t=y-d.h/2;
+  el('rect',{x:x,y:t,width:d.w,height:d.h,fill:'#fbf7ec',stroke:'#2a211c','stroke-width':3,filter:'url(#sh)'},g);
+  var ix=x+7,iy=t+7,iw=d.w-14,ih=d.h-14;
+  if(d.k==='oil'){
+   el('rect',{x:ix,y:iy,width:iw,height:ih,fill:'#b5532f'},g);
+   el('circle',{cx:ix+iw*.35,cy:iy+ih*.4,r:iw*.28,fill:'#e7b04a'},g);
+   el('rect',{x:ix,y:iy+ih*.65,width:iw,height:ih*.35,fill:'#6b2e1c'},g);
+  }else if(d.k==='acrylic'){
+   el('rect',{x:ix,y:iy,width:iw,height:ih,fill:'#2f8f8a'},g);
+   el('rect',{x:ix+iw*.1,y:iy+ih*.2,width:iw*.35,height:ih*.6,fill:'#f2c14e'},g);
+   el('rect',{x:ix+iw*.55,y:iy+ih*.1,width:iw*.3,height:ih*.45,fill:'#d8472d'},g);
+  }else if(d.k==='water'){
+   el('rect',{x:ix,y:iy,width:iw,height:ih,fill:'#dfeaf0'},g);
+   el('ellipse',{cx:ix+iw*.4,cy:iy+ih*.45,rx:iw*.38,ry:ih*.2,fill:'#7fb2c9',opacity:.8},g);
+   el('ellipse',{cx:ix+iw*.6,cy:iy+ih*.7,rx:iw*.3,ry:ih*.14,fill:'#d99aa0',opacity:.8},g);
+  }else if(d.k==='mixed'){
+   el('rect',{x:ix,y:iy,width:iw,height:ih,fill:'#d8c3a0'},g);
+   el('rect',{x:ix+4,y:iy+4,width:iw*.5,height:ih*.5,fill:'#2a211c'},g);
+   el('path',{d:'M'+(ix+iw*.3)+' '+(iy+ih)+' L'+(ix+iw)+' '+(iy+ih*.3)+' L'+(ix+iw)+' '+(iy+ih)+'Z',fill:'#b5532f'},g);
+   el('circle',{cx:ix+iw*.7,cy:iy+ih*.25,r:7,fill:'#2f8f8a'},g);
+  }else{
+   el('rect',{x:ix,y:iy,width:iw,height:ih,fill:'#f4efe3'},g);
+   for(var s=0;s<5;s++)el('path',{d:'M'+ix+' '+(iy+ih*(.15+s*.17))+' Q'+(ix+iw*.5)+' '+(iy+ih*(.05+s*.17))+' '+(ix+iw)+' '+(iy+ih*(.2+s*.17)),fill:'none',stroke:'#2a211c','stroke-width':1.2},g);
+  }
+  d.top=t;d.bot=t+d.h;
+ }
+ /* wall label */
+ var ly=d.bot+(d.k==='bronze'?0:14);
+ if(d.k==='bronze')ly=d.bot-18;
+ var lx=d.k==='bronze'?d.cx+38:d.cx-26;
+ if(d.k==='bronze')lx=d.cx+34;
+ var lw=d.k==='bronze'?0:0;
+ el('rect',{x:d.k==='bronze'?d.cx+32:d.cx-26,y:d.k==='bronze'?318:d.bot+8,width:52,height:20,fill:'#fff',stroke:'#cdbb9b','stroke-width':1},lab);
+ var tx=el('text',{x:d.k==='bronze'?d.cx+58:d.cx,y:d.k==='bronze'?331:d.bot+21,'text-anchor':'middle','font-family':'Arial,sans-serif','font-size':8,'font-weight':700,fill:'#2a211c'},lab);
+ tx.textContent=d.lab;
+ return {g:g,lab:lab,d:d,i:i};
+});
+var steps=[
+["Find the line","A laser level marks the centre height for the whole row."],
+["Oil","Hung on the line. Oil is one of the media their site lists."],
+["Acrylic","Centred on the same line, so the row reads as one."],
+["Watercolor","The third work of the top row finds its place."],
+["Mixed media","A second line, a second row. Mixed media is listed on their site."],
+["Bronze","Sculpture stands on the floor, with its own wall label."],
+["Works on paper","The last work hangs. Every medium on their site has its place on the wall."]];
+var cT=document.getElementById('cT'),cS=document.getElementById('cS'),dots=document.querySelectorAll('#dots i');
+function seg(t,a,b){return Math.min(1,Math.max(0,(t-a)/(b-a)))}
+function upd(){
+ var t=1;
+ if(!reduce){var r=hero.getBoundingClientRect(),max=hero.offsetHeight-innerHeight;t=Math.min(1,Math.max(0,max>0?-r.top/max:1))}
+ lines.forEach(function(L,i){
+  var s=seg(t,.02+i*.02,.14+i*.02);
+  L.l.setAttribute('stroke-dashoffset',(372*(1-s)).toFixed(1));
+  L.d.setAttribute('cx',(14+372*s).toFixed(1));
+  var fade=1-seg(t,.9,.98);
+  L.l.setAttribute('opacity',(.9*fade).toFixed(2));L.d.setAttribute('opacity',fade.toFixed(2));
+ });
+ works.forEach(function(w,i){
+  var a=.16+i*.13,u=seg(t,a,a+.09),e=1-Math.pow(1-u,3);
+  var drop=(1-e)*-70,rot=(1-e)*(i%2?5:-5);
+  w.g.setAttribute('transform','translate(0 '+drop.toFixed(1)+') rotate('+rot.toFixed(1)+' '+w.d.cx+' '+(w.d.top||0)+')');
+  w.g.setAttribute('opacity',Math.min(1,u*3).toFixed(2));
+  w.lab.setAttribute('opacity',seg(t,a+.08,a+.12).toFixed(2));
+ });
+ var k=t<.16?0:Math.min(6,1+Math.floor((t-.16)/.13));
+ cT.textContent=steps[k][0];cS.textContent=steps[k][1];
+ for(var j=0;j<7;j++)dots[j].className=j<=k?'on':'';
+}
+addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+})();
+</script>
+</body>
+</html>
