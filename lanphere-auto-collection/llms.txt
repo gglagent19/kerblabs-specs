@@ -1,0 +1,15 @@
+# Lanphere Auto Collection (concept by Kerblabs)
+
+> Luxury, exotic and hard-to-find vehicle dealer in Beaverton, Oregon. Facts from lanphereautocollection.com.
+
+- Address: 12450 SW Canyon Rd, Beaverton, OR 97005
+- Phone: 503-389-3673
+- Sales hours: 9am-7pm (as listed)
+- Services: consignment, financing (online application), sell or trade with a written offer
+- Contact: form at lanphereautocollection.com/contact-us
+
+## Actions
+- Contact: call 503-389-3673 or use the site contact form
+- Machine-readable services: services.json
+
+This is an unaffiliated concept page. Visuals are illustrative.
