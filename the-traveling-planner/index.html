@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Traveling Planner | Portland, Oregon wedding planner (concept)</title>
+<meta name="description" content="Concept site for The Traveling Planner, Portland Oregon. A globe turns and routes draw out from Portland as you scroll. Built by Kerblabs as a free spec.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/the-traveling-planner/">
+<meta property="og:title" content="The Traveling Planner | Concept site by Kerblabs">
+<meta property="og:description" content="A globe turns, routes leave Portland. Free concept.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/the-traveling-planner/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"LocalBusiness","@id":"https://gglagent19.github.io/kerblabs-specs/the-traveling-planner/#biz","name":"The Traveling Planner","url":"https://www.thetravelingplanner.com","telephone":"+1-908-303-9712","email":"TheTravelingPlanner@outlook.com","areaServed":"Pacific Northwest and beyond","address":{"@type":"PostalAddress","addressLocality":"Portland","addressRegion":"OR","addressCountry":"US"}},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Where is The Traveling Planner based?","acceptedAnswer":{"@type":"Answer","text":"Portland, Oregon, servicing throughout the PNW and beyond, per their site."}},
+{"@type":"Question","name":"What do they do?","acceptedAnswer":{"@type":"Answer","text":"Wedding planning and coordination services, per their site."}},
+{"@type":"Question","name":"How do I reach them?","acceptedAnswer":{"@type":"Answer","text":"Email TheTravelingPlanner@outlook.com, call 908-303-9712, or use the inquiry form on their site. They are taking inquiries for 2027 dates."}}
+]}]}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0e1b22;--bg2:#16272f;--ink:#f3ead9;--mut:#a9b8b9;--rose:#e0997a;--sea:#74bdb4;--line:#2c4048}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.55;-webkit-text-size-adjust:100%}
+a{color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;height:64px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 16px;background:rgba(14,27,34,.96);border-bottom:1px solid var(--line);font-family:Arial,Helvetica,sans-serif}
+.brand{font-weight:800;letter-spacing:.05em;font-size:13px;line-height:1.1;text-transform:uppercase;max-width:110px}
+.navr{display:flex;gap:14px;align-items:center;font-size:13px}
+.navr a.l{text-decoration:none;display:none}
+.btn{display:inline-block;background:var(--rose);color:#1d1008;padding:10px 16px;border-radius:2px;text-decoration:none;font:700 13px Arial,sans-serif;letter-spacing:.05em}
+.btn.alt{background:var(--ink);color:#0e1b22}
+.hero{height:440vh;position:relative}
+.pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;padding-top:104px;display:flex;flex-direction:column}
+.copy{padding:0 18px;max-width:900px}
+.eyebrow{font:700 11px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--rose)}
+h1{font-size:clamp(32px,8.5vw,76px);line-height:1;margin:8px 0;letter-spacing:-.02em}
+.sub{font-size:clamp(14px,3.6vw,18px);color:var(--mut);max-width:560px}
+.stage{flex:1;min-height:0;display:flex;flex-direction:column;margin-top:6px}
+.stage svg{flex:1;min-height:0;width:100%;display:block}
+.cap{font:11px Arial,sans-serif;color:var(--mut);padding:0 18px;letter-spacing:.04em}
+.call{margin:4px 18px 0;max-width:620px;min-height:72px;border-left:5px solid var(--rose);padding:4px 0 4px 14px}
+.call b{display:block;font:800 clamp(20px,5.4vw,30px)/1.1 Georgia,serif}
+.call span{display:block;margin-top:4px;font-size:clamp(13px,3.4vw,16px);color:var(--mut);overflow-wrap:anywhere}
+.dots{display:flex;gap:6px;margin:8px 18px max(14px,env(safe-area-inset-bottom))}
+.dots i{width:24px;height:4px;background:var(--line);display:block;border-radius:2px}
+.dots i.on{background:var(--rose)}
+section{padding:72px 18px;max-width:1040px;margin:0 auto}
+h2{font-size:clamp(28px,7vw,48px);line-height:1.05;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:22px}
+.card{background:var(--bg2);border:1px solid var(--line);padding:20px;border-radius:3px}
+.card h3{font-size:20px;margin-bottom:6px;color:var(--rose)}
+.card p{color:var(--mut);font-size:16px}
+.band{background:var(--bg2);max-width:none}
+.band .in{max-width:1040px;margin:0 auto}
+.band p{max-width:640px;color:var(--mut)}
+.note{margin-top:16px;border-left:4px solid var(--rose);padding:8px 14px;background:var(--bg2);color:var(--mut)}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{font-weight:700;cursor:pointer}
+.faq p{margin-top:8px;color:var(--mut);overflow-wrap:anywhere}
+.ctaRow{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+footer{padding:32px 18px 90px;text-align:center;font:13px/1.6 Arial,sans-serif;color:var(--mut);border-top:1px solid var(--line)}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:8px;padding:10px 12px max(10px,env(safe-area-inset-bottom));background:rgba(14,27,34,.97);border-top:1px solid var(--line)}
+.sticky .btn{flex:1;text-align:center}
+@media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr)}.navr a.l{display:inline}.sticky{display:none}footer{padding-bottom:40px}.pin{padding-top:112px}.copy,.call,.dots,.cap{margin-left:48px}.brand{max-width:none}nav{padding:0 40px}}
+@media(prefers-reduced-motion:reduce){.hero{height:auto}.pin{position:static;height:auto;padding-bottom:20px}.stage svg{height:60vh;flex:none}}
+</style>
+</head>
+<body>
+<nav>
+ <span class="brand">The Traveling Planner</span>
+ <div class="navr"><a class="l" href="#about">About</a><a class="l" href="#faq">FAQ</a><a class="l" href="#agent-ready">Agent-ready</a><a class="btn alt" href="mailto:TheTravelingPlanner@outlook.com">Email</a></div>
+</nav>
+
+<div class="hero" id="hero">
+ <div class="pin">
+  <div class="copy">
+   <div class="eyebrow">Portland, Oregon &middot; Wedding planning &amp; coordination</div>
+   <h1>Love takes you places.</h1>
+   <p class="sub">Scroll and the globe turns, with routes leaving Portland for the PNW and beyond.</p>
+  </div>
+  <div class="stage">
+   <svg id="gl" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Illustrative globe: a grid of latitude and longitude turns while routes are drawn out from Portland, Oregon">
+    <defs><radialGradient id="ocean" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#1f3a45"/><stop offset="1" stop-color="#0b161c"/></radialGradient></defs>
+    <circle cx="200" cy="150" r="132" fill="url(#ocean)" stroke="#2c4048" stroke-width="1.5"/>
+    <path id="grat" fill="none" stroke="#3b5963" stroke-width=".8"/>
+    <g id="arcs" fill="none" stroke-linecap="round"></g>
+    <g id="pts"></g>
+   </svg>
+   <div class="cap">Illustrative visual, generated in the browser. Routes and stops are examples, not a claim about any booking.</div>
+  </div>
+  <div class="call"><b id="cT">Portland, Oregon</b><span id="cS">Based in Portland. Scroll to plan the journey.</span></div>
+  <div class="dots" id="dots"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+ </div>
+</div>
+
+<section id="about">
+ <h2>The Traveling Planner</h2>
+ <p>Their site says they are based in Portland, Oregon, servicing throughout the PNW and beyond, with wedding planning and coordination services. Their tagline is "Love takes you places, let's plan the journey." They are taking inquiries for 2027 dates.</p>
+ <div class="grid">
+  <div class="card"><h3>Planning</h3><p>Wedding planning, per their site.</p></div>
+  <div class="card"><h3>Coordination</h3><p>Coordination services for the day itself.</p></div>
+  <div class="card"><h3>PNW and beyond</h3><p>Portland based, travelling to the couple.</p></div>
+ </div>
+ <div class="note">Their site does not list destinations, prices or an address, so none are shown. The globe is illustrative.</div>
+</section>
+
+<section class="band"><div class="in">
+ <h2>A first impression that already travels</h2>
+ <p>Couples inquiring for 2027 land on the page before they write. This concept lets the homepage show the journey, using only what The Traveling Planner already says about itself.</p>
+ <div class="ctaRow"><a class="btn" href="mailto:TheTravelingPlanner@outlook.com">Email TheTravelingPlanner@outlook.com</a><a class="btn alt" href="https://www.thetravelingplanner.com">Their current site</a></div>
+</div></section>
+
+<section id="agent-ready">
+ <h2>Agent-Ready included</h2>
+ <p>This concept ships with llms.txt, robots.txt, schema markup and a machine-readable services file, so AI assistants can read where the planner is based and how to inquire. See <a href="llms.txt">llms.txt</a> and <a href="services.json">services.json</a>.</p>
+</section>
+
+<section id="faq" class="faq" style="padding-top:0">
+ <h2>FAQ</h2>
+ <details><summary>Where are they based?</summary><p>Portland, Oregon, servicing throughout the PNW and beyond.</p></details>
+ <details><summary>What do they offer?</summary><p>Wedding planning and coordination services, per their site.</p></details>
+ <details><summary>How do I inquire?</summary><p>Email TheTravelingPlanner@outlook.com, call 908-303-9712, or use the inquiry form on their site. Inquire for 2027 dates.</p></details>
+</section>
+
+<footer>Concept by Kerblabs. Not affiliated with or endorsed by The Traveling Planner. Facts from thetravelingplanner.com; visuals are illustrative.</footer>
+<div class="sticky"><a class="btn" href="mailto:TheTravelingPlanner@outlook.com">Email</a><a class="btn alt" href="https://www.thetravelingplanner.com">Their site</a></div>
+
+<script>
+(function(){
+var hero=document.getElementById('hero');
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function seg(t,a,b){return Math.min(1,Math.max(0,(t-a)/(b-a)))}
+function ease(u){return u<.5?2*u*u:1-Math.pow(-2*u+2,2)/2}
+function $(i){return document.getElementById(i)}
+var NS='http://www.w3.org/2000/svg',D=Math.PI/180,R=132,CX=200,CY=150,P0=32*D;
+function mk(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e}
+function proj(lat,lon,L0){
+ var p=lat*D,l=(lon-L0)*D;
+ var c=Math.sin(P0)*Math.sin(p)+Math.cos(P0)*Math.cos(p)*Math.cos(l);
+ return {x:CX+R*Math.cos(p)*Math.sin(l),y:CY-R*(Math.cos(P0)*Math.sin(p)-Math.sin(P0)*Math.cos(p)*Math.cos(l)),v:c>0};
+}
+function vec(lat,lon){var p=lat*D,l=lon*D;return [Math.cos(p)*Math.cos(l),Math.cos(p)*Math.sin(l),Math.sin(p)]}
+function gc(a,b,u){
+ var A=vec(a[0],a[1]),B=vec(b[0],b[1]);
+ var dot=Math.max(-1,Math.min(1,A[0]*B[0]+A[1]*B[1]+A[2]*B[2])),w=Math.acos(dot),s=Math.sin(w)||1;
+ var f=Math.sin((1-u)*w)/s,g=Math.sin(u*w)/s;
+ var x=f*A[0]+g*B[0],y=f*A[1]+g*B[1],z=f*A[2]+g*B[2];
+ return [Math.asin(z)/D,Math.atan2(y,x)/D];
+}
+var HOME=[45.52,-122.68];
+var DEST=[[47.6,-122.3],[20.8,-156.3],[43.8,11.2]];
+var arcsG=$('arcs'),ptsG=$('pts'),grat=$('grat');
+var arcEls=DEST.map(function(){return mk('path',{stroke:'#e0997a','stroke-width':2.2},arcsG)});
+var heads=DEST.map(function(){return mk('circle',{r:3.6,fill:'#f3ead9'},ptsG)});
+var homeRing=mk('circle',{r:9,fill:'none',stroke:'#e0997a','stroke-width':1.5},ptsG);
+var home=mk('circle',{r:4.5,fill:'#e0997a'},ptsG);
+var steps=[
+["Portland, Oregon","Based in Portland. Scroll to plan the journey."],
+["Throughout the PNW","The first route stays close to home."],
+["And beyond","Further destinations, shown here as illustrative."],
+["Wedding planning and coordination","Every route, planned end to end."],
+["Inquire for 2027 dates","TheTravelingPlanner@outlook.com or 908-303-9712"]];
+var cT=$('cT'),cS=$('cS'),dots=document.querySelectorAll('#dots i');
+function lon0(t){
+ if(t<.2)return -122;
+ if(t<.5)return -122+(-30)*ease(seg(t,.2,.45));
+ return -152+112*ease(seg(t,.55,.85));
+}
+function upd(){
+ var t=1;
+ if(!reduce){var r=hero.getBoundingClientRect(),max=hero.offsetHeight-innerHeight;t=Math.min(1,Math.max(0,max>0?-r.top/max:1))}
+ var L0=reduce?-60:lon0(t),d='',lon,lat,pr,pen;
+ for(lat=-60;lat<=60;lat+=30){pen=false;for(lon=-180;lon<=180;lon+=6){pr=proj(lat,lon,L0);if(pr.v){d+=(pen?'L':'M')+pr.x.toFixed(1)+' '+pr.y.toFixed(1);pen=true}else pen=false}}
+ for(lon=-180;lon<180;lon+=30){pen=false;for(lat=-84;lat<=84;lat+=6){pr=proj(lat,lon,L0);if(pr.v){d+=(pen?'L':'M')+pr.x.toFixed(1)+' '+pr.y.toFixed(1);pen=true}else pen=false}}
+ grat.setAttribute('d',d);
+ var win=[[.08,.26],[.3,.5],[.55,.8]];
+ for(var i=0;i<3;i++){
+  var k=reduce?1:ease(seg(t,win[i][0],win[i][1]));
+  var s='',pen2=false,last=null;
+  for(var j=0;j<=40;j++){
+   var u=j/40*k;if(j>0&&u===0)break;
+   var q=gc(HOME,DEST[i],u),p2=proj(q[0],q[1],L0);
+   if(p2.v){s+=(pen2?'L':'M')+p2.x.toFixed(1)+' '+p2.y.toFixed(1);pen2=true;last=p2}else pen2=false;
+  }
+  arcEls[i].setAttribute('d',s);
+  var e=gc(HOME,DEST[i],k),pe=proj(e[0],e[1],L0);
+  heads[i].setAttribute('cx',pe.x.toFixed(1));heads[i].setAttribute('cy',pe.y.toFixed(1));
+  heads[i].setAttribute('opacity',pe.v&&k>0?1:0);
+ }
+ var ph=proj(HOME[0],HOME[1],L0);
+ home.setAttribute('cx',ph.x.toFixed(1));home.setAttribute('cy',ph.y.toFixed(1));
+ homeRing.setAttribute('cx',ph.x.toFixed(1));homeRing.setAttribute('cy',ph.y.toFixed(1));
+ var pulse=reduce?1:(t*40)%1;
+ homeRing.setAttribute('r',(5+10*pulse).toFixed(1));homeRing.setAttribute('opacity',ph.v?(1-pulse).toFixed(2):0);
+ home.setAttribute('opacity',ph.v?1:0);
+ var q2=t<.08?0:t<.3?1:t<.55?2:t<.85?3:4;
+ cT.textContent=steps[q2][0];cS.textContent=steps[q2][1];
+ for(var m=0;m<5;m++)dots[m].className=m<=q2?'on':'';
+}
+addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+})();
+</script>
+</body>
+</html>

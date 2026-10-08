@@ -1,0 +1,14 @@
+{
+  "business": "Del Toro Guitars",
+  "url": "https://deltoroguitars.com",
+  "address": "1727 John Dodd Rd., Wellford, SC 29385",
+  "phone": "+1-864-398-2262",
+  "email": "Brian@deltoroguitars.com",
+  "source": "deltoroguitars.com, concept by Kerblabs, unaffiliated",
+  "services": [
+    {"name": "Guitar repair and restoration", "price": null},
+    {"name": "Customizing and setup of new instruments", "price": null},
+    {"name": "Custom builds", "price": null}
+  ],
+  "hours": null
+}

@@ -1,0 +1,16 @@
+# Del Toro Guitars (concept by Kerblabs)
+
+> Guitar repair, restoration, setup and custom builds in Wellford, South Carolina. This is an unaffiliated concept page; facts come from deltoroguitars.com.
+
+- Address: 1727 John Dodd Rd., Wellford, SC 29385
+- Phone / text: 864.398.2262
+- Email: Brian@deltoroguitars.com
+- Services: guitar repair and restoration; customizing and setup of new instruments; custom builds
+- Prices and hours: not published
+
+## FAQ
+- Where? 1727 John Dodd Rd., Wellford, SC 29385.
+- How to book? Call or text 864.398.2262.
+
+## Machine-readable
+- [services.json](services.json)

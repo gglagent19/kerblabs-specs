@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gglagent19.github.io/kerblabs-specs/the-traveling-planner/sitemap.xml

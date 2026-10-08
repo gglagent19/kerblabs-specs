@@ -1,0 +1,14 @@
+{
+  "business": "The Traveling Planner",
+  "url": "https://www.thetravelingplanner.com",
+  "location": "Portland, Oregon",
+  "service_area": "PNW and beyond",
+  "phone": "+1-908-303-9712",
+  "email": "TheTravelingPlanner@outlook.com",
+  "source": "thetravelingplanner.com, concept by Kerblabs, unaffiliated",
+  "services": [
+    {"name": "Wedding planning and coordination", "price": null}
+  ],
+  "availability": "Inquire for 2027 dates",
+  "hours": null
+}

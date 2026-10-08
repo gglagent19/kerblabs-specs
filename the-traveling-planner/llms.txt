@@ -1,0 +1,17 @@
+# The Traveling Planner (concept by Kerblabs)
+
+> Wedding planning and coordination in Portland, Oregon, servicing throughout the PNW and beyond. This is an unaffiliated concept page; facts come from thetravelingplanner.com.
+
+- Based in: Portland, Oregon
+- Email: TheTravelingPlanner@outlook.com
+- Phone: 908-303-9712
+- Services: wedding planning and coordination services
+- Availability: inquire for 2027 dates
+- Prices, hours and street address: not published
+
+## FAQ
+- Where? Portland, Oregon, servicing throughout the PNW and beyond.
+- How to inquire? Email TheTravelingPlanner@outlook.com or use the inquiry form on their site.
+
+## Machine-readable
+- [services.json](services.json)
