@@ -1,0 +1,16 @@
+{
+ "name": "Calhoun Beach Framing",
+ "source": "https://calhounbeachframing.com",
+ "address": "1517 West Lake Street, Minneapolis, MN 55408",
+ "phone": "+1-612-920-5979",
+ "email": "calhounbeachframing@yahoo.com",
+ "hours": "Monday to Saturday 11:00-17:00",
+ "services": [
+  {"name": "Custom framing", "booking": "call or email", "price": null, "price_note": "not published"},
+  {"name": "On-site consultations, delivery and installation", "booking": "call or email", "price": null, "price_note": "not published"},
+  {"name": "Custom mirrors", "booking": "call or email", "price": null, "price_note": "not published"},
+  {"name": "Framed art for sale", "booking": "in shop", "price": null, "price_note": "not published"},
+  {"name": "Unique photo frames", "booking": "in shop", "price": null, "price_note": "not published"},
+  {"name": "Business accounts", "booking": "call or email", "price": null, "price_note": "not published"}
+ ]
+}
