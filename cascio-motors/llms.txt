@@ -1,0 +1,17 @@
+# Cascio Motors (concept by Kerblabs)
+> Family-run dealer of pre-owned classic, luxury and exotic vehicles, 8455 N 90th St Suite 1, Scottsdale, AZ 85258. Owned and operated by Joey Cascio since 2008. Facts from casciomotors.com.
+
+- Visits: by appointment only (no weekly hours published)
+- Phone: (480) 699-2030
+- Services: financing, restoration, detailing, transportation, collection management, window tinting, wraps, consignment, trade-in valuation, test-drive scheduling, online credit approval
+- Serves: Glendale to Phoenix
+- Prices: not shown here (inventory changes)
+
+## FAQ
+Q: Where is it? A: 8455 N 90th St Suite 1, Scottsdale, AZ 85258.
+Q: Can I walk in? A: Their site says by appointment only.
+
+## Actions
+- Contact form: https://www.casciomotors.com/contact-us
+
+Machine-readable: services.json

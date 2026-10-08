@@ -1,0 +1,21 @@
+# Seagull Electronics (concept by Kerblabs)
+
+> Luxury home automation and audio visual company in Jupiter, FL. Facts from seagullelectronics.com. This is an unofficial concept page.
+
+## Contact
+- Address: 430 Toney Penna Dr, Suite 1, Jupiter, FL 33458
+- Phone: (561) 624-0220
+- Hours: Monday to Friday 8:30am to 5pm, weekends by appointment
+- Contact form: https://www.seagullelectronics.com/contact
+
+## Services
+Video, audio, theater, outdoor, lighting, shades, networking, security, control systems.
+
+## Service area (per their site)
+Palm Beach, Palm Beach Gardens, Jupiter, Tequesta, West Palm Beach, Stuart, Hobe Sound, North Palm Beach, Boca Raton, Delray Beach.
+
+## FAQ
+- How do I get in touch? Use the contact form or call (561) 624-0220.
+
+## Files
+- services.json

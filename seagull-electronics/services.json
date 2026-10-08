@@ -1,0 +1,20 @@
+{
+ "business": "Seagull Electronics",
+ "url": "https://www.seagullelectronics.com",
+ "phone": "+1-561-624-0220",
+ "address": "430 Toney Penna Dr, Suite 1, Jupiter, FL 33458",
+ "hours": "Mo-Fr 08:30-17:00; Sa-Su by appointment",
+ "booking": "https://www.seagullelectronics.com/contact",
+ "services": [
+  {"name": "Video", "price": null},
+  {"name": "Audio", "price": null},
+  {"name": "Theater", "price": null},
+  {"name": "Outdoor", "price": null},
+  {"name": "Lighting", "price": null},
+  {"name": "Shades", "price": null},
+  {"name": "Networking", "price": null},
+  {"name": "Security", "price": null},
+  {"name": "Control systems", "price": null}
+ ],
+ "note": "Prices not published. Concept file by Kerblabs, unofficial."
+}
