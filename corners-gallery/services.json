@@ -1,0 +1,14 @@
+{
+ "name": "Corners Gallery",
+ "source": "https://www.cornersgallery.com",
+ "address": "903 Hanshaw Road, Suite 101A, Ithaca, NY 14850",
+ "phone": "+1-607-257-5756",
+ "email": "Ariel@cornersgallery.com",
+ "hours": "Wednesday to Saturday 11:00-16:00",
+ "services": [
+  {"name": "Gallery viewing", "booking": "no appointment necessary"},
+  {"name": "Custom framing", "booking": "by appointment, call or email"},
+  {"name": "Curatorial services", "booking": "contact by email"},
+  {"name": "Shop", "booking": "in gallery"}
+ ]
+}
