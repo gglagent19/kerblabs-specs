@@ -1,0 +1,14 @@
+# Contemporary Art Matters (concept by Kerblabs)
+
+> Contemporary art gallery in Columbus, Ohio, founded 2017. Facts from contemporaryartmatters.com.
+
+- Address: 243 N 5th Street, Suite 110, Columbus, OH 43215
+- Phone: (614) 313-4360
+- Visits: by appointment only
+- Services: exhibitions, art advising, collection management, curatorial services
+
+## Actions
+- Arrange a visit: call (614) 313-4360
+- Machine-readable services: services.json
+
+This is an unaffiliated concept page. Visuals are illustrative.

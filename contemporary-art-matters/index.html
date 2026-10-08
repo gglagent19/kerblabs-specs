@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contemporary Art Matters | Columbus, Ohio (concept)</title>
+<meta name="description" content="Concept site for Contemporary Art Matters, a Columbus gallery at 243 N 5th Street. A shipping crate unpacks as you scroll. Built by Kerblabs as a free spec.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/contemporary-art-matters/">
+<meta property="og:title" content="Contemporary Art Matters | Concept site by Kerblabs">
+<meta property="og:description" content="A crate opens, the work comes out, four registrar tags attach. Free concept.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/contemporary-art-matters/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"ArtGallery","@id":"https://gglagent19.github.io/kerblabs-specs/contemporary-art-matters/#biz","name":"Contemporary Art Matters","url":"https://contemporaryartmatters.com","telephone":"+1-614-313-4360","address":{"@type":"PostalAddress","streetAddress":"243 N 5th Street, Suite 110","addressLocality":"Columbus","addressRegion":"OH","postalCode":"43215","addressCountry":"US"},"foundingDate":"2017"},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Where is Contemporary Art Matters?","acceptedAnswer":{"@type":"Answer","text":"243 N 5th Street, Suite 110, Columbus, OH 43215."}},
+{"@type":"Question","name":"When can I visit?","acceptedAnswer":{"@type":"Answer","text":"By appointment only, per their site. Call (614) 313-4360."}},
+{"@type":"Question","name":"What does the gallery offer?","acceptedAnswer":{"@type":"Answer","text":"Exhibitions of contemporary art, art advising, collection management and curatorial services, per their site."}}
+]}]}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#e9e4d9;--bg2:#dcd5c6;--ink:#1e2328;--mut:#5b6064;--kraft:#b88a56;--cobalt:#2b4fa3;--tag:#d8472b;--line:#c4bcab}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.55;-webkit-text-size-adjust:100%}
+a{color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;height:64px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 16px;background:rgba(233,228,217,.96);border-bottom:1px solid var(--line);font-family:Arial,Helvetica,sans-serif}
+.brand{font-weight:800;letter-spacing:.05em;font-size:13px;line-height:1.1;text-transform:uppercase;max-width:150px}
+.navr{display:flex;gap:14px;align-items:center;font-size:13px}
+.navr a.l{text-decoration:none;display:none}
+.btn{display:inline-block;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:2px;text-decoration:none;font:700 13px Arial,sans-serif;letter-spacing:.05em}
+.btn.alt{background:var(--cobalt);color:#fff}
+.hero{height:420vh;position:relative}
+.pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;padding-top:108px;display:flex;flex-direction:column}
+.copy{padding:0 18px;max-width:900px}
+.eyebrow{font:700 11px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--cobalt)}
+h1{font-size:clamp(32px,8.5vw,76px);line-height:1;margin:8px 0;letter-spacing:-.02em}
+.sub{font-size:clamp(14px,3.6vw,18px);color:var(--mut);max-width:560px}
+.stage{flex:1;min-height:0;display:flex;flex-direction:column;margin-top:6px}
+.stage svg{flex:1;min-height:0;width:100%;display:block}
+.cap{font:11px Arial,sans-serif;color:var(--mut);padding:0 18px;letter-spacing:.04em}
+.call{margin:4px 18px 0;max-width:620px;min-height:72px;border-left:5px solid var(--tag);padding:4px 0 4px 14px}
+.call b{display:block;font:800 clamp(20px,5.4vw,30px)/1.1 Georgia,serif}
+.call span{display:block;margin-top:4px;font-size:clamp(13px,3.4vw,16px);color:var(--mut)}
+.dots{display:flex;gap:6px;margin:8px 18px max(14px,env(safe-area-inset-bottom))}
+.dots i{width:24px;height:4px;background:var(--line);display:block;border-radius:2px}
+.dots i.on{background:var(--tag)}
+section{padding:72px 18px;max-width:1040px;margin:0 auto}
+h2{font-size:clamp(28px,7vw,48px);line-height:1.05;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:22px}
+.card{background:var(--bg2);border:1px solid var(--line);padding:20px;border-radius:3px}
+.card h3{font-size:20px;margin-bottom:6px;color:var(--cobalt)}
+.card p{color:var(--mut);font-size:16px}
+.band{background:var(--ink);color:var(--bg);max-width:none}
+.band .in{max-width:1040px;margin:0 auto}
+.band p{max-width:640px;color:#cfc9bb}
+.note{margin-top:16px;border-left:4px solid var(--tag);padding:8px 14px;background:var(--bg2);color:var(--mut)}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{font-weight:700;cursor:pointer}
+.faq p{margin-top:8px;color:var(--mut)}
+.ctaRow{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+footer{padding:32px 18px 90px;text-align:center;font:13px/1.6 Arial,sans-serif;color:var(--mut);border-top:1px solid var(--line)}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:8px;padding:10px 12px max(10px,env(safe-area-inset-bottom));background:rgba(233,228,217,.97);border-top:1px solid var(--line)}
+.sticky .btn{flex:1;text-align:center}
+@media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr)}.navr a.l{display:inline}.sticky{display:none}footer{padding-bottom:40px}.pin{padding-top:112px}.copy,.call,.dots,.cap{margin-left:48px}.brand{max-width:none}nav{padding:0 40px}}
+@media(prefers-reduced-motion:reduce){.hero{height:auto}.pin{position:static;height:auto;padding-bottom:20px}.stage svg{height:60vh;flex:none}}
+</style>
+</head>
+<body>
+<nav>
+ <span class="brand">Contemporary Art Matters</span>
+ <div class="navr"><a class="l" href="#visit">Visit</a><a class="l" href="#faq">FAQ</a><a class="l" href="#agent-ready">Agent-ready</a><a class="btn alt" href="tel:+16143134360">Call (614) 313-4360</a></div>
+</nav>
+
+<div class="hero" id="hero">
+ <div class="pin">
+  <div class="copy">
+   <div class="eyebrow">243 N 5th Street &middot; Columbus, Ohio</div>
+   <h1>Unpacked with care.</h1>
+   <p class="sub">A crate arrives. Scroll and it opens, the work comes out, and the registrar tags it.</p>
+  </div>
+  <div class="stage">
+   <svg id="crate" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Illustrative shipping crate: the front panel lifts off, foam slides away, an abstract artwork rises out and four registrar tags attach">
+    <rect x="4" y="4" width="392" height="392" rx="8" fill="#f3efe5"/>
+    <rect x="4" y="348" width="392" height="48" fill="#d6cfbf"/>
+    <!-- crate interior -->
+    <rect x="56" y="146" width="288" height="190" fill="#4a3a28"/>
+    <!-- artwork -->
+    <g id="art">
+     <rect x="128" y="168" width="144" height="168" fill="#fbf8f0" stroke="#1e2328" stroke-width="3"/>
+     <rect x="138" y="178" width="124" height="148" fill="#2b4fa3"/>
+     <circle cx="190" cy="232" r="34" fill="#f0c75e"/>
+     <rect x="138" y="270" width="124" height="56" fill="#17306b"/>
+     <path d="M138 270 L200 214 L262 270Z" fill="#d8472b"/>
+    </g>
+    <!-- foam layer -->
+    <g id="foam">
+     <rect x="62" y="152" width="276" height="178" fill="#cfc6ae"/>
+     <g stroke="#b9af95" stroke-width="2">
+      <path d="M62 180H338M62 210H338M62 240H338M62 270H338M62 300H338"/>
+     </g>
+    </g>
+    <!-- front panel -->
+    <g id="panel">
+     <rect x="52" y="142" width="296" height="198" fill="#b88a56" stroke="#7d5a30" stroke-width="3"/>
+     <g stroke="#8d6738" stroke-width="2">
+      <path d="M52 175H348M52 208H348M52 241H348M52 274H348M52 307H348"/>
+     </g>
+     <rect x="52" y="142" width="14" height="198" fill="#9b7343"/>
+     <rect x="334" y="142" width="14" height="198" fill="#9b7343"/>
+     <rect x="160" y="226" width="80" height="34" fill="#f3efe5"/>
+     <text x="200" y="240" text-anchor="middle" font-family="Arial" font-weight="700" font-size="9" fill="#1e2328" letter-spacing="1">THIS SIDE UP</text>
+     <text x="200" y="253" text-anchor="middle" font-family="Arial" font-size="8" fill="#5b6064">HANDLE WITH CARE</text>
+    </g>
+    <!-- tags -->
+    <g id="tags"></g>
+   </svg>
+   <div class="cap">Illustrative visual, generated in the browser. This is not a work from the gallery.</div>
+  </div>
+  <div class="call"><b id="cT">Crate received</b><span id="cS">Sealed, labelled, waiting for a registrar.</span></div>
+  <div class="dots" id="dots"><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
+ </div>
+</div>
+
+<section id="visit">
+ <h2>Visit Contemporary Art Matters</h2>
+ <p>243 N 5th Street, Suite 110, Columbus, OH 43215. Their site says the gallery is open by appointment only, and that it was founded in 2017 by Rebecca Ibel.</p>
+ <div class="grid">
+  <div class="card"><h3>Find it</h3><p>243 N 5th Street, Suite 110, Columbus.</p></div>
+  <div class="card"><h3>Visit</h3><p>By appointment only. Call (614) 313-4360.</p></div>
+  <div class="card"><h3>What they do</h3><p>Exhibitions, art advising, collection management and curatorial services.</p></div>
+ </div>
+ <div class="note">This concept names no artist, exhibition or work, so the picture in the hero is illustrative.</div>
+</section>
+
+<section class="band"><div class="in">
+ <h2>Appointment-only, so the site is the front door</h2>
+ <p>When people can only visit by appointment, the first thing they see online does the work a walk-in would. This concept shows the care behind the services before anyone picks up the phone, using only what the gallery already says about itself.</p>
+ <div class="ctaRow"><a class="btn alt" href="tel:+16143134360">Call (614) 313-4360</a><a class="btn" style="background:#f3efe5;color:#1e2328" href="https://contemporaryartmatters.com">Their current site</a></div>
+</div></section>
+
+<section id="agent-ready">
+ <h2>Agent-Ready included</h2>
+ <p>This concept ships with llms.txt, robots.txt, schema markup and a machine-readable services file, so AI assistants can read where the gallery is, how visits work and how to reach it. See <a href="llms.txt">llms.txt</a> and <a href="services.json">services.json</a>.</p>
+</section>
+
+<section id="faq" class="faq" style="padding-top:0">
+ <h2>FAQ</h2>
+ <details><summary>Where is the gallery?</summary><p>243 N 5th Street, Suite 110, Columbus, OH 43215.</p></details>
+ <details><summary>Can I walk in?</summary><p>Their site says visits are by appointment only. Call (614) 313-4360.</p></details>
+ <details><summary>What services are offered?</summary><p>Exhibitions of contemporary art, art advising, collection management and curatorial services, per their site.</p></details>
+</section>
+
+<footer>Concept by Kerblabs. Not affiliated with or endorsed by Contemporary Art Matters. Facts from contemporaryartmatters.com; visuals are illustrative.</footer>
+<div class="sticky"><a class="btn alt" href="tel:+16143134360">Call</a><a class="btn" href="https://contemporaryartmatters.com">Their site</a></div>
+
+<script>
+(function(){
+var NS='http://www.w3.org/2000/svg';
+var hero=document.getElementById('hero');
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e}
+function seg(t,a,b){return Math.min(1,Math.max(0,(t-a)/(b-a)))}
+function ease(u){return 1-Math.pow(1-u,3)}
+var panel=document.getElementById('panel'),foam=document.getElementById('foam'),art=document.getElementById('art'),TG=document.getElementById('tags');
+var names=["Exhibitions","Art advising","Collection management","Curatorial services"];
+var tags=names.map(function(n,i){
+ var cx=62+i*92;
+ var g=el('g',{opacity:0},TG);
+ el('path',{d:'M'+cx+' 16 L'+cx+' 40',stroke:'#1e2328','stroke-width':1.5,fill:'none'},g);
+ el('rect',{x:cx-34,y:40,width:68,height:44,rx:3,fill:'#d8472b'},g);
+ el('circle',{cx:cx,cy:48,r:3,fill:'#f3efe5'},g);
+ var t=el('text',{x:cx,y:68,'text-anchor':'middle','font-family':'Arial','font-weight':'800','font-size':16,fill:'#fff'},g);
+ t.textContent='0'+(i+1);
+ return g;
+});
+var steps=[
+["Crate received","Sealed, labelled, waiting for a registrar."],
+["Panel off","The front comes away. Nothing is rushed."],
+["Foam aside","The packing lifts clear of the work."],
+["The work comes out","Handled, lifted and held."],
+["Tagged and logged","Exhibitions, art advising, collection management and curatorial services."],
+["Visits by appointment","Call (614) 313-4360 to arrange one."]];
+var cT=document.getElementById('cT'),cS=document.getElementById('cS'),dots=document.querySelectorAll('#dots i');
+function upd(){
+ var t=1;
+ if(!reduce){var r=hero.getBoundingClientRect(),max=hero.offsetHeight-innerHeight;t=Math.min(1,Math.max(0,max>0?-r.top/max:1))}
+ var p=ease(seg(t,.08,.26));
+ panel.setAttribute('transform','translate(0 '+(-250*p).toFixed(1)+')');
+ panel.setAttribute('opacity',(1-seg(t,.2,.28)).toFixed(2));
+ var f=ease(seg(t,.28,.44));
+ foam.setAttribute('transform','translate('+(300*f).toFixed(1)+' 0)');
+ foam.setAttribute('opacity',(1-seg(t,.4,.48)).toFixed(2));
+ var a=ease(seg(t,.46,.62));
+ art.setAttribute('transform','translate(0 '+(-64*a).toFixed(1)+')');
+ tags.forEach(function(g,i){
+  var s=.64+i*.06,u=ease(seg(t,s,s+.07));
+  g.setAttribute('opacity',u.toFixed(2));
+  g.setAttribute('transform','translate(0 '+(-22*(1-u)).toFixed(1)+')');
+ });
+ var k=t<.08?0:t<.28?1:t<.46?2:t<.64?3:t<.9?4:5;
+ cT.textContent=steps[k][0];cS.textContent=steps[k][1];
+ for(var j=0;j<6;j++)dots[j].className=j<=k?'on':'';
+}
+addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+})();
+</script>
+</body>
+</html>
