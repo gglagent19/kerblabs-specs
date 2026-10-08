@@ -1,0 +1,31 @@
+# Northcoast Classic Auto Restoration (concept by Kerblabs)
+
+> Classic car restoration shop in Willoughby, Ohio with over 25 years experience doing ground up restorations. Facts from northcoastautorestoration.com. This is a free concept, not their official site.
+
+- Address: 3945 Church St. Unit A, Willoughby, Ohio 44094
+- Phone (main): 440-602-7200, Monday to Friday, 9am to 5pm
+- Text line (24/7): 216-544-7549
+- Email: not published
+- Contact form: http://www.northcoastautorestoration.com/contact.html
+
+## Services
+- Classic, antique and muscle car restoration
+- Custom builds
+- Modern drivetrain conversions
+- Muscle car customization
+- Interior and exterior restoration
+- Welding and metal fabrication
+- Body work and refinishing
+- Classic appraisals
+- Consignment
+- Parts sourcing
+
+## FAQ
+- Where? Willoughby, Ohio.
+- Prices? Not published in the source pages.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Call 440-602-7200, text 216-544-7549, or use the contact form to start a conversation.

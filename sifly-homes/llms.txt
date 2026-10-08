@@ -1,0 +1,24 @@
+# Sifly Homes (concept by Kerblabs)
+
+> Luxury custom home builders in Charleston, SC. Tagline: "Built on Experience". Facts from siflyhomes.com. This is a free concept, not their official site.
+
+- Location: Charleston, SC (street address not published)
+- Phone: not published
+- Website: http://www.siflyhomes.com
+- Contact form: http://www.siflyhomes.com/connect (First/Last name, Email, Subject, Message)
+
+## Services
+- Pre-Construction
+- Construction & Renovations
+- Post-Construction
+- Bespoke Work
+
+## FAQ
+- Where? Charleston, SC.
+- Prices? Not published in the source pages.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Use the contact form at http://www.siflyhomes.com/connect to start a conversation.

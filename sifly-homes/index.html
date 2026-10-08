@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sifly Homes | Luxury custom home builders, Charleston SC (concept)</title>
+<meta name="description" content="Concept site for Sifly Homes, luxury custom home builders in Charleston, SC. A scroll-exploded axonometric house lights their four services in turn. Built by Kerblabs as a free spec.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/sifly-homes/">
+<meta property="og:title" content="Sifly Homes | Concept site by Kerblabs">
+<meta property="og:description" content="A house that pulls itself apart as you scroll, then settles whole. Free concept for Sifly Homes.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/sifly-homes/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":["GeneralContractor","HomeAndConstructionBusiness"],"@id":"https://gglagent19.github.io/kerblabs-specs/sifly-homes/#biz","name":"Sifly Homes","slogan":"Built on Experience","description":"Luxury custom home builders in Charleston, SC.","url":"http://www.siflyhomes.com","address":{"@type":"PostalAddress","addressLocality":"Charleston","addressRegion":"SC","addressCountry":"US"},"contactPoint":{"@type":"ContactPoint","contactType":"customer service","url":"http://www.siflyhomes.com/connect"},"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Pre-Construction"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Construction & Renovations"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Post-Construction"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Bespoke Work"}}]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Where is Sifly Homes based?","acceptedAnswer":{"@type":"Answer","text":"Charleston, SC. A street address is not published on the pages this concept draws from."}},
+{"@type":"Question","name":"What does Sifly Homes offer?","acceptedAnswer":{"@type":"Answer","text":"Four listed services: Pre-Construction, Construction & Renovations, Post-Construction and Bespoke Work."}},
+{"@type":"Question","name":"How do I contact Sifly Homes?","acceptedAnswer":{"@type":"Answer","text":"Use the contact form at http://www.siflyhomes.com/connect. It asks for first and last name, email, subject and message."}},
+{"@type":"Question","name":"Does Sifly Homes publish prices?","acceptedAnswer":{"@type":"Answer","text":"Not on the pages this concept draws from. Ask through the contact form."}}
+]}]}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--greige:#ddd6ca;--paper:#ece7dd;--card:#f5f1e8;--ink:#2a2927;--brass:#a8854a;--brassd:#7d6030;--mut:#625d54;--line:#cbc3b3}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.55;-webkit-text-size-adjust:100%}
+a{color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;height:64px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 16px;background:rgba(236,231,221,.95);border-bottom:1px solid var(--line);font-family:Arial,Helvetica,sans-serif}
+.brand{font-weight:700;letter-spacing:.14em;font-size:14px;text-transform:uppercase;line-height:1.2}
+.navr{display:flex;gap:16px;align-items:center;font-size:13px}
+.navr a.l{text-decoration:none;display:none}
+.btn{display:inline-block;background:var(--ink);color:var(--paper);padding:11px 16px;border-radius:2px;text-decoration:none;font:700 13px Arial,sans-serif;letter-spacing:.06em}
+.btn.alt{background:var(--brass);color:#fff}
+.hero{height:380vh;position:relative;background:linear-gradient(180deg,var(--greige),var(--paper))}
+.pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;padding-top:112px;display:flex;flex-direction:column}
+.copy{padding:0 18px;max-width:900px}
+.eyebrow{font:700 11px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--brassd)}
+h1{font-size:clamp(30px,8vw,76px);line-height:1.02;margin:8px 0;letter-spacing:-.02em;font-weight:400}
+.sub{font-size:clamp(14px,3.6vw,18px);color:var(--mut);max-width:520px}
+.stage{flex:1 1 auto;min-height:0;position:relative}
+.stage svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.call{margin:0 18px;max-width:640px;min-height:104px;border-left:3px solid var(--brass);padding:4px 0 4px 14px}
+.call em{display:block;font:700 11px 'Courier New',monospace;letter-spacing:.08em;color:var(--brassd);font-style:normal}
+.call b{display:block;font:400 clamp(21px,5.6vw,32px)/1.1 Georgia,serif;margin-top:3px}
+.call span{display:block;margin-top:5px;font-size:clamp(13px,3.4vw,16px);color:var(--mut)}
+.dots{display:flex;gap:8px;margin:10px 18px max(16px,env(safe-area-inset-bottom))}
+.dots i{width:28px;height:3px;background:var(--line);display:block}
+.dots i.on{background:var(--brass)}
+/* house drawing */
+.L .w{stroke:#3a3835;stroke-width:1.2;stroke-linejoin:round;transition:stroke .4s,fill .4s}
+.fl{fill:#e9e3d6}.fr{fill:#d3cab8}.ft{fill:#f4f0e6}
+.wall.fl{fill:rgba(244,240,230,.55)}.wall.fr{fill:rgba(211,202,184,.6)}
+.g.fl,.g.fr{fill:#cfc6b4}.g.ft{fill:#dcd4c3}
+.gr{stroke:#a79e8b;stroke-width:.6;opacity:.7}
+.st{stroke:#3a3835;stroke-width:.5;opacity:.35}
+.rim{fill:none;stroke:#3a3835;stroke-width:.8;stroke-dasharray:3 3;opacity:.5}
+.pt{stroke:#3a3835;stroke-width:1;fill:none;transition:stroke .4s}
+.fu{fill:rgba(58,56,53,.06);stroke:#3a3835;stroke-width:.8;transition:stroke .4s,fill .4s}
+.win{fill:#cfd2cc;stroke:#3a3835;stroke-width:.9;transition:fill .6s}
+.dr{fill:#8b7345;stroke:#3a3835;stroke-width:.9}
+.ax{stroke:var(--brass);stroke-width:1;stroke-dasharray:4 5;opacity:.55}
+.tag{font:700 12px 'Courier New',monospace;fill:#625d54;letter-spacing:.06em;transition:fill .4s}
+.ld{stroke:#8b8474;stroke-width:.8}
+.s0 .L0 .w,.s1 .L1 .w,.s1 .L2 .w,.s2 .L3 .w{stroke:var(--brass);stroke-width:1.8}
+.s0 .L0 .fl,.s1 .L1 .fl,.s1 .L2 .fl,.s2 .L3 .fl{fill:#efe2c4}
+.s0 .L0 .fr,.s1 .L1 .fr,.s1 .L2 .fr,.s2 .L3 .fr{fill:#e0cc9e}
+.s0 .L0 .ft,.s1 .L1 .ft,.s1 .L2 .ft,.s2 .L3 .ft{fill:#f7edd6}
+.s0 .L0 .wall.fl,.s1 .L1 .wall.fl,.s1 .L2 .wall.fl{fill:rgba(239,226,196,.6)}
+.s0 .L0 .wall.fr,.s1 .L1 .wall.fr,.s1 .L2 .wall.fr{fill:rgba(224,204,158,.65)}
+.s0 .L0 .tag,.s1 .L1 .tag,.s1 .L2 .tag,.s2 .L3 .tag,.s3 .tag{fill:var(--brassd)}
+.s2 .pt,.s2 .fu{stroke:var(--brass);stroke-width:1.6}
+.s2 .fu{fill:rgba(168,133,74,.2)}
+.s3 .w{stroke:var(--brass);stroke-width:1.5}
+.s3 .win{fill:#f3cf82}
+.s3 .pt,.s3 .fu{stroke:var(--brass)}
+.s3 .fu{fill:rgba(168,133,74,.22)}
+.s3 .glow{opacity:1}
+.glow{opacity:0;transition:opacity .6s}
+.note{position:absolute;right:10px;bottom:2px;font:10px Arial,sans-serif;color:var(--mut);letter-spacing:.04em}
+section{padding:72px 18px;max-width:1040px;margin:0 auto}
+h2{font-size:clamp(28px,7vw,46px);line-height:1.06;margin-bottom:16px;font-weight:400}
+.grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:22px}
+.card{background:var(--card);border:1px solid var(--line);padding:20px;border-top:3px solid var(--brass)}
+.card small{font:700 11px 'Courier New',monospace;letter-spacing:.1em;color:var(--brassd)}
+.card h3{font-size:21px;margin:4px 0 6px;font-weight:400}
+.card p{color:var(--mut);font-size:16px}
+.band{background:var(--ink);color:#ece7dd;max-width:none}
+.band .in{max-width:1040px;margin:0 auto}
+.band p{max-width:660px;opacity:.9}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{font-weight:700;cursor:pointer}
+.faq p{margin-top:8px;color:var(--mut)}
+.ctaRow{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.ph{margin-top:18px;border:2px dashed #b3a88f;padding:18px;color:var(--mut);font-size:15px}
+footer{padding:32px 18px 90px;text-align:center;font:13px/1.6 Arial,sans-serif;color:var(--mut);border-top:1px solid var(--line)}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:8px;padding:10px 12px max(10px,env(safe-area-inset-bottom));background:rgba(236,231,221,.96);border-top:1px solid var(--line)}
+.sticky .btn{flex:1;text-align:center}
+@media(min-width:760px){.grid{grid-template-columns:repeat(4,1fr)}.navr a.l{display:inline}.sticky{display:none}footer{padding-bottom:40px}.pin{padding-top:124px}.copy,.call,.dots{margin-left:48px}nav{padding:0 40px}.brand{font-size:15px}}
+@media(prefers-reduced-motion:reduce){.hero{height:auto}.pin{position:static;height:auto;padding-bottom:20px}.stage{flex:none;height:62vh;min-height:380px}}
+</style>
+</head>
+<body>
+<nav>
+ <span class="brand">Sifly Homes</span>
+ <div class="navr"><a class="l" href="#build">Services</a><a class="l" href="#faq">FAQ</a><a class="l" href="#agent-ready">Agent-ready</a><a class="btn alt" href="http://www.siflyhomes.com/connect">Connect</a></div>
+</nav>
+
+<div class="hero" id="hero">
+ <div class="pin">
+  <div class="copy">
+   <div class="eyebrow">Charleston, SC &middot; Luxury Custom Home Builders</div>
+   <h1>Built on Experience.</h1>
+   <p class="sub">Scroll to lift a custom home apart, layer by layer, and watch it settle whole.</p>
+  </div>
+  <div class="stage"><svg id="svg" class="s0" viewBox="-210 -335 545 590" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Illustrative line drawing of a luxury home in axonometric view, floors and roof separating then settling together"></svg><div class="note">Illustrative drawing, not a Sifly Homes project</div></div>
+  <div class="call" id="call"><em id="cE">STAGE 01/04 &middot; SEPARATION 0%</em><b id="cT">Pre-Construction</b><span id="cS">Site and foundation layer lights first.</span></div>
+  <div class="dots" id="dots"><i class="on"></i><i></i><i></i><i></i></div>
+ </div>
+</div>
+
+<section id="build">
+ <h2>Four services, one house</h2>
+ <p>The four services listed on their own site, matched to the layer of the drawing above. The mapping is illustrative.</p>
+ <div class="grid">
+  <div class="card"><small>LAYER 01</small><h3>Pre-Construction</h3><p>Site and foundation.</p></div>
+  <div class="card"><small>LAYER 02</small><h3>Construction &amp; Renovations</h3><p>Framing and floors.</p></div>
+  <div class="card"><small>LAYER 03</small><h3>Bespoke Work</h3><p>Interiors and roof.</p></div>
+  <div class="card"><small>LAYER 04</small><h3>Post-Construction</h3><p>The completed, lit house.</p></div>
+ </div>
+</section>
+
+<section class="band"><div class="in">
+ <h2>A luxury builder deserves a luxury first click</h2>
+ <p>Sifly Homes presents "Luxury Custom Home Builders" and "Built on Experience" on a clean, modern site. This concept shows what a cinematic first impression could add: one moving drawing that explains the whole service line in ten seconds of scrolling. Details not yet confirmed, such as address, phone and credentials, stay as labelled placeholders until the team supplies them.</p>
+ <div class="ctaRow"><a class="btn alt" href="http://www.siflyhomes.com/connect">Open their connect page</a></div>
+</div></section>
+
+<section id="start">
+ <h2>Start a conversation</h2>
+ <p>Their contact form asks for first and last name, email, subject and message. This concept sends visitors straight to it.</p>
+ <div class="ctaRow"><a class="btn" href="http://www.siflyhomes.com/connect">siflyhomes.com/connect</a></div>
+ <div class="ph">Project enquiry form goes here (concept placeholder, not connected). Phone and address: to be supplied by Sifly Homes.</div>
+</section>
+
+<section id="agent-ready" style="padding-top:0">
+ <h2>Agent-Ready included</h2>
+ <p>This concept ships with llms.txt, robots.txt, schema markup and a machine-readable services file, so AI assistants can read who Sifly Homes is, what they offer and how to reach them. See <a href="llms.txt">llms.txt</a> and <a href="services.json">services.json</a>.</p>
+</section>
+
+<section id="faq" class="faq" style="padding-top:0">
+ <h2>FAQ</h2>
+ <details><summary>Where are they based?</summary><p>Charleston, SC. A street address is not published on the pages this concept draws from.</p></details>
+ <details><summary>What do they offer?</summary><p>Four listed services: Pre-Construction, Construction &amp; Renovations, Post-Construction and Bespoke Work.</p></details>
+ <details><summary>How do I contact them?</summary><p>Use the contact form at siflyhomes.com/connect. It asks for first and last name, email, subject and message.</p></details>
+ <details><summary>Are prices published?</summary><p>Not on the pages this concept draws from. Ask through the contact form.</p></details>
+</section>
+
+<footer>Concept by Kerblabs. Not affiliated with or endorsed by Sifly Homes. Facts from siflyhomes.com; the house drawing and layer mapping are illustrative.</footer>
+<div class="sticky"><a class="btn alt" href="http://www.siflyhomes.com/connect">Connect on their site</a></div>
+
+<script>
+(function(){
+var hero=document.getElementById('hero'),svg=document.getElementById('svg'),
+cE=document.getElementById('cE'),cT=document.getElementById('cT'),cS=document.getElementById('cS'),
+dots=document.querySelectorAll('#dots i');
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+var W=240,D=170,GAP=56,S=0.866,H=0.5;
+function X(x,y){return Math.round((x-y)*S*10)/10}
+function Y(x,y,z){return Math.round(((x+y)*H-z)*10)/10}
+function P(p){return X(p[0],p[1])+','+Y(p[0],p[1],p[2])}
+function poly(pts,cls){return '<polygon class="'+cls+'" points="'+pts.map(P).join(' ')+'"/>'}
+function ln(a,b,cls){return '<line class="'+cls+'" x1="'+X(a[0],a[1])+'" y1="'+Y(a[0],a[1],a[2])+'" x2="'+X(b[0],b[1])+'" y2="'+Y(b[0],b[1],b[2])+'"/>'}
+function pl(pts,cls){return '<polyline class="'+cls+'" points="'+pts.map(P).join(' ')+'"/>'}
+function box(x0,y0,x1,y1,z0,z1,c){
+ return poly([[x0,y1,z0],[x1,y1,z0],[x1,y1,z1],[x0,y1,z1]],c+' fl')+
+  poly([[x1,y1,z0],[x1,y0,z0],[x1,y0,z1],[x1,y1,z1]],c+' fr')+
+  poly([[x0,y0,z1],[x1,y0,z1],[x1,y1,z1],[x0,y1,z1]],c+' ft');
+}
+function wl(x0,x1,z0,z1,c){return poly([[x0,D,z0],[x1,D,z0],[x1,D,z1],[x0,D,z1]],c||'win')}
+function wr(y0,y1,z0,z1){return poly([[W,y1,z0],[W,y0,z0],[W,y0,z1],[W,y1,z1]],'win')}
+function flat(x0,y0,x1,y1,z){return poly([[x0,y0,z],[x1,y0,z],[x1,y1,z],[x0,y1,z]],'fu')}
+function tag(txt,zmid){
+ var x1=X(W,0)+4,y=Y(W,0,zmid);
+ return '<line class="ld" x1="'+x1+'" y1="'+y+'" x2="262" y2="'+y+'"/><text class="tag" x="268" y="'+(y+4)+'">'+txt+'</text>';
+}
+function floor(zb,h,lvl){
+ var t=zb+6,top=zb+h,s='',x;
+ s+=box(0,0,W,D,zb,t,'w');
+ if(lvl===1){
+  s+=ln([110,0,t],[110,95,t],'pt')+ln([110,95,t],[W,95,t],'pt')+ln([0,80,t],[110,80,t],'pt')+flat(140,20,200,60,t)+flat(20,20,60,50,t);
+ }else{
+  s+=ln([80,0,t],[80,100,t],'pt')+ln([80,100,t],[W,100,t],'pt')+ln([150,100,t],[150,D,t],'pt')+flat(160,20,215,70,t)+flat(20,110,60,150,t);
+ }
+ s+=pl([[0,D,top],[0,0,top],[W,0,top],[W,D,top]],'rim');
+ s+=poly([[0,D,t],[W,D,t],[W,D,top],[0,D,top]],'w wall fl')+poly([[W,D,t],[W,0,t],[W,0,top],[W,D,top]],'w wall fr');
+ for(x=20;x<W;x+=20)s+=ln([x,D,t],[x,D,top],'st');
+ for(x=20;x<D;x+=20)s+=ln([W,x,t],[W,x,top],'st');
+ var w0=t+14,w1=top-12;
+ if(lvl===1){
+  s+=wl(20,60,w0,w1)+wl(150,210,w0,w1)+poly([[85,D,t],[115,D,t],[115,D,t+40],[85,D,t+40]],'dr');
+  s+=wr(25,60,w0,w1)+wr(100,145,w0,w1);
+ }else{
+  s+=wl(20,60,w0,w1)+wl(85,125,w0,w1)+wl(150,210,w0,w1);
+  s+=wr(25,70,w0,w1)+wr(100,145,w0,w1);
+ }
+ return s;
+}
+function roof(zb){
+ var R=52,o=12,s='',x0=-o,x1=W+o,y0=-o,y1=D+o,ym=D/2;
+ // chimney
+ var cz=zb+R*66/85+2;
+ s+=box(40,50,58,68,zb+10,cz+22,'w');
+ s+=poly([[x1,y0,zb],[x1,y1,zb],[x1,ym,zb+R]],'w fr');
+ s+=poly([[x0,y1,zb],[x1,y1,zb],[x1,ym,zb+R],[x0,ym,zb+R]],'w fl');
+ s+=ln([x0,ym,zb+R],[x1,ym,zb+R],'rim');
+ for(var i=1;i<8;i++){var xx=x0+i*(x1-x0)/8;s+=ln([xx,y1,zb],[xx,ym,zb+R],'st')}
+ return s;
+}
+function site(){
+ var s='',i;
+ s+=box(-30,-30,W+30,D+30,-8,0,'w g');
+ for(i=-30;i<=W+30;i+=30)s+=ln([i,-30,0],[i,D+30,0],'gr');
+ for(i=-30;i<=D+30;i+=30)s+=ln([-30,i,0],[W+30,i,0],'gr');
+ s+=pl([[-10,-10,0],[W+10,-10,0],[W+10,D+10,0],[-10,D+10,0],[-10,-10,0]],'rim');
+ s+=box(0,0,W,D,0,8,'w');
+ s+=ln([-20,-20,0],[-20,-20,26],'ld')+ln([W+20,-20,0],[W+20,-20,26],'ld')+ln([-20,D+20,0],[-20,D+20,26],'ld')+ln([W+20,D+20,0],[W+20,D+20,26],'ld');
+ return s;
+}
+var Z=[0,8,66,120];
+var html='';
+var corners=[[0,D],[W,D],[W,0]];
+corners.forEach(function(c,i){html+='<line class="ax" id="ax'+i+'" x1="'+X(c[0],c[1])+'" y1="'+Y(c[0],c[1],8)+'" x2="'+X(c[0],c[1])+'" y2="'+Y(c[0],c[1],120)+'"/>'});
+html+='<g class="L L0" id="g0">'+site()+tag('SITE',2)+'</g>';
+html+='<g class="L L1" id="g1">'+floor(8,58,1)+tag('LEVEL 1',37)+'</g>';
+html+='<g class="L L2" id="g2">'+floor(66,54,2)+tag('LEVEL 2',93)+'</g>';
+html+='<g class="L L3" id="g3">'+roof(120)+tag('ROOF',140)+'</g>';
+svg.innerHTML=html;
+var g=[0,1,2,3].map(function(i){return document.getElementById('g'+i)});
+var ax=[0,1,2].map(function(i){return document.getElementById('ax'+i)});
+var steps=[
+["Pre-Construction","Site and foundation layer lights first (illustrative mapping)."],
+["Construction & Renovations","Framing and floors lift apart and light up."],
+["Bespoke Work","Interiors and roof, drawn out of the shell."],
+["Post-Construction","The house settles whole, windows lit."]];
+function upd(){
+ var t=1;
+ if(!reduce){var r=hero.getBoundingClientRect(),max=hero.offsetHeight-innerHeight;t=Math.min(1,Math.max(0,-r.top/max))}
+ var ex=(t<0.4?0.3+0.7*(t/0.4):1)*(t>0.8?(1-t)/0.2:1);
+ var i;
+ for(i=0;i<4;i++)g[i].setAttribute('transform','translate(0,'+(-(i*GAP*ex)).toFixed(1)+')');
+ var top=120-3*GAP*ex*-1;
+ for(i=0;i<3;i++){var c=corners[i];ax[i].setAttribute('y2',Y(c[0],c[1],120+3*GAP*ex))}
+ var st=t>=1?3:Math.min(3,Math.floor(t*4));
+ svg.setAttribute('class','s'+st);
+ cE.textContent='STAGE 0'+(st+1)+'/04 · SEPARATION '+Math.round(ex*100)+'%';
+ cT.textContent=steps[st][0];cS.textContent=steps[st][1];
+ for(i=0;i<4;i++)dots[i].className=i<=st?'on':'';
+}
+addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+})();
+</script>
+</body>
+</html>

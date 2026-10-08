@@ -1,0 +1,26 @@
+# Charleston Landscape (concept by Kerblabs)
+
+> Landscape design and build company serving the Charleston area and the Lowcountry, with over 45 years of expertise. Facts from charlestonlandscape.com. This is a free concept, not their official site.
+
+- Phone: (843) 296-7592
+- Contact form: https://www.charlestonlandscape.com/contact-us/ (name, email, phone, location, start date, budget, message)
+- Note: per their site, not currently accepting general lawn maintenance clients; custom projects only
+
+## Services
+- Landscape design and installation
+- Hardscaping: pavers, concrete, brick, retaining walls, pool decks
+- Outdoor structures: kitchens, pergolas, decks, firepits, screened porches, fences
+- Outdoor features: water features, cable railing, lighting
+- Turf and planting: hydroseeding, synthetic turf
+- Gutters and downspouts
+
+## FAQ
+- Where? Charleston area and the Lowcountry.
+- Prices? Not published in the source pages.
+- Lawn maintenance? Not currently accepting general clients.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Call (843) 296-7592 or submit the contact form to start a custom project.
