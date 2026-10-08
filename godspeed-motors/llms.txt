@@ -1,0 +1,17 @@
+# Godspeed Motors (concept by Kerblabs)
+
+> Concept site, not the official one. Official site: https://www.godspeedmotors.com/
+
+- Type: family owned pre-owned car dealer
+- Address: 11881 Vance Davis Dr, Charlotte, NC 28269
+- Phone: 704-877-7500 (Sales)
+- Hours (per their website): Mon-Fri 9 am-7 pm, Sat 9 am-5 pm, Sun closed
+- Contact: https://www.godspeedmotors.com/contact/ (Send a message)
+
+## Machine-readable
+- services.json
+
+## FAQ
+- Where is it? 11881 Vance Davis Dr, Charlotte, NC 28269.
+- When is it open? Mon-Fri 9-7, Sat 9-5, Sun closed.
+- How to reach them? Call 704-877-7500 or use Send a message on their site.

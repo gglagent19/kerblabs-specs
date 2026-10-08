@@ -1,0 +1,17 @@
+# Paul Scott Gallery (concept by Kerblabs)
+
+> Concept site, not the official one. Official site: https://www.paulscottgallery.com
+
+- Type: art gallery, Scottsdale, Arizona
+- Phone: 480-596-9533
+- Hours (per their site): Tue-Sat 11 am-5:30 pm. Thursday ArtWalk 7-9 pm, October through May only
+- Featured on homepage: Shona sculpture
+- Contact form: https://www.paulscottgallery.com/contact
+
+## Machine-readable
+- services.json
+
+## FAQ
+- When is it open? Tue-Sat 11-5:30.
+- What is the Thursday ArtWalk? 7-9 pm, October through May.
+- How to reach them? Call 480-596-9533 or use the contact form.
