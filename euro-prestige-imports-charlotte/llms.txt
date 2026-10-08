@@ -1,0 +1,22 @@
+# Euro Prestige Imports (concept by Kerblabs)
+
+> European car sales, brokerage, consignment, service and storage in Charlotte, NC. Facts from epicharlotte.com. This page is a free concept, not the company's own site.
+
+## Facts
+- Address: 8350 Arrowridge Boulevard, Charlotte, NC 28273.
+- Phone: 704-305-5373 (site also lists 704-621-0752).
+- Hours listed: Monday to Friday 9am to 5pm, weekends by appointment.
+- Marques sold: Aston Martin, Ferrari, Porsche, Maserati, Land Rover.
+
+## Services
+- Sales, brokerage and consignment of pre-owned European cars
+- Service and maintenance
+- Collection maintenance
+- Car storage (through Unknown Charlotte)
+- TECHART Porsche parts (installer and dealer), urban styling kits
+
+## Actions
+- Contact: https://www.epicharlotte.com/ (contact form)
+
+## Files
+- services.json

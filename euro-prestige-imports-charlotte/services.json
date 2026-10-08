@@ -1,0 +1,14 @@
+{
+ "business": "Euro Prestige Imports",
+ "source": "epicharlotte.com (concept by Kerblabs, not the company's own file)",
+ "location": {"street": "8350 Arrowridge Boulevard", "city": "Charlotte", "region": "NC", "postalCode": "28273", "country": "US"},
+ "phone": "+1-704-305-5373",
+ "services": [
+  {"name": "Sales, brokerage and consignment of pre-owned European cars", "price": null},
+  {"name": "Service and maintenance", "price": null},
+  {"name": "Collection maintenance", "price": null},
+  {"name": "Car storage (through Unknown Charlotte)", "price": null},
+  {"name": "TECHART Porsche parts and urban styling kits", "price": null}
+ ],
+ "booking": "https://www.epicharlotte.com/"
+}
