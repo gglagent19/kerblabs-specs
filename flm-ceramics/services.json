@@ -1,0 +1,14 @@
+{
+ "name": "FLM Ceramics",
+ "source": "https://flmceramics.com",
+ "address": "301 2nd Street, Petaluma, CA 94952",
+ "phone": "+1-415-272-9997",
+ "email": "flmceramics@gmail.com",
+ "hours": "Mon 10:00-16:00, Thu-Fri 10:00-17:00 (storefront); Saturday listing unclear",
+ "services": [
+  {"name": "Handmade tile", "booking": "request the printed catalog via site form"},
+  {"name": "Handmade pottery and dinnerware", "booking": "showroom or online shop"},
+  {"name": "Studio tour", "booking": "by appointment, call or email"},
+  {"name": "Workshops and events", "booking": "see their site"}
+ ]
+}

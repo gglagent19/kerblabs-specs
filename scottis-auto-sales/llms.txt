@@ -1,0 +1,16 @@
+# Scotti's Auto Sales (concept by Kerblabs)
+> Family-owned premium and luxury used dealer at 2811 Bee Ridge Road, Sarasota, FL 34239, serving Sarasota for over 30 years. Facts from scottisautosales.com.
+
+- Phone: (941) 924-5885 (sales), 888.312.9003 (toll-free)
+- Services: financing for all types of credit, online credit application, Capital One pre-qualification, nationwide shipping, trade-in valuation, KBB Instant Cash Offer, service and maintenance for any make or model
+- Hours: weekly schedule not published
+- Prices: not shown here (inventory changes)
+
+## FAQ
+Q: Where is it? A: 2811 Bee Ridge Road, Sarasota, FL 34239.
+Q: How do I contact them? A: Phone or the contact form on their site.
+
+## Actions
+- Contact form: https://www.scottisautosales.com/contact-scottis-auto-sales-in-sarasota-fl
+
+Machine-readable: services.json
