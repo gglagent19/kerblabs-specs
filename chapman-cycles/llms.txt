@@ -1,0 +1,17 @@
+# Chapman Cycles (concept site by Kerblabs)
+
+> Custom bicycles hand built in Pawtuxet Village, Rhode Island, USA. Tagline: "Modern frames for vintage souls."
+
+This is a free concept page, not the official site. Official site: https://www.chapmancycles.com
+
+## Facts (from chapmancycles.com)
+- Location: Pawtuxet Village, Rhode Island, USA. No street address or phone is published.
+- Builds: 650b city and touring bikes, 700c randonneur, 650b allroad frameset, single speed, fixed gear, basket city bike, porteur, big tire road bike.
+- Methods shown: silver brazing, lugged frames, modified and hand carved fork crowns.
+- Prices: not stated on the pages reviewed.
+
+## How to get on the list
+- Email brian@chapmancycles.com or use https://www.chapmancycles.com/contact/
+
+## Machine-readable
+- services.json

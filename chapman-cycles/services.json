@@ -1,0 +1,12 @@
+{
+ "business": "Chapman Cycles",
+ "location": "Pawtuxet Village, Rhode Island, USA",
+ "official_site": "https://www.chapmancycles.com",
+ "contact": {"email": "brian@chapmancycles.com", "form": "https://www.chapmancycles.com/contact/", "phone": null, "address": null},
+ "services": [
+  {"name": "Custom hand built bicycle", "types": ["650b city/touring", "700c randonneur", "650b allroad frameset", "single speed", "fixed gear", "basket city bike", "porteur", "big tire road bike"]}
+ ],
+ "prices": "not published on pages reviewed",
+ "booking": "Email or contact form to get on the list",
+ "source": "chapmancycles.com; concept by Kerblabs, not affiliated"
+}
