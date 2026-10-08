@@ -1,0 +1,15 @@
+# R. Michelson Galleries (concept by Kerblabs)
+
+> Fine art gallery with art restoration and picture framing in Northampton, Massachusetts. Facts from rmichelson.com.
+
+- Address: 132 Main Street, Northampton, MA 01060
+- Phone: 413.586.3964
+- Email: RM@RMichelson.com
+- Hours: Sun-Tue 12-5, Wed-Thu 10-6, Fri 12-8, Sat 10-6
+- Services: fine art, children's book illustration, art restoration, picture framing
+
+## Actions
+- Contact: call 413.586.3964 or email RM@RMichelson.com
+- Machine-readable services: services.json
+
+This is an unaffiliated concept page. Visuals are illustrative.
