@@ -1,0 +1,15 @@
+{
+ "business": "Keweenaw Saunas",
+ "location": "37055 US, Chassell, Michigan 49916, USA",
+ "official_site": "https://keweenawsaunas.com",
+ "contact": {"email": "tammy.waisanen@icloud.com", "phone": "+1-906-481-3000", "form": null, "address": "37055 US, Chassell, MI 49916"},
+ "hours": "Monday-Friday 9-4; weekends by appointment",
+ "services": [
+  {"name": "Keweenaw barrel saunas", "fuel": "wood-burning"},
+  {"name": "Square saunas"},
+  {"name": "Hot tubs", "note": "named in their page title"}
+ ],
+ "prices": "not published on pages reviewed; a Pricing page is linked on their site",
+ "booking": "Phone or email",
+ "source": "keweenawsaunas.com; concept by Kerblabs, not affiliated"
+}

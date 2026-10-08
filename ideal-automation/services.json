@@ -1,0 +1,24 @@
+{
+ "business": "Ideal Automation LLC",
+ "url": "https://www.myidealav.com",
+ "phone": "+1-602-556-4164",
+ "address": "2980 E Northern Ave, Suite B5, Phoenix, AZ 85028",
+ "license": "AZ ROC #332501",
+ "booking": "https://www.myidealav.com/contact",
+ "services": [
+  {"name": "Lighting design and control", "price": null},
+  {"name": "Whole-home automation", "price": null},
+  {"name": "Audio and video", "price": null},
+  {"name": "Home theater and media rooms", "price": null},
+  {"name": "Motorized shades", "price": null},
+  {"name": "Security and surveillance", "price": null},
+  {"name": "Networking and Wi-Fi", "price": null},
+  {"name": "Pool and outdoor control", "price": null},
+  {"name": "Climate and energy", "price": null},
+  {"name": "Structured wiring and pre-wire", "price": null}
+ ],
+ "actions": [
+  {"name": "Request a consultation", "url": "https://www.myidealav.com/contact", "status": "available"}
+ ],
+ "note": "Prices not published. Concept file by Kerblabs, unofficial."
+}

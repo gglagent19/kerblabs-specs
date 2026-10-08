@@ -1,0 +1,25 @@
+# Ideal Automation (concept by Kerblabs)
+
+> Home automation and audio video company in Phoenix, AZ. Facts from myidealav.com. This is an unofficial concept page.
+
+## Contact
+- Address: 2980 E Northern Ave, Suite B5, Phoenix, AZ 85028
+- Phone: 602.556.4164
+- Contact form: https://www.myidealav.com/contact
+- License: AZ ROC #332501
+
+## Services
+Lighting design and control, whole-home automation, audio and video, home theater and media rooms, motorized shades, security and surveillance, networking and Wi-Fi, pool and outdoor control, climate and energy, custom control and touchpanels, structured wiring and pre-wire.
+
+## Service area (per their site)
+Phoenix, Scottsdale, Paradise Valley, Arcadia, Biltmore, Cave Creek, Carefree, Fountain Hills, Mesa, Chandler, Gilbert, Tucson.
+
+## Actions
+- Request a consultation: https://www.myidealav.com/contact (available)
+- Call: 602.556.4164 (available)
+
+## FAQ
+- How do I get in touch? Use the consultation form or call 602.556.4164.
+
+## Files
+- services.json

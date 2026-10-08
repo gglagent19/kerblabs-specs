@@ -1,0 +1,22 @@
+# Keweenaw Saunas (concept site by Kerblabs)
+
+> Wood-burning barrel saunas and square saunas built in Chassell, Michigan, in the Upper Peninsula, USA.
+
+This is a free concept page, not the official site. Official site: https://keweenawsaunas.com
+
+## Facts (from keweenawsaunas.com)
+- Address: 37055 US, Chassell, MI 49916. Phone: (906) 481-3000.
+- Hours: Monday to Friday 9 to 4, weekends by appointment.
+- Products: Keweenaw barrel saunas (wood-burning), square saunas, hot tubs named in the page title.
+- Prices: not published on the pages reviewed.
+
+## How to reach them
+- Call (906) 481-3000 or email tammy.waisanen@icloud.com (published on their contact page). No contact form.
+
+## FAQ
+- Where? Chassell, Michigan 49916.
+- What do they sell? Wood-burning barrel saunas and square saunas.
+- Cost? Not published here; see the Pricing page on their site.
+
+## Machine-readable
+- services.json
