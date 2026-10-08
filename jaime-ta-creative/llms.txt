@@ -1,0 +1,19 @@
+# Jaime Ta Creative (concept by Kerblabs)
+> Wedding and event planning in Portland, San Diego and Orange County, plus destination weddings. Facts from jaimetacreative.com. This is a concept page, not their official site.
+
+## Services
+- Full-service wedding planning
+- Month-of coordination
+- Custom package planning
+- Elopement planning
+- Event planning
+- Destination weddings
+
+## Contact
+- Email: jaimetacreative@gmail.com
+- Phone: 858.231.8357
+- Official site: https://jaimetacreative.com
+
+## FAQ
+- Prices: none seen on their homepage.
+- Machine-readable: services.json
