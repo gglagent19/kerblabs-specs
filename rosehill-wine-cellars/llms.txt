@@ -1,0 +1,24 @@
+# Rosehill Wine Cellars (concept by Kerblabs)
+
+> Custom wine cellar design and build. Facts from rosehillwinecellars.com. This page is a free concept, not the company's own site.
+
+## Facts
+- Established 1995 (per their site); worldwide design and service.
+- Canada showroom: 1686 Mattawa Avenue, Mississauga, ON L4X 1K2.
+- USA office and showroom: 3940 Prospect Ave, #103, Naples, FL (contact page listed it as opening mid-November 2025; confirm current status).
+- USA office phone: 239-402-1415. Toll-free 888-253-6807.
+- USA hours listed: Tuesday to Friday 9am to 5pm, Saturday 10am to 4pm.
+
+## Services
+- Custom wine cellar design and build (personalized consultation, CAD design, in-house construction)
+- Cellar consultation services
+- Off-site wine storage
+- Annual maintenance plans
+- Wine coolers, cellar cooling systems, racking
+
+## Actions
+- Contact: https://rosehillwinecellars.com/pages/contact
+- Service appointment: https://rosehillwinecellars.com/pages/request-a-service-appointment
+
+## Files
+- services.json

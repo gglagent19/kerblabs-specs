@@ -1,0 +1,13 @@
+{
+ "business": "Rosehill Wine Cellars",
+ "source": "rosehillwinecellars.com (concept by Kerblabs, not the company's own file)",
+ "location": {"street": "3940 Prospect Ave, #103", "city": "Naples", "region": "FL", "country": "US", "note": "listed as opening mid-November 2025; confirm status"},
+ "phone": "+1-239-402-1415",
+ "services": [
+  {"name": "Custom wine cellar design and build", "price": null},
+  {"name": "Cellar consultation", "price": null},
+  {"name": "Off-site wine storage", "price": null},
+  {"name": "Annual maintenance plans", "price": null}
+ ],
+ "booking": "https://rosehillwinecellars.com/pages/contact"
+}
