@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Michelle's Piano Company | Portland, Oregon piano showroom (concept)</title>
+<meta name="description" content="Concept site for Michelle's Piano Company, Portland Oregon. A player-piano roll scrolls and the keys play as you scroll. Built by Kerblabs as a free spec.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/michelles-piano-company/">
+<meta property="og:title" content="Michelle's Piano Company | Concept site by Kerblabs">
+<meta property="og:description" content="A piano roll scrolls, the keys play. Free concept.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/michelles-piano-company/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"LocalBusiness","@id":"https://gglagent19.github.io/kerblabs-specs/michelles-piano-company/#biz","name":"Michelle's Piano Company","url":"https://michellespiano.com","telephone":"+1-503-295-1180","address":{"@type":"PostalAddress","streetAddress":"600 SE Stark St","addressLocality":"Portland","addressRegion":"OR","postalCode":"97214","addressCountry":"US"},"openingHours":["Mo-Sa 10:00-17:00"]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Where is Michelle's Piano Company?","acceptedAnswer":{"@type":"Answer","text":"600 SE Stark St, Portland, OR 97214, per their site."}},
+{"@type":"Question","name":"When is the showroom open?","acceptedAnswer":{"@type":"Answer","text":"Monday to Saturday 10am to 5pm, Sunday by appointment, per their site."}},
+{"@type":"Question","name":"What do they offer?","acceptedAnswer":{"@type":"Answer","text":"New and pre-owned piano sales, moving, storage, rentals, lessons, service and rebuilding, and event space rental, per their site."}},
+{"@type":"Question","name":"How do I reach them?","acceptedAnswer":{"@type":"Answer","text":"Showroom 503-295-1180, moving and storage 503-295-9317, service and rebuilding 503-819-5053 (call or text), or the contact form on their site."}}
+]}]}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#1a1210;--bg2:#251a16;--ink:#f4ead8;--mut:#b9a998;--gold:#d9a441;--red:#a8322d;--line:#3d2c25}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.55;-webkit-text-size-adjust:100%}
+a{color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;height:64px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 16px;background:rgba(26,18,16,.96);border-bottom:1px solid var(--line);font-family:Arial,Helvetica,sans-serif}
+.brand{font-weight:800;letter-spacing:.05em;font-size:13px;line-height:1.1;text-transform:uppercase;max-width:130px}
+.navr{display:flex;gap:14px;align-items:center;font-size:13px}
+.navr a.l{text-decoration:none;display:none}
+.btn{display:inline-block;background:var(--gold);color:#201406;padding:10px 16px;border-radius:2px;text-decoration:none;font:700 13px Arial,sans-serif;letter-spacing:.05em}
+.btn.alt{background:var(--ink);color:#1a1210}
+.hero{height:460vh;position:relative}
+.pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;padding-top:104px;display:flex;flex-direction:column}
+.copy{padding:0 18px;max-width:900px}
+.eyebrow{font:700 11px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+h1{font-size:clamp(30px,8vw,72px);line-height:1;margin:8px 0;letter-spacing:-.02em}
+.sub{font-size:clamp(14px,3.6vw,18px);color:var(--mut);max-width:560px}
+.stage{flex:1;min-height:0;display:flex;flex-direction:column;margin-top:6px}
+.stage svg{flex:1;min-height:0;width:100%;display:block}
+.cap{font:11px Arial,sans-serif;color:var(--mut);padding:0 18px;letter-spacing:.04em}
+.call{margin:4px 18px 0;max-width:620px;min-height:72px;border-left:5px solid var(--gold);padding:4px 0 4px 14px}
+.call b{display:block;font:800 clamp(20px,5.4vw,30px)/1.1 Georgia,serif}
+.call span{display:block;margin-top:4px;font-size:clamp(13px,3.4vw,16px);color:var(--mut);overflow-wrap:anywhere}
+.dots{display:flex;gap:6px;margin:8px 18px max(14px,env(safe-area-inset-bottom))}
+.dots i{width:24px;height:4px;background:var(--line);display:block;border-radius:2px}
+.dots i.on{background:var(--gold)}
+section{padding:72px 18px;max-width:1040px;margin:0 auto}
+h2{font-size:clamp(28px,7vw,48px);line-height:1.05;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:22px}
+.card{background:var(--bg2);border:1px solid var(--line);padding:20px;border-radius:3px}
+.card h3{font-size:20px;margin-bottom:6px;color:var(--gold)}
+.card p{color:var(--mut);font-size:16px}
+.band{background:var(--bg2);max-width:none}
+.band .in{max-width:1040px;margin:0 auto}
+.band p{max-width:640px;color:var(--mut)}
+.note{margin-top:16px;border-left:4px solid var(--gold);padding:8px 14px;background:var(--bg2);color:var(--mut)}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{font-weight:700;cursor:pointer}
+.faq p{margin-top:8px;color:var(--mut);overflow-wrap:anywhere}
+.ctaRow{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+footer{padding:32px 18px 90px;text-align:center;font:13px/1.6 Arial,sans-serif;color:var(--mut);border-top:1px solid var(--line)}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:8px;padding:10px 12px max(10px,env(safe-area-inset-bottom));background:rgba(26,18,16,.97);border-top:1px solid var(--line)}
+.sticky .btn{flex:1;text-align:center}
+@media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr)}.navr a.l{display:inline}.sticky{display:none}footer{padding-bottom:40px}.pin{padding-top:112px}.copy,.call,.dots,.cap{margin-left:48px}.brand{max-width:none}nav{padding:0 40px}}
+@media(prefers-reduced-motion:reduce){.hero{height:auto}.pin{position:static;height:auto;padding-bottom:20px}.stage svg{height:60vh;flex:none}}
+</style>
+</head>
+<body>
+<nav>
+ <span class="brand">Michelle's Piano Company</span>
+ <div class="navr"><a class="l" href="#about">About</a><a class="l" href="#faq">FAQ</a><a class="l" href="#agent-ready">Agent-ready</a><a class="btn alt" href="tel:+15032951180">Call showroom</a></div>
+</nav>
+
+<div class="hero" id="hero">
+ <div class="pin">
+  <div class="copy">
+   <div class="eyebrow">Portland, Oregon &middot; Piano showroom</div>
+   <h1>Let us help you find your perfect piano.</h1>
+   <p class="sub">Scroll and a player-piano roll feeds the keys, one service at a time.</p>
+  </div>
+  <div class="stage">
+   <svg id="pr" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Illustrative player-piano roll: holes slide down a paper roll and press the keys of a keyboard">
+    <defs><clipPath id="rollclip"><rect x="0" y="0" width="400" height="180"/></clipPath></defs>
+    <rect x="0" y="0" width="400" height="180" fill="#e9d9b6"/>
+    <g id="roll" clip-path="url(#rollclip)"></g>
+    <rect x="0" y="176" width="400" height="4" fill="#a8322d"/>
+    <g id="keys"></g>
+   </svg>
+   <div class="cap">Illustrative visual, generated in the browser. The notes are decoration, not a claim about any instrument.</div>
+  </div>
+  <div class="call"><b id="cT">Portland showroom</b><span id="cS">600 SE Stark St. Scroll to play the roll.</span></div>
+  <div class="dots" id="dots"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+ </div>
+</div>
+
+<section id="about">
+ <h2>Michelle's Piano Company</h2>
+ <p>Their site describes a locally owned, family operated piano company in Portland, Oregon, at 600 SE Stark St. The showroom is open Monday to Saturday 10am to 5pm, Sunday by appointment.</p>
+ <div class="grid">
+  <div class="card"><h3>Sales</h3><p>New and pre-owned pianos, including Steinway, Mason and Hamlin, Bechstein, Sauter and Roland, per their site.</p></div>
+  <div class="card"><h3>Moving &amp; storage</h3><p>Piano moving and storage, with a dedicated line: 503-295-9317.</p></div>
+  <div class="card"><h3>Service &amp; more</h3><p>Service and rebuilding (call or text 503-819-5053), rentals, lessons and event space.</p></div>
+ </div>
+ <div class="note">Their site does not list prices, a founding year or owner names, so none are shown. The roll and keys are illustrative.</div>
+</section>
+
+<section class="band"><div class="in">
+ <h2>A homepage that plays like the showroom feels</h2>
+ <p>Buyers choose a piano by sound and touch. This concept gives the homepage one clear path: pick a type, choose a finish, ask about a trade-in, call the right line. Everything shown comes from what Michelle's already says about itself.</p>
+ <div class="ctaRow"><a class="btn" href="tel:+15032951180">Call 503-295-1180</a><a class="btn alt" href="https://michellespiano.com/contact/">Their contact page</a></div>
+</div></section>
+
+<section id="agent-ready">
+ <h2>Agent-Ready included</h2>
+ <p>This concept ships with llms.txt, robots.txt, schema markup and a machine-readable services file, so AI assistants can read the address, hours, brands and which phone line to use. See <a href="llms.txt">llms.txt</a> and <a href="services.json">services.json</a>.</p>
+</section>
+
+<section id="faq" class="faq" style="padding-top:0">
+ <h2>FAQ</h2>
+ <details><summary>Where is the showroom?</summary><p>600 SE Stark St, Portland, OR 97214.</p></details>
+ <details><summary>When is it open?</summary><p>Monday to Saturday 10am to 5pm. Sunday by appointment.</p></details>
+ <details><summary>What do they offer?</summary><p>New and pre-owned piano sales, moving, storage, rentals, lessons, service and rebuilding, and event space rental.</p></details>
+ <details><summary>Which number do I call?</summary><p>Showroom 503-295-1180. Moving and storage 503-295-9317. Service and rebuilding 503-819-5053 (call or text).</p></details>
+</section>
+
+<footer>Concept by Kerblabs. Not affiliated with or endorsed by Michelle's Piano Company. Facts from michellespiano.com; visuals are illustrative.</footer>
+<div class="sticky"><a class="btn" href="tel:+15032951180">Call showroom</a><a class="btn alt" href="https://michellespiano.com/contact/">Contact form</a></div>
+
+<script>
+(function(){
+var hero=document.getElementById('hero');
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function $(i){return document.getElementById(i)}
+var NS='http://www.w3.org/2000/svg';
+function mk(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e}
+var NW=14,KW=400/NW,HIT=176,KY=180,KH=120;
+var rollG=$('roll'),keysG=$('keys');
+// white keys
+var white=[];
+for(var i=0;i<NW;i++){white.push(mk('rect',{x:i*KW+.5,y:KY,width:KW-1,height:KH,rx:2,fill:'#f4ead8',stroke:'#3d2c25','stroke-width':1},keysG))}
+var blackAfter=[0,1,3,4,5,7,8,10,11,12],black={};
+blackAfter.forEach(function(w){black[w]=mk('rect',{x:(w+1)*KW-KW*.3,y:KY,width:KW*.6,height:KH*.6,rx:2,fill:'#1a1210'},keysG)});
+// melody on white keys, rolled paper holes
+var melody=[0,2,4,7,4,2,0,5,7,9,7,5,3,5,7,10,9,7,4,2,0,2,4,7,9,11,13,11,9,7,4,0];
+var STEP=26,HH=16,notes=melody.map(function(k,i){return {k:k,r:i*STEP}});
+var L=notes[notes.length-1].r+HH+HIT+20;
+// lane guides and holes
+for(var i=1;i<NW;i++)mk('line',{x1:i*KW,y1:0,x2:i*KW,y2:HIT,stroke:'#cdb98d','stroke-width':.6},rollG);
+var holes=notes.map(function(n){return mk('rect',{x:n.k*KW+3,width:KW-6,height:HH,rx:6,fill:'#1a1210'},rollG)});
+var steps=[
+["Portland showroom","600 SE Stark St. Open Mon to Sat 10 to 5."],
+["Sales","New and pre-owned. Steinway, Mason and Hamlin, Bechstein and more."],
+["Moving and storage","Their own line: 503-295-9317."],
+["Rentals, lessons, events","Per their site. Ask the showroom for details."],
+["Service and rebuilding","Call or text 503-819-5053. Showroom: 503-295-1180."]];
+var cT=$('cT'),cS=$('cS'),dots=document.querySelectorAll('#dots i');
+function upd(){
+ var t=1;
+ if(!reduce){var r=hero.getBoundingClientRect(),max=hero.offsetHeight-innerHeight;t=Math.min(1,Math.max(0,max>0?-r.top/max:1))}
+ var off=reduce?L*.5:t*L,on={};
+ for(var i=0;i<notes.length;i++){
+  var yb=off-notes[i].r,yt=yb-HH;
+  holes[i].setAttribute('y',yt.toFixed(1));
+  if(!reduce&&yt<HIT&&yb>HIT-6)on[notes[i].k]=1;
+ }
+ for(var k=0;k<NW;k++){
+  var p=on[k]?1:0;
+  white[k].setAttribute('fill',p?'#d9a441':'#f4ead8');
+  white[k].setAttribute('y',KY+(p?4:0));
+  if(black[k])black[k].setAttribute('y',KY+(on[k]?3:0));
+ }
+ var q=t<.1?0:t<.35?1:t<.6?2:t<.82?3:4;
+ cT.textContent=steps[q][0];cS.textContent=steps[q][1];
+ for(var m=0;m<5;m++)dots[m].className=m<=q?'on':'';
+}
+addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+})();
+</script>
+</body>
+</html>

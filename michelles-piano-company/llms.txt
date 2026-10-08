@@ -1,0 +1,19 @@
+# Michelle's Piano Company (concept by Kerblabs)
+> Locally owned, family operated piano company, 600 SE Stark St, Portland, OR 97214. Facts from michellespiano.com.
+
+- Hours: Mon-Sat 10:00-17:00, Sunday by appointment
+- Showroom: 503-295-1180
+- Moving and storage: 503-295-9317
+- Service and rebuilding: 503-819-5053 (call or text)
+- Services: new and pre-owned piano sales, moving, storage, rentals, lessons, service and rebuilding, event space
+- Brands listed on their site: Steinway, Mason and Hamlin, Bechstein, Sauter, Roland, Hallett Davis
+- Prices: not published
+
+## FAQ
+Q: Where is it? A: 600 SE Stark St, Portland, OR 97214.
+Q: Which number? A: Showroom 503-295-1180; moving/storage 503-295-9317; service 503-819-5053.
+
+## Actions
+- Contact form: https://michellespiano.com/contact/
+
+Machine-readable: services.json
