@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jake's Motorcars | La Jolla (concept)</title>
+<meta name="description" content="Concept site for Jake's Motorcars, 7514 Girard Avenue, La Jolla. A starlit headliner lights seven constellations as you scroll, one per marque on their site. Built by Kerblabs as a free spec.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/jakes-motorcars/">
+<meta property="og:title" content="Jake's Motorcars | Concept site by Kerblabs">
+<meta property="og:description" content="Seven marques, seven constellations, lit by scroll. Free concept.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/jakes-motorcars/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"AutoDealer","@id":"https://gglagent19.github.io/kerblabs-specs/jakes-motorcars/#biz","name":"Jake's Motorcars","url":"https://www.jakesmotorcars.com/","telephone":"+1-858-547-8424","address":{"@type":"PostalAddress","streetAddress":"7514 Girard Avenue","addressLocality":"La Jolla","addressRegion":"CA","postalCode":"92037","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"15:00"}],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Pre-owned luxury and exotic car sales"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Online credit approval and financing"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Trade-in valuation"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Luxury vehicle service"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Detail"}}]}},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Where is Jake's Motorcars?","acceptedAnswer":{"@type":"Answer","text":"7514 Girard Avenue, La Jolla, CA 92037."}},
+{"@type":"Question","name":"What are the sales hours?","acceptedAnswer":{"@type":"Answer","text":"Monday to Friday 9 AM to 5 PM, Saturday 10 AM to 3 PM. Detail is Monday to Friday 9 AM to 5 PM."}},
+{"@type":"Question","name":"Which marques are listed?","acceptedAnswer":{"@type":"Answer","text":"Their site lists Mercedes-Benz, Bentley, Ferrari, Maserati, Porsche, Land Rover and Rolls-Royce."}}
+]}]}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0e1c;--bg2:#131a30;--ink:#f1ead8;--mut:#a7aec2;--au:#e6cf94;--sea:#7fd1c7;--line:#252e4c}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.55;-webkit-text-size-adjust:100%}
+a{color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;height:64px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 16px;background:rgba(10,14,28,.96);border-bottom:1px solid var(--line);font-family:Arial,Helvetica,sans-serif}
+.brand{font-weight:800;letter-spacing:.06em;font-size:13px;line-height:1.1;text-transform:uppercase;max-width:150px}
+.navr{display:flex;gap:14px;align-items:center;font-size:13px}
+.navr a.l{text-decoration:none;display:none}
+.btn{display:inline-block;background:var(--au);color:#1a1608;padding:10px 16px;border-radius:2px;text-decoration:none;font:700 13px Arial,sans-serif;letter-spacing:.05em}
+.btn.alt{background:var(--sea);color:#062320}
+.hero{height:480vh;position:relative}
+.pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;padding-top:104px;display:flex;flex-direction:column}
+.copy{padding:0 18px;max-width:900px}
+.eyebrow{font:700 11px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--sea)}
+h1{font-size:clamp(30px,8vw,72px);line-height:1;margin:8px 0;letter-spacing:-.02em}
+.sub{font-size:clamp(14px,3.6vw,18px);color:var(--mut);max-width:560px}
+.stage{flex:1;min-height:0;display:flex;flex-direction:column;margin-top:6px}
+.stage svg{flex:1;min-height:0;width:100%;display:block}
+.cap{font:11px Arial,sans-serif;color:var(--mut);padding:0 18px;letter-spacing:.04em}
+.call{margin:4px 18px 0;max-width:620px;min-height:68px;border-left:5px solid var(--au);padding:4px 0 4px 14px}
+.call b{display:block;font:800 clamp(20px,5.4vw,30px)/1.1 Georgia,serif}
+.call span{display:block;margin-top:4px;font-size:clamp(13px,3.4vw,16px);color:var(--mut)}
+.chips{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin:8px 18px max(14px,env(safe-area-inset-bottom));max-width:700px;font:700 10px/1.2 Arial,sans-serif}
+.chips i{font-style:normal;display:block;padding:6px 3px;background:var(--bg2);color:var(--mut);border-bottom:3px solid var(--line);text-align:center}
+.chips i.on{background:#1f2a4d;color:var(--au);border-color:var(--au)}
+section{padding:72px 18px;max-width:1040px;margin:0 auto}
+h2{font-size:clamp(28px,7vw,48px);line-height:1.05;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:22px}
+.card{background:var(--bg2);border:1px solid var(--line);padding:20px;border-radius:3px}
+.card h3{font-size:20px;margin-bottom:6px;color:var(--au)}
+.card p{color:var(--mut);font-size:16px}
+.band{background:#10172c;max-width:none}
+.band .in{max-width:1040px;margin:0 auto}
+.band p{max-width:640px;color:var(--mut)}
+.note{margin-top:16px;border-left:4px solid var(--sea);padding:8px 14px;background:var(--bg2);color:var(--mut)}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{font-weight:700;cursor:pointer}
+.faq p{margin-top:8px;color:var(--mut)}
+.ctaRow{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+footer{padding:32px 18px 90px;text-align:center;font:13px/1.6 Arial,sans-serif;color:var(--mut);border-top:1px solid var(--line)}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:8px;padding:10px 12px max(10px,env(safe-area-inset-bottom));background:rgba(10,14,28,.97);border-top:1px solid var(--line)}
+.sticky .btn{flex:1;text-align:center}
+@media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr)}.navr a.l{display:inline}.sticky{display:none}footer{padding-bottom:40px}.pin{padding-top:112px}.copy,.call,.chips,.cap{margin-left:48px}.brand{max-width:none}nav{padding:0 40px}.chips{grid-template-columns:repeat(7,1fr)}}
+@media(prefers-reduced-motion:reduce){.hero{height:auto}.pin{position:static;height:auto;padding-bottom:20px}.stage svg{height:60vh;flex:none}}
+</style>
+</head>
+<body>
+<nav>
+ <span class="brand">Jake's Motorcars</span>
+ <div class="navr"><a class="l" href="#visit">Visit</a><a class="l" href="#faq">FAQ</a><a class="l" href="#agent-ready">Agent-ready</a><a class="btn alt" href="tel:+18585478424">Call (858) 547 8424</a></div>
+</nav>
+
+<div class="hero" id="hero">
+ <div class="pin">
+  <div class="copy">
+   <div class="eyebrow">La Jolla, California &middot; Since 2001</div>
+   <h1>Seven marques. One night sky.</h1>
+   <p class="sub">Scroll to light a constellation for each marque on their site.</p>
+  </div>
+  <div class="stage">
+   <svg id="sk" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Illustrative starlit car headliner: seven constellations light up, one per marque">
+    <defs><radialGradient id="glow"><stop offset="0" stop-color="#e6cf94" stop-opacity=".9"/><stop offset="1" stop-color="#e6cf94" stop-opacity="0"/></radialGradient></defs>
+    <rect x="6" y="6" width="388" height="288" rx="26" fill="#070a16" stroke="#252e4c" stroke-width="2"/>
+    <g id="bg"></g>
+    <g id="cons"></g>
+   </svg>
+   <div class="cap">Illustrative visual, generated in the browser. Constellation shapes are abstract and are not a claim about any vehicle.</div>
+  </div>
+  <div class="call"><b id="cT">Lights down</b><span id="cS">Seven marques are listed on their site.</span></div>
+  <div class="chips" id="chips"></div>
+ </div>
+</div>
+
+<section id="visit">
+ <h2>Visit Jake's Motorcars</h2>
+ <p>7514 Girard Avenue, La Jolla, CA 92037. Their site says: &ldquo;Since 2001, Jake's Motorcars has been a family-owned, pre-owned luxury and exotic car dealership.&rdquo; Sales hours are Monday to Friday 9 AM to 5 PM and Saturday 10 AM to 3 PM; detail is Monday to Friday 9 AM to 5 PM.</p>
+ <div class="grid">
+  <div class="card"><h3>Seven marques</h3><p>Mercedes-Benz, Bentley, Ferrari, Maserati, Porsche, Land Rover and Rolls-Royce are listed on their site.</p></div>
+  <div class="card"><h3>Financing and trade-in</h3><p>Online credit approval with a financing department, and a Value Your Trade tool.</p></div>
+  <div class="card"><h3>Luxury service</h3><p>A service department described as trained for high-end luxury models, plus detail.</p></div>
+ </div>
+ <div class="note">No prices, inventory counts or owner names are published on the pages we read, so none appear here. The hero is illustrative.</div>
+</section>
+
+<section class="band"><div class="in">
+ <h2>Make the first impression feel like the cars</h2>
+ <p>Their current site runs on a standard dealer template. This concept shows how a single scroll can give La Jolla buyers the feel of the showroom before they ever see inventory, with a call or a message one tap away.</p>
+ <div class="ctaRow"><a class="btn alt" href="tel:+18585478424">Call (858) 547 8424</a><a class="btn" href="https://www.jakesmotorcars.com/contact-jakes-motorcars-in-san-diego-ca">Their contact form</a><a class="btn" href="https://www.jakesmotorcars.com/">Their current site</a></div>
+</div></section>
+
+<section id="agent-ready">
+ <h2>Agent-Ready included</h2>
+ <p>This concept ships with llms.txt, robots.txt, schema markup and a machine-readable services file, so AI assistants can read where the dealership is, when it is open and how to reach it. See <a href="llms.txt">llms.txt</a> and <a href="services.json">services.json</a>.</p>
+</section>
+
+<section id="faq" class="faq" style="padding-top:0">
+ <h2>FAQ</h2>
+ <details><summary>Where is Jake's Motorcars?</summary><p>7514 Girard Avenue, La Jolla, CA 92037.</p></details>
+ <details><summary>What are the hours?</summary><p>Sales Monday to Friday 9 AM to 5 PM, Saturday 10 AM to 3 PM. Detail Monday to Friday 9 AM to 5 PM.</p></details>
+ <details><summary>Which marques are listed?</summary><p>Their site lists Mercedes-Benz, Bentley, Ferrari, Maserati, Porsche, Land Rover and Rolls-Royce.</p></details>
+</section>
+
+<footer>Concept by Kerblabs. Not affiliated with or endorsed by Jake's Motorcars. Facts from jakesmotorcars.com; visuals are illustrative.</footer>
+<div class="sticky"><a class="btn alt" href="tel:+18585478424">Call</a><a class="btn" href="https://www.jakesmotorcars.com/contact-jakes-motorcars-in-san-diego-ca">Contact form</a></div>
+
+<script>
+(function(){
+var hero=document.getElementById('hero');
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function seg(t,a,b){return Math.min(1,Math.max(0,(t-a)/(b-a)))}
+function ease(u){return u<.5?2*u*u:1-Math.pow(-2*u+2,2)/2}
+function $(i){return document.getElementById(i)}
+var NS='http://www.w3.org/2000/svg';
+function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
+var names=["Mercedes-Benz","Bentley","Ferrari","Maserati","Porsche","Land Rover","Rolls-Royce"];
+/* abstract constellations, each 5-6 points inside the 400x300 panel */
+var C=[
+ [[40,70],[70,45],[105,62],[90,100],[55,105]],
+ [[150,40],[185,60],[215,38],[240,70]],
+ [[275,50],[300,80],[335,55],[355,90],[320,115]],
+ [[40,170],[75,150],[110,180],[85,215]],
+ [[150,130],[180,160],[160,200],[205,215],[225,175]],
+ [[265,170],[300,150],[335,185],[310,225],[270,215]],
+ [[110,255],[155,240],[200,262],[250,245],[300,262],[345,245]]
+];
+var seed=7;function rnd(){seed=(seed*9301+49297)%233280;return seed/233280}
+var bg=$('bg');
+for(var i=0;i<90;i++){el('circle',{cx:(14+rnd()*372).toFixed(1),cy:(14+rnd()*272).toFixed(1),r:(.4+rnd()*.9).toFixed(2),fill:'#f1ead8',opacity:(.15+rnd()*.35).toFixed(2)},bg)}
+var cons=$('cons'),chips=$('chips'),G=[],L=[];
+for(var i=0;i<7;i++){
+ var g=el('g',{},cons),pts=C[i],d='M'+pts.map(function(p){return p[0]+' '+p[1]}).join('L');
+ var line=el('path',{d:d,fill:'none',stroke:'#e6cf94','stroke-width':'1.2','stroke-linecap':'round','stroke-linejoin':'round'},g);
+ var len=line.getTotalLength();line.setAttribute('stroke-dasharray',len.toFixed(1)+' '+(len+10).toFixed(1));
+ var stars=[];
+ pts.forEach(function(p){el('circle',{cx:p[0],cy:p[1],r:9,fill:'url(#glow)',opacity:0},g);stars.push(el('circle',{cx:p[0],cy:p[1],r:2.4,fill:'#fff',opacity:.25},g))});
+ G.push({g:g,line:line,len:len,stars:stars,halos:g.querySelectorAll('circle[fill^="url"]')});
+ var c=document.createElement('i');c.textContent=names[i];chips.appendChild(c);
+}
+var cells=chips.children,cT=$('cT'),cS=$('cS');
+function upd(){
+ var t=1;
+ if(!reduce){var r=hero.getBoundingClientRect(),max=hero.offsetHeight-innerHeight;t=Math.min(1,Math.max(0,max>0?-r.top/max:1))}
+ var u=Math.min(6.999,seg(t,.04,.96)*7),k=reduce?6:Math.floor(u),f=reduce?1:ease(u-k);
+ var started=t>.04||reduce;
+ for(var i=0;i<7;i++){
+  var on=!started?0:(i<k?1:i===k?f:0),o=G[i];
+  o.line.setAttribute('stroke-dashoffset',(o.len*(1-on)).toFixed(1));
+  o.line.style.opacity=on>0?(i===k&&!reduce?1:.55):0;
+  for(var s=0;s<o.stars.length;s++){
+   var lit=on*o.stars.length>s?1:0;
+   o.stars[s].setAttribute('opacity',lit?1:.25);o.stars[s].setAttribute('r',lit?(i===k&&!reduce?3.4:2.8):2.4);
+   o.halos[s].setAttribute('opacity',lit?(i===k&&!reduce?.9:.35):0);
+  }
+  cells[i].className=started&&i<=k?'on':'';
+ }
+ if(!started){cT.textContent='Lights down';cS.textContent='Seven marques are listed on their site.'}
+ else{cT.textContent=names[k];cS.textContent='Constellation '+(k+1)+' of 7. Listed on their site as a marque.'}
+}
+addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+})();
+</script>
+</body>
+</html>

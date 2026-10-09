@@ -1,0 +1,20 @@
+# W Realty Miami (concept by Kerblabs)
+
+> Concept site, not affiliated with the business. Facts from wrealtymiami.com.
+
+W Realty Miami offers personalized real estate representation for buyers, sellers, renters and investors in Miami and South Florida. Wilma Perez is named on the site. Office phone: 305-321-4098.
+
+## Services listed on their site
+- Property search
+- Homes for sale and for rent
+- New developments
+- Free home evaluation
+- Mortgage calculator
+- Dream Home Finder
+- Blog and new-listing email alerts
+
+## FAQ
+- Who is the agent? Their site names Wilma Perez.
+- Email and street address: not published on their live site (template fields are unfilled).
+
+See services.json for the machine-readable list.

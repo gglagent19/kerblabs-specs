@@ -1,0 +1,16 @@
+{
+ "business": "Jake's Motorcars",
+ "type": "AutoDealer",
+ "address": "7514 Girard Avenue, La Jolla, CA 92037",
+ "phone": "+1-858-547-8424",
+ "hours": {"sales": "Mon-Fri 09:00-17:00, Sat 10:00-15:00", "detail": "Mon-Fri 09:00-17:00"},
+ "marques": ["Mercedes-Benz","Bentley","Ferrari","Maserati","Porsche","Land Rover","Rolls-Royce"],
+ "services": [
+  {"name": "Pre-owned luxury and exotic sales", "price": null, "price_note": "not published"},
+  {"name": "Online credit approval and financing", "price": null, "price_note": "not published"},
+  {"name": "Trade-in valuation", "price": null, "price_note": "free tool on their site, not priced here"},
+  {"name": "Luxury vehicle service", "price": null, "price_note": "not published"},
+  {"name": "Detail", "price": null, "price_note": "not published"}
+ ],
+ "booking": {"contact_form": "https://www.jakesmotorcars.com/contact-jakes-motorcars-in-san-diego-ca", "status": "available (their own channel)"}
+}

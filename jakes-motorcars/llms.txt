@@ -1,0 +1,19 @@
+# Jake's Motorcars (Kerblabs concept)
+
+> Concept site for Jake's Motorcars, a family-owned pre-owned luxury and exotic car dealership in La Jolla, CA (since 2001 per their site). Not affiliated with the business.
+
+## Facts (from jakesmotorcars.com)
+- Address: 7514 Girard Avenue, La Jolla, CA 92037
+- Phone: (858) 547-8424
+- Sales hours: Mon-Fri 9 AM-5 PM, Sat 10 AM-3 PM. Detail: Mon-Fri 9 AM-5 PM
+- Marques listed: Mercedes-Benz, Bentley, Ferrari, Maserati, Porsche, Land Rover, Rolls-Royce
+- Services: online credit approval and financing, trade-in valuation, luxury vehicle service, detail
+
+## Actions
+- Contact form (available): https://www.jakesmotorcars.com/contact-jakes-motorcars-in-san-diego-ca
+- Phone (available): +1-858-547-8424
+
+## FAQ
+- Where? 7514 Girard Avenue, La Jolla, CA 92037.
+- Hours? Sales Mon-Fri 9-5, Sat 10-3.
+- Prices and inventory are not published in this concept.

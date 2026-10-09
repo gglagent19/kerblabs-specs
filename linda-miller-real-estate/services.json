@@ -1,0 +1,13 @@
+{
+ "name": "Linda Miller Real Estate",
+ "source": "https://thesmileof30a.com",
+ "address": "5297 E County Hwy 30A, Suite 201, Santa Rosa Beach, FL 32459",
+ "phone": "+1-850-974-8885",
+ "email": "linda@thesmileof30a.com",
+ "services": [
+  {"name": "Home search and listings", "booking": "call or email", "price": null, "price_note": "not published"},
+  {"name": "Home valuation", "booking": "call or email", "price": null, "price_note": "not published"},
+  {"name": "Buyer and seller representation", "booking": "call or email", "price": null, "price_note": "not published"},
+  {"name": "Neighborhood guides and market updates", "booking": "call or email", "price": null, "price_note": "not published"}
+ ]
+}
