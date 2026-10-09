@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alexis Weigand Real Estate | Boerne, TX (concept)</title>
+<meta name="description" content="Concept site for Alexis Weigand Real Estate, 2 Spencer Rd, Boerne TX. A signpost grows nine arrow signs as you scroll, one per neighborhood guide on their site. Built by Kerblabs as a free spec.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/alexis-weigand-real-estate/">
+<meta property="og:title" content="Alexis Weigand Real Estate | Concept site by Kerblabs">
+<meta property="og:description" content="Nine neighborhoods, nine signs, raised by scroll. Free concept.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/alexis-weigand-real-estate/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"RealEstateAgent","@id":"https://gglagent19.github.io/kerblabs-specs/alexis-weigand-real-estate/#biz","name":"Alexis Weigand Real Estate","url":"https://weigandrealestate.com","telephone":"+1-210-987-8801","email":"alexis@alexisweigand.com","address":{"@type":"PostalAddress","streetAddress":"2 Spencer Rd","addressLocality":"Boerne","addressRegion":"TX","postalCode":"78006","addressCountry":"US"},"employee":{"@type":"Person","name":"Alexis Weigand","jobTitle":"Broker"},"areaServed":["Boerne","Fair Oaks Ranch","Esperanza","Cordillera","The Dominion","Shavano Park","Bulverde","Menger Springs","Alamo Heights"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Buying a home"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Selling a home"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Home valuation"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Neighborhood guides"}}]}},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Where is Alexis Weigand Real Estate?","acceptedAnswer":{"@type":"Answer","text":"2 Spencer Rd, Boerne, TX 78006."}},
+{"@type":"Question","name":"How do I reach Alexis?","acceptedAnswer":{"@type":"Answer","text":"Phone (210) 987-8801, email alexis@alexisweigand.com."}},
+{"@type":"Question","name":"Which neighborhoods have guides?","acceptedAnswer":{"@type":"Answer","text":"Their site lists Boerne, Fair Oaks Ranch, Esperanza, Cordillera, The Dominion, Shavano Park, Bulverde, Menger Springs and Alamo Heights."}}
+]}]}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f1ece0;--bg2:#e4dccb;--ink:#1f2433;--mut:#5d6070;--bl:#34498f;--gold:#d49b2f;--ced:#6b3e26;--line:#d3c9b3}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.55;-webkit-text-size-adjust:100%}
+a{color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;height:64px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 16px;background:rgba(241,236,224,.96);border-bottom:1px solid var(--line);font-family:Arial,Helvetica,sans-serif}
+.brand{font-weight:800;letter-spacing:.05em;font-size:13px;line-height:1.1;text-transform:uppercase;max-width:150px}
+.navr{display:flex;gap:14px;align-items:center;font-size:13px}
+.navr a.l{text-decoration:none;display:none}
+.btn{display:inline-block;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:2px;text-decoration:none;font:700 13px Arial,sans-serif;letter-spacing:.05em}
+.btn.alt{background:var(--bl);color:#fff}
+.hero{height:460vh;position:relative}
+.pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;padding-top:104px;display:flex;flex-direction:column}
+.copy{padding:0 18px;max-width:900px}
+.eyebrow{font:700 11px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--bl)}
+h1{font-size:clamp(30px,8vw,72px);line-height:1;margin:8px 0;letter-spacing:-.02em}
+.sub{font-size:clamp(14px,3.6vw,18px);color:var(--mut);max-width:560px}
+.stage{flex:1;min-height:0;display:flex;flex-direction:column;margin-top:6px}
+.stage svg{flex:1;min-height:0;width:100%;display:block}
+.cap{font:11px Arial,sans-serif;color:var(--mut);padding:0 18px;letter-spacing:.04em}
+.call{margin:4px 18px calc(58px + max(14px,env(safe-area-inset-bottom)));max-width:620px;min-height:68px;border-left:5px solid var(--gold);padding:4px 0 4px 14px}
+.call b{display:block;font:800 clamp(20px,5.4vw,30px)/1.1 Georgia,serif}
+.call span{display:block;margin-top:4px;font-size:clamp(13px,3.4vw,16px);color:var(--mut)}
+section{padding:72px 18px;max-width:1040px;margin:0 auto}
+h2{font-size:clamp(28px,7vw,48px);line-height:1.05;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:22px}
+.card{background:var(--bg2);border:1px solid var(--line);padding:20px;border-radius:3px}
+.card h3{font-size:20px;margin-bottom:6px;color:var(--bl)}
+.card p{color:var(--mut);font-size:16px}
+.band{background:var(--bl);color:var(--bg);max-width:none}
+.band .in{max-width:1040px;margin:0 auto}
+.band p{max-width:640px;color:#dfe4f4}
+.note{margin-top:16px;border-left:4px solid var(--gold);padding:8px 14px;background:var(--bg2);color:var(--mut)}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{font-weight:700;cursor:pointer}
+.faq p{margin-top:8px;color:var(--mut)}
+.ctaRow{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+footer{padding:32px 18px 90px;text-align:center;font:13px/1.6 Arial,sans-serif;color:var(--mut);border-top:1px solid var(--line)}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:8px;padding:10px 12px max(10px,env(safe-area-inset-bottom));background:rgba(241,236,224,.97);border-top:1px solid var(--line)}
+.sticky .btn{flex:1;text-align:center}
+@media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr)}.navr a.l{display:inline}.sticky{display:none}footer{padding-bottom:40px}.pin{padding-top:112px}.copy,.call,.cap{margin-left:48px}.call{margin-bottom:max(14px,env(safe-area-inset-bottom))}.brand{max-width:none}nav{padding:0 40px}}
+@media(prefers-reduced-motion:reduce){.hero{height:auto}.pin{position:static;height:auto;padding-bottom:20px}.stage svg{height:60vh;flex:none}}
+</style>
+</head>
+<body>
+<nav>
+ <span class="brand">Alexis Weigand Real Estate</span>
+ <div class="navr"><a class="l" href="#visit">Visit</a><a class="l" href="#faq">FAQ</a><a class="l" href="#agent-ready">Agent-ready</a><a class="btn alt" href="tel:+12109878801">Call (210) 987 8801</a></div>
+</nav>
+
+<div class="hero" id="hero">
+ <div class="pin">
+  <div class="copy">
+   <div class="eyebrow">Boerne, Texas &middot; Neighborhood guides</div>
+   <h1>Nine neighborhoods. One signpost.</h1>
+   <p class="sub">Scroll to raise a sign for each neighborhood guide on their site.</p>
+  </div>
+  <div class="stage">
+   <svg id="sp" viewBox="0 0 400 330" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Illustrative signpost: nine arrow signs appear on one post, one per neighborhood guide">
+    <rect width="400" height="330" fill="#f1ece0"/>
+    <path d="M0 292C80 278 150 286 220 276C290 268 350 280 400 270V330H0Z" fill="#cfc4a8"/>
+    <path d="M0 304C90 292 170 300 240 292C310 286 360 294 400 288V330H0Z" fill="#b9ad8d"/>
+    <rect x="193" y="22" width="14" height="274" fill="#6b3e26"/>
+    <rect x="189" y="16" width="22" height="9" rx="2" fill="#4f2c1a"/>
+    <g id="signs"></g>
+   </svg>
+   <div class="cap">Illustrative visual, generated in the browser. Sign order and shapes are not a claim about any listing.</div>
+  </div>
+  <div class="call"><b id="cT">An empty post</b><span id="cS">Nine neighborhood guides are listed on their site.</span></div>
+ </div>
+</div>
+
+<section id="visit">
+ <h2>Visit Alexis Weigand Real Estate</h2>
+ <p>2 Spencer Rd, Boerne, TX 78006. Their site presents Alexis Weigand as a broker and lists buying, selling, home valuation, featured properties and neighborhood guides. Phone (210) 987-8801.</p>
+ <div class="grid">
+  <div class="card"><h3>Buy</h3><p>A buyers page and a listing search are on their site.</p></div>
+  <div class="card"><h3>Sell</h3><p>A sellers page and a home valuation tool are on their site.</p></div>
+  <div class="card"><h3>Know the area</h3><p>Nine neighborhood guides, from Boerne to Alamo Heights, plus a local blog.</p></div>
+ </div>
+ <div class="note">Their site also publishes volume and review figures. This concept does not repeat them, and the hero is illustrative, not a map.</div>
+</section>
+
+<section class="band"><div class="in">
+ <h2>Let the neighborhood do the welcoming</h2>
+ <p>Buyers search by place first. This concept turns the neighborhood list into the first thing a visitor feels, with a call or an email one tap away.</p>
+ <div class="ctaRow"><a class="btn" style="background:#f1ece0;color:#1f2433" href="tel:+12109878801">Call (210) 987 8801</a><a class="btn" style="background:#d49b2f;color:#1f2433" href="mailto:alexis@alexisweigand.com?subject=Boerne%20home%20inquiry">Email Alexis</a><a class="btn" style="background:#f1ece0;color:#1f2433" href="https://weigandrealestate.com">Their current site</a></div>
+</div></section>
+
+<section id="agent-ready">
+ <h2>Agent-Ready included</h2>
+ <p>This concept ships with llms.txt, robots.txt, schema markup and a machine-readable services file, so AI assistants can read where the office is, what is offered and how to reach the broker. See <a href="llms.txt">llms.txt</a> and <a href="services.json">services.json</a>.</p>
+</section>
+
+<section id="faq" class="faq" style="padding-top:0">
+ <h2>FAQ</h2>
+ <details><summary>Where is the office?</summary><p>2 Spencer Rd, Boerne, TX 78006.</p></details>
+ <details><summary>How do I reach Alexis?</summary><p>Phone (210) 987-8801, email alexis@alexisweigand.com.</p></details>
+ <details><summary>Which neighborhoods have guides?</summary><p>Their site lists Boerne, Fair Oaks Ranch, Esperanza, Cordillera, The Dominion, Shavano Park, Bulverde, Menger Springs and Alamo Heights.</p></details>
+</section>
+
+<footer>Concept by Kerblabs. Not affiliated with or endorsed by Alexis Weigand Real Estate. Facts from weigandrealestate.com; visuals are illustrative.</footer>
+<div class="sticky"><a class="btn alt" href="tel:+12109878801">Call</a><a class="btn" href="mailto:alexis@alexisweigand.com?subject=Boerne%20home%20inquiry">Email</a></div>
+
+<script>
+(function(){
+var hero=document.getElementById('hero');
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function seg(t,a,b){return Math.min(1,Math.max(0,(t-a)/(b-a)))}
+function ease(u){return u<.5?2*u*u:1-Math.pow(-2*u+2,2)/2}
+function $(i){return document.getElementById(i)}
+var NS='http://www.w3.org/2000/svg';
+var names=["Boerne","Fair Oaks Ranch","Esperanza","Cordillera","The Dominion","Shavano Park","Bulverde","Menger Springs","Alamo Heights"];
+var cols=["#34498f","#d49b2f","#6b3e26","#34498f","#d49b2f","#6b3e26","#34498f","#d49b2f","#6b3e26"];
+var txt=["#fff","#1f2433","#fff","#fff","#1f2433","#fff","#fff","#1f2433","#fff"];
+var g=$('signs'),sg=[];
+for(var i=0;i<9;i++){
+ var y=34+i*28,dir=i%2?-1:1,w=150,h=24;
+ var e=document.createElementNS(NS,'g');
+ var d=dir>0?'M0 0H'+(w-12)+'L'+w+' '+(h/2)+'L'+(w-12)+' '+h+'H0Z':'M0 0H-'+(w-12)+'L-'+w+' '+(h/2)+'L-'+(w-12)+' '+h+'H0Z';
+ var p=document.createElementNS(NS,'path');p.setAttribute('d',d);p.setAttribute('fill',cols[i]);e.appendChild(p);
+ var t=document.createElementNS(NS,'text');t.textContent=names[i];
+ t.setAttribute('x',dir>0?10:-10);t.setAttribute('y',16);t.setAttribute('text-anchor',dir>0?'start':'end');
+ t.setAttribute('font-family','Arial,sans-serif');t.setAttribute('font-size','12');t.setAttribute('font-weight','700');t.setAttribute('fill',txt[i]);e.appendChild(t);
+ g.appendChild(e);sg.push({el:e,y:y,dir:dir});
+}
+var cT=$('cT'),cS=$('cS');
+function upd(){
+ var t=1;
+ if(!reduce){var r=hero.getBoundingClientRect(),max=hero.offsetHeight-innerHeight;t=Math.min(1,Math.max(0,max>0?-r.top/max:1))}
+ var u=reduce?9:seg(t,.04,.96)*9,n=0;
+ for(var i=0;i<9;i++){
+  var f=ease(Math.min(1,Math.max(0,u-i)));
+  if(f>.25)n=i+1;
+  sg[i].el.setAttribute('transform','translate(200 '+sg[i].y+') scale('+Math.max(f,.001).toFixed(3)+' 1)');
+  sg[i].el.style.opacity=f>0?1:0;
+ }
+ if(n===0){cT.textContent='An empty post';cS.textContent='Nine neighborhood guides are listed on their site.'}
+ else{cT.textContent=names[n-1];cS.textContent='Sign '+n+' of 9. Listed on their site as a neighborhood guide.'}
+}
+addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+})();
+</script>
+</body>
+</html>

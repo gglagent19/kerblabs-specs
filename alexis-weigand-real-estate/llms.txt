@@ -1,0 +1,26 @@
+# Alexis Weigand Real Estate (Kerblabs concept)
+
+> Concept site, not the business's own. Facts from weigandrealestate.com, read 2026-10-09.
+
+## Business
+- Name: Alexis Weigand Real Estate
+- Broker: Alexis Weigand
+- Address: 2 Spencer Rd, Boerne, TX 78006
+- Phone: (210) 987-8801
+- Email: alexis@alexisweigand.com
+- Hours: not published
+
+## Services
+- Buying, selling, home valuation, listing search, neighborhood guides, local blog
+
+## Neighborhood guides
+Boerne, Fair Oaks Ranch, Esperanza, Cordillera, The Dominion, Shavano Park, Bulverde, Menger Springs, Alamo Heights
+
+## Actions
+- Call (210) 987-8801 (available)
+- Email alexis@alexisweigand.com (available)
+
+## FAQ
+- Where is the office? 2 Spencer Rd, Boerne, TX 78006.
+- How do I reach Alexis? Phone or email above.
+- Prices: not published.
