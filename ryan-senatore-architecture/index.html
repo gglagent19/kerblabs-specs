@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ryan Senatore Architecture | Portland, Maine (concept)</title>
+<meta name="description" content="Concept site for Ryan Senatore Architecture, 500 Congress Street, Portland ME. A section cut slides through a building as you scroll. Built by Kerblabs as a free spec.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/ryan-senatore-architecture/">
+<meta property="og:title" content="Ryan Senatore Architecture | Concept site by Kerblabs">
+<meta property="og:description" content="A section cut reveals the building behind the elevation. Free concept.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/ryan-senatore-architecture/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"LocalBusiness","@id":"https://gglagent19.github.io/kerblabs-specs/ryan-senatore-architecture/#biz","name":"Ryan Senatore Architecture","url":"http://senatorearchitecture.com/","telephone":"+1-207-747-5159","email":"ryan@senatorearchitecture.com","address":{"@type":"PostalAddress","streetAddress":"500 Congress Street, Suite 2","addressLocality":"Portland","addressRegion":"ME","postalCode":"04101","addressCountry":"US"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Residential builds"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Commercial spaces"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Renovations"}}]}},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Where is Ryan Senatore Architecture?","acceptedAnswer":{"@type":"Answer","text":"500 Congress Street, Suite 2, Portland, Maine 04101."}},
+{"@type":"Question","name":"What does the studio design?","acceptedAnswer":{"@type":"Answer","text":"Per their site: a residential build, commercial space, or renovation. Listed projects include apartments, townhomes and the Animal Refuge League of Greater Portland."}},
+{"@type":"Question","name":"How do I reach them?","acceptedAnswer":{"@type":"Answer","text":"Call 207-747-5159 or email ryan@senatorearchitecture.com."}}
+]}]}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#eef0ee;--bg2:#e0e5e2;--ink:#1c2428;--mut:#56626a;--lk:#1f4a5c;--hl:#d9a441;--cl:#a8452f;--line:#c6cfcb}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.55;-webkit-text-size-adjust:100%}
+a{color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;height:64px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 16px;background:rgba(238,240,238,.96);border-bottom:1px solid var(--line);font-family:Arial,Helvetica,sans-serif}
+.brand{font-weight:800;letter-spacing:.05em;font-size:13px;line-height:1.1;text-transform:uppercase;max-width:170px}
+.navr{display:flex;gap:14px;align-items:center;font-size:13px}
+.navr a.l{text-decoration:none;display:none}
+.btn{display:inline-block;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:2px;text-decoration:none;font:700 13px Arial,sans-serif;letter-spacing:.05em}
+.btn.alt{background:var(--lk);color:#fff}
+.hero{height:420vh;position:relative}
+.pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;padding-top:104px;padding-bottom:calc(88px + env(safe-area-inset-bottom));display:flex;flex-direction:column}
+.copy{padding:0 18px;max-width:900px}
+.eyebrow{font:700 11px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--cl)}
+h1{font-size:clamp(30px,8vw,72px);line-height:1;margin:8px 0;letter-spacing:-.02em}
+.sub{font-size:clamp(14px,3.6vw,18px);color:var(--mut);max-width:560px}
+.stage{flex:1;min-height:0;display:flex;flex-direction:column;margin-top:6px}
+.stage svg{flex:1;min-height:0;width:100%;display:block}
+.cap{font:11px Arial,sans-serif;color:var(--mut);padding:0 18px;letter-spacing:.04em}
+.call{margin:4px 18px 0;max-width:620px;min-height:72px;border-left:5px solid var(--hl);padding:4px 0 4px 14px}
+.call b{display:block;font:800 clamp(20px,5.4vw,30px)/1.1 Georgia,serif}
+.call span{display:block;margin-top:4px;font-size:clamp(13px,3.4vw,16px);color:var(--mut)}
+.dots{display:flex;gap:6px;margin:8px 18px 4px}
+.dots i{width:24px;height:4px;background:var(--line);display:block;border-radius:2px}
+.dots i.on{background:var(--lk)}
+section{padding:72px 18px;max-width:1040px;margin:0 auto}
+h2{font-size:clamp(28px,7vw,48px);line-height:1.05;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:22px}
+.card{background:var(--bg2);border:1px solid var(--line);padding:20px;border-radius:3px}
+.card h3{font-size:20px;margin-bottom:6px;color:var(--lk)}
+.card p{color:var(--mut);font-size:16px}
+.band{background:var(--lk);color:var(--bg);max-width:none}
+.band .in{max-width:1040px;margin:0 auto}
+.band p{max-width:640px;color:#d3e3ea}
+.ba{display:grid;grid-template-columns:1fr;gap:14px;margin-top:20px}
+.ba div{border:1px solid var(--line);background:var(--bg2);padding:16px;border-radius:3px}
+.ba b{font:700 11px Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--cl)}
+.ba p{margin-top:6px;color:var(--mut);font-size:15px}
+.note{margin-top:16px;border-left:4px solid var(--hl);padding:8px 14px;background:var(--bg2);color:var(--mut)}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{cursor:pointer;font-weight:700}
+.faq p{margin-top:8px;color:var(--mut)}
+footer{padding:36px 18px 90px;text-align:center;color:var(--mut);font:12px Arial,sans-serif}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:8px;padding:8px 12px max(8px,env(safe-area-inset-bottom));background:rgba(238,240,238,.97);border-top:1px solid var(--line)}
+.sticky .btn{flex:1;text-align:center}
+@media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr)}.ba{grid-template-columns:1fr 1fr}.navr a.l{display:inline}.sticky{display:none}footer{padding-bottom:36px}.pin{padding-bottom:16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div class="brand">Ryan Senatore<br>Architecture</div>
+<div class="navr"><a class="l" href="#work">Work</a><a class="l" href="#faq">FAQ</a><a class="btn" href="mailto:ryan@senatorearchitecture.com">Email Ryan</a></div></nav>
+
+<div class="hero" id="hero"><div class="pin">
+<div class="copy"><div class="eyebrow">Concept for Ryan Senatore Architecture</div>
+<h1>Innovative designs, enduring spaces.</h1>
+<p class="sub">A Portland, Maine studio for a residential build, commercial space, or renovation.</p></div>
+<div class="stage">
+<svg id="sv" viewBox="0 0 400 240" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Illustrative building elevation that a section cut slides across, revealing floors, stair and roof framing">
+<defs>
+<clipPath id="exC"><rect id="exR" x="0" y="0" width="200" height="240"/></clipPath>
+<clipPath id="seC"><rect id="seR" x="200" y="0" width="200" height="240"/></clipPath>
+</defs>
+<rect x="0" y="0" width="400" height="240" fill="#eef0ee"/>
+<rect x="0" y="208" width="400" height="32" fill="#c6cfcb"/>
+<g id="ex" clip-path="url(#exC)">
+<rect x="90" y="96" width="220" height="112" fill="#f4f1e8" stroke="#1c2428" stroke-width="2"/>
+<path d="M80 98 L200 34 L320 98Z" fill="#56626a" stroke="#1c2428" stroke-width="2"/>
+<g stroke="#c9c2ae" stroke-width="1"><path d="M90 108H310M90 120H310M90 132H310M90 144H310M90 156H310M90 168H310M90 180H310M90 192H310"/></g>
+<g fill="#a9c0c8" stroke="#1c2428" stroke-width="1.5"><rect x="108" y="108" width="24" height="26"/><rect x="152" y="108" width="24" height="26"/><rect x="224" y="108" width="24" height="26"/><rect x="268" y="108" width="24" height="26"/><rect x="108" y="150" width="24" height="26"/><rect x="268" y="150" width="24" height="26"/></g>
+<rect x="150" y="162" width="100" height="46" fill="#a9c0c8" stroke="#1c2428" stroke-width="2"/>
+<rect x="196" y="162" width="8" height="46" fill="#1c2428"/>
+</g>
+<g id="se" clip-path="url(#seC)">
+<rect x="90" y="96" width="220" height="112" fill="#e8e0c8" stroke="#1c2428" stroke-width="2"/>
+<path d="M80 98 L200 34 L320 98Z" fill="#f4f1e8" stroke="#1c2428" stroke-width="2"/>
+<rect id="hlTop" x="94" y="100" width="212" height="52" fill="#1f4a5c" opacity="0"/>
+<rect id="hlGnd" x="94" y="154" width="212" height="52" fill="#d9a441" opacity="0"/>
+<path d="M200 36 L96 98M200 36 L304 98M200 36 V98M200 98 L150 66M200 98 L250 66" stroke="#a8452f" stroke-width="2.2" fill="none"/>
+<g stroke="#1c2428" stroke-width="1.2" opacity=".5"><path d="M110 98V206M130 98V206M270 98V206M290 98V206"/></g>
+<rect x="90" y="150" width="220" height="6" fill="#1c2428"/>
+<rect x="90" y="96" width="220" height="5" fill="#1c2428"/>
+<rect x="90" y="204" width="220" height="5" fill="#1c2428"/>
+<path d="M150 204 L180 180 L150 180 L180 156 L150 156" stroke="#a8452f" stroke-width="3" fill="none"/>
+<g id="dorm" opacity="0"><path d="M232 98 L262 70 L292 98Z" fill="#d9a441" stroke="#1c2428" stroke-width="2"/><rect x="244" y="82" width="16" height="16" fill="#a9c0c8" stroke="#1c2428" stroke-width="1.2"/></g>
+</g>
+<g id="cut">
+<line id="cl" x1="200" y1="20" x2="200" y2="224" stroke="#a8452f" stroke-width="2.4" stroke-dasharray="10 4 2 4"/>
+<g id="mk"><circle id="m1" cx="200" cy="14" r="9" fill="#a8452f"/><text id="t1" x="200" y="18" text-anchor="middle" font-family="Arial" font-size="12" font-weight="700" fill="#fff">A</text>
+<circle id="m2" cx="200" cy="230" r="9" fill="#a8452f"/><text id="t2" x="200" y="234" text-anchor="middle" font-family="Arial" font-size="12" font-weight="700" fill="#fff">A</text></g>
+</g>
+<text x="12" y="20" font-family="Arial" font-size="11" font-weight="700" fill="#56626a" letter-spacing="1">ELEVATION</text>
+<text x="388" y="20" text-anchor="end" font-family="Arial" font-size="11" font-weight="700" fill="#56626a" letter-spacing="1">SECTION A-A</text>
+</svg>
+<div class="cap">Illustrative section cut. Not a specific Ryan Senatore Architecture project.</div>
+</div>
+<div class="call"><b id="ct">Elevation</b><span id="cs">The face of a building, as the street sees it.</span></div>
+<div class="dots" id="dots"><i></i><i></i><i></i><i></i><i></i></div>
+</div></div>
+
+<section id="work">
+<h2>Residential, commercial, renovation.</h2>
+<p>From their own site: "a residential build, commercial space, or renovation." Listed projects include apartments, townhomes and the Animal Refuge League of Greater Portland, in Portland, Augusta, Westbrook and Bath.</p>
+<div class="grid">
+<div class="card"><h3>Residential builds</h3><p>Apartments and townhomes, listed in their portfolio.</p></div>
+<div class="card"><h3>Commercial spaces</h3><p>Commercial work, as stated on their site.</p></div>
+<div class="card"><h3>Renovations</h3><p>Renovation work, as stated on their site.</p></div>
+<div class="card"><h3>Animal Refuge League</h3><p>Animal Refuge League of Greater Portland, listed in their portfolio.</p></div>
+</div>
+</section>
+
+<section>
+<h2>What a refresh changes.</h2>
+<p>Observed on senatorearchitecture.com: typos in the team bios, images without alt text, and some images served over http. A concept keeps every project and rebuilds how the studio is first seen.</p>
+<div class="ba">
+<div><b>Today (observed)</b><p>No services section; the closest line is the "Let's Work Together" text. Address, phone and email sit only on the contact page.</p></div>
+<div><b>Concept</b><p>One scroll story, services up front, 500 Congress Street, phone and email in reach on mobile.</p></div>
+</div>
+</section>
+
+<section class="band"><div class="in">
+<h2>Agent-ready, so assistants can find the studio.</h2>
+<p>This concept ships with llms.txt, structured data and an open crawler policy, so AI assistants can read what the studio designs and how to reach it.</p>
+</div></section>
+
+<section class="faq" id="faq">
+<h2>Questions</h2>
+<details><summary>Where is Ryan Senatore Architecture?</summary><p>500 Congress Street, Suite 2, Portland, Maine 04101.</p></details>
+<details><summary>What does the studio design?</summary><p>Per their site: a residential build, commercial space, or renovation. Listed projects include apartments, townhomes and the Animal Refuge League of Greater Portland.</p></details>
+<details><summary>How do I reach them?</summary><p>Call 207-747-5159 or email ryan@senatorearchitecture.com.</p></details>
+<div class="note">Concept built by Kerblabs as a free spec. Not affiliated with Ryan Senatore Architecture. Visuals are illustrative.</div>
+</section>
+
+<footer>Ryan Senatore Architecture concept | Kerblabs | 500 Congress Street, Suite 2, Portland, ME 04101 | 207-747-5159</footer>
+<div class="sticky"><a class="btn" href="tel:+12077475159">Call</a><a class="btn alt" href="mailto:ryan@senatorearchitecture.com">Email</a></div>
+
+<script>
+(function(){
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var T=[['Elevation','The face of a building, as the street sees it.'],['Section A-A','A cut line slides across and shows what is behind the facade.'],['Residential','Floors, stair and framing: a residential build, apartments and townhomes.'],['Commercial','A ground floor opens up: commercial space.'],['Renovation','A new dormer joins the old roof. Portland, Augusta, Westbrook, Bath.']];
+var ct=document.getElementById('ct'),cs=document.getElementById('cs'),dots=document.querySelectorAll('#dots i'),hero=document.getElementById('hero');
+var exR=document.getElementById('exR'),seR=document.getElementById('seR'),cl=document.getElementById('cl'),m1=document.getElementById('m1'),m2=document.getElementById('m2'),t1=document.getElementById('t1'),t2=document.getElementById('t2'),hlTop=document.getElementById('hlTop'),hlGnd=document.getElementById('hlGnd'),dorm=document.getElementById('dorm');
+function clamp(x){return Math.max(0,Math.min(1,x))}
+function draw(t){
+ var u=clamp((t-0.08)/0.5);
+ var x=60+280*u;
+ exR.setAttribute('x','0');exR.setAttribute('width',x.toFixed(1));
+ seR.setAttribute('x',x.toFixed(1));seR.setAttribute('width',(400-x).toFixed(1));
+ cl.setAttribute('x1',x.toFixed(1));cl.setAttribute('x2',x.toFixed(1));
+ m1.setAttribute('cx',x.toFixed(1));m2.setAttribute('cx',x.toFixed(1));t1.setAttribute('x',x.toFixed(1));t2.setAttribute('x',x.toFixed(1));
+ hlTop.setAttribute('opacity',(0.28*clamp((t-.55)/0.1)*(1-clamp((t-.75)/0.08))).toFixed(2));
+ hlGnd.setAttribute('opacity',(0.4*clamp((t-.7)/0.1)*(1-clamp((t-.88)/0.08))).toFixed(2));
+ dorm.setAttribute('opacity',clamp((t-.84)/0.1).toFixed(2));
+ var s=t<.06?0:t<.52?1:t<.7?2:t<.84?3:4;
+ ct.innerHTML=T[s][0];cs.innerHTML=T[s][1];
+ dots.forEach(function(d,i){d.className=i<=s?'on':''})}
+function onS(){if(reduce){draw(0.97);return}var r=hero.getBoundingClientRect();draw(clamp(-r.top/(r.height-innerHeight)))}
+addEventListener('scroll',onS,{passive:true});addEventListener('resize',onS);onS();
+if(reduce){hero.style.height='auto';var p=hero.firstElementChild;p.style.position='relative';p.style.height='auto';p.style.minHeight='100vh'}
+})();
+</script>
+</body>
+</html>
