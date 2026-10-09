@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Studio Architects | Bozeman, Montana (concept)</title>
+<meta name="description" content="Concept site for Studio Architects, 21 West Babcock Street, Bozeman. A foam-core site model is built layer by layer as you scroll. Built by Kerblabs as a free spec.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/studio-architects-bozeman/">
+<meta property="og:title" content="Studio Architects | Concept site by Kerblabs">
+<meta property="og:description" content="Contour layers stack into a site model, then project types land on it. Free concept.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/studio-architects-bozeman/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"LocalBusiness","@id":"https://gglagent19.github.io/kerblabs-specs/studio-architects-bozeman/#biz","name":"Studio Architects","url":"https://studioarchitects.net","telephone":"+1-406-586-4777","email":"studio@studioarchitects.net","address":{"@type":"PostalAddress","streetAddress":"21 West Babcock Street","addressLocality":"Bozeman","addressRegion":"MT","postalCode":"59715","addressCountry":"US"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Residential architecture"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Commercial architecture"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Multifamily"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Ranch and resort"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Master planning"}}]}},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Where is Studio Architects?","acceptedAnswer":{"@type":"Answer","text":"21 West Babcock Street, Bozeman, MT 59715."}},
+{"@type":"Question","name":"What does the firm design?","acceptedAnswer":{"@type":"Answer","text":"Per their site: residential, commercial, multifamily, ranch and resort projects, and master planning."}},
+{"@type":"Question","name":"How do I reach them?","acceptedAnswer":{"@type":"Answer","text":"Call 406.586.4777 or email studio@studioarchitects.net."}}
+]}]}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f1eee7;--bg2:#e6e1d6;--ink:#1f2a2c;--mut:#59605f;--sl:#2f4a4f;--pine:#3e6b57;--cl:#c9743f;--line:#d3cdbf}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.55;-webkit-text-size-adjust:100%}
+a{color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;height:64px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 16px;background:rgba(241,238,231,.96);border-bottom:1px solid var(--line);font-family:Arial,Helvetica,sans-serif}
+.brand{font-weight:800;letter-spacing:.05em;font-size:13px;line-height:1.1;text-transform:uppercase;max-width:150px}
+.navr{display:flex;gap:14px;align-items:center;font-size:13px}
+.navr a.l{text-decoration:none;display:none}
+.btn{display:inline-block;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:2px;text-decoration:none;font:700 13px Arial,sans-serif;letter-spacing:.05em}
+.btn.alt{background:var(--cl);color:#fff}
+.hero{height:420vh;position:relative}
+.pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;padding-top:104px;display:flex;flex-direction:column}
+.copy{padding:0 18px;max-width:900px}
+.eyebrow{font:700 11px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--cl)}
+h1{font-size:clamp(30px,8vw,72px);line-height:1;margin:8px 0;letter-spacing:-.02em}
+.sub{font-size:clamp(14px,3.6vw,18px);color:var(--mut);max-width:560px}
+.stage{flex:1;min-height:0;display:flex;flex-direction:column;margin-top:6px}
+.stage svg{flex:1;min-height:0;width:100%;display:block}
+.cap{font:11px Arial,sans-serif;color:var(--mut);padding:0 18px;letter-spacing:.04em}
+.call{margin:4px 18px 0;max-width:620px;min-height:72px;border-left:5px solid var(--cl);padding:4px 0 4px 14px}
+.call b{display:block;font:800 clamp(20px,5.4vw,30px)/1.1 Georgia,serif}
+.call span{display:block;margin-top:4px;font-size:clamp(13px,3.4vw,16px);color:var(--mut)}
+.dots{display:flex;gap:6px;margin:8px 18px max(14px,env(safe-area-inset-bottom))}
+.dots i{width:24px;height:4px;background:var(--line);display:block;border-radius:2px}
+.dots i.on{background:var(--cl)}
+section{padding:72px 18px;max-width:1040px;margin:0 auto}
+h2{font-size:clamp(28px,7vw,48px);line-height:1.05;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:22px}
+.card{background:var(--bg2);border:1px solid var(--line);padding:20px;border-radius:3px}
+.card h3{font-size:20px;margin-bottom:6px;color:var(--sl)}
+.card p{color:var(--mut);font-size:16px}
+.band{background:var(--sl);color:var(--bg);max-width:none}
+.band .in{max-width:1040px;margin:0 auto}
+.band p{max-width:640px;color:#d6dedb}
+.note{margin-top:16px;border-left:4px solid var(--cl);padding:8px 14px;background:var(--bg2);color:var(--mut)}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{cursor:pointer;font-weight:700}
+.faq p{margin-top:8px;color:var(--mut)}
+footer{padding:36px 18px 90px;text-align:center;color:var(--mut);font:12px Arial,sans-serif}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:8px;padding:8px 12px max(8px,env(safe-area-inset-bottom));background:rgba(241,238,231,.97);border-top:1px solid var(--line)}
+.sticky .btn{flex:1;text-align:center}
+@media(max-width:759px){.pin{padding-bottom:64px}}
+@media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr)}.navr a.l{display:inline}.sticky{display:none}footer{padding-bottom:36px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div class="brand">Studio Architects<br>Bozeman</div>
+<div class="navr"><a class="l" href="#work">Work</a><a class="l" href="#faq">FAQ</a><a class="btn" href="mailto:studio@studioarchitects.net">Email the studio</a></div></nav>
+
+<div class="hero" id="hero"><div class="pin">
+<div class="copy"><div class="eyebrow">Concept for Studio Architects</div>
+<h1>Boutique architecture, built up layer by layer.</h1>
+<p class="sub">Full-service residential, commercial, ranch and resort design from 21 West Babcock Street, Bozeman.</p></div>
+<div class="stage">
+<svg id="sv" viewBox="0 0 400 260" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Illustrative foam-core site model built from stacked contour layers with project volumes placed on it"><g id="gl"></g><g id="gb"></g></svg>
+<div class="cap">Illustrative site model. Not a Studio Architects project.</div>
+</div>
+<div class="call"><b id="ct">Contours</b><span id="cs">Foam-core layers stack into the land.</span></div>
+<div class="dots" id="dots"><i></i><i></i><i></i><i></i><i></i></div>
+</div></div>
+
+<section id="work">
+<h2>Five kinds of project, one boutique studio.</h2>
+<p>Straight from their own site: a full-service, boutique architecture firm designing spaces that reflect each client's individual vision.</p>
+<div class="grid">
+<div class="card"><h3>Residential</h3><p>Homes shaped around the individual client.</p></div>
+<div class="card"><h3>Commercial</h3><p>Commercial projects from the same studio.</p></div>
+<div class="card"><h3>Multifamily</h3><p>Listed on their site as its own practice area.</p></div>
+<div class="card"><h3>Ranch &amp; Resort</h3><p>Ranch and resort projects.</p></div>
+<div class="card"><h3>Planning</h3><p>Master planning, linked on their site.</p></div>
+<div class="card"><h3>On the Boards</h3><p>Their site has an "On the Boards" section for work in progress.</p></div>
+</div>
+</section>
+
+<section class="band"><div class="in">
+<h2>Agent-ready, so assistants can find the studio.</h2>
+<p>This concept ships with llms.txt, structured data and an open crawler policy, so AI assistants can read what the studio designs and how to reach it.</p>
+</div></section>
+
+<section class="faq" id="faq">
+<h2>Questions</h2>
+<details><summary>Where is Studio Architects?</summary><p>21 West Babcock Street, Bozeman, MT 59715.</p></details>
+<details><summary>What does the firm design?</summary><p>Per their site: residential, commercial, multifamily, ranch and resort projects, and master planning.</p></details>
+<details><summary>How do I reach them?</summary><p>Call 406.586.4777 or email studio@studioarchitects.net.</p></details>
+<div class="note">Concept built by Kerblabs as a free spec. Not affiliated with Studio Architects. Visuals are illustrative.</div>
+</section>
+
+<footer>Studio Architects concept | Kerblabs | 21 West Babcock Street, Bozeman, MT 59715 | 406.586.4777</footer>
+<div class="sticky"><a class="btn" href="tel:+14065864777">Call</a><a class="btn alt" href="mailto:studio@studioarchitects.net">Email</a></div>
+
+<script>
+(function(){
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var NS='http://www.w3.org/2000/svg',N=8,LH=11,CX=200,CY=170;
+var gl=document.getElementById('gl'),gb=document.getElementById('gb');
+function mk(t,a,p){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);(p||gl).appendChild(e);return e}
+function pts(i){var s=1-i*0.1,o=[];for(var a=0;a<28;a++){var th=a/28*Math.PI*2;var r=1+0.14*Math.sin(th*3+1)+0.08*Math.sin(th*5+i*0.7);o.push([Math.cos(th)*150*s*r,Math.sin(th)*150*s*r*0.5])}return o}
+function d(p,dy){return 'M'+p.map(function(q){return (CX+q[0]).toFixed(1)+','+(CY+q[1]+dy).toFixed(1)}).join('L')+'Z'}
+var L=[];
+for(var i=0;i<N;i++){var p=pts(i);var g=document.createElementNS(NS,'g');gl.appendChild(g);
+ mk('path',{d:d(p,LH),fill:'#c9c2b0',stroke:'#a9a28f','stroke-width':.6},g);
+ mk('path',{d:d(p,0),fill:i%2?'#f7f4ec':'#efeadd',stroke:'#b9b29f','stroke-width':.8},g);
+ L.push({g:g,y:-i*LH})}
+var B=[{x:-95,z:6,w:36,h:26,c:'#3e6b57'},{x:-5,z:-8,w:44,h:20,c:'#2f4a4f'},{x:60,z:14,w:38,h:32,c:'#c9743f'},{x:-50,z:30,w:52,h:12,c:'#7a6a4f'}];
+var BE=[];
+B.forEach(function(b){var g=document.createElementNS(NS,'g');gb.appendChild(g);
+ var x=CX+b.x,y=CY+b.z-N*LH*0.55,w=b.w;
+ mk('path',{d:'M'+x+','+y+'l'+w/2+','+(-w*0.25)+'l'+w/2+','+(w*0.25)+'l0,'+b.h+'l'+(-w/2)+','+(w*0.25)+'l'+(-w/2)+','+(-w*0.25)+'Z',fill:b.c,stroke:'#fff','stroke-width':.8},g);
+ mk('path',{d:'M'+x+','+y+'l'+w/2+','+(-w*0.25)+'l'+w/2+','+(w*0.25)+'l'+(-w/2)+','+(w*0.25)+'Z',fill:'#fff',opacity:.35},g);
+ BE.push(g)});
+var ring=mk('path',{d:d(pts(4),-4*LH),fill:'none',stroke:'#c9743f','stroke-width':1.4,'stroke-dasharray':'5 4',opacity:0},gb);
+var T=[['Contours','Foam-core layers stack into the land.'],['Residential','Homes that reflect each individual client.'],['Commercial','Commercial work from the same studio.'],['Multifamily + Ranch &amp; Resort','Two more practice areas land on the site.'],['Planning','Master planning ties the whole site together.']];
+var ct=document.getElementById('ct'),cs=document.getElementById('cs'),dots=document.querySelectorAll('#dots i'),hero=document.getElementById('hero');
+function clamp(x){return Math.max(0,Math.min(1,x))}
+function e(x){return x*x*(3-2*x)}
+function draw(t){
+ L.forEach(function(l,i){var a=e(clamp((t-i*0.045)/0.12));l.g.setAttribute('transform','translate(0,'+(((1-a)*-60)+l.y).toFixed(1)+')');l.g.setAttribute('opacity',a)});
+ var bt=[0.42,0.56,0.7,0.78];
+ BE.forEach(function(g,k){var a=e(clamp((t-bt[k])/0.12));g.setAttribute('transform','translate(0,'+((1-a)*-70).toFixed(1)+')');g.setAttribute('opacity',a)});
+ ring.setAttribute('opacity',e(clamp((t-0.9)/0.1)));
+ var s=t<.44?0:t<.54?1:t<.68?2:t<.9?3:4;
+ ct.innerHTML=T[s][0];cs.textContent=T[s][1];
+ dots.forEach(function(d,i){d.className=i<=s?'on':''})}
+function onS(){if(reduce){draw(1);return}var r=hero.getBoundingClientRect();draw(clamp(-r.top/(r.height-innerHeight)))}
+addEventListener('scroll',onS,{passive:true});addEventListener('resize',onS);onS();
+if(reduce){hero.style.height='auto';var p=hero.firstElementChild;p.style.position='relative';p.style.height='auto';p.style.minHeight='100vh'}
+})();
+</script>
+</body>
+</html>

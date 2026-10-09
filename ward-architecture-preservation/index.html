@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ward Architecture + Preservation | Savannah, Georgia (concept)</title>
+<meta name="description" content="Concept site for Ward Architecture + Preservation, 625 East 44th Street, Savannah GA. A historic porch is rebuilt piece by piece as you scroll. Built by Kerblabs as a free spec.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/ward-architecture-preservation/">
+<meta property="og:title" content="Ward Architecture + Preservation | Concept site by Kerblabs">
+<meta property="og:description" content="A lost porch is rebuilt as you scroll. Free concept.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/ward-architecture-preservation/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"LocalBusiness","@id":"https://gglagent19.github.io/kerblabs-specs/ward-architecture-preservation/#biz","name":"Ward Architecture + Preservation","url":"https://www.wardarch.com","telephone":"+1-912-596-4882","email":"jward@wardarch.com","address":{"@type":"PostalAddress","streetAddress":"625 East 44th Street","addressLocality":"Savannah","addressRegion":"GA","postalCode":"31405","addressCountry":"US"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"New construction"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Adaptive reuse"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Historic rehabilitation tax incentives"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Preservation planning"}}]}},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Where is Ward Architecture + Preservation?","acceptedAnswer":{"@type":"Answer","text":"625 East 44th Street, Savannah, Georgia 31405."}},
+{"@type":"Question","name":"What does the firm do?","acceptedAnswer":{"@type":"Answer","text":"Per their site: new construction, adaptive reuse, historic rehabilitation tax incentives and preservation planning, rehabilitating historic buildings in Savannah and Tybee Island to the Secretary of the Interior's Standards for Rehabilitation."}},
+{"@type":"Question","name":"How do I reach them?","acceptedAnswer":{"@type":"Answer","text":"Call 912-596-4882 or email jward@wardarch.com."}}
+]}]}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f1ece0;--bg2:#e6dfcd;--ink:#22262b;--mut:#5d625f;--lk:#3b5a4a;--gd:#b8892f;--cl:#a8452f;--line:#d1c7ae}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.55;-webkit-text-size-adjust:100%}
+a{color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;height:64px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 16px;background:rgba(241,236,224,.96);border-bottom:1px solid var(--line);font-family:Arial,Helvetica,sans-serif}
+.brand{font-weight:800;letter-spacing:.05em;font-size:13px;line-height:1.1;text-transform:uppercase;max-width:190px}
+.navr{display:flex;gap:14px;align-items:center;font-size:13px}
+.navr a.l{text-decoration:none;display:none}
+.btn{display:inline-block;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:2px;text-decoration:none;font:700 13px Arial,sans-serif;letter-spacing:.05em}
+.btn.alt{background:var(--lk);color:#fff}
+.hero{height:440vh;position:relative}
+.pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;padding-top:104px;padding-bottom:64px;display:flex;flex-direction:column}
+.copy{padding:0 18px;max-width:900px}
+.eyebrow{font:700 11px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--cl)}
+h1{font-size:clamp(30px,8vw,72px);line-height:1;margin:8px 0;letter-spacing:-.02em}
+.sub{font-size:clamp(14px,3.6vw,18px);color:var(--mut);max-width:580px}
+.stage{flex:1;min-height:0;display:flex;flex-direction:column;margin-top:6px}
+.stage svg{flex:1;min-height:0;width:100%;display:block}
+.cap{font:11px Arial,sans-serif;color:var(--mut);padding:0 18px;letter-spacing:.04em}
+.call{margin:4px 18px 0;max-width:640px;min-height:72px;border-left:5px solid var(--gd);padding:4px 0 4px 14px}
+.call b{display:block;font:800 clamp(20px,5.4vw,30px)/1.1 Georgia,serif}
+.call span{display:block;margin-top:4px;font-size:clamp(13px,3.4vw,16px);color:var(--mut)}
+.dots{display:flex;gap:6px;margin:8px 18px 4px}
+.dots i{width:24px;height:4px;background:var(--line);display:block;border-radius:2px}
+.dots i.on{background:var(--lk)}
+section{padding:72px 18px;max-width:1040px;margin:0 auto}
+h2{font-size:clamp(28px,7vw,48px);line-height:1.05;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:22px}
+.card{background:var(--bg2);border:1px solid var(--line);padding:20px;border-radius:3px}
+.card h3{font-size:20px;margin-bottom:6px;color:var(--lk)}
+.card p{color:var(--mut);font-size:16px}
+.band{background:var(--lk);color:var(--bg);max-width:none}
+.band .in{max-width:1040px;margin:0 auto}
+.band p{max-width:640px;color:#dbe7df}
+.ba{display:grid;grid-template-columns:1fr;gap:14px;margin-top:20px}
+.ba div{border:1px solid var(--line);background:var(--bg2);padding:16px;border-radius:3px}
+.ba b{font:700 11px Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--cl)}
+.ba p{margin-top:6px;color:var(--mut);font-size:15px}
+.note{margin-top:16px;border-left:4px solid var(--gd);padding:8px 14px;background:var(--bg2);color:var(--mut)}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{cursor:pointer;font-weight:700}
+.faq p{margin-top:8px;color:var(--mut)}
+footer{padding:36px 18px 90px;text-align:center;color:var(--mut);font:12px Arial,sans-serif}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:8px;padding:8px 12px max(8px,env(safe-area-inset-bottom));background:rgba(241,236,224,.97);border-top:1px solid var(--line)}
+.sticky .btn{flex:1;text-align:center}
+@media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr)}.ba{grid-template-columns:1fr 1fr}.navr a.l{display:inline}.sticky{display:none}footer{padding-bottom:36px}.pin{padding-bottom:16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div class="brand">Ward Architecture<br>+ Preservation</div>
+<div class="navr"><a class="l" href="#work">Work</a><a class="l" href="#faq">FAQ</a><a class="btn" href="mailto:jward@wardarch.com">Email Josh</a></div></nav>
+
+<div class="hero" id="hero"><div class="pin">
+<div class="copy"><div class="eyebrow">Concept for Ward Architecture + Preservation</div>
+<h1>Rebuild what was lost.</h1>
+<p class="sub">Historic rehabilitation, adaptive reuse and preservation planning from 625 East 44th Street, Savannah, to the Secretary of the Interior's Standards.</p></div>
+<div class="stage">
+<svg id="sv" viewBox="0 0 400 240" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Illustrative Savannah house elevation: a missing front porch is surveyed, boarded windows reopened, and the porch rebuilt piece by piece">
+<defs><clipPath id="wc"><rect id="wcr" x="90" y="200" width="220" height="0"/></clipPath></defs>
+<rect x="0" y="0" width="400" height="240" fill="#e9e1cd"/>
+<rect x="0" y="200" width="400" height="40" fill="#cbbf9f"/>
+<g fill="none" stroke="#22262b" stroke-width="1.2" stroke-dasharray="4 4" opacity=".4" id="ghost">
+<rect x="100" y="100" width="200" height="100"/>
+<path d="M88 100 L200 50 L312 100Z"/>
+<path d="M66 142 L252 142 L252 150 L66 150Z"/>
+<rect x="72" y="150" width="176" height="42"/>
+</g>
+<g id="survey" font-family="Arial" font-size="8" fill="#a8452f">
+<path d="M330 100 L330 200 M326 100 L334 100 M326 200 L334 200" stroke="#a8452f" stroke-width="1" fill="none"/>
+<text x="338" y="154">survey</text>
+</g>
+<g id="wall" clip-path="url(#wc)">
+<rect x="100" y="100" width="200" height="100" fill="#d9c9a0" stroke="#22262b" stroke-width="2"/>
+<g stroke="#b9a878" stroke-width="1"><path d="M100 112H300M100 124H300M100 136H300M100 148H300M100 160H300M100 172H300M100 184H300"/></g>
+</g>
+<g id="wins">
+<g id="glass" opacity="0">
+<rect x="128" y="108" width="24" height="28" fill="#9fb9bd" stroke="#22262b" stroke-width="1.5"/>
+<rect x="232" y="108" width="24" height="28" fill="#9fb9bd" stroke="#22262b" stroke-width="1.5"/>
+<rect x="254" y="152" width="24" height="30" fill="#9fb9bd" stroke="#22262b" stroke-width="1.5"/>
+<rect x="150" y="152" width="24" height="40" fill="#a8452f" stroke="#22262b" stroke-width="1.5"/>
+</g>
+<g id="boards" stroke="#5a4a32" stroke-width="2.4" opacity="0">
+<path d="M128 112L152 132M152 112L128 132M232 112L256 132M256 112L232 132M254 156L278 178M278 156L254 178M150 160L174 186M174 160L150 186"/>
+</g>
+</g>
+<g id="roof" opacity="0"><path d="M88 100 L200 50 L312 100Z" fill="#6c5a4a" stroke="#22262b" stroke-width="2"/>
+<g stroke="#54463a" stroke-width="1"><path d="M110 90L290 90M126 80L274 80M142 70L258 70"/></g>
+<path id="fin" d="M200 50 L200 38" stroke="#22262b" stroke-width="2"/><circle cx="200" cy="36" r="2.6" fill="#b8892f"/></g>
+<g id="porch">
+<rect id="deck" x="66" y="190" width="188" height="6" fill="#8a7658" stroke="#22262b" stroke-width="1.5" opacity="0"/>
+<g id="posts"></g>
+<g id="rail"></g>
+<g id="brk"></g>
+<g id="pr" opacity="0"><path d="M62 144 L66 134 L256 134 L260 144Z" fill="#a8452f" stroke="#22262b" stroke-width="1.8"/><rect x="66" y="142" width="190" height="4" fill="#22262b"/></g>
+</g>
+<g id="stamp" opacity="0" transform="rotate(-6 330 60)"><rect x="276" y="44" width="108" height="34" fill="none" stroke="#3b5a4a" stroke-width="2"/><text x="330" y="58" text-anchor="middle" font-family="Arial" font-size="9" font-weight="700" fill="#3b5a4a">REHABILITATION</text><text x="330" y="70" text-anchor="middle" font-family="Arial" font-size="8" fill="#3b5a4a">PLAN IN PLACE</text></g>
+<text id="hr" x="12" y="20" font-family="Arial" font-size="12" font-weight="700" fill="#22262b">Step 1 of 5</text>
+</svg>
+<div class="cap">Illustrative elevation. Not a specific Ward Architecture + Preservation project.</div>
+</div>
+<div class="call"><b id="ct">Survey</b><span id="cs">Measure what is left and document the building.</span></div>
+<div class="dots" id="dots"><i></i><i></i><i></i><i></i><i></i></div>
+</div></div>
+
+<section id="work">
+<h2>Savannah and Tybee, rebuilt right.</h2>
+<p>From their own site: the firm rehabilitates historic buildings in Savannah and Tybee Island, secures state and federal historic tax incentives, and designs infill that fits its historic context.</p>
+<div class="grid">
+<div class="card"><h3>Benjamin Wilson House (1867)</h3><p>Greek Revival residence restored in Calhoun Ward, listed in their portfolio.</p></div>
+<div class="card"><h3>521 East Bolton (ca. 1890)</h3><p>Missing front porch reconstructed on a Queen Anne duplex, listed in their portfolio.</p></div>
+<div class="card"><h3>Persse Pharmacy &amp; Corner Store (1901)</h3><p>Mixed-use rehabilitation, listed in their portfolio.</p></div>
+<div class="card"><h3>Enlisted Men's Barracks (1910)</h3><p>Rehabilitated into seven apartments, listed in their portfolio.</p></div>
+<div class="card"><h3>Big Bon Bodega</h3><p>Adaptive reuse of an Art Deco service station, listed in their portfolio.</p></div>
+<div class="card"><h3>2313-2315 Barnard Townhomes</h3><p>Infill referencing the Thomas Square Streetcar district, listed in their portfolio.</p></div>
+</div>
+<p style="margin-top:16px;color:var(--mut)">Also listed: Ft. Screven Bowling Alley, Curry-Miller-Byrd Cottage, Nom Nom Poke, 121 West Bolton, Hermes-Gottlieb's Bakery, 111 West Gwinnett, Starland Rehabilitation, 1812 Habersham, 248 Wiley Bottom.</p>
+</section>
+
+<section>
+<h2>Show the process, not only the photos.</h2>
+<p>Preservation work is a sequence: survey, stabilize, rebuild, file. A concept can let a visitor watch that sequence while every project from the current portfolio stays in place.</p>
+<div class="ba">
+<div><b>Today (observed)</b><p>Projects from 2017 to 2021 and a 2022 award are the newest dated items, and one email is listed.</p></div>
+<div><b>Concept</b><p>One scroll story for the method, project pages that lead with before and after, phone and email in reach on mobile.</p></div>
+</div>
+</section>
+
+<section class="band"><div class="in">
+<h2>Agent-ready, so assistants can find the firm.</h2>
+<p>This concept ships with llms.txt, structured data and an open crawler policy, so AI assistants can read what the firm does, where it works and how to reach it.</p>
+</div></section>
+
+<section class="faq" id="faq">
+<h2>Questions</h2>
+<details><summary>Where is Ward Architecture + Preservation?</summary><p>625 East 44th Street, Savannah, Georgia 31405.</p></details>
+<details><summary>What does the firm do?</summary><p>Per their site: new construction, adaptive reuse, historic rehabilitation tax incentives and preservation planning in Savannah and Tybee Island.</p></details>
+<details><summary>How do I reach them?</summary><p>Call 912-596-4882 or email jward@wardarch.com.</p></details>
+<div class="note">Concept built by Kerblabs as a free spec. Not affiliated with Ward Architecture + Preservation. Visuals are illustrative.</div>
+</section>
+
+<footer>Ward Architecture + Preservation concept | Kerblabs | 625 East 44th Street, Savannah, GA 31405 | 912-596-4882</footer>
+<div class="sticky"><a class="btn" href="tel:+19125964882">Call</a><a class="btn alt" href="mailto:jward@wardarch.com">Email</a></div>
+
+<script>
+(function(){
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var NS='http://www.w3.org/2000/svg';
+var T=[['Survey','Measure what is left and document the building.'],['Stabilize','Walls repaired, openings secured, siding matched.'],['Reopen','Boarded windows come back, door restored.'],['Rebuild the porch','Posts, rail, brackets and roof rebuilt to the historic profile.'],['File and finish','Preservation planning and tax-incentive paperwork, then the roof is done.']];
+var ct=document.getElementById('ct'),cs=document.getElementById('cs'),dots=document.querySelectorAll('#dots i'),hero=document.getElementById('hero'),hr=document.getElementById('hr');
+var wcr=document.getElementById('wcr'),glass=document.getElementById('glass'),boards=document.getElementById('boards'),roof=document.getElementById('roof'),deck=document.getElementById('deck'),pr=document.getElementById('pr'),stamp=document.getElementById('stamp'),ghost=document.getElementById('ghost'),survey=document.getElementById('survey');
+function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e}
+var postX=[76,120,164,208,246],posts=[],rails=[],brks=[];
+postX.forEach(function(x){posts.push(el('rect',{x:x-3,y:190,width:6,height:0,fill:'#f4efe2',stroke:'#22262b','stroke-width':1.4},document.getElementById('posts')));
+ var b=el('path',{d:'M'+(x-3)+' 146 L'+(x-11)+' 146 L'+(x-3)+' 156Z M'+(x+3)+' 146 L'+(x+11)+' 146 L'+(x+3)+' 156Z',fill:'#a8452f',stroke:'#22262b','stroke-width':1,opacity:0},document.getElementById('brk'));brks.push(b)});
+for(var i=0;i<24;i++){var bx=84+i*7;if(postX.some(function(p){return Math.abs(p-bx)<6}))continue;
+ rails.push(el('rect',{x:bx-1,y:166,width:2,height:22,fill:'#f4efe2',stroke:'#22262b','stroke-width':.8,opacity:0},document.getElementById('rail')))}
+var topRail=el('rect',{x:70,y:164,width:0,height:3,fill:'#22262b'},document.getElementById('rail'));
+function clamp(x){return Math.max(0,Math.min(1,x))}
+function draw(t){
+ wcr.setAttribute('y',(200-100*clamp((t-.14)/.2)).toFixed(1));wcr.setAttribute('height',(100*clamp((t-.14)/.2)).toFixed(1));
+ ghost.setAttribute('opacity',(.4*(1-clamp((t-.5)/.4))+.08).toFixed(2));
+ survey.setAttribute('opacity',(1-clamp((t-.12)/.1)).toFixed(2));
+ boards.setAttribute('opacity',(clamp((t-.3)/.06)*(1-clamp((t-.42)/.08))).toFixed(2));
+ glass.setAttribute('opacity',clamp((t-.45)/.12).toFixed(2));
+ deck.setAttribute('opacity',clamp((t-.5)/.06).toFixed(2));
+ posts.forEach(function(p,i){var u=clamp((t-.56-i*.03)/.1),h=44*u;p.setAttribute('y',(190-h).toFixed(1));p.setAttribute('height',h.toFixed(1))});
+ rails.forEach(function(r,i){r.setAttribute('opacity',clamp((t-.66-i*.005)/.03).toFixed(2))});
+ topRail.setAttribute('width',(180*clamp((t-.72)/.08)).toFixed(1));
+ brks.forEach(function(b,i){b.setAttribute('opacity',clamp((t-.76-i*.015)/.04).toFixed(2))});
+ pr.setAttribute('opacity',clamp((t-.8)/.06).toFixed(2));pr.setAttribute('transform','translate(0,'+(-14*(1-clamp((t-.8)/.08))).toFixed(1)+')');
+ roof.setAttribute('opacity',clamp((t-.86)/.06).toFixed(2));roof.setAttribute('transform','translate(0,'+(-16*(1-clamp((t-.86)/.08))).toFixed(1)+')');
+ stamp.setAttribute('opacity',clamp((t-.93)/.05).toFixed(2));
+ var s=t<.14?0:t<.34?1:t<.52?2:t<.86?3:4;
+ hr.textContent='Step '+(s+1)+' of 5';
+ ct.textContent=T[s][0];cs.textContent=T[s][1];
+ dots.forEach(function(d,i){d.className=i<=s?'on':''})}
+function onS(){if(reduce){draw(1);return}var r=hero.getBoundingClientRect();draw(clamp(-r.top/(r.height-innerHeight)))}
+addEventListener('scroll',onS,{passive:true});addEventListener('resize',onS);onS();
+if(reduce){hero.style.height='auto';var p=hero.firstElementChild;p.style.position='relative';p.style.height='auto';p.style.minHeight='100vh'}
+})();
+</script>
+</body>
+</html>
