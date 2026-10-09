@@ -1,0 +1,18 @@
+# JML Interiors (Kerblabs concept site)
+
+> Concept spec by Kerblabs for JML Interiors, residential and commercial interior design in St. Louis, MO 63146. Not the official site: https://www.jmlinteriors.net/
+
+## Facts (from their public site)
+- Services: Residential Interior Design; Commercial Interior Design; Kitchen Remodeling; Bathroom Remodeling; Whole House Design; Virtual Interior Design Services
+- Address: 11622 Page Service Drive, Suite 108, St. Louis, MO 63146
+- Phone: 314-435-4233
+- Email: jeanne@jmlinteriors.net
+- Hours: Monday to Friday 8:00 am to 5:00 pm; closed Saturday and Sunday
+- First step: complimentary discovery call by appointment
+- Prices and years in business: not published
+- Machine-readable: services.json in this folder
+
+## FAQ
+- What do they do? Residential and commercial interior design, remodeling and virtual design.
+- Where? St. Louis, MO.
+- How to start? Email or call, or book the complimentary discovery call.
