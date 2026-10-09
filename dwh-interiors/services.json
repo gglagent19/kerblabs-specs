@@ -1,0 +1,14 @@
+{
+ "business": "DWH Interiors",
+ "location": "351 Peachtree Hill Ave NE, Suite 503 Studio I, Atlanta, GA 30305",
+ "phone": "404-550-5484",
+ "email": "Douglas@DWHinteriors.com",
+ "website": "https://dwhinteriors.com/",
+ "services": [
+  {"name": "Residential interior design", "description": "Personal style development: English Regency, Transitional, Contemporary or Eclectic", "price": "not published"},
+  {"name": "High-rise condo interiors", "description": "Residential interiors for condos", "price": "not published"},
+  {"name": "Second-home interiors", "description": "Primary residences and international second homes", "price": "not published"}
+ ],
+ "booking": "Contact the firm by phone, email or the form on dwhinteriors.com",
+ "note": "Concept by Kerblabs, not affiliated with the firm."
+}
