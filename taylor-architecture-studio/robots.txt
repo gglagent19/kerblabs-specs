@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gglagent19.github.io/kerblabs-specs/taylor-architecture-studio/sitemap.xml

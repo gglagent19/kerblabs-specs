@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Taylor Architecture Studio | Boulder, Colorado (concept)</title>
+<meta name="description" content="Concept site for Taylor Architecture Studio, residential architect in Boulder County. A floor plan draws itself as you scroll. Built by Kerblabs as a free spec.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/taylor-architecture-studio/">
+<meta property="og:title" content="Taylor Architecture Studio | Concept site by Kerblabs">
+<meta property="og:description" content="A plan draws itself: house, addition, ADU, documents. Free concept.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/taylor-architecture-studio/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"LocalBusiness","@id":"https://gglagent19.github.io/kerblabs-specs/taylor-architecture-studio/#biz","name":"Taylor Architecture Studio","url":"https://www.taylorarchitecturestudio.com/","telephone":"+1-303-815-3463","email":"nicole@taylorarchitecturestudio.com","areaServed":"Boulder County, Colorado","hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Custom Home Design"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Additions & Remodels"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"ADU Design"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Construction Documents"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Permitting"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Early Project Guidance"}}]}},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Where does Taylor Architecture Studio work?","acceptedAnswer":{"@type":"Answer","text":"Boulder County, Colorado. Their site lists service pages for Boulder, Longmont and the wider county."}},
+{"@type":"Question","name":"What does the studio design?","acceptedAnswer":{"@type":"Answer","text":"Per their site: custom homes, additions and remodels, ADUs, construction documents, permitting and early project guidance."}},
+{"@type":"Question","name":"How do I reach them?","acceptedAnswer":{"@type":"Answer","text":"Call (303) 815-3463 or email nicole@taylorarchitecturestudio.com."}}
+]}]}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f3efe6;--bg2:#e8e2d3;--ink:#23272a;--mut:#5d625f;--lk:#2f5a46;--hl:#c98b3a;--cl:#b0502f;--line:#d3ccb8}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.55;-webkit-text-size-adjust:100%}
+a{color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;height:64px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 16px;background:rgba(243,239,230,.96);border-bottom:1px solid var(--line);font-family:Arial,Helvetica,sans-serif}
+.brand{font-weight:800;letter-spacing:.05em;font-size:13px;line-height:1.1;text-transform:uppercase;max-width:170px}
+.navr{display:flex;gap:14px;align-items:center;font-size:13px}
+.navr a.l{text-decoration:none;display:none}
+.btn{display:inline-block;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:2px;text-decoration:none;font:700 13px Arial,sans-serif;letter-spacing:.05em}
+.btn.alt{background:var(--lk);color:#fff}
+.hero{height:440vh;position:relative}
+.pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;padding-top:104px;padding-bottom:calc(88px + env(safe-area-inset-bottom));display:flex;flex-direction:column}
+.copy{padding:0 18px;max-width:900px}
+.eyebrow{font:700 11px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--cl)}
+h1{font-size:clamp(30px,8vw,72px);line-height:1;margin:8px 0;letter-spacing:-.02em}
+.sub{font-size:clamp(14px,3.6vw,18px);color:var(--mut);max-width:560px}
+.stage{flex:1;min-height:0;display:flex;flex-direction:column;margin-top:6px}
+.stage svg{flex:1;min-height:0;width:100%;display:block}
+.cap{font:11px Arial,sans-serif;color:var(--mut);padding:0 18px;letter-spacing:.04em}
+.call{margin:4px 18px 0;max-width:620px;min-height:72px;border-left:5px solid var(--hl);padding:4px 0 4px 14px}
+.call b{display:block;font:800 clamp(20px,5.4vw,30px)/1.1 Georgia,serif}
+.call span{display:block;margin-top:4px;font-size:clamp(13px,3.4vw,16px);color:var(--mut)}
+.dots{display:flex;gap:6px;margin:8px 18px 4px}
+.dots i{width:24px;height:4px;background:var(--line);display:block;border-radius:2px}
+.dots i.on{background:var(--lk)}
+section{padding:72px 18px;max-width:1040px;margin:0 auto}
+h2{font-size:clamp(28px,7vw,48px);line-height:1.05;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:22px}
+.card{background:var(--bg2);border:1px solid var(--line);padding:20px;border-radius:3px}
+.card h3{font-size:20px;margin-bottom:6px;color:var(--lk)}
+.card p{color:var(--mut);font-size:16px}
+.band{background:var(--lk);color:var(--bg);max-width:none}
+.band .in{max-width:1040px;margin:0 auto}
+.band p{max-width:640px;color:#d6e6dc}
+.ba{display:grid;grid-template-columns:1fr;gap:14px;margin-top:20px}
+.ba div{border:1px solid var(--line);background:var(--bg2);padding:16px;border-radius:3px}
+.ba b{font:700 11px Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--cl)}
+.ba p{margin-top:6px;color:var(--mut);font-size:15px}
+.note{margin-top:16px;border-left:4px solid var(--hl);padding:8px 14px;background:var(--bg2);color:var(--mut)}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{cursor:pointer;font-weight:700}
+.faq p{margin-top:8px;color:var(--mut)}
+footer{padding:36px 18px 90px;text-align:center;color:var(--mut);font:12px Arial,sans-serif}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:8px;padding:8px 12px max(8px,env(safe-area-inset-bottom));background:rgba(243,239,230,.97);border-top:1px solid var(--line)}
+.sticky .btn{flex:1;text-align:center}
+.w{fill:none;stroke-linecap:butt;stroke-linejoin:miter}
+@media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr)}.ba{grid-template-columns:1fr 1fr}.navr a.l{display:inline}.sticky{display:none}footer{padding-bottom:36px}.pin{padding-bottom:16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div class="brand">Taylor Architecture<br>Studio</div>
+<div class="navr"><a class="l" href="#work">Services</a><a class="l" href="#faq">FAQ</a><a class="btn" href="mailto:nicole@taylorarchitecturestudio.com">Email Nicole</a></div></nav>
+
+<div class="hero" id="hero"><div class="pin">
+<div class="copy"><div class="eyebrow">Concept for Taylor Architecture Studio</div>
+<h1>A plan, drawn wall by wall.</h1>
+<p class="sub">Residential architecture in Boulder County: custom homes, additions, remodels and ADUs.</p></div>
+<div class="stage">
+<svg id="sv" viewBox="0 0 400 240" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Illustrative floor plan that draws itself: an existing house, then an addition, then a backyard ADU, then dimensions and a sheet tag">
+<rect x="0" y="0" width="400" height="240" fill="#f3efe6"/>
+<g stroke="#d3ccb8" stroke-width="1"><path d="M0 40H400M0 80H400M0 120H400M0 160H400M0 200H400M40 0V240M80 0V240M120 0V240M160 0V240M200 0V240M240 0V240M280 0V240M320 0V240M360 0V240"/></g>
+<rect x="16" y="22" width="368" height="196" fill="none" stroke="#5d625f" stroke-width="1.4" stroke-dasharray="6 4"/>
+<text x="22" y="34" font-family="Arial" font-size="9" fill="#5d625f" letter-spacing="1">LOT LINE</text>
+
+<g id="g1">
+<path class="w a1" pathLength="100" d="M200 100V70H50V190H200V150" stroke="#23272a" stroke-width="5"/>
+<path class="w a1b" pathLength="100" d="M50 125H120M120 70V125M120 160V190M120 160H200" stroke="#23272a" stroke-width="2.4"/>
+</g>
+<g id="g2">
+<path class="w a2" pathLength="100" d="M200 70H290V150H200" stroke="#b0502f" stroke-width="5"/>
+<path class="w a2b" pathLength="100" d="M194 100H206M194 150H206" stroke="#b0502f" stroke-width="2"/>
+</g>
+<g id="g3">
+<path class="w a3" pathLength="100" d="M310 140H365V205H310Z" stroke="#2f5a46" stroke-width="5"/>
+<path class="w a3b" pathLength="100" d="M310 190A18 18 0 0 1 328 205" stroke="#2f5a46" stroke-width="1.4"/>
+</g>
+<g id="g4" opacity="0">
+<path d="M50 56H200M50 52V60M200 52V60" stroke="#23272a" stroke-width="1.2"/>
+<text x="125" y="50" text-anchor="middle" font-family="Arial" font-size="9" fill="#23272a">EXISTING</text>
+<path d="M200 56H290M290 52V60" stroke="#b0502f" stroke-width="1.2"/>
+<text x="245" y="50" text-anchor="middle" font-family="Arial" font-size="9" fill="#b0502f">ADDITION</text>
+<path d="M310 128H365M310 124V132M365 124V132" stroke="#2f5a46" stroke-width="1.2"/>
+<text x="338" y="121" text-anchor="middle" font-family="Arial" font-size="9" fill="#2f5a46">ADU</text>
+<rect x="318" y="208" width="62" height="26" fill="#f3efe6" stroke="#23272a" stroke-width="1.2"/>
+<text x="349" y="219" text-anchor="middle" font-family="Arial" font-size="8" fill="#23272a">SHEET</text>
+<text x="349" y="230" text-anchor="middle" font-family="Arial" font-size="10" font-weight="700" fill="#23272a">A-101</text>
+</g>
+<g id="g5" opacity="0" transform="rotate(-8 250 190)">
+<rect x="208" y="178" width="84" height="24" fill="none" stroke="#b0502f" stroke-width="2.2"/>
+<text x="250" y="194" text-anchor="middle" font-family="Arial" font-size="11" font-weight="800" fill="#b0502f" letter-spacing="1.5">PERMIT SET</text>
+</g>
+<text x="12" y="236" font-family="Arial" font-size="9" font-weight="700" fill="#5d625f" letter-spacing="1">FLOOR PLAN, ILLUSTRATIVE</text>
+</svg>
+<div class="cap">Illustrative plan. Not a specific Taylor Architecture Studio project.</div>
+</div>
+<div class="call"><b id="ct">The lot</b><span id="cs">Every project starts with a site and a question.</span></div>
+<div class="dots" id="dots"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+</div></div>
+
+<section id="work">
+<h2>Six things the studio does.</h2>
+<p>From their own site: Nicole Taylor Nutting leads a residential studio working across Boulder County, with a consultant network of structural and civil engineers, surveyors, interior designers, energy consultants and contractors.</p>
+<div class="grid">
+<div class="card"><h3>Custom Home Design</h3><p>New homes, listed on their site.</p></div>
+<div class="card"><h3>Additions &amp; Remodels</h3><p>Featured: Miami Way Remodel (South Boulder), Folsom Street Remodel (Boulder).</p></div>
+<div class="card"><h3>ADU Design</h3><p>Accessory dwelling units, with a dedicated ADU page for Boulder.</p></div>
+<div class="card"><h3>Construction Documents</h3><p>Listed as a core service.</p></div>
+<div class="card"><h3>Permitting</h3><p>Listed as a core service.</p></div>
+<div class="card"><h3>Early Project Guidance</h3><p>Listed on their site, before the design begins.</p></div>
+</div>
+</section>
+
+<section>
+<h2>What a refresh changes.</h2>
+<p>taylorarchitecturestudio.com is clean and clear. A concept keeps every word of it and adds one thing it does not have yet: a first screen that shows how a project actually unfolds, from existing house to addition to ADU to documents.</p>
+<div class="ba">
+<div><b>Today (observed)</b><p>A tidy, conventional homepage with services, three featured projects including the 966 Arapahoe Marshall Fire rebuild, and a contact page.</p></div>
+<div><b>Concept</b><p>The same content behind a scroll story, with phone and email in reach on mobile at all times.</p></div>
+</div>
+</section>
+
+<section class="band"><div class="in">
+<h2>Agent-ready, so assistants can find the studio.</h2>
+<p>This concept ships with llms.txt, structured data and an open crawler policy, so AI assistants can read what the studio designs and how to reach it.</p>
+</div></section>
+
+<section class="faq" id="faq">
+<h2>Questions</h2>
+<details><summary>Where does Taylor Architecture Studio work?</summary><p>Boulder County, Colorado. Their site lists service pages for Boulder, Longmont and the wider county.</p></details>
+<details><summary>What does the studio design?</summary><p>Per their site: custom homes, additions and remodels, ADUs, construction documents, permitting and early project guidance.</p></details>
+<details><summary>How do I reach them?</summary><p>Call (303) 815-3463 or email nicole@taylorarchitecturestudio.com.</p></details>
+<div class="note">Concept built by Kerblabs as a free spec. Not affiliated with Taylor Architecture Studio. Visuals are illustrative.</div>
+</section>
+
+<footer>Taylor Architecture Studio concept | Kerblabs | Boulder County, CO | (303) 815-3463</footer>
+<div class="sticky"><a class="btn" href="tel:+13038153463">Call</a><a class="btn alt" href="mailto:nicole@taylorarchitecturestudio.com">Email</a></div>
+
+<script>
+(function(){
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var T=[['Custom home design','Every new home starts as a blank lot and a question.'],['Early guidance','The existing house, drawn first.'],['Additions & remodels','New walls grow off the old ones.'],['ADU design','A separate unit in the backyard, door swing and all.'],['Construction documents','Dimensions and a sheet number turn a sketch into a set.'],['Permitting','The set goes in, ready for review.']];
+var ct=document.getElementById('ct'),cs=document.getElementById('cs'),dots=document.querySelectorAll('#dots i'),hero=document.getElementById('hero');
+var g4=document.getElementById('g4'),g5=document.getElementById('g5');
+var Q=function(c){return document.querySelectorAll(c)};
+var A1=Q('.a1'),A1b=Q('.a1b'),A2=Q('.a2'),A2b=Q('.a2b'),A3=Q('.a3'),A3b=Q('.a3b');
+function clamp(x){return Math.max(0,Math.min(1,x))}
+function dash(list,u){for(var i=0;i<list.length;i++){var s=list[i].style;s.strokeDasharray='100';s.strokeDashoffset=(100*(1-u)).toFixed(2);s.opacity=u>0?1:0}}
+/* windows are proportional to path length within each group: shell first, then partitions/details */
+function win(t,a,b){return clamp((t-a)/(b-a))}
+function draw(t){
+ dash(A1,win(t,.08,.219));dash(A1b,win(t,.219,.28));
+ dash(A2,win(t,.3,.46));dash(A2b,win(t,.46,.5));
+ dash(A3,win(t,.52,.67));dash(A3b,win(t,.67,.7));
+ g4.setAttribute('opacity',clamp((t-.72)/.1).toFixed(2));
+ g5.setAttribute('opacity',clamp((t-.88)/.08).toFixed(2));
+ var s=t<.06?0:t<.3?1:t<.52?2:t<.72?3:t<.88?4:5;
+ ct.textContent=T[s][0];cs.textContent=T[s][1];
+ dots.forEach(function(d,i){d.className=i<=s?'on':''})}
+function onS(){if(reduce){draw(1);return}var r=hero.getBoundingClientRect();draw(clamp(-r.top/(r.height-innerHeight)))}
+addEventListener('scroll',onS,{passive:true});addEventListener('resize',onS);onS();
+if(reduce){hero.style.height='auto';var p=hero.firstElementChild;p.style.position='relative';p.style.height='auto';p.style.minHeight='100vh'}
+})();
+</script>
+</body>
+</html>
