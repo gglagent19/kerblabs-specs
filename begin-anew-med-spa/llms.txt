@@ -1,0 +1,24 @@
+# Begin Anew Med Spa (concept site by Kerblabs)
+
+> Concept site, not the official site. Official: https://beginanewmed.com
+> Med spa at 337 E Indiantown Rd, Suite E-13, Jupiter, FL 33477. Phone (561) 781-3578.
+
+## Hours
+Mon-Thu 9 AM-6 PM, Fri 9 AM-5 PM, Sat 9 AM-3 PM, closed Sunday.
+
+## Service categories (from the spa's site)
+- Injectables: Botox, Dermal Fillers, Lip Fillers, Dysport, Xeomin, PRP Hair Restoration
+- Skin Rejuvenation: Chemical Peels, Hydrafacial, DiamondGlow Facial, Microneedling, Morpheus8
+- Laser, Light & CO2: AviClear, CO2RE, Fraxel, IPL Photofacial, Laser Hair Removal
+- Body Contouring: EMSCULPT NEO, CoolSculpting Elite, Morpheus8 Body
+- IV Therapy & Injections: Nutrient IV Therapy, Glutathione, NAD+
+- Hormone Therapy: BHRT, Hormone Pellet Therapy, Testosterone Therapy
+
+## Prices
+Service prices are not published. VIP Membership lists savings of up to 20 percent.
+
+## Booking
+Call (561) 781-3578 or use the online booking page linked from the official site.
+
+## FAQ
+See the #faq section of index.html.

@@ -1,0 +1,17 @@
+# Studio Riche Designs (Kerblabs concept site)
+
+> Concept spec by Kerblabs for Studio Riche Designs, interior design in New Orleans, LA. Not the official site: https://www.studiorichedesigns.com/
+
+## Facts (from their public site)
+- Tagline: Designing personal spaces that inspire!
+- Offers: Consultations (full tour of your home); Design in One Day (up to six hours of shopping alongside the client); Makeover Session (on-site 3-hour visit, client manages and installs); Designer on Call (10-hour minimum, 1-hour increments); Custom Interior Design Services
+- Custom process: Initial Consultation; Design Proposal & Agreement; Design Concept; Design Presentation; Design Implementation & Completion
+- Price: services start at $500
+- Phone: (504) 905-0431
+- Email: regina@studiorichedesigns.com
+- Street address and hours: not published
+- Machine-readable: services.json in this folder
+
+## FAQ
+- What do they do? Interior design in the New Orleans area, from one-day sessions to full custom projects.
+- How to start? Email or call to schedule a call.
