@@ -1,0 +1,17 @@
+# Arizona Luxury Real Estate (concept by Kerblabs, not affiliated)
+
+> Luxury real estate brokerage, Scottsdale, Arizona. Facts from arizonaluxurygroup.com.
+
+- Address: 20511 Hayden Rd #115, Scottsdale, AZ 85255
+- Broker and owner (per their site): Perry Bergelt, (480) 272-3000, perry@arizonaluxurygroup.com
+- Services: buying and selling properties, luxury rentals, home valuation, owner financing, interior design, blog
+- Golf course communities listed: Estancia, Whisper Rock, Desert Highlands, Desert Mountain, Silverleaf, Mirabel, Troon, Troon North
+- Prices: listing prices vary, none published as service prices
+
+## Actions
+- Ask about a property (available): call (480) 272-3000 or email perry@arizonaluxurygroup.com
+
+## FAQ
+- Where? 20511 Hayden Rd #115, Scottsdale, AZ 85255.
+- Who is the broker? Perry Bergelt, listed as Broker and Owner.
+- Golf communities? Estancia, Whisper Rock, Desert Highlands, Desert Mountain, Silverleaf, Mirabel, Troon, Troon North.

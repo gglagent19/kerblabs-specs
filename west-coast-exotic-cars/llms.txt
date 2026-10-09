@@ -1,0 +1,16 @@
+# West Coast Exotic Cars (concept by Kerblabs)
+
+> Exotic car dealership at 26900 Jefferson Ave, Murrieta, CA 92562. Phone 951-355-2308. Site: https://www.westcoastexoticcars.com
+
+This is a free concept site by Kerblabs, not affiliated with the business. Facts come from westcoastexoticcars.com.
+
+## What they offer (per their site)
+- Inventory pages: All, SoCal, Naples, Miami, Recently Sold
+- Consignment, same-day payment or loan payoff when selling
+- Financing: credit application, finance calculator
+- Delivery or pickup, service, photography, videography, detailing, storage, negotiation
+
+## FAQ
+- Where? 26900 Jefferson Ave, Murrieta, CA 92562.
+- Contact? Call 951-355-2308.
+- Prices? Not stated on this concept; see their inventory pages.

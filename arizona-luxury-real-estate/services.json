@@ -1,0 +1,14 @@
+{
+ "name": "Arizona Luxury Real Estate, LLC",
+ "source": "https://arizonaluxurygroup.com",
+ "address": "20511 Hayden Rd #115, Scottsdale, AZ 85255",
+ "phone": "+1-480-272-3000",
+ "email": "perry@arizonaluxurygroup.com",
+ "services": [
+  {"name": "Buying and selling properties", "booking": "call or email", "price": null, "price_note": "not published"},
+  {"name": "Luxury rentals", "booking": "call or email", "price": null, "price_note": "not published"},
+  {"name": "Home valuation", "booking": "call or email", "price": null, "price_note": "not published"},
+  {"name": "Owner financing", "booking": "call or email", "price": null, "price_note": "not published"},
+  {"name": "Interior design", "booking": "call or email", "price": null, "price_note": "not published"}
+ ]
+}
