@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Nobnocket Boutique Inn | Vineyard Haven, MA (concept)</title>
+<meta name="description" content="Concept site for The Nobnocket Boutique Inn, Vineyard Haven, Martha's Vineyard. Postcards land one by one as you scroll. Built by Kerblabs as a free spec.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/nobnocket-boutique-inn/">
+<meta property="og:title" content="The Nobnocket Boutique Inn | Concept site by Kerblabs">
+<meta property="og:description" content="Five postcards from a Martha's Vineyard inn. A free concept hero.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/nobnocket-boutique-inn/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Hotel","@id":"https://gglagent19.github.io/kerblabs-specs/nobnocket-boutique-inn/#biz","name":"The Nobnocket Boutique Inn","url":"https://nobnocket.com","telephone":"+1-508-696-0859","address":{"@type":"PostalAddress","addressLocality":"Vineyard Haven","addressRegion":"MA","postalCode":"02568","addressCountry":"US"},"containsPlace":[
+{"@type":"HotelRoom","name":"Luxury Grand","bed":{"@type":"BedDetails","typeOfBed":"King"}},
+{"@type":"HotelRoom","name":"Luxury Suite","bed":{"@type":"BedDetails","typeOfBed":"King"}},
+{"@type":"HotelRoom","name":"Deluxe","bed":{"@type":"BedDetails","typeOfBed":"King"}},
+{"@type":"HotelRoom","name":"Lux","bed":{"@type":"BedDetails","typeOfBed":"Queen"}}]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Where is The Nobnocket Boutique Inn?","acceptedAnswer":{"@type":"Answer","text":"Vineyard Haven, Martha's Vineyard, Massachusetts 02568, on 2 acres of gardens (per their site)."}},
+{"@type":"Question","name":"What room types does the inn have?","acceptedAnswer":{"@type":"Answer","text":"Four listed room types: Luxury Grand, Luxury Suite and Deluxe with king beds, and Lux with a queen bed."}},
+{"@type":"Question","name":"How do I book?","acceptedAnswer":{"@type":"Answer","text":"Through the inn's own reservations page on thinkreservations, or by phone at (508) 696-0859."}}
+]}]}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#eef1ee;--bg2:#e0e6e3;--ink:#1d2b3a;--mut:#546170;--hy:#5f7fb0;--co:#d0583f;--cr:#fbf6ea;--line:#c8d1cf}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.55;-webkit-text-size-adjust:100%}
+a{color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;height:64px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 16px;background:rgba(238,241,238,.96);border-bottom:1px solid var(--line);font-family:Arial,Helvetica,sans-serif}
+.brand{font-weight:800;letter-spacing:.05em;font-size:13px;line-height:1.1;text-transform:uppercase;max-width:170px}
+.navr{display:flex;gap:14px;align-items:center;font-size:13px}
+.navr a.l{text-decoration:none;display:none}
+.btn{display:inline-block;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:2px;text-decoration:none;font:700 13px Arial,sans-serif;letter-spacing:.05em}
+.hero{height:420vh;position:relative}
+.pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;padding-top:104px;padding-bottom:calc(88px + env(safe-area-inset-bottom));display:flex;flex-direction:column}
+.copy{padding:0 18px;max-width:900px}
+.eyebrow{font:700 11px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--co)}
+h1{font-size:clamp(30px,8vw,72px);line-height:1;margin:8px 0;letter-spacing:-.02em}
+.sub{font-size:clamp(14px,3.6vw,18px);color:var(--mut);max-width:560px}
+.stage{flex:1;min-height:0;display:flex;flex-direction:column;margin-top:6px}
+.stage svg{flex:1;min-height:0;width:100%;display:block}
+.cap{font:11px Arial,sans-serif;color:var(--mut);padding:0 18px;letter-spacing:.04em}
+.call{margin:4px 18px 0;max-width:620px;min-height:72px;border-left:5px solid var(--hy);padding:4px 0 4px 14px}
+.call b{display:block;font:800 clamp(20px,5.4vw,30px)/1.1 Georgia,serif}
+.call span{display:block;margin-top:4px;font-size:clamp(13px,3.4vw,16px);color:var(--mut)}
+.dots{display:flex;gap:6px;margin:8px 18px 4px}
+.dots i{width:24px;height:4px;background:var(--line);display:block;border-radius:2px}
+.dots i.on{background:var(--co)}
+section{padding:72px 18px;max-width:1040px;margin:0 auto}
+h2{font-size:clamp(28px,7vw,48px);line-height:1.05;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:22px}
+.card{background:var(--cr);border:1px solid var(--line);padding:20px;border-radius:3px}
+.card h3{font-size:20px;margin-bottom:6px;color:var(--hy)}
+.card p{color:var(--mut);font-size:16px}
+.band{background:var(--ink);color:var(--bg);max-width:none}
+.band .in{max-width:1040px;margin:0 auto}
+.band p{max-width:640px;color:#c9d4de}
+.note{margin-top:16px;border-left:4px solid var(--co);padding:8px 14px;background:var(--bg2);color:var(--mut)}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{cursor:pointer;font-weight:700;min-height:44px}
+.faq p{margin-top:8px;color:var(--mut)}
+footer{padding:36px 18px 90px;text-align:center;color:var(--mut);font:12px Arial,sans-serif}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:8px;padding:8px 12px max(8px,env(safe-area-inset-bottom));background:rgba(238,241,238,.97);border-top:1px solid var(--line)}
+.sticky .btn{flex:1;text-align:center}
+@media(min-width:760px){.grid{grid-template-columns:repeat(2,1fr)}.navr a.l{display:inline}.sticky{display:none}footer{padding-bottom:36px}.pin{padding-bottom:16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div class="brand">The Nobnocket<br>Boutique Inn</div>
+<div class="navr"><a class="l" href="#rooms">Rooms</a><a class="l" href="#faq">FAQ</a><a class="btn" href="https://secure.thinkreservations.com/nobnocket/reservations">Book</a></div></nav>
+
+<div class="hero" id="hero">
+<div class="pin">
+<div class="copy">
+<div class="eyebrow">Boutique inn / Vineyard Haven, Martha's Vineyard</div>
+<h1>Postcards from the garden.</h1>
+<p class="sub">Scroll. Five postcards land on the table, then the postmark.</p>
+</div>
+<div class="stage">
+<svg id="svg" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Illustrative stack of five postcards about the inn landing one by one">
+<rect x="14" y="30" width="372" height="210" rx="6" fill="#e0e6e3"/>
+<g id="cards"></g>
+<g id="pm" opacity="0" transform="translate(330 70)">
+<circle r="34" fill="none" stroke="#d0583f" stroke-width="2.4"/>
+<circle r="27" fill="none" stroke="#d0583f" stroke-width="1"/>
+<text y="-6" text-anchor="middle" font-family="Arial" font-weight="800" font-size="8.5" fill="#d0583f">VINEYARD</text>
+<text y="5" text-anchor="middle" font-family="Arial" font-weight="800" font-size="8.5" fill="#d0583f">HAVEN MA</text>
+<text y="17" text-anchor="middle" font-family="Arial" font-size="7" fill="#d0583f">02568</text>
+<path d="M-70 -14 q10 -8 20 0 t20 0 t20 0" fill="none" stroke="#d0583f" stroke-width="1.6" transform="translate(-34 -2)"/>
+<path d="M-70 -4 q10 -8 20 0 t20 0 t20 0" fill="none" stroke="#d0583f" stroke-width="1.6" transform="translate(-34 -2)"/>
+</g>
+</svg>
+<div class="cap">Illustrative postcards. Text from nobnocket.com; the design is a concept, not the inn's.</div>
+</div>
+<div class="call" id="call" aria-live="polite"><b id="ct">Postcards from the garden.</b><span id="cs">A Vineyard Haven inn, by the page.</span></div>
+<div class="dots"><i id="d0" class="on"></i><i id="d1"></i><i id="d2"></i><i id="d3"></i><i id="d4"></i></div>
+</div>
+</div>
+
+<section id="rooms">
+<h2>Four room types.</h2>
+<p>As listed on their rooms page. This page is a concept, not their words.</p>
+<div class="grid">
+<div class="card"><h3>Luxury Grand</h3><p>King bed. Table and chairs for in-room breakfast. Listed range $310-$800.</p></div>
+<div class="card"><h3>Luxury Suite</h3><p>King bed. Table and chairs for in-room breakfast. Listed range $290-$750.</p></div>
+<div class="card"><h3>Deluxe</h3><p>King bed. Table and chairs for in-room breakfast. Listed range $245-$700.</p></div>
+<div class="card"><h3>Lux</h3><p>Queen bed. Listed range $205-$610.</p></div>
+</div>
+<div class="note">Rates are the ranges shown on their site; what they cover is not stated there, so confirm with the inn. Booking runs through their own reservations page; this concept does not replace it.</div>
+</section>
+
+<section class="band" id="agent"><div class="in">
+<h2>Agent-ready.</h2>
+<p>This concept ships with llms.txt, JSON-LD for the inn and its four room types, and an open robots.txt, so an AI assistant asked for a boutique inn on Martha's Vineyard can read the rooms, the location and the booking route.</p>
+</div></section>
+
+<section class="faq" id="faq">
+<h2>FAQ</h2>
+<details><summary>Where is the inn?</summary><p>Vineyard Haven, Martha's Vineyard, MA 02568, on 2 acres of gardens (per their site).</p></details>
+<details><summary>What rooms are there?</summary><p>Four listed types: Luxury Grand, Luxury Suite and Deluxe with king beds, and Lux with a queen bed.</p></details>
+<details><summary>How do I book?</summary><p>Through the inn's own reservations page, or by phone at (508) 696-0859.</p></details>
+</section>
+
+<footer>Free concept by Kerblabs for The Nobnocket Boutique Inn. Not affiliated. Postcards are illustrative. Facts from nobnocket.com.</footer>
+<div class="sticky"><a class="btn" href="https://secure.thinkreservations.com/nobnocket/reservations">Book</a><a class="btn" href="tel:+15086960859">Call</a></div>
+
+<script>
+(function(){
+var hero=document.getElementById('hero'),reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function seg(t,a,b){return Math.max(0,Math.min(1,(t-a)/(b-a)))}
+function ease(p){return 1-Math.pow(1-p,3)}
+var $=function(i){return document.getElementById(i)};
+var NS='http://www.w3.org/2000/svg';
+var P=[
+["Vineyard Haven, MA","Martha's Vineyard","Postcard one. Where it is."],
+["Two acres of gardens","a secluded retreat","Postcard two. The garden."],
+["Michelin Key 2026","shown on their site","Postcard three. The recognition."],
+["Four room types","Grand, Suite, Deluxe, Lux","Postcard four. The rooms."],
+["Frette linens","Nespresso in the room","Postcard five. The details."]];
+var C=[
+["Postcards from the garden.","A Vineyard Haven inn, by the page."],
+["Vineyard Haven, Martha's Vineyard.","Postcode 02568, per their site."],
+["Two acres of gardens.","Their site calls it a secluded retreat."],
+["Michelin Key 2026.","Shown on their site, with a Condé Nast listing."],
+["Four room types.","Luxury Grand, Luxury Suite, Deluxe and Lux."],
+["Frette linens, Nespresso, postmarked.","Book on their own reservations page."]];
+var rot=[-4,3,-2,4,-1],dx=[-16,14,-12,12,0],g=[];
+var host=$('cards');
+for(var i=0;i<5;i++){
+var e=document.createElementNS(NS,'g');
+var r=document.createElementNS(NS,'rect');
+r.setAttribute('x',-80);r.setAttribute('y',-46);r.setAttribute('width',160);r.setAttribute('height',92);r.setAttribute('rx',3);
+r.setAttribute('fill','#fbf6ea');r.setAttribute('stroke','#c8d1cf');r.setAttribute('stroke-width',1.2);
+e.appendChild(r);
+var s=document.createElementNS(NS,'rect');
+s.setAttribute('x',56);s.setAttribute('y',-40);s.setAttribute('width',18);s.setAttribute('height',22);s.setAttribute('fill','none');s.setAttribute('stroke','#5f7fb0');s.setAttribute('stroke-dasharray','2 2');
+e.appendChild(s);
+var t1=document.createElementNS(NS,'text');
+t1.setAttribute('x',-72);t1.setAttribute('y',-26);t1.setAttribute('font-family','Georgia');t1.setAttribute('font-weight','700');t1.setAttribute('font-size','13');t1.setAttribute('fill','#1d2b3a');t1.textContent=P[i][0];
+e.appendChild(t1);
+var t2=document.createElementNS(NS,'text');
+t2.setAttribute('x',-72);t2.setAttribute('y',-8);t2.setAttribute('font-family','Georgia');t2.setAttribute('font-size','11');t2.setAttribute('fill','#546170');t2.textContent=P[i][1];
+e.appendChild(t2);
+var l=document.createElementNS(NS,'path');
+l.setAttribute('d','M-72 14 H40 M-72 26 H40 M-72 38 H10');l.setAttribute('stroke','#c8d1cf');l.setAttribute('stroke-width',1);
+e.appendChild(l);
+host.appendChild(e);g.push(e);
+}
+function draw(t){
+for(var i=0;i<5;i++){
+var a=0.06+i*0.15,p=ease(seg(t,a,a+0.12));
+var cx=200+dx[i]+(1-p)*300,cy=62+i*30-(1-p)*24,ro=rot[i]+(1-p)*24;
+g[i].setAttribute('transform','translate('+cx+' '+cy+') rotate('+ro+')');
+g[i].setAttribute('opacity',p>0?1:0);
+}
+var pm=seg(t,.84,.94);
+$('pm').setAttribute('opacity',pm);
+$('pm').setAttribute('transform','translate(320 '+(78)+') scale('+(1.5-.5*pm)+')');
+var k=t<.06?0:t<.21?1:t<.36?2:t<.51?3:t<.66?4:t<.84?4:5;
+var idx=t<.06?0:Math.min(5,1+Math.floor((t-.06)/.15));
+if(t>=.84)idx=5;
+$('ct').textContent=C[idx][0];$('cs').textContent=C[idx][1];
+for(var d=0;d<5;d++)$('d'+d).className=(d<=Math.max(0,idx-1)&&idx>0)||(idx==0&&d==0)?'on':'';
+}
+function upd(){
+if(reduce){draw(1);return}
+var r=hero.getBoundingClientRect(),m=hero.offsetHeight-innerHeight;
+draw(Math.max(0,Math.min(1,-r.top/m)));
+}
+addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+})();
+</script>
+<noscript><p style="padding:20px">Concept for The Nobnocket Boutique Inn, Vineyard Haven MA. Rooms: Luxury Grand, Luxury Suite, Deluxe, Lux. Phone (508) 696-0859.</p></noscript>
+</body>
+</html>
