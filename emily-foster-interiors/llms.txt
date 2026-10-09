@@ -1,0 +1,16 @@
+# Emily Foster Interiors (Kerblabs concept site)
+
+> Concept spec by Kerblabs for Emily Foster Interiors, an interior design and construction business in Albuquerque, NM 87122. Not the official site: https://www.emilyfosterinteriors.com/
+
+## Facts (from their public site)
+- Services: Interior design; Construction
+- Scope: art installation to plumbing, furniture assembly to layout design
+- Area: Albuquerque, Santa Fe, Taos NM. Denver CO listed as coming soon.
+- Phone: 505 440 3662
+- Email: emily@emilyfosterinteriors.com
+- Prices and hours: not published
+
+## FAQ
+- What do they do? Interior design and construction.
+- Where? Albuquerque, Santa Fe, Taos.
+- Contact? Phone or email above, or Book a Consultation on their site.
