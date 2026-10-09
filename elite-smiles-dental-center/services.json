@@ -1,0 +1,18 @@
+{
+ "business": "Elite Smiles Dental Center",
+ "location": "1501 SW 37 Avenue, Suite B, Miami, FL 33145",
+ "phone": "786-228-7000",
+ "newPatientsPhone": "(786) 432-5301",
+ "hours": "Mon-Fri 9am-6pm, Sat 9am-1pm",
+ "website": "https://elitesmilesdentalcenter.com",
+ "services": [
+  {"name": "Cosmetic dentistry", "description": "Smile design, tooth bonding, smile makeovers, teeth whitening, porcelain veneers", "price": "not published"},
+  {"name": "Dental implants", "description": "Implant dentistry", "price": "not published"},
+  {"name": "Invisalign", "description": "Certified Invisalign provider", "price": "not published"},
+  {"name": "Restorative dentistry", "description": "Bridges, porcelain crowns, inlays and onlays", "price": "not published"},
+  {"name": "General and family dentistry", "description": "Exams, cleanings, extractions, root canal, children's and emergency care", "price": "not published"}
+ ],
+ "financing": ["CareCredit", "Cherry", "Sunbit", "Alphaeon"],
+ "booking": "https://links.reliom.com/widget/form/2i35tPO6MfDsmsaxXz62",
+ "note": "Concept by Kerblabs, not affiliated with the practice."
+}

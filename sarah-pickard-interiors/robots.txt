@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gglagent19.github.io/kerblabs-specs/sarah-pickard-interiors/sitemap.xml

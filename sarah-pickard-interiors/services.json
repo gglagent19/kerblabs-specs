@@ -1,0 +1,16 @@
+{
+ "business": "Pickard Design Studio (Sarah Pickard Interiors)",
+ "location": "4008 Eastside Avenue, Dallas, TX 75226",
+ "phone": "214-833-8181",
+ "email": "SPickard@sarahpickard.com",
+ "website": "https://sarahpickard.com/",
+ "instagram": "https://www.instagram.com/pickarddesignstudio/",
+ "services": [
+  {"name": "Hospitality interior design", "description": "Hotels, country clubs and resorts", "price": "not published"},
+  {"name": "Luxury residential interior design", "description": "Residential interiors from sketch to completion", "price": "not published"},
+  {"name": "Multi-family interior design", "description": "Multi-family projects", "price": "not published"},
+  {"name": "Interior architectural services", "description": "Paired with interior design", "price": "not published"}
+ ],
+ "booking": "Contact the studio by phone, email or Instagram",
+ "note": "Concept by Kerblabs, not affiliated with the studio."
+}
