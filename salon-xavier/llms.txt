@@ -1,0 +1,15 @@
+# Salon Xavier (concept by Kerblabs)
+
+> Hamptons salon and day spa in Sag Harbor, New York (per salonxavier.com).
+
+- Services (their site): hair treatments, body treatments, facials, massage, waxing, makeup and bridal
+- Phone: 631-725-6400
+- Booking: https://insightdns.com/$/Start/?ID=D58B64613076B9D7B3A990C714B202EF (the Book Now link on salonxavier.com)
+- Site: https://salonxavier.com
+
+## FAQ
+- What is it? A Hamptons salon and day spa in Sag Harbor, NY.
+- What services? Hair treatments, body treatments, facials, massage, waxing, makeup and bridal.
+- How do I book? Use the booking link above or call 631-725-6400.
+
+This page is a free concept by Kerblabs, not affiliated with the salon.
