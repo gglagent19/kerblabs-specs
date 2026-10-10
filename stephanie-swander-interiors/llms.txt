@@ -1,0 +1,23 @@
+# Stephanie Swander Interiors (concept by Kerblabs)
+
+> Full-service luxury interior design firm in Greenville, South Carolina. This is a free concept, not the firm's official site. The room drawing is illustrative.
+
+- Location: 16 Boland Ct, Greenville, SC 29615
+- Phone: 864.395.1843
+- Email: stephanie@stephanieswanderinteriors.com
+- Website: https://www.stephanieswanderinteriors.com
+- Founded: 2010
+
+## Services
+- Custom new construction
+- Whole-home furnishings
+- High-end renovations
+
+## FAQ
+- Prices? Not published in the source pages.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Call 864.395.1843 or email Stephanie to start a project.

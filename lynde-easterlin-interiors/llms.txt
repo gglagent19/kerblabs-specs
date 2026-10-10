@@ -1,0 +1,17 @@
+# Lynde Easterlin Interiors (concept by Kerblabs)
+
+> Interior design in Nashville, Tennessee. This is a free concept, not the studio's official site. The chair and fabrics are illustrative.
+
+- Location: Nashville, TN
+- Email: lynde@lyndeeasterlin.com
+- Phone: (917) 420-2962
+- Website: https://www.lyndeeasterlin.com
+
+## FAQ
+- Prices? Not published in the source pages.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Email Lynde to start a project.

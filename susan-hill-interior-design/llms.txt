@@ -1,0 +1,22 @@
+# Susan Hill Interior Design (concept by Kerblabs)
+
+> Interior design, remodeling, new builds and furnishings in Charlotte, North Carolina (also shown as Susan Hill Design Group). This is a free concept, not the firm's official site. The binder pages and seal are illustrative.
+
+- Location: Charlotte, NC and surrounding areas
+- Email: susan@susanhillid.com
+- Website: https://www.susanhilldesigngroup.com
+
+## Services
+- Interior design and project management
+- Custom homes and additions
+- Renovations and remodeling
+- Full service design and furnishing
+
+## FAQ
+- Prices? Not published in the source pages.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Email Susan to start a project.
