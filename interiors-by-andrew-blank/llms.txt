@@ -1,0 +1,16 @@
+# Interiors by Andrew Blank (concept by Kerblabs)
+
+> Full home renovations, new construction homes, high-end interior design, and investment and Airbnb property design in Cleveland, Ohio. Serves Cleveland, Akron, Kent and Port Clinton.
+
+- Address: 4685 State Road, Cleveland, OH 44109
+- Phone: 216.685.9010
+- Email: andrewjblank@sbcglobal.net
+- Current site: https://www.interiorsbyandrewblank.com
+- Machine-readable services: services.json
+- Prices: not published
+
+## FAQ
+- Where do they work? Cleveland, Akron, Kent and Port Clinton, Ohio.
+- How do I start? Call or email.
+
+This is a free concept site by Kerblabs, not the business's official site.

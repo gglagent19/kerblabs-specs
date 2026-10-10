@@ -1,0 +1,23 @@
+# Hennessee Haven (concept by Kerblabs)
+
+> Interior designer in Greenville, South Carolina. This is a free concept, not the studio's official site. The wall and roller are illustrative.
+
+- Location: 415 Mauldin Rd, Greenville, SC 29605
+- Phone: 864-597-9494
+- Email: terry@hennesseehaven.com
+- Website: https://www.hennesseehaven.com
+
+## Pages on the current site
+- Portfolio
+- About
+- Press
+- Inquiries (schedule a discovery call)
+
+## FAQ
+- Prices? Not published in the source pages.
+
+## Machine-readable
+- services.json
+
+## Actions
+- Email or call to schedule a discovery call.
