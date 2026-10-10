@@ -1,0 +1,17 @@
+# Ottalaus Salon (concept by Kerblabs)
+
+> Hair salon with two Utah locations, Lehi and South Jordan (per ottalaus.com).
+
+- Lehi: 3300 Running Creek Way, Suite A2, Lehi, UT 84043
+- South Jordan: 11649 South 4000 West, Suite 120, South Jordan, UT 84009
+- Phone: 1-833-385-1523
+- Services (their site): hair cutting and styling, hair color, hair extensions, eyelash extensions
+- Booking: https://ottalaus.zenoti.com/webstoreNew/services
+- Site: https://www.ottalaus.com
+
+## FAQ
+- Where? Lehi (3300 Running Creek Way, Suite A2) and South Jordan (11649 South 4000 West, Suite 120), Utah.
+- What services? Hair cutting and styling, hair color, hair extensions, eyelash extensions.
+- How do I book? Book Now on ottalaus.com (Zenoti), or call 1-833-385-1523.
+
+This page is a free concept by Kerblabs, not affiliated with the salon.
