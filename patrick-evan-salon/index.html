@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Patrick Evan Salon | Union Square, San Francisco (concept)</title>
+<meta name="description" content="Concept site for Patrick Evan Salon, Union Square, San Francisco. A flat iron glides down nine hanging strands as you scroll, one stage per service. Built by Kerblabs as a free spec.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://gglagent19.github.io/kerblabs-specs/patrick-evan-salon/">
+<meta property="og:title" content="Patrick Evan Salon | Concept site by Kerblabs">
+<meta property="og:description" content="A free concept hero for a Union Square hair salon.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gglagent19.github.io/kerblabs-specs/patrick-evan-salon/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"HairSalon","@id":"https://gglagent19.github.io/kerblabs-specs/patrick-evan-salon/#biz","name":"Patrick Evan Salon","url":"https://patrickevansalon.com","telephone":"+1-415-421-1111","foundingDate":"2003","address":{"@type":"PostalAddress","streetAddress":"55 Grant Avenue, Levels 4-6","addressLocality":"San Francisco","addressRegion":"CA","postalCode":"94108","addressCountry":"US"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Cutting"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Color and highlights"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Japanese hair straightening"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Keratin and smoothing treatments"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Hair extensions"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Bridal and formal styling"}}]}},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Where is Patrick Evan Salon?","acceptedAnswer":{"@type":"Answer","text":"55 Grant Avenue, Levels 4 to 6, San Francisco, CA 94108, in Union Square."}},
+{"@type":"Question","name":"What services are listed?","acceptedAnswer":{"@type":"Answer","text":"Cutting, color and highlights, Japanese hair straightening, keratin and smoothing, hair extensions, bridal and formal styling."}},
+{"@type":"Question","name":"How do I book?","acceptedAnswer":{"@type":"Answer","text":"New clients submit a request on patrickevansalon.com or call 415-421-1111. Existing clients book online through the salon's Zenoti page."}}
+]}]}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#fbf6f1;--bg2:#f1e7de;--ink:#2b1d24;--mut:#6a5a60;--lk:#4a2a3a;--hl:#b9776a;--line:#e0d1c6}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.55;-webkit-text-size-adjust:100%}
+a{color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;height:64px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 16px;background:rgba(251,246,241,.96);border-bottom:1px solid var(--line);font-family:Arial,Helvetica,sans-serif}
+.brand{font-weight:800;letter-spacing:.05em;font-size:13px;line-height:1.1;text-transform:uppercase;max-width:170px}
+.navr{display:flex;gap:14px;align-items:center;font-size:13px}
+.navr a.l{text-decoration:none;display:none}
+.btn{display:inline-block;background:var(--lk);color:var(--bg);padding:10px 16px;border-radius:2px;text-decoration:none;font:700 13px Arial,sans-serif;letter-spacing:.05em}
+.hero{height:440vh;position:relative}
+.pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;padding-top:104px;padding-bottom:calc(88px + env(safe-area-inset-bottom));display:flex;flex-direction:column}
+.copy{padding:0 18px;max-width:900px}
+.eyebrow{font:700 11px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--hl)}
+h1{font-size:clamp(30px,8vw,72px);line-height:1;margin:8px 0;letter-spacing:-.02em}
+.sub{font-size:clamp(14px,3.6vw,18px);color:var(--mut);max-width:560px}
+.stage{flex:1;min-height:0;display:flex;flex-direction:column;margin-top:6px}
+.stage svg{flex:1;min-height:0;width:100%;display:block}
+.cap{font:11px Arial,sans-serif;color:var(--mut);padding:0 18px;letter-spacing:.04em}
+.call{margin:4px 18px 0;max-width:620px;min-height:72px;border-left:5px solid var(--hl);padding:4px 0 4px 14px}
+.call b{display:block;font:800 clamp(20px,5.4vw,30px)/1.1 Georgia,serif}
+.call span{display:block;margin-top:4px;font-size:clamp(13px,3.4vw,16px);color:var(--mut)}
+.dots{display:flex;gap:6px;margin:8px 18px 4px}
+.dots i{width:24px;height:4px;background:var(--line);display:block;border-radius:2px}
+.dots i.on{background:var(--lk)}
+section{padding:72px 18px;max-width:1040px;margin:0 auto}
+h2{font-size:clamp(28px,7vw,48px);line-height:1.05;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:22px}
+.card{background:var(--bg2);border:1px solid var(--line);padding:20px;border-radius:3px}
+.card h3{font-size:20px;margin-bottom:6px;color:var(--lk)}
+.card p{color:var(--mut);font-size:16px}
+.band{background:var(--lk);color:var(--bg);max-width:none}
+.band .in{max-width:1040px;margin:0 auto}
+.band p{max-width:640px;color:#ead9d9}
+.note{margin-top:16px;border-left:4px solid var(--hl);padding:8px 14px;background:var(--bg2);color:var(--mut)}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{cursor:pointer;font-weight:700;min-height:44px}
+.faq p{margin-top:8px;color:var(--mut)}
+footer{padding:36px 18px 90px;text-align:center;color:var(--mut);font:12px Arial,sans-serif}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:8px;padding:8px 12px max(8px,env(safe-area-inset-bottom));background:rgba(251,246,241,.97);border-top:1px solid var(--line)}
+.sticky .btn{flex:1;text-align:center}
+@media(min-width:760px){.grid{grid-template-columns:repeat(2,1fr)}.navr a.l{display:inline}.sticky{display:none}footer{padding-bottom:36px}.pin{padding-bottom:16px}}
+@media(max-height:520px) and (orientation:landscape){.pin{padding-top:88px;padding-bottom:8px}.sub,.call span,.cap{display:none}h1{font-size:clamp(22px,5vh,32px);margin:4px 0}.stage{margin-top:2px}.call{min-height:0;margin-top:2px;padding:2px 0 2px 10px}.call b{font-size:16px}.dots{margin:4px 18px 2px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div class="brand">Patrick Evan<br>Salon</div>
+<div class="navr"><a class="l" href="#services">Services</a><a class="l" href="#faq">FAQ</a><a class="l" href="tel:+14154211111">415-421-1111</a><a class="btn" href="https://patrickevansalon.com">Book</a></div></nav>
+
+<div class="hero" id="hero">
+<div class="pin">
+<div class="copy">
+<div class="eyebrow">Union Square / San Francisco</div>
+<h1>Smooth is a craft.</h1>
+<p class="sub">Scroll. A flat iron glides down nine strands, one stage for each service on the menu.</p>
+</div>
+<div class="stage">
+<svg id="svg" viewBox="0 0 400 260" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Illustrative drawing of nine wavy hair strands being straightened by a flat iron moving down">
+<rect x="30" y="12" width="340" height="8" rx="4" fill="#4a2a3a"/>
+<g id="strands" fill="none" stroke-linecap="round"></g>
+<g id="shine" fill="none" stroke="#fff" stroke-linecap="round" opacity=".55"></g>
+<g id="iron">
+<rect x="22" y="-9" width="356" height="9" rx="4" fill="#2b1d24"/>
+<rect x="22" y="0" width="356" height="9" rx="4" fill="#4a2a3a"/>
+<rect x="22" y="-1" width="356" height="2" fill="#b9776a"/>
+</g>
+</svg>
+<div class="cap">Illustrative drawing. Not a photo of the salon.</div>
+</div>
+<div class="call" id="call" aria-live="polite"><b id="ct">Smooth is a craft.</b><span id="cs">A Union Square hair salon.</span></div>
+<div class="dots"><i id="d0" class="on"></i><i id="d1"></i><i id="d2"></i><i id="d3"></i><i id="d4"></i><i id="d5"></i></div>
+</div>
+</div>
+
+<section id="services">
+<h2>Six stages. One menu.</h2>
+<p>The services their site lists. This page is a concept, not their words.</p>
+<div class="grid">
+<div class="card"><h3>Cutting</h3><p>Listed on patrickevansalon.com.</p></div>
+<div class="card"><h3>Color and highlights</h3><p>Balayage, foil highlights, blonding and gloss, as listed.</p></div>
+<div class="card"><h3>Japanese hair straightening</h3><p>Thermal reconditioning, listed as the founder's specialty.</p></div>
+<div class="card"><h3>Keratin and smoothing</h3><p>Keratin and smoothing treatments, as listed.</p></div>
+<div class="card"><h3>Hair extensions</h3><p>Wefts, tape-ins and K-tips, as listed.</p></div>
+<div class="card"><h3>Bridal and formal styling</h3><p>Listed on their site.</p></div>
+</div>
+<div class="note">Visit: 55 Grant Avenue, Levels 4 to 6, San Francisco, CA 94108. Phone 415-421-1111. New clients submit a request on their own site. This concept does not replace it.</div>
+</section>
+
+<section class="band" id="agent"><div class="in">
+<h2>Agent-ready.</h2>
+<p>This concept ships with llms.txt, JSON-LD for the salon and its services, and an open robots.txt, so an AI assistant asked for a Union Square hair salon can read the services, the address and the booking route.</p>
+</div></section>
+
+<section class="faq" id="faq">
+<h2>FAQ</h2>
+<details><summary>Where is Patrick Evan Salon?</summary><p>55 Grant Avenue, Levels 4 to 6, San Francisco, CA 94108, in Union Square.</p></details>
+<details><summary>What services are listed?</summary><p>Cutting, color and highlights, Japanese hair straightening, keratin and smoothing, hair extensions, bridal and formal styling.</p></details>
+<details><summary>How do I book?</summary><p>New clients submit a request on patrickevansalon.com or call 415-421-1111. Existing clients book online through the salon's Zenoti page.</p></details>
+</section>
+
+<footer>Free concept by Kerblabs for Patrick Evan Salon. Not affiliated. Drawing is illustrative. Facts from patrickevansalon.com.</footer>
+<div class="sticky"><a class="btn" href="tel:+14154211111">Call</a><a class="btn" href="https://patrickevansalon.com">Book</a></div>
+
+<script>
+(function(){
+var hero=document.getElementById('hero'),reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function seg(t,a,b){return Math.max(0,Math.min(1,(t-a)/(b-a)))}
+function ease(x){return x*x*(3-2*x)}
+var $=function(i){return document.getElementById(i)};
+var NS='http://www.w3.org/2000/svg';
+var N=9,Y0=22,Y1=238,A0=.05,A1=.95;
+var COL=['#7a4a3a','#8a5640','#9a6446','#a8714c','#b27c52','#bd8a5e','#c4946a','#b27c52','#8a5640'];
+// stages: label, line. Iron position and stage both derive from the same progress p.
+var C=[
+["Cutting.","The first line on their menu."],
+["Color and highlights.","Balayage, foil highlights, blonding and gloss."],
+["Japanese straightening.","Thermal reconditioning, the founder's specialty."],
+["Keratin and smoothing.","Smoothing treatments, listed on their site."],
+["Extensions.","Wefts, tape-ins and K-tips."],
+["Bridal and formal.","Styling for the day. Smooth from root to tip."]];
+var gs=$('strands'),gh=$('shine'),P=[],H=[];
+for(var i=0;i<N;i++){
+var p=document.createElementNS(NS,'path');p.setAttribute('stroke',COL[i]);p.setAttribute('stroke-width','7');gs.appendChild(p);P.push(p);
+var h=document.createElementNS(NS,'path');h.setAttribute('stroke-width','1.6');gh.appendChild(h);H.push(h);
+}
+function xAt(i,y,iy){
+var x0=56+i*36;
+var w=ease(seg(y,iy-14,iy+2)); // 1 below the iron, 0 above
+var amp=(9+(i%3)*2)*w;
+return x0+amp*Math.sin(y*.085+i*1.3);
+}
+function draw(t){
+var u=seg(t,A0,A1),iy=Y0+(Y1-Y0)*ease(u);
+$('iron').setAttribute('transform','translate(0 '+iy.toFixed(1)+')');
+for(var i=0;i<N;i++){
+var d='',dh='',started=false;
+for(var y=Y0;y<=Y1;y+=4){
+var x=xAt(i,y,iy);
+d+=(y===Y0?'M':'L')+x.toFixed(1)+' '+y;
+if(y<iy-2){dh+=(started?'L':'M')+(x-1.8).toFixed(1)+' '+y;started=true}
+}
+P[i].setAttribute('d',d);H[i].setAttribute('d',dh);
+}
+var s=Math.min(5,Math.floor(u*6));
+$('ct').textContent=C[s][0];$('cs').textContent=C[s][1];
+for(var k=0;k<6;k++)$('d'+k).className=(k<=s&&(t>0.02||reduce))?'on':'';
+}
+function upd(){
+if(reduce){draw(1);return}
+var r=hero.getBoundingClientRect(),m=hero.offsetHeight-innerHeight;
+draw(Math.max(0,Math.min(1,-r.top/m)));
+}
+addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+})();
+</script>
+<noscript><p style="padding:20px">Concept for Patrick Evan Salon, Union Square, San Francisco. 55 Grant Avenue, Levels 4 to 6. Cutting, color and highlights, Japanese hair straightening, keratin and smoothing, extensions, bridal and formal styling. Phone 415-421-1111.</p></noscript>
+</body>
+</html>
